@@ -1,176 +1,553 @@
-TABLE_NAME,FIELD_NAME,DATA_TYPE,DATA_FORMAT,REPLICATED,UNIT_OF_MEASURE,VALUE_DESCRIPTION,DEFINITION,CDM_ORDER
-DEMOGRAPHIC,PATID,TEXT(x),,NO,,,"Arbitrary person-level identifier used to link across tables. PATID is a pseudoidentifier with a consistent crosswalk to the true identifier retained by the source Data Partner. For analytical data sets requiring patient-level data, only the pseudoidentifier is used to link across all information belonging to a patient.The PATID must be unique within the data source being queried. Creating a unique identifier within a CDRN would be beneficial and acceptable. The PATID is not the basis for linkages across partners.",1
-DEMOGRAPHIC,BIRTH_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,Date of birth.,2
-DEMOGRAPHIC,BIRTH_TIME,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,Time of birth.,3
-DEMOGRAPHIC,SEX,TEXT(2),,NO,,"A = Ambiguous F = FemaleM = MaleNI = No informationUN = UnknownOT = Other","Administrative sex.  The “Ambiguous” category may be used for individuals who are physically undifferentiated from birth. The “Other” category may be used for individuals who are undergoing gender re-assignment.",4
-DEMOGRAPHIC,HISPANIC,TEXT(2),,NO,,"Y = YesN = No R = Refuse to answerNI = No informationUN = UnknownOT = Other","A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race.",5
-DEMOGRAPHIC,RACE,TEXT(2),,NO,,"01 = American Indian or Alaska Native02 = Asian03 = Black or African American04 = Native Hawaiian or Other Pacific Islander05 = White06 = Multiple race07 = Refuse to answerNI = No informationUN = UnknownOT = Other","Please use only one race value per patient.Details of categorical definitions:American Indian or Alaska Native: A person having origins in any of the original peoples of North and South America (including Central America), and who maintains tribal affiliation or community attachment.Asian: A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam.Black or African American: A person having origins in any of the black racial groups of Africa.Native Hawaiian or Other Pacific Islander: A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands.White: A person having origins in any of the original peoples of Europe, the Middle East, or North Africa.",6
-DEMOGRAPHIC,BIOBANK_FLAG,TEXT(1),,NO,,"Y = YesN = No","Flag to indicate that one or more biobanked specimens are stored and available for research use. Examples of biospecimens could include plasma, urine, or tissue. If biospecimens are available, locally maintained “mapping tables” would be necessary to map between the DEMOGRAPHIC record and the originating biobanking system(s).If no known biobanked specimens are available, this field should be marked “No”.",7
-DEMOGRAPHIC,RAW_SEX,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",8
-DEMOGRAPHIC,RAW_HISPANIC,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",9
-DEMOGRAPHIC,RAW_RACE,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",10
-ENROLLMENT,PATID,TEXT(x),,NO,,,Arbitrary person-level identifier used to link across tables.,11
-ENROLLMENT,ENR_START_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,"Date of the beginning of the enrollment period. If the exact date is unknown, use the first day of the month.For implementation of the CDM, a long span of longitudinal data is desirable; however, especially for historical data more than a decade old, the appropriate beginning date should be determined by the partner’s knowledge of the validity and usability of the data. More specific guidance can be provided through implementation discussions.",12
-ENROLLMENT,ENR_END_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,"Date of the end of the enrollment period. If the exact date is unknown, use the last day of the month.",13
-ENROLLMENT,CHART,TEXT(1),,NO,,"Y = YesN = No","Chart abstraction flag is intended to answer the question, ""Are you able to request (or review) charts for this person?"" This flag does not address chart availability. Mark as ""Yes"" if there are no contractual or other restrictions between you and the individual (or sponsor) that would prohibit you from requesting any chart for this member.Note: This field is most relevant for health insurers that can request charts from affiliated providers. This field allows exclusion of patients from studies that require chart review to validate exposures and/or outcomes. It identifies patients for whom charts are never available and for whom the chart can never be requested.",14
-ENROLLMENT,ENR_BASIS,TEXT(1),,NO,,"I = InsuranceG = GeographyA = AlgorithmicE = Encounter-based","When insurance information is not available but complete capture can be asserted some other way, please identify the basis on which complete capture is defined. Additional information on the approach identified will be required from each partner.ENR_BASIS is a property of the time period defined. A patient can have multiple entries in the table.Details of categorical definitions:Insurance: The start and stop dates are based upon the concept of enrollment with health plan insuranceGeography: An assertion of complete data capture between the start and end dates based upon geographic characteristics, such as regional isolationAlgorithmic: An assertion of complete data capture between the start and end dates, based on a locally developed or applied algorithm, often using multiple criteria Encounter-based: The start and stop dates are populated from the earliest-observed encounter and latest-observed encounter.",15
-ENCOUNTER,PATID,TEXT(x),,NO,,,Arbitrary person-level identifier used to link across tables.,16
-ENCOUNTER,ENCOUNTERID,TEXT(x),,NO,,,"Arbitrary encounter-level identifier. Used to link across tables, including the ENCOUNTER, DIAGNOSIS, and PROCEDURE tables.",17
-ENCOUNTER,ADMIT_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,Encounter or admission date.,18
-ENCOUNTER,ADMIT_TIME,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,Encounter or admission time.,19
-ENCOUNTER,DISCHARGE_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,Discharge date. Should be populated for all Inpatient Hospital Stay (IP) and Non-Acute Institutional Stay (IS) encounter types. May be populated for Emergency Department (ED) encounter types. Should be missing for ambulatory visit (AV or OA) encounter types.,20
-ENCOUNTER,DISCHARGE_TIME,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,Discharge time.,21
-ENCOUNTER,PROVIDERID,TEXT(x),,NO,,,"Provider code for the provider who is most responsible for this encounter. For encounters with multiple providers choose one so the encounter can be linked to the diagnosis and procedure tables. As with the PATID, the provider code is a pseudoidentifier with a consistent crosswalk to the real identifier.",22
-ENCOUNTER,FACILITY_LOCATION,TEXT(3),,NO,,,Geographic location (3 digit zip code). Should be left blank if not recorded in source system.,23
-ENCOUNTER,ENC_TYPE,TEXT(2),,NO,,"AV = Ambulatory VisitED = Emergency Department EI = Emergency Department Admit to Inpatient Hospital Stay (permissible substitution)IP = Inpatient Hospital StayIS = Non-Acute Institutional StayOA = Other Ambulatory VisitNI = No informationUN = UnknownOT = Other","Encounter type.Details of categorical definitions:Ambulatory Visit: Includes visits at outpatient clinics, physician offices, same day/ambulatory surgery centers, urgent care facilities, and other same-day ambulatory hospital encounters, but excludes emergency department encounters.Emergency Department (ED): Includes ED encounters that become inpatient stays (in which case inpatient stays would be a separate encounter). Excludes urgent care visits. ED claims should be pulled before hospitalization claims to ensure that ED with subsequent admission won't be rolled up in the hospital event. Emergency Department Admit to Inpatient Hospital Stay: Permissible substitution for preferred state of separate ED and IP records. Only for use with data sources where the individual records for ED and IP cannot be distinguished. Inpatient Hospital Stay: Includes all inpatient stays, including: same-day hospital discharges, hospital transfers, and acute hospital care where the discharge is after the admission date.Non-Acute Institutional Stay: Includes hospice, skilled nursing facility (SNF), rehab center, nursing home, residential, overnight non-hospital dialysis and other non-hospital stays.Other Ambulatory Visit: Includes other non-overnight AV encounters such as hospice visits, home health visits, skilled nursing facility visits, other non-hospital visits, as well as telemedicine, telephone and email consultations. May also include ""lab only"" visits (when a lab is ordered outside of a patient visit), ""pharmacy only"" (e.g., when a patient has a refill ordered without a face-to-face visit), ""imaging only"", etc.",24
-ENCOUNTER,FACILITYID,TEXT(x),,NO,,,"Arbitrary local facility code that identifies the hospital or clinic. Used for chart abstraction and validation.FACILITYID can be a true identifier, or a pseudoidentifier with a consistent crosswalk to the true identifier retained by the source Data Partner.",25
-ENCOUNTER,DISCHARGE_DISPOSITION,TEXT(2),,NO,,"A = Discharged aliveE = ExpiredNI = No informationUN = UnknownOT = Other",Vital status at discharge. Should be populated for Inpatient Hospital Stay (IP) and Non-Acute Institutional Stay (IS) encounter types. May be populated for Emergency Department (ED) encounter types. Should be missing for ambulatory visit (AV or OA) encounter types.,26
-ENCOUNTER,DISCHARGE_STATUS,TEXT(2),,NO,,"AF = Adult Foster HomeAL = Assisted Living FacilityAM = Against Medical AdviceAW = Absent without leaveEX = ExpiredHH = Home HealthHO = Home / Self CareHS = HospiceIP = Other Acute Inpatient HospitalNH = Nursing Home (Includes ICF)RH = Rehabilitation FacilityRS = Residential FacilitySH = Still In HospitalSN = Skilled Nursing FacilityNI = No informationUN = UnknownOT = Other",Discharge status. Should be populated for Inpatient Hospital Stay (IP) and Non-Acute Institutional Stay (IS) encounter types. May be populated for Emergency Department (ED) encounter types. Should be missing for ambulatory visit (AV or OA) encounter types.,27
-ENCOUNTER,DRG,TEXT(3),,NO,,,"3-digit Diagnosis Related Group (DRG). Should be populated for IP and IS encounter types. May be populated for ED encounter types. Should be missing for AV or OA encounters. Use leading zeroes for codes less than 100.The DRG is used for reimbursement for inpatient encounters. It is a Medicare requirement that combines diagnoses into clinical concepts for billing. Frequently used in observational data analyses.",28
-ENCOUNTER,DRG_TYPE,TEXT(2),,NO,,"01 = CMS-DRG (old system)02 = MS-DRG (current system)NI = No informationUN = UnknownOT = Other",DRG code version. MS-DRG (current system) began on 10/1/2007. Should be populated for IP and IS encounter types. May be populated for ED encounter types. Should be missing for AV or OA encounters.,29
-ENCOUNTER,ADMITTING_SOURCE,TEXT(2),,NO,,"AF = Adult Foster HomeAL = Assisted Living FacilityAV = Ambulatory VisitED = Emergency DepartmentHH = Home HealthHO = Home / Self CareHS = HospiceIP = Other Acute Inpatient HospitalNH = Nursing Home (Includes ICF)RH = Rehabilitation FacilityRS = Residential FacilitySN = Skilled Nursing FacilityNI = No informationUN = UnknownOT = Other",Admitting source. Should be populated for Inpatient Hospital Stay (IP) and Non-Acute Institutional Stay (IS) encounter types. May be populated for Emergency Department (ED) encounter types. Should be missing for ambulatory visit (AV or OA) encounter types.,30
-ENCOUNTER,RAW_SITEID,TEXT(x),,NO,,,"Optional field for locally-defined identifier intended for local use; for example, where a network may have multiple sites contributing to a central data repository.  This attribute may be sensitive in certain contexts; the intent is for internal network use only, and not to enable site quality comparisons.",31
-ENCOUNTER,RAW_ENC_TYPE,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",32
-ENCOUNTER,RAW_DISCHARGE_DISPOSITION,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",33
-ENCOUNTER,RAW_DISCHARGE_STATUS,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",34
-ENCOUNTER,RAW_DRG_TYPE,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",35
-ENCOUNTER,RAW_ADMITTING_SOURCE,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",36
-DIAGNOSIS,PATID,TEXT(x),,NO,,,Arbitrary person-level identifier. Used to link across tables.,37
-DIAGNOSIS,ENCOUNTERID,TEXT(x),,NO,,,Arbitrary encounter-level identifier. Used to link across tables.,38
-DIAGNOSIS,ENC_TYPE,TEXT(2),,YES,,"AV = Ambulatory VisitED = Emergency Department EI = Emergency Department Admit to Inpatient Hospital Stay (permissible substitution)IP = Inpatient Hospital StayIS = Non-Acute Institutional StayOA = Other Ambulatory VisitNI = No informationUN = UnknownOT = Other",Please note: This is a field replicated from the ENCOUNTER table. See the ENCOUNTER table for definitions. ,39
-DIAGNOSIS,ADMIT_DATE,TEXT(10),YYYY-MM-DD,YES,DATE,,Please note: This is a field replicated from the ENCOUNTER table. See the ENCOUNTER table for definitions. ,40
-DIAGNOSIS,PROVIDERID,TEXT(x),,YES,,,Please note: This is a field replicated from the ENCOUNTER table. See the ENCOUNTER table for definitions. ,41
-DIAGNOSIS,DX,TEXT(18),,NO,,,"Diagnosis code. Leading zeroes and different levels of decimal precision are permissible in this field. Please populate the exact textual value of this diagnosis code, but remove source-specific suffixes and prefixes. Other codes should be listed as recorded in the source data.",42
-DIAGNOSIS,DX_TYPE,TEXT(2),,NO,,"09 = ICD-9-CM10 = ICD-10-CM11 = ICD-11-CMSM = SNOMED CTNI = No informationUN = UnknownOT = Other","Diagnosis code type. We provide values for ICD and SNOMED code types. Other code types will be added as new terminologies are more widely used.Please note: The “Other” category is meant to identify internal use ontologies and codes.",43
-DIAGNOSIS,DX_SOURCE,TEXT(2),,NO,,"AD = AdmittingDI = DischargeFI = FinalIN = InterimNI = No informationUN = UnknownOT = Other","Classification of diagnosis source. We include these categories to allow some flexibility in implementation. The context is to capture available diagnoses recorded during a specific encounter. It is not necessary to populate interim diagnoses unless readily available.Ambulatory encounters would generally be expected to have a source of “Final.”",44
-DIAGNOSIS,PDX,TEXT(2),,NO,,"P = PrincipalS = SecondaryX = Unable to ClassifyNI = No informationUN = UnknownOT = Other","Principal discharge diagnosis flag. Relevant only on IP and IS encounters. For ED, AV, and OA encounter types, mark as X = Unable to Classify. (Billing systems do not require a primary diagnosis for ambulatory visits (eg, professional services))One principal diagnosis is expected, although in some instances more than one diagnosis may be flagged as principal.",45
-DIAGNOSIS,RAW_DX,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",46
-DIAGNOSIS,RAW_DX_TYPE,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",47
-DIAGNOSIS,RAW_DX_SOURCE,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",48
-DIAGNOSIS,RAW_PDX,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",49
-PROCEDURE,PATID,TEXT(x),,NO,,,Arbitrary person-level identifier. Used to link across tables.,50
-PROCEDURE,ENCOUNTERID,TEXT(x),,NO,,,Arbitrary encounter-level identifier. Used to link across tables.,51
-PROCEDURE,ENC_TYPE,TEXT(2),,YES,,"AV = Ambulatory VisitED = Emergency Department EI = Emergency Department Admit to Inpatient Hospital Stay (permissible substitution)IP = Inpatient Hospital StayIS = Non-Acute Institutional StayOA = Other Ambulatory VisitNI = No informationUN = UnknownOT = Other",Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.,52
-PROCEDURE,ADMIT_DATE,TEXT(10),YYYY-MM-DD,YES,DATE,,Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.,53
-PROCEDURE,PROVIDERID,TEXT(x),,YES,,,Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.,54
-PROCEDURE,PX_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,Date the procedure was performed.,55
-PROCEDURE,PX,TEXT(11),,NO,,,Procedure code.,56
-PROCEDURE,PX_TYPE,TEXT(2),,NO,,"09 = ICD-9-CM10 = ICD-10-PCS11 = ICD-11-PCSC2 = CPT Category IIC3 = CPT Category IIIC4 = CPT-4 (i.e., HCPCS Level I)H3 = HCPCS Level IIIHC = HCPCS (i.e., HCPCS Level II)LC = LOINCND = NDCRE = RevenueNI = No informationUN = UnknownOT = Other","Procedure code type.We include a number of code types for flexibility, but the basic requirement that the code refer to a medical procedure remains.Revenue codes are a standard concept in Medicare billing and can be useful for defining care settings. If those codes are available they can be included.Medications administered by clinicians can be captured in billing data and Electronic Health Records (EHRs) as HCPCS procedure codes. Administration (infusion) of chemotherapy is an example. We are now seeing NDCs captured as part of procedures because payers are demanding it for payment authorization. Inclusion of this code type enables those data partners that capture the NDC along with the procedure to include the data.Please note: The “Other” category is meant to identify internal use ontologies and codes.",57
-PROCEDURE,PX_SOURCE,TEXT(x),,NO,,"OD = Order BI = Billing CL = Claim NI = No information UN = Unknown OT = Other","Source of the procedure information.  Order and billing pertain to internal healthcare processes and data sources. Claim pertains to data from the bill fulfillment, generally data sources held by insurers and other health plans.",58
-PROCEDURE,RAW_PX,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",59
-PROCEDURE,RAW_PX_TYPE,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",60
-VITAL,PATID,TEXT(x),,NO,,,Arbitrary person-level identifier. Used to link across tables.,61
-VITAL,ENCOUNTERID,TEXT(x),,NO,,,Arbitrary encounter-level identifier. This is an optional relationship; the ENCOUNTERID should be present if the vitals were measured as part of healthcare delivery.,62
-VITAL,MEASURE_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,Date of vitals measure.,63
-VITAL,MEASURE_TIME,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,Time of vitals measure.,64
-VITAL,VITAL_SOURCE,TEXT(2),,NO,,"PR = Patient-reported PD = Patient device direct feedHC = Healthcare delivery setting HD = Healthcare device direct feedNI = No informationUN = UnknownOT = Other","Please note: The “Patient-reported” category can include reporting by patient’s family or guardian.  If unknown whether data are received directly from a device feed, use the more general context (such as patient-reported, healthcare delivery setting, or registry).",65
-VITAL,HT,NUMBER(8),,NO,INCH,,"Height (in inches) measured by standing. Only populated if measure was taken on this date. If missing, leave blank. Decimal precision is permissible.",66
-VITAL,WT,NUMBER(8),,NO,POUND,,"Weight (in pounds). Only populated if measure was taken on this date. If missing, leave blank. Decimal precision is permissible.",67
-VITAL,DIASTOLIC,NUMBER(4),,NO,MMHG,,"Diastolic blood pressure (in mmHg). Only populated if measure was taken on this date. If missing, leave blank. Only report 1 reading per encounter.",68
-VITAL,SYSTOLIC,NUMBER(4),,NO,MMHG,,"Systolic blood pressure (in mmHg). Only populated if measure was taken on this date. If missing, leave blank. Only report 1 reading per encounter.",69
-VITAL,ORIGINAL_BMI,NUMBER(8),,NO,,,"BMI if calculated in the source system.Important: Please do not calculate BMI during CDM implementation. This field should only reflect originating source system calculations, if height and weight are not stored in the source.",70
-VITAL,BP_POSITION,TEXT(2),,NO,,"01 = Sitting02 = Standing03 = SupineNI = No informationUN = UnknownOT = Other",Position for orthostatic blood pressure. Leave blank if blood pressure was not measured.,71
-VITAL,TOBACCO,TEXT(2),,NO,,"01 = Current every day smoker 02 = Current some day smoker 03 = Former smoker 04 = Never smoker 05 = Smoker, current status unknown 06 = Unknown if ever smoked 07 = Heavy tobacco smoker 08 = Light tobacco smoker NI = No information UN = Unknown OT = Other",The values of “Heavy tobacco smoker” and “Light tobacco smoker” will be assumed to imply a smoking status of current.,72
-VITAL,TOBACCO_TYPE,TEXT(2),,NO,,"01 = Cigarettes only 02 = Other tobacco only 03 = Cigarettes and other tobacco 04 = None NI = No information UN = Unknown OT = Other",Type(s) of tobacco used.,73
-VITAL,RAW_DIASTOLIC,TEXT(x),,NO,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM.",74
-VITAL,RAW_SYSTOLIC,TEXT(x),,NO,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM.",75
-VITAL,RAW_BP_POSITION,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",76
-VITAL,RAW_TOBACCO,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",77
-VITAL,RAW_TOBACCO_TYPE,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",78
-DISPENSING,PATID,TEXT(x),,YES,,,Arbitrary person-level identifier. Used to link across tables.,79
-DISPENSING,DISPENSE_DATE,TEXT(10),YYYY-MM-DD,YES,DATE,,Dispensing date (as close as possible to date the person received the dispensing).,80
-DISPENSING,NDC,TEXT(11),,YES,,,"National Drug Code in the 11-digit, no-dash, HIPAA format.  Please expunge any place holders (such as dashes or extra digits).  If needed, guidance on normalization for other forms of NDC can be found: http://www.nlm.nih.gov/research/umls/rxnorm/docs/2012/rx_norm_doco_full_2012-1.html (see section 6)",81
-DISPENSING,DISPENSE_SUP,NUMBER(4),,NO,,,"Days supply. Number of days that the medication supports based on the number of doses as reported by the pharmacist. This amount is typically found on the dispensing record. Integer values are expected.  Important: Please do not calculate during CDM implementation. This field should only reflect originating source system calculations.",82
-DISPENSING,DISPENSE_AMT,NUMBER(4),,NO,,,"Number of units (pills, tablets, vials) dispensed. Net amount per NDC per dispensing. This amount is typically found on the dispensing record. Positive values are expected.  Important: Please do not calculate during CDM implementation. This field should only reflect originating source system calculations.",83
-DISPENSING,RAW_NDC,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",84
-LAB_RESULT_CM,PATID,TEXT(x),,NO,,,Arbitrary person-level identifier. Used to link across tables.,85
-LAB_RESULT_CM,ENCOUNTERID,TEXT(x),,NO,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the lab was collected as part of a healthcare encounter.",86
-LAB_RESULT_CM,LAB_NAME,TEXT(10),,NO,,"A1C = Hemoglobin A1c CK = Creatine kinase total CK_MB = Creatine kinase MB CK_MBI = Creatine kinase MB/creatine kinase total CREATININE = Creatinine HGB = Hemoglobin LDL = Low-density lipoprotein INR = International normalized ratio TROP_I = Troponin I cardiac TROP_T_QL = Troponin T cardiac (qualitative) TROP_T_QN = Troponin T cardiac (quantitative)","Laboratory result common measure, a categorical identification for the type of test, which is harmonized across all contributing data partners.  Please note that it is possible for more than one LOINC code, CPT code, and/or local code to be associated with one LAB_NAME.",87
-LAB_RESULT_CM,SPECIMEN_SOURCE,TEXT(10),,NO,,"BLOOD = blood CSF = cerebrospinal fluid PLASMA = plasma PPP = platelet poor plasma SERUM = serum SR_PLS = serum/plasma URINE = urine NI = No information UN = Unknown OT = Other",Specimen source. All records will have a specimen source; some tests have several possible values for SPECIMEN_SOURCE. Please see the reference tables for additional details.,88
-LAB_RESULT_CM,LAB_LOINC,TEXT(10),,NO,,,"Logical Observation Identifiers, Names, and Codes (LOINC) from the Regenstrief Institute. Results with local versions of LOINC codes (e.g., LOINC candidate codes) should be included in the RAW_ table field, but the LOINC variable should be set to missing. Current LOINC codes are from 3-7 characters long but Regenstrief suggests a length of 10 for future growth. The last digit of the LOINC code is a check digit and is always preceded by a hyphen. All parts of the LOINC code, including the hyphen, must be included. Do not pad the LOINC code with leading zeros.  Please see the LOINC reference table for known LOINC codes for each LAB_NAME.",89
-LAB_RESULT_CM,PRIORITY,TEXT(2),,NO,,"E = Expedite R = Routine S = Stat NI = No information UN = Unknown OT = Other",Immediacy of test. The intent of this variable is to determine whether the test was obtained as part of routine care or as an emergent/urgent diagnostic test (designated as Stat or Expedite).,90
-LAB_RESULT_CM,RESULT_LOC,TEXT(2),,NO,,"L = Lab P = Point of Care NI = No information UN = Unknown OT = Other","Location of the test result. Point of Care locations may include anticoagulation clinic, newborn nursery, finger stick in provider office, or home. The default value is ‘L’ unless the result is Point of Care. There should not be any missing values.",91
-LAB_RESULT_CM,LAB_PX,TEXT(11),,NO,,,"Optional variable for local and standard procedure codes, used to identify the originating order for the lab test.",92
-LAB_RESULT_CM,LAB_PX_TYPE,TEXT(2),,NO,,"09 = ICD-9-CM 10 = ICD-10-PCS 11 = ICD-11-PCS C2 = CPT Category II C3 = CPT Category III C4 = CPT-4 (i.e., HCPCS Level I) H3 = HCPCS Level III HC = HCPCS (i.e., HCPCS Level II) LC = LOINC ND = NDC RE = Revenue NI = No information UN = Unknown OT = Other","Procedure code type, if applicable. ",93
-LAB_RESULT_CM,LAB_ORDER_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,Date test was ordered.,94
-LAB_RESULT_CM,SPECIMEN_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,Date specimen was collected.,95
-LAB_RESULT_CM,SPECIMEN_TIME,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,Time specimen was collected.,96
-LAB_RESULT_CM,RESULT_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,Result date.,97
-LAB_RESULT_CM,RESULT_TIME,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,Result time.,98
-LAB_RESULT_CM,RESULT_QUAL,TEXT(12),,NO,,"BORDERLINE POSITIVE NEGATIVE UNDETERMINED NI = No information UN = Unknown OT = Other",Standardized result for qualitative results. This variable should be NI for quantitative results. Please see the reference tables for additional details and information on acceptable values for each qualitative LAB_NAME.,99
-LAB_RESULT_CM,RESULT_NUM,NUMBER(8),,NO,,,Standardized/converted result for quantitative results. This variable should be left blank for qualitative results. Please see the reference tables for additional details.,100
-LAB_RESULT_CM,RESULT_MODIFIER,TEXT(2),,NO,,"EQ = Equal GE = Greater than or equal to GT = Greater than LE = Less than or equal to LT = Less than TX = Text NI = No information UN = Unknown OT = Other","Modifier for result values. Any symbols in the RAW_RESULT value should be reflected in the RESULT_MODIFIER variable.  For example, if the original source data value is ""<=200"" then RAW_RESULT=200 and RESULT_MODIFIER=LE. If the original source data value is text then RESULT_MODIFIER=TX. If the original source data value is a numeric value then RESULT_MODIFIER=EQ.",101
-LAB_RESULT_CM,RESULT_UNIT,TEXT(11),,NO,,,Converted/standardized units for the result. Please see the standard abbreviations reference table for additional details.,102
-LAB_RESULT_CM,NORM_RANGE_LOW,TEXT(10),,NO,,,"Lower bound of the normal range assigned by the laboratory. Value should only contain the value of the lower bound. The symbols >, <, >=, <= should be removed. For example, if the normal range for a test is >100 and <300, then ""100"" should be entered.",103
-LAB_RESULT_CM,MODIFIER_LOW,TEXT(2),,NO,,"EQ = Equal GE = Greater than or equal to GT = Greater than NO = No lower limit NI = No information UN = Unknown OT = Other","Modifier for NORM_RANGE_LOW values.  For numeric results one of the following needs to be true: 1) Both MODIFIER_LOW and MODIFIER_HIGH contain EQ (e.g. normal values fall in the range 3-10) 2) MODIFIER_LOW contains GT or GE and MODIFIER_HIGH contains NO (e.g. normal values are >3 with no upper boundary) 3) MODIFIER_HIGH contains LT or LE and MODIFIER_LOW contains NO (e.g. normal values are <=10 with no lower boundary)",104
-LAB_RESULT_CM,NORM_RANGE_HIGH,TEXT(10),,NO,,,"Upper bound of the normal range assigned by the laboratory. Value should only contain the value of the upper bound. The symbols >, <, >=, <= should be removed. For example, if the normal range for a test is >100 and <300, then ""300"" should be entered.",105
-LAB_RESULT_CM,MODIFIER_HIGH,TEXT(2),,NO,,"EQ = Equal LE = Less than or equal to LT = Less than NO = No higher limit NI = No information UN = Unknown OT = Other",Modifier for NORM_RANGE_HIGH values. For numeric results one of the following needs to be true: 1) Both MODIFIER_LOW and MODIFIER_HIGH contain EQ (e.g. normal values fall in the range 3-10) 2) MODIFIER_LOW contains GT or GE and MODIFIER_HIGH contains NO (e.g. normal values are >3 with no upper boundary) 3) MODIFIER_HIGH contains LT or LE and MODIFIER_LOW contains NO (e.g. normal values are <=10 with no lower boundary),106
-LAB_RESULT_CM,ANB_IND,TEXT(2),,NO,,"AB = Abnormal AH = Abnormally high AL = Abnormally low CH = Critically high CL = Critically low CR = Critical IN = Inconclusive NL = Normal NI = No information UN = Unknown OT = Other",Abnormal result indicator. This value comes from the source data; do not apply logic to create it.,107
-LAB_RESULT_CM,RAW_LAB_NAME,TEXT(x),,NO,,,"Local code related to an individual lab test. This variable will not be used in queries, but may be used by local programmers to associate a record with a particular LAB_NAME.",108
-LAB_RESULT_CM,RAW_LAB_CODE,TEXT(x),,NO,,,"Local code related to an individual lab test. This variable will not be used in queries, but may be used by local programmers to associate a record with a particular LAB_NAME.",109
-LAB_RESULT_CM,RAW_PANEL,TEXT(x),,NO,,,"Local code related to a battery or panel of lab tests. This variable will not be used in queries, but may be used by local programmers to associate a record with a particular LAB_NAME.",110
-LAB_RESULT_CM,RAW_RESULT,TEXT(x),,NO,,,"The original test result value as seen in your source data. Values may include a decimal point, a sign or text (e.g., POSITIVE, NEGATIVE, DETECTED). The symbols >, <, >=, <= should be removed from the value and stored in the Modifier variable instead.",111
-LAB_RESULT_CM,RAW_UNIT,TEXT(x),,NO,,,Original units for the result in your source data.,112
-LAB_RESULT_CM,RAW_ORDER_DEPT,TEXT(x),,NO,,,Local code for ordering provider department.,113
-LAB_RESULT_CM,RAW_FACILITY_CODE,TEXT(x),,NO,,,Local facility code that identifies the hospital or clinic. Taken from facility claims.,114
-CONDITION,PATID,TEXT(x),,YES,,,Arbitrary person-level identifier. Used to link across tables.,115
-CONDITION,ENCOUNTERID,TEXT(x),,NO,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the item was collected as part of a healthcare encounter.",116
-CONDITION,REPORT_DATE,TEXT(10),YYYY-MM-DD,YES,DATE,,Date condition was noted. Please note that this date may not correspond to onset date.,117
-CONDITION,RESOLVE_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,"Date condition was resolved, if resolution of a transient condition has been achieved. A resolution date is not generally expected for chronic conditions, even if the condition is managed.",118
-CONDITION,CONDITION_STATUS,TEXT(2),,NO,,"AC = Active RS = Resolved IN = Inactive NI = No information UN = Unknown OT = Other","Condition status corresponding with REPORT_DATE.  Guidance: The value of IN=Inactive may be used in situations where a condition is not resolved, but is not currently active (for example, psoriasis).",119
-CONDITION,CONDITION,TEXT(18),,YES,,,"Condition code.  Leading zeroes and different levels of decimal precision are permissible in this field. Please populate the exact textual value of this diagnosis code, but remove source-specific suffixes and prefixes. Other codes should be listed as recorded in the source data.",120
-CONDITION,CONDITION_TYPE,TEXT(2),,YES,,"09 = ICD-9-CM 10 = ICD-10-CM 11 = ICD-11-CM SM = SNOMED CT HP = Human Phenotype Ontology NI = No information UN = Unknown OT = Other","Condition code type.  Please note: The “Other” category is meant to identify internal use ontologies and codes.",121
-CONDITION,CONDITION_SOURCE,TEXT(2),,NO,,"PR = Patient-reported medical history HC = Healthcare problem list RG = Registry cohort NI = No information UN = Unknown OT = Other","Please note: The “Patient-reported” category can include reporting by a proxy, such as patient’s family or guardian.  Guidance: “Registry cohort” generally refers to cohorts of patients flagged with a certain set of characteristics for management within a health system.  “Patient-reported” can include self-reported medical history and/or current medical conditions, not captured via healthcare problem lists or registry cohorts.",122
-CONDITION,RAW_CONDITION_STATUS,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",123
-CONDITION,RAW_CONDITION,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",124
-CONDITION,RAW_CONDITION_TYPE,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",125
-CONDITION,RAW_CONDITION_SOURCE,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",126
-PRO_CM,PATID,TEXT(x),,YES,,,Arbitrary person-level identifier for the patient for whom the PRO response was captured. Used to link across tables.,127
-PRO_CM,ENCOUNTERID,TEXT(x),,NO,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the item was collected as part of a healthcare encounter.",128
-PRO_CM,PRO_ITEM,TEXT(7),,YES,,"PN_0001 = GLOBAL01
-PN_0002 = GLOBAL02
-PN_0003 = GLOBAL06
-PN_0004 = PFA53
-PN_0005 = EDDEP29
-PN_0006 = HI7
-PN_0007 = SLEEP20
-PN_0008 = SRPPER11_CAPS
-PN_0009 = PAININ9
-PN_0010 = 3793R1
-PN_0011 = 28676R1
-PN_0012 = EOS_P_011
-PN_0013 = PEDSGLOBAL2
-PN_0014 = PEDSGLOBAL5
-PN_0015 = PEDSGLOBAL6
-PN_0016 = GLOBAL03
-PN_0017 = GLOBAL04
-PN_0018 = EDANX53
-PN_0019 = SAMHSA
-PN_0020 = CAHPS
-PN_0021 = PA070",PCORnet identifier for the specific Common Measure item. Please see the Common Measures reference table for more details.,129
-PRO_CM,PRO_LOINC,TEXT(10),,NO,,,"LOINC code for item context and stem. Please see the reference table for known LOINC codes for each common measure. 
-Logical Observation Identifiers, Names, and Codes (LOINC) from the Regenstrief Institute. Results with local versions of LOINC codes (e.g., LOINC candidate codes) should be included in the RAW_ table field, but the PRO_LOINC variable should be set to missing. Current LOINC codes are from 3-7 characters long but Regenstrief suggests a length of 10 for future growth. The last digit of the LOINC code is a check digit and is always preceded by a hyphen. All parts of the LOINC code, including the hyphen, must be included. Do not pad the LOINC code with leading zeros.",130
-PRO_CM,PRO_DATE,TEXT(10),YYYY-MM-DD,YES,DATE,,The date of the response. ,131
-PRO_CM,PRO_TIME,TEXT(5),HH:MI (24-hour clock and zero padding),YES,TIME,,The time of the response. ,132
-PRO_CM,PRO_RESPONSE,NUMBER(8),,NO,,,The numeric response recorded for the item. Please see the Common Measures reference table for the list of valid responses for each item.,133
-PRO_CM,PRO_METHOD,TEXT(2),,NO,,"PA = Paper
-EC = Electronic
-PH = Telephonic
-IV = Telephonic with interactive voice response (IVR) technology
+TABLE_NAME,FIELD_NAME,DATA_TYPE,DATA_FORMAT,REPLICATED,UNIT_OF_MEASURE,VALUE_SET,VALUE_DESCRIPTION,DEFINITION
+DEMOGRAPHIC,PATID,TEXT(x),,NO,,,,"Arbitrary person-level identifier used to link across tables. 
+
+PATID is a pseudoidentifier with a consistent crosswalk to the true identifier retained by the source Data Partner. For analytical data sets requiring patient-level data, only the pseudoidentifier is used to link across all information belonging to a patient.
+
+The PATID must be unique within the data source being queried. Creating a unique identifier within a CDRN would be beneficial and acceptable. The PATID is not the basis for linkages across partners."
+DEMOGRAPHIC,BIRTH_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,,Date of birth.
+DEMOGRAPHIC,BIRTH_TIME,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,,Time of birth.
+DEMOGRAPHIC,SEX,TEXT(2),,NO,,A;F;M;NI;UN;OT,"A = Ambiguous 
+F = Female
+M = Male
 NI = No information
 UN = Unknown
-OT = Other","Method of administration. Electronic includes responses captured via a personal or tablet computer, at web kiosks, or via a smartphone.",134
-PRO_CM,PRO_MODE,TEXT(2),,NO,,"SF = Self without assistance
-SA =  Self with assistance
-PR = Proxy without assistance
-PA = Proxy with assistance
-NI = No information
-UN = Unknown
-OT = Other","The person who responded on behalf of the patient for whom the response was captured. A proxy report is a measurement based on a report by someone other than the patient reporting as if he or she is the patient, such as a parent responding for a child, or a caregiver responding for an individual unable to report for themselves. Assistance excludes providing interpretation of the patient’s response. ",135
-PRO_CM,PRO_CAT,TEXT(2),,NO,,"Y = Yes
+OT = Other","Administrative sex. 
+
+v2.0 guidance added: The “Ambiguous” category may be used for individuals who are physically undifferentiated from birth. The “Other” category may be used for individuals who are undergoing gender re-assignment."
+DEMOGRAPHIC,HISPANIC,TEXT(2),,NO,,Y;N;R;NI;UN;OT,"Y = Yes
 N = No
+R = Refuse to answer
 NI = No information
 UN = Unknown
-OT = Other",Indicates whether Computer Adaptive Testing (CAT) was used to administer the survey or instrument that the item was part of. May apply to electronic (EC) and telephonic (PH or IV) modes. ,136
-PRO_CM,RAW_PRO_CODE,TEXT(x),,NO,,,"Optional field for originating code, such as LOINC candidate codes that have not yet been adopted",137
-PRO_CM,RAW_PRO_RESPONSE,TEXT(x),,NO,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",138
+OT = Other","A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+DEMOGRAPHIC,RACE,TEXT(2),,NO,,01;02;03;04;05;06;07;NI;UN;OT,"01 = American Indian or Alaska Native
+02 = Asian
+03 = Black or African American
+04 = Native Hawaiian or Other Pacific Islander
+05 = White
+06 = Multiple race
+07 = Refuse to answer
+NI = No information
+UN = Unknown
+OT = Other","Please use only one race value per patient.
+
+Details of categorical definitions:
+American Indian or Alaska Native: A person having origins in any of the original peoples of North and South America (including Central America), and who maintains tribal affiliation or community attachment.
+
+Asian: A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam.
+
+Black or African American: A person having origins in any of the black racial groups of Africa.
+
+Native Hawaiian or Other Pacific Islander: A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands.
+
+White: A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+DEMOGRAPHIC,BIOBANK_FLAG,TEXT(1),,NO,,Y;N,"Y = Yes
+N = No","Flag to indicate that one or more biobanked specimens are stored and available for research use. Examples of biospecimens could include plasma, urine, or tissue. If biospecimens are available, locally maintained “mapping tables” would be necessary to map between the DEMOGRAPHIC record and the originating biobanking system(s).
+
+If no known biobanked specimens are available, this field should be marked “No”."
+DEMOGRAPHIC,RAW_SEX,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DEMOGRAPHIC,RAW_ HISPANIC,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DEMOGRAPHIC,RAW_RACE,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+ENROLLMENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier used to link across tables.
+ENROLLMENT,ENR_START_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,,"Date of the beginning of the enrollment period. If the exact date is unknown, use the first day of the month.
+
+For implementation of the CDM, a long span of longitudinal data is desirable; however, especially for historical data more than a decade old, the appropriate beginning date should be determined by the partner’s knowledge of the validity and usability of the data. More specific guidance can be provided through implementation discussions."
+ENROLLMENT,ENR_END_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,,"Date of the end of the enrollment period. If the exact date is unknown, use the last day of the month."
+ENROLLMENT,CHART,TEXT(1),,NO,,Y;N,"Y = Yes
+N = No","Chart abstraction flag is intended to answer the question, ""Are you able to request (or review) charts for this person?"" This flag does not address chart availability. Mark as ""Yes"" if there are no contractual or other restrictions between you and the individual (or sponsor) that would prohibit you from requesting any chart for this member.
+
+Note: This field is most relevant for health insurers that can request charts from affiliated providers. This field allows exclusion of patients from studies that require chart review to validate exposures and/or outcomes. It identifies patients for whom charts are never available and for whom the chart can never be requested."
+ENROLLMENT,ENR_BASIS,TEXT(1),,NO,,I;G;A;E,"I = Insurance
+G = Geography
+A = Algorithmic
+E = Encounter-based","When insurance information is not available but complete capture can be asserted some other way, please identify the basis on which complete capture is defined. Additional information on the approach identified will be required from each partner.
+
+ENR_BASIS is a property of the time period defined. A patient can have multiple entries in the table.
+
+Details of categorical definitions:
+Insurance: The start and stop dates are based upon the concept of enrollment with health plan insurance
+
+Geography: An assertion of complete data capture between the start and end dates based upon geographic characteristics, such as regional isolation
+
+Algorithmic: An assertion of complete data capture between the start and end dates, based on a locally developed or applied algorithm, often using multiple criteria 
+
+Encounter-based: The start and stop dates are populated from the earliest-observed encounter and latest-observed encounter."
+ENCOUNTER,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier used to link across tables.
+ENCOUNTER,ENCOUNTERID,TEXT(x),,NO,,,,"Arbitrary encounter-level identifier. Used to link across tables, including the ENCOUNTER, DIAGNOSIS, and PROCEDURE tables."
+ENCOUNTER,ADMIT_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,,Encounter or admission date.
+ENCOUNTER,ADMIT_TIME,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,,Encounter or admission time.
+ENCOUNTER,DISCHARGE_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,,Discharge date. Should be populated for all Inpatient Hospital Stay (IP) and Non-Acute Institutional Stay (IS) encounter types. May be populated for Emergency Department (ED) encounter types. Should be missing for ambulatory visit (AV or OA) encounter types.
+ENCOUNTER,DISCHARGE_TIME,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,,Discharge time.
+ENCOUNTER,PROVIDERID,TEXT(x),,NO,,,,"Provider code for the provider who is most responsible for this encounter. For encounters with multiple providers choose one so the encounter can be linked to the diagnosis and procedure tables. As with the PATID, the provider code is a pseudoidentifier with a consistent crosswalk to the real identifier."
+ENCOUNTER,FACILITY_LOCATION,TEXT(3),,NO,,,,Geographic location (3 digit zip code). Should be left blank if not recorded in source system.
+ENCOUNTER,ENC_TYPE,TEXT(2),,NO,,AV;ED;EI;IP;IS;OA;NI;UN;OT,"AV = Ambulatory Visit
+ED = Emergency Department
+EI = Emergency Department Admit to Inpatient Hospital Stay (permissible substitution)
+IP = Inpatient Hospital Stay
+IS = Non-Acute Institutional Stay
+OA = Other Ambulatory Visit
+NI = No information
+UN = Unknown
+OT = Other","Encounter type.
+
+Details of categorical definitions:
+Ambulatory Visit: Includes visits at outpatient clinics, physician offices, same day/ambulatory surgery centers, urgent care facilities, and other same-day ambulatory hospital encounters, but excludes emergency department encounters.
+
+Emergency Department (ED): Includes ED encounters that become inpatient stays (in which case inpatient stays would be a separate encounter). Excludes urgent care visits. ED claims should be pulled before hospitalization claims to ensure that ED with subsequent admission won't be rolled up in the hospital event.
+
+Emergency Department Admit to Inpatient Hospital Stay: Permissible substitution for preferred state of separate ED and IP records. Only for use with data sources where the individual records for ED and IP cannot be distinguished (new to v2.0).
+
+Inpatient Hospital Stay: Includes all inpatient stays, including: same-day hospital discharges, hospital transfers, and acute hospital care where the discharge is after the admission date.
+
+Non-Acute Institutional Stay: Includes hospice, skilled nursing facility (SNF), rehab center, nursing home, residential, overnight non-hospital dialysis and other non-hospital stays.
+
+Other Ambulatory Visit: Includes other non-overnight AV encounters such as hospice visits, home health visits, skilled nursing facility visits, other non-hospital visits, as well as telemedicine, telephone and email consultations. May also include ""lab only"" visits (when a lab is ordered outside of a patient visit), ""pharmacy only"" (e.g., when a patient has a refill ordered without a face-to-face visit), ""imaging only"", etc."
+ENCOUNTER,FACILITYID,TEXT(x),,NO,,,,"Arbitrary local facility code that identifies the hospital or clinic. Used for chart abstraction and validation.
+
+FACILITYID can be a true identifier, or a pseudoidentifier with a consistent crosswalk to the true identifier retained by the source Data Partner."
+ENCOUNTER,DISCHARGE_DISPOSITION,TEXT(2),,NO,,A;E;NI;UN;OT,"A = Discharged alive
+E = Expired
+NI = No information
+UN = Unknown
+OT = Other",Vital status at discharge. Should be populated for Inpatient Hospital Stay (IP) and Non-Acute Institutional Stay (IS) encounter types. May be populated for Emergency Department (ED) encounter types. Should be missing for ambulatory visit (AV or OA) encounter types.
+ENCOUNTER,DISCHARGE_STATUS,TEXT(2),,NO,,AF;AL;AM;AW;EX;HH;HO;HS;IP;NH;RH;RS;SH;SN;NI;UN;OT,"AF = Adult Foster Home
+AL = Assisted Living Facility
+AM = Against Medical Advice
+AW = Absent without leave
+EX = Expired
+HH = Home Health
+HO = Home / Self Care
+HS = Hospice
+IP = Other Acute Inpatient Hospital
+NH = Nursing Home (Includes ICF)
+RH = Rehabilitation Facility
+RS = Residential Facility
+SH = Still In Hospital
+SN = Skilled Nursing Facility
+NI = No information
+UN = Unknown
+OT = Other",Discharge status. Should be populated for Inpatient Hospital Stay (IP) and Non-Acute Institutional Stay (IS) encounter types. May be populated for Emergency Department (ED) encounter types. Should be missing for ambulatory visit (AV or OA) encounter types.
+ENCOUNTER,DRG,TEXT(3),,NO,,,,"3-digit Diagnosis Related Group (DRG). Should be populated for IP and IS encounter types. May be populated for ED encounter types. Should be missing for AV or OA encounters. Use leading zeroes for codes less than 100.
+
+The DRG is used for reimbursement for inpatient encounters. It is a Medicare requirement that combines diagnoses into clinical concepts for billing. Frequently used in observational data analyses."
+ENCOUNTER,DRG_TYPE,TEXT(2),,NO,,01;02;NI;UN;OT,"01 = CMS-DRG (old system)
+02 = MS-DRG (current system)
+NI = No information
+UN = Unknown
+OT = Other",DRG code version. MS-DRG (current system) began on 10/1/2007. Should be populated for IP and IS encounter types. May be populated for ED encounter types. Should be missing for AV or OA encounters.
+ENCOUNTER,ADMITTING_SOURCE,TEXT(2),,NO,,AF;AL;AV;ED;HH;HO;HS;IP;NH;RH;RS;SN;NI;UN;OT,"AF = Adult Foster Home
+AL = Assisted Living Facility
+AV = Ambulatory Visit
+ED = Emergency Department
+HH = Home Health
+HO = Home / Self Care
+HS = Hospice
+IP = Other Acute Inpatient Hospital
+NH = Nursing Home (Includes ICF)
+RH = Rehabilitation Facility
+RS = Residential Facility
+SN = Skilled Nursing Facility
+NI = No information
+UN = Unknown
+OT = Other",Admitting source. Should be populated for Inpatient Hospital Stay (IP) and Non-Acute Institutional Stay (IS) encounter types. May be populated for Emergency Department (ED) encounter types. Should be missing for ambulatory visit (AV or OA) encounter types.
+ENCOUNTER,RAW_SITEID,TEXT(x),,NO,,,,"This field is new to v2.0.
+
+Optional field for locally-defined identifier intended for local use; for example, where a network may have multiple sites contributing to a central data repository.
+
+This attribute may be sensitive in certain contexts; the intent is for internal network use only, and not to enable site quality comparisons."
+ENCOUNTER,RAW_ ENC_TYPE,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+ENCOUNTER,RAW_ DISCHARGE_DISPOSITION,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+ENCOUNTER,RAW_ DISCHARGE_STATUS,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+ENCOUNTER,RAW_ DRG_TYPE,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+ENCOUNTER,RAW_ ADMITTING_SOURCE,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DIAGNOSIS,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+DIAGNOSIS,ENCOUNTERID,TEXT(x),,NO,,,,Arbitrary encounter-level identifier. Used to link across tables.
+DIAGNOSIS,ENC_TYPE,TEXT(2),,YES,,AV;ED;EI;IP;IS;OA;NI;UN;OT,"AV = Ambulatory Visit
+ED = Emergency Department
+EI=Emergency Department Admit to Inpatient Hospital Stay (permissible substitution)
+IP = Inpatient Hospital Stay
+IS = Non-Acute Institutional Stay
+OA = Other Ambulatory Visit
+NI = No information
+UN = Unknown
+OT = Other",Please note: This is a field replicated from the ENCOUNTER table. See the ENCOUNTER table for definitions. 
+DIAGNOSIS,ADMIT_DATE,TEXT(10),YYYY-MM-DD,YES,DATE,,,Please note: This is a field replicated from the ENCOUNTER table. See the ENCOUNTER table for definitions. 
+DIAGNOSIS,PROVIDERID,TEXT(x),,YES,,,,Please note: This is a field replicated from the ENCOUNTER table. See the ENCOUNTER table for definitions. 
+DIAGNOSIS,DX,TEXT(18),,NO,,,,"Diagnosis code. 
+
+Leading zeroes and different levels of decimal precision are permissible in this field. Please populate the exact textual value of this diagnosis code, but remove source-specific suffixes and prefixes. Other codes should be listed as recorded in the source data."
+DIAGNOSIS,DX_TYPE,TEXT(2),,NO,,09;10;11;SM;NI;UN;OT,"09 = ICD-9-CM
+10 = ICD-10-CM
+11 = ICD-11-CM
+SM = SNOMED CT
+NI = No information
+UN = Unknown
+OT = Other","Diagnosis code type. 
+
+We provide values for ICD and SNOMED code types. Other code types will be added as new terminologies are more widely used.
+
+Please note: The “Other” category is meant to identify internal use ontologies and codes."
+DIAGNOSIS,DX_SOURCE,TEXT(2),,NO,,AD;DI;FI;IN;NI;UN;OT,"AD = Admitting
+DI = Discharge
+FI = Final
+IN = Interim
+NI = No information
+UN = Unknown
+OT = Other","Classification of diagnosis source. We include these categories to allow some flexibility in implementation. The context is to capture available diagnoses recorded during a specific encounter. It is not necessary to populate interim diagnoses unless readily available.
+
+Ambulatory encounters would generally be expected to have a source of “Final.”"
+DIAGNOSIS,PDX,TEXT(2),,NO,,P;S;X;NI;UN;OT,"P = Principal
+S = Secondary
+X = Unable to Classify
+NI = No information
+UN = Unknown
+OT = Other","Principal discharge diagnosis flag. Relevant only on IP and IS encounters. 
+
+For ED, AV, and OA encounter types, mark as X = Unable to Classify. (Billing systems do not require a primary diagnosis for ambulatory visits (eg, professional services))
+
+One principal diagnosis is expected, although in some instances more than one diagnosis may be flagged as principal."
+DIAGNOSIS,RAW_DX,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DIAGNOSIS,RAW_ DX_TYPE,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DIAGNOSIS,RAW_ DX_SOURCE,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DIAGNOSIS,RAW_ PDX,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+PROCEDURE,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+PROCEDURE,ENCOUNTERID,TEXT(x),,NO,,,,Arbitrary encounter-level identifier. Used to link across tables.
+PROCEDURE,ENC_TYPE,TEXT(2),,YES,,AV;ED;EI;IP;IS;OA;NI;UN;OT,"AV = Ambulatory Visit
+ED = Emergency Department
+EI=Emergency Department Admit to Inpatient Hospital Stay (permissible substitution)
+IP = Inpatient Hospital Stay
+IS = Non-Acute Institutional Stay
+OA = Other Ambulatory Visit
+NI = No information
+UN = Unknown
+OT = Other",Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
+PROCEDURE,ADMIT_DATE,TEXT(10),YYYY-MM-DD,YES,DATE,,,Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
+PROCEDURE,PROVIDERID,TEXT(x),,YES,,,,Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
+PROCEDURE,PX_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,,"New to v2.0.
+
+Date the procedure was performed."
+PROCEDURE,PX,TEXT(11),,NO,,,,Procedure code.
+PROCEDURE,PX_TYPE,TEXT(2),,NO,,09;10;11;C2;C3;C4;H3;HC;LC;ND;RE;NI;UN;OT,"09 = ICD-9-CM
+10 = ICD-10-PCS
+11 = ICD-11-PCS
+C2 = CPT Category II
+C3 = CPT Category III
+C4 = CPT-4 (i.e., HCPCS Level I)
+H3 = HCPCS Level III
+HC = HCPCS (i.e., HCPCS Level II)
+LC = LOINC
+ND = NDC
+RE = Revenue
+NI = No information
+UN = Unknown
+OT = Other","Procedure code type.
+
+We include a number of code types for flexibility, but the basic requirement that the code refer to a medical procedure remains.
+
+Revenue codes are a standard concept in Medicare billing and can be useful for defining care settings. If those codes are available they can be included.
+
+Medications administered by clinicians can be captured in billing data and Electronic Health Records (EHRs) as HCPCS procedure codes. Administration (infusion) of chemotherapy is an example. 
+
+We are now seeing NDCs captured as part of procedures because payers are demanding it for payment authorization. Inclusion of this code type enables those data partners that capture the NDC along with the procedure to include the data.
+
+Please note: The “Other” category is meant to identify internal use ontologies and codes."
+PROCEDURE,PX_SOURCE,TEXT(x),,NO,,OD;BI;CL;NI;UN;OT,"OD=Order
+BI=Billing
+CL=Claim
+NI=No information
+UN=Unknown
+OT=Other","New to v2.0.
+
+Source of the procedure information.
+
+Order and billing pertain to internal healthcare processes and data sources. Claim pertains to data from the bill fulfillment, generally data sources held by insurers and other health plans."
+PROCEDURE,RAW_PX,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+PROCEDURE,RAW_PX_TYPE,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+VITAL,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+VITAL,ENCOUNTERID,TEXT(x),,NO,,,,Arbitrary encounter-level identifier. This is an optional relationship; the ENCOUNTERID should be present if the vitals were measured as part of healthcare delivery.
+VITAL,MEASURE_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,,Date of vitals measure.
+VITAL,MEASURE_TIME,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,,Time of vitals measure.
+VITAL,VITAL_SOURCE,TEXT(2),,NO,,PR;PD;HC;HD;NI;UN;OT,"PR = Patient-reported
+PD=Patient device direct feed
+HC = Healthcare delivery setting
+HD=Healthcare device direct feed
+NI = No information
+UN = Unknown
+OT = Other","Please note: The “Patient-reported” category can include reporting by patient’s family or guardian.
+
+v2.0 amendment: The new categorical value of PD and HD have been added.
+
+v2.0 guidance added: If unknown whether data are received directly from a device feed, use the more general context (such as patient-reported, healthcare delivery setting, or registry)."
+VITAL,HT,NUMBER(8),,NO,INCH,,,"Height (in inches) measured by standing. Only populated if measure was taken on this date. If missing, leave blank. Decimal precision is permissible."
+VITAL,WT,NUMBER(8),,NO,POUND,,,"Weight (in pounds). Only populated if measure was taken on this date. If missing, leave blank. Decimal precision is permissible."
+VITAL,DIASTOLIC,NUMBER(4),,NO,MMHG,,,"Diastolic blood pressure (in mmHg). Only populated if measure was taken on this date. If missing, leave blank."
+VITAL,SYSTOLIC,NUMBER(4),,NO,MMHG,,,"Systolic blood pressure (in mmHg). Only populated if measure was taken on this date. If missing, leave blank."
+VITAL,ORIGINAL_BMI,NUMBER(8),,NO,,,,"BMI if calculated in the source system.
+
+Important: Please do not calculate BMI during CDM implementation. This field should only reflect originating source system calculations, if height and weight are not stored in the source."
+VITAL,BP_POSITION,TEXT(2),,NO,,01;02;03;NI;UN;OT,"01 = Sitting
+02 = Standing
+03 = Supine
+NI = No information
+UN = Unknown
+OT = Other",Position for orthostatic blood pressure. Leave blank if blood pressure was not measured.
+VITAL,TOBACCO,TEXT(2),,NO,,01;02;03;04;05;06;07;08;NI;UN;OT,"01=Current every day smoker
+02=Current some day smoker
+03=Former smoker
+04=Never smoker
+05=Smoker, current status unknown
+06=Unknown if ever smoked
+07=Heavy tobacco smoker
+08=Light tobacco smoker
+NI=No information
+UN=Unknown
+OT=Other","This field is new to v2.0.
+
+Guidance: The values of “Heavy tobacco smoker” and “Light tobacco smoker” will be assumed to imply a smoking status of current."
+VITAL,TOBACCO_TYPE,TEXT(2),,NO,,"01;02;03;04;NI;UN;OT
+","01=Cigarettes only
+02=Other tobacco only
+03=Cigarettes and other tobacco
+04=None
+NI=No information
+UN=Unknown
+OT=Other","This field is new to v2.0.
+
+Type(s) of tobacco used."
+VITAL,RAW_ DIASTOLIC,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM."
+VITAL,RAW_ SYSTOLIC,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM."
+VITAL,RAW_ BP_POSITION,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+VITAL,RAW_TOBACCO,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set. New to v2.0."
+VITAL,RAW_TOBACCO_TYPE,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set. New to v2.0."
+DISPENSING,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+DISPENSING,DISPENSE_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,,Dispensing date (as close as possible to date the person received the dispensing).
+DISPENSING,NDC,TEXT(11),,NO,,,,"National Drug Code in the 11-digit, no-dash, HIPAA format. 
+
+Please expunge any place holders (such as dashes or extra digits).
+
+If needed, guidance on normalization for other forms of NDC can be found: http://www.nlm.nih.gov/research/umls/rxnorm/docs/2012/rxnorm_doco_full_2012-1.html (see section 6)"
+DISPENSING,DISPENSE_SUP,NUMBER(4),,NO,DAYS,,,"Days supply. Number of days that the medication supports based on the number of doses as reported by the pharmacist. This amount is typically found on the dispensing record. Integer values are expected.
+
+Important: Please do not calculate during CDM implementation. This field should only reflect originating source system calculations."
+DISPENSING,DISPENSE_AMT,NUMBER(4),,NO,UNITS,,,"Number of units (pills, tablets, vials) dispensed. Net amount per NDC per dispensing. This amount is typically found on the dispensing record. Positive values are expected.
+
+Important: Please do not calculate during CDM implementation. This field should only reflect originating source system calculations.
+"
+DISPENSING,RAW_NDC,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+LAB_RESULT_CM ,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+LAB_RESULT_CM ,ENCOUNTERID,TEXT(x),,NO,,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the lab was collected as part of a healthcare encounter."
+LAB_RESULT_CM ,LAB_NAME,TEXT(10),,NO,,A1C;CK;CK_MB;CK_MBI;CREATININE;HGB;LDL;INR;TROP_I;TROP_T_QL;TROP_T_QN,"A1C=Hemoglobin A1c
+CK=Creatine kinase total
+CK_MB=Creatine kinase MB
+CK_MBI=Creatine kinase MB/creatine kinase total
+CREATININE=Creatinine
+HGB=Hemoglobin
+LDL=Low-density lipoprotein
+INR=International normalized ratio
+TROP_I=Troponin I cardiac
+TROP_T_QL=Troponin T cardiac (qualitative)
+TROP_T_QN=Troponin T cardiac (quantitative)","Laboratory result common measure, a categorical identification for the type of test, which is harmonized across all contributing data partners.
+
+Please note that it is possible for more than one LOINC code, CPT code, and/or local code to be associated with one LAB_NAME."
+LAB_RESULT_CM ,SPECIMEN_SOURCE,TEXT(10),,NO,,BLOOD;CSF;PLASMA;PPP;SERUM;SR_PLS;URINE;NI;UN;OT,"BLOOD=blood
+CSF=cerebrospinal fluid
+PLASMA=plasma
+PPP=platelet poor plasma
+SERUM=serum
+SR_PLS=serum/plasma
+URINE=urine
+NI=No information
+UN=Unknown
+OT=Other",Specimen source. All records will have a specimen source; some tests have several possible values for SPECIMEN_SOURCE. Please see the reference tables for additional details.
+LAB_RESULT_CM ,LAB_LOINC,TEXT(10),,NO,,,,"Logical Observation Identifiers, Names, and Codes (LOINC) from the Regenstrief Institute. Results with local versions of LOINC codes (e.g., LOINC candidate codes) should be included in the RAW_ table field, but the LOINC variable should be set to missing. Current LOINC codes are from 3-7 characters long but Regenstrief suggests a length of 10 for future growth. The last digit of the LOINC code is a check digit and is always preceded by a hyphen. All parts of the LOINC code, including the hyphen, must be included. Do not pad the LOINC code with leading zeros. 
+
+Please see the LOINC reference table for known LOINC codes for each LAB_NAME.
+"
+LAB_RESULT_CM ,PRIORITY,TEXT(2),,NO,,E;R;S;NI;UN;OT,"E=Expedite
+R=Routine
+S=Stat
+NI=No information
+UN=Unknown
+OT=Other",Immediacy of test. The intent of this variable is to determine whether the test was obtained as part of routine care or as an emergent/urgent diagnostic test (designated as Stat or Expedite).
+LAB_RESULT_CM ,RESULT_LOC,TEXT(2),,NO,,L;P;NI;UN;OT,"L=Lab
+P=Point of Care
+NI=No information
+UN=Unknown
+OT=Other","Location of the test result. Point of Care locations may include anticoagulation clinic, newborn nursery, finger stick in provider office, or home. The default value is ‘L’ unless the result is Point of Care. There should not be any missing values."
+LAB_RESULT_CM ,LAB_PX,TEXT(11),,NO,,,,"Optional variable for local and standard procedure codes, used to identify the originating order for the lab test."
+LAB_RESULT_CM ,LAB_PX_TYPE,TEXT(2),,NO,,09;10;11;C2;C3;C4;H3;HC;LC;ND;RE;NI;UN;OT,"09=ICD-9-CM
+10=ICD-10-PCS
+11=ICD-11-PCS
+C2=CPT Category II
+C3=CPT Category III
+C4=CPT-4 (i.e., HCPCS Level I)
+H3=HCPCS Level III
+HC=HCPCS (i.e., HCPCS Level II)
+LC=LOINC
+ND=NDC
+RE=Revenue
+NI=No information
+UN=Unknown
+OT=Other","Procedure code type, if applicable."
+LAB_RESULT_CM ,LAB_ORDER_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,,Date test was ordered.
+LAB_RESULT_CM ,SPECIMEN_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,,Date specimen was collected.
+LAB_RESULT_CM ,SPECIMEN_TIME,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,,Time specimen was collected.
+LAB_RESULT_CM ,RESULT_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,,Result date.
+LAB_RESULT_CM ,RESULT_TIME,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,,Result time.
+LAB_RESULT_CM ,RESULT_QUAL,TEXT(12),,NO,,"BORDERLINE;POSITIVE;NEGATIVE;UNDETERMINED;NI=No information;UN=Unknown;OT=Other
+","BORDERLINE
+POSITIVE
+NEGATIVE
+UNDETERMINED
+NI=No information
+UN=Unknown
+OT=Other",Standardized result for qualitative results. This variable should be NI for quantitative results. Please see the reference tables for additional details and information on acceptable values for each qualitative LAB_NAME.
+LAB_RESULT_CM ,RESULT_NUM,NUMBER(8),,NO,,,,Standardized/converted result for quantitative results. This variable should be left blank for qualitative results. Please see the reference tables for additional details.
+LAB_RESULT_CM ,RESULT_MODIFIER,TEXT(2),,NO,,EQ;GE;GT;LE;LT;TX;NI;UN;OT,"EQ=Equal
+GE=Greater than or equal to
+GT=Greater than
+LE=Less than or equal to
+LT=Less than
+TX=Text
+NI=No information
+UN=Unknown
+OT=Other","Modifier for result values. Any symbols in the RAW_RESULT value should be reflected in the RESULT_MODIFIER variable. 
+
+For example, if the original source data value is ""<=200"" then RAW_RESULT=200 and RESULT_MODIFIER=LE. If the original source data value is text then RESULT_MODIFIER=TX. If the original source data value is a numeric value then RESULT_MODIFIER=EQ."
+LAB_RESULT_CM ,RESULT_UNIT,TEXT(11),,NO,,,,Converted/standardized units for the result. Please see the standard abbreviations reference table for additional details.
+LAB_RESULT_CM ,NORM_RANGE_LOW,TEXT(10),,NO,,,,"Lower bound of the normal range assigned by the laboratory. Value should only contain the value of the lower bound. The symbols >, <, >=, <= should be removed. For example, if the normal range for a test is >100 and <300, then ""100"" should be entered."
+LAB_RESULT_CM ,MODIFIER_LOW,TEXT(2),,NO,,EQ;GE;GT;NO;NI;UN;OT,"EQ=Equal
+GE=Greater than or equal to
+GT=Greater than
+NO=No lower limit
+NI=No information
+UN=Unknown
+OT=Other","Modifier for NORM_RANGE_LOW values. 
+
+For numeric results one of the following needs to be true: 
+1) Both MODIFIER_LOW and MODIFIER_HIGH contain EQ (e.g. normal values fall in the range 3-10)
+2) MODIFIER_LOW contains GT or GE and MODIFIER_HIGH contains NO (e.g. normal values are >3 with no upper boundary)
+3) MODIFIER_HIGH contains LT or LE and MODIFIER_LOW contains NO (e.g. normal values are <=10 with no lower boundary)"
+LAB_RESULT_CM ,NORM_RANGE_HIGH,TEXT(10),,NO,,,,"Upper bound of the normal range assigned by the laboratory. Value should only contain the value of the upper bound. The symbols >, <, >=, <= should be removed. For example, if the normal range for a test is >100 and <300, then ""300"" should be entered."
+LAB_RESULT_CM ,MODIFIER_HIGH,TEXT(2),,NO,,EQ;LE;LT;NO;NI;UN;OT,"EQ=Equal
+LE=Less than or equal to
+LT=Less than
+NO=No higher limit
+NI=No information
+UN=Unknown
+OT=Other","Modifier for NORM_RANGE_HIGH values. 
+
+For numeric results one of the following needs to be true: 
+1) Both MODIFIER_LOW and MODIFIER_HIGH contain EQ (e.g. normal values fall in the range 3-10)
+2) MODIFIER_LOW contains GT or GE and MODIFIER_HIGH contains NO (e.g. normal values are >3 with no upper boundary)
+3) MODIFIER_HIGH contains LT or LE and MODIFIER_LOW contains NO (e.g. normal values are <=10 with no lower boundary)"
+LAB_RESULT_CM ,ABN_IND,TEXT(2),,NO,,AB;AH;AL;CH;CL;CR;IN;NL;NI;UN;OT,"AB=Abnormal
+AH=Abnormally high
+AL=Abnormally low
+CH=Critically high
+CL=Critically low
+CR=Critical
+IN=Inconclusive
+NL=Normal
+NI=No information
+UN=Unknown
+OT=Other",Abnormal result indicator. This value comes from the source data; do not apply logic to create it.
+LAB_RESULT_CM ,RAW_LAB_NAME,TEXT(x),,NO,,,,"Local code related to an individual lab test. This variable will not be used in queries, but may be used by local programmers to associate a record with a particular LAB_NAME."
+LAB_RESULT_CM ,RAW_LAB_CODE,TEXT(x),,NO,,,,"Local code related to an individual lab test. This variable will not be used in queries, but may be used by local programmers to associate a record with a particular LAB_NAME."
+LAB_RESULT_CM ,RAW_PANEL,TEXT(x),,NO,,,,"Local code related to a battery or panel of lab tests. This variable will not be used in queries, but may be used by local programmers to associate a record with a particular LAB_NAME."
+LAB_RESULT_CM ,RAW_RESULT,TEXT(x),,NO,,,,"The original test result value as seen in your source data. Values may include a decimal point, a sign or text (e.g., POSITIVE, NEGATIVE, DETECTED). The symbols >, <, >=, <= should be removed from the value and stored in the Modifier variable instead."
+LAB_RESULT_CM ,RAW_UNIT,TEXT(x),,NO,,,,Original units for the result in your source data.
+LAB_RESULT_CM ,RAW_ORDER_DEPT,TEXT(x),,NO,,,,Local code for ordering provider department.
+LAB_RESULT_CM ,RAW_FACILITY_CODE,TEXT(x),,NO,,,,Local facility code that identifies the hospital or clinic. Taken from facility claims.
+CONDITION,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+CONDITION,ENCOUNTERID,TEXT(x),,NO,,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the item was collected as part of a healthcare encounter."
+CONDITION,REPORT_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,,Date condition was noted. Please note that this date may not correspond to onset date.
+CONDITION,RESOLVE_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,,"Date condition was resolved, if resolution of a transient condition has been achieved. A resolution date is not generally expected for chronic conditions, even if the condition is managed."
+CONDITION,CONDITION_STATUS,TEXT(2),,NO,,AC;RS;IN;NI;UN;OT,"AC=Active
+RS=Resolved
+IN=Inactive
+NI=No information
+UN=Unknown
+OT=Other","Condition status corresponding with REPORT_DATE.
+
+Guidance: The value of IN=Inactive may be used in situations where a condition is not resolved, but is not currently active (for example, psoriasis)."
+CONDITION,CONDITION,TEXT(18),,NO,,,,"Condition code. 
+
+Leading zeroes and different levels of decimal precision are permissible in this field. Please populate the exact textual value of this diagnosis code, but remove source-specific suffixes and prefixes. Other codes should be listed as recorded in the source data."
+CONDITION,CONDITION_TYPE,TEXT(2),,NO,,09;10;11;SM;HP;NI;UN;OT,"09=ICD-9-CM
+10=ICD-10-CM
+11=ICD-11-CM
+SM=SNOMED CT
+HP=Human Phenotype Ontology
+NI=No information
+UN=Unknown
+OT=Other","Condition code type. 
+
+Please note: The “Other” category is meant to identify internal use ontologies and codes."
+CONDITION,CONDITION_SOURCE,TEXT(2),,NO,,PR;HC;RG;NI;UN;OT,"PR=Patient-reported medical history
+HC=Healthcare problem list
+RG=Registry cohort
+NI=No information
+UN=Unknown
+OT=Other","Please note: The “Patient-reported” category can include reporting by a proxy, such as patient’s family or guardian.
+
+Guidance: “Registry cohort” generally refers to cohorts of patients flagged with a certain set of characteristics for management within a health system.
+
+“Patient-reported” can include self-reported medical history and/or current medical conditions, not captured via healthcare problem lists or registry cohorts."
+CONDITION,RAW_CONDITION_STATUS,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+CONDITION,RAW_CONDITION,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+CONDITION,RAW_CONDITION_TYPE,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+CONDITION,RAW_CONDITION_SOURCE,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+PRO_CM,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier for the patient for whom the PRO response was captured. Used to link across tables.
+PRO_CM,ENCOUNTERID,TEXT(x),,NO,,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the item was collected as part of a healthcare encounter."
+PRO_CM,PRO_ITEM,TEXT(7),,NO,,PN_0001;PN_0002;PN_0003;PN_0004;PN_0005;PN_0006;PN_0007;PN_0008;PN_0009;PN_0010;PN_0011;PN_0012;PN_0013;PN_0014;PN_0015;PN_0016;PN_0017;PN_0018;PN_0019;PN_0020;PN_0021,"PN_0001=GLOBAL01
+PN_0002=GLOBAL02
+PN_0003=GLOBAL06
+PN_0004=PFA53
+PN_0005=EDDEP29
+PN_0006=HI7
+PN_0007=SLEEP20
+PN_0008=SRPPER11_CAPS
+PN_0009=PAININ9
+PN_0010=3793R1
+PN_0011=28676R1
+PN_0012=EOS_P_011
+PN_0013=PEDSGLOBAL2
+PN_0014=PEDSGLOBAL5
+PN_0015=PEDSGLOBAL6
+PN_0016=GLOBAL03
+PN_0017=GLOBAL04
+PN_0018=EDANX53
+PN_0019=SAMHSA
+PN_0020=CAHPS 4.0
+PN_0021=PA070",PCORnet identifier for the specific Common Measure item. Please see the Common Measures reference table for more details.
+PRO_CM,PRO_LOINC,TEXT(10),,NO,,,,"LOINC code for item context and stem. Please see the reference table for known LOINC codes for each common measure.
+
+Logical Observation Identifiers, Names, and Codes (LOINC) from the Regenstrief Institute. Results with local versions of LOINC codes (e.g., LOINC candidate codes) should be included in the RAW_ table field, but the PRO_LOINC variable should be set to missing. Current LOINC codes are from 3-7 characters long but Regenstrief suggests a length of 10 for future growth. The last digit of the LOINC code is a check digit and is always preceded by a hyphen. All parts of the LOINC code, including the hyphen, must be included. Do not pad the LOINC code with leading zeros. 
+"
+PRO_CM,PRO_DATE,TEXT(10),YYYY-MM-DD,NO,DATE,,,The date of the response.
+PRO_CM,PRO_TIME,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,,The time of the response.
+PRO_CM,PRO_RESPONSE,NUMBER(8),,NO,,,,The numeric response recorded for the item. Please see the Common Measures reference table for the list of valid responses for each item.
+PRO_CM,PRO_METHOD,TEXT(2),,NO,,PA;EC;PH;IV;NI;UN;OT,"PA=Paper 
+EC=Electronic 
+PH=Telephonic
+IV=Telephonic with interactive voice response (IVR) technology
+NI=No information
+UN=Unknown
+OT=Other","Method of administration. Electronic includes responses captured via a personal or tablet computer, at web kiosks, or via a smartphone."
+PRO_CM,PRO_MODE,TEXT(2),,NO,,"SF;SA;PR;PA;NI;UN;OT
+","SF=Self without assistance
+SA= Self with assistance
+PR=Proxy without assistance
+PA=Proxy with assistance
+NI=No information
+UN=Unknown
+OT=Other","The person who responded on behalf of the patient for whom the response was captured. A proxy report is a measurement based on a report by someone other than the patient reporting as if he or she is the patient, such as a parent responding for a child, or a caregiver responding for an individual unable to report for themselves. Assistance excludes providing interpretation of the patient’s response. "
+PRO_CM,PRO_CAT,TEXT(2),,NO,,"Y;N;NI;UN;OT
+","Y=Yes
+N=No
+NI=No information
+UN=Unknown
+OT=Other",Indicates whether Computer Adaptive Testing (CAT) was used to administer the survey or instrument that the item was part of. May apply to electronic (EC) and telephonic (PH or IV) modes. 
+PRO_CM,RAW_PRO_CODE,TEXT(x),,NO,,,,"Optional field for originating code, such as LOINC candidate codes that have not yet been adopted"
+PRO_CM,RAW_PRO_RESPONSE,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
