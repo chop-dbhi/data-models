@@ -46,7 +46,7 @@ N = No","Flag to indicate that one or more biobanked specimens are stored and av
 
 If no known biobanked specimens are available, this field should be marked “No”."
 DEMOGRAPHIC,RAW_SEX,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
-DEMOGRAPHIC,RAW_ HISPANIC,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DEMOGRAPHIC,RAW_HISPANIC,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 DEMOGRAPHIC,RAW_RACE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 ENROLLMENT,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier used to link across tables.
 ENROLLMENT,ENR_START_DATE,YES,,,TEXT(10),YYYY-MM-DD,NO,DATE,,,"Date of the beginning of the enrollment period. If the exact date is unknown, use the first day of the month.
@@ -155,11 +155,11 @@ ENCOUNTER,RAW_SITEID,NO,,,TEXT(x),,NO,,,,"This field is new to v2.0.
 Optional field for locally-defined identifier intended for local use; for example, where a network may have multiple sites contributing to a central data repository.
 
 This attribute may be sensitive in certain contexts; the intent is for internal network use only, and not to enable site quality comparisons."
-ENCOUNTER,RAW_ ENC_TYPE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
-ENCOUNTER,RAW_ DISCHARGE_DISPOSITION,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
-ENCOUNTER,RAW_ DISCHARGE_STATUS,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
-ENCOUNTER,RAW_ DRG_TYPE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
-ENCOUNTER,RAW_ ADMITTING_SOURCE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+ENCOUNTER,RAW_ENC_TYPE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+ENCOUNTER,RAW_DISCHARGE_DISPOSITION,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+ENCOUNTER,RAW_DISCHARGE_STATUS,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+ENCOUNTER,RAW_DRG_TYPE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+ENCOUNTER,RAW_ADMITTING_SOURCE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 DIAGNOSIS,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
 DIAGNOSIS,ENCOUNTERID,YES,ENCOUNTER,ENCOUNTERID,TEXT(x),,NO,,,,Arbitrary encounter-level identifier. Used to link across tables.
 DIAGNOSIS,ENC_TYPE,NO,,,TEXT(2),,YES,,AV;ED;EI;IP;IS;OA;NI;UN;OT,"AV = Ambulatory Visit
@@ -207,9 +207,9 @@ For ED, AV, and OA encounter types, mark as X = Unable to Classify. (Billing sys
 
 One principal diagnosis is expected, although in some instances more than one diagnosis may be flagged as principal."
 DIAGNOSIS,RAW_DX,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
-DIAGNOSIS,RAW_ DX_TYPE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
-DIAGNOSIS,RAW_ DX_SOURCE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
-DIAGNOSIS,RAW_ PDX,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DIAGNOSIS,RAW_DX_TYPE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DIAGNOSIS,RAW_DX_SOURCE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DIAGNOSIS,RAW_PDX,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 PROCEDURE,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
 PROCEDURE,ENCOUNTERID,YES,ENCOUNTER,ENCOUNTERID,TEXT(x),,NO,,,,Arbitrary encounter-level identifier. Used to link across tables.
 PROCEDURE,ENC_TYPE,NO,,,TEXT(2),,YES,,AV;ED;EI;IP;IS;OA;NI;UN;OT,"AV = Ambulatory Visit
@@ -314,9 +314,9 @@ UN=Unknown
 OT=Other","This field is new to v2.0.
 
 Type(s) of tobacco used."
-VITAL,RAW_ DIASTOLIC,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM."
-VITAL,RAW_ SYSTOLIC,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM."
-VITAL,RAW_ BP_POSITION,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+VITAL,RAW_DIASTOLIC,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM."
+VITAL,RAW_SYSTOLIC,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM."
+VITAL,RAW_BP_POSITION,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 VITAL,RAW_TOBACCO,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set. New to v2.0."
 VITAL,RAW_TOBACCO_TYPE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set. New to v2.0."
 DISPENSING,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
