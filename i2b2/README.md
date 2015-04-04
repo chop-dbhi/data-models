@@ -1,6 +1,6 @@
-# i2b2 Schema
+# i2b2
 
-Data model for the [i2b2](https://www.i2b2.org) star schema.
+Data models for the [i2b2](https://www.i2b2.org).
 
 ## Additions
 
