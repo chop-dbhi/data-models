@@ -33,6 +33,15 @@ concept_dimension,download_date,No,timestamp
 concept_dimension,import_date,No,timestamp
 concept_dimension,sourcesystem_cd,No,text(50)
 concept_dimension,upload_id,No,number(38)
+provider_dimension,provider_path,Yes,text(700)
+provider_dimension,provider_id,Yes,text(50)
+provider_dimension,name_char,No,text(850)
+provider_dimension,provider_blob,No,text(x)
+provider_dimension,update_date,No,timestamp
+provider_dimension,download_date,No,timestamp
+provider_dimension,import_date,No,timestamp
+provider_dimension,sourcesystem_cd,No,text(50)
+provider_dimension,upload_id,No,number(38)
 patient_dimension,patient_num,Yes,number(38)
 patient_dimension,vital_status_cd,No,text(50)
 patient_dimension,birth_date,No,timestamp

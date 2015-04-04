@@ -1,6 +1,7 @@
-Table,,,,
-i2b2,,,,
-concept_dimension,,,,
-patient_dimension,,,,
-visit_dimension,,,,
-observation_fact,,,,
+Table
+i2b2
+concept_dimension
+patient_dimension
+visit_dimension
+provider_dimension
+observation_fact
