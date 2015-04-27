@@ -1,0 +1,193 @@
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
+person,person_id,Yes,,,integer,,A system-generated unique identifier for each person.
+person,gender_concept_id,Yes,concept,concept_id,integer,HL7,A foreign key that refers to a standard concept identifier in the vocabulary for the gender of the person.
+person,year_of_birth,Yes,,,number(4),,"The year of birth of the person. For data sources with date of birth, the year is extracted. For data sources where the year of birth is not available, the approximate year of birth is derived based on any age group categorization available. "
+person,month_of_birth,No,,,number(2),,"The month of birth of the person. For data sources that provide the precise date of birth, the month is extracted and stored in this field. "
+person,day_of_birth,No,,,number(2),,"The day of the month of birth of the person. For data sources that provide the precise date of birth, the day is extracted and stored in this field. "
+person,race_concept_id,No,concept,concept_id,integer,"OMB, CDC",A foreign key that refers to a standard concept identifier in the vocabulary for the race of the person.
+person,ethnicity_concept_id,No,concept,concept_id,integer,OMB,A foreign key that refers to the standard concept identifier in the vocabulary for the ethnicity of the person.
+person,location_id,No,location,location_id,integer,,"A foreign key to the place of residency for the person in the location table, where the detailed address information is stored. "
+person,provider_id,No,provider,provider_id,integer,,A foreign key to the primary care provider the person is seeing in the provider table.
+person,care_site_id,No,care_site,care_site_id,integer,,"A foreign key to the primary care site in the care site table, where the details of the care site are stored. "
+person,person_source_value,No,,,string(50),,An encrypted key derived from the person identifier in the source data. This is necessary when a drug safety issue requires a link back to the person data at the source dataset. No value with any medical or demographic significance must be stored.
+person,gender_source_value,No,,,string(50),,"The source code for the gender of the person as it appears in the source data. The person gender is mapped to a standard gender concept in the vocabulary and the corresponding concept identifier is, stored here for reference. "
+person,race_source_value,No,,,string(50),,"The source code for the race of the person as it appears in the source data. The person race is mapped to a standard race concept in the vocabulary and the original code is, stored here for reference. "
+person,ethnicity_source_value,No,,,string(50),,"The source code for the ethnicity of the person as it appears in the source data. The person ethnicity is mapped to a standard ethnicity concept in the vocabulary and the original code is, stored here for reference. "
+drug_exposure,drug_exposure_id,Yes,,,integer,,A system-generated unique identifier for each drug utilization event.
+drug_exposure,person_id,Yes,person,person_id,integer,,A foreign key identifier to the person who is subjected to the drug. The demographic details of that person are stored in the person table.
+drug_exposure,drug_concept_id,Yes,concept,concept_id,integer,RxNorm,A foreign key that refers to a standard concept identifier in the vocabulary for the drug concept.
+drug_exposure,drug_exposure_start_date,Yes,,,date,,"The start date for the current instance of drug utilization. Valid entries include a start date of a prescription, the date a prescription was filled, or the date on which a drug administration procedure was recorded. "
+drug_exposure,drug_exposure_end_date,No,,,date,,The end date for the current instance of drug utilization. It is not available from all sources.
+drug_exposure,drug_type_concept_id,Yes,concept,concept_id,integer,OMOP,"A foreign key to the predefined concept identifier in the vocabulary reflecting the type of drug exposure recorded. It indicates how the drug exposure was represented in the source data: as medication history, filled prescriptions, etc. "
+drug_exposure,stop_reason,No,,,string(20),,"The reason the medication was stopped, where available. Reasons include regimen completed, changed, removed, etc. "
+drug_exposure,refills,No,,,number(3),,"The number of refills after the initial prescription. The initial prescription is not counted, values start with 0. "
+drug_exposure,quantity,No,,,number(4),,The quantity of drug as recorded in the original prescription or dispensing record.
+drug_exposure,days_supply,No,,,number(4),,The number of days of supply of the medication as recorded in the original prescription or dispensing record.
+drug_exposure,sig,No,,,string(500),,"The directions (""signetur"") on the drug prescription as recorded in the original prescription (and printed on the container) or dispensing record. "
+drug_exposure,prescribing_provider_id,No,provider,provider_id,integer,,A foreign key to the provider in the provider table who initiated (prescribed) the drug exposure.
+drug_exposure,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,integer,,A foreign key to the visit in the visit table during which the drug exposure initiated.
+drug_exposure,relevant_condition_concept_id,No,concept,concept_id,integer,SNOMED,"A foreign key to the predefined concept identifier in the vocabulary reflecting the condition that was the cause for initiation of the drug exposure. Note that this is not a direct reference to a specific condition record in the condition table, but rather a condition concept in the vocabulary. "
+drug_exposure,drug_source_value,No,,,string(50),,"The source code for the drug as it appears in the source data. This code is mapped to a standard drug concept in the vocabulary and the original code is, stored here for reference. "
+drug_era,drug_era_id,Yes,,,integer,,A system-generated unique identifier for each drug era.
+drug_era,person_id,Yes,person,person_id,integer,,A foreign key identifier to the person who is subjected to the drug during the drug era. The demographic details of that person are stored in the person table.
+drug_era,drug_concept_id,Yes,concept,concept_id,integer,RxNorm,A foreign key that refers to a standard concept identifier in the vocabulary for the drug concept.
+drug_era,drug_era_start_date,Yes,,,date,,The start date for the drug era constructed from the individual instances of drug exposures. It is the start date of the very first chronologically recorded instance of utilization of a drug.
+drug_era,drug_era_end_date,Yes,,,date,,The end date for the drug era constructed from the individual instance of drug exposures. It is the end date of the final continuously recorded instance of utilization of a drug.
+drug_era,drug_type_concept_id,Yes,concept,concept_id,integer,OMOP,A foreign key to the predefined concept identifier in the vocabulary reflecting the parameters used to construct the drug era.
+drug_era,drug_exposure_count,No,,,number(4),,The number of individual drug exposure occurrences used to construct the drug era.
+condition_occurrence,condition_occurrence_id,Yes,,,integer,,A system-generated unique identifier for each condition occurrence event.
+condition_occurrence,person_id,Yes,person,person_id,integer,,A foreign key identifier to the person who is experiencing the condition. The demographic details of that person are stored in the person table.
+condition_occurrence,condition_concept_id,Yes,concept,concept_id,integer,SNOMED,A foreign key that refers to a standard condition concept identifier in the vocabulary.
+condition_occurrence,condition_start_date,Yes,,,date,,The date when the instance of the condition is recorded.
+condition_occurrence,condition_end_date,No,,,date,,The date when the instance of the condition is considered to have ended. This is not typically recorded.
+condition_occurrence,condition_type_concept_id,Yes,concept,concept_id,integer,OMOP,"A foreign key to the predefined concept identifier in the vocabulary reflecting the source data from which the condition was recorded, the level of standardization, and the type of occurrence. Conditions are defined as primary or secondary diagnoses, problem lists and person statuses. "
+condition_occurrence,stop_reason,No,,,string(20),,"The reason, if available, that the condition was no longer recorded, as indicated in the source data. Valid values include discharged, resolved, etc. "
+condition_occurrence,associated_provider_id,No,provider,provider_id,integer,,A foreign key to the provider in the provider table who was responsible for determining (diagnosing) the condition.
+condition_occurrence,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,integer,,A foreign key to the visit in the visit table during which the condition was determined (diagnosed).
+condition_occurrence,condition_source_value,No,,,string(50),,"The source code for the condition as it appears in the source data. This code is mapped to a standard condition concept in the vocabulary and the original code is, stored here for reference. Condition source codes are typically ICD-9-CM diagnosis codes from medical claims or discharge status/disposition codes from EHRs. "
+condition_era,condition_era_id,Yes,,,integer,,A system-generated unique identifier for each condition era.
+condition_era,person_id,Yes,person,person_id,integer,,A foreign key identifier to the person who is experiencing the condition during the condition era. The demographic details of that person are stored in the person table.
+condition_era,condition_concept_id,Yes,concept,concept_id,integer,SNOMED,A foreign key that refers to a standard condition concept identifier in the vocabulary.
+condition_era,condition_era_start_date,Yes,,,date,,The start date for the condition era constructed from the individual instances of condition occurrences. It is the start date of the very first chronologically recorded instance of the condition.
+condition_era,condition_era_end_date,Yes,,,date,,The end date for the condition era constructed from the individual instances of condition occurrences. It is the end date of the final continuously recorded instance of the condition.
+condition_era,condition_type_concept_id,Yes,concept,concept_id,integer,OMOP,A foreign key to the predefined concept identifier in the vocabulary reflecting the parameters used to construct the condition era.
+condition_era,condition_occurrence_count,No,,,number(4),,The number of individual condition occurrences used to construct the condition era.
+visit_occurrence,visit_occurrence_id,Yes,,,integer,,A system-generated unique identifier for each person's visit or encounter at a healthcare provider.
+visit_occurrence,person_id,Yes,person,person_id,integer,,A foreign key identifier to the person for whom the visit is recorded. The demographic details of that person are stored in the person table.
+visit_occurrence,visit_start_date,Yes,,,date,,The start date of the visit.
+visit_occurrence,visit_end_date,Yes,,,date,,The end date of the visit. If this is a one-day visit the end date should match the start date.
+visit_occurrence,place_of_service_concept_id,Yes,concept,concept_id,integer,OMOP CMS,A foreign key that refers to a place of service concept identifier in the vocabulary.
+visit_occurrence,care_site_id,No,care_site,care_site_id,integer,,A foreign key to the care site in the care site table that was visited.
+visit_occurrence,place_of_service_source_value,No,,,string(50),,"The source code used to reflect the type or source of the visit in the source data. Valid entries include office visits, hospital admissions, etc. These source codes can also be type-of service codes and activity type codes. "
+procedure_occurrence,procedure_occurrence_id,Yes,,,integer,,A system-generated unique identifier for each procedure occurrence.
+procedure_occurrence,person_id,Yes,person,person_id,integer,,A foreign key identifier to the person who is subjected to the procedure. The demographic details of that person are stored in the person table.
+procedure_occurrence,procedure_concept_id,Yes,concept,concept_id,integer,"CPT-4 HCPCS ICD-9-Proc, ICD-9-CM, LOINC",A foreign key that refers to a standard procedure concept identifier in the vocabulary.
+procedure_occurrence,procedure_date,Yes,,,date,,The date on which the procedure was performed.
+procedure_occurrence,procedure_type_concept_id,Yes,concept,concept_id,integer,OMOP,The date on which the procedure was performed.
+procedure_occurrence,associated_provider_id,No,provider,provider_id,integer,,A foreign key to the provider in the provider table who was responsible for carrying out the procedure.
+procedure_occurrence,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,integer,,A foreign key to the visit in the visit table during which the procedure was carried out.
+procedure_occurrence,relevant_condition_concept_id,No,concept,concept_id,integer,SNOMED,"A foreign key to the predefined concept identifier in the vocabulary reflecting the condition that was the cause for initiation of the procedure. Note that this is not a direct reference to a specific condition record in the condition table, but rather a condition concept in the vocabulary. "
+procedure_occurrence,procedure_source_value,No,,,string(50),,"The source code for the procedure as it appears in the source data. This code is mapped to a standard procedure concept in the vocabulary and the original code is, stored here for reference. Procedure source codes are typically ICD-9-Proc, CPT-4 or HCPCS codes."
+observation,observation_id,Yes,,,integer,,A system-generated unique identifier for each observation.
+observation,person_id,Yes,person,person_id,integer,,A foreign key identifier to the person about whom the observation was recorded. The demographic details of that person are stored in the person table.
+observation,observation_concept_id,Yes,concept,concept_id,integer,LOINC SNOMED,A foreign key to the standard observation concept identifier in the vocabulary.
+observation,observation_date,Yes,,,date,,The date of the observation.
+observation,observation_time,No,,,time,,The time of the observation.
+observation,value_as_number,No,,,"number(14,3)",,The observation result stored as a number. This is applicable to observations where the result is expressed as a numeric value.
+observation,value_as_string,No,,,string(60),,"The observation result stored as a string. This is applicable to observations where the result is expressed as verbatim text, such as in radiology or pathology reports. "
+observation,value_as_concept_id,No,concept,concept_id,integer,,"A foreign key to an observation result stored as a concept identifier. This is applicable to observations where the result can be expressed as a standard concept from the vocabulary (e.g., positive/negative, present/absent, low/high, etc.). "
+observation,unit_concept_id,No,concept,concept_id,integer,UCUM,A foreign key to a standard concept identifier of measurement units in the vocabulary.
+observation,range_low,No,,,"number(14,3)",,"The lower limit of the normal range of the observation. It is not applicable if the observation results are non- numeric or categorical, and must be in the same units of measure as the observation value. "
+observation,range_high,No,,,"number(14,3)",,"The upper limit of the normal range of the observation. It is not applicable if the observation results are non- numeric or categorical, and must be in the same units of measure as the observation value. "
+observation,observation_type_concept_id,Yes,concept,concept_id,integer,OMOP,A foreign key to the predefined concept identifier in the vocabulary reflecting the type of the observation.
+observation,associated_provider_id,No,provider,provider_id,integer,,A foreign key to the provider in the provider table who was responsible for making the observation.
+observation,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,integer,,A foreign key to the visit in the visit table during which the observation was recorded.
+observation,relevant_condition_concept_id,No,concept,concept_id,integer,SNOMED,"A foreign key to the predefined concept identifier in the vocabulary reflecting the condition that was associated with the observation. Note that this is not a direct reference to a specific condition record in the condition table, but rather a condition concept in the vocabulary. "
+observation,observation_source_value,No,,,string(50),,"The observation code as it appears in the source data. This code is mapped to a standard concept in the vocabulary and the original code is, stored here for reference. "
+observation,unit_source_value,No,,,string(50),,"The source code for the unit as it appears in the source data. This code is mapped to a standard unit concept in the vocabulary and the original code is, stored here for reference. "
+observation_period,observation_period_id,Yes,,,integer,,A system-generated unique identifier for each observation period.
+observation_period,person_id,Yes,person,person_id,integer,,A foreign key identifier to the person for whom the observation period is defined. The demographic details of that person are stored in the person table.
+observation_period,observation_period_start_date,Yes,,,date,,The start date of the observation period for which data are available from the data source.
+observation_period,observation_period_end_date,Yes,,,date,,The end date of the observation period for which data are available from the data source.
+death,person_id,Yes,person,person_id,integer,,A foreign key identifier to the deceased person. The demographic details of that person are stored in the person table.
+death,death_date,Yes,,,date,,"The date the person deceased. If the precise date including day or month is not known or not allowed, December is used as the default month, and the last day of the month the default day. "
+death,death_type_concept_id,Yes,concept,concept_id,integer,OMOP,A foreign key referring to the predefined concept identifier in the vocabulary reflecting how the death was represented in the source data.
+death,cause_of_death_concept_id,No,concept,concept_id,integer,SNOMED,A foreign key referring to a standard concept identifier in the vocabulary for conditions.
+death,cause_of_death_source_value,No,,,string(50),,"The source code for the cause of death as it appears in the source data. This code is mapped to a standard concept in the vocabulary and the original code is, stored here for reference. "
+drug_cost,drug_cost_id,Yes,,,integer,,A system-generated unique identifier for each drug cost record.
+drug_cost,drug_exposure_id,Yes,drug_exposure,drug_exposure_id,integer,,A foreign key identifier to the drug record for which cost data are recorded.
+drug_cost,paid_copay,No,,,"number(8,2)",,The amount paid by the person as a fixed contribution to the expenses. Copay does not contribute to the out of pocket expenses.
+drug_cost,paid_coinsurance,No,,,"number(8,2)",,"The amount paid by the person as a joint assumption of risk. Typically, this is a percentage of the expenses defined by the payer plan (policy) after the person's deductible is exceeded. "
+drug_cost,paid_toward_deductible,No,,,"number(8,2)",,The amount paid by the person that is counted toward the deductible defined by the payer plan (policy).
+drug_cost,paid_by_payer,No,,,"number(8,2)",,"The amount paid by the payer (insurer). If there is more than one payer, several drug_cost records indicate that fact. "
+drug_cost,paid_by_coordination_benefits,No,,,"number(8,2)",,The amount paid by a secondary payer through the coordination of benefits.
+drug_cost,total_out_of_pocket,No,,,"number(8,2)",,"The total amount paid by the person as a share of the expenses, excluding the copay. "
+drug_cost,total_paid,No,,,"number(8,2)",,The total amount paid for the expenses of drug exposure.
+drug_cost,ingredient_cost,No,,,"number(8,2)",,"The portion of the drug expenses due to the cost charged by the manufacturer for the drug, typically a percentage of the Average Wholesale Price. "
+drug_cost,dispensing_fee,No,,,"number(8,2)",,"The portion of the drug expenses due to the dispensing fee charged by the pharmacy, typically a fixed amount. "
+drug_cost,average_wholesale_price,No,,,"number(8,2)",,List price of a drug set by the manufacturer.
+drug_cost,payer_plan_period_id,No,payer_plan_period,payer_plan_period_id,integer,,"A foreign key to the payer_plan_period table, where the details of the payer, plan and family are stored. "
+procedure_cost,procedure_cost_id,Yes,,,integer,,A system-generated unique identifier for each procedure cost record.
+procedure_cost,procedure_occurrence_id,Yes,procedure_occurrence,procedure_occurrence_id,integer,,A foreign key identifier to the procedure record for which cost data are recorded.
+procedure_cost,paid_copay,No,,,"number(8,2)",,The amount paid by the person as a fixed contribution to the expenses. Copay does not contribute to the out_of_pocket expenses.
+procedure_cost,paid_coinsurance,No,,,"number(8,2)",,"The amount paid by the person as a joint assumption of risk. Typically, this is a percentage of the expenses defined by the payer plan (policy) after the person's deductible is exceeded. "
+procedure_cost,paid_toward_deductible,No,,,"number(8,2)",,The amount paid by the person that is counted toward the deductible defined by the payer plan (policy).
+procedure_cost,paid_by_payer,No,,,"number(8,2)",,"The amount paid by the payer (insurer). If there is more than one payer, several procedure_cost records indicate that fact. "
+procedure_cost,paid_by_coordination_benefits,No,,,"number(8,2)",,The amount paid by a secondary payer through the coordination of benefits.
+procedure_cost,total_out_of_pocket,No,,,"number(8,2)",,"The total amount paid by the person as a share of the expenses, excluding the copay. "
+procedure_cost,total_paid,No,,,"number(8,2)",,The total amount paid for the expenses of the procedure.
+procedure_cost,disease_class_concept_id,No,concept,concept_id,integer,"DRG, APC","A foreign key referring to a standard concept identifier in the vocabulary for disease classes, such as DRGs and APCs. "
+procedure_cost,revenue_code_concept_id,No,concept,concept_id,integer,HCFA,A foreign key referring to a standard concept identifier in the vocabulary for revenue codes.
+procedure_cost,payer_plan_period_id,No,payer_plan_period,payer_plan_period_id,integer,,"A foreign key to the payer_plan_period table, where the details of the payer, plan and family are stored. "
+procedure_cost,disease_class_source_value,No,,,string(50),,"The source code for the disease class as it appears in the source data, stored here for reference. "
+procedure_cost,revenue_code_source_value,No,,,string(50),,"The source code for the revenue code as it appears in the source data, stored here for reference. "
+location,location_id,Yes,,,integer,,A system-generated unique identifier for each geographic location.
+location,address_1,No,,,string(50),,"The address field 1, typically used for the street address, as it appears in the source data. "
+location,address_2,No,,,string(50),,"The address field 2, typically used for additional detail such as buildings, suites, floors, as it appears in the source data. "
+location,city,No,,,string(50),,The city field as it appears in the source data.
+location,state,No,,,string(2),,The state field as it appears in the source data.
+location,zip,No,,,string(9),,"The zip code. For US addresses, valid zip codes can be 3, 5 or 9 digits long, depending on the source data. "
+location,county,No,,,string(20),,The county. The county information is necessary because not all zip codes fall into one and the same county.
+location,location_source_value,No,,,string(50),,The verbatim information that is used to uniquely identify the location as it appears in the source data.
+provider,provider_id,Yes,,,integer,,A system-generated unique identifier for each provider.
+provider,npi,No,,,string(20),,The National Provider Identifier (NPI) of the provider.
+provider,dea,No,,,string(20),,The Drug Enforcement Administration (DEA) number of the provider.
+provider,specialty_concept_id,No,concept,concept_id,integer,CDC,A foreign key to a standard provider's specialty concept identifier in the vocabulary.
+provider,care_site_id,No,care_site,care_site_id,integer,,A foreign key to the main care site where the provider is practicing.
+provider,provider_source_value,Yes,,,string(50),,"The identifier used for the provider in the source data, stored here for reference. "
+provider,specialty_source_value,No,,,string(50),,"The source code for the provider specialty as it appears in the source data, stored here for reference. "
+organization,organization_id,Yes,,,integer,,"A system-generated unique identifier for each organization. Here, an organization is defined as a collection of one or more care sites that share a single EHR database. "
+organization,place_of_service_concept_id,No,concept,concept_id,integer,CMS,A foreign key that refers to a place of service concept identifier in the vocabulary.
+organization,location_id,No,location,location_id,integer,,"A foreign key to the geographic location of the administrative offices of the organization in the location table, where the detailed address information is stored. "
+organization,organization_source_value,Yes,,,string(50),,"The identifier for the organization in the source data, stored here for reference. "
+organization,place_of_service_source_value,No,,,string(50),,"The source code for the place of service as it appears in the source data, stored here for reference. "
+care_site,care_site_id,Yes,,,integer,,A system-generated unique identifier for each care site. A care site is the place where the provider delivered the healthcare to the person.
+care_site,location_id,No,location,location_id,integer,,"A foreign key to the geographic location in the location table, where the detailed address information is stored. "
+care_site,organization_id,No,organization,organization_id,integer,,"A foreign key to the organization in the organization table, where the detailed information is stored. "
+care_site,place_of_service_concept_id,No,concept,concept_id,integer,CMS,A foreign key to the predefined concept identifier in the vocabulary reflecting the place of service.
+care_site,care_site_source_value,No,,,string(50),,"The identifier for the care site as it appears in the source data, stored here for reference. "
+care_site,place_of_service_source_value,No,,,string(50),,"The source code for the place of service as it appears in the source data, stored here for reference. "
+cohort,cohort_id,Yes,,,integer,,A system-generated unique identifier for each cohort record.
+cohort,cohort_concept_id,Yes,concept,concept_id,integer,,"A foreign key to a standard cohort concept identifier in the vocabulary. Cohort concepts identify the cohorts: whether they are defined through persons, providers or visits, or any combination thereof. "
+cohort,cohort_start_date,Yes,,,date,,"The date when the cohort definition criteria for the person, provider or visit first match. "
+cohort,cohort_end_date,No,,,date,,"The date when the cohort definition criteria for the person, provider or visit no longer match or the cohort membership was terminated. "
+cohort,subject_id,Yes,"person, provider, visit_occurrence","person_id, provider_id, visit_occurrence_id",integer,,"A foreign key to the subject in the cohort. These could be referring to records in the Person, Provider, Visit Occurrence table. "
+cohort,stop_reason,No,,,string(20),,The reason for the end of a cohort membership other than defined by the cohort definition criteria as it appears in the source data.
+concept,concept_id,Yes,,,integer,,A system-generated unique identifier for each concept across all domains.
+concept,concept_name,Yes,,,string(256),,"An unambiguous, meaningful and descriptive name for the concept. "
+concept,concept_level,Yes,,,integer,,"The level of hierarchy associated with the concept. Different concept levels are assigned to concepts to depict their seniority in a clearly defined hierarchy, such as drugs, conditions, etc. A concept level of 0 is assigned to concepts that are not part of a standard vocabulary, but are part of the vocabulary for reference purposes (e.g. drug form). "
+concept,concept_class,Yes,,,string(60),,"The category or class of the concept along both the hierarchical tree as well as different domains within a vocabulary. Examples are “Clinical Drug”, “Ingredient”, “Clinical Finding” etc. "
+concept,vocabulary_id,Yes,vocabulary,vocabulary_id,integer,,A foreign key to the vocabulary table indicating from which source the concept has been adapted.
+concept,concept_code,Yes,,,string(20),,"The concept code represents the identifier of the concept in the source data it originates from, such as SNOMED-CT concept IDs, RxNorm RXCUIs etc. Note that concept codes are not unique across vocabularies. "
+concept,valid_start_date,Yes,,,date,,The date when the concept was first recorded.
+concept,valid_end_date,Yes,,,date,,The date when the concept became invalid because it was deleted or superseded (updated) by a new concept. The default value is 31-Dec-2099.
+concept,invalid_reason,No,,,string(1),,"Reason the concept was invalidated. Possible values are D (deleted), U (replaced with an update) or NULL when valid_end_date has the default value. "
+concept_synonym,concept_synonym_id,Yes,,,integer,,A system-generated unique identifier for each concept synonym.
+concept_synonym,concept_id,Yes,concept,concept_id,integer,,A foreign key to the concept in the concept table.
+concept_synonym,concept_synonym_name,Yes,,,string(1000),,The alternative name for the concept.
+concept_relationship,concept_id_1,Yes,concept,concept_id,integer,,"A foreign key to the concept in the concept table associated with the relationship. Relationships are directional, and this field represents the source concept designation. "
+concept_relationship,concept_id_2,Yes,concept,concept_id,integer,,"A foreign key to the concept in the concept table associated with the relationship. Relationships are directional, and this field represents the destination concept designation. "
+concept_relationship,relationship_id,Yes,,,string(3),,The type of relationship as defined in the relationship table.
+concept_relationship,valid_start_date,Yes,,,date,,The date when the instance of the relationship is first recorded.
+concept_relationship,valid_end_date,Yes,,,date,,The date when the relationship became invalid because it was deleted or superseded (updated) by a new relationship. Default value is 31-Dec-2099.
+concept_relationship,invalid_reason,No,,,string(1),,"Reason the relationship was invalidated. Possible values are D (deleted), U (replaced with an update) or NULL when valid_end_date has the default value. "
+concept_ancestor,ancestor_concept_id,Yes,concept,concept_id,integer,,A foreign key to the concept code in the concept table for the higher-level concept that forms the ancestor in the relationship.
+concept_ancestor,descendant_concept_id,Yes,concept,concept_id,integer,,A foreign key to the concept code in the concept table for the lower-level concept that forms the descendant in the relationship.
+concept_ancestor,min_levels_of_separation,No,,,integer,,The minimum separation in number of levels of hierarchy between ancestor and descendant concepts. This is an optional attribute that is used to simplify hierarchic analysis.
+concept_ancestor,max_levels_of_separation,No,,,integer,,The maximum separation in number of levels of hierarchy between ancestor and descendant concepts. This is an optional attribute that is used to simplify hierarchic analysis.
+vocabulary,vocabulary_id,Yes,,,integer,,A unique identifier for each vocabulary.
+vocabulary,vocabulary_name,Yes,,,string(256),,"The name describing the vocabulary, for example ""SNOMED-CT"", ""ICD-9"", ""Visit"", etc. "
+source_to_concept_map,source_code,Yes,,,string(20),,The source code being translated into a standard concept.
+source_to_concept_map,source_vocabulary_id,Yes,vocabulary,vocabulary_id,integer,,A foreign key to the vocabulary table defining the vocabulary of the source code that is being mapped to the standard vocabulary.
+source_to_concept_map,source_code_description,No,,,string(256),,An optional description for the source code. This is included as a convenience to compare the description of the source code to the name of the concept.
+source_to_concept_map,target_concept_id,Yes,concept,concept_id,integer,,A foreign key to the concept to which the source code is being mapped.
+source_to_concept_map,target_vocabulary_id,Yes,vocabulary,vocabulary_id,integer,,A foreign key to the vocabulary table defining the vocabulary of the target concept.
+source_to_concept_map,mapping_type,No,,,string(20),,"A string identifying the observational data element being translated. Examples include ‘DRUG’, ‘CONDITION’, ‘PROCEDURE’, ‘PROCEDURE DRUG’ etc. It is important to pick the appropriate mapping record when the same source code is being mapped to different concepts in different contexts. As an example a procedure code for drug administration can be mapped to a procedure concept or a drug concept or both. "
+source_to_concept_map,primary_map,No,,,string(1),,"A boolean value identifying the primary mapping relationship for those sets where the source_code, the source_vocabulary_id and the mapping type is identical (one-to-many mappings). The ETL will only consider the primary map. Permitted values are Y and NULL. "
+source_to_concept_map,valid_start_date,Yes,,,date,,The date when the mapping instance was first recorded.
+source_to_concept_map,valid_end_date,Yes,,,date,,The date when the mapping instance became invalid because it was deleted or superseded (updated) by a new relationship. Default value is 31-Dec-2099.
+source_to_concept_map,invalid_reason,No,,,string(1),,"Reason the mapping instance was invalidated. Possible values are D (deleted), U (replaced with an update) or NULL when valid_end_date has the default value. "
+relationship,relationship_id,Yes,,,integer,,The type of relationship captured by the relationship record.
+relationship,relationship_name,Yes,,,string(256),,The text that describes the relationship type.
+relationship,is_hierarchical,No,,,string(1),,Defines whether a relationship defines concepts into classes or hierarchies. Values are Y for hierarchical relationship or NULL if not.
+relationship,defines_ancestry,No,,,string(1),,Defines whether a hierarchical relationship contributes to the concept_ancestor table. These are subsets of the hierarchical relationships. Valid values are Y or NULL.
