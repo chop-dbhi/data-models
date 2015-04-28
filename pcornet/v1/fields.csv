@@ -1,0 +1,265 @@
+TABLE_NAME,FIELD_NAME,REQUIRED,REF_TABLE,REF_FIELD,DATA_TYPE,DATA_FORMAT,REPLICATED,UNIT_OF_MEASURE,VALUE_SET,VALUE_DESCRIPTION,DEFINITION
+DEMOGRAPHIC,PATID,YES,,,TEXT(x),,NO,,,,"Arbitrary person-level identifier used to link across tables. 
+
+PATID is a pseudoidentifier with a consistent crosswalk to the true identifier retained by the source Data Partner. For analytical data sets requiring patient-level data, only the pseudoidentifier is used to link across all information belonging to a patient.
+
+The PATID must be unique within the data source being queried. Creating a unique identifier within a CDRN would be beneficial and acceptable. The PATID is not the basis for linkages across partners."
+DEMOGRAPHIC,BIRTH_DATE,NO,,,TEXT(10),YYYY-MM-DD,NO,DATE,,,Date of birth.
+DEMOGRAPHIC,BIRTH_TIME,NO,,,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,,Time of birth.
+DEMOGRAPHIC,SEX,NO,,,TEXT(2),,NO,,A;F;M;NI;UN;OT,"A = Ambiguous 
+F = Female
+M = Male
+NI = No information
+UN = Unknown
+OT = Other",Administrative sex.
+DEMOGRAPHIC,HISPANIC,NO,,,TEXT(2),,NO,,Y;N;NI;UN;OT,"Y = Yes
+N = No
+NI = No information
+UN = Unknown
+OT = Other","A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+DEMOGRAPHIC,RACE,NO,,,TEXT(2),,NO,,01;02;03;04;05;06;07;NI;UN;OT,"01 = American Indian or Alaska Native
+02 = Asian
+03 = Black or African American
+04 = Native Hawaiian or Other Pacific Islander
+05 = White
+06 = Multiple race
+07 = Refuse to answer
+NI = No information
+UN = Unknown
+OT = Other","Please use only one race value per patient.
+
+Details of categorical definitions:
+American Indian or Alaska Native: A person having origins in any of the original peoples of North and South America (including Central America), and who maintains tribal affiliation or community attachment.
+
+Asian: A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam.
+
+Black or African American: A person having origins in any of the black racial groups of Africa.
+
+Native Hawaiian or Other Pacific Islander: A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands.
+
+White: A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+DEMOGRAPHIC,BIOBANK_FLAG,NO,,,TEXT(1),,NO,,Y;N,"Y = Yes
+N = No","Flag to indicate that one or more biobanked specimens are stored and available for research use. Examples of biospecimens could include plasma, urine, or tissue. If biospecimens are available, locally maintained “mapping tables” would be necessary to map between the DEMOGRAPHIC record and the originating biobanking system(s).
+
+If no known biobanked specimens are available, this field should be marked “No”."
+DEMOGRAPHIC,RAW_SEX,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DEMOGRAPHIC,RAW_HISPANIC,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DEMOGRAPHIC,RAW_RACE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+ENROLLMENT,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier used to link across tables.
+ENROLLMENT,ENR_START_DATE,YES,,,TEXT(10),YYYY-MM-DD,NO,DATE,,,"Date of the beginning of the enrollment period. If the exact date is unknown, use the first day of the month.
+
+For implementation of the CDM, a long span of longitudinal data is desirable; however, especially for historical data more than a decade old, the appropriate beginning date should be determined by the partner’s knowledge of the validity and usability of the data. More specific guidance can be provided through implementation discussions."
+ENROLLMENT,ENR_END_DATE,NO,,,TEXT(10),YYYY-MM-DD,NO,DATE,,,"Date of the end of the enrollment period. If the exact date is unknown, use the last day of the month."
+ENROLLMENT,CHART,NO,,,TEXT(1),,NO,,Y;N,"Y = Yes
+N = No","Chart abstraction flag is intended to answer the question, ""Are you able to request (or review) charts for this person?"" This flag does not address chart availability. Mark as ""Yes"" if there are no contractual or other restrictions between you and the individual (or sponsor) that would prohibit you from requesting any chart for this member.
+
+Note: This field is most relevant for health insurers that can request charts from affiliated providers. This field allows exclusion of patients from studies that require chart review to validate exposures and/or outcomes. It identifies patients for whom charts are never available and for whom the chart can never be requested."
+ENROLLMENT,ENR_BASIS,YES,,,TEXT(1),,NO,,I;G;A;E,"I = Insurance
+G = Geography
+A = Algorithmic
+E = Encounter-based","When insurance information is not available but complete capture can be asserted some other way, please identify the basis on which complete capture is defined. Additional information on the approach identified will be required from each partner.
+
+ENR_BASIS is a property of the time period defined. A patient can have multiple entries in the table.
+
+Details of categorical definitions:
+Insurance: The start and stop dates are based upon the concept of enrollment with health plan insurance
+
+Geography: An assertion of complete data capture between the start and end dates based upon geographic characteristics, such as regional isolation
+
+Algorithmic: An assertion of complete data capture between the start and end dates, based on a locally developed or applied algorithm, often using multiple criteria 
+
+Encounter-based: The start and stop dates are populated from the earliest-observed encounter and latest-observed encounter."
+ENCOUNTER,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier used to link across tables.
+ENCOUNTER,ENCOUNTERID,YES,,,TEXT(x),,NO,,,,"Arbitrary encounter-level identifier. Used to link across tables, including the ENCOUNTER, DIAGNOSIS, and PROCEDURE tables."
+ENCOUNTER,ADMIT_DATE,NO,,,TEXT(10),YYYY-MM-DD,NO,DATE,,,Encounter or admission date.
+ENCOUNTER,ADMIT_TIME,NO,,,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,,Encounter or admission time.
+ENCOUNTER,DISCHARGE_DATE,NO,,,TEXT(10),YYYY-MM-DD,NO,DATE,,,Discharge date. Should be populated for all Inpatient Hospital Stay (IP) and Non-Acute Institutional Stay (IS) encounter types. May be populated for Emergency Department (ED) encounter types. Should be missing for ambulatory visit (AV or OA) encounter types.
+ENCOUNTER,DISCHARGE_TIME,NO,,,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,,Discharge time.
+ENCOUNTER,PROVIDERID,NO,,,TEXT(x),,NO,,,,"Provider code for the provider who is most responsible for this encounter. For encounters with multiple providers choose one so the encounter can be linked to the diagnosis and procedure tables. As with the PATID, the provider code is a pseudoidentifier with a consistent crosswalk to the real identifier."
+ENCOUNTER,FACILITY_LOCATION,NO,,,TEXT(3),,NO,,,,Geographic location (3 digit zip code). Should be left blank if not recorded in source system.
+ENCOUNTER,ENC_TYPE,NO,,,TEXT(2),,NO,,AV;ED;IP;IS;OA;NI;UN;OT,"AV = Ambulatory Visit
+ED = Emergency Department
+IP = Inpatient Hospital Stay
+IS = Non-Acute Institutional Stay
+OA = Other Ambulatory Visit
+NI = No information
+UN = Unknown
+OT = Other","Encounter type.
+
+Details of categorical definitions:
+Ambulatory Visit: Includes visits at outpatient clinics, physician offices, same day/ambulatory surgery centers, urgent care facilities, and other same-day ambulatory hospital encounters, but excludes emergency department encounters.
+
+Emergency Department (ED): Includes ED encounters that become inpatient stays (in which case inpatient stays would be a separate encounter). Excludes urgent care visits. ED claims should be pulled before hospitalization claims to ensure that ED with subsequent admission won't be rolled up in the hospital event.
+
+Inpatient Hospital Stay: Includes all inpatient stays, including: same-day hospital discharges, hospital transfers, and acute hospital care where the discharge is after the admission date.
+
+Non-Acute Institutional Stay: Includes hospice, skilled nursing facility (SNF), rehab center, nursing home, residential, overnight non-hospital dialysis and other non-hospital stays.
+
+Other Ambulatory Visit: Includes other non-overnight AV encounters such as hospice visits, home health visits, skilled nursing facility visits, other non-hospital visits, as well as telemedicine, telephone and email consultations. May also include ""lab only"" visits (when a lab is ordered outside of a patient visit), ""pharmacy only"" (e.g., when a patient has a refill ordered without a face-to-face visit), ""imaging only"", etc."
+ENCOUNTER,FACILITYID,NO,,,TEXT(x),,NO,,,,"Arbitrary local facility code that identifies the hospital or clinic. Used for chart abstraction and validation.
+
+FACILITYID can be a true identifier, or a pseudoidentifier with a consistent crosswalk to the true identifier retained by the source Data Partner."
+ENCOUNTER,DISCHARGE_DISPOSITION,NO,,,TEXT(2),,NO,,A;E;NI;UN;OT,"A = Discharged alive
+E = Expired
+NI = No information
+UN = Unknown
+OT = Other",Vital status at discharge. Should be populated for Inpatient Hospital Stay (IP) and Non-Acute Institutional Stay (IS) encounter types. May be populated for Emergency Department (ED) encounter types. Should be missing for ambulatory visit (AV or OA) encounter types.
+ENCOUNTER,DISCHARGE_STATUS,NO,,,TEXT(2),,NO,,AF;AL;AM;AW;EX;HH;HO;HS;IP;NH;RH;RS;SH;SN;NI;UN;OT,"AF = Adult Foster Home
+AL = Assisted Living Facility
+AM = Against Medical Advice
+AW = Absent without leave
+EX = Expired
+HH = Home Health
+HO = Home / Self Care
+HS = Hospice
+IP = Other Acute Inpatient Hospital
+NH = Nursing Home (Includes ICF)
+RH = Rehabilitation Facility
+RS = Residential Facility
+SH = Still In Hospital
+SN = Skilled Nursing Facility
+NI = No information
+UN = Unknown
+OT = Other",Discharge status. Should be populated for Inpatient Hospital Stay (IP) and Non-Acute Institutional Stay (IS) encounter types. May be populated for Emergency Department (ED) encounter types. Should be missing for ambulatory visit (AV or OA) encounter types.
+ENCOUNTER,DRG,NO,,,TEXT(3),,NO,,,,"3-digit Diagnosis Related Group (DRG). Should be populated for IP and IS encounter types. May be populated for ED encounter types. Should be missing for AV or OA encounters. Use leading zeroes for codes less than 100.
+
+The DRG is used for reimbursement for inpatient encounters. It is a Medicare requirement that combines diagnoses into clinical concepts for billing. Frequently used in observational data analyses."
+ENCOUNTER,DRG_TYPE,NO,,,TEXT(2),,NO,,01;02;NI;UN;OT,"01 = CMS-DRG (old system)
+02 = MS-DRG (current system)
+NI = No information
+UN = Unknown
+OT = Other",DRG code version. MS-DRG (current system) began on 10/1/2007. Should be populated for IP and IS encounter types. May be populated for ED encounter types. Should be missing for AV or OA encounters.
+ENCOUNTER,ADMITTING_SOURCE,NO,,,TEXT(2),,NO,,AF;AL;AV;ED;HH;HO;HS;IP;NH;RH;RS;SN;NI;UN;OT,"AF = Adult Foster Home
+AL = Assisted Living Facility
+AV = Ambulatory Visit
+ED = Emergency Department
+HH = Home Health
+HO = Home / Self Care
+HS = Hospice
+IP = Other Acute Inpatient Hospital
+NH = Nursing Home (Includes ICF)
+RH = Rehabilitation Facility
+RS = Residential Facility
+SN = Skilled Nursing Facility
+NI = No information
+UN = Unknown
+OT = Other",Admitting source. Should be populated for Inpatient Hospital Stay (IP) and Non-Acute Institutional Stay (IS) encounter types. May be populated for Emergency Department (ED) encounter types. Should be missing for ambulatory visit (AV or OA) encounter types.
+ENCOUNTER,RAW_ENC_TYPE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+ENCOUNTER,RAW_DISCHARGE_DISPOSITION,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+ENCOUNTER,RAW_DISCHARGE_STATUS,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+ENCOUNTER,RAW_DRG_TYPE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+ENCOUNTER,RAW_ADMITTING_SOURCE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DIAGNOSIS,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+DIAGNOSIS,ENCOUNTERID,YES,ENCOUNTER,ENCOUNTERID,TEXT(x),,NO,,,,Arbitrary encounter-level identifier. Used to link across tables.
+DIAGNOSIS,ENC_TYPE,NO,,,TEXT(2),,YES,,AV;ED;IP;IS;OA;NI;UN;OT,"AV = Ambulatory Visit
+ED = Emergency Department
+IP = Inpatient Hospital Stay
+IS = Non-Acute Institutional Stay
+OA = Other Ambulatory Visit
+NI = No information
+UN = Unknown
+OT = Other",Please note: This is a field replicated from the ENCOUNTER table. See the ENCOUNTER table for definitions. 
+DIAGNOSIS,ADMIT_DATE,NO,,,TEXT(10),YYYY-MM-DD,YES,DATE,,,Please note: This is a field replicated from the ENCOUNTER table. See the ENCOUNTER table for definitions. 
+DIAGNOSIS,PROVIDERID,NO,,,TEXT(x),,YES,,,,Please note: This is a field replicated from the ENCOUNTER table. See the ENCOUNTER table for definitions. 
+DIAGNOSIS,DX,YES,,,TEXT(18),,NO,,,,"Diagnosis code. 
+
+Leading zeroes and different levels of decimal precision are permissible in this field. Please populate the exact textual value of this diagnosis code, but remove source-specific suffixes and prefixes. Other codes should be listed as recorded in the source data."
+DIAGNOSIS,DX_TYPE,YES,,,TEXT(2),,NO,,09;10;11;SM;NI;UN;OT,"09 = ICD-9-CM
+10 = ICD-10-CM
+11 = ICD-11-CM
+SM = SNOMED CT
+NI = No information
+UN = Unknown
+OT = Other","Diagnosis code type. 
+
+We provide values for ICD and SNOMED code types. Other code types will be added as new terminologies are more widely used.
+
+Please note: The “Other” category is meant to identify internal use ontologies and codes."
+DIAGNOSIS,DX_SOURCE,YES,,,TEXT(2),,NO,,AD;DI;FI;IN;NI;UN;OT,"AD = Admitting
+DI = Discharge
+FI = Final
+IN = Interim
+NI = No information
+UN = Unknown
+OT = Other","Classification of diagnosis source. We include these categories to allow some flexibility in implementation. The context is to capture available diagnoses recorded during a specific encounter. It is not necessary to populate interim diagnoses unless readily available.
+
+Ambulatory encounters would generally be expected to have a source of “Final.”"
+DIAGNOSIS,PDX,NO,,,TEXT(2),,NO,,P;S;X;NI;UN;OT,"P = Principal
+S = Secondary
+X = Unable to Classify
+NI = No information
+UN = Unknown
+OT = Other","Principal discharge diagnosis flag. Relevant only on IP and IS encounters. 
+
+For ED, AV, and OA encounter types, mark as X = Unable to Classify. (Billing systems do not require a primary diagnosis for ambulatory visits (eg, professional services))
+
+One principal diagnosis is expected, although in some instances more than one diagnosis may be flagged as principal."
+DIAGNOSIS,RAW_DX,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DIAGNOSIS,RAW_DX_TYPE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DIAGNOSIS,RAW_DX_SOURCE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DIAGNOSIS,RAW_PDX,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+PROCEDURE,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+PROCEDURE,ENCOUNTERID,YES,ENCOUNTER,ENCOUNTERID,TEXT(x),,NO,,,,Arbitrary encounter-level identifier. Used to link across tables.
+PROCEDURE,ENC_TYPE,NO,,,TEXT(2),,YES,,AV;ED;IP;IS;OA;NI;UN;OT,"AV = Ambulatory Visit
+ED = Emergency Department
+IP = Inpatient Hospital Stay
+IS = Non-Acute Institutional Stay
+OA = Other Ambulatory Visit
+NI = No information
+UN = Unknown
+OT = Other",Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
+PROCEDURE,ADMIT_DATE,NO,,,TEXT(10),YYYY-MM-DD,YES,DATE,,,Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
+PROCEDURE,PROVIDERID,NO,,,TEXT(x),,YES,,,,Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
+PROCEDURE,PX,YES,,,TEXT(11),,NO,,,,Procedure code.
+PROCEDURE,PX_TYPE,YES,,,TEXT(2),,NO,,09;10;11;C2;C3;C4;H3;HC;LC;ND;RE;NI;UN;OT,"09 = ICD-9-CM
+10 = ICD-10-PCS
+11 = ICD-11-PCS
+C2 = CPT Category II
+C3 = CPT Category III
+C4 = CPT-4 (i.e., HCPCS Level I)
+H3 = HCPCS Level III
+HC = HCPCS (i.e., HCPCS Level II)
+LC = LOINC
+ND = NDC
+RE = Revenue
+NI = No information
+UN = Unknown
+OT = Other","Procedure code type.
+
+We include a number of code types for flexibility, but the basic requirement that the code refer to a medical procedure remains.
+
+Revenue codes are a standard concept in Medicare billing and can be useful for defining care settings. If those codes are available they can be included.
+
+Medications administered by clinicians can be captured in billing data and Electronic Health Records (EHRs) as HCPCS procedure codes. Administration (infusion) of chemotherapy is an example. 
+
+We are now seeing NDCs captured as part of procedures because payers are demanding it for payment authorization. Inclusion of this code type enables those data partners that capture the NDC along with the procedure to include the data.
+
+Please note: The “Other” category is meant to identify internal use ontologies and codes."
+PROCEDURE,RAW_PX,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+PROCEDURE,RAW_PX_TYPE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+VITAL,PATID,NO,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+VITAL,ENCOUNTERID,NO,ENCOUNTER,ENCOUNTERID,TEXT(x),,NO,,,,Arbitrary encounter-level identifier. This is an optional relationship; the ENCOUNTERID should be present if the vitals were measured as part of healthcare delivery.
+VITAL,MEASURE_DATE,NO,,,TEXT(10),YYYY-MM-DD,NO,DATE,,,Date of vitals measure.
+VITAL,MEASURE_TIME,NO,,,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,,Time of vitals measure.
+VITAL,VITAL_SOURCE,NO,,,TEXT(2),,NO,,PR;HC;NI;UN;OT,"PR = Patient-reported
+HC = Healthcare delivery setting
+NI = No information
+UN = Unknown
+OT = Other",Please note: The “Patient-reported” category can include reporting by patient’s family or guardian.
+VITAL,HT,NO,,,NUMBER(8),,NO,INCH,,,"Height (in inches) measured by standing. Only populated if measure was taken on this date. If missing, leave blank. Decimal precision is permissible."
+VITAL,WT,NO,,,NUMBER(8),,NO,POUND,,,"Weight (in pounds). Only populated if measure was taken on this date. If missing, leave blank. Decimal precision is permissible."
+VITAL,DIASTOLIC,NO,,,NUMBER(4),,NO,MMHG,,,"Diastolic blood pressure (in mmHg). Only populated if measure was taken on this date. If missing, leave blank."
+VITAL,SYSTOLIC,NO,,,NUMBER(4),,NO,MMHG,,,"Systolic blood pressure (in mmHg). Only populated if measure was taken on this date. If missing, leave blank."
+VITAL,ORIGINAL_BMI,NO,,,NUMBER(8),,NO,,,,"BMI if calculated in the source system.
+
+Important: Please do not calculate BMI during CDM implementation. This field should only reflect originating source system calculations, if height and weight are not stored in the source."
+VITAL,BP_POSITION,NO,,,TEXT(2),,NO,,01;02;03;NI;UN;OT,"01 = Sitting
+02 = Standing
+03 = Supine
+NI = No information
+UN = Unknown
+OT = Other",Position for orthostatic blood pressure. Leave blank if blood pressure was not measured.
+VITAL,RAW_VITAL_SOURCE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+VITAL,RAW_DIASTOLIC,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM."
+VITAL,RAW_SYSTOLIC,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM."
+VITAL,RAW_BP_POSITION,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
