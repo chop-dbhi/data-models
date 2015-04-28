@@ -1,0 +1,9 @@
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
+location,address_1,No,,,varchar,,Optional - Do not transmit to DCC
+location,address_2,No,,,varchar,,Optional - Do not transmit to DCC
+location,city,No,,,varchar,,Optional - Do not transmit to DCC
+location,county,No,,,varchar,,Optional - Do not transmit to DCC
+location,location_id,Yes,,,integer,,A unique identifier for each geographic location.
+location,location_source_value,No,,,varchar,,The verbatim information that is used to uniquely identify the location as it appears in the source data. 
+location,state,No,,,varchar,,The state field as it appears in the source data.
+location,zip,No,,,varchar,,"The zip code. For US addresses, valid zip codes can be 3, 5 or 9 digits long, depending on the source data."
