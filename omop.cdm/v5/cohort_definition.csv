@@ -1,8 +1,8 @@
 Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
-,cohort_definition_description,No,,,clob,,A complete description of the cohort definition.
+cohort_definition,cohort_definition_description,No,,,clob,,A complete description of the cohort definition.
 cohort_definition,cohort_definition_id,Yes,,,integer,,A unique identifier for each cohort. 
-,cohort_definition_name,Yes,,,varchar(255),,A short description of the cohort. 
-,cohort_definition_syntax,No,,,clob,,Syntax to operationalize the cohort definition.
-,cohort_instantiation_date,No,,,date,,A date to indicate when the cohort was instantiated in the COHORT table.
-,definition_type_concept_id,Yes,concept,concept_id,integer,,Type to define what kind of cohort definition the record represents and how the syntax may be executed.
-,subject_concept_id,Yes,concept,concept_id,integer,,"A foreign key to the concept to which defines the domain of subjects that are members of the cohort (e.g., person, provider, visit). "
+cohort_definition,cohort_definition_name,Yes,,,varchar(255),,A short description of the cohort. 
+cohort_definition,cohort_definition_syntax,No,,,clob,,Syntax to operationalize the cohort definition.
+cohort_definition,cohort_instantiation_date,No,,,date,,A date to indicate when the cohort was instantiated in the COHORT table.
+cohort_definition,definition_type_concept_id,Yes,concept,concept_id,integer,,Type to define what kind of cohort definition the record represents and how the syntax may be executed.
+cohort_definition,subject_concept_id,Yes,concept,concept_id,integer,,"A foreign key to the concept to which defines the domain of subjects that are members of the cohort (e.g., person, provider, visit). "
