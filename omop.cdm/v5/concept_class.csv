@@ -1,0 +1,4 @@
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
+concept_class,concept_class_concept_id,Yes,concept,concept_id,integer,,A foreign key that refers to a standard concept identifier in the Standardized Vocabularies for the Class the record belongs to. 
+concept_class,concept_class_id,Yes,,,varchar(20),,A unique key for each class. 
+concept_class,concept_class_name,Yes,,,varchar(255),,"The name describing the Concept Class, e.g. ""Clinical Finding"", ""Ingredient"", etc. "

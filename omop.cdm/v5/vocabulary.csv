@@ -1,0 +1,6 @@
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
+vocabulary,vocabulary_concept_id,Yes,concept,concept_id,integer,,A foreign key that refers to a standard concept identifier in the Standardized Vocabularies for the vocabulary the Vocabulary record belongs to. 
+vocabulary,vocabulary_id,Yes,,,varchar(20),,A unique identifier for each vocabulary. 
+vocabulary,vocabulary_name,Yes,,,varchar(255),,"The name describing the vocabulary, for example ""SNOMED-CT"", ""ICD-9"", ""Visit"", etc. "
+vocabulary,vocabulary_reference,Yes,,,varchar(255),,"The name describing the vocabulary, for example ""SNOMED-CT"", ""ICD-9"", ""Visit"", etc. "
+vocabulary,vocabulary_version,Yes,,,varchar(255),,External reference to documentation or available download of the about the vocabulary.

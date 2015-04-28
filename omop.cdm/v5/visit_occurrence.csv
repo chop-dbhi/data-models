@@ -1,0 +1,13 @@
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
+visit_occurrence,care_site_id,No,care_site,care_site_id,integer,,A foreign key to the care site in the care site table that was visited. 
+visit_occurrence,person_id,Yes,person,person_id,integer,,A foreign key identifier to the person for whom the visit is recorded. The demographic details of that person are stored in the person table. 
+visit_occurrence,provider_id,No,provider,provider_id,integer,,A foreign key to the provider in the provider table who was associated with the visit. 
+visit_occurrence,visit_concept_id,Yes,concept,concept_id,integer,,A foreign key that refers to a visit concept identifier in the Standardized Vocabularies. 
+visit_occurrence,visit_end_date,Yes,,,date,,The end date of the visit. If this is a one-day visit the end date should match the start date. 
+visit_occurrence,visit_end_time,No,,,time,,The time the visit ended. 
+visit_occurrence,visit_occurrence_id,Yes,,,integer,,A system-generated unique identifier for each person's visit or encounter at a healthcare provider. 
+visit_occurrence,visit_source_concept_id,No,concept,concept_id,integer,,A foreign key to a concept that refers to the code used in the source. 
+visit_occurrence,visit_source_value,No,,,varchar(50),,The source code used to reflect the type or source of the visit in the source data.
+visit_occurrence,visit_start_date,Yes,,,date,,The start date of the visit.
+visit_occurrence,visit_start_time,No,,,time,,The time the visit started. 
+visit_occurrence,visit_type_concept_id,Yes,concept,concept_id,integer,,A foreign key to the predefined concept identifier in the Standardized Vocabularies reflecting the type of source data from which the visit record is derived. 

@@ -1,0 +1,8 @@
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
+cohort_attribute,attribute_definition_id,Yes,attribute_definition,attribute_definition_id,integer,,A foreign key to a record in the ATTRIBUTE_DEFINITION table containing relevant attribute definition information. 
+cohort_attribute,cohort_definition_id,Yes,,,integer,,A foreign key to a record in the COHORT_DEFINITION table containing relevant Cohort definition information. 
+cohort_attribute,cohort_end_date,Yes,,,date,,"The date when the cohort definition criteria for the person, provider or visit no longer match or the cohort membership was terminated. "
+cohort_attribute,cohort_start_date,Yes,,,date,,"The date when the cohort definition criteria for the person, provider or visit first match. "
+cohort_attribute,subject_id,Yes,"person, provider, visit_occurrence","person_id, provider_id, visit_occurrence_id",integer,,"A foreign key to the subject in the cohort. These could be referring to records in the PERSON, PROVIDER, or VISIT_OCCURRENCE table. "
+cohort_attribute,value_as_concept_id,No,concept,concept_id,integer,,The attribute result stored as a concept id. This is applicable to attributes where the result is expressed as a categorical value. 
+cohort_attribute,value_as_number,No,,,float,,"The attribute result stored as a number. This is applicable to attributes where the result is expressed as a numeric value, such as calculated entities (e.g. age, BMI) or composite scales (e.g. Charlson index). "

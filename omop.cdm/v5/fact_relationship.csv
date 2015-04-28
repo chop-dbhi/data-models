@@ -1,0 +1,6 @@
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
+fact_relationship,domain_concept_id,Yes,concept,concept_id,integer,,"The concept representing the domain of fact one, from which the corresponding table can be inferred. "
+fact_relationship,domain_concept_id,Yes,concept,concept_id,integer,,"The concept representing the domain of fact two, from which the corresponding table can be inferred. "
+fact_relationship,fact_id_1,Yes,,,integer,,The unique identifier in the table corresponding to the domain of fact one. 
+fact_relationship,fact_id_2,Yes,,,integer,,The unique identifier in the table corresponding to the domain of fact two. 
+fact_relationship,relationship_concept_id,Yes,concept,concept_id,integer,,A foreign key to a standard concept identifier of relationship in the Standardized Vocabularies. 
