@@ -1,26 +1,26 @@
 Table,Description
-person,Demographic information about a Person
-drug_exposure,Association between a Person and a Drug at a specific time
-drug_era,Association between a Person and a Drug over a specific time period
-condition_occurrence,A diagnosis or condition that has been recorded about a person at a certain time
-condition_era,A Condition Era is defined as a span of time when the Person is assumed to have a given condition.
-observation_period,"Time intervals during which health care information, such as drugs, conditions, and other clinical observations, may be available "
-observation,"Observations are clinical facts, such as laboratory tests, signs/symptoms, which are not captured within other CDM tables"
-procedure_occurrence,Procedures carried out on the Person
-visit_occurrence,Visits for health care services of the Person
-death,Time and cause of death of the Person
-drug_cost,For each Drug Exposure record additional information about cost and payments
-procedure_cost,For each Procedure additional information about cost and payments
-location,"Physical addresses of patients, organizations and care sites "
-provider,Information about health care providers
-organization,Information about health care organizations
-care_site,Information about the site of care
-payer_plan_period,Information about the coverage plan of the person
+care_site,Information about the site of care 
 cohort,"Person, Provider or Visit cohorts "
 concept,"Contains all Concepts across domains, including the name (description), their source (called Concept Type), their identifier in the source (called Source Code), their level in the hierarchy and their class. "
-concept_synonym,Contains any number of synonymous names (descriptions) for the Concepts.
-concept_relationship,Contains the Relationship between any two Concepts and the type of the Relationship.
 concept_ancestor,"Contains the ancestry relationship of Concepts that have one or several hierarchical Relationships among them for fast lookup of hierarchical tree information, such as drug classes. "
+concept_relationship,Contains the Relationship between any two Concepts and the type of the Relationship. 
+concept_synonym,Contains any number of synonymous names (descriptions) for the Concepts. 
+condition_era,A Condition Era is defined as a span of time when the Person is assumed to have a given condition. 
+condition_occurrence,A diagnosis or condition that has been recorded about a person at a certain time 
+death,Time and cause of death of the Person 
+drug_cost,For each Drug Exposure record additional information about cost and payments 
+drug_era,Association between a Person and a Drug over a specific time period 
+drug_exposure,Association between a Person and a Drug at a specific time 
+location,"Physical addresses of patients, organizations and care sites "
+observation,"Observations are clinical facts, such as laboratory tests, signs/symptoms, which are not captured within other CDM tables"
+observation_period,"Time intervals during which health care information, such as drugs, conditions, and other clinical observations, may be available "
+organization,Information about health care organizations 
+payer_plan_period,Information about the coverage plan of the person 
+person,Demographic information about a Person 
+procedure_cost,For each Procedure additional information about cost and payments 
+procedure_occurrence,Procedures carried out on the Person
+provider,Information about health care providers 
+relationship,List of all types of Relationships in the Concept Relationship Table and their names (descriptions). 
+source_to_concept_map,Mapping between codes used in source data and Concepts in the Standard Vocabulary. 
+visit_occurrence,Visits for health care services of the Person
 vocabulary,"Contains a list of sources for the various Concepts. Many Concepts are derived from national or industry initiatives, such as the ICD diagnostic codes. Others are created by OMOP. "
-source_to_concept_map,Mapping between codes used in source data and Concepts in the Standard Vocabulary.
-relationship,List of all types of Relationships in the Concept Relationship Table and their names (descriptions).

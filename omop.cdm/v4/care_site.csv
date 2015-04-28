@@ -1,0 +1,7 @@
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
+care_site,care_site_id,Yes,,,integer,,A system-generated unique identifier for each care site. A care site is the place where the provider delivered the healthcare to the person. 
+care_site,care_site_source_value,No,,,string(50),,"The identifier for the care site as it appears in the source data, stored here for reference. "
+care_site,location_id,No,location,location_id,integer,,"A foreign key to the geographic location in the location table, where the detailed address information is stored. "
+care_site,organization_id,No,organization,organization_id,integer,,"A foreign key to the organization in the organization table, where the detailed information is stored. "
+care_site,place_of_service_concept_id,No,concept,concept_id,integer,CMS,A foreign key to the predefined concept identifier in the vocabulary reflecting the place of service. 
+care_site,place_of_service_source_value,No,,,string(50),,"The source code for the place of service as it appears in the source data, stored here for reference. "

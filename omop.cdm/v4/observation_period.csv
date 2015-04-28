@@ -1,0 +1,5 @@
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
+observation_period,observation_period_end_date,Yes,,,date,,The end date of the observation period for which data are available from the data source. 
+observation_period,observation_period_id,Yes,,,integer,,A system-generated unique identifier for each observation period. 
+observation_period,observation_period_start_date,Yes,,,date,,The start date of the observation period for which data are available from the data source. 
+observation_period,person_id,Yes,person,person_id,integer,,A foreign key identifier to the person for whom the observation period is defined. The demographic details of that person are stored in the person table. 

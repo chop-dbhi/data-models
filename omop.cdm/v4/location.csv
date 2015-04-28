@@ -1,0 +1,9 @@
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
+location,address_1,No,,,string(50),,"The address field 1, typically used for the street address, as it appears in the source data. "
+location,address_2,No,,,string(50),,"The address field 2, typically used for additional detail such as buildings, suites, floors, as it appears in the source data. "
+location,city,No,,,string(50),,The city field as it appears in the source data. 
+location,county,No,,,string(20),,The county. The county information is necessary because not all zip codes fall into one and the same county. 
+location,location_id,Yes,,,integer,,A system-generated unique identifier for each geographic location. 
+location,location_source_value,No,,,string(50),,The verbatim information that is used to uniquely identify the location as it appears in the source data. 
+location,state,No,,,string(2),,The state field as it appears in the source data. 
+location,zip,No,,,string(9),,"The zip code. For US addresses, valid zip codes can be 3, 5 or 9 digits long, depending on the source data. "

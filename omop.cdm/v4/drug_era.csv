@@ -1,0 +1,8 @@
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
+drug_era,drug_concept_id,Yes,concept,concept_id,integer,RxNorm,A foreign key that refers to a standard concept identifier in the vocabulary for the drug concept. 
+drug_era,drug_era_end_date,Yes,,,date,,The end date for the drug era constructed from the individual instance of drug exposures. It is the end date of the final continuously recorded instance of utilization of a drug. 
+drug_era,drug_era_id,Yes,,,integer,,A system-generated unique identifier for each drug era. 
+drug_era,drug_era_start_date,Yes,,,date,,The start date for the drug era constructed from the individual instances of drug exposures. It is the start date of the very first chronologically recorded instance of utilization of a drug. 
+drug_era,drug_exposure_count,No,,,number(4),,The number of individual drug exposure occurrences used to construct the drug era. 
+drug_era,drug_type_concept_id,Yes,concept,concept_id,integer,OMOP,A foreign key to the predefined concept identifier in the vocabulary reflecting the parameters used to construct the drug era. 
+drug_era,person_id,Yes,person,person_id,integer,,A foreign key identifier to the person who is subjected to the drug during the drug era. The demographic details of that person are stored in the person table. 

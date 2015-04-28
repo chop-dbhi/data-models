@@ -1,0 +1,11 @@
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
+source_to_concept_map,invalid_reason,No,,,string(1),,"Reason the mapping instance was invalidated. Possible values are D (deleted), U (replaced with an update) or NULL when valid_end_date has the default value. "
+source_to_concept_map,mapping_type,No,,,string(20),,"A string identifying the observational data element being translated. Examples include ‘DRUG’, ‘CONDITION’, ‘PROCEDURE’, ‘PROCEDURE DRUG’ etc. It is important to pick the appropriate mapping record when the same source code is being mapped to different concepts in different contexts. As an example a procedure code for drug administration can be mapped to a procedure concept or a drug concept or both. "
+source_to_concept_map,primary_map,No,,,string(1),,"A boolean value identifying the primary mapping relationship for those sets where the source_code, the source_vocabulary_id and the mapping type is identical (one-to-many mappings). The ETL will only consider the primary map. Permitted values are Y and NULL. "
+source_to_concept_map,source_code,Yes,,,string(20),,The source code being translated into a standard concept. 
+source_to_concept_map,source_code_description,No,,,string(256),,An optional description for the source code. This is included as a convenience to compare the description of the source code to the name of the concept. 
+source_to_concept_map,source_vocabulary_id,Yes,vocabulary,vocabulary_id,integer,,A foreign key to the vocabulary table defining the vocabulary of the source code that is being mapped to the standard vocabulary. 
+source_to_concept_map,target_concept_id,Yes,concept,concept_id,integer,,A foreign key to the concept to which the source code is being mapped. 
+source_to_concept_map,target_vocabulary_id,Yes,vocabulary,vocabulary_id,integer,,A foreign key to the vocabulary table defining the vocabulary of the target concept. 
+source_to_concept_map,valid_end_date,Yes,,,date,,The date when the mapping instance became invalid because it was deleted or superseded (updated) by a new relationship. Default value is 31-Dec-2099. 
+source_to_concept_map,valid_start_date,Yes,,,date,,The date when the mapping instance was first recorded. 

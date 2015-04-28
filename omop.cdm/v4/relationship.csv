@@ -1,0 +1,5 @@
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
+relationship,defines_ancestry,No,,,string(1),,Defines whether a hierarchical relationship contributes to the concept_ancestor table. These are subsets of the hierarchical relationships. Valid values are Y or NULL. 
+relationship,is_hierarchical,No,,,string(1),,Defines whether a relationship defines concepts into classes or hierarchies. Values are Y for hierarchical relationship or NULL if not. 
+relationship,relationship_id,Yes,,,integer,,The type of relationship captured by the relationship record. 
+relationship,relationship_name,Yes,,,string(256),,The text that describes the relationship type. 
