@@ -1,4 +1,4 @@
-Table,Field,Required,Ref Table,Ref Field,Type,Description
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Description
 person,care_site_id,Yes,care_site,care_site_id,integer,"A foreign key to the site of primary care in the care_site table, where the details of the care site are stored"
 person,day_of_birth,No,,,integer,"The day of the month of birth of the person. For data sources that provide the precise date of birth, the day is extracted and stored in this field."
 person,ethnicity_concept_id,No,concept,concept_id,integer,A foreign key that refers to the standard concept identifier in the Vocabulary for the ethnicity of the person.
