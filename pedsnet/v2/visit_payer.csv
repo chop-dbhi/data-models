@@ -1,0 +1,6 @@
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Description
+visit_payer,plan_class,Yes,,,varchar,"A list of the ""payment sources"" most often used in demographic analyses; proposed value would be Private/commercial, Medicaid/sCHIP, Medicare, Other public, Self-pay, Other/unknown"
+visit_payer,plan_name,Yes,,,varchar,The untransformed payer/plan name from the source data
+visit_payer,plan_type,No,,,varchar,"A standardized interpretation of the plan structure; proposed value set would be HMO, PPO, POS, Fee for service, Other/unknown"
+visit_payer,visit_occurrence_id,Yes,visit_occurrence,visit_occurrence_id,integer,A foreign key to the visit in the visit table where the payer was billed for the visit.
+visit_payer,visit_payer_id,Yes,,,integer,A system-generated unique identifier for each visit payer relationship.
