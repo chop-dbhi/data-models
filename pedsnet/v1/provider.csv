@@ -1,8 +1,8 @@
-Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
-provider,care_site_id,Yes,care_site,care_site_id,integer,,"A foreign key to the main care site where the provider is practicing. This field is required in PEDSnet, which is a deviation from OMOP CDM V4."
-provider,dea,No,,,varchar,,The Drug Enforcement Administration (DEA) number of the provider. Optional – Do not transmit to DCC.
-provider,npi,No,,,varchar,,The National Provider Identifier (NPI) of the provider. Optional – Do not transmit to DCC.
-provider,provider_id,Yes,,,integer,,A unique identifier for each provider. Each site must maintain a map from this value to the identifier used for the provider in the source data.
-provider,provider_source_value,Yes,,,varchar,,"The identifier used for the provider in the source data, stored here for reference. Sites should create a random ID, but keep the mapping."
-provider,specialty_concept_id,No,concept,concept_id,integer,CDC,A foreign key to a standard provider's specialty concept identifier in the Vocabulary. This is an optional field. PEDSnet has not yet defined an ETL convention for selecting one specialty code for providers who have multiple specialties.
-provider,specialty_source_value,No,,,varchar,,"The source code for the provider specialty as it appears in the source data, stored here for reference."
+Table,Field,Required,Ref Table,Ref Field,Type Precision,Description
+provider,care_site_id,Yes,care_site,care_site_id,integer,"A foreign key to the main care site where the provider is practicing. This field is required in PEDSnet, which is a deviation from OMOP CDM V4."
+provider,dea,No,,,varchar,The Drug Enforcement Administration (DEA) number of the provider. Optional – Do not transmit to DCC.
+provider,npi,No,,,varchar,The National Provider Identifier (NPI) of the provider. Optional – Do not transmit to DCC.
+provider,provider_id,Yes,,,integer,A unique identifier for each provider. Each site must maintain a map from this value to the identifier used for the provider in the source data.
+provider,provider_source_value,Yes,,,varchar,"The identifier used for the provider in the source data, stored here for reference. Sites should create a random ID, but keep the mapping."
+provider,specialty_concept_id,No,concept,concept_id,integer,A foreign key to a standard provider's specialty concept identifier in the Vocabulary. This is an optional field. PEDSnet has not yet defined an ETL convention for selecting one specialty code for providers who have multiple specialties.
+provider,specialty_source_value,No,,,varchar,"The source code for the provider specialty as it appears in the source data, stored here for reference."
