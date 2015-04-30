@@ -2,11 +2,14 @@ Table,Description
 care_site,Information about the site of care 
 condition_occurrence,A diagnosis or condition that has been recorded about a person at a certain time 
 death,Time and cause of death of the Person 
+drug_exposure,The drug exposure domain captures any biochemical substance that is introduced in any way to a patient.
+fact_relationship,"The fact relationship domain contains details of the relationships between facts within one domain or across two domains, and the nature of the relationship."
 location,"Physical addresses of patients, organizations and care sites "
+measurement,The measurement domain captures measurement orders and measurement results. The measurement domain can contain laboratory results and vital signs.
 observation,"Observations are clinical facts, such as laboratory tests, signs/symptoms, which are not captured within other CDM tables"
 observation_period,"Time intervals during which health care information, such as drugs, conditions, and other clinical observations, may be available "
-organization,Information about health care organizations 
 person,Demographic information about a Person 
 procedure_occurrence,Procedures carried out on the Person
 provider,Information about health care providers 
 visit_occurrence,Visits for health care services of the Person
+visit_payer,The visit payer table documents insurance information as it relates to a visit in visit_occurrence. For this reason the key of this table will be visit_occurrence_id and visit_payer_id.
