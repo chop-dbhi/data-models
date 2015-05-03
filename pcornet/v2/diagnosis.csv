@@ -1,0 +1,51 @@
+TABLE_NAME,FIELD_NAME,REQUIRED,REF_TABLE,REF_FIELD,DATA_TYPE,DATA_FORMAT,REPLICATED,UNIT_OF_MEASURE,VALUE_SET,VALUE_DESCRIPTION,DEFINITION
+DIAGNOSIS,ADMIT_DATE,NO,,,TEXT(10),YYYY-MM-DD,YES,DATE,,,Please note: This is a field replicated from the ENCOUNTER table. See the ENCOUNTER table for definitions. 
+DIAGNOSIS,DX,YES,,,TEXT(18),,NO,,,,"Diagnosis code. 
+
+Leading zeroes and different levels of decimal precision are permissible in this field. Please populate the exact textual value of this diagnosis code, but remove source-specific suffixes and prefixes. Other codes should be listed as recorded in the source data."
+DIAGNOSIS,DX_SOURCE,YES,,,TEXT(2),,NO,,AD;DI;FI;IN;NI;UN;OT,"AD = Admitting
+DI = Discharge
+FI = Final
+IN = Interim
+NI = No information
+UN = Unknown
+OT = Other","Classification of diagnosis source. We include these categories to allow some flexibility in implementation. The context is to capture available diagnoses recorded during a specific encounter. It is not necessary to populate interim diagnoses unless readily available.
+
+Ambulatory encounters would generally be expected to have a source of “Final.”"
+DIAGNOSIS,DX_TYPE,YES,,,TEXT(2),,NO,,09;10;11;SM;NI;UN;OT,"09 = ICD-9-CM
+10 = ICD-10-CM
+11 = ICD-11-CM
+SM = SNOMED CT
+NI = No information
+UN = Unknown
+OT = Other","Diagnosis code type. 
+
+We provide values for ICD and SNOMED code types. Other code types will be added as new terminologies are more widely used.
+
+Please note: The “Other” category is meant to identify internal use ontologies and codes."
+DIAGNOSIS,ENC_TYPE,NO,,,TEXT(2),,YES,,AV;ED;EI;IP;IS;OA;NI;UN;OT,"AV = Ambulatory Visit
+ED = Emergency Department
+EI=Emergency Department Admit to Inpatient Hospital Stay (permissible substitution)
+IP = Inpatient Hospital Stay
+IS = Non-Acute Institutional Stay
+OA = Other Ambulatory Visit
+NI = No information
+UN = Unknown
+OT = Other",Please note: This is a field replicated from the ENCOUNTER table. See the ENCOUNTER table for definitions. 
+DIAGNOSIS,ENCOUNTERID,YES,ENCOUNTER,ENCOUNTERID,TEXT(x),,NO,,,,Arbitrary encounter-level identifier. Used to link across tables.
+DIAGNOSIS,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+DIAGNOSIS,PDX,NO,,,TEXT(2),,NO,,P;S;X;NI;UN;OT,"P = Principal
+S = Secondary
+X = Unable to Classify
+NI = No information
+UN = Unknown
+OT = Other","Principal discharge diagnosis flag. Relevant only on IP and IS encounters. 
+
+For ED, AV, and OA encounter types, mark as X = Unable to Classify. (Billing systems do not require a primary diagnosis for ambulatory visits (eg, professional services))
+
+One principal diagnosis is expected, although in some instances more than one diagnosis may be flagged as principal."
+DIAGNOSIS,PROVIDERID,NO,,,TEXT(x),,YES,,,,Please note: This is a field replicated from the ENCOUNTER table. See the ENCOUNTER table for definitions. 
+DIAGNOSIS,RAW_DX,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DIAGNOSIS,RAW_DX_SOURCE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DIAGNOSIS,RAW_DX_TYPE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+DIAGNOSIS,RAW_PDX,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
