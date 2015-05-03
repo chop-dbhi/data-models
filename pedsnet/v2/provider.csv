@@ -10,3 +10,4 @@ provider,provider_source_value,Yes,,,varchar,"The identifier used for the provid
 provider,specialty_concept_id,No,concept,concept_id,integer,A foreign key to a standard provider's specialty concept identifier in the Vocabulary. This is an optional field. PEDSnet has not yet defined an ETL convention for selecting one specialty code for providers who have multiple specialties.
 provider,specialty_source_concept_id,No,concept,concept_id,integer,A foreign key to a concept that refers to the code used in the source
 provider,specialty_source_value,No,,,varchar,"The source code for the provider specialty as it appears in the source data, stored here for reference."
+provider,year_of_birth,No,,,integer,The year of birth of the provider
