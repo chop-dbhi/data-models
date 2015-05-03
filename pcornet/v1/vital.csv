@@ -1,0 +1,27 @@
+TABLE_NAME,FIELD_NAME,REQUIRED,REF_TABLE,REF_FIELD,DATA_TYPE,DATA_FORMAT,REPLICATED,UNIT_OF_MEASURE,VALUE_SET,VALUE_DESCRIPTION,DEFINITION
+VITAL,BP_POSITION,NO,,,TEXT(2),,NO,,01;02;03;NI;UN;OT,"01 = Sitting
+02 = Standing
+03 = Supine
+NI = No information
+UN = Unknown
+OT = Other",Position for orthostatic blood pressure. Leave blank if blood pressure was not measured.
+VITAL,DIASTOLIC,NO,,,NUMBER(4),,NO,MMHG,,,"Diastolic blood pressure (in mmHg). Only populated if measure was taken on this date. If missing, leave blank."
+VITAL,ENCOUNTERID,NO,ENCOUNTER,ENCOUNTERID,TEXT(x),,NO,,,,Arbitrary encounter-level identifier. This is an optional relationship; the ENCOUNTERID should be present if the vitals were measured as part of healthcare delivery.
+VITAL,HT,NO,,,NUMBER(8),,NO,INCH,,,"Height (in inches) measured by standing. Only populated if measure was taken on this date. If missing, leave blank. Decimal precision is permissible."
+VITAL,MEASURE_DATE,NO,,,TEXT(10),YYYY-MM-DD,NO,DATE,,,Date of vitals measure.
+VITAL,MEASURE_TIME,NO,,,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,,Time of vitals measure.
+VITAL,ORIGINAL_BMI,NO,,,NUMBER(8),,NO,,,,"BMI if calculated in the source system.
+
+Important: Please do not calculate BMI during CDM implementation. This field should only reflect originating source system calculations, if height and weight are not stored in the source."
+VITAL,PATID,NO,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+VITAL,RAW_BP_POSITION,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+VITAL,RAW_DIASTOLIC,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM."
+VITAL,RAW_SYSTOLIC,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM."
+VITAL,RAW_VITAL_SOURCE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+VITAL,SYSTOLIC,NO,,,NUMBER(4),,NO,MMHG,,,"Systolic blood pressure (in mmHg). Only populated if measure was taken on this date. If missing, leave blank."
+VITAL,VITAL_SOURCE,NO,,,TEXT(2),,NO,,PR;HC;NI;UN;OT,"PR = Patient-reported
+HC = Healthcare delivery setting
+NI = No information
+UN = Unknown
+OT = Other",Please note: The “Patient-reported” category can include reporting by patient’s family or guardian.
+VITAL,WT,NO,,,NUMBER(8),,NO,POUND,,,"Weight (in pounds). Only populated if measure was taken on this date. If missing, leave blank. Decimal precision is permissible."
