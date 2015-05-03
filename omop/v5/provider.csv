@@ -9,5 +9,6 @@ provider,provider_id,Yes,,,integer,,A system-generated unique identifier for eac
 provider,provider_name,No,,,varchar(50),,A description of the provider 
 provider,provider_source_value,Yes,,,varchar(50),,"The identifier used for the provider in the source data, stored here for reference. "
 provider,specialty_concept_id,No,concept,concept_id,integer,CDC,A foreign key to a standard provider's specialty concept identifier in the vocabulary. 
+provider,specialty_source_concept_id,No,concept,concept_id,integer,,A foreign key to a concept that refers to the code used in the source. 
 provider,specialty_source_value,No,,,varchar(50),,"The source code for the provider specialty as it appears in the source data, stored here for reference. "
 provider,year_of_birth,No,,,integer,,

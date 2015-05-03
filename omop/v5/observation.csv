@@ -1,5 +1,4 @@
 Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
-observation,associated_provider_id,No,provider,provider_id,integer,,A foreign key to the provider in the provider table who was responsible for making the observation. 
 observation,observation_concept_id,Yes,concept,concept_id,integer,LOINC SNOMED,A foreign key to the standard observation concept identifier in the vocabulary. 
 observation,observation_date,Yes,,,date,,The date of the observation. 
 observation,observation_id,Yes,,,integer,,A system-generated unique identifier for each observation. 
@@ -11,9 +10,6 @@ observation,person_id,Yes,person,person_id,integer,,A foreign key identifier to 
 observation,provider_id,No,provider,provider_id,integer,,A foreign key to the provider in the provider table who was responsible for making the observation. 
 observation,qualifier_concept_id,No,concept,concept_id,integer,,"A foreign key to a standard concept identifier for a qualifier (e.g., severity of drug-drug interaction alert) "
 observation,qualifier_source_value,No,,,varchar(50),,The source value associated with a qualifier to characterize the observation 
-observation,range_high,No,,,float,,"The upper limit of the normal range of the observation. It is not applicable if the observation results are non- numeric or categorical, and must be in the same units of measure as the observation value. "
-observation,range_low,No,,,float,,"The lower limit of the normal range of the observation. It is not applicable if the observation results are non- numeric or categorical, and must be in the same units of measure as the observation value. "
-observation,relevant_condition_concept_id,No,concept,concept_id,integer,SNOMED,"A foreign key to the predefined concept identifier in the vocabulary reflecting the condition that was associated with the observation. Note that this is not a direct reference to a specific condition record in the condition table, but rather a condition concept in the vocabulary. "
 observation,unit_concept_id,No,concept,concept_id,integer,UCUM,A foreign key to a standard concept identifier of measurement units in the vocabulary. 
 observation,unit_source_value,No,,,varchar(50),,"The source code for the unit as it appears in the source data. This code is mapped to a standard unit concept in the vocabulary and the original code is, stored here for reference. "
 observation,value_as_concept_id,No,concept,concept_id,integer,,"A foreign key to an observation result stored as a concept identifier. This is applicable to observations where the result can be expressed as a standard concept from the vocabulary (e.g., positive/negative, present/absent, low/high, etc.). "

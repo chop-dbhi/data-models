@@ -1,5 +1,4 @@
 Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
-condition_occurrence,associated_provider_id,No,provider,provider_id,integer,,A foreign key to the provider in the provider table who was responsible for determining (diagnosing) the condition. 
 condition_occurrence,condition_concept_id,Yes,concept,concept_id,integer,SNOMED,A foreign key that refers to a standard condition concept identifier in the vocabulary. 
 condition_occurrence,condition_end_date,No,,,date,,The date when the instance of the condition is considered to have ended. This is not typically recorded. 
 condition_occurrence,condition_occurrence_id,Yes,,,integer,,A system-generated unique identifier for each condition occurrence event. 

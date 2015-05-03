@@ -12,7 +12,6 @@ drug_exposure,drug_type_concept_id,Yes,concept,concept_id,integer,OMOP,"A foreig
 drug_exposure,effective_drug_dose,No,,,float,,Numerical value of drug dose for this drug_exposure record. 
 drug_exposure,lot_number,No,,,varchar(50),,An identifier to determine where the product originated 
 drug_exposure,person_id,Yes,person,person_id,integer,,A foreign key identifier to the person who is subjected to the drug. The demographic details of that person are stored in the person table. 
-drug_exposure,prescribing_provider_id,No,provider,provider_id,integer,,A foreign key to the provider in the provider table who initiated (prescribed) the drug exposure. 
 drug_exposure,provider_id,No,provider,provider_id,integer,,A foreign key to the provider in the provider table who initiated (prescribed) the drug exposure. 
 drug_exposure,quantity,No,,,float,,The quantity of drug as recorded in the original prescription or dispensing record. 
 drug_exposure,refills,No,,,integer,,"The number of refills after the initial prescription. The initial prescription is not counted, values start with 0. "
