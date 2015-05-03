@@ -1,6 +1,6 @@
 Table
 concept_dimension
-patient_dimension
-visit_dimension
-provider_dimension
 observation_fact
+patient_dimension
+provider_dimension
+visit_dimension

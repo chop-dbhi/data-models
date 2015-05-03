@@ -1,0 +1,10 @@
+Table,Field,Required,Ref Table,Ref Field,Type
+provider_dimension,download_date,No,,,timestamp
+provider_dimension,import_date,No,,,timestamp
+provider_dimension,name_char,No,,,text(850)
+provider_dimension,provider_blob,No,,,text(x)
+provider_dimension,provider_id,Yes,,,text(50)
+provider_dimension,provider_path,Yes,,,text(700)
+provider_dimension,sourcesystem_cd,No,,,text(50)
+provider_dimension,update_date,No,,,timestamp
+provider_dimension,upload_id,No,,,number(38)

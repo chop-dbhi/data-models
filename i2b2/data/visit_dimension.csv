@@ -1,0 +1,16 @@
+Table,Field,Required,Ref Table,Ref Field,Type
+visit_dimension,active_status_cd,No,,,text(50)
+visit_dimension,download_date,No,,,timestamp
+visit_dimension,encounter_num,Yes,,,number(38)
+visit_dimension,end_date,No,,,timestamp
+visit_dimension,import_date,No,,,timestamp
+visit_dimension,inout_cd,No,,,text(50)
+visit_dimension,length_of_stay,No,,,number(38)
+visit_dimension,location_cd,No,,,text(50)
+visit_dimension,location_path,No,,,text(900)
+visit_dimension,patient_num,Yes,patient_dimension,patient_num,number(38)
+visit_dimension,sourcesystem_cd,No,,,text(50)
+visit_dimension,start_date,No,,,timestamp
+visit_dimension,update_date,No,,,timestamp
+visit_dimension,upload_id,No,,,number(38)
+visit_dimension,visit_blob,No,,,text(x)

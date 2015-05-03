@@ -1,0 +1,23 @@
+Table,Field,Required,Ref Table,Ref Field,Type
+observation_fact,concept_cd,Yes,concept_dimension,concept_cd,text(50)
+observation_fact,confidence_num,No,,,"number(18,5)"
+observation_fact,download_date,No,,,timestamp
+observation_fact,encounter_num,Yes,visit_dimension,encounter_num,number(38)
+observation_fact,end_date,No,,,timestamp
+observation_fact,import_date,No,,,timestamp
+observation_fact,instance_num,Yes,,,number(18)
+observation_fact,location_cd,No,,,text(50)
+observation_fact,modifier_cd,Yes,,,text(100)
+observation_fact,nval_num,No,,,"number(18,5)"
+observation_fact,observation_blob,No,,,text(x)
+observation_fact,patient_num,Yes,patient_dimension,patient_num,number(38)
+observation_fact,provider_id,Yes,provider_dimension,provider_id,text(50)
+observation_fact,quantity_num,No,,,"number(18,5)"
+observation_fact,sourcesystem_cd,No,,,text(50)
+observation_fact,start_date,Yes,,,timestamp
+observation_fact,tval_char,No,,,text(255)
+observation_fact,units_cd,No,,,text(50)
+observation_fact,update_date,No,,,timestamp
+observation_fact,upload_id,No,,,number(38)
+observation_fact,valtype_cd,No,,,text(50)
+observation_fact,valueflag_cd,No,,,text(50)

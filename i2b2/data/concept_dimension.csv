@@ -1,0 +1,10 @@
+Table,Field,Required,Ref Table,Ref Field,Type
+concept_dimension,concept_blob,No,,,text(x)
+concept_dimension,concept_cd,No,,,text(50)
+concept_dimension,concept_path,Yes,,,text(700)
+concept_dimension,download_date,No,,,timestamp
+concept_dimension,import_date,No,,,timestamp
+concept_dimension,name_char,No,,,text(2000)
+concept_dimension,sourcesystem_cd,No,,,text(50)
+concept_dimension,update_date,No,,,timestamp
+concept_dimension,upload_id,No,,,number(38)
