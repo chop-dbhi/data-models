@@ -70,7 +70,7 @@ For numeric results one of the following needs to be true:
 3) MODIFIER_HIGH contains LT or LE and MODIFIER_LOW contains NO (e.g. normal values are <=10 with no lower boundary)"
 LAB_RESULT_CM ,NORM_RANGE_HIGH,NO,,,TEXT(10),,NO,,,,"Upper bound of the normal range assigned by the laboratory. Value should only contain the value of the upper bound. The symbols >, <, >=, <= should be removed. For example, if the normal range for a test is >100 and <300, then ""300"" should be entered."
 LAB_RESULT_CM ,NORM_RANGE_LOW,NO,,,TEXT(10),,NO,,,,"Lower bound of the normal range assigned by the laboratory. Value should only contain the value of the lower bound. The symbols >, <, >=, <= should be removed. For example, if the normal range for a test is >100 and <300, then ""100"" should be entered."
-LAB_RESULT_CM ,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+LAB_RESULT_CM ,PATID,YES,DEMOGRAPHIC,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
 LAB_RESULT_CM ,PRIORITY,NO,,,TEXT(2),,NO,,E;R;S;NI;UN;OT,"E=Expedite
 R=Routine
 S=Stat

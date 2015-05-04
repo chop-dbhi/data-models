@@ -9,7 +9,7 @@ NI = No information
 UN = Unknown
 OT = Other",Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
 PROCEDURE,ENCOUNTERID,YES,ENCOUNTER,ENCOUNTERID,TEXT(x),,NO,,,,Arbitrary encounter-level identifier. Used to link across tables.
-PROCEDURE,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+PROCEDURE,PATID,YES,DEMOGRAPHIC,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
 PROCEDURE,PROVIDERID,NO,,,TEXT(x),,YES,,,,Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
 PROCEDURE,PX,YES,,,TEXT(11),,NO,,,,Procedure code.
 PROCEDURE,PX_TYPE,YES,,,TEXT(2),,NO,,09;10;11;C2;C3;C4;H3;HC;LC;ND;RE;NI;UN;OT,"09 = ICD-9-CM

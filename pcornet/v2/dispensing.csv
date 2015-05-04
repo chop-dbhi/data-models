@@ -12,5 +12,5 @@ DISPENSING,NDC,YES,,,TEXT(11),,NO,,,,"National Drug Code in the 11-digit, no-das
 Please expunge any place holders (such as dashes or extra digits).
 
 If needed, guidance on normalization for other forms of NDC can be found: http://www.nlm.nih.gov/research/umls/rxnorm/docs/2012/rxnorm_doco_full_2012-1.html (see section 6)"
-DISPENSING,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+DISPENSING,PATID,YES,DEMOGRAPHIC,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
 DISPENSING,RAW_NDC,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."

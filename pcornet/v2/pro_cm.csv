@@ -1,6 +1,6 @@
 TABLE_NAME,FIELD_NAME,REQUIRED,REF_TABLE,REF_FIELD,DATA_TYPE,DATA_FORMAT,REPLICATED,UNIT_OF_MEASURE,VALUE_SET,VALUE_DESCRIPTION,DEFINITION
 PRO_CM,ENCOUNTERID,NO,ENCOUNTER,ENCOUNTERID,TEXT(x),,NO,,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the item was collected as part of a healthcare encounter."
-PRO_CM,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier for the patient for whom the PRO response was captured. Used to link across tables.
+PRO_CM,PATID,YES,DEMOGRAPHIC,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier for the patient for whom the PRO response was captured. Used to link across tables.
 PRO_CM,PRO_CAT,NO,,,TEXT(2),,NO,,"Y;N;NI;UN;OT
 ","Y=Yes
 N=No

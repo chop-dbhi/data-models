@@ -22,4 +22,4 @@ ENROLLMENT,ENR_END_DATE,NO,,,TEXT(10),YYYY-MM-DD,NO,DATE,,,"Date of the end of t
 ENROLLMENT,ENR_START_DATE,YES,,,TEXT(10),YYYY-MM-DD,NO,DATE,,,"Date of the beginning of the enrollment period. If the exact date is unknown, use the first day of the month.
 
 For implementation of the CDM, a long span of longitudinal data is desirable; however, especially for historical data more than a decade old, the appropriate beginning date should be determined by the partner’s knowledge of the validity and usability of the data. More specific guidance can be provided through implementation discussions."
-ENROLLMENT,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier used to link across tables.
+ENROLLMENT,PATID,YES,DEMOGRAPHIC,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier used to link across tables.

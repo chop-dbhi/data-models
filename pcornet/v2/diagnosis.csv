@@ -33,7 +33,7 @@ NI = No information
 UN = Unknown
 OT = Other",Please note: This is a field replicated from the ENCOUNTER table. See the ENCOUNTER table for definitions. 
 DIAGNOSIS,ENCOUNTERID,YES,ENCOUNTER,ENCOUNTERID,TEXT(x),,NO,,,,Arbitrary encounter-level identifier. Used to link across tables.
-DIAGNOSIS,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+DIAGNOSIS,PATID,YES,DEMOGRAPHIC,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
 DIAGNOSIS,PDX,NO,,,TEXT(2),,NO,,P;S;X;NI;UN;OT,"P = Principal
 S = Secondary
 X = Unable to Classify

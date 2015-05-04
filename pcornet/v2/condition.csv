@@ -31,7 +31,7 @@ OT=Other","Condition code type.
 
 Please note: The “Other” category is meant to identify internal use ontologies and codes."
 CONDITION,ENCOUNTERID,NO,ENCOUNTER,ENCOUNTERID,TEXT(x),,NO,,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the item was collected as part of a healthcare encounter."
-CONDITION,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+CONDITION,PATID,YES,DEMOGRAPHIC,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
 CONDITION,RAW_CONDITION,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 CONDITION,RAW_CONDITION_SOURCE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 CONDITION,RAW_CONDITION_STATUS,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."

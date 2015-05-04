@@ -13,7 +13,7 @@ VITAL,MEASURE_TIME,NO,,,TEXT(5),HH:MI (24-hour clock and zero padding),NO,TIME,,
 VITAL,ORIGINAL_BMI,NO,,,NUMBER(8),,NO,,,,"BMI if calculated in the source system.
 
 Important: Please do not calculate BMI during CDM implementation. This field should only reflect originating source system calculations, if height and weight are not stored in the source."
-VITAL,PATID,NO,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+VITAL,PATID,NO,DEMOGRAPHIC,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier. Used to link across tables.
 VITAL,RAW_BP_POSITION,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 VITAL,RAW_DIASTOLIC,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM."
 VITAL,RAW_SYSTOLIC,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM."

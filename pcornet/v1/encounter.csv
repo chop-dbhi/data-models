@@ -72,7 +72,7 @@ ENCOUNTER,FACILITY_LOCATION,NO,,,TEXT(3),,NO,,,,Geographic location (3 digit zip
 ENCOUNTER,FACILITYID,NO,,,TEXT(x),,NO,,,,"Arbitrary local facility code that identifies the hospital or clinic. Used for chart abstraction and validation.
 
 FACILITYID can be a true identifier, or a pseudoidentifier with a consistent crosswalk to the true identifier retained by the source Data Partner."
-ENCOUNTER,PATID,YES,PATIENT,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier used to link across tables.
+ENCOUNTER,PATID,YES,DEMOGRAPHIC,PATID,TEXT(x),,NO,,,,Arbitrary person-level identifier used to link across tables.
 ENCOUNTER,PROVIDERID,NO,,,TEXT(x),,NO,,,,"Provider code for the provider who is most responsible for this encounter. For encounters with multiple providers choose one so the encounter can be linked to the diagnosis and procedure tables. As with the PATID, the provider code is a pseudoidentifier with a consistent crosswalk to the real identifier."
 ENCOUNTER,RAW_ADMITTING_SOURCE,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 ENCOUNTER,RAW_DISCHARGE_DISPOSITION,NO,,,TEXT(x),,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
