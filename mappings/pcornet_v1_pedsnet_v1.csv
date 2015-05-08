@@ -1,74 +1,74 @@
 target_model,target_version,target_table,target_field,source_model,source_version,source_table,source_field,comment
-pcornet,v1,DEMOGRAPHIC,PATID,pedsnet,v1,person,person_id,
-pcornet,v1,DEMOGRAPHIC,BIRTH_DATE,pedsnet,v1,person,year_of_birth,
-pcornet,v1,DEMOGRAPHIC,BIRTH_DATE,pedsnet,v1,person,month_of_birth,
-pcornet,v1,DEMOGRAPHIC,BIRTH_DATE,pedsnet,v1,person,day_of_birth,
-pcornet,v1,DEMOGRAPHIC,SEX,pedsnet,v1,person,gender_concept_id,Maps to the concept_id values under the “Gender” concept class.
-pcornet,v1,DEMOGRAPHIC,HISPANIC,pedsnet,v1,person,ethnicity_concept_id,Limited to the concept_id values under the “Hispanic” concept class.
-pcornet,v1,DEMOGRAPHIC,RACE,pedsnet,v1,person,race_concept_id,Limited to the concept_id values under the “Race” concept class.
-pcornet,v1,DEMOGRAPHIC,BIOBANK_FLAG,pedsnet,v1,observation,value_as_concept_id,Explicitly maps to concept_id 4001345 in the “Biobank_flag” concept class.
-pcornet,v1,DEMOGRAPHIC,RAW_SEX,pedsnet,v1,person,gender_source_value,
-pcornet,v1,DEMOGRAPHIC,RAW_HISPANIC,pedsnet,v1,person,ethnicity_source_value,
-pcornet,v1,DEMOGRAPHIC,RAW_RACE,pedsnet,v1,person,race_source_value,
-pcornet,v1,ENCOUNTER,PATID,pedsnet,v1,visit_occurrence,person_id,
-pcornet,v1,ENCOUNTER,ENCOUNTERID,pedsnet,v1,visit_occurrence,visit_occurrence_id,
-pcornet,v1,ENCOUNTER,ADMIT_DATE,pedsnet,v1,visit_occurrence,visit_start_date,
-pcornet,v1,ENCOUNTER,ADMIT_TIME,pedsnet,v1,visit_occurrence,,
-pcornet,v1,ENCOUNTER,DISCHARGE_DATE,pedsnet,v1,visit_occurrence,visit_end_date,
-pcornet,v1,ENCOUNTER,DISCHARGE_TIME,pedsnet,v1,,,
-pcornet,v1,ENCOUNTER,PROVIDERID,pedsnet,v1,,,
-pcornet,v1,ENCOUNTER,FACILITY_LOCATION,pedsnet,v1,location,zip,
-pcornet,v1,ENCOUNTER,ENC_TYPE,pedsnet,v1,visit_occurrence,place_of_service_concept_id,Limited to concept_id values under the “Encounter Type” concept class.
-pcornet,v1,ENCOUNTER,FACILITY_ID,pedsnet,v1,visit_occurrence,care_site_id,
-pcornet,v1,ENCOUNTER,DISCHARGE_DISPOSITION,pedsnet,v1,observation,value_as_concept_id,Explicitly maps to concept_id 44813951 in the “Discharge Disposition” concept class.
-pcornet,v1,ENCOUNTER,DISCHARGE_STATUS,pedsnet,v1,observation,value_as_concept_id,Explicitly maps to concept_id 4137274 in the “Discharge Status” concept class.
-pcornet,v1,ENCOUNTER,DRG,pedsnet,v1,concept,concept_code,Explicitly maps to concept_id 3040646.
-pcornet,v1,ENCOUNTER,DRG_TYPE,pedsnet,v1,,,"Corresponds to the field DRG; ‘01’ if concept_class is ‘DRG’, else ‘02’"
-pcornet,v1,ENCOUNTER,ADMITTING_SOURCE,pedsnet,v1,observation,value_as_concept_id,Explicitly maps to concept_id 4145666 in the “Admitting Source” concept class.
-pcornet,v1,ENCOUNTER,RAW_ENC_TYPE,pedsnet,v1,visit_occurrence,place_of_service_concept_id,
-pcornet,v1,ENCOUNTER,RAW_DISCHARGE_DISPOSITION,pedsnet,v1,observation,value_as_concept_id,
-pcornet,v1,ENCOUNTER,RAW_DISCHARGE_STATUS,pedsnet,v1,observation,value_as_concept_id,
-pcornet,v1,ENCOUNTER,RAW_DRG_TYPE,pedsnet,v1,,,
-pcornet,v1,ENCOUNTER,RAW_ADMITTING_SOURCE,pedsnet,v1,observation,value_as_concept_id,
-pcornet,v1,ENROLLMENT,PATID,pedsnet,v1,observation_period,person_id,
-pcornet,v1,ENROLLMENT,ENR_START_DATE,pedsnet,v1,observation_period,observation_start_date,
-pcornet,v1,ENROLLMENT,ENR_END_DATE,pedsnet,v1,observation_period,observation_end_date,
-pcornet,v1,ENROLLMENT,CHART,pedsnet,v1,observation,value_as_concept_id,Explicitly maps to concept_id 4030450 in the “Chart Availability” concept class.
-pcornet,v1,ENROLLMENT,BASIS,pedsnet,v1,,,
-pcornet,v1,DIAGNOSIS,PATID,pedsnet,v1,condition_occurrence,person_id,
-pcornet,v1,DIAGNOSIS,ENCOUNTERID,pedsnet,v1,condition_occurrence,visit_occurrence_id,
-pcornet,v1,DIAGNOSIS,ENC_TYPE,pedsnet,v1,encounter,enc_type,
-pcornet,v1,DIAGNOSIS,ADMIT_DATE,pedsnet,v1,encounter,admit_date,
-pcornet,v1,DIAGNOSIS,PROVIDERID,pedsnet,v1,encounter,provider_id,
-pcornet,v1,DIAGNOSIS,DX,pedsnet,v1,condition_occurrence,condition_concept_id,
-pcornet,v1,DIAGNOSIS,DX_TYPE,pedsnet,v1,,,
-pcornet,v1,DIAGNOSIS,DX_SOURCE,pedsnet,v1,,,
-pcornet,v1,DIAGNOSIS,PDX,pedsnet,v1,,,
-pcornet,v1,DIAGNOSIS,RAW_DX,pedsnet,v1,,,
-pcornet,v1,DIAGNOSIS,RAW_DX_TYPE,pedsnet,v1,,,
-pcornet,v1,DIAGNOSIS,RAW_DX_SOURCE,pedsnet,v1,,,
-pcornet,v1,DIAGNOSIS,RAW_PDX,pedsnet,v1,,,
-pcornet,v1,PROCEDURE,PATID,pedsnet,v1,procedure_occurrence,person_id,
-pcornet,v1,PROCEDURE,ENCOUNTERID,pedsnet,v1,procedure_occurrence,visit_occurrence_id,
-pcornet,v1,PROCEDURE,ENC_TYPE,pedsnet,v1,encounter,enc_type,
-pcornet,v1,PROCEDURE,ADMIT_DATE,pedsnet,v1,encounter,admit_date,
-pcornet,v1,PROCEDURE,PROVIDERID,pedsnet,v1,encounter,provider_id,
-pcornet,v1,PROCEDURE,PX,pedsnet,v1,procedure_occurrence,procedure_concept_id,
-pcornet,v1,PROCEDURE,PX_TYPE,pedsnet,v1,,,
-pcornet,v1,PROCEDURE,RAW_PX,pedsnet,v1,,,
-pcornet,v1,PROCEDURE,RAW_PX_TYPE,pedsnet,v1,,,
-pcornet,v1,VITAL,PATID,pedsnet,v1,observation,person_id,
-pcornet,v1,VITAL,ENCOUNTERID,pedsnet,v1,observation,visit_occurrence_id,
-pcornet,v1,VITAL,MEASURE_DATE,pedsnet,v1,observation,observation_date,
-pcornet,v1,VITAL,MEASURE_TIME,pedsnet,v1,observation,observation_time,
-pcornet,v1,VITAL,VITAL_SOURCE,pedsnet,v1,,,
-pcornet,v1,VITAL,HT,pedsnet,v1,observation,value_as_number,Explicitly maps to concept_id 3036277.
-pcornet,v1,VITAL,WT,pedsnet,v1,observation,value_as_number,Explicitly maps to concept_id 3025315.
-pcornet,v1,VITAL,ORIGINAL_BMI,pedsnet,v1,observation,value_as_number,Explicitly maps to concept_id 3038553.
-pcornet,v1,VITAL,DIASTOLIC,pedsnet,v1,observation,value_as_number,Explicitly maps to concept_id 3012888.
-pcornet,v1,VITAL,SYSTOLIC,pedsnet,v1,observation,value_as_number,Explicitly maps to concept_id 3004249.
-pcornet,v1,VITAL,BP_POSITION,pedsnet,v1,observation,target_concept,Maps to the concept_id values under the “BP Position” concept class.
-pcornet,v1,VITAL,RAW_VITAL_SOURCE,pedsnet,v1,,,
-pcornet,v1,VITAL,RAW_DIASTOLIC,pedsnet,v1,,,
-pcornet,v1,VITAL,RAW_SYSTOLIC,pedsnet,v1,,,
-pcornet,v1,VITAL,RAW_BP_POSITION,pedsnet,v1,,,
+pcornet,v1,demographic,patid,pedsnet,v1,person,person_id,
+pcornet,v1,demographic,birth_date,pedsnet,v1,person,year_of_birth,
+pcornet,v1,demographic,birth_date,pedsnet,v1,person,month_of_birth,
+pcornet,v1,demographic,birth_date,pedsnet,v1,person,day_of_birth,
+pcornet,v1,demographic,sex,pedsnet,v1,person,gender_concept_id,Maps to the concept_id values under the “Gender” concept class.
+pcornet,v1,demographic,hispanic,pedsnet,v1,person,ethnicity_concept_id,Limited to the concept_id values under the “Hispanic” concept class.
+pcornet,v1,demographic,race,pedsnet,v1,person,race_concept_id,Limited to the concept_id values under the “Race” concept class.
+pcornet,v1,demographic,biobank_flag,pedsnet,v1,observation,value_as_concept_id,Explicitly maps to concept_id 4001345 in the “Biobank_flag” concept class.
+pcornet,v1,demographic,raw_sex,pedsnet,v1,person,gender_source_value,
+pcornet,v1,demographic,raw_hispanic,pedsnet,v1,person,ethnicity_source_value,
+pcornet,v1,demographic,raw_race,pedsnet,v1,person,race_source_value,
+pcornet,v1,encounter,patid,pedsnet,v1,visit_occurrence,person_id,
+pcornet,v1,encounter,encounterid,pedsnet,v1,visit_occurrence,visit_occurrence_id,
+pcornet,v1,encounter,admit_date,pedsnet,v1,visit_occurrence,visit_start_date,
+pcornet,v1,encounter,admit_time,pedsnet,v1,visit_occurrence,,
+pcornet,v1,encounter,discharge_date,pedsnet,v1,visit_occurrence,visit_end_date,
+pcornet,v1,encounter,discharge_time,pedsnet,v1,,,
+pcornet,v1,encounter,providerid,pedsnet,v1,,,
+pcornet,v1,encounter,facility_location,pedsnet,v1,location,zip,
+pcornet,v1,encounter,enc_type,pedsnet,v1,visit_occurrence,place_of_service_concept_id,Limited to concept_id values under the “Encounter Type” concept class.
+pcornet,v1,encounter,facility_id,pedsnet,v1,visit_occurrence,care_site_id,
+pcornet,v1,encounter,discharge_disposition,pedsnet,v1,observation,value_as_concept_id,Explicitly maps to concept_id 44813951 in the “Discharge Disposition” concept class.
+pcornet,v1,encounter,discharge_status,pedsnet,v1,observation,value_as_concept_id,Explicitly maps to concept_id 4137274 in the “Discharge Status” concept class.
+pcornet,v1,encounter,drg,pedsnet,v1,concept,concept_code,Explicitly maps to concept_id 3040646.
+pcornet,v1,encounter,drg_type,pedsnet,v1,,,"Corresponds to the field DRG; ‘01’ if concept_class is ‘DRG’, else ‘02’"
+pcornet,v1,encounter,admitting_source,pedsnet,v1,observation,value_as_concept_id,Explicitly maps to concept_id 4145666 in the “Admitting Source” concept class.
+pcornet,v1,encounter,raw_enc_type,pedsnet,v1,visit_occurrence,place_of_service_concept_id,
+pcornet,v1,encounter,raw_discharge_disposition,pedsnet,v1,observation,value_as_concept_id,
+pcornet,v1,encounter,raw_discharge_status,pedsnet,v1,observation,value_as_concept_id,
+pcornet,v1,encounter,raw_drg_type,pedsnet,v1,,,
+pcornet,v1,encounter,raw_admitting_source,pedsnet,v1,observation,value_as_concept_id,
+pcornet,v1,enrollment,patid,pedsnet,v1,observation_period,person_id,
+pcornet,v1,enrollment,enr_start_date,pedsnet,v1,observation_period,observation_start_date,
+pcornet,v1,enrollment,enr_end_date,pedsnet,v1,observation_period,observation_end_date,
+pcornet,v1,enrollment,chart,pedsnet,v1,observation,value_as_concept_id,Explicitly maps to concept_id 4030450 in the “Chart Availability” concept class.
+pcornet,v1,enrollment,basis,pedsnet,v1,,,
+pcornet,v1,diagnosis,patid,pedsnet,v1,condition_occurrence,person_id,
+pcornet,v1,diagnosis,encounterid,pedsnet,v1,condition_occurrence,visit_occurrence_id,
+pcornet,v1,diagnosis,enc_type,pedsnet,v1,encounter,enc_type,
+pcornet,v1,diagnosis,admit_date,pedsnet,v1,encounter,admit_date,
+pcornet,v1,diagnosis,providerid,pedsnet,v1,encounter,provider_id,
+pcornet,v1,diagnosis,dx,pedsnet,v1,condition_occurrence,condition_concept_id,
+pcornet,v1,diagnosis,dx_type,pedsnet,v1,,,
+pcornet,v1,diagnosis,dx_source,pedsnet,v1,,,
+pcornet,v1,diagnosis,pdx,pedsnet,v1,,,
+pcornet,v1,diagnosis,raw_dx,pedsnet,v1,,,
+pcornet,v1,diagnosis,raw_dx_type,pedsnet,v1,,,
+pcornet,v1,diagnosis,raw_dx_source,pedsnet,v1,,,
+pcornet,v1,diagnosis,raw_pdx,pedsnet,v1,,,
+pcornet,v1,procedure,patid,pedsnet,v1,procedure_occurrence,person_id,
+pcornet,v1,procedure,encounterid,pedsnet,v1,procedure_occurrence,visit_occurrence_id,
+pcornet,v1,procedure,enc_type,pedsnet,v1,encounter,enc_type,
+pcornet,v1,procedure,admit_date,pedsnet,v1,encounter,admit_date,
+pcornet,v1,procedure,providerid,pedsnet,v1,encounter,provider_id,
+pcornet,v1,procedure,px,pedsnet,v1,procedure_occurrence,procedure_concept_id,
+pcornet,v1,procedure,px_type,pedsnet,v1,,,
+pcornet,v1,procedure,raw_px,pedsnet,v1,,,
+pcornet,v1,procedure,raw_px_type,pedsnet,v1,,,
+pcornet,v1,vital,patid,pedsnet,v1,observation,person_id,
+pcornet,v1,vital,encounterid,pedsnet,v1,observation,visit_occurrence_id,
+pcornet,v1,vital,measure_date,pedsnet,v1,observation,observation_date,
+pcornet,v1,vital,measure_time,pedsnet,v1,observation,observation_time,
+pcornet,v1,vital,vital_source,pedsnet,v1,,,
+pcornet,v1,vital,ht,pedsnet,v1,observation,value_as_number,Explicitly maps to concept_id 3036277.
+pcornet,v1,vital,wt,pedsnet,v1,observation,value_as_number,Explicitly maps to concept_id 3025315.
+pcornet,v1,vital,original_bmi,pedsnet,v1,observation,value_as_number,Explicitly maps to concept_id 3038553.
+pcornet,v1,vital,diastolic,pedsnet,v1,observation,value_as_number,Explicitly maps to concept_id 3012888.
+pcornet,v1,vital,systolic,pedsnet,v1,observation,value_as_number,Explicitly maps to concept_id 3004249.
+pcornet,v1,vital,bp_position,pedsnet,v1,observation,target_concept,Maps to the concept_id values under the “BP Position” concept class.
+pcornet,v1,vital,raw_vital_source,pedsnet,v1,,,
+pcornet,v1,vital,raw_diastolic,pedsnet,v1,,,
+pcornet,v1,vital,raw_systolic,pedsnet,v1,,,
+pcornet,v1,vital,raw_bp_position,pedsnet,v1,,,
