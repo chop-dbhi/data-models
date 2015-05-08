@@ -1,0 +1,8 @@
+model,source_version,source_table,source_field,target_version,target_table,target_field
+omop,v4,condition_occurrence,associated_provider_id,v5,condition_occurrence,provider_id
+omop,v4,death,cause_of_death_concept_id,v5,death,cause_concept_id
+omop,v4,death,cause_of_death_source_value,v5,death,cause_source_value
+omop,v4,drug_exposure,prescribing_provider_id,v5,drug_exposure,provider_id
+omop,v4,procedure_occurrence,associated_provider_id,v5,procedure_occurrence,provider_id
+omop,v4,visit_occurrence,place_of_service_concept_id,v5,visit_occurrence,visit_concept_id
+omop,v4,visit_occurrence,place_of_service_source_value,v5,visit_occurrence,visit_source_value
