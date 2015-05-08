@@ -1,3 +1,0 @@
-Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
-vocabulary,vocabulary_id,Yes,,,integer,,A unique identifier for each vocabulary. 
-vocabulary,vocabulary_name,Yes,,,string(256),,"The name describing the vocabulary, for example ""SNOMED-CT"", ""ICD-9"", ""Visit"", etc. "

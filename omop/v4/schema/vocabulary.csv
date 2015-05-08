@@ -1,0 +1,3 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v4,vocabulary,vocabulary_id,integer,,,,
+omop,v4,vocabulary,vocabulary_name,string,256,,,

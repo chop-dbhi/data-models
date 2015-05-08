@@ -1,0 +1,7 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v4,cohort,cohort_concept_id,Yes,concept,concept_id,,"A foreign key to a standard cohort concept identifier in the vocabulary. Cohort concepts identify the cohorts: whether they are defined through persons, providers or visits, or any combination thereof. "
+omop,v4,cohort,cohort_end_date,No,,,,"The date when the cohort definition criteria for the person, provider or visit no longer match or the cohort membership was terminated. "
+omop,v4,cohort,cohort_id,Yes,,,,A system-generated unique identifier for each cohort record. 
+omop,v4,cohort,cohort_start_date,Yes,,,,"The date when the cohort definition criteria for the person, provider or visit first match. "
+omop,v4,cohort,stop_reason,No,,,,The reason for the end of a cohort membership other than defined by the cohort definition criteria as it appears in the source data. 
+omop,v4,cohort,subject_id,Yes,"person, provider, visit_occurrence","person_id, provider_id, visit_occurrence_id",,"A foreign key to the subject in the cohort. These could be referring to records in the Person, Provider, Visit Occurrence table. "
