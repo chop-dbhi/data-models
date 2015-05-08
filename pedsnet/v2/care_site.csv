@@ -6,3 +6,4 @@ care_site,location_id,No,location,location_id,integer,"A foreign key to the geog
 care_site,place_of_service_concept_id,No,concept,concept_id,integer,A foreign key that refers to a place of service concept identifier in the Vocabulary
 care_site,place_of_service_source_value,No,,,varchar,"The source code for the place of service as it appears in the source data, stored here for reference."
 care_site,specialty_concept_id,No,concept,concept_id,integer,The specialty of the department linked to a standard specialty concept as it appears in the Vocabulary
+care_site,specialty_source_value,No,,,varchar,"The source code for the specialty as it appears in the source data, stored here for reference."
