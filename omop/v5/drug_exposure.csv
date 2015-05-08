@@ -15,7 +15,6 @@ drug_exposure,person_id,Yes,person,person_id,integer,,A foreign key identifier t
 drug_exposure,provider_id,No,provider,provider_id,integer,,A foreign key to the provider in the provider table who initiated (prescribed) the drug exposure. 
 drug_exposure,quantity,No,,,float,,The quantity of drug as recorded in the original prescription or dispensing record. 
 drug_exposure,refills,No,,,integer,,"The number of refills after the initial prescription. The initial prescription is not counted, values start with 0. "
-drug_exposure,relevant_condition_concept_id,No,concept,concept_id,integer,SNOMED,"A foreign key to the predefined concept identifier in the vocabulary reflecting the condition that was the cause for initiation of the drug exposure. Note that this is not a direct reference to a specific condition record in the condition table, but rather a condition concept in the vocabulary. "
 drug_exposure,route_concept_id,No,concept,concept_id,integer,,A foreign key to a predefined concept in the Standardized Vocabularies reflecting the route of administration. 
 drug_exposure,route_source_value,No,,,varchar(50),,The information about the route of administration as detailed in the source. 
 drug_exposure,sig,No,,,clob,,"The directions (""signetur"") on the drug prescription as recorded in the original prescription (and printed on the container) or dispensing record. "
