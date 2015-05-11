@@ -1,7 +1,0 @@
-Table,Field,Required,Ref Table,Ref Field,Type Precision,Description
-care_site,care_site_id,Yes,,,integer,"A unique identifier for each defined location of care within an organization. Here, an organization is defined as a collection of one or more care sites that share a single EHR database."
-care_site,care_site_source_value,Yes,,,varchar,"The identifier for the organization in the source data, stored here for reference."
-care_site,location_id,No,location,location_id,integer,"A foreign key to the geographic location of the administrative offices of the organization in the location table, where the detailed address information is stored."
-care_site,organization_id,Yes,organization,organization_id,integer,A foreign key to the organization record.
-care_site,place_of_service_concept_id,No,concept,concept_id,integer,A foreign key that refers to a place of service concept identifier in the Vocabulary
-care_site,place_of_service_source_value,No,,,varchar,"The source code for the place of service as it appears in the source data, stored here for reference."
