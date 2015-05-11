@@ -1,0 +1,6 @@
+model,version,table,field,type,length,precision,scale,default
+pcornet,v2,ENROLLMENT,CHART,string,1,,,
+pcornet,v2,ENROLLMENT,ENR_BASIS,string,1,,,
+pcornet,v2,ENROLLMENT,ENR_END_DATE,string,10,,,
+pcornet,v2,ENROLLMENT,ENR_START_DATE,string,10,,,
+pcornet,v2,ENROLLMENT,PATID,string,,,,

@@ -1,0 +1,40 @@
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
+pcornet,v2,CONDITION,CONDITION,YES,,,,NO,,,,"Condition code. 
+
+Leading zeroes and different levels of decimal precision are permissible in this field. Please populate the exact textual value of this diagnosis code, but remove source-specific suffixes and prefixes. Other codes should be listed as recorded in the source data."
+pcornet,v2,CONDITION,CONDITION_SOURCE,NO,,,,NO,,PR;HC;RG;NI;UN;OT,"PR=Patient-reported medical history
+HC=Healthcare problem list
+RG=Registry cohort
+NI=No information
+UN=Unknown
+OT=Other","Please note: The “Patient-reported” category can include reporting by a proxy, such as patient’s family or guardian.
+
+Guidance: “Registry cohort” generally refers to cohorts of patients flagged with a certain set of characteristics for management within a health system.
+
+“Patient-reported” can include self-reported medical history and/or current medical conditions, not captured via healthcare problem lists or registry cohorts."
+pcornet,v2,CONDITION,CONDITION_STATUS,NO,,,,NO,,AC;RS;IN;NI;UN;OT,"AC=Active
+RS=Resolved
+IN=Inactive
+NI=No information
+UN=Unknown
+OT=Other","Condition status corresponding with REPORT_DATE.
+
+Guidance: The value of IN=Inactive may be used in situations where a condition is not resolved, but is not currently active (for example, psoriasis)."
+pcornet,v2,CONDITION,CONDITION_TYPE,YES,,,,NO,,09;10;11;SM;HP;NI;UN;OT,"09=ICD-9-CM
+10=ICD-10-CM
+11=ICD-11-CM
+SM=SNOMED CT
+HP=Human Phenotype Ontology
+NI=No information
+UN=Unknown
+OT=Other","Condition code type. 
+
+Please note: The “Other” category is meant to identify internal use ontologies and codes."
+pcornet,v2,CONDITION,ENCOUNTERID,NO,ENCOUNTER,ENCOUNTERID,,NO,,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the item was collected as part of a healthcare encounter."
+pcornet,v2,CONDITION,PATID,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+pcornet,v2,CONDITION,RAW_CONDITION,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,v2,CONDITION,RAW_CONDITION_SOURCE,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,v2,CONDITION,RAW_CONDITION_STATUS,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,v2,CONDITION,RAW_CONDITION_TYPE,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,v2,CONDITION,REPORT_DATE,YES,,,YYYY-MM-DD,NO,DATE,,,Date condition was noted. Please note that this date may not correspond to onset date.
+pcornet,v2,CONDITION,RESOLVE_DATE,NO,,,YYYY-MM-DD,NO,DATE,,,"Date condition was resolved, if resolution of a transient condition has been achieved. A resolution date is not generally expected for chronic conditions, even if the condition is managed."

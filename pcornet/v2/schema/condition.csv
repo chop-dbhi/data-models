@@ -1,0 +1,13 @@
+model,version,table,field,type,length,precision,scale,default
+pcornet,v2,CONDITION,CONDITION,string,18,,,
+pcornet,v2,CONDITION,CONDITION_SOURCE,string,2,,,
+pcornet,v2,CONDITION,CONDITION_STATUS,string,2,,,
+pcornet,v2,CONDITION,CONDITION_TYPE,string,2,,,
+pcornet,v2,CONDITION,ENCOUNTERID,string,,,,
+pcornet,v2,CONDITION,PATID,string,,,,
+pcornet,v2,CONDITION,RAW_CONDITION,string,,,,
+pcornet,v2,CONDITION,RAW_CONDITION_SOURCE,string,,,,
+pcornet,v2,CONDITION,RAW_CONDITION_STATUS,string,,,,
+pcornet,v2,CONDITION,RAW_CONDITION_TYPE,string,,,,
+pcornet,v2,CONDITION,REPORT_DATE,string,10,,,
+pcornet,v2,CONDITION,RESOLVE_DATE,string,10,,,
