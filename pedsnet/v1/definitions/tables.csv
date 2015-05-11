@@ -1,5 +1,6 @@
 model,version,table,description
 pedsnet,v1,care_site,Information about the site of care 
+pedsnet,v1,concept,"Contains all Concepts across domains, including the name (description), their source (called Concept Type), their identifier in the source (called Source Code), their level in the hierarchy and their class. "
 pedsnet,v1,condition_occurrence,A diagnosis or condition that has been recorded about a person at a certain time 
 pedsnet,v1,death,Time and cause of death of the Person 
 pedsnet,v1,location,"Physical addresses of patients, organizations and care sites "
@@ -10,3 +11,4 @@ pedsnet,v1,person,Demographic information about a Person
 pedsnet,v1,procedure_occurrence,Procedures carried out on the Person
 pedsnet,v1,provider,Information about health care providers 
 pedsnet,v1,visit_occurrence,Visits for health care services of the Person
+pedsnet,v1,vocabulary,"Contains a list of sources for the various Concepts. Many Concepts are derived from national or industry initiatives, such as the ICD diagnostic codes. Others are created by OMOP. "
