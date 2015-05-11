@@ -1,10 +1,10 @@
 model,version,table,field,required,ref_table,ref_field,description
 pedsnet,v2,observation,observation_concept_id,Yes,concept,concept_id,A foreign key to the standard observation concept identifier in the Vocabulary.
-pedsnet,v2,observation,observation_date,Yes,,,The date of the observation (UTC).
+pedsnet,v2,observation,observation_date,Yes,,,The date of the observation.
 pedsnet,v2,observation,observation_id,Yes,,,A unique identifier for each observation.
 pedsnet,v2,observation,observation_source_concept_id,No,concept,concept_id,A foreign key to a concept that refers to the code used in the source.
 pedsnet,v2,observation,observation_source_value,No,,,"The observation code as it appears in the source data. This code is mapped to a standard concept in the Vocabulary and the original code is, stored here for reference."
-pedsnet,v2,observation,observation_time,No,,,The time of the observation (UTC).
+pedsnet,v2,observation,observation_time,No,,,The time of the observation.
 pedsnet,v2,observation,observation_type_concept_id,Yes,concept,concept_id,A foreign key to the predefined concept identifier in the Vocabulary reflecting the type of the observation.
 pedsnet,v2,observation,person_id,Yes,person,person_id,A foreign key identifier to the person about whom the observation was recorded. The demographic details of that person are stored in the person table.
 pedsnet,v2,observation,provider_id,No,provider,provider_id,A foreign key to the provider in the provider table who was responsible for making the observation.
