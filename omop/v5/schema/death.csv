@@ -1,0 +1,7 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v5,death,cause_concept_id,integer,,,,
+omop,v5,death,cause_source_concept_id,integer,,,,
+omop,v5,death,cause_source_value,string,50,,,
+omop,v5,death,death_date,date,,,,
+omop,v5,death,death_type_concept_id,integer,,,,
+omop,v5,death,person_id,integer,,,,

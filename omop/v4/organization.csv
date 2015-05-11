@@ -1,6 +1,0 @@
-Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
-organization,location_id,No,location,location_id,integer,,"A foreign key to the geographic location of the administrative offices of the organization in the location table, where the detailed address information is stored. "
-organization,organization_id,Yes,,,integer,,"A system-generated unique identifier for each organization. Here, an organization is defined as a collection of one or more care sites that share a single EHR database. "
-organization,organization_source_value,Yes,,,string(50),,"The identifier for the organization in the source data, stored here for reference. "
-organization,place_of_service_concept_id,No,concept,concept_id,integer,CMS,A foreign key that refers to a place of service concept identifier in the vocabulary. 
-organization,place_of_service_source_value,No,,,string(50),,"The source code for the place of service as it appears in the source data, stored here for reference. "

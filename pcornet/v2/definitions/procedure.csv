@@ -1,0 +1,54 @@
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
+pcornet,v2,PROCEDURE,ADMIT_DATE,NO,,,YYYY-MM-DD,YES,DATE,,,Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
+pcornet,v2,PROCEDURE,ENC_TYPE,NO,,,,YES,,AV;ED;EI;IP;IS;OA;NI;UN;OT,"AV = Ambulatory Visit
+ED = Emergency Department
+EI=Emergency Department Admit to Inpatient Hospital Stay (permissible substitution)
+IP = Inpatient Hospital Stay
+IS = Non-Acute Institutional Stay
+OA = Other Ambulatory Visit
+NI = No information
+UN = Unknown
+OT = Other",Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
+pcornet,v2,PROCEDURE,ENCOUNTERID,YES,ENCOUNTER,ENCOUNTERID,,NO,,,,Arbitrary encounter-level identifier. Used to link across tables.
+pcornet,v2,PROCEDURE,PATID,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+pcornet,v2,PROCEDURE,PROVIDERID,NO,,,,YES,,,,Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
+pcornet,v2,PROCEDURE,PX,YES,,,,NO,,,,Procedure code.
+pcornet,v2,PROCEDURE,PX_DATE,YES,,,YYYY-MM-DD,NO,DATE,,,"New to v2.0.
+
+Date the procedure was performed."
+pcornet,v2,PROCEDURE,PX_SOURCE,NO,,,,NO,,OD;BI;CL;NI;UN;OT,"OD=Order
+BI=Billing
+CL=Claim
+NI=No information
+UN=Unknown
+OT=Other","New to v2.0.
+
+Source of the procedure information.
+
+Order and billing pertain to internal healthcare processes and data sources. Claim pertains to data from the bill fulfillment, generally data sources held by insurers and other health plans."
+pcornet,v2,PROCEDURE,PX_TYPE,YES,,,,NO,,09;10;11;C2;C3;C4;H3;HC;LC;ND;RE;NI;UN;OT,"09 = ICD-9-CM
+10 = ICD-10-PCS
+11 = ICD-11-PCS
+C2 = CPT Category II
+C3 = CPT Category III
+C4 = CPT-4 (i.e., HCPCS Level I)
+H3 = HCPCS Level III
+HC = HCPCS (i.e., HCPCS Level II)
+LC = LOINC
+ND = NDC
+RE = Revenue
+NI = No information
+UN = Unknown
+OT = Other","Procedure code type.
+
+We include a number of code types for flexibility, but the basic requirement that the code refer to a medical procedure remains.
+
+Revenue codes are a standard concept in Medicare billing and can be useful for defining care settings. If those codes are available they can be included.
+
+Medications administered by clinicians can be captured in billing data and Electronic Health Records (EHRs) as HCPCS procedure codes. Administration (infusion) of chemotherapy is an example. 
+
+We are now seeing NDCs captured as part of procedures because payers are demanding it for payment authorization. Inclusion of this code type enables those data partners that capture the NDC along with the procedure to include the data.
+
+Please note: The “Other” category is meant to identify internal use ontologies and codes."
+pcornet,v2,PROCEDURE,RAW_PX,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,v2,PROCEDURE,RAW_PX_TYPE,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."

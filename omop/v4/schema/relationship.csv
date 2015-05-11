@@ -1,0 +1,5 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v4,relationship,defines_ancestry,string,1,,,
+omop,v4,relationship,is_hierarchical,string,1,,,
+omop,v4,relationship,relationship_id,integer,,,,
+omop,v4,relationship,relationship_name,string,256,,,

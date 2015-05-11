@@ -1,0 +1,8 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v4,payer_plan_period,family_source_value,No,,,,The source code for the person's family as it appears in the source data. 
+omop,v4,payer_plan_period,payer_plan_period_end_date,Yes,,,,The end date of the payer plan period. 
+omop,v4,payer_plan_period,payer_plan_period_id,Yes,,,,"A system-generated identifier for each unique combination of payer, plan, family code and time span. "
+omop,v4,payer_plan_period,payer_plan_period_start_date,Yes,,,,The start date of the payer plan period. 
+omop,v4,payer_plan_period,payer_source_value,No,,,,The source code for the payer as it appears in the source data. 
+omop,v4,payer_plan_period,person_id,Yes,person,person_id,,A foreign key identifier to the person covered by the payer. The demographic details of that person are stored in the person table. 
+omop,v4,payer_plan_period,plan_source_value,No,,,,The source code for the person's coverage plan as it appears in the source data. 

@@ -1,0 +1,12 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v5,visit_cost,currency_concept_id,integer,,,,
+omop,v5,visit_cost,paid_by_coordination_benefits,float,,,,
+omop,v5,visit_cost,paid_by_payer,float,,,,
+omop,v5,visit_cost,paid_coinsurance,float,,,,
+omop,v5,visit_cost,paid_copay,float,,,,
+omop,v5,visit_cost,paid_toward_deductible,float,,,,
+omop,v5,visit_cost,payer_plan_period_id,integer,,,,
+omop,v5,visit_cost,total_out_of_pocket,float,,,,
+omop,v5,visit_cost,total_paid,float,,,,
+omop,v5,visit_cost,visit_cost_id,integer,,,,
+omop,v5,visit_cost,visit_occurrence_id,integer,,,,

@@ -1,0 +1,8 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v5,cohort_attribute,attribute_definition_id,integer,,,,
+omop,v5,cohort_attribute,cohort_definition_id,integer,,,,
+omop,v5,cohort_attribute,cohort_end_date,date,,,,
+omop,v5,cohort_attribute,cohort_start_date,date,,,,
+omop,v5,cohort_attribute,subject_id,integer,,,,
+omop,v5,cohort_attribute,value_as_concept_id,integer,,,,
+omop,v5,cohort_attribute,value_as_number,float,,,,

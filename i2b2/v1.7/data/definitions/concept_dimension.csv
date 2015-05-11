@@ -1,0 +1,10 @@
+model,version,table,field,required,ref_table,ref_field,type
+i2b2,v1.7,concept_dimension,concept_blob,No,,,string
+i2b2,v1.7,concept_dimension,concept_cd,No,,,string
+i2b2,v1.7,concept_dimension,concept_path,Yes,,,string
+i2b2,v1.7,concept_dimension,download_date,No,,,timestamp
+i2b2,v1.7,concept_dimension,import_date,No,,,timestamp
+i2b2,v1.7,concept_dimension,name_char,No,,,string
+i2b2,v1.7,concept_dimension,sourcesystem_cd,No,,,string
+i2b2,v1.7,concept_dimension,update_date,No,,,timestamp
+i2b2,v1.7,concept_dimension,upload_id,No,,,integer

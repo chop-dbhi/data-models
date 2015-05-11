@@ -1,0 +1,18 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v4,observation,associated_provider_id,No,provider,provider_id,,A foreign key to the provider in the provider table who was responsible for making the observation. 
+omop,v4,observation,observation_concept_id,Yes,concept,concept_id,LOINC SNOMED,A foreign key to the standard observation concept identifier in the vocabulary. 
+omop,v4,observation,observation_date,Yes,,,,The date of the observation. 
+omop,v4,observation,observation_id,Yes,,,,A system-generated unique identifier for each observation. 
+omop,v4,observation,observation_source_value,No,,,,"The observation code as it appears in the source data. This code is mapped to a standard concept in the vocabulary and the original code is, stored here for reference. "
+omop,v4,observation,observation_time,No,,,,The time of the observation.
+omop,v4,observation,observation_type_concept_id,Yes,concept,concept_id,OMOP,A foreign key to the predefined concept identifier in the vocabulary reflecting the type of the observation. 
+omop,v4,observation,person_id,Yes,person,person_id,,A foreign key identifier to the person about whom the observation was recorded. The demographic details of that person are stored in the person table. 
+omop,v4,observation,range_high,No,,,,"The upper limit of the normal range of the observation. It is not applicable if the observation results are non- numeric or categorical, and must be in the same units of measure as the observation value. "
+omop,v4,observation,range_low,No,,,,"The lower limit of the normal range of the observation. It is not applicable if the observation results are non- numeric or categorical, and must be in the same units of measure as the observation value. "
+omop,v4,observation,relevant_condition_concept_id,No,concept,concept_id,SNOMED,"A foreign key to the predefined concept identifier in the vocabulary reflecting the condition that was associated with the observation. Note that this is not a direct reference to a specific condition record in the condition table, but rather a condition concept in the vocabulary. "
+omop,v4,observation,unit_concept_id,No,concept,concept_id,UCUM,A foreign key to a standard concept identifier of measurement units in the vocabulary. 
+omop,v4,observation,unit_source_value,No,,,,"The source code for the unit as it appears in the source data. This code is mapped to a standard unit concept in the vocabulary and the original code is, stored here for reference. "
+omop,v4,observation,value_as_concept_id,No,concept,concept_id,,"A foreign key to an observation result stored as a concept identifier. This is applicable to observations where the result can be expressed as a standard concept from the vocabulary (e.g., positive/negative, present/absent, low/high, etc.). "
+omop,v4,observation,value_as_number,No,,,,The observation result stored as a number. This is applicable to observations where the result is expressed as a numeric value.
+omop,v4,observation,value_as_string,No,,,,"The observation result stored as a string. This is applicable to observations where the result is expressed as verbatim text, such as in radiology or pathology reports. "
+omop,v4,observation,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,,A foreign key to the visit in the visit table during which the observation was recorded. 

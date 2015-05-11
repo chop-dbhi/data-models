@@ -1,0 +1,10 @@
+model,version,table,field,type,length,precision,scale,default
+pcornet,v1,PROCEDURE,ADMIT_DATE,string,10,,,
+pcornet,v1,PROCEDURE,ENC_TYPE,string,2,,,
+pcornet,v1,PROCEDURE,ENCOUNTERID,string,,,,
+pcornet,v1,PROCEDURE,PATID,string,,,,
+pcornet,v1,PROCEDURE,PROVIDERID,string,,,,
+pcornet,v1,PROCEDURE,PX,string,11,,,
+pcornet,v1,PROCEDURE,PX_TYPE,string,2,,,
+pcornet,v1,PROCEDURE,RAW_PX,string,,,,
+pcornet,v1,PROCEDURE,RAW_PX_TYPE,string,,,,
