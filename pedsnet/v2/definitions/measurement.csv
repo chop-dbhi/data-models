@@ -1,10 +1,10 @@
 model,version,table,field,required,ref_table,ref_field,description
 pedsnet,v2,measurement,measurement_concept_id,Yes,concept,concept_id,A foreign key to the standard measurement concept identifier in the Vocabulary.
-pedsnet,v2,measurement,measurement_date,Yes,,,The date of the measurement (UTC).
+pedsnet,v2,measurement,measurement_date,Yes,,,The date of the measurement.
 pedsnet,v2,measurement,measurement_id,Yes,,,A system-generated unique identifier for each measurement
 pedsnet,v2,measurement,measurement_source_concept_id,No,concept,concept_id,A foreign key to a concept that refers to the code used in the source.
 pedsnet,v2,measurement,measurement_source_value,Yes,,,"The measurement name as it appears in the source data. This code is mapped to a standard concept in the Standardized Vocabularies and the original code is, stored here for reference."
-pedsnet,v2,measurement,measurement_time,No,,,The time of the measurement (UTC).
+pedsnet,v2,measurement,measurement_time,No,,,The time of the measurement.
 pedsnet,v2,measurement,measurement_type_concept_id,Yes,concept,concept_id,A foreign key to the predefined concept identifier in the Vocabulary reflecting the type of the measurement.
 pedsnet,v2,measurement,operator_concept_id,No,concept,concept_id,"A foreign key identifier to the mathematical operator that is applied to the value_as_number.Operators are <, ≤, =, ≥, >"
 pedsnet,v2,measurement,person_id,Yes,person,person_id,A foreign key identifier to the person who the measurement is being documented for. The demographic details of that person are stored in the person table.
