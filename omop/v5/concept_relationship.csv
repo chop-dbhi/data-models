@@ -1,7 +1,0 @@
-Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
-concept_relationship,concept_id_1,Yes,concept,concept_id,integer,,"A foreign key to the concept in the concept table associated with the relationship. Relationships are directional, and this field represents the source concept designation. "
-concept_relationship,concept_id_2,Yes,concept,concept_id,integer,,"A foreign key to the concept in the concept table associated with the relationship. Relationships are directional, and this field represents the destination concept designation. "
-concept_relationship,invalid_reason,No,,,varchar(1),,"Reason the relationship was invalidated. Possible values are D (deleted), U (replaced with an update) or NULL when valid_end_date has the default value. "
-concept_relationship,relationship_id,Yes,,,varchar(20),,The type of relationship as defined in the relationship table. 
-concept_relationship,valid_end_date,Yes,,,date,,The date when the relationship became invalid because it was deleted or superseded (updated) by a new relationship. Default value is 31-Dec-2099. 
-concept_relationship,valid_start_date,Yes,,,date,,The date when the instance of the relationship is first recorded. 

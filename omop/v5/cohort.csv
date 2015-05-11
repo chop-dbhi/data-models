@@ -1,5 +1,0 @@
-Table,Field,Required,Ref Table,Ref Field,Type Precision,Standard,Description
-cohort,cohort_definition_id,Yes,,,integer,,A foreign key to a record in the COHORT_DEFINITION table containing relevant Cohort definition information. 
-cohort,cohort_end_date,Yes,,,date,,"The date when the cohort definition criteria for the person, provider or visit no longer match or the cohort membership was terminated. "
-cohort,cohort_start_date,Yes,,,date,,"The date when the cohort definition criteria for the person, provider or visit first match. "
-cohort,subject_id,Yes,"person, provider, visit_occurrence","person_id, provider_id, visit_occurrence_id",integer,,"A foreign key to the subject in the cohort. These could be referring to records in the Person, Provider, Visit Occurrence table. "
