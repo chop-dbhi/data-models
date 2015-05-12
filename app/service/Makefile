@@ -9,6 +9,7 @@ doc:
 install:
 	go get github.com/julienschmidt/httprouter
 	go get github.com/sirupsen/logrus
+	go get github.com/russross/blackfriday
 	go get github.com/jteeuwen/go-bindata/...
 
 test-install: install
@@ -21,11 +22,11 @@ test:
 	go test -cover ./...
 
 build:
-	go-bindata -ignore \\.sw[a-z] templates/
+	go-bindata -ignore \\.sw[a-z] assets/
 	go build .
 
 build-dev:
-	go-bindata -debug -ignore \\.sw[a-z] templates/
+	go-bindata -debug -ignore \\.sw[a-z] assets/
 	go build .
 
 bench:
