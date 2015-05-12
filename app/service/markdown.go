@@ -5,10 +5,6 @@ import (
 	"text/template"
 )
 
-var (
-	hierarchyTemplate, schemaTemplate, mappingsTemplate *template.Template
-)
-
 func loadTemplate(n string) *template.Template {
 	data, err := Asset(n)
 
@@ -19,20 +15,27 @@ func loadTemplate(n string) *template.Template {
 	return template.Must(template.New("model").Parse(string(data)))
 }
 
-func init() {
-	hierarchyTemplate = loadTemplate("templates/model.md")
-	schemaTemplate = loadTemplate("templates/schema.md")
-	mappingsTemplate = loadTemplate("templates/mappings.md")
+func RenderModelsMarkdown(w io.Writer, v interface{}) {
+	t := loadTemplate("templates/models.md")
+	t.Execute(w, v)
 }
 
-func RenderHierarchyMarkdown(m *Model, w io.Writer) {
-	hierarchyTemplate.Execute(w, m)
+func RenderFullMarkdown(w io.Writer, v interface{}) {
+	t := loadTemplate("templates/full.md")
+	t.Execute(w, v)
 }
 
-func RenderSchemaMarkdown(m *Model, w io.Writer) {
-	schemaTemplate.Execute(w, m)
+func RenderDefinitionMarkdown(w io.Writer, v interface{}) {
+	t := loadTemplate("templates/definition.md")
+	t.Execute(w, v)
 }
 
-func RenderMappingMarkdown(m *Model, w io.Writer) {
-	mappingsTemplate.Execute(w, m)
+func RenderSchemaMarkdown(w io.Writer, v interface{}) {
+	t := loadTemplate("templates/schema.md")
+	t.Execute(w, v)
+}
+
+func RenderMappingMarkdown(w io.Writer, v interface{}) {
+	t := loadTemplate("templates/mappings.md")
+	t.Execute(w, v)
 }

@@ -5,7 +5,6 @@
 ## Tables
 {{range $t := .Tables.List}}
 ### {{$t.Name}}
-
 {{range $f := $t.Fields.List}}
 {{if $f.Mappings}}
 #### {{$f.Name}}

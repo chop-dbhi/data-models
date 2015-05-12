@@ -52,24 +52,30 @@ func main() {
 	router.RedirectFixedPath = true
 	router.HandleMethodNotAllowed = true
 
-	router.GET("/models", apiDataModels)
-	router.GET("/models/:name/:version", apiDataModel)
-	router.GET("/models/:name/:version/schema", apiDataModelSchema)
-	router.GET("/models/:name/:version/schema:ext", apiDataModelSchema)
-	router.GET("/models/:name/:version/mapping", apiDataModelMapping)
-	router.GET("/models/:name/:version/mapping:ext", apiDataModelMapping)
+	// API
+	router.GET("/api/models", apiModels)
+	router.GET("/api/models/:name/:version", apiModel)
+	router.GET("/api/models/:name/:version/:table", apiTable)
+	router.GET("/api/models/:name/:version/:table/:field", apiField)
 
-	// Integrations.
-	router.GET("/github", githubWebhook)
+	// Views.
+	router.GET("/models.:ext", viewModels)
+	router.GET("/models/:name/:version/full.:ext", viewModelFull)
+	router.GET("/models/:name/:version/definition.:ext", viewModelDefinition)
+	router.GET("/models/:name/:version/schema.:ext", viewModelSchema)
+	router.GET("/models/:name/:version/mapping.:ext", viewModelMapping)
 
 	// Update the repo on startup.
 	go updateRepo()
 
-	// Start the interval.
-	go pollRepo()
+	// Poll the repo.
+	if interval > 0 {
+		go pollRepo()
+	}
 
 	// Listen.
 	addr := fmt.Sprintf("%s:%d", host, port)
+
 	logrus.Printf("Listening on %s...", addr)
 	logrus.Fatal(http.ListenAndServe(addr, router))
 }

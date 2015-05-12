@@ -222,8 +222,6 @@ type Field struct {
 	Name        string
 	Label       string
 	Description string
-	RefTable    string
-	RefField    string
 
 	// Schema fields
 	Type      string
@@ -232,12 +230,13 @@ type Field struct {
 	Scale     string
 	Default   string
 
+	RefTable *Table `json:"-"`
+	RefField *Field `json:"-"`
+
 	Table    *Table     `json:"-"`
 	Mappings []*Mapping `json:"-"`
 
-	attrs    Attrs
-	refTable *Table
-	refField *Field
+	attrs Attrs
 }
 
 func (f *Field) String() string {

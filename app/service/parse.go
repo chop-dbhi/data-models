@@ -4,12 +4,19 @@ import (
 	"encoding/json"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 
 	"github.com/sirupsen/logrus"
 )
 
 var dataModels ModelIndex
+
+var newlinesRe = regexp.MustCompile(`[\s]+`)
+
+func stripNewlines(s string) string {
+	return newlinesRe.ReplaceAllString(s, " ")
+}
 
 func rebuildCache(path string) {
 	logrus.Debugf("parse: rebuilding cache")
@@ -248,7 +255,7 @@ func parseFiles(model *Model, path string) (TableIndex, error) {
 
 		t = &Table{
 			Name:        attrs["table"],
-			Description: attrs["description"],
+			Description: stripNewlines(attrs["description"]),
 			Label:       attrs["label"],
 			Fields:      fields,
 			Model:       model,
@@ -268,10 +275,8 @@ func parseFiles(model *Model, path string) (TableIndex, error) {
 		for _, attrs = range fieldList {
 			f = &Field{
 				Name:        attrs["field"],
-				Description: attrs["description"],
+				Description: stripNewlines(attrs["description"]),
 				Label:       attrs["label"],
-				RefTable:    attrs["ref_table"],
-				RefField:    attrs["ref_field"],
 				Mappings:    make([]*Mapping, 0),
 				Table:       t,
 				attrs:       attrs,
@@ -310,8 +315,8 @@ func parseFiles(model *Model, path string) (TableIndex, error) {
 			continue
 		}
 
-		f.refTable = rt
-		f.refField = rf
+		f.RefTable = rt
+		f.RefField = rf
 	}
 
 	return tables, nil

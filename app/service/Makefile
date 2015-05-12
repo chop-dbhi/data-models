@@ -9,7 +9,7 @@ doc:
 install:
 	go get github.com/julienschmidt/httprouter
 	go get github.com/sirupsen/logrus
-	go get github.com/jteeuwen/go-bindata
+	go get github.com/jteeuwen/go-bindata/...
 
 test-install: install
 	go get golang.org/x/tools/cmd/cover
@@ -22,6 +22,10 @@ test:
 
 build:
 	go-bindata -ignore \\.sw[a-z] templates/
+	go build .
+
+build-dev:
+	go-bindata -debug -ignore \\.sw[a-z] templates/
 	go build .
 
 bench:
