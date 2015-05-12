@@ -45,12 +45,6 @@ func main() {
 		logrus.Fatalf("bad repo path")
 	}
 
-	// Update the repo on startup.
-	go updateRepo()
-
-	// Start the interval.
-	go pollRepo()
-
 	// Setup routes.
 	router := httprouter.New()
 
@@ -60,9 +54,19 @@ func main() {
 
 	router.GET("/models", apiDataModels)
 	router.GET("/models/:name/:version", apiDataModel)
+	router.GET("/models/:name/:version/schema", apiDataModelSchema)
+	router.GET("/models/:name/:version/schema:ext", apiDataModelSchema)
+	router.GET("/models/:name/:version/mapping", apiDataModelMapping)
+	router.GET("/models/:name/:version/mapping:ext", apiDataModelMapping)
 
 	// Integrations.
 	router.GET("/github", githubWebhook)
+
+	// Update the repo on startup.
+	go updateRepo()
+
+	// Start the interval.
+	go pollRepo()
 
 	// Listen.
 	addr := fmt.Sprintf("%s:%d", host, port)

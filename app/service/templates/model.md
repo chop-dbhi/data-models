@@ -3,13 +3,13 @@
 *ID: {{.Name}}/{{.Version}}*
 
 ## Tables
-{{range $table := .Tables.List}}- [{{$table.Name}}](#{{$table.Name}})
+{{range $t := .Tables.List}}- [{{$t.Name}}](#{{$t.Name}})
 {{end}}
-{{range $table := .Tables.List}}
-### {{$table.Name}}
+{{range $t:= .Tables.List}}
+### {{$t.Name}}
 
 Name | Type | Description
 -----|------|------------
-{{range $field := $table.Fields.List}}{{$field.Name}} | {{$field.Schema.Type}} | {{$field.Description}}
+{{range $f:= $t.Fields.List}}{{$f.Name}} | {{$f.Type}} | {{$f.Description}}
 {{end}}
 {{end}}

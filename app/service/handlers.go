@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"net/http"
-	"path"
+	"path/filepath"
 	"sort"
 
 	"github.com/julienschmidt/httprouter"
@@ -31,7 +31,7 @@ func apiDataModel(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	// May be bare or have an extension.
 	version := p.ByName("version")
 
-	isMarkdown := path.Ext(version) == ".md"
+	isMarkdown := filepath.Ext(version) == ".md"
 
 	if isMarkdown {
 		version = version[:len(version)-3]
@@ -44,14 +44,57 @@ func apiDataModel(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 		return
 	}
 
-	if path.Ext(r.URL.Path) == ".md" {
+	if isMarkdown {
 		w.Header().Set("content-type", "text/markdown")
-		RenderMarkdownHierarchy(m, w)
+		RenderHierarchyMarkdown(m, w)
 	} else {
 		jsonResponse(w, m)
 	}
 }
 
+func apiDataModelSchema(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+	name := p.ByName("name")
+	version := p.ByName("version")
+	ext := p.ByName("ext")
+
+	isMarkdown := ext == ".md"
+
+	m := dataModels.Get(name, version)
+
+	if m == nil {
+		w.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if isMarkdown {
+		w.Header().Set("content-type", "text/markdown")
+		RenderSchemaMarkdown(m, w)
+	} else {
+		jsonResponse(w, m)
+	}
+}
+
+func apiDataModelMapping(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+	name := p.ByName("name")
+	version := p.ByName("version")
+	ext := p.ByName("ext")
+
+	isMarkdown := ext == ".md"
+
+	m := dataModels.Get(name, version)
+
+	if m == nil {
+		w.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if isMarkdown {
+		w.Header().Set("content-type", "text/markdown")
+		RenderMappingMarkdown(m, w)
+	} else {
+		jsonResponse(w, m)
+	}
+}
 func githubWebhook(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 }

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"time"
 
 	"github.com/sirupsen/logrus"
@@ -46,13 +47,15 @@ func pullRepo() {
 // updateRepo clones or updates the repo and returns true
 // if an update occurred.
 func updateRepo() {
-	if !pathExists(repoDir) {
+	gitDir := filepath.Join(repoDir, ".git")
+
+	if !pathExists(gitDir) {
 		cloneRepo()
 	} else {
 		pullRepo()
 	}
 
-	rebuildCache()
+	rebuildCache(repoDir)
 }
 
 // pollRepo periodically checks the repo for updates.

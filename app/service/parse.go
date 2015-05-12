@@ -9,18 +9,13 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-const mappingsDir = "mappings"
+var dataModels ModelIndex
 
-var (
-	dataModels    ModelIndex
-	modelMappings map[string]*Mapping
-)
-
-func rebuildCache() {
+func rebuildCache(path string) {
 	logrus.Debugf("parse: rebuilding cache")
 
-	models := findModels()
-	newDataModels := make(ModelIndex)
+	models := findModels(path)
+	tmpDataModels := make(ModelIndex)
 
 	var (
 		err   error
@@ -29,44 +24,18 @@ func rebuildCache() {
 
 	for _, path := range models {
 		if model, err = parseModel(path); err == nil {
-			newDataModels.Add(model)
+			tmpDataModels.Add(model)
 		}
 	}
 
-	dataModels = newDataModels
+	parseMappings(tmpDataModels, filepath.Join(path, "mappings"))
 
-	//parseMappings()
+	dataModels = tmpDataModels
+
 }
 
-func parseMappings() {
-	//mapDir := filepath.Join(repoDir, "mappings")
-}
-
-func loadModel(fn string) (*Model, error) {
-	f, err := os.Open(fn)
-
-	if err != nil {
-		return nil, err
-	}
-
-	defer f.Close()
-
-	m := Model{}
-	d := json.NewDecoder(f)
-
-	if err = d.Decode(&m); err != nil {
-		return nil, err
-	}
-
-	return &m, nil
-}
-
-// parseDefinition finds and parses all definitions files in the passed directory.
-func parseFiles(model *Model, path string) (TableIndex, error) {
+func parseMappings(models ModelIndex, path string) {
 	logrus.Debugf("parse: parsing %s", path)
-
-	tableList := make([]map[string]string, 0)
-	tableFields := make(map[string][]map[string]string)
 
 	// Load all the definitions files.
 	filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
@@ -102,26 +71,169 @@ func parseFiles(model *Model, path string) (TableIndex, error) {
 			return nil
 		}
 
-		doc := records[0]
+		var (
+			mp     *Mapping
+			sm, tm *Model
+			st, tt *Table
+			sf, tf *Field
+		)
 
-		if _, ok := doc["ref_field"]; ok {
-			logrus.Debugf("parse: adding fields for %s", doc["table"])
-			tableFields[doc["table"]] = records
-		} else if _, ok := doc["field"]; !ok {
+		for _, r := range records {
+			if sm = models.Get(r["source_model"], r["source_version"]); sm == nil {
+				logrus.Warnf("parse: no model %s/%s", r["source_model"], r["source_version"])
+				continue
+			}
+
+			if tm = models.Get(r["target_model"], r["target_version"]); tm == nil {
+				logrus.Warnf("parse: no model %s/%s", r["target_model"], r["target_version"])
+				continue
+			}
+
+			if st = sm.Tables.Get(r["source_table"]); st == nil {
+				logrus.Warnf("parse: no table %s/%s", sm, r["source_table"])
+				continue
+			}
+
+			if tt = tm.Tables.Get(r["target_table"]); tt == nil {
+				logrus.Warnf("parse: no table %s/%s", tm, r["target_table"])
+				continue
+			}
+
+			if sf = st.Fields.Get(r["source_field"]); sf == nil {
+				logrus.Warnf("parse: no field %s/%s", st, r["source_field"])
+				continue
+			}
+
+			if tf = tt.Fields.Get(r["target_field"]); tf == nil {
+				logrus.Warnf("parse: no field %s/%s", tt, r["target_field"])
+				continue
+			}
+
+			// Bi-directional mapping.
+			mp = &Mapping{
+				Field:   sf,
+				Comment: r["comment"],
+			}
+
+			tf.Mappings = append(tf.Mappings, mp)
+
+			mp = &Mapping{
+				Field:   tf,
+				Comment: r["comment"],
+			}
+
+			sf.Mappings = append(sf.Mappings, mp)
+		}
+
+		return nil
+	})
+}
+
+func loadModel(fn string) (*Model, error) {
+	f, err := os.Open(fn)
+
+	if err != nil {
+		return nil, err
+	}
+
+	defer f.Close()
+
+	m := Model{}
+	d := json.NewDecoder(f)
+
+	if err = d.Decode(&m); err != nil {
+		return nil, err
+	}
+
+	return &m, nil
+}
+
+// parseDefinition finds and parses all definitions files in the passed directory.
+func parseFiles(model *Model, path string) (TableIndex, error) {
+	logrus.Debugf("parse: parsing %s", path)
+
+	var (
+		ok    bool
+		table string
+	)
+
+	tableList := make([]Attrs, 0)
+	tableFields := make(map[string][]Attrs)
+	schemata := make(TableFieldIndex)
+
+	// Load all the definitions files.
+	filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
+		// Ignore errors.
+		if err != nil {
+			return nil
+		}
+
+		// Nothing to do with directories.
+		if info.IsDir() {
+			return nil
+		}
+
+		// Skip non-CSV files.
+		if filepath.Ext(path) != ".csv" {
+			return nil
+		}
+
+		f, err := os.Open(path)
+
+		if err != nil {
+			return nil
+		}
+
+		defer f.Close()
+
+		r := NewMapCSVReader(f)
+
+		// Read all the records.
+		records, err := r.ReadAll()
+
+		if err != nil || len(records) == 0 {
+			return nil
+		}
+
+		attrs := records[0]
+
+		table = attrs["table"]
+
+		// Table file.
+		if _, ok := attrs["field"]; !ok {
 			logrus.Debug("parse: adding tables")
 			tableList = append(tableList, records...)
+			return nil
 		}
+
+		// Fields file.
+		if _, ok := attrs["ref_field"]; ok {
+			logrus.Debugf("parse: adding fields for %s", attrs["table"])
+			tableFields[table] = records
+			return nil
+		}
+
+		// Schema
+		if _, ok := attrs["precision"]; ok {
+			logrus.Debugf("parse: augmenting schema data for %s", attrs["table"])
+
+			for _, r := range records {
+				schemata.Add(table, r["field"], r)
+			}
+
+			return nil
+		}
+
+		logrus.Debugf("parse: could not detect record type in %s", path)
 
 		return nil
 	})
 
 	var (
-		ok        bool
-		doc       map[string]string
+		attrs     Attrs
 		t         *Table
 		f         *Field
-		s         *Schema
-		fieldList []map[string]string
+		fieldList []Attrs
 		fields    FieldIndex
 	)
 
@@ -131,19 +243,20 @@ func parseFiles(model *Model, path string) (TableIndex, error) {
 	// Fields that has references to other fields.
 	refs := make([]*Field, 0)
 
-	for _, doc = range tableList {
+	for _, attrs = range tableList {
 		fields = make(FieldIndex)
 
 		t = &Table{
-			Name:        doc["table"],
-			Description: doc["description"],
-			Label:       doc["label"],
+			Name:        attrs["table"],
+			Description: attrs["description"],
+			Label:       attrs["label"],
 			Fields:      fields,
-			attrs:       doc,
-			model:       model,
+			Model:       model,
+			attrs:       attrs,
 		}
 
 		tables.Add(t)
+
 		logrus.Debugf("added table %s", t.Name)
 
 		fieldList, ok = tableFields[t.Name]
@@ -152,23 +265,31 @@ func parseFiles(model *Model, path string) (TableIndex, error) {
 			continue
 		}
 
-		for _, doc = range fieldList {
-			s = &Schema{}
-
+		for _, attrs = range fieldList {
 			f = &Field{
-				Name:        doc["field"],
-				Description: doc["description"],
-				Label:       doc["label"],
-				RefTable:    doc["ref_table"],
-				RefField:    doc["ref_field"],
-				Schema:      s,
-				table:       t,
-				attrs:       doc,
+				Name:        attrs["field"],
+				Description: attrs["description"],
+				Label:       attrs["label"],
+				RefTable:    attrs["ref_table"],
+				RefField:    attrs["ref_field"],
+				Mappings:    make([]*Mapping, 0),
+				Table:       t,
+				attrs:       attrs,
+			}
+
+			// Add schema information.
+			if sattrs := schemata.Get(t.Name, f.Name); sattrs != nil {
+				f.Type = sattrs["type"]
+				f.Length = sattrs["length"]
+				f.Precision = sattrs["precision"]
+				f.Scale = sattrs["scale"]
+				f.Default = sattrs["default"]
 			}
 
 			t.Fields.Add(f)
 
-			if doc["ref_table"] != "" {
+			// Defer settings up references.
+			if attrs["ref_table"] != "" {
 				refs = append(refs, f)
 			}
 		}
@@ -215,13 +336,13 @@ func parseModel(path string) (*Model, error) {
 	return m, nil
 }
 
-func findModels() []string {
+func findModels(path string) []string {
 	var (
 		curPath    string
 		modelPaths = make([]string, 0)
 	)
 
-	filepath.Walk(repoDir, func(path string, info os.FileInfo, err error) error {
+	filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
 		// Ignore errors.
 		if err != nil {
 			return nil

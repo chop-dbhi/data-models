@@ -2,8 +2,36 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"sort"
+	"strings"
 )
+
+type Attrs map[string]string
+
+type TableFieldIndex map[string]map[string]Attrs
+
+func (i TableFieldIndex) Add(t, f string, a Attrs) {
+	t = strings.ToLower(t)
+	f = strings.ToLower(f)
+
+	if _, ok := i[t]; !ok {
+		i[t] = make(map[string]Attrs)
+	}
+
+	i[t][f] = a
+}
+
+func (i TableFieldIndex) Get(t, f string) Attrs {
+	t = strings.ToLower(t)
+	f = strings.ToLower(f)
+
+	if _, ok := i[t]; !ok {
+		return nil
+	}
+
+	return i[t][f]
+}
 
 type Models []*Model
 
@@ -32,16 +60,22 @@ func (m Models) Swap(i, j int) {
 type ModelIndex map[string]map[string]*Model
 
 func (mi ModelIndex) Add(m *Model) {
-	if _, ok := mi[m.Name]; !ok {
-		mi[m.Name] = make(map[string]*Model)
+	n := strings.ToLower(m.Name)
+	v := strings.ToLower(m.Version)
+
+	if _, ok := mi[n]; !ok {
+		mi[n] = make(map[string]*Model)
 	}
 
-	mi[m.Name][m.Version] = m
+	mi[n][v] = m
 }
 
-func (mi ModelIndex) Get(name, version string) *Model {
-	if ms, ok := mi[name]; ok {
-		return ms[version]
+func (mi ModelIndex) Get(n, v string) *Model {
+	n = strings.ToLower(n)
+	v = strings.ToLower(v)
+
+	if ms, ok := mi[n]; ok {
+		return ms[v]
 	}
 
 	return nil
@@ -81,11 +115,11 @@ func (ts Tables) Swap(i, j int) {
 type TableIndex map[string]*Table
 
 func (ti TableIndex) Add(t *Table) {
-	ti[t.Name] = t
+	ti[strings.ToLower(t.Name)] = t
 }
 
-func (ti TableIndex) Get(name string) *Table {
-	return ti[name]
+func (ti TableIndex) Get(n string) *Table {
+	return ti[strings.ToLower(n)]
 }
 
 func (ti TableIndex) List() Tables {
@@ -128,11 +162,11 @@ func (fs Fields) Swap(i, j int) {
 type FieldIndex map[string]*Field
 
 func (fi FieldIndex) Add(f *Field) {
-	fi[f.Name] = f
+	fi[strings.ToLower(f.Name)] = f
 }
 
-func (fi FieldIndex) Get(name string) *Field {
-	return fi[name]
+func (fi FieldIndex) Get(n string) *Field {
+	return fi[strings.ToLower(n)]
 }
 
 func (fi FieldIndex) List() Fields {
@@ -165,14 +199,23 @@ type Model struct {
 	path string
 }
 
+func (m *Model) String() string {
+	return fmt.Sprintf("%s/%s", m.Name, m.Version)
+}
+
 type Table struct {
 	Name        string
 	Label       string
 	Description string
 	Fields      FieldIndex
 
-	attrs map[string]string
-	model *Model
+	Model *Model `json:"-"`
+
+	attrs Attrs
+}
+
+func (t *Table) String() string {
+	return fmt.Sprintf("%s/%s", t.Model, t.Name)
 }
 
 type Field struct {
@@ -181,25 +224,27 @@ type Field struct {
 	Description string
 	RefTable    string
 	RefField    string
-	Schema      *Schema `json:"-"`
 
-	attrs    map[string]string
-	table    *Table
+	// Schema fields
+	Type      string
+	Length    string
+	Precision string
+	Scale     string
+	Default   string
+
+	Table    *Table     `json:"-"`
+	Mappings []*Mapping `json:"-"`
+
+	attrs    Attrs
 	refTable *Table
 	refField *Field
 }
 
-type Schema struct {
-	Type      string
-	Length    int
-	Precision int
-	Scale     int
-	Default   string
-
-	field *Field
+func (f *Field) String() string {
+	return fmt.Sprintf("%s/%s", f.Table, f.Name)
 }
 
 type Mapping struct {
-	Source *Model
-	Target *Model
+	Field   *Field
+	Comment string
 }

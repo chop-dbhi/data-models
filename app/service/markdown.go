@@ -5,18 +5,34 @@ import (
 	"text/template"
 )
 
-var modelTemplate *template.Template
+var (
+	hierarchyTemplate, schemaTemplate, mappingsTemplate *template.Template
+)
 
-func init() {
-	data, err := Asset("templates/model.md")
+func loadTemplate(n string) *template.Template {
+	data, err := Asset(n)
 
 	if err != nil {
 		panic(err)
 	}
 
-	modelTemplate = template.Must(template.New("model").Parse(string(data)))
+	return template.Must(template.New("model").Parse(string(data)))
 }
 
-func RenderMarkdownHierarchy(m *Model, w io.Writer) {
-	modelTemplate.Execute(w, m)
+func init() {
+	hierarchyTemplate = loadTemplate("templates/model.md")
+	schemaTemplate = loadTemplate("templates/schema.md")
+	mappingsTemplate = loadTemplate("templates/mappings.md")
+}
+
+func RenderHierarchyMarkdown(m *Model, w io.Writer) {
+	hierarchyTemplate.Execute(w, m)
+}
+
+func RenderSchemaMarkdown(m *Model, w io.Writer) {
+	schemaTemplate.Execute(w, m)
+}
+
+func RenderMappingMarkdown(m *Model, w io.Writer) {
+	mappingsTemplate.Execute(w, m)
 }

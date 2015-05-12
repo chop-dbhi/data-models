@@ -11,8 +11,8 @@ type MapCSVReader struct {
 	csv *csv.Reader
 }
 
-func (r *MapCSVReader) zip(keys, values []string) map[string]string {
-	m := make(map[string]string, len(keys))
+func (r *MapCSVReader) zip(keys, values []string) Attrs {
+	m := make(Attrs, len(keys))
 
 	for i, k := range keys {
 		m[k] = values[i]
@@ -35,7 +35,7 @@ func (r *MapCSVReader) Fields() []string {
 	return r.fields
 }
 
-func (r *MapCSVReader) Read() (map[string]string, error) {
+func (r *MapCSVReader) Read() (Attrs, error) {
 	// First iteration.
 	if r.fields == nil {
 		r.Fields()
@@ -52,8 +52,8 @@ func (r *MapCSVReader) Read() (map[string]string, error) {
 	return m, err
 }
 
-func (r *MapCSVReader) ReadAll() ([]map[string]string, error) {
-	records := make([]map[string]string, 0)
+func (r *MapCSVReader) ReadAll() ([]Attrs, error) {
+	records := make([]Attrs, 0)
 
 	for {
 		record, err := r.Read()
