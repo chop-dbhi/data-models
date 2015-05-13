@@ -20,10 +20,8 @@ func pathExists(p string) bool {
 func cloneRepo() {
 	cmd := exec.Command("git", "clone", "--branch", repoBranch, repoName, repoDir)
 
-	if logrus.GetLevel() == logrus.DebugLevel {
-		cmd.Stdout = os.Stdout
-		cmd.Stderr = os.Stderr
-	}
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
 
 	if err := cmd.Run(); err != nil {
 		logrus.Fatalf("problem cloning repo: %s", err)
@@ -34,13 +32,11 @@ func pullRepo() {
 	remote := fmt.Sprintf("origin/%s", repoBranch)
 	cmd := exec.Command("git", "pull", repoDir, remote)
 
-	if logrus.GetLevel() == logrus.DebugLevel {
-		cmd.Stdout = os.Stdout
-		cmd.Stderr = os.Stderr
-	}
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
 
 	if err := cmd.Run(); err != nil {
-		logrus.Fatalf("problem updating repo: %s", err)
+		logrus.Fatalf("problem pulling repo: %s", err)
 	}
 }
 
