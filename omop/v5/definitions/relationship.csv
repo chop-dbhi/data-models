@@ -4,4 +4,4 @@ omop,v5,relationship,is_hierarchical,Yes,,,,Defines whether a relationship defin
 omop,v5,relationship,relationship_concept_id,Yes,concept,concept_id,,A foreign key that refers to a standard concept identifier in the Standardized Vocabularies for the relationship concept. 
 omop,v5,relationship,relationship_id,Yes,,,,The type of relationship captured by the relationship record. 
 omop,v5,relationship,relationship_name,Yes,,,,The text that describes the relationship type. 
-omop,v5,relationship,reverse_relationship_id,Yes,,,,The identifier for the relationship used to define the reverse relationship between two concepts. 
+omop,v5,relationship,reverse_relationship_id,Yes,relationship,relationship_id,,The identifier for the relationship used to define the reverse relationship between two concepts. 

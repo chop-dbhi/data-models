@@ -8,7 +8,7 @@ omop,v5,measurement,measurement_time,No,,,,The time of the Measurement
 omop,v5,measurement,measurement_type_concept_id,Yes,concept,concept_id,,A foreign key to the predefined concept identifier in the Standardized Vocabularies reflecting the type of data on which the measurement record is based. 
 omop,v5,measurement,operator_concept_id,No,concept,concept_id,,"A foreign key identifier to the mathematical operator that is applied to the value_as_number. Operators are <, ≤, =, ≥, > "
 omop,v5,measurement,person_id,Yes,person,person_id,,A foreign key identifier to the person about whom the measurement was recorded. The demographic details of that person are stored in the person table. 
-omop,v5,measurement,provider_id,No,,,,A foreign key to the provider in the provider table who was responsible for making the measurement. 
+omop,v5,measurement,provider_id,No,provider,provider_id,,A foreign key to the provider in the provider table who was responsible for making the measurement. 
 omop,v5,measurement,range_high,No,,,,The upper limit of the normal range of the measurement. The lower range is assumed to be in the same units of measure as the measurement value. 
 omop,v5,measurement,range_low,No,,,,The lower limit of the normal range of the measurement. The lower range is assumed to be in the same units of measure as the measurement value. 
 omop,v5,measurement,unit_concept_id,No,concept,concept_id,,A foreign key to a standard concept identifier of measurement units in the Standardized Vocabularies. 

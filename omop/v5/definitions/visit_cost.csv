@@ -5,7 +5,7 @@ omop,v5,visit_cost,paid_by_payer,No,,,,"The amount paid by the payer (insurer). 
 omop,v5,visit_cost,paid_coinsurance,No,,,,"The amount paid by the person as a joint assumption of risk. Typically, this is a percentage of the expenses defined by the payer plan (policy) after the person's deductible is exceeded. "
 omop,v5,visit_cost,paid_copay,No,,,,The amount paid by the person as a fixed contribution to the expenses. Copay does not contribute to the out_of_pocket expenses. 
 omop,v5,visit_cost,paid_toward_deductible,No,,,,The amount paid by the person that is counted toward the deductible defined by the payer plan (policy). 
-omop,v5,visit_cost,payer_plan_period_id,No,,,,"A foreign key to the payer_plan_period table, where the details of the payer, plan and family are stored. "
+omop,v5,visit_cost,payer_plan_period_id,No,payer_plan_period,payer_plan_period_id,,"A foreign key to the payer_plan_period table, where the details of the payer, plan and family are stored. "
 omop,v5,visit_cost,total_out_of_pocket,No,,,,"The total amount paid by the person as a share of the expenses, excluding the copay. "
 omop,v5,visit_cost,total_paid,No,,,,The total amount paid for the expenses of the procedure. 
 omop,v5,visit_cost,visit_cost_id,Yes,,,,A unique identifier for each procedure cost record. 

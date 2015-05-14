@@ -1,5 +1,5 @@
 model,version,table,field,required,ref_table,ref_field,standard,description
-omop,v5,cohort,cohort_definition_id,Yes,,,,A foreign key to a record in the COHORT_DEFINITION table containing relevant Cohort definition information. 
+omop,v5,cohort,cohort_definition_id,Yes,cohort_definition,cohort_definition_id,,A foreign key to a record in the COHORT_DEFINITION table containing relevant Cohort definition information. 
 omop,v5,cohort,cohort_end_date,Yes,,,,"The date when the cohort definition criteria for the person, provider or visit no longer match or the cohort membership was terminated. "
 omop,v5,cohort,cohort_start_date,Yes,,,,"The date when the cohort definition criteria for the person, provider or visit first match. "
 omop,v5,cohort,subject_id,Yes,"person, provider, visit_occurrence","person_id, provider_id, visit_occurrence_id",,"A foreign key to the subject in the cohort. These could be referring to records in the Person, Provider, Visit Occurrence table. "
