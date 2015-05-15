@@ -8,7 +8,7 @@ pedsnet,v2,measurement,measurement_time,No,,,The time of the measurement.
 pedsnet,v2,measurement,measurement_type_concept_id,Yes,concept,concept_id,A foreign key to the predefined concept identifier in the Vocabulary reflecting the type of the measurement.
 pedsnet,v2,measurement,operator_concept_id,No,concept,concept_id,"A foreign key identifier to the mathematical operator that is applied to the value_as_number.Operators are <, ≤, =, ≥, >"
 pedsnet,v2,measurement,person_id,Yes,person,person_id,A foreign key identifier to the person who the measurement is being documented for. The demographic details of that person are stored in the person table.
-pedsnet,v2,measurement,provider_id,No,,,A foreign key to the provider in the provider table who was responsible for making the measurement.
+pedsnet,v2,measurement,provider_id,No,provider,provider_id,A foreign key to the provider in the provider table who was responsible for making the measurement.
 pedsnet,v2,measurement,range_high,No,,,"The upper limit of the normal range of the measurement. It is not applicable if the observation results are non-numeric or categorical, and must be in the same units of measure as the measurement value."
 pedsnet,v2,measurement,range_low,No,,,"The lower limit of the normal range of the measurement. It is not applicable if the observation results are non-numeric or categorical, and must be in the same units of measure as the measurement value."
 pedsnet,v2,measurement,unit_concept_id,No,concept,concept_id,A foreign key to a standard concept identifier of measurement units in the Vocabulary.
