@@ -10,10 +10,9 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-const repoName = "https://github.com/chop-dbhi/data-models"
-
 func pathExists(p string) bool {
 	_, err := os.Stat(p)
+
 	return err == nil
 }
 

@@ -11,11 +11,14 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
+const defaultRepoName = "https://github.com/chop-dbhi/data-models"
+
 var (
 	host       string
 	port       int
 	loglevel   string
 	repoDir    string
+	repoName   string
 	repoBranch string
 	interval   time.Duration
 )
@@ -25,9 +28,10 @@ func main() {
 	flag.StringVar(&loglevel, "log", "info", "Specify the log level.")
 	flag.StringVar(&host, "host", "127.0.0.1", "Host or IP to bind to")
 	flag.IntVar(&port, "port", 8123, "Port to bind to")
-	flag.StringVar(&repoDir, "repo", "repo", "Path to the cloned repo")
-	flag.StringVar(&repoBranch, "branch", "master", "Repo branch")
-	flag.DurationVar(&interval, "interval", time.Hour, "Fetch inteval")
+	flag.StringVar(&repoDir, "path", "data-models", "Local name of the cloned repo")
+	flag.StringVar(&repoName, "repo", defaultRepoName, "Remote path or URL of the repository.")
+	flag.StringVar(&repoBranch, "branch", "master", "Branch to use.")
+	flag.DurationVar(&interval, "interval", time.Hour, "The interval for checking for updates")
 
 	flag.Parse()
 
