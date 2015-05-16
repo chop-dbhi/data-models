@@ -12,4 +12,5 @@ pedsnet,v2,primary key,xpk_person,person,person_id
 pedsnet,v2,primary key,xpk_procedure_occurrence,procedure_occurrence,procedure_occurrence_id
 pedsnet,v2,primary key,xpk_provider,provider,provider_id
 pedsnet,v2,primary key,xpk_visit_occurrence,visit_occurrence,visit_occurrence_id
+pedsnet,v2,primary key,xpk_visit_payer,visit_payer,visit_payer_id
 pedsnet,v2,primary key,xpk_vocabulary,vocabulary,vocabulary_id

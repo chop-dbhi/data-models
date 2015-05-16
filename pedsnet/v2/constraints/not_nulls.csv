@@ -54,6 +54,9 @@ pedsnet,v2,not null,,visit_occurrence,visit_end_date
 pedsnet,v2,not null,,visit_occurrence,visit_occurrence_id
 pedsnet,v2,not null,,visit_occurrence,visit_start_date
 pedsnet,v2,not null,,visit_occurrence,visit_type_concept_id
+pedsnet,v2,not null,,visit_payer,plan_name
+pedsnet,v2,not null,,visit_payer,visit_occurrence_id
+pedsnet,v2,not null,,visit_payer,visit_payer_id
 pedsnet,v2,not null,,vocabulary,vocabulary_concept_id
 pedsnet,v2,not null,,vocabulary,vocabulary_id
 pedsnet,v2,not null,,vocabulary,vocabulary_name

@@ -27,4 +27,6 @@ pedsnet,v2,idx_procedure_concept_id,No,procedure_occurrence,procedure_concept_id
 pedsnet,v2,idx_procedure_visit_id,No,procedure_occurrence,visit_occurrence_id,asc
 pedsnet,v2,idx_visit_person_id,No,visit_occurrence,person_id,asc
 pedsnet,v2,idx_visit_concept_id,No,visit_occurrence,visit_concept_id,asc
+pedsnet,v2,idx_visit_payer_id,Yes,visit_payer,visit_payer_id,asc
+pedsnet,v2,idx_visit_payer_visit_occurrence_id,No,visit_payer,visit_occurrence_id,asc
 pedsnet,v2,idx_vocabulary_vocabulary_id,Yes,vocabulary,vocabulary_id,asc
