@@ -23,11 +23,11 @@ test:
 
 build:
 	go-bindata -ignore \\.sw[a-z] assets/
-	go build .
+	go build -o $(GOPATH)/bin/data-models .
 
 build-dev:
 	go-bindata -debug -ignore \\.sw[a-z] assets/
-	go build .
+	go build -o $(GOPATH)/bin/data-models .
 
 bench:
 	go test -run=none -bench=. ./... | prettybench
