@@ -1,7 +1,7 @@
 model,version,table,field,type,length,precision,scale,default
 omop,v5,drug_exposure,days_supply,integer,,,,
 omop,v5,drug_exposure,dose_unit_concept_id,integer,,,,
-omop,v5,drug_exposure,dose_unit_source_value,varchar(50),,,,
+omop,v5,drug_exposure,dose_unit_source_value,string,50,,,
 omop,v5,drug_exposure,drug_concept_id,integer,,,,
 omop,v5,drug_exposure,drug_exposure_end_date,date,,,,
 omop,v5,drug_exposure,drug_exposure_id,integer,,,,
