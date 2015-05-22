@@ -6,22 +6,60 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
+func viewIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+	RenderIndexHTML(w)
+}
+
 func viewModels(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
-	switch p.ByName("ext") {
+	q := r.URL.Query()
+
+	data := map[string]interface{}{
+		"Title": "Models",
+		"Items": dataModels.List(),
+	}
+
+	switch q.Get("format") {
 	case "md", "markdown":
 		w.Header().Set("content-type", "text/markdown")
-		RenderModelsMarkdown(w, dataModels)
-		break
-	case "html":
+		RenderModelsMarkdown(w, data)
+	case "", "html":
 		w.Header().Set("content-type", "text/html")
-		RenderModelsHTML(w, dataModels)
-		break
+		RenderModelsHTML(w, data)
 	default:
 		w.WriteHeader(http.StatusNotFound)
 	}
 }
 
-func viewModelFull(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func viewModel(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+	n := p.ByName("name")
+
+	m := dataModels.Versions(n)
+
+	if m == nil {
+		w.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	q := r.URL.Query()
+
+	data := map[string]interface{}{
+		"Title": m[0].Name,
+		"Items": m,
+	}
+
+	switch q.Get("format") {
+	case "md", "markdown":
+		w.Header().Set("content-type", "text/markdown")
+		RenderModelMarkdown(w, data)
+	case "", "html":
+		w.Header().Set("content-type", "text/html")
+		RenderModelHTML(w, data)
+	default:
+		w.WriteHeader(http.StatusNotFound)
+	}
+}
+
+func viewModelVersion(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	n := p.ByName("name")
 	v := p.ByName("version")
 
@@ -32,90 +70,15 @@ func viewModelFull(w http.ResponseWriter, r *http.Request, p httprouter.Params) 
 		return
 	}
 
-	switch p.ByName("ext") {
+	q := r.URL.Query()
+
+	switch q.Get("format") {
 	case "md", "markdown":
 		w.Header().Set("content-type", "text/markdown")
-		RenderFullMarkdown(w, m)
-		break
-	case "html":
+		RenderModelVersionMarkdown(w, m)
+	case "", "html":
 		w.Header().Set("content-type", "text/html")
-		RenderFullHTML(w, m)
-		break
-	default:
-		w.WriteHeader(http.StatusNotFound)
-	}
-}
-
-func viewModelDefinition(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
-	n := p.ByName("name")
-	v := p.ByName("version")
-
-	m := dataModels.Get(n, v)
-
-	if m == nil {
-		w.WriteHeader(http.StatusNotFound)
-		return
-	}
-
-	switch p.ByName("ext") {
-	case "md", "markdown":
-		w.Header().Set("content-type", "text/markdown")
-		RenderDefinitionMarkdown(w, m)
-		break
-	case "html":
-		w.Header().Set("content-type", "text/html")
-		RenderSchemaHTML(w, m)
-		break
-	default:
-		w.WriteHeader(http.StatusNotFound)
-	}
-}
-
-func viewModelSchema(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
-	n := p.ByName("name")
-	v := p.ByName("version")
-
-	m := dataModels.Get(n, v)
-
-	if m == nil {
-		w.WriteHeader(http.StatusNotFound)
-		return
-	}
-
-	switch p.ByName("ext") {
-	case "md", "markdown":
-		w.Header().Set("content-type", "text/markdown")
-		RenderSchemaMarkdown(w, m)
-		break
-	case "html":
-		w.Header().Set("content-type", "text/html")
-		RenderSchemaHTML(w, m)
-		break
-	default:
-		w.WriteHeader(http.StatusNotFound)
-	}
-}
-
-func viewModelMapping(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
-	n := p.ByName("name")
-	v := p.ByName("version")
-
-	m := dataModels.Get(n, v)
-
-	if m == nil {
-		w.WriteHeader(http.StatusNotFound)
-		return
-	}
-
-	switch p.ByName("ext") {
-	case "md", "markdown":
-		w.Header().Set("content-type", "text/markdown")
-		RenderMappingMarkdown(w, m)
-		break
-	case "html":
-		w.Header().Set("content-type", "text/html")
-		RenderMappingHTML(w, m)
-		break
+		RenderModelVersionHTML(w, m)
 	default:
 		w.WriteHeader(http.StatusNotFound)
 	}

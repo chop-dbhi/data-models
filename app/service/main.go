@@ -58,16 +58,16 @@ func main() {
 
 	// API
 	router.GET("/api/models", apiModels)
-	router.GET("/api/models/:name/:version", apiModel)
+	router.GET("/api/models/:name", apiModel)
+	router.GET("/api/models/:name/:version", apiModelVersion)
 	router.GET("/api/models/:name/:version/:table", apiTable)
 	router.GET("/api/models/:name/:version/:table/:field", apiField)
 
 	// Views.
-	router.GET("/models.:ext", viewModels)
-	router.GET("/models/:name/:version/full.:ext", viewModelFull)
-	router.GET("/models/:name/:version/definition.:ext", viewModelDefinition)
-	router.GET("/models/:name/:version/schema.:ext", viewModelSchema)
-	router.GET("/models/:name/:version/mapping.:ext", viewModelMapping)
+	router.GET("/", viewIndex)
+	router.GET("/models", viewModels)
+	router.GET("/models/:name", viewModel)
+	router.GET("/models/:name/:version", viewModelVersion)
 
 	// Update the repo on startup.
 	go updateRepo()
