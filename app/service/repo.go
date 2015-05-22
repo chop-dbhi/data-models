@@ -29,7 +29,7 @@ func cloneRepo() {
 
 func pullRepo() {
 	remote := fmt.Sprintf("origin/%s", repoBranch)
-	cmd := exec.Command("git", "pull", repoDir, remote)
+	cmd := exec.Command("git", "-C", repoDir, "pull", ".", remote)
 
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
