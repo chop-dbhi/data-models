@@ -38,7 +38,6 @@ func rebuildCache(path string) {
 	parseMappings(tmpDataModels, filepath.Join(path, "mappings"))
 
 	dataModels = tmpDataModels
-
 }
 
 func parseMappings(models ModelIndex, path string) {

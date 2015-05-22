@@ -59,38 +59,26 @@ func RenderModelsMarkdown(w io.Writer, v interface{}) {
 	renderMarkdown(w, "assets/models.md", v)
 }
 
-func RenderFullMarkdown(w io.Writer, v interface{}) {
+func RenderModelMarkdown(w io.Writer, v interface{}) {
+	renderMarkdown(w, "assets/models.md", v)
+}
+
+func RenderModelVersionMarkdown(w io.Writer, v interface{}) {
 	renderMarkdown(w, "assets/full.md", v)
 }
 
-func RenderDefinitionMarkdown(w io.Writer, v interface{}) {
-	renderMarkdown(w, "assets/definition.md", v)
-}
-
-func RenderSchemaMarkdown(w io.Writer, v interface{}) {
-	renderMarkdown(w, "assets/schema.md", v)
-}
-
-func RenderMappingMarkdown(w io.Writer, v interface{}) {
-	renderMarkdown(w, "assets/mappings.md", v)
+func RenderIndexHTML(w io.Writer) {
+	renderHTML(w, "assets/index.md", nil)
 }
 
 func RenderModelsHTML(w io.Writer, v interface{}) {
 	renderHTML(w, "assets/models.md", v)
 }
 
-func RenderFullHTML(w io.Writer, v interface{}) {
+func RenderModelHTML(w io.Writer, v interface{}) {
+	renderHTML(w, "assets/models.md", v)
+}
+
+func RenderModelVersionHTML(w io.Writer, v interface{}) {
 	renderHTML(w, "assets/full.md", v)
-}
-
-func RenderDefinitionHTML(w io.Writer, v interface{}) {
-	renderHTML(w, "assets/definition.md", v)
-}
-
-func RenderSchemaHTML(w io.Writer, v interface{}) {
-	renderHTML(w, "assets/schema.md", v)
-}
-
-func RenderMappingHTML(w io.Writer, v interface{}) {
-	renderHTML(w, "assets/mappings.md", v)
 }

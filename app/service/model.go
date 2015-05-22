@@ -81,6 +81,24 @@ func (mi ModelIndex) Get(n, v string) *Model {
 	return nil
 }
 
+func (mi ModelIndex) Versions(n string) Models {
+	n = strings.ToLower(n)
+
+	if _, ok := mi[n]; !ok {
+		return nil
+	}
+
+	models := make(Models, 0)
+
+	for _, m := range mi[n] {
+		models = append(models, m)
+	}
+
+	sort.Sort(models)
+
+	return models
+}
+
 func (mi ModelIndex) List() Models {
 	models := make(Models, 0)
 

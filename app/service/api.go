@@ -22,6 +22,19 @@ func apiModels(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 func apiModel(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	n := p.ByName("name")
+
+	var m Models
+
+	if m = dataModels.Versions(n); m == nil {
+		w.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	jsonResponse(w, m)
+}
+
+func apiModelVersion(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+	n := p.ByName("name")
 	v := p.ByName("version")
 
 	var m *Model
