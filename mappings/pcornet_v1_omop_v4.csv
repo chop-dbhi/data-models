@@ -13,62 +13,35 @@ pcornet,v1,demographic,raw_race,omop,v4,person,race_source_value,
 pcornet,v1,encounter,patid,omop,v4,visit_occurrence,person_id,
 pcornet,v1,encounter,encounterid,omop,v4,visit_occurrence,visit_occurrence_id,
 pcornet,v1,encounter,admit_date,omop,v4,visit_occurrence,visit_start_date,
-pcornet,v1,encounter,admit_time,omop,v4,visit_occurrence,,
 pcornet,v1,encounter,discharge_date,omop,v4,visit_occurrence,visit_end_date,
-pcornet,v1,encounter,discharge_time,omop,v4,,,
-pcornet,v1,encounter,providerid,omop,v4,,,
 pcornet,v1,encounter,facility_location,omop,v4,location,zip,
 pcornet,v1,encounter,enc_type,omop,v4,visit_occurrence,place_of_service_concept_id,Limited to concept_id values under the “Encounter Type” concept class.
-pcornet,v1,encounter,facility_id,omop,v4,visit_occurrence,care_site_id,
+pcornet,v1,encounter,facilityid,omop,v4,visit_occurrence,care_site_id,
 pcornet,v1,encounter,discharge_disposition,omop,v4,observation,value_as_concept_id,Explicitly maps to concept_id 44813951 in the “Discharge Disposition” concept class.
 pcornet,v1,encounter,discharge_status,omop,v4,observation,value_as_concept_id,Explicitly maps to concept_id 4137274 in the “Discharge Status” concept class.
 pcornet,v1,encounter,drg,omop,v4,concept,concept_code,Explicitly maps to concept_id 3040646.
-pcornet,v1,encounter,drg_type,omop,v4,,,"Corresponds to the field DRG; ‘01’ if concept_class is ‘DRG’, else ‘02’"
 pcornet,v1,encounter,admitting_source,omop,v4,observation,value_as_concept_id,Explicitly maps to concept_id 4145666 in the “Admitting Source” concept class.
 pcornet,v1,encounter,raw_enc_type,omop,v4,visit_occurrence,place_of_service_concept_id,
 pcornet,v1,encounter,raw_discharge_disposition,omop,v4,observation,value_as_concept_id,
 pcornet,v1,encounter,raw_discharge_status,omop,v4,observation,value_as_concept_id,
-pcornet,v1,encounter,raw_drg_type,omop,v4,,,
 pcornet,v1,encounter,raw_admitting_source,omop,v4,observation,value_as_concept_id,
 pcornet,v1,enrollment,patid,omop,v4,observation_period,person_id,
-pcornet,v1,enrollment,enr_start_date,omop,v4,observation_period,observation_start_date,
-pcornet,v1,enrollment,enr_end_date,omop,v4,observation_period,observation_end_date,
+pcornet,v1,enrollment,enr_start_date,omop,v4,observation_period,observation_period_start_date,
+pcornet,v1,enrollment,enr_end_date,omop,v4,observation_period,observation_period_end_date,
 pcornet,v1,enrollment,chart,omop,v4,observation,value_as_concept_id,Explicitly maps to concept_id 4030450 in the “Chart Availability” concept class.
-pcornet,v1,enrollment,basis,omop,v4,,,
 pcornet,v1,diagnosis,patid,omop,v4,condition_occurrence,person_id,
 pcornet,v1,diagnosis,encounterid,omop,v4,condition_occurrence,visit_occurrence_id,
-pcornet,v1,diagnosis,enc_type,omop,v4,encounter,enc_type,
-pcornet,v1,diagnosis,admit_date,omop,v4,encounter,admit_date,
-pcornet,v1,diagnosis,providerid,omop,v4,encounter,provider_id,
 pcornet,v1,diagnosis,dx,omop,v4,condition_occurrence,condition_concept_id,
-pcornet,v1,diagnosis,dx_type,omop,v4,,,
-pcornet,v1,diagnosis,dx_source,omop,v4,,,
-pcornet,v1,diagnosis,pdx,omop,v4,,,
-pcornet,v1,diagnosis,raw_dx,omop,v4,,,
-pcornet,v1,diagnosis,raw_dx_type,omop,v4,,,
-pcornet,v1,diagnosis,raw_dx_source,omop,v4,,,
-pcornet,v1,diagnosis,raw_pdx,omop,v4,,,
 pcornet,v1,procedure,patid,omop,v4,procedure_occurrence,person_id,
 pcornet,v1,procedure,encounterid,omop,v4,procedure_occurrence,visit_occurrence_id,
-pcornet,v1,procedure,enc_type,omop,v4,encounter,enc_type,
-pcornet,v1,procedure,admit_date,omop,v4,encounter,admit_date,
-pcornet,v1,procedure,providerid,omop,v4,encounter,provider_id,
 pcornet,v1,procedure,px,omop,v4,procedure_occurrence,procedure_concept_id,
-pcornet,v1,procedure,px_type,omop,v4,,,
-pcornet,v1,procedure,raw_px,omop,v4,,,
-pcornet,v1,procedure,raw_px_type,omop,v4,,,
 pcornet,v1,vital,patid,omop,v4,observation,person_id,
 pcornet,v1,vital,encounterid,omop,v4,observation,visit_occurrence_id,
 pcornet,v1,vital,measure_date,omop,v4,observation,observation_date,
 pcornet,v1,vital,measure_time,omop,v4,observation,observation_time,
-pcornet,v1,vital,vital_source,omop,v4,,,
 pcornet,v1,vital,ht,omop,v4,observation,value_as_number,Explicitly maps to concept_id 3036277.
 pcornet,v1,vital,wt,omop,v4,observation,value_as_number,Explicitly maps to concept_id 3025315.
 pcornet,v1,vital,original_bmi,omop,v4,observation,value_as_number,Explicitly maps to concept_id 3038553.
 pcornet,v1,vital,diastolic,omop,v4,observation,value_as_number,Explicitly maps to concept_id 3012888.
 pcornet,v1,vital,systolic,omop,v4,observation,value_as_number,Explicitly maps to concept_id 3004249.
-pcornet,v1,vital,bp_position,omop,v4,observation,target_concept,Maps to the concept_id values under the “BP Position” concept class.
-pcornet,v1,vital,raw_vital_source,omop,v4,,,
-pcornet,v1,vital,raw_diastolic,omop,v4,,,
-pcornet,v1,vital,raw_systolic,omop,v4,,,
-pcornet,v1,vital,raw_bp_position,omop,v4,,,
+pcornet,v1,vital,bp_position,omop,v4,observation,observation_concept_id,Maps to the concept_id values under the “BP Position” concept class.
