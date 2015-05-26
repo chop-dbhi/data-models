@@ -48,13 +48,13 @@ func pullRepo() {
 // updateRepo clones or updates the repo and returns true
 // if an update occurred.
 func updateRepo() {
-	updateLock.Lock()
-	defer updateLock.Unlock()
-
 	// Update already in progress
 	if updatingRepo {
 		return
 	}
+
+	updateLock.Lock()
+	defer updateLock.Unlock()
 
 	updatingRepo = true
 
