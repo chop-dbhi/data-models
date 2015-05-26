@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"strings"
+	"sync"
 
 	"github.com/sirupsen/logrus"
 )
@@ -29,12 +30,23 @@ func rebuildCache(path string) {
 		model *Model
 	)
 
+	// Process models in parallel
+	wg := sync.WaitGroup{}
+	wg.Add(len(models))
+
 	for _, path := range models {
-		if model, err = parseModel(path); err == nil {
-			tmpDataModels.Add(model)
-		}
+		go func(path string) {
+			if model, err = parseModel(path); err == nil {
+				tmpDataModels.Add(model)
+			}
+
+			wg.Done()
+		}(path)
 	}
 
+	wg.Wait()
+
+	// Parse mapping serially since it crosses the model boundary.
 	parseMappings(tmpDataModels, filepath.Join(path, "mappings"))
 
 	dataModels = tmpDataModels
