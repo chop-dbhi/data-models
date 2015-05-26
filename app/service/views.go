@@ -5,6 +5,7 @@ import (
 	"crypto/sha1"
 	"encoding/json"
 	"fmt"
+	"io"
 	"mime"
 	"net/http"
 	"strings"
@@ -250,10 +251,11 @@ func viewCompareModels(w http.ResponseWriter, r *http.Request, p httprouter.Para
 	}
 }
 
-func verifySecret(actual string) bool {
+func verifyGithubSignature(sig string, r io.Reader) bool {
 	mac := hmac.New(sha1.New, []byte(secret))
-	expected := fmt.Sprintf("%x", mac.Sum(nil))
-	return expected == actual
+	io.Copy(mac, r)
+	expected := fmt.Sprintf("sha1=%x", mac.Sum(nil))
+	return hmac.Equal([]byte(expected), []byte(sig))
 }
 
 func viewUpdateRepo(_ http.ResponseWriter, r *http.Request, _ httprouter.Params) {
@@ -265,7 +267,9 @@ func viewUpdateRepo(_ http.ResponseWriter, r *http.Request, _ httprouter.Params)
 
 	// Check for Github's webhook signature.
 	if sig := r.Header.Get("X-Hub-Signature"); sig != "" {
-		if verifySecret(sig) {
+		defer r.Body.Close()
+
+		if verifyGithubSignature(sig, r.Body) {
 			updateRepo()
 		}
 	}
