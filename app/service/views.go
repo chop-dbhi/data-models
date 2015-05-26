@@ -258,7 +258,7 @@ func verifyGithubSignature(sig string, r io.Reader) bool {
 	return hmac.Equal([]byte(expected), []byte(sig))
 }
 
-func viewUpdateRepo(_ http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+func viewUpdateRepo(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	// If no secret has been supplied, update at will.
 	if secret == "" {
 		updateRepo()
@@ -271,6 +271,9 @@ func viewUpdateRepo(_ http.ResponseWriter, r *http.Request, _ httprouter.Params)
 
 		if verifyGithubSignature(sig, r.Body) {
 			updateRepo()
+			return
 		}
 	}
+
+	w.WriteHeader(http.StatusUnauthorized)
 }
