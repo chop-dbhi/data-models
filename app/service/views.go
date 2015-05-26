@@ -1,7 +1,10 @@
 package main
 
 import (
+	"crypto/hmac"
+	"crypto/sha1"
 	"encoding/json"
+	"fmt"
 	"mime"
 	"net/http"
 	"strings"
@@ -244,5 +247,26 @@ func viewCompareModels(w http.ResponseWriter, r *http.Request, p httprouter.Para
 		RenderModelCompareHTML(w, m1, m2)
 	default:
 		w.WriteHeader(http.StatusNotAcceptable)
+	}
+}
+
+func verifySecret(actual string) bool {
+	mac := hmac.New(sha1.New, []byte(secret))
+	expected := fmt.Sprintf("%x", mac.Sum(nil))
+	return expected == actual
+}
+
+func viewUpdateRepo(_ http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+	// If no secret has been supplied, update at will.
+	if secret == "" {
+		updateRepo()
+		return
+	}
+
+	// Check for Github's webhook signature.
+	if sig := r.Header.Get("X-Hub-Signature"); sig != "" {
+		if verifySecret(sig) {
+			updateRepo()
+		}
 	}
 }

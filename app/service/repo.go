@@ -5,9 +5,15 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"sync"
 	"time"
 
 	"github.com/sirupsen/logrus"
+)
+
+var (
+	updatingRepo = false
+	updateLock   = sync.Mutex{}
 )
 
 func pathExists(p string) bool {
@@ -42,6 +48,16 @@ func pullRepo() {
 // updateRepo clones or updates the repo and returns true
 // if an update occurred.
 func updateRepo() {
+	updateLock.Lock()
+	defer updateLock.Unlock()
+
+	// Update already in progress
+	if updatingRepo {
+		return
+	}
+
+	updatingRepo = true
+
 	gitDir := filepath.Join(repoDir, ".git")
 
 	if !pathExists(gitDir) {
@@ -51,6 +67,8 @@ func updateRepo() {
 	}
 
 	rebuildCache(repoDir)
+
+	updatingRepo = false
 }
 
 // pollRepo periodically checks the repo for updates.
