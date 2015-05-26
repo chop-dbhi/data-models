@@ -59,6 +59,21 @@ func (m Models) Swap(i, j int) {
 
 type ModelIndex map[string]map[string]*Model
 
+func (mi ModelIndex) Keys() []string {
+	keys := make([]string, len(mi))
+
+	i := 0
+
+	for k, _ := range mi {
+		keys[i] = k
+		i++
+	}
+
+	sort.Strings(keys)
+
+	return keys
+}
+
 func (mi ModelIndex) Add(m *Model) {
 	n := strings.ToLower(m.Name)
 	v := strings.ToLower(m.Version)
@@ -140,6 +155,20 @@ func (ti TableIndex) Get(n string) *Table {
 	return ti[strings.ToLower(n)]
 }
 
+func (ti TableIndex) Names() []string {
+	names := make([]string, len(ti))
+
+	i := 0
+	for s, _ := range ti {
+		names[i] = s
+		i++
+	}
+
+	sort.Strings(names)
+
+	return names
+}
+
 func (ti TableIndex) List() Tables {
 	tables := make(Tables, len(ti))
 
@@ -185,6 +214,20 @@ func (fi FieldIndex) Add(f *Field) {
 
 func (fi FieldIndex) Get(n string) *Field {
 	return fi[strings.ToLower(n)]
+}
+
+func (ti FieldIndex) Names() []string {
+	names := make([]string, len(ti))
+
+	i := 0
+	for s, _ := range ti {
+		names[i] = s
+		i++
+	}
+
+	sort.Strings(names)
+
+	return names
 }
 
 func (fi FieldIndex) List() Fields {
@@ -261,6 +304,9 @@ func (f *Field) String() string {
 	return fmt.Sprintf("%s/%s", f.Table, f.Name)
 }
 
+// A mapping defined a correspondence between two fields. A mapping points
+// points to the opposing field and a *comment* which describes the nuances
+// of the relationship between the two fields.
 type Mapping struct {
 	Field   *Field
 	Comment string

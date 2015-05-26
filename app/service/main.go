@@ -68,6 +68,7 @@ func main() {
 	router.GET("/models", viewModels)
 	router.GET("/models/:name", viewModel)
 	router.GET("/models/:name/:version", viewModelVersion)
+	router.GET("/compare/:name1/:version1/:name2/:version2", viewCompareModels)
 
 	// Update the repo on startup.
 	go updateRepo()

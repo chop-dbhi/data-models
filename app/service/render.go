@@ -16,7 +16,8 @@ const (
 		blackfriday.EXTENSION_TABLES |
 		blackfriday.EXTENSION_AUTOLINK |
 		blackfriday.EXTENSION_STRIKETHROUGH |
-		blackfriday.EXTENSION_HEADER_IDS
+		blackfriday.EXTENSION_HEADER_IDS |
+		blackfriday.EXTENSION_FENCED_CODE
 )
 
 func loadTemplate(n string) *template.Template {
@@ -34,18 +35,13 @@ func renderMarkdown(w io.Writer, n string, v interface{}) {
 	t.Execute(w, v)
 }
 
-func renderHTML(w io.Writer, n string, v interface{}) {
-	t := loadTemplate(n)
-	b := bytes.Buffer{}
-
-	t.Execute(&b, v)
-
+func renderHTML(w io.Writer, b []byte) {
 	// Render the final HTML page.
-	t = loadTemplate("assets/wrap.html")
+	t := loadTemplate("assets/wrap.html")
 	s, _ := Asset("assets/style.css")
 
 	renderer := blackfriday.HtmlRenderer(htmlFlags, "", "")
-	c := blackfriday.Markdown(b.Bytes(), renderer, extFlags)
+	c := blackfriday.Markdown(b, renderer, extFlags)
 
 	data := map[string]string{
 		"Content": string(c),
@@ -67,18 +63,36 @@ func RenderModelVersionMarkdown(w io.Writer, v interface{}) {
 	renderMarkdown(w, "assets/full.md", v)
 }
 
+func RenderModelCompareMarkdown(w io.Writer, m1 *Model, m2 *Model) {
+	DiffModels(w, m1, m2)
+}
+
 func RenderIndexHTML(w io.Writer) {
-	renderHTML(w, "assets/index.md", nil)
+	b := bytes.Buffer{}
+	renderMarkdown(&b, "assets/index.md", nil)
+	renderHTML(w, b.Bytes())
 }
 
 func RenderModelsHTML(w io.Writer, v interface{}) {
-	renderHTML(w, "assets/models.md", v)
+	b := bytes.Buffer{}
+	renderMarkdown(&b, "assets/models.md", v)
+	renderHTML(w, b.Bytes())
 }
 
 func RenderModelHTML(w io.Writer, v interface{}) {
-	renderHTML(w, "assets/models.md", v)
+	b := bytes.Buffer{}
+	renderMarkdown(&b, "assets/models.md", v)
+	renderHTML(w, b.Bytes())
 }
 
 func RenderModelVersionHTML(w io.Writer, v interface{}) {
-	renderHTML(w, "assets/full.md", v)
+	b := bytes.Buffer{}
+	renderMarkdown(&b, "assets/full.md", v)
+	renderHTML(w, b.Bytes())
+}
+
+func RenderModelCompareHTML(w io.Writer, m1 *Model, m2 *Model) {
+	b := bytes.Buffer{}
+	DiffModels(&b, m1, m2)
+	renderHTML(w, b.Bytes())
 }

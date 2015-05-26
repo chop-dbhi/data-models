@@ -83,3 +83,38 @@ func viewModelVersion(w http.ResponseWriter, r *http.Request, p httprouter.Param
 		w.WriteHeader(http.StatusNotFound)
 	}
 }
+
+func viewCompareModels(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+	n1 := p.ByName("name1")
+	v1 := p.ByName("version1")
+
+	m1 := dataModels.Get(n1, v1)
+
+	if m1 == nil {
+		w.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	n2 := p.ByName("name2")
+	v2 := p.ByName("version2")
+
+	m2 := dataModels.Get(n2, v2)
+
+	if m2 == nil {
+		w.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	q := r.URL.Query()
+
+	switch q.Get("format") {
+	case "md", "markdown":
+		w.Header().Set("content-type", "text/markdown")
+		RenderModelCompareMarkdown(w, m1, m2)
+	case "", "html":
+		w.Header().Set("content-type", "text/html")
+		RenderModelCompareHTML(w, m1, m2)
+	default:
+		w.WriteHeader(http.StatusNotFound)
+	}
+}

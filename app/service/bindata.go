@@ -99,7 +99,7 @@ func assets_full_md() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/full.md", size: 1364, mode: os.FileMode(420), modTime: time.Unix(1432301771, 0)}
+	info := bindata_file_info{name: "assets/full.md", size: 1364, mode: os.FileMode(420), modTime: time.Unix(1432304277, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -119,7 +119,7 @@ func assets_index_md() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/index.md", size: 88, mode: os.FileMode(420), modTime: time.Unix(1432301711, 0)}
+	info := bindata_file_info{name: "assets/index.md", size: 88, mode: os.FileMode(420), modTime: time.Unix(1432639899, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -159,7 +159,7 @@ func assets_models_md() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/models.md", size: 97, mode: os.FileMode(420), modTime: time.Unix(1432300324, 0)}
+	info := bindata_file_info{name: "assets/models.md", size: 97, mode: os.FileMode(420), modTime: time.Unix(1432304277, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
