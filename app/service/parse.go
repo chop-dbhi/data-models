@@ -53,8 +53,6 @@ func rebuildCache(path string) {
 }
 
 func parseMappings(models ModelIndex, path string) {
-	logrus.Debugf("parse: parsing %s", path)
-
 	// Load all the definitions files.
 	filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
 		// Ignore errors.
@@ -96,34 +94,46 @@ func parseMappings(models ModelIndex, path string) {
 			sf, tf *Field
 		)
 
-		for _, r := range records {
+		// Use the short name
+		path = info.Name()
+
+		for lineno, r := range records {
+			// 1 header + 1-indexed
+			lineno += 2
+
+			// Ignore incomplete mappings.
+			if r["source_field"] == "" || r["target_field"] == "" {
+				logrus.Infof("mapping (%s:%d): incomplete mapping", path, lineno)
+				continue
+			}
+
 			if sm = models.Get(r["source_model"], r["source_version"]); sm == nil {
-				logrus.Warnf("parse: no model %s/%s", r["source_model"], r["source_version"])
+				logrus.Warnf("mapping (%s:%d): no model %s/%s", path, lineno, r["source_model"], r["source_version"])
 				continue
 			}
 
 			if tm = models.Get(r["target_model"], r["target_version"]); tm == nil {
-				logrus.Warnf("parse: no model %s/%s", r["target_model"], r["target_version"])
+				logrus.Warnf("mapping (%s:%d): no model %s/%s", path, lineno, r["target_model"], r["target_version"])
 				continue
 			}
 
 			if st = sm.Tables.Get(r["source_table"]); st == nil {
-				logrus.Warnf("parse: no table %s/%s", sm, r["source_table"])
+				logrus.Warnf("mapping (%s:%d): no table %s/%s", path, lineno, sm, r["source_table"])
 				continue
 			}
 
 			if tt = tm.Tables.Get(r["target_table"]); tt == nil {
-				logrus.Warnf("parse: no table %s/%s", tm, r["target_table"])
+				logrus.Warnf("mapping (%s:%d): no table %s/%s", path, lineno, tm, r["target_table"])
 				continue
 			}
 
 			if sf = st.Fields.Get(r["source_field"]); sf == nil {
-				logrus.Warnf("parse: no field %s/%s", st, r["source_field"])
+				logrus.Warnf("mapping (%s:%d): no field %s/%s", path, lineno, st, r["source_field"])
 				continue
 			}
 
 			if tf = tt.Fields.Get(r["target_field"]); tf == nil {
-				logrus.Warnf("parse: no field %s/%s", tt, r["target_field"])
+				logrus.Warnf("mapping (%s:%d): no field %s/%s", path, lineno, tt, r["target_field"])
 				continue
 			}
 
@@ -166,10 +176,9 @@ func loadModel(fn string) (*Model, error) {
 	return &m, nil
 }
 
-// parseDefinition finds and parses all definitions files in the passed directory.
-func parseFiles(model *Model, path string) (TableIndex, error) {
-	logrus.Debugf("parse: parsing %s", path)
 
+// parseFiles finds and parses all definitions files in the passed directory.
+func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 	var (
 		ok    bool
 		table string
@@ -179,8 +188,10 @@ func parseFiles(model *Model, path string) (TableIndex, error) {
 	tableFields := make(map[string][]Attrs)
 	schemata := make(TableFieldIndex)
 
+	modelName, _ := filepath.Rel(repoDir, modelDir)
+
 	// Load all the definitions files.
-	filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
+	filepath.Walk(modelDir, func(path string, info os.FileInfo, err error) error {
 		// Ignore errors.
 		if err != nil {
 			return nil
@@ -315,14 +326,14 @@ func parseFiles(model *Model, path string) (TableIndex, error) {
 		rt := tables.Get(f.attrs["ref_table"])
 
 		if rt == nil {
-			logrus.Warnf("parse: could not reference table %s", f.attrs["ref_table"])
+			logrus.Warnf("refs (%s): could not reference table `%s` by %s", modelName, f.attrs["ref_table"], f)
 			continue
 		}
 
 		rf := rt.Fields.Get(f.attrs["ref_field"])
 
 		if rf == nil {
-			logrus.Warnf("parse: could not reference field %s", f.attrs["ref_field"])
+			logrus.Warnf("refs (%s): could not reference field `%s` by %s", modelName, f.attrs["ref_field"], f)
 			continue
 		}
 
