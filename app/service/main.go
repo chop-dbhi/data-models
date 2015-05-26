@@ -56,18 +56,12 @@ func main() {
 	router.RedirectFixedPath = true
 	router.HandleMethodNotAllowed = true
 
-	// API
-	router.GET("/api/models", apiModels)
-	router.GET("/api/models/:name", apiModel)
-	router.GET("/api/models/:name/:version", apiModelVersion)
-	router.GET("/api/models/:name/:version/:table", apiTable)
-	router.GET("/api/models/:name/:version/:table/:field", apiField)
-
-	// Views.
 	router.GET("/", viewIndex)
 	router.GET("/models", viewModels)
 	router.GET("/models/:name", viewModel)
 	router.GET("/models/:name/:version", viewModelVersion)
+	router.GET("/models/:name/:version/:table", viewTable)
+	router.GET("/models/:name/:version/:table/:field", viewField)
 	router.GET("/compare/:name1/:version1/:name2/:version2", viewCompareModels)
 
 	// Update the repo on startup.
