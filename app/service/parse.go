@@ -176,7 +176,6 @@ func loadModel(fn string) (*Model, error) {
 	return &m, nil
 }
 
-
 // parseFiles finds and parses all definitions files in the passed directory.
 func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 	var (
@@ -217,43 +216,46 @@ func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 
 		r := NewMapCSVReader(f)
 
+		path, _ = filepath.Rel(repoDir, path)
+
+		fileType := detectFileType(r.Fields())
+
+		if fileType == UnknownType {
+			logrus.Warnf("parse (%s): could not detect file type", path)
+			return nil
+		}
+
 		// Read all the records.
 		records, err := r.ReadAll()
 
 		if err != nil || len(records) == 0 {
+			logrus.Warnf("parse (%s): error reading file", path)
 			return nil
 		}
 
-		attrs := records[0]
-
-		table = attrs["table"]
-
-		// Table file.
-		if _, ok := attrs["field"]; !ok {
-			logrus.Debug("parse: adding tables")
+		switch fileType {
+		case TablesFile:
+			logrus.Debugf("parse (%s): adding tables file", path)
 			tableList = append(tableList, records...)
-			return nil
-		}
+		case FieldsFile:
+			logrus.Debugf("parse (%s): adding fields file", path)
+			var tableRecords []Attrs
 
-		// Fields file.
-		if _, ok := attrs["ref_field"]; ok {
-			logrus.Debugf("parse: adding fields for %s", attrs["table"])
-			tableFields[table] = records
-			return nil
-		}
+			for _, record := range records {
+				table = record["table"]
 
-		// Schema
-		if _, ok := attrs["precision"]; ok {
-			logrus.Debugf("parse: augmenting schema data for %s", attrs["table"])
+				if tableRecords, ok = tableFields[table]; !ok {
+					tableRecords = make([]Attrs, 0)
+				}
 
-			for _, r := range records {
-				schemata.Add(table, r["field"], r)
+				tableRecords = append(tableRecords, record)
+				tableFields[table] = tableRecords
 			}
-
-			return nil
+		case SchemataFile:
+			for _, r := range records {
+				schemata.Add(r["table"], r["field"], r)
+			}
 		}
-
-		logrus.Debugf("parse: could not detect record type in %s", path)
 
 		return nil
 	})
@@ -285,8 +287,6 @@ func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 		}
 
 		tables.Add(t)
-
-		logrus.Debugf("added table %s", t.Name)
 
 		fieldList, ok = tableFields[t.Name]
 
