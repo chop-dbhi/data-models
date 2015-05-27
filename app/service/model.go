@@ -257,7 +257,20 @@ type Model struct {
 	URL     string
 	Tables  TableIndex
 
+	schema *Schema
+
 	path string
+}
+
+func (m *Model) MarshalJSON() ([]byte, error) {
+	aux := map[string]interface{}{
+		"name":    m.Name,
+		"version": m.Version,
+		"url":     m.URL,
+		"tables":  m.Tables,
+	}
+
+	return json.Marshal(aux)
 }
 
 func (m *Model) String() string {
@@ -270,9 +283,21 @@ type Table struct {
 	Description string
 	Fields      FieldIndex
 
-	Model *Model `json:"-"`
+	Model *Model
 
 	attrs Attrs
+}
+
+func (t *Table) MarshalJSON() ([]byte, error) {
+	aux := map[string]interface{}{
+		"model":       t.Model.Name,
+		"version":     t.Model.Version,
+		"name":        t.Name,
+		"description": t.Description,
+		"fields":      t.Fields,
+	}
+
+	return json.Marshal(aux)
 }
 
 func (t *Table) String() string {
@@ -283,6 +308,7 @@ type Field struct {
 	Name        string
 	Label       string
 	Description string
+	Required    bool
 
 	// Schema fields
 	Type      string
@@ -291,11 +317,20 @@ type Field struct {
 	Scale     string
 	Default   string
 
-	RefTable *Table `json:"-"`
-	RefField *Field `json:"-"`
+	Table    *Table
+	Mappings []*Mapping
 
-	Table    *Table     `json:"-"`
-	Mappings []*Mapping `json:"-"`
+	// The field this field was renamed from in the previous version.
+	RenamedFrom *Field
+
+	// The field this field was renamed to in the next version.
+	RenamedTo *Field
+
+	// The field this field references.
+	References *Reference
+
+	// Fields that reference this field.
+	InboundRefs []*Reference
 
 	attrs Attrs
 }
@@ -304,10 +339,214 @@ func (f *Field) String() string {
 	return fmt.Sprintf("%s/%s", f.Table, f.Name)
 }
 
+func (f *Field) MarshalJSON() ([]byte, error) {
+	aux := map[string]interface{}{
+		"name":        f.Name,
+		"table":       f.Table.Name,
+		"description": f.Description,
+		"required":    f.Required,
+		"type":        f.Type,
+		"length":      json.Number(f.Length),
+		"precision":   json.Number(f.Precision),
+		"scale":       json.Number(f.Scale),
+		"default":     f.Default,
+	}
+
+	return json.Marshal(aux)
+}
+
 // A mapping defined a correspondence between two fields. A mapping points
 // points to the opposing field and a *comment* which describes the nuances
 // of the relationship between the two fields.
 type Mapping struct {
 	Field   *Field
 	Comment string
+}
+
+// Reference declares that the source field is a reference to the target field.
+type Reference struct {
+	Name  string
+	Field *Field
+
+	attrs Attrs
+}
+
+func (r *Reference) MarshalJSON() ([]byte, error) {
+	aux := map[string]string{
+		"name":  r.Name,
+		"table": r.Field.Table.Name,
+		"field": r.Field.Name,
+	}
+
+	return json.Marshal(aux)
+}
+
+// Schema contains constraints and indexes for a model.
+type Schema struct {
+	// Schematic components.
+	PrimaryKeys  map[string]*PrimaryKey
+	ForeignKeys  []*ForeignKey
+	NotNullables []*NotNullable
+	Uniques      map[string]*Unique
+	Indexes      map[string]*Index
+}
+
+func (s *Schema) MarshalJSON() ([]byte, error) {
+	pks := make([]*PrimaryKey, len(s.PrimaryKeys))
+	uniqs := make([]*Unique, len(s.Uniques))
+	indexes := make([]*Index, len(s.Indexes))
+
+	i := 0
+
+	for _, pk := range s.PrimaryKeys {
+		pks[i] = pk
+		i++
+	}
+
+	i = 0
+
+	for _, un := range s.Uniques {
+		uniqs[i] = un
+		i++
+	}
+
+	i = 0
+
+	for _, idx := range s.Indexes {
+		indexes[i] = idx
+		i++
+	}
+
+	aux := map[string]interface{}{
+		"indexes": indexes,
+		"constraints": map[string]interface{}{
+			"foreign_keys": s.ForeignKeys,
+			"primary_keys": pks,
+			"uniques":      uniqs,
+			"not_null":     s.NotNullables,
+		},
+	}
+
+	return json.Marshal(aux)
+}
+
+func (s *Schema) AddPrimaryKey(a Attrs) {
+	if s.PrimaryKeys == nil {
+		s.PrimaryKeys = make(map[string]*PrimaryKey)
+	}
+
+	n := a["name"]
+
+	if pk, ok := s.PrimaryKeys[n]; !ok {
+		s.PrimaryKeys[n] = &PrimaryKey{
+			Name:   n,
+			Table:  a["table"],
+			Fields: []string{a["field"]},
+		}
+	} else {
+		pk.Fields = append(pk.Fields, a["field"])
+	}
+}
+
+func (s *Schema) AddForeignKey(a Attrs) {
+	s.ForeignKeys = append(s.ForeignKeys, &ForeignKey{
+		Name:        a["name"],
+		SourceTable: a["table"],
+		SourceField: a["field"],
+		TargetTable: a["ref_table"],
+		TargetField: a["ref_field"],
+	})
+}
+
+func (s *Schema) AddNotNullable(a Attrs) {
+	s.NotNullables = append(s.NotNullables, &NotNullable{
+		Table: a["table"],
+		Field: a["field"],
+	})
+}
+
+func (s *Schema) AddUnique(a Attrs) {
+	if s.Uniques == nil {
+		s.Uniques = make(map[string]*Unique)
+	}
+
+	n := a["name"]
+
+	if un, ok := s.Uniques[n]; !ok {
+		s.Uniques[n] = &Unique{
+			Name:   n,
+			Table:  a["table"],
+			Fields: []string{a["field"]},
+		}
+	} else {
+		un.Fields = append(un.Fields, a["field"])
+	}
+}
+
+func (s *Schema) AddIndex(a Attrs) {
+	if s.Indexes == nil {
+		s.Indexes = make(map[string]*Index)
+	}
+
+	n := a["name"]
+
+	if idx, ok := s.Indexes[n]; !ok {
+		var uniq bool
+
+		switch strings.ToLower(a["unique"]) {
+		case "yes", "y", "1":
+			uniq = true
+		}
+
+		s.Indexes[n] = &Index{
+			Name:   n,
+			Order:  a["order"],
+			Table:  a["table"],
+			Unique: uniq,
+			Fields: []string{a["field"]},
+		}
+	} else {
+		idx.Fields = append(idx.Fields, a["field"])
+	}
+}
+
+// PrimaryKey is a constraint which declares the field values uniquely define
+// a record in the respective table.
+type PrimaryKey struct {
+	Name   string   `json:"name"`
+	Table  string   `json:"table"`
+	Fields []string `json:"fields"`
+}
+
+// Unique is a constraint which declares the field values be unique for
+// a record in the respective table.
+type Unique struct {
+	Name   string   `json:"name"`
+	Table  string   `json:"table"`
+	Fields []string `json:"fields"`
+}
+
+// ForeignKey is a constraint which declares the field values are constrained
+// to values in the referenced fields.
+type ForeignKey struct {
+	Name        string `json:"name"`
+	SourceTable string `json:"source_table"`
+	SourceField string `json:"source_field"`
+	TargetTable string `json:"target_table"`
+	TargetField string `json:"target_field"`
+}
+
+// NotNullable is a constraint which declares the field cannot be a null.
+type NotNullable struct {
+	Table string `json:"table"`
+	Field string `json:"field"`
+}
+
+// Index represents a schematic index for one or more fields.
+type Index struct {
+	Name   string   `json:"name"`
+	Unique bool     `json:"unique"`
+	Order  string   `json:"order"`
+	Table  string   `json:"table"`
+	Fields []string `json:"fields"`
 }

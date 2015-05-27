@@ -179,13 +179,18 @@ func loadModel(fn string) (*Model, error) {
 // parseFiles finds and parses all definitions files in the passed directory.
 func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 	var (
-		ok    bool
-		table string
+		ok        bool
+		table     string
+		tableList []Attrs
+		refs      []*Reference
 	)
 
-	tableList := make([]Attrs, 0)
+	// Initialize
+	schema := &Schema{}
+	model.schema = schema
+
 	tableFields := make(map[string][]Attrs)
-	schemata := make(TableFieldIndex)
+	fieldSchemata := make(TableFieldIndex)
 
 	modelName, _ := filepath.Rel(repoDir, modelDir)
 
@@ -237,6 +242,7 @@ func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 		case TablesFile:
 			logrus.Debugf("parse (%s): adding tables file", path)
 			tableList = append(tableList, records...)
+
 		case FieldsFile:
 			logrus.Debugf("parse (%s): adding fields file", path)
 			var tableRecords []Attrs
@@ -251,9 +257,36 @@ func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 				tableRecords = append(tableRecords, record)
 				tableFields[table] = tableRecords
 			}
+
 		case SchemataFile:
 			for _, r := range records {
-				schemata.Add(r["table"], r["field"], r)
+				fieldSchemata.Add(r["table"], r["field"], r)
+			}
+
+		case ReferencesFile:
+			for _, r := range records {
+				refs = append(refs, &Reference{
+					Name:  r["name"],
+					attrs: r,
+				})
+
+				schema.AddForeignKey(r)
+			}
+
+		case ConstraintsFile:
+			for _, r := range records {
+				switch r["type"] {
+				case "primary key":
+					schema.AddPrimaryKey(r)
+
+				case "not null":
+					schema.AddNotNullable(r)
+				}
+			}
+
+		case IndexesFile:
+			for _, r := range records {
+				schema.AddIndex(r)
 			}
 		}
 
@@ -272,8 +305,6 @@ func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 	tables := make(TableIndex)
 
 	// Fields that has references to other fields.
-	refs := make([]*Field, 0)
-
 	for _, attrs = range tableList {
 		fields = make(FieldIndex)
 
@@ -294,18 +325,27 @@ func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 			continue
 		}
 
+		var req bool
+
 		for _, attrs = range fieldList {
+			switch strings.ToLower(attrs["required"]) {
+			case "yes", "y", "1":
+				req = true
+			default:
+				req = false
+			}
+
 			f = &Field{
 				Name:        attrs["field"],
 				Description: stripNewlines(attrs["description"]),
 				Label:       attrs["label"],
-				Mappings:    make([]*Mapping, 0),
+				Required:    req,
 				Table:       t,
 				attrs:       attrs,
 			}
 
 			// Add schema information.
-			if sattrs := schemata.Get(t.Name, f.Name); sattrs != nil {
+			if sattrs := fieldSchemata.Get(t.Name, f.Name); sattrs != nil {
 				f.Type = sattrs["type"]
 				f.Length = sattrs["length"]
 				f.Precision = sattrs["precision"]
@@ -314,31 +354,54 @@ func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 			}
 
 			t.Fields.Add(f)
-
-			// Defer settings up references.
-			if attrs["ref_table"] != "" {
-				refs = append(refs, f)
-			}
 		}
 	}
 
-	for _, f = range refs {
-		rt := tables.Get(f.attrs["ref_table"])
+	var (
+		rt *Table
+		rf *Field
+	)
+
+	// Add references.
+	for _, ref := range refs {
+		t = tables.Get(ref.attrs["table"])
+
+		if t == nil {
+			logrus.Warnf("refs (%s): no source table `%s`", modelName, ref.attrs["table"])
+			continue
+		}
+
+		f = t.Fields.Get(ref.attrs["field"])
+
+		if f == nil {
+			logrus.Warnf("refs (%s:%s): no source field `%s`", modelName, t.Name, ref.attrs["field"])
+			continue
+		}
+
+		rt = tables.Get(ref.attrs["ref_table"])
 
 		if rt == nil {
-			logrus.Warnf("refs (%s): could not reference table `%s` by %s", modelName, f.attrs["ref_table"], f)
+			logrus.Warnf("refs (%s): could not reference table `%s` by %s", modelName, ref.attrs["ref_table"], f)
 			continue
 		}
 
-		rf := rt.Fields.Get(f.attrs["ref_field"])
+		rf = rt.Fields.Get(ref.attrs["ref_field"])
 
 		if rf == nil {
-			logrus.Warnf("refs (%s): could not reference field `%s` by %s", modelName, f.attrs["ref_field"], f)
+			logrus.Warnf("refs (%s): could not reference field `%s` by %s", modelName, ref.attrs["ref_field"], f)
 			continue
 		}
 
-		f.RefTable = rt
-		f.RefField = rf
+		ref.Field = rf
+
+		// Add references
+		f.References = ref
+
+		// Add back references.
+		rf.InboundRefs = append(rf.InboundRefs, &Reference{
+			Name:  ref.Name,
+			Field: f,
+		})
 	}
 
 	return tables, nil
@@ -366,7 +429,7 @@ func parseModel(path string) (*Model, error) {
 func findModels(path string) []string {
 	var (
 		curPath    string
-		modelPaths = make([]string, 0)
+		modelPaths []string
 	)
 
 	filepath.Walk(path, func(path string, info os.FileInfo, err error) error {

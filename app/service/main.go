@@ -65,6 +65,7 @@ func main() {
 	router.GET("/models/:name/:version/:table", viewTable)
 	router.GET("/models/:name/:version/:table/:field", viewField)
 	router.GET("/compare/:name1/:version1/:name2/:version2", viewCompareModels)
+	router.GET("/schemata/:name/:version", viewModelSchema)
 
 	// Endpoint for webhook integration.
 	router.POST("/_hook", viewUpdateRepo)

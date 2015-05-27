@@ -5,37 +5,48 @@
 
 ## Tables
 
-{{range $t := .Tables.List}}- [{{$t.Name}}](#{{$t.Name}})
+{{range .Tables.List}}- [{{.Name}}](#{{.Name}})
 {{end}}
 
-{{range $t:= .Tables.List}}## {{$t.Name}} {#{{$t.Name}}}
+{{range .Tables.List}}## {{.Name}} {#{{.Name}}}
 
-{{$t.Description}}
+{{.Description}}
 
 **Fields**
 
-{{range $f := $t.Fields.List}}- [{{$f.Name}}](#{{$t.Name}}-{{$f.Name}})
+{{range .Fields.List}}- [{{.Name}}](#{{.Table.Name}}-{{.Name}})
 {{end}}
-{{range $f := $t.Fields.List}}#### {{$f.Name}} {#{{$t.Name}}-{{$f.Name}}}
+{{range .Fields.List}}#### {{.Name}} {#{{.Table.Name}}-{{.Name}}}
 
-{{if $f.RefField}}*References: [{{$f.RefField.Table.Name}}](#{{$f.RefField.Table.Name}}) / {{$f.RefField.Name}}*{{end}}
+{{if .References}}*Refers to: [{{.References.Field.Table.Name}}](#{{.References.Field.Table.Name}}) / [{{.References.Field.Name}}](#{{.References.Field.Table.Name}}-{{.References.Field.Name}})*{{end}}
 
-{{$f.Description}}
+{{.Description}}
 
-{{if $f.Type}}##### Schema
+{{if .Type}}##### Schema
 
-- Type: `{{$f.Type}}`{{if $f.Length}}
-- Length: {{$f.Length}}{{end}}{{if $f.Precision}}
-- Precision: {{$f.Precision}}{{end}}{{if $f.Scale}}
-- Scale: {{$f.Scale}}{{end}}
+- Type: `{{.Type}}`{{if .Length}}
+- Length: {{.Length}}{{end}}{{if .Precision}}
+- Precision: {{.Precision}}{{end}}{{if .Scale}}
+- Scale: {{.Scale}}{{end}}
 {{end}}
 
-{{if $f.Mappings}}##### Mappings
+{{if .Mappings}}##### Mappings
 
 Model | Version | Table | Field | Comment
 ------|---------|-------|-------|--------
-{{range $m := $f.Mappings}}[{{$m.Field.Table.Model.Name}}](/models/{{$m.Field.Table.Model.Name}}) | [{{$m.Field.Table.Model.Version}}](/models/{{$m.Field.Table.Model.Name}}/{{$m.Field.Table.Model.Version}}) | [{{$m.Field.Table.Name}}](/models/{{$m.Field.Table.Model.Name}}/{{$m.Field.Table.Model.Version}}#{{$m.Field.Table.Name}}) | [{{$m.Field.Name}}](/models/{{$m.Field.Table.Model.Name}}/{{$m.Field.Table.Model.Version}}#{{$m.Field.Table.Name}}-{{$m.Field.Name}}) | {{$m.Comment}}
+{{range .Mappings}}[{{.Field.Table.Model.Name}}](/models/{{.Field.Table.Model.Name}}) | [{{.Field.Table.Model.Version}}](/models/{{.Field.Table.Model.Name}}/{{.Field.Table.Model.Version}}) | [{{.Field.Table.Name}}](/models/{{.Field.Table.Model.Name}}/{{.Field.Table.Model.Version}}#{{.Field.Table.Name}}) | [{{.Field.Name}}](/models/{{.Field.Table.Model.Name}}/{{.Field.Table.Model.Version}}#{{.Field.Table.Name}}-{{.Field.Name}}) | {{.Comment}}
 {{end}}
 {{end}}
+
+{{if .InboundRefs}}##### Inbound References
+
+*Total: {{len .InboundRefs}}*
+
+Table | Field | Name
+------|-------|-----
+{{range .InboundRefs}}[{{.Field.Table.Name}}](#{{.Field.Table.Name}}) | [{{.Field.Name}}](#{{.Field.Table.Name}}-{{.Field.Name}}) | {{.Name}}
+{{end}}
+{{end}}
+
 {{end}}
 {{end}}

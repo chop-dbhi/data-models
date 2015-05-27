@@ -277,3 +277,31 @@ func viewUpdateRepo(w http.ResponseWriter, r *http.Request, _ httprouter.Params)
 
 	w.WriteHeader(http.StatusUnauthorized)
 }
+
+func viewModelSchema(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+	n := p.ByName("name")
+	v := p.ByName("version")
+
+	var (
+		m *Model
+	)
+
+	if m = dataModels.Get(n, v); m == nil {
+		w.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	aux := make(map[string]interface{})
+
+	aux["model"] = m.Name
+	aux["version"] = m.Version
+	aux["tables"] = m.Tables
+	aux["schema"] = m.schema
+
+	switch detectFormat(w, r) {
+	case "json":
+		jsonResponse(w, aux)
+	default:
+		w.WriteHeader(http.StatusNotAcceptable)
+	}
+}
