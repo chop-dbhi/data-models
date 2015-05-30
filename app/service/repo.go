@@ -1,29 +1,106 @@
 package main
 
 import (
+	"bytes"
+	"encoding/json"
+	"errors"
 	"fmt"
+	"net/url"
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strconv"
+	"strings"
 	"sync"
 	"time"
 
 	"github.com/sirupsen/logrus"
 )
 
-var (
-	updatingRepo = false
-	updateLock   = sync.Mutex{}
-)
+var ErrInvalidRepo = errors.New("repo: invalid repo URI")
 
-func pathExists(p string) bool {
-	_, err := os.Stat(p)
+const defaultRepoName = "https://github.com/chop-dbhi/data-models@master"
 
-	return err == nil
+type Repos []*Repo
+
+// Repos is a string or repo that implement the flag.Value interface.
+func (r *Repos) String() string {
+	return defaultRepoName
 }
 
-func cloneRepo() {
-	cmd := exec.Command("git", "clone", "--branch", repoBranch, repoName, repoDir)
+func (r *Repos) Set(s string) error {
+	p, err := ParseRepo(s)
+
+	if err != nil {
+		return err
+	}
+
+	*r = append(*r, p)
+
+	return nil
+}
+
+type Repo struct {
+	URL    string
+	Branch string
+
+	FetchTime  time.Time
+	CommitSHA1 string
+	CommitTime time.Time
+
+	// For updating.
+	sync.Mutex
+
+	updating bool
+	path     string
+}
+
+func (r *Repo) String() string {
+	return fmt.Sprintf("%s@%s", r.URL, r.Branch)
+}
+
+func (r *Repo) MarshalJSON() ([]byte, error) {
+	aux := map[string]interface{}{
+		"uri":       r.URL,
+		"branch":    r.Branch,
+		"fetchTime": r.FetchTime,
+		"commit": map[string]interface{}{
+			"sha1": r.CommitSHA1,
+			"time": r.CommitTime,
+		},
+	}
+
+	return json.Marshal(aux)
+}
+
+func (r *Repo) info() {
+	cmd := exec.Command("git", "log", "-1", "--format=%H|%ct")
+
+	buf := bytes.NewBuffer(nil)
+
+	cmd.Dir = r.path
+	cmd.Stdout = buf
+
+	if err := cmd.Run(); err != nil {
+		logrus.Errorf("repo: error getting commit info: %s", err)
+	}
+
+	v := strings.TrimSpace(buf.String())
+	parts := strings.Split(v, "|")
+
+	ts, err := strconv.Atoi(parts[1])
+
+	if err != nil {
+		logrus.Errorf("repo: error parsing timestamp: %s", err)
+	}
+
+	r.CommitSHA1 = parts[0]
+	r.CommitTime = time.Unix(int64(ts), 0)
+	r.FetchTime = time.Now()
+}
+
+func (r *Repo) clone() {
+	cmd := exec.Command("git", "clone", "--branch", r.Branch, r.URL, r.path)
 
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
@@ -31,55 +108,117 @@ func cloneRepo() {
 	if err := cmd.Run(); err != nil {
 		logrus.Fatalf("problem cloning repo: %s", err)
 	}
+
+	logrus.Debugf("repo: cloneed repo %s", r)
+	r.info()
 }
 
-func pullRepo() {
-	remote := fmt.Sprintf("origin/%s", repoBranch)
-	cmd := exec.Command("git", "-C", repoDir, "pull", ".", remote)
+func (r *Repo) pull() {
+	remote := fmt.Sprintf("origin/%s", r.Branch)
+	cmd := exec.Command("git", "pull", ".", remote)
 
+	cmd.Dir = r.path
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
 	if err := cmd.Run(); err != nil {
 		logrus.Fatalf("problem pulling repo: %s", err)
+		return
 	}
+
+	logrus.Debugf("repo: pulled repo %s", r)
+	r.info()
 }
 
 // updateRepo clones or updates the repo and returns true
 // if an update occurred.
-func updateRepo() {
+func (r *Repo) update() {
 	// Update already in progress
-	if updatingRepo {
+	if r.updating {
 		return
 	}
 
-	updateLock.Lock()
-	defer updateLock.Unlock()
+	r.Lock()
 
-	updatingRepo = true
+	defer func() {
+		r.updating = false
+		r.Unlock()
+	}()
 
-	gitDir := filepath.Join(repoDir, ".git")
+	r.updating = true
 
-	if !pathExists(gitDir) {
-		cloneRepo()
+	gitDir := filepath.Join(r.path, ".git")
+
+	if _, err := os.Stat(gitDir); err != nil {
+		r.clone()
 	} else {
-		pullRepo()
+		r.pull()
+	}
+}
+
+func ParseRepo(uri string) (*Repo, error) {
+	toks := strings.SplitN(uri, "@", 1)
+
+	r := &Repo{
+		Branch: "master",
 	}
 
-	rebuildCache(repoDir)
+	uri = toks[0]
 
-	updatingRepo = false
+	// A remote URL must be absolute.
+	if purl, err := url.ParseRequestURI(uri); err == nil {
+		r.URL = uri
+
+		// Go-style namespacing e.g. github.com/chop-dbhi/data-models
+		r.path = filepath.Join(reposDir, purl.Host, purl.Path)
+	} else if uri, err = filepath.Abs(toks[0]); err == nil {
+		gitDir := filepath.Join(uri, ".git")
+
+		if _, err = os.Stat(gitDir); err != nil {
+			return nil, err
+		}
+
+		//
+		r.URL = uri
+		r.path = uri
+	} else {
+		return nil, ErrInvalidRepo
+	}
+
+	if len(toks) > 1 {
+		r.Branch = toks[1]
+	}
+
+	return r, nil
+}
+
+// Update all the repos.
+func updateRepos() {
+	wg := sync.WaitGroup{}
+	wg.Add(len(registeredRepos))
+
+	for _, r := range registeredRepos {
+		go func(r *Repo) {
+			r.update()
+			wg.Done()
+		}(r)
+	}
+
+	wg.Wait()
+
+	// Rebuild cache one all the repos are up-to-date.
+	rebuildCache()
 }
 
 // pollRepo periodically checks the repo for updates.
-func pollRepo() {
+func pollRepos() {
 	// Check for updates every hour.
 	t := time.NewTicker(interval)
 
 	for {
 		select {
 		case <-t.C:
-			updateRepo()
+			updateRepos()
 		}
 	}
 }

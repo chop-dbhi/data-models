@@ -88,7 +88,7 @@ func viewIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 func viewModels(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	data := map[string]interface{}{
 		"Title": "Models",
-		"Items": dataModels.List(),
+		"Items": dataModelCache.List(),
 	}
 
 	switch detectFormat(w, r) {
@@ -106,7 +106,7 @@ func viewModels(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 func viewModel(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	n := p.ByName("name")
 
-	m := dataModels.Versions(n)
+	m := dataModelCache.Versions(n)
 
 	if m == nil {
 		w.WriteHeader(http.StatusNotFound)
@@ -134,7 +134,7 @@ func viewModelVersion(w http.ResponseWriter, r *http.Request, p httprouter.Param
 	n := p.ByName("name")
 	v := p.ByName("version")
 
-	m := dataModels.Get(n, v)
+	m := dataModelCache.Get(n, v)
 
 	if m == nil {
 		w.WriteHeader(http.StatusNotFound)
@@ -165,7 +165,7 @@ func viewTable(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 		t *Table
 	)
 
-	if m = dataModels.Get(n, v); m == nil {
+	if m = dataModelCache.Get(n, v); m == nil {
 		w.WriteHeader(http.StatusNotFound)
 		return
 	}
@@ -195,7 +195,7 @@ func viewField(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 		f *Field
 	)
 
-	if m = dataModels.Get(n, v); m == nil {
+	if m = dataModelCache.Get(n, v); m == nil {
 		w.WriteHeader(http.StatusNotFound)
 		return
 	}
@@ -222,7 +222,7 @@ func viewCompareModels(w http.ResponseWriter, r *http.Request, p httprouter.Para
 	n1 := p.ByName("name1")
 	v1 := p.ByName("version1")
 
-	m1 := dataModels.Get(n1, v1)
+	m1 := dataModelCache.Get(n1, v1)
 
 	if m1 == nil {
 		w.WriteHeader(http.StatusNotFound)
@@ -232,7 +232,7 @@ func viewCompareModels(w http.ResponseWriter, r *http.Request, p httprouter.Para
 	n2 := p.ByName("name2")
 	v2 := p.ByName("version2")
 
-	m2 := dataModels.Get(n2, v2)
+	m2 := dataModelCache.Get(n2, v2)
 
 	if m2 == nil {
 		w.WriteHeader(http.StatusNotFound)
@@ -259,9 +259,10 @@ func verifyGithubSignature(sig string, r io.Reader) bool {
 }
 
 func viewUpdateRepo(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+// TODO: does each repo have a webhook?
 	// If no secret has been supplied, update at will.
 	if secret == "" {
-		updateRepo()
+		updateRepos()
 		return
 	}
 
@@ -270,7 +271,7 @@ func viewUpdateRepo(w http.ResponseWriter, r *http.Request, _ httprouter.Params)
 		defer r.Body.Close()
 
 		if verifyGithubSignature(sig, r.Body) {
-			updateRepo()
+			updateRepos()
 			return
 		}
 	}
@@ -286,7 +287,7 @@ func viewModelSchema(w http.ResponseWriter, r *http.Request, p httprouter.Params
 		m *Model
 	)
 
-	if m = dataModels.Get(n, v); m == nil {
+	if m = dataModelCache.Get(n, v); m == nil {
 		w.WriteHeader(http.StatusNotFound)
 		return
 	}
