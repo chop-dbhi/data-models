@@ -56,17 +56,18 @@ func main() {
 	router.RedirectFixedPath = true
 	router.HandleMethodNotAllowed = true
 
-	router.GET("/", viewIndex)
-	router.GET("/models", viewModels)
-	router.GET("/models/:name", viewModel)
-	router.GET("/models/:name/:version", viewModelVersion)
-	router.GET("/models/:name/:version/:table", viewTable)
-	router.GET("/models/:name/:version/:table/:field", viewField)
-	router.GET("/compare/:name1/:version1/:name2/:version2", viewCompareModels)
-	router.GET("/schemata/:name/:version", viewModelSchema)
+	router.GET("/", httpIndex)
+	router.GET("/repos", httpReposList)
+	router.GET("/models", httpModels)
+	router.GET("/models/:name", httpModel)
+	router.GET("/models/:name/:version", httpModelVersion)
+	router.GET("/models/:name/:version/:table", httpTable)
+	router.GET("/models/:name/:version/:table/:field", httpField)
+	router.GET("/compare/:name1/:version1/:name2/:version2", httpCompareModels)
+	router.GET("/schemata/:name/:version", httpModelSchema)
 
 	// Endpoint for webhook integration.
-	router.POST("/_hook", viewUpdateRepo)
+	router.POST("/_hook", httpUpdateRepos)
 
 	// Update the repo on startup.
 	go updateRepos()

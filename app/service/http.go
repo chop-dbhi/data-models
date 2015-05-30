@@ -76,7 +76,7 @@ func detectFormat(w http.ResponseWriter, r *http.Request) string {
 	return format
 }
 
-func viewIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+func httpIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	switch detectFormat(w, r) {
 	case "html":
 		RenderIndexHTML(w)
@@ -85,7 +85,7 @@ func viewIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	}
 }
 
-func viewModels(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func httpModels(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	data := map[string]interface{}{
 		"Title": "Models",
 		"Items": dataModelCache.List(),
@@ -103,7 +103,7 @@ func viewModels(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	}
 }
 
-func viewModel(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func httpModel(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	n := p.ByName("name")
 
 	m := dataModelCache.Versions(n)
@@ -130,7 +130,7 @@ func viewModel(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	}
 }
 
-func viewModelVersion(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func httpModelVersion(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	n := p.ByName("name")
 	v := p.ByName("version")
 
@@ -155,7 +155,7 @@ func viewModelVersion(w http.ResponseWriter, r *http.Request, p httprouter.Param
 	}
 }
 
-func viewTable(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func httpTable(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	n := p.ByName("name")
 	v := p.ByName("version")
 	tn := p.ByName("table")
@@ -183,7 +183,7 @@ func viewTable(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	}
 }
 
-func viewField(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func httpField(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	n := p.ByName("name")
 	v := p.ByName("version")
 	tn := p.ByName("table")
@@ -218,7 +218,7 @@ func viewField(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	}
 }
 
-func viewCompareModels(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func httpCompareModels(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	n1 := p.ByName("name1")
 	v1 := p.ByName("version1")
 
@@ -258,8 +258,8 @@ func verifyGithubSignature(sig string, r io.Reader) bool {
 	return hmac.Equal([]byte(expected), []byte(sig))
 }
 
-func viewUpdateRepo(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 // TODO: does each repo have a webhook?
+func httpUpdateRepos(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	// If no secret has been supplied, update at will.
 	if secret == "" {
 		updateRepos()
@@ -279,7 +279,7 @@ func viewUpdateRepo(w http.ResponseWriter, r *http.Request, _ httprouter.Params)
 	w.WriteHeader(http.StatusUnauthorized)
 }
 
-func viewModelSchema(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func httpModelSchema(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	n := p.ByName("name")
 	v := p.ByName("version")
 
@@ -302,6 +302,21 @@ func viewModelSchema(w http.ResponseWriter, r *http.Request, p httprouter.Params
 	switch detectFormat(w, r) {
 	case "json":
 		jsonResponse(w, aux)
+	default:
+		w.WriteHeader(http.StatusNotAcceptable)
+	}
+}
+
+func httpReposList(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+	switch detectFormat(w, r) {
+	case "md", "markdown":
+		w.Header().Set("content-type", "text/markdown")
+		RenderReposMarkdown(w, registeredRepos)
+	case "", "html":
+		w.Header().Set("content-type", "text/html")
+		RenderReposHTML(w, registeredRepos)
+	case "json":
+		jsonResponse(w, registeredRepos)
 	default:
 		w.WriteHeader(http.StatusNotAcceptable)
 	}

@@ -67,6 +67,10 @@ func RenderModelCompareMarkdown(w io.Writer, m1 *Model, m2 *Model) {
 	DiffModels(w, m1, m2)
 }
 
+func RenderReposMarkdown(w io.Writer, v interface{}) {
+	renderMarkdown(w, "assets/repos.md", v)
+}
+
 func RenderIndexHTML(w io.Writer) {
 	b := bytes.Buffer{}
 	renderMarkdown(&b, "assets/index.md", nil)
@@ -94,5 +98,11 @@ func RenderModelVersionHTML(w io.Writer, v interface{}) {
 func RenderModelCompareHTML(w io.Writer, m1 *Model, m2 *Model) {
 	b := bytes.Buffer{}
 	DiffModels(&b, m1, m2)
+	renderHTML(w, b.Bytes())
+}
+
+func RenderReposHTML(w io.Writer, v interface{}) {
+	b := bytes.Buffer{}
+	RenderReposMarkdown(&b, v)
 	renderHTML(w, b.Bytes())
 }
