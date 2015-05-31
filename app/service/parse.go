@@ -7,11 +7,14 @@ import (
 	"regexp"
 	"strings"
 	"sync"
+	"time"
 
 	"github.com/sirupsen/logrus"
 )
 
-var dataModels ModelIndex
+const modelFileName = "datamodel.json"
+
+var dataModelCache ModelIndex
 
 var newlinesRe = regexp.MustCompile(`[\s]+`)
 
@@ -19,37 +22,67 @@ func stripNewlines(s string) string {
 	return newlinesRe.ReplaceAllString(s, " ")
 }
 
-func rebuildCache(path string) {
+func rebuildCache() {
 	logrus.Debugf("parse: rebuilding cache")
 
-	models := findModels(path)
-	tmpDataModels := make(ModelIndex)
-
-	var (
-		err   error
-		model *Model
-	)
-
-	// Process models in parallel
 	wg := sync.WaitGroup{}
-	wg.Add(len(models))
+	wg.Add(len(registeredRepos))
 
-	for _, path := range models {
-		go func(path string) {
-			if model, err = parseModel(path); err == nil {
-				tmpDataModels.Add(model)
+	cache := make(ModelIndex)
+	modelDirs := make(chan string)
+
+	// Find models across repos.
+	for _, r := range registeredRepos {
+		go func(r *Repo) {
+			for _, d := range findModelDirs(r.path) {
+				wg.Add(1)
+				modelDirs <- d
 			}
 
 			wg.Done()
-		}(path)
+		}(r)
+	}
+
+	// Spawn 5 workers.
+	for i := 0; i < 5; i++ {
+		go func() {
+			var (
+				d   string
+				m   *Model
+				err error
+			)
+
+			for {
+				select {
+				case d = <-modelDirs:
+					if d == "" {
+						return
+					}
+
+					if m, err = loadModel(d); err != nil {
+						logrus.Warnf("model (%s): error loading model: %s", d, err)
+					} else {
+						cache.Add(m)
+					}
+
+					wg.Done()
+				case <-time.After(time.Second):
+					logrus.Warnf("model: timed out")
+				}
+			}
+		}()
 	}
 
 	wg.Wait()
 
-	// Parse mapping serially since it crosses the model boundary.
-	parseMappings(tmpDataModels, filepath.Join(path, "mappings"))
+	close(modelDirs)
 
-	dataModels = tmpDataModels
+	// Parse mapping serially since it crosses the model boundary.
+	for _, r := range registeredRepos {
+		parseMappings(cache, r.path)
+	}
+
+	dataModelCache = cache
 }
 
 func parseMappings(models ModelIndex, path string) {
@@ -80,6 +113,12 @@ func parseMappings(models ModelIndex, path string) {
 
 		r := NewMapCSVReader(f)
 
+		if detectFileType(r.Fields()) != MappingsFile {
+			return nil
+		}
+
+		logrus.Debugf("parse (%s): found mappings file", path)
+
 		// Read all the records.
 		records, err := r.ReadAll()
 
@@ -93,9 +132,6 @@ func parseMappings(models ModelIndex, path string) {
 			st, tt *Table
 			sf, tf *Field
 		)
-
-		// Use the short name
-		path = info.Name()
 
 		for lineno, r := range records {
 			// 1 header + 1-indexed
@@ -157,27 +193,8 @@ func parseMappings(models ModelIndex, path string) {
 	})
 }
 
-func loadModel(fn string) (*Model, error) {
-	f, err := os.Open(fn)
-
-	if err != nil {
-		return nil, err
-	}
-
-	defer f.Close()
-
-	m := Model{}
-	d := json.NewDecoder(f)
-
-	if err = d.Decode(&m); err != nil {
-		return nil, err
-	}
-
-	return &m, nil
-}
-
 // parseFiles finds and parses all definitions files in the passed directory.
-func parseFiles(model *Model, modelDir string) (TableIndex, error) {
+func parseFiles(model *Model, modelDir string) {
 	var (
 		ok        bool
 		table     string
@@ -191,8 +208,6 @@ func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 
 	tableFields := make(map[string][]Attrs)
 	fieldSchemata := make(TableFieldIndex)
-
-	modelName, _ := filepath.Rel(repoDir, modelDir)
 
 	// Load all the definitions files.
 	filepath.Walk(modelDir, func(path string, info os.FileInfo, err error) error {
@@ -220,8 +235,6 @@ func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 		defer f.Close()
 
 		r := NewMapCSVReader(f)
-
-		path, _ = filepath.Rel(repoDir, path)
 
 		fileType := detectFileType(r.Fields())
 
@@ -302,7 +315,7 @@ func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 	)
 
 	// Combine and link.
-	tables := make(TableIndex)
+	model.Tables = make(TableIndex)
 
 	// Fields that has references to other fields.
 	for _, attrs = range tableList {
@@ -317,7 +330,7 @@ func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 			attrs:       attrs,
 		}
 
-		tables.Add(t)
+		model.Tables.Add(t)
 
 		fieldList, ok = tableFields[t.Name]
 
@@ -364,31 +377,31 @@ func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 
 	// Add references.
 	for _, ref := range refs {
-		t = tables.Get(ref.attrs["table"])
+		t = model.Tables.Get(ref.attrs["table"])
 
 		if t == nil {
-			logrus.Warnf("refs (%s): no source table `%s`", modelName, ref.attrs["table"])
+			logrus.Warnf("refs (%s): no source table `%s`", modelDir, ref.attrs["table"])
 			continue
 		}
 
 		f = t.Fields.Get(ref.attrs["field"])
 
 		if f == nil {
-			logrus.Warnf("refs (%s:%s): no source field `%s`", modelName, t.Name, ref.attrs["field"])
+			logrus.Warnf("refs (%s:%s): no source field `%s`", modelDir, t.Name, ref.attrs["field"])
 			continue
 		}
 
-		rt = tables.Get(ref.attrs["ref_table"])
+		rt = model.Tables.Get(ref.attrs["ref_table"])
 
 		if rt == nil {
-			logrus.Warnf("refs (%s): could not reference table `%s` by %s", modelName, ref.attrs["ref_table"], f)
+			logrus.Warnf("refs (%s): could not reference table `%s` by %s", modelDir, ref.attrs["ref_table"], f)
 			continue
 		}
 
 		rf = rt.Fields.Get(ref.attrs["ref_field"])
 
 		if rf == nil {
-			logrus.Warnf("refs (%s): could not reference field `%s` by %s", modelName, ref.attrs["ref_field"], f)
+			logrus.Warnf("refs (%s): could not reference field `%s` by %s", modelDir, ref.attrs["ref_field"], f)
 			continue
 		}
 
@@ -403,33 +416,14 @@ func parseFiles(model *Model, modelDir string) (TableIndex, error) {
 			Field: f,
 		})
 	}
-
-	return tables, nil
 }
 
-func parseModel(path string) (*Model, error) {
-	metaFile := filepath.Join(path, "datamodel.json")
-
+// findModels walks a path and looks for datamodel.json files which declare a
+// data model. Files in the directory will be walked to find definition files.
+func findModelDirs(path string) []string {
 	var (
-		m   *Model
-		err error
-	)
-
-	if m, err = loadModel(metaFile); err != nil {
-		return nil, err
-	}
-
-	tables, _ := parseFiles(m, path)
-
-	m.Tables = tables
-
-	return m, nil
-}
-
-func findModels(path string) []string {
-	var (
-		curPath    string
-		modelPaths []string
+		file   string
+		models []string
 	)
 
 	filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
@@ -448,16 +442,42 @@ func findModels(path string) []string {
 			return filepath.SkipDir
 		}
 
-		curPath = filepath.Join(path, "datamodel.json")
+		file = filepath.Join(path, modelFileName)
 
-		// Queue path and skip descending it.
-		if pathExists(curPath) {
-			logrus.Debugf("found model %s", path)
-			modelPaths = append(modelPaths, path)
+		// If it exists, attempt to load it.
+		if _, err = os.Stat(file); err == nil {
+			models = append(models, path)
 		}
 
 		return nil
 	})
 
-	return modelPaths
+	return models
+}
+
+// loadModel loads the JSON metadata file for a model.
+func loadModel(path string) (*Model, error) {
+	fn := filepath.Join(path, modelFileName)
+
+	f, err := os.Open(fn)
+
+	if err != nil {
+		return nil, err
+	}
+
+	defer f.Close()
+
+	m := Model{}
+	d := json.NewDecoder(f)
+
+	if err = d.Decode(&m); err != nil {
+		return nil, err
+	}
+
+	// Set the path of where the model was found.
+	m.path = path
+
+	parseFiles(&m, path)
+
+	return &m, nil
 }

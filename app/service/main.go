@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"net/http"
+	"os"
 	"path/filepath"
 	"time"
 
@@ -11,17 +12,15 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-const defaultRepoName = "https://github.com/chop-dbhi/data-models"
-
 var (
-	host       string
-	port       int
-	loglevel   string
-	repoDir    string
-	repoName   string
-	repoBranch string
-	interval   time.Duration
-	secret     string
+	registeredRepos Repos
+
+	host     string
+	port     int
+	loglevel string
+	reposDir string
+	interval time.Duration
+	secret   string
 )
 
 func main() {
@@ -29,11 +28,10 @@ func main() {
 	flag.StringVar(&loglevel, "log", "info", "Specify the log level.")
 	flag.StringVar(&host, "host", "127.0.0.1", "Host or IP to bind to.")
 	flag.IntVar(&port, "port", 8123, "Port to bind to.")
-	flag.StringVar(&repoDir, "path", "data-models", "Local name of the cloned repo.")
-	flag.StringVar(&repoName, "repo", defaultRepoName, "Remote path or URL of the repository.")
-	flag.StringVar(&repoBranch, "branch", "master", "Branch to use.")
+	flag.StringVar(&reposDir, "path", "data-models", "Local directory of the cloned repos")
 	flag.DurationVar(&interval, "interval", time.Hour, "The interval for checking for updates.")
 	flag.StringVar(&secret, "secret", "", "Secret for webhook integration.")
+	flag.Var(&registeredRepos, "repo", "Git repository to include. Multiple values can be supplied.")
 
 	flag.Parse()
 
@@ -45,10 +43,10 @@ func main() {
 
 	var err error
 
-	repoDir, err = filepath.Abs(repoDir)
+	reposDir, err = filepath.Abs(reposDir)
 
-	if err != nil {
-		logrus.Fatalf("bad repo path")
+	if err = os.MkdirAll(reposDir, os.ModeDir|0775); err != nil {
+		logrus.Fatalf("could not create repos directory: %s", err)
 	}
 
 	// Setup routes.
@@ -58,24 +56,25 @@ func main() {
 	router.RedirectFixedPath = true
 	router.HandleMethodNotAllowed = true
 
-	router.GET("/", viewIndex)
-	router.GET("/models", viewModels)
-	router.GET("/models/:name", viewModel)
-	router.GET("/models/:name/:version", viewModelVersion)
-	router.GET("/models/:name/:version/:table", viewTable)
-	router.GET("/models/:name/:version/:table/:field", viewField)
-	router.GET("/compare/:name1/:version1/:name2/:version2", viewCompareModels)
-	router.GET("/schemata/:name/:version", viewModelSchema)
+	router.GET("/", httpIndex)
+	router.GET("/repos", httpReposList)
+	router.GET("/models", httpModels)
+	router.GET("/models/:name", httpModel)
+	router.GET("/models/:name/:version", httpModelVersion)
+	router.GET("/models/:name/:version/:table", httpTable)
+	router.GET("/models/:name/:version/:table/:field", httpField)
+	router.GET("/compare/:name1/:version1/:name2/:version2", httpCompareModels)
+	router.GET("/schemata/:name/:version", httpModelSchema)
 
 	// Endpoint for webhook integration.
-	router.POST("/_hook", viewUpdateRepo)
+	router.POST("/_hook", httpUpdateRepos)
 
 	// Update the repo on startup.
-	go updateRepo()
+	go updateRepos()
 
 	// Poll the repo.
 	if interval > 0 {
-		go pollRepo()
+		go pollRepos()
 	}
 
 	// Listen.

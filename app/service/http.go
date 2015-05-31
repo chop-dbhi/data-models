@@ -76,7 +76,7 @@ func detectFormat(w http.ResponseWriter, r *http.Request) string {
 	return format
 }
 
-func viewIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+func httpIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	switch detectFormat(w, r) {
 	case "html":
 		RenderIndexHTML(w)
@@ -85,10 +85,10 @@ func viewIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	}
 }
 
-func viewModels(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func httpModels(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	data := map[string]interface{}{
 		"Title": "Models",
-		"Items": dataModels.List(),
+		"Items": dataModelCache.List(),
 	}
 
 	switch detectFormat(w, r) {
@@ -103,10 +103,10 @@ func viewModels(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	}
 }
 
-func viewModel(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func httpModel(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	n := p.ByName("name")
 
-	m := dataModels.Versions(n)
+	m := dataModelCache.Versions(n)
 
 	if m == nil {
 		w.WriteHeader(http.StatusNotFound)
@@ -130,11 +130,11 @@ func viewModel(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	}
 }
 
-func viewModelVersion(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func httpModelVersion(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	n := p.ByName("name")
 	v := p.ByName("version")
 
-	m := dataModels.Get(n, v)
+	m := dataModelCache.Get(n, v)
 
 	if m == nil {
 		w.WriteHeader(http.StatusNotFound)
@@ -155,7 +155,7 @@ func viewModelVersion(w http.ResponseWriter, r *http.Request, p httprouter.Param
 	}
 }
 
-func viewTable(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func httpTable(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	n := p.ByName("name")
 	v := p.ByName("version")
 	tn := p.ByName("table")
@@ -165,7 +165,7 @@ func viewTable(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 		t *Table
 	)
 
-	if m = dataModels.Get(n, v); m == nil {
+	if m = dataModelCache.Get(n, v); m == nil {
 		w.WriteHeader(http.StatusNotFound)
 		return
 	}
@@ -183,7 +183,7 @@ func viewTable(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	}
 }
 
-func viewField(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func httpField(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	n := p.ByName("name")
 	v := p.ByName("version")
 	tn := p.ByName("table")
@@ -195,7 +195,7 @@ func viewField(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 		f *Field
 	)
 
-	if m = dataModels.Get(n, v); m == nil {
+	if m = dataModelCache.Get(n, v); m == nil {
 		w.WriteHeader(http.StatusNotFound)
 		return
 	}
@@ -218,11 +218,11 @@ func viewField(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	}
 }
 
-func viewCompareModels(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func httpCompareModels(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	n1 := p.ByName("name1")
 	v1 := p.ByName("version1")
 
-	m1 := dataModels.Get(n1, v1)
+	m1 := dataModelCache.Get(n1, v1)
 
 	if m1 == nil {
 		w.WriteHeader(http.StatusNotFound)
@@ -232,7 +232,7 @@ func viewCompareModels(w http.ResponseWriter, r *http.Request, p httprouter.Para
 	n2 := p.ByName("name2")
 	v2 := p.ByName("version2")
 
-	m2 := dataModels.Get(n2, v2)
+	m2 := dataModelCache.Get(n2, v2)
 
 	if m2 == nil {
 		w.WriteHeader(http.StatusNotFound)
@@ -258,10 +258,11 @@ func verifyGithubSignature(sig string, r io.Reader) bool {
 	return hmac.Equal([]byte(expected), []byte(sig))
 }
 
-func viewUpdateRepo(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+// TODO: does each repo have a webhook?
+func httpUpdateRepos(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	// If no secret has been supplied, update at will.
 	if secret == "" {
-		updateRepo()
+		updateRepos()
 		return
 	}
 
@@ -270,7 +271,7 @@ func viewUpdateRepo(w http.ResponseWriter, r *http.Request, _ httprouter.Params)
 		defer r.Body.Close()
 
 		if verifyGithubSignature(sig, r.Body) {
-			updateRepo()
+			updateRepos()
 			return
 		}
 	}
@@ -278,7 +279,7 @@ func viewUpdateRepo(w http.ResponseWriter, r *http.Request, _ httprouter.Params)
 	w.WriteHeader(http.StatusUnauthorized)
 }
 
-func viewModelSchema(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func httpModelSchema(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	n := p.ByName("name")
 	v := p.ByName("version")
 
@@ -286,7 +287,7 @@ func viewModelSchema(w http.ResponseWriter, r *http.Request, p httprouter.Params
 		m *Model
 	)
 
-	if m = dataModels.Get(n, v); m == nil {
+	if m = dataModelCache.Get(n, v); m == nil {
 		w.WriteHeader(http.StatusNotFound)
 		return
 	}
@@ -301,6 +302,21 @@ func viewModelSchema(w http.ResponseWriter, r *http.Request, p httprouter.Params
 	switch detectFormat(w, r) {
 	case "json":
 		jsonResponse(w, aux)
+	default:
+		w.WriteHeader(http.StatusNotAcceptable)
+	}
+}
+
+func httpReposList(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
+	switch detectFormat(w, r) {
+	case "md", "markdown":
+		w.Header().Set("content-type", "text/markdown")
+		RenderReposMarkdown(w, registeredRepos)
+	case "", "html":
+		w.Header().Set("content-type", "text/html")
+		RenderReposHTML(w, registeredRepos)
+	case "json":
+		jsonResponse(w, registeredRepos)
 	default:
 		w.WriteHeader(http.StatusNotAcceptable)
 	}

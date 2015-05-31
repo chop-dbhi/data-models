@@ -99,7 +99,7 @@ func assets_full_md() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/full.md", size: 1628, mode: os.FileMode(420), modTime: time.Unix(1432820672, 0)}
+	info := bindata_file_info{name: "assets/full.md", size: 1628, mode: os.FileMode(420), modTime: time.Unix(1432915115, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -119,7 +119,7 @@ func assets_index_md() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/index.md", size: 950, mode: os.FileMode(420), modTime: time.Unix(1432648467, 0)}
+	info := bindata_file_info{name: "assets/index.md", size: 950, mode: os.FileMode(420), modTime: time.Unix(1432915115, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -159,7 +159,27 @@ func assets_models_md() (*asset, error) {
 		return nil, err
 	}
 
-	info := bindata_file_info{name: "assets/models.md", size: 97, mode: os.FileMode(420), modTime: time.Unix(1432304277, 0)}
+	info := bindata_file_info{name: "assets/models.md", size: 97, mode: os.FileMode(420), modTime: time.Unix(1432915115, 0)}
+	a := &asset{bytes: bytes, info:  info}
+	return a, nil
+}
+
+var _assets_repos_md = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x52\x56\x08\x4a\x2d\xc8\x2f\xce\x2c\xc9\x2f\xca\x4c\x2d\xe6\xe2\xaa\xae\x2e\x4a\xcc\x4b\x4f\x55\xd0\xab\xad\xd5\x55\xa8\xae\xd6\x0b\x0d\xf2\xa9\xad\xe5\x52\x00\x02\x5d\x05\x27\xa0\x54\x72\x86\x15\x48\x18\xc2\x84\xcb\x38\xe7\xe7\xe6\x66\x96\x80\x65\x20\xcc\x60\x0f\x47\x43\x34\x59\x05\x97\xc4\x92\x54\x24\x25\x21\x99\xb9\xa9\x70\x25\x6e\xa9\x25\xc9\x19\xa9\x29\x60\x69\x30\x1b\x2a\x5b\x5d\x9d\x9a\x97\x02\xa4\x01\x01\x00\x00\xff\xff\xc4\xad\x01\x96\xa7\x00\x00\x00")
+
+func assets_repos_md_bytes() ([]byte, error) {
+	return bindata_read(
+		_assets_repos_md,
+		"assets/repos.md",
+	)
+}
+
+func assets_repos_md() (*asset, error) {
+	bytes, err := assets_repos_md_bytes()
+	if err != nil {
+		return nil, err
+	}
+
+	info := bindata_file_info{name: "assets/repos.md", size: 167, mode: os.FileMode(420), modTime: time.Unix(1432993022, 0)}
 	a := &asset{bytes: bytes, info:  info}
 	return a, nil
 }
@@ -281,6 +301,7 @@ var _bindata = map[string]func() (*asset, error){
 	"assets/index.md": assets_index_md,
 	"assets/mappings.md": assets_mappings_md,
 	"assets/models.md": assets_models_md,
+	"assets/repos.md": assets_repos_md,
 	"assets/schema.md": assets_schema_md,
 	"assets/style.css": assets_style_css,
 	"assets/wrap.html": assets_wrap_html,
@@ -336,6 +357,8 @@ var _bintree = &_bintree_t{nil, map[string]*_bintree_t{
 		"mappings.md": &_bintree_t{assets_mappings_md, map[string]*_bintree_t{
 		}},
 		"models.md": &_bintree_t{assets_models_md, map[string]*_bintree_t{
+		}},
+		"repos.md": &_bintree_t{assets_repos_md, map[string]*_bintree_t{
 		}},
 		"schema.md": &_bintree_t{assets_schema_md, map[string]*_bintree_t{
 		}},
