@@ -44,8 +44,9 @@ func renderHTML(w io.Writer, b []byte) {
 	c := blackfriday.Markdown(b, renderer, extFlags)
 
 	data := map[string]string{
-		"Content": string(c),
-		"Style":   string(s),
+		"Content":         string(c),
+		"Style":           string(s),
+		"GoogleAnalytics": googleAnalytics,
 	}
 
 	t.Execute(w, data)

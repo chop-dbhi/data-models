@@ -15,12 +15,13 @@ import (
 var (
 	registeredRepos Repos
 
-	host     string
-	port     int
-	loglevel string
-	reposDir string
-	interval time.Duration
-	secret   string
+	host            string
+	port            int
+	loglevel        string
+	reposDir        string
+	interval        time.Duration
+	secret          string
+	googleAnalytics string
 )
 
 func main() {
@@ -31,6 +32,7 @@ func main() {
 	flag.StringVar(&reposDir, "path", "data-models", "Local directory of the cloned repos")
 	flag.DurationVar(&interval, "interval", time.Hour, "The interval for checking for updates.")
 	flag.StringVar(&secret, "secret", "", "Secret for webhook integration.")
+	flag.StringVar(&googleAnalytics, "ga", "", "Google Analytics tracking code.")
 	flag.Var(&registeredRepos, "repo", "Git repository to include. Multiple values can be supplied.")
 
 	flag.Parse()
