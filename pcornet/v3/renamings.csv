@@ -1,0 +1,4 @@
+model,source_version,source_table,source_field,target_version,target_table,target_field
+pcornet,v2,LAB_RESULT_CM,MODIFIER_LOW,v3,LAB_RESULT_CM,NORM_MODIFIER_LOW
+pcornet,v2,LAB_RESULT_CM,MODIFIER_HIGH,v3,LAB_RESULT_CM,NORM_MODIFIER_HIGH
+pcornet,v2,PROCEDURE,,v3,PROCEDURES,
