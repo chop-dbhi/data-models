@@ -1,0 +1,6 @@
+model,version,table,field,type,length,precision,scale,default
+pcornet,v3,DEATH,PATID,string,,,,
+pcornet,v3,DEATH,DEATH_DATE,date,,,,
+pcornet,v3,DEATH,DEATH_DATE_IMPUTE,string,2,,,
+pcornet,v3,DEATH,DEATH_SOURCE,string,2,,,
+pcornet,v3,DEATH,DEATH_MATCH_CONFIDENCE,string,2,,,
