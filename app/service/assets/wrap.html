@@ -3,9 +3,65 @@
     <style>{{.Style}}</style>
 </head>
 <body>
-    <div class="markdown-body">
+    <div id='header'>
+        <a class='brand' href='/'>Data Models</a>
+
+        <ul>
+            <li><a href='/models'>Models</a></li>
+            <li><a href='/repos'>Repos</a></li>
+        </ul>
+    </div>
+
+    <a id='scroll-anchor' href='#'>Top</a>
+
+
+    <div class='markdown-body'>
         {{.Content}}
     </div>
+
+    <script>
+        (function() {
+
+            // Debounce executes only the last call of a function after the
+            // specified wait period.
+            function debounce(func, wait, immediate) {
+                var timeout;
+
+                return function() {
+                    var context = this,
+                        args = arguments;
+
+                    var later = function() {
+                        timeout = null;
+                        if (!immediate) func.apply(context, args);
+                    };
+
+                    var callNow = immediate && !timeout;
+
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+
+                    if (callNow) func.apply(context, args);
+                };
+            };
+
+            var scrollAnchor = document.getElementById('scroll-anchor');
+
+            // Scroll to top.
+            scrollAnchor.addEventListener('click', function(event) {
+                event.preventDefault();
+                scroll(0, 0);
+            }, false);
+
+            // Toggle scroll anchor.
+            window.addEventListener('scroll', debounce(function(event) {
+                var top = (window.pageYOffset || document.scrollTop) - (document.clientTop || 0);
+
+                scrollAnchor.style.display = top > 50 ? 'block' : 'none';
+            }, 15), false);
+
+        })();
+    </script>
 
     {{if .GoogleAnalytics}}
     <script>
