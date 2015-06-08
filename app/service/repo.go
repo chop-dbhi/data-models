@@ -51,6 +51,8 @@ type Repo struct {
 	// For updating.
 	sync.Mutex
 
+	// SHA1 of the previous state.
+	prevSHA1 string
 	updating bool
 	path     string
 }
@@ -94,6 +96,7 @@ func (r *Repo) info() {
 		logrus.Errorf("repo: error parsing timestamp: %s", err)
 	}
 
+	r.prevSHA1 = r.CommitSHA1
 	r.CommitSHA1 = parts[0]
 	r.CommitTime = time.Unix(int64(ts), 0)
 	r.FetchTime = time.Now()
@@ -132,10 +135,10 @@ func (r *Repo) pull() {
 
 // updateRepo clones or updates the repo and returns true
 // if an update occurred.
-func (r *Repo) update() {
+func (r *Repo) update() bool {
 	// Update already in progress
 	if r.updating {
-		return
+		return false
 	}
 
 	r.Lock()
@@ -154,6 +157,8 @@ func (r *Repo) update() {
 	} else {
 		r.pull()
 	}
+
+	return r.CommitSHA1 != r.prevSHA1
 }
 
 func ParseRepo(uri string) (*Repo, error) {
@@ -197,17 +202,24 @@ func updateRepos() {
 	wg := sync.WaitGroup{}
 	wg.Add(len(registeredRepos))
 
+	var changed bool
+
 	for _, r := range registeredRepos {
 		go func(r *Repo) {
-			r.update()
+			if r.update() {
+				changed = true
+			}
+
 			wg.Done()
 		}(r)
 	}
 
 	wg.Wait()
 
-	// Rebuild cache one all the repos are up-to-date.
-	rebuildCache()
+	// Rebuild the cache if any of the repos changed.
+	if changed {
+		rebuildCache()
+	}
 }
 
 // pollRepo periodically checks the repo for updates.
