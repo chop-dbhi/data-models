@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/csv"
 	"io"
+	"strings"
 )
 
 type MapCSVReader struct {
@@ -15,7 +16,7 @@ func (r *MapCSVReader) zip(keys, values []string) Attrs {
 	m := make(Attrs, len(keys))
 
 	for i, k := range keys {
-		m[k] = values[i]
+		m[strings.TrimSpace(k)] = strings.TrimSpace(values[i])
 	}
 
 	return m
