@@ -2,6 +2,10 @@ package main
 
 type FileType int
 
+func (f FileType) String() string {
+	return fileTypeStrings[f]
+}
+
 const (
 	UnknownType FileType = iota
 	FieldsFile
@@ -12,6 +16,16 @@ const (
 	ConstraintsFile
 	MappingsFile
 )
+
+var fileTypeStrings = map[FileType]string{
+	UnknownType:     "unknown",
+	FieldsFile:      "fields",
+	TablesFile:      "tables",
+	SchemataFile:    "schema",
+	IndexesFile:     "indexes",
+	ConstraintsFile: "constraints",
+	MappingsFile:    "mappings",
+}
 
 // Mapping of file types to their minimum required fields.
 var FileTypeFields = map[FileType][]string{
@@ -112,6 +126,8 @@ func hasFields(header, fields []string) bool {
 	return true
 }
 
+// detectFileType takes a header and attempts to detect the file type based
+// on the fields.
 func detectFileType(header []string) FileType {
 	for _, fileType := range fileTypesOrder {
 		if hasFields(header, FileTypeFields[fileType]) {
