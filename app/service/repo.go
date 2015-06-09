@@ -221,8 +221,8 @@ func updateRepos() {
 	}
 }
 
-// pollRepo periodically checks the repo for updates.
-func pollRepos() {
+// pollRepos periodically checks the repos for updates.
+func pollRepos(interval time.Duration) {
 	// Check for updates every hour.
 	t := time.NewTicker(interval)
 

@@ -12,19 +12,22 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
+// Global variables.
 var (
 	registeredRepos Repos
-
-	host            string
-	port            int
-	loglevel        string
 	reposDir        string
-	interval        time.Duration
 	secret          string
 	googleAnalytics string
 )
 
 func main() {
+	var (
+		host     string
+		port     int
+		loglevel string
+		interval time.Duration
+	)
+
 	// Bind and parse flags
 	flag.StringVar(&loglevel, "log", "info", "Specify the log level.")
 	flag.StringVar(&host, "host", "127.0.0.1", "Host or IP to bind to.")
@@ -76,7 +79,7 @@ func main() {
 
 	// Poll the repo.
 	if interval > 0 {
-		go pollRepos()
+		go pollRepos(interval)
 	}
 
 	// Listen.
