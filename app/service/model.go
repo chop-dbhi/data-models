@@ -251,11 +251,12 @@ func (fi FieldIndex) MarshalJSON() ([]byte, error) {
 }
 
 type Model struct {
-	Label   string
-	Name    string
-	Version string
-	URL     string
-	Tables  TableIndex
+	Label       string
+	Name        string
+	Version     string
+	Description string
+	URL         string
+	Tables      TableIndex
 
 	schema *Schema
 
@@ -264,10 +265,11 @@ type Model struct {
 
 func (m *Model) MarshalJSON() ([]byte, error) {
 	aux := map[string]interface{}{
-		"name":    m.Name,
-		"version": m.Version,
-		"url":     m.URL,
-		"tables":  m.Tables,
+		"name":        m.Name,
+		"version":     m.Version,
+		"description": m.Description,
+		"url":         m.URL,
+		"tables":      m.Tables,
 	}
 
 	return json.Marshal(aux)

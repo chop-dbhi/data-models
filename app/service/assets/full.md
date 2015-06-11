@@ -1,5 +1,7 @@
 # {{.Label}}
 
+{{if .Description}}{{.Description}}{{end}}
+
 - ID: {{.Name}}/{{.Version}}
 - URL: {{.URL}}
 

@@ -1,4 +1,4 @@
 # {{.Title}}
 
-{{range $m := .Items}}- [{{$m.Label}}](/models/{{$m.Name}}/{{$m.Version}})
+{{range .Items}}- [{{.Label}}](/models/{{.Name}}/{{.Version}}){{if .Description}} - {{.Description}}{{end}}
 {{end}}
