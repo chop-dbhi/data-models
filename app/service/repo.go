@@ -162,7 +162,7 @@ func (r *Repo) update() bool {
 }
 
 func ParseRepo(uri string) (*Repo, error) {
-	toks := strings.SplitN(uri, "@", 1)
+	toks := strings.SplitN(uri, "@", 2)
 
 	r := &Repo{
 		Branch: "master",
@@ -176,14 +176,13 @@ func ParseRepo(uri string) (*Repo, error) {
 
 		// Go-style namespacing e.g. github.com/chop-dbhi/data-models
 		r.path = filepath.Join(reposDir, purl.Host, purl.Path)
-	} else if uri, err = filepath.Abs(toks[0]); err == nil {
+	} else if uri, err = filepath.Abs(uri); err == nil {
 		gitDir := filepath.Join(uri, ".git")
 
 		if _, err = os.Stat(gitDir); err != nil {
 			return nil, err
 		}
 
-		//
 		r.URL = uri
 		r.path = uri
 	} else {
