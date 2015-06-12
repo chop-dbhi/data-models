@@ -276,7 +276,19 @@ func (m *Model) MarshalJSON() ([]byte, error) {
 }
 
 func (m *Model) String() string {
+	if m.Label != "" {
+		return m.Label
+	}
+
 	return fmt.Sprintf("%s/%s", m.Name, m.Version)
+}
+
+func (m *Model) Path() string {
+	return fmt.Sprintf("%s/%s", m.Name, m.Version)
+}
+
+func (m *Model) Slug() string {
+	return fmt.Sprintf("%s-%s", m.Name, m.Version)
 }
 
 type Table struct {
@@ -295,6 +307,7 @@ func (t *Table) MarshalJSON() ([]byte, error) {
 		"model":       t.Model.Name,
 		"version":     t.Model.Version,
 		"name":        t.Name,
+		"label":       t.Label,
 		"description": t.Description,
 		"fields":      t.Fields,
 	}
@@ -303,7 +316,19 @@ func (t *Table) MarshalJSON() ([]byte, error) {
 }
 
 func (t *Table) String() string {
-	return fmt.Sprintf("%s/%s", t.Model, t.Name)
+	if t.Label != "" {
+		return t.Label
+	}
+
+	return t.Name
+}
+
+func (t *Table) Path() string {
+	return fmt.Sprintf("%s/%s", t.Model.Path(), t.Name)
+}
+
+func (t *Table) Slug() string {
+	return fmt.Sprintf("%s-%s", t.Model.Slug(), t.Name)
 }
 
 type Field struct {
@@ -338,12 +363,25 @@ type Field struct {
 }
 
 func (f *Field) String() string {
-	return fmt.Sprintf("%s/%s", f.Table, f.Name)
+	if f.Label != "" {
+		return f.Label
+	}
+
+	return f.Name
+}
+
+func (f *Field) Path() string {
+	return fmt.Sprintf("%s/%s", f.Table.Path(), f.Name)
+}
+
+func (f *Field) Slug() string {
+	return fmt.Sprintf("%s-%s", f.Table.Slug(), f.Name)
 }
 
 func (f *Field) MarshalJSON() ([]byte, error) {
 	aux := map[string]interface{}{
 		"name":        f.Name,
+		"label":       f.Label,
 		"table":       f.Table.Name,
 		"description": f.Description,
 		"required":    f.Required,
@@ -371,6 +409,10 @@ type Reference struct {
 	Field *Field
 
 	attrs Attrs
+}
+
+func (r *Reference) String() string {
+	return r.Name
 }
 
 func (r *Reference) MarshalJSON() ([]byte, error) {

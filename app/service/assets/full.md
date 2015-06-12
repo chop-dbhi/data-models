@@ -1,4 +1,4 @@
-# {{.Label}}
+# {{.}}
 
 {{if .Description}}{{.Description}}{{end}}
 
@@ -7,20 +7,20 @@
 
 ## Tables
 
-{{range .Tables.List}}- [{{.Name}}](#{{.Name}})
+{{range .Tables.List}}- [{{.}}](#{{.Slug}})
 {{end}}
 
-{{range .Tables.List}}## {{.Name}} {#{{.Name}}}
+{{range .Tables.List}}## {{.}} {#{{.Slug}}}
 
 {{.Description}}
 
 **Fields**
 
-{{range .Fields.List}}- [{{.Name}}](#{{.Table.Name}}-{{.Name}})
+{{range .Fields.List}}- [{{.}}](#{{.Slug}})
 {{end}}
-{{range .Fields.List}}#### {{.Name}} {#{{.Table.Name}}-{{.Name}}}
+{{range .Fields.List}}#### {{.}} {#{{.Slug}}}
 
-{{if .References}}*Refers to: [{{.References.Field.Table.Name}}](#{{.References.Field.Table.Name}}) / [{{.References.Field.Name}}](#{{.References.Field.Table.Name}}-{{.References.Field.Name}})*{{end}}
+{{if .References}}*Refers to: [{{.References.Field.Table}}](#{{.References.Field.Table.Slug}}) / [{{.References.Field}}](#{{.References.Field.Slug}})*{{end}}
 
 {{.Description}}
 
@@ -34,9 +34,9 @@
 
 {{if .Mappings}}##### Mappings
 
-Model | Version | Table | Field | Comment
-------|---------|-------|-------|--------
-{{range .Mappings}}[{{.Field.Table.Model.Name}}](/models/{{.Field.Table.Model.Name}}) | [{{.Field.Table.Model.Version}}](/models/{{.Field.Table.Model.Name}}/{{.Field.Table.Model.Version}}) | [{{.Field.Table.Name}}](/models/{{.Field.Table.Model.Name}}/{{.Field.Table.Model.Version}}#{{.Field.Table.Name}}) | [{{.Field.Name}}](/models/{{.Field.Table.Model.Name}}/{{.Field.Table.Model.Version}}#{{.Field.Table.Name}}-{{.Field.Name}}) | {{.Comment}}
+Model | Table | Field | Comment
+------|-------|-------|--------
+{{range .Mappings}}[{{.Field.Table.Model}}](/models/{{.Field.Table.Model.Path}}) | [{{.Field.Table}}](/models/{{.Field.Table.Model.Path}}#{{.Field.Table.Slug}}) | [{{.Field}}](/models/{{.Field.Table.Model.Path}}#{{.Field.Slug}}) | {{.Comment}}
 {{end}}
 {{end}}
 
@@ -46,7 +46,7 @@ Model | Version | Table | Field | Comment
 
 Table | Field | Name
 ------|-------|-----
-{{range .InboundRefs}}[{{.Field.Table.Name}}](#{{.Field.Table.Name}}) | [{{.Field.Name}}](#{{.Field.Table.Name}}-{{.Field.Name}}) | {{.Name}}
+{{range .InboundRefs}}[{{.Field.Table}}](#{{.Field.Table.Slug}}) | [{{.Field}}](#{{.Field.Slug}}) | {{.}}
 {{end}}
 {{end}}
 

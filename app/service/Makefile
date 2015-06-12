@@ -22,11 +22,11 @@ test:
 	go test -cover ./...
 
 build:
-	go-bindata -ignore \\.sw[a-z] assets/
+	go-bindata -ignore \\.sw[a-z] -ignore \\.DS_Store assets/
 	go build -o $(GOPATH)/bin/data-models .
 
 build-dev:
-	go-bindata -debug -ignore \\.sw[a-z] assets/
+	go-bindata -debug -ignore \\.sw[a-z] -ignore \\.DS_Store assets/
 	go build -o $(GOPATH)/bin/data-models .
 
 bench:
