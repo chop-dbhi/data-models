@@ -15,6 +15,7 @@ const (
 	IndexesFile
 	ConstraintsFile
 	MappingsFile
+	ModelsFile
 )
 
 var fileTypeStrings = map[FileType]string{
@@ -25,6 +26,7 @@ var fileTypeStrings = map[FileType]string{
 	IndexesFile:     "indexes",
 	ConstraintsFile: "constraints",
 	MappingsFile:    "mappings",
+	ModelsFile:      "models",
 }
 
 // Mapping of file types to their minimum required fields.
@@ -96,6 +98,14 @@ var FileTypeFields = map[FileType][]string{
 		"target_field",
 		"comment",
 	},
+
+	ModelsFile: []string{
+		"model",
+		"version",
+		"label",
+		"description",
+		"url",
+	},
 }
 
 // Explict order since the tables file is a subset of fields.
@@ -108,6 +118,7 @@ var fileTypesOrder = []FileType{
 	ReferencesFile,
 	TablesFile,
 	MappingsFile,
+	ModelsFile,
 }
 
 func hasFields(header, fields []string) bool {
