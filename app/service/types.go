@@ -36,8 +36,6 @@ var FileTypeFields = map[FileType][]string{
 		"version",
 		"table",
 		"field",
-		"ref_table",
-		"ref_field",
 		"description",
 	},
 
