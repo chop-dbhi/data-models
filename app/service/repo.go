@@ -103,6 +103,18 @@ func (r *Repo) info() {
 	r.FetchTime = time.Now()
 }
 
+func (r *Repo) hasOrigin() bool {
+	cmd := exec.Command("git", "remote")
+
+	buf := bytes.NewBuffer(nil)
+
+	cmd.Stdout = buf
+	cmd.Dir = r.path
+	cmd.Run()
+
+	return strings.Contains(buf.String(), "origin\n")
+}
+
 func (r *Repo) clone() {
 	cmd := exec.Command("git", "clone", "--branch", r.Branch, r.URL, r.path)
 
@@ -113,24 +125,27 @@ func (r *Repo) clone() {
 		logrus.Fatalf("problem cloning repo: %s", err)
 	}
 
-	logrus.Debugf("repo: cloneed repo %s", r)
+	logrus.Debugf("repo: cloned repo %s", r)
 	r.info()
 }
 
 func (r *Repo) pull() {
-	remote := fmt.Sprintf("origin/%s", r.Branch)
-	cmd := exec.Command("git", "pull", ".", remote)
+	if r.hasOrigin() {
+		remote := fmt.Sprintf("origin/%s", r.Branch)
+		cmd := exec.Command("git", "pull", ".", remote)
 
-	cmd.Dir = r.path
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
+		cmd.Dir = r.path
+		cmd.Stdout = os.Stdout
+		cmd.Stderr = os.Stderr
 
-	if err := cmd.Run(); err != nil {
-		logrus.Fatalf("problem pulling repo: %s", err)
-		return
+		if err := cmd.Run(); err != nil {
+			logrus.Fatalf("problem pulling repo: %s", err)
+			return
+		}
+
+		logrus.Debugf("repo: pulled repo %s", r)
 	}
 
-	logrus.Debugf("repo: pulled repo %s", r)
 	r.info()
 }
 
