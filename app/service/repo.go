@@ -55,6 +55,7 @@ type Repo struct {
 	prevSHA1 string
 	updating bool
 	path     string
+	git      bool
 }
 
 func (r *Repo) String() string {
@@ -141,6 +142,10 @@ func (r *Repo) update() bool {
 		return false
 	}
 
+	if !r.git {
+		return true
+	}
+
 	r.Lock()
 
 	defer func() {
@@ -173,14 +178,15 @@ func ParseRepo(uri string) (*Repo, error) {
 	// A remote URL must be absolute.
 	if purl, err := url.ParseRequestURI(uri); err == nil {
 		r.URL = uri
+		r.git = true
 
 		// Go-style namespacing e.g. github.com/chop-dbhi/data-models
 		r.path = filepath.Join(reposDir, purl.Host, purl.Path)
 	} else if uri, err = filepath.Abs(uri); err == nil {
 		gitDir := filepath.Join(uri, ".git")
 
-		if _, err = os.Stat(gitDir); err != nil {
-			return nil, err
+		if _, err = os.Stat(gitDir); err == nil {
+			r.git = true
 		}
 
 		r.URL = uri
