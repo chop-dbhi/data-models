@@ -1,6 +1,12 @@
 model,version,type,name,table,field
 pedsnet,v1,primary key,xpk_care_site,care_site,care_site_id
 pedsnet,v1,primary key,xpk_concept,concept,concept_id
+pedsnet,v1,primary key,xpk_concept_ancestor,concept_ancestor,ancestor_concept_id
+pedsnet,v1,primary key,xpk_concept_ancestor,concept_ancestor,descendant_concept_id
+pedsnet,v1,primary key,xpk_concept_relationship,concept_relationship,concept_id_1
+pedsnet,v1,primary key,xpk_concept_relationship,concept_relationship,concept_id_2
+pedsnet,v1,primary key,xpk_concept_relationship,concept_relationship,relationship_id
+pedsnet,v1,primary key,xpk_concept_synonym,concept_synonym,concept_synonym_id
 pedsnet,v1,primary key,xpk_condition_occurrence,condition_occurrence,condition_occurrence_id
 pedsnet,v1,primary key,xpk_death,death,death_id
 pedsnet,v1,primary key,xpk_location,location,location_id
@@ -10,5 +16,10 @@ pedsnet,v1,primary key,xpk_organization,organization,organization_id
 pedsnet,v1,primary key,xpk_person,person,person_id
 pedsnet,v1,primary key,xpk_procedure_occurrence,procedure_occurrence,procedure_occurrence_id
 pedsnet,v1,primary key,xpk_provider,provider,provider_id
+pedsnet,v1,primary key,xpk_relationship,relationship,relationship_id
+pedsnet,v1,primary key,xpk_source_to_concept_map,source_to_concept_map,source_vocabulary_id
+pedsnet,v1,primary key,xpk_source_to_concept_map,source_to_concept_map,target_concept_id
+pedsnet,v1,primary key,xpk_source_to_concept_map,source_to_concept_map,source_code
+pedsnet,v1,primary key,xpk_source_to_concept_map,source_to_concept_map,valid_end_date
 pedsnet,v1,primary key,xpk_visit_occurrence,visit_occurrence,visit_occurrence_id
 pedsnet,v1,primary key,xpk_vocabulary,vocabulary,vocabulary_id

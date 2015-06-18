@@ -1,0 +1,6 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v1,relationship,defines_ancestry,integer,,,,1
+pedsnet,v1,relationship,is_hierarchical,integer,,,,
+pedsnet,v1,relationship,relationship_id,integer,,,,
+pedsnet,v1,relationship,relationship_name,string,256,,,
+pedsnet,v1,relationship,reverse_relationship,integer,,,,
