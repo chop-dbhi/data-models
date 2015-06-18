@@ -8,9 +8,11 @@ omop,v4,concept_synonym,Contains any number of synonymous names (descriptions) f
 omop,v4,condition_era,A Condition Era is defined as a span of time when the Person is assumed to have a given condition. 
 omop,v4,condition_occurrence,A diagnosis or condition that has been recorded about a person at a certain time 
 omop,v4,death,Time and cause of death of the Person 
+omop,v4,drug_approval,
 omop,v4,drug_cost,For each Drug Exposure record additional information about cost and payments 
 omop,v4,drug_era,Association between a Person and a Drug over a specific time period 
 omop,v4,drug_exposure,Association between a Person and a Drug at a specific time 
+omop,v4,drug_strength,
 omop,v4,location,"Physical addresses of patients, organizations and care sites "
 omop,v4,observation,"Observations are clinical facts, such as laboratory tests, signs/symptoms, which are not captured within other CDM tables"
 omop,v4,observation_period,"Time intervals during which health care information, such as drugs, conditions, and other clinical observations, may be available "

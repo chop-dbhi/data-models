@@ -30,6 +30,9 @@ omop,v4,not null,,condition_occurrence,condition_start_date
 omop,v4,not null,,condition_occurrence,condition_type_concept_id
 omop,v4,not null,,condition_occurrence,person_id
 omop,v4,not null,,death,death_date
+omop,v4,not null,,drug_approval,ingredient_concept_id
+omop,v4,not null,,drug_approval,approval_date
+omop,v4,not null,,drug_approval,approved_by
 omop,v4,not null,,drug_cost,drug_exposure_id
 omop,v4,not null,,drug_era,drug_concept_id
 omop,v4,not null,,drug_era,drug_era_end_date
@@ -40,6 +43,10 @@ omop,v4,not null,,drug_exposure,drug_concept_id
 omop,v4,not null,,drug_exposure,drug_exposure_start_date
 omop,v4,not null,,drug_exposure,drug_type_concept_id
 omop,v4,not null,,drug_exposure,person_id
+omop,v4,not null,,drug_strength,drug_concept_id
+omop,v4,not null,,drug_strength,ingredient_concept_id
+omop,v4,not null,,drug_strength,valid_start_date
+omop,v4,not null,,drug_strength,valid_end_date
 omop,v4,not null,,observation,observation_concept_id
 omop,v4,not null,,observation,observation_date
 omop,v4,not null,,observation,observation_type_concept_id

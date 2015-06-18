@@ -1,0 +1,11 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v4,drug_strength,drug_concept_id,integer,,,,
+omop,v4,drug_strength,ingredient_concept_id,integer,,,,
+omop,v4,drug_strength,amount_value,number,,,,
+omop,v4,drug_strength,amount_unit,string,60,,,
+omop,v4,drug_strength,concentration_value,number,,,,
+omop,v4,drug_strength,concentration_enum_unit,string,60,,,
+omop,v4,drug_strength,concentration_denom_unit,string,60,,,
+omop,v4,drug_strength,valid_start_date,date,,,,
+omop,v4,drug_strength,valid_end_date,date,,,,
+omop,v4,drug_strength,invalid_reason,string,1,,,
