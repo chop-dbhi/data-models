@@ -1,6 +1,9 @@
 model,version,type,name,table,field
-pedsnet,v1,not null,,concept,concept_class_id
+pedsnet,v1,not null,,care_site,care_site_source_value
+pedsnet,v1,not null,,care_site,organization_id
+pedsnet,v1,not null,,concept,concept_class
 pedsnet,v1,not null,,concept,concept_code
+pedsnet,v1,not null,,concept,concept_level
 pedsnet,v1,not null,,concept,concept_name
 pedsnet,v1,not null,,concept,domain_id
 pedsnet,v1,not null,,concept,valid_end_date
@@ -31,18 +34,18 @@ pedsnet,v1,not null,,observation,observation_concept_id
 pedsnet,v1,not null,,observation,observation_date
 pedsnet,v1,not null,,observation,observation_type_concept_id
 pedsnet,v1,not null,,observation,person_id
-pedsnet,v1,not null,,observation_period,observation_period_end_date
 pedsnet,v1,not null,,observation_period,observation_period_start_date
-pedsnet,v1,not null,,observation_period,period_type_concept_id
 pedsnet,v1,not null,,observation_period,person_id
-pedsnet,v1,not null,,person,ethnicity_concept_id
+pedsnet,v1,not null,,organization,organization_source_value
 pedsnet,v1,not null,,person,gender_concept_id
-pedsnet,v1,not null,,person,race_concept_id
 pedsnet,v1,not null,,person,year_of_birth
+pedsnet,v1,not null,,person,person_source_value
 pedsnet,v1,not null,,procedure_occurrence,person_id
 pedsnet,v1,not null,,procedure_occurrence,procedure_concept_id
 pedsnet,v1,not null,,procedure_occurrence,procedure_date
 pedsnet,v1,not null,,procedure_occurrence,procedure_type_concept_id
+pedsnet,v1,not null,,provider,care_site_id
+pedsnet,v1,not null,,provider,provider_source_value
 pedsnet,v1,not null,,relationship,defines_ancestry
 pedsnet,v1,not null,,relationship,is_hierarchical
 pedsnet,v1,not null,,relationship,relationship_name
@@ -54,9 +57,6 @@ pedsnet,v1,not null,,source_to_concept_map,target_vocabulary_id
 pedsnet,v1,not null,,source_to_concept_map,valid_end_date
 pedsnet,v1,not null,,source_to_concept_map,valid_start_date
 pedsnet,v1,not null,,visit_occurrence,person_id
-pedsnet,v1,not null,,visit_occurrence,visit_concept_id
-pedsnet,v1,not null,,visit_occurrence,visit_end_date
 pedsnet,v1,not null,,visit_occurrence,visit_start_date
-pedsnet,v1,not null,,visit_occurrence,visit_type_concept_id
-pedsnet,v1,not null,,vocabulary,vocabulary_concept_id
+pedsnet,v1,not null,,visit_occurrence,place_of_service_concept_id
 pedsnet,v1,not null,,vocabulary,vocabulary_name

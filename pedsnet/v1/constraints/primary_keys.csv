@@ -8,7 +8,9 @@ pedsnet,v1,primary key,xpk_concept_relationship,concept_relationship,concept_id_
 pedsnet,v1,primary key,xpk_concept_relationship,concept_relationship,relationship_id
 pedsnet,v1,primary key,xpk_concept_synonym,concept_synonym,concept_synonym_id
 pedsnet,v1,primary key,xpk_condition_occurrence,condition_occurrence,condition_occurrence_id
-pedsnet,v1,primary key,xpk_death,death,death_id
+pedsnet,v1,primary key,xpk_death,death,person_id
+pedsnet,v1,primary key,xpk_death,death,death_type_concept_id
+pedsnet,v1,primary key,xpk_death,death,cause_of_death_concept_id
 pedsnet,v1,primary key,xpk_location,location,location_id
 pedsnet,v1,primary key,xpk_observation,observation,observation_id
 pedsnet,v1,primary key,xpk_observation_period,observation_period,observation_period_id
