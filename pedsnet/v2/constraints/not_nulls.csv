@@ -10,6 +10,13 @@ pedsnet,v2,not null,,concept_ancestor,ancestor_concept_id
 pedsnet,v2,not null,,concept_ancestor,descendant_concept_id
 pedsnet,v2,not null,,concept_ancestor,min_levels_of_separation
 pedsnet,v2,not null,,concept_ancestor,max_levels_of_separation
+pedsnet,v2,not null,,concept_class,concept_class_name
+pedsnet,v2,not null,,concept_class,concept_class_concept_id
+pedsnet,v2,not null,,concept_relationship,concept_id_1
+pedsnet,v2,not null,,concept_relationship,concept_id_2
+pedsnet,v2,not null,,concept_relationship,relationship_id
+pedsnet,v2,not null,,concept_relationship,valid_start_date
+pedsnet,v2,not null,,concept_relationship,valid_end_date
 pedsnet,v2,not null,,concept_synonym,concept_id
 pedsnet,v2,not null,,concept_synonym,concept_synonym_name
 pedsnet,v2,not null,,concept_synonym,language_concept_id
@@ -19,6 +26,8 @@ pedsnet,v2,not null,,condition_occurrence,condition_type_concept_id
 pedsnet,v2,not null,,condition_occurrence,person_id
 pedsnet,v2,not null,,death,death_date
 pedsnet,v2,not null,,death,death_type_concept_id
+pedsnet,v2,not null,,domain,domain_name
+pedsnet,v2,not null,,domain,domain_concept_id
 pedsnet,v2,not null,,drug_strength,drug_concept_id
 pedsnet,v2,not null,,drug_strength,ingredient_concept_id
 pedsnet,v2,not null,,drug_strength,valid_start_date
@@ -48,6 +57,11 @@ pedsnet,v2,not null,,procedure_occurrence,person_id
 pedsnet,v2,not null,,procedure_occurrence,procedure_concept_id
 pedsnet,v2,not null,,procedure_occurrence,procedure_date
 pedsnet,v2,not null,,procedure_occurrence,procedure_type_concept_id
+pedsnet,v2,not null,,relationship,relationship_name
+pedsnet,v2,not null,,relationship,is_hierarchical
+pedsnet,v2,not null,,relationship,defines_ancestry
+pedsnet,v2,not null,,relationship,reverse_relationship_id
+pedsnet,v2,not null,,relationship,relationship_concept_id
 pedsnet,v2,not null,,source_to_concept_map,source_code
 pedsnet,v2,not null,,source_to_concept_map,source_concept_id
 pedsnet,v2,not null,,source_to_concept_map,source_vocabulary_id
