@@ -2,7 +2,7 @@ model,version,table,field,type,length,precision,scale,default
 omop,v5,note,note_date,date,,,,
 omop,v5,note,note_id,integer,,,,
 omop,v5,note,note_source_value,string,50,,,
-omop,v5,note,note_text,string,,,,
+omop,v5,note,note_text,clob,,,,
 omop,v5,note,note_time,string,10,,,
 omop,v5,note,note_type_concept_id,integer,,,,
 omop,v5,note,person_id,integer,,,,

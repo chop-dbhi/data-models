@@ -1,0 +1,2 @@
+model,version,type,name,table,field
+omop,v4,unique,xnq_vocabulary_name,vocabulary,vocabulary_name
