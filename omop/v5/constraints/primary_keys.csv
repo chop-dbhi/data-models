@@ -20,7 +20,6 @@ omop,v5,primary key,xpk_attribute_definition,attribute_definition,attribute_defi
 omop,v5,primary key,xpk_person,person,person_id
 omop,v5,primary key,xpk_observation_period,observation_period,observation_period_id
 omop,v5,primary key,xpk_specimen,specimen,specimen_id
-omop,v5,primary key,xpk_death,death,death_id
 omop,v5,primary key,xpk_visit_occurrence,visit_occurrence,visit_occurrence_id
 omop,v5,primary key,xpk_procedure_occurrence,procedure_occurrence,procedure_occurrence_id
 omop,v5,primary key,xpk_drug_exposure,drug_exposure,drug_exposure_id
@@ -40,6 +39,7 @@ omop,v5,primary key,xpk_device_cost,device_cost,device_cost_id
 omop,v5,primary key,xpk_cohort,cohort,cohort_definition_id
 omop,v5,primary key,xpk_cohort,cohort,cohort_start_date
 omop,v5,primary key,xpk_cohort,cohort,cohort_end_date
+omop,v5,primary key,xpk_cohort,cohort,subject_id
 omop,v5,primary key,xpk_cohort_attribute,cohort_definition,cohort_definition_id
 omop,v5,primary key,xpk_cohort_attribute,cohort_definition,subject_id
 omop,v5,primary key,xpk_cohort_attribute,cohort_definition,cohort_start_date

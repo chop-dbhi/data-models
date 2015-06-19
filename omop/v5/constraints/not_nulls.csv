@@ -106,6 +106,7 @@ omop,v5,not null,,visit_cost,visit_occurrence_id
 omop,v5,not null,,procedure_cost,procedure_occurrence_id
 omop,v5,not null,,drug_cost,drug_exposure_id
 omop,v5,not null,,device_cost,device_exposure_id
+omop,v5,not null,,cohort,cohort_definition_id
 omop,v5,not null,,cohort,subject_id
 omop,v5,not null,,cohort,cohort_start_date
 omop,v5,not null,,cohort,cohort_end_date
@@ -113,7 +114,7 @@ omop,v5,not null,,cohort_attribute,cohort_definition_id
 omop,v5,not null,,cohort_attribute,cohort_start_date
 omop,v5,not null,,cohort_attribute,cohort_end_date
 omop,v5,not null,,cohort_attribute,subject_id
-omop,v5,not null,,cohort_attribute,attribution_definition_id
+omop,v5,not null,,cohort_attribute,attribute_definition_id
 omop,v5,not null,,drug_era,person_id
 omop,v5,not null,,drug_era,drug_concept_id
 omop,v5,not null,,drug_era,drug_era_start_date
