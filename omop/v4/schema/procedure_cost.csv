@@ -1,6 +1,6 @@
 model,version,table,field,type,length,precision,scale,default
 omop,v4,procedure_cost,disease_class_concept_id,integer,,,,
-omop,v4,procedure_cost,disease_class_source_value,string,string,,,
+omop,v4,procedure_cost,disease_class_source_value,string,,,,
 omop,v4,procedure_cost,paid_by_coordination_benefits,number,,8,2,
 omop,v4,procedure_cost,paid_by_payer,number,,8,2,
 omop,v4,procedure_cost,paid_coinsurance,number,,8,2,

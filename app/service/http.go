@@ -30,12 +30,15 @@ var (
 	}
 )
 
-func jsonResponse(w http.ResponseWriter, d interface{}) {
+func jsonResponse(w http.ResponseWriter, d interface{}) error {
 	e := json.NewEncoder(w)
 
 	if err := e.Encode(d); err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
+		return err
 	}
+
+	return nil
 }
 
 // detectFormat applies content negotiation logic to determine the
@@ -284,7 +287,8 @@ func httpModelSchema(w http.ResponseWriter, r *http.Request, p httprouter.Params
 	v := p.ByName("version")
 
 	var (
-		m *Model
+		m   *Model
+		err error
 	)
 
 	if m = dataModelCache.Get(n, v); m == nil {
@@ -301,7 +305,9 @@ func httpModelSchema(w http.ResponseWriter, r *http.Request, p httprouter.Params
 
 	switch detectFormat(w, r) {
 	case "json":
-		jsonResponse(w, aux)
+		if err = jsonResponse(w, aux); err != nil {
+			w.Write([]byte(fmt.Sprintf("erroring marshaling %s schema: %s", m, err)))
+		}
 	default:
 		w.WriteHeader(http.StatusNotAcceptable)
 	}
