@@ -40,11 +40,6 @@ omop,v5,primary key,xpk_cohort,cohort,cohort_definition_id
 omop,v5,primary key,xpk_cohort,cohort,cohort_start_date
 omop,v5,primary key,xpk_cohort,cohort,cohort_end_date
 omop,v5,primary key,xpk_cohort,cohort,subject_id
-omop,v5,primary key,xpk_cohort_attribute,cohort_definition,cohort_definition_id
-omop,v5,primary key,xpk_cohort_attribute,cohort_definition,subject_id
-omop,v5,primary key,xpk_cohort_attribute,cohort_definition,cohort_start_date
-omop,v5,primary key,xpk_cohort_attribute,cohort_definition,cohort_end_date
-omop,v5,primary key,xpk_cohort_attribute,cohort_definition,attribute_definition_id
 omop,v5,primary key,xpk_drug_era,drug_era,drug_era_id
 omop,v5,primary key,xpk_dose_era,dose_era,dose_era_id
 omop,v5,primary key,xpk_condition_era,condition_era,condition_era_id
