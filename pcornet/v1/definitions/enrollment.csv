@@ -1,9 +1,9 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
-pcornet,v1,ENROLLMENT,CHART,NO,,,,NO,,Y;N,"Y = Yes
+pcornet,v1,enrollment,chart,NO,,,,NO,,Y;N,"Y = Yes
 N = No","Chart abstraction flag is intended to answer the question, ""Are you able to request (or review) charts for this person?"" This flag does not address chart availability. Mark as ""Yes"" if there are no contractual or other restrictions between you and the individual (or sponsor) that would prohibit you from requesting any chart for this member.
 
 Note: This field is most relevant for health insurers that can request charts from affiliated providers. This field allows exclusion of patients from studies that require chart review to validate exposures and/or outcomes. It identifies patients for whom charts are never available and for whom the chart can never be requested."
-pcornet,v1,ENROLLMENT,ENR_BASIS,YES,,,,NO,,I;G;A;E,"I = Insurance
+pcornet,v1,enrollment,enr_basis,YES,,,,NO,,I;G;A;E,"I = Insurance
 G = Geography
 A = Algorithmic
 E = Encounter-based","When insurance information is not available but complete capture can be asserted some other way, please identify the basis on which complete capture is defined. Additional information on the approach identified will be required from each partner.
@@ -18,8 +18,8 @@ Geography: An assertion of complete data capture between the start and end dates
 Algorithmic: An assertion of complete data capture between the start and end dates, based on a locally developed or applied algorithm, often using multiple criteria 
 
 Encounter-based: The start and stop dates are populated from the earliest-observed encounter and latest-observed encounter."
-pcornet,v1,ENROLLMENT,ENR_END_DATE,NO,,,YYYY-MM-DD,NO,DATE,,,"Date of the end of the enrollment period. If the exact date is unknown, use the last day of the month."
-pcornet,v1,ENROLLMENT,ENR_START_DATE,YES,,,YYYY-MM-DD,NO,DATE,,,"Date of the beginning of the enrollment period. If the exact date is unknown, use the first day of the month.
+pcornet,v1,enrollment,enr_end_date,NO,,,YYYY-MM-DD,NO,DATE,,,"Date of the end of the enrollment period. If the exact date is unknown, use the last day of the month."
+pcornet,v1,enrollment,enr_start_date,YES,,,YYYY-MM-DD,NO,DATE,,,"Date of the beginning of the enrollment period. If the exact date is unknown, use the first day of the month.
 
 For implementation of the CDM, a long span of longitudinal data is desirable; however, especially for historical data more than a decade old, the appropriate beginning date should be determined by the partner’s knowledge of the validity and usability of the data. More specific guidance can be provided through implementation discussions."
-pcornet,v1,ENROLLMENT,PATID,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier used to link across tables.
+pcornet,v1,enrollment,patid,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier used to link across tables.
