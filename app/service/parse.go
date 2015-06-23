@@ -195,7 +195,11 @@ func parseFiles(model *Model) {
 	)
 
 	// Initialize
-	schema := &Schema{}
+	schema := &Schema{
+		ForeignKeys:  make([]*ForeignKey, 0),
+		NotNullables: make([]*NotNullable, 0),
+	}
+
 	model.schema = schema
 
 	tableFields := make(map[string][]Attrs)
