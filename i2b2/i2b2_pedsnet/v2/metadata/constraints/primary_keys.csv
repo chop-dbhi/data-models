@@ -1,0 +1,2 @@
+model,version,type,name,table,field
+i2b2_pedsnet,v2,primary key,pk_i2b2,i2b2,id

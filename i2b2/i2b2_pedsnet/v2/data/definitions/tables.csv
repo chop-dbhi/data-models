@@ -1,0 +1,6 @@
+model,version,table,description
+i2b2_pedsnet,v2,concept_dimension,
+i2b2_pedsnet,v2,observation_fact,
+i2b2_pedsnet,v2,patient_dimension,
+i2b2_pedsnet,v2,provider_dimension,
+i2b2_pedsnet,v2,visit_dimension,
