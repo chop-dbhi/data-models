@@ -1,5 +1,5 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
-pcornet,v3,LAB_RESULT_CM,ABN_IND,NO,,,,NO,,AB;AH;AL;CH;CL;CR;IN;NL;NI;UN;OT,"AB=Abnormal
+pcornet,v3,lab_result_cm,abn_ind,NO,,,,NO,,AB;AH;AL;CH;CL;CR;IN;NL;NI;UN;OT,"AB=Abnormal
 AH=Abnormally high
 AL=Abnormally low
 CH=Critically high
@@ -10,12 +10,12 @@ NL=Normal
 NI=No information
 UN=Unknown
 OT=Other",Abnormal result indicator. This value comes from the source data; do not apply logic to create it.
-pcornet,v3,LAB_RESULT_CM,ENCOUNTERID,NO,ENCOUNTER,ENCOUNTERID,,NO,,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the lab was collected as part of a healthcare encounter."
-pcornet,v3,LAB_RESULT_CM,LAB_LOINC,NO,,,,NO,,,,"Logical Observation Identifiers, Names, and Codes (LOINC) from the Regenstrief Institute. Results with local versions of LOINC codes (e.g., LOINC candidate codes) should be included in the RAW_table field, but the LOINC variable should be set to missing. Current LOINC codes are from 3-7 characters long but Regenstrief suggests a length of 10 for future growth. The last digit of the LOINC code is a check digit and is always preceded by a hyphen. All parts of the LOINC code, including the hyphen, must be included. Do not pad the LOINC code with leading zeros. 
+pcornet,v3,lab_result_cm,encounterid,NO,ENCOUNTER,ENCOUNTERID,,NO,,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the lab was collected as part of a healthcare encounter."
+pcornet,v3,lab_result_cm,lab_loinc,NO,,,,NO,,,,"Logical Observation Identifiers, Names, and Codes (LOINC) from the Regenstrief Institute. Results with local versions of LOINC codes (e.g., LOINC candidate codes) should be included in the RAW_table field, but the LOINC variable should be set to missing. Current LOINC codes are from 3-7 characters long but Regenstrief suggests a length of 10 for future growth. The last digit of the LOINC code is a check digit and is always preceded by a hyphen. All parts of the LOINC code, including the hyphen, must be included. Do not pad the LOINC code with leading zeros. 
 
 Please see the LOINC reference table for known LOINC codes for each LAB_NAME.
 "
-pcornet,v3,LAB_RESULT_CM,LAB_NAME,NO,,,,NO,,A1C;CK;CK_MB;CK_MBI;CREATININE;HGB;LDL;INR;TROP_I;TROP_T_QL;TROP_T_QN,"A1C=Hemoglobin A1c
+pcornet,v3,lab_result_cm,lab_name,NO,,,,NO,,A1C;CK;CK_MB;CK_MBI;CREATININE;HGB;LDL;INR;TROP_I;TROP_T_QL;TROP_T_QN,"A1C=Hemoglobin A1c
 CK=Creatine kinase total
 CK_MB=Creatine kinase MB
 CK_MBI=Creatine kinase MB/creatine kinase total
@@ -28,9 +28,9 @@ TROP_T_QL=Troponin T cardiac (qualitative)
 TROP_T_QN=Troponin T cardiac (quantitative)","Laboratory result common measure, a categorical identification for the type of test, which is harmonized across all contributing data partners.
 
 Please note that it is possible for more than one LOINC code, CPT code, and/or local code to be associated with one LAB_NAME."
-pcornet,v3,LAB_RESULT_CM,LAB_ORDER_DATE,NO,,,YYYY-MM-DD,NO,DATE,,,Date test was ordered.
-pcornet,v3,LAB_RESULT_CM,LAB_PX,NO,,,,NO,,,,"Optional variable for local and standard procedure codes, used to identify the originating order for the lab test."
-pcornet,v3,LAB_RESULT_CM,LAB_PX_TYPE,NO,,,,NO,,09;10;11;C2;C3;C4;H3;HC;LC;ND;RE;NI;UN;OT,"09=ICD-9-CM
+pcornet,v3,lab_result_cm,lab_order_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date test was ordered.
+pcornet,v3,lab_result_cm,lab_px,NO,,,,NO,,,,"Optional variable for local and standard procedure codes, used to identify the originating order for the lab test."
+pcornet,v3,lab_result_cm,lab_px_type,NO,,,,NO,,09;10;11;C2;C3;C4;H3;HC;LC;ND;RE;NI;UN;OT,"09=ICD-9-CM
 10=ICD-10-PCS
 11=ICD-11-PCS
 C2=CPT Category II
@@ -44,8 +44,8 @@ RE=Revenue
 NI=No information
 UN=Unknown
 OT=Other","Procedure code type, if applicable."
-pcornet,v3,LAB_RESULT_CM,LAB_RESULT_CM_ID,YES,,,,,,,,"Arbitrary identifier for each unique LAB_RESULT_CM record. Does not need to be persistent across refreshes, and may be created by methods such as sequence or GUID."
-pcornet,v3,LAB_RESULT_CM,NORM_MODIFIER_HIGH,NO,,,,NO,,EQ;LE;LT;NO;NI;UN;OT,"EQ=Equal
+pcornet,v3,lab_result_cm,lab_result_cm_id,YES,,,,,,,,"Arbitrary identifier for each unique LAB_RESULT_CM record. Does not need to be persistent across refreshes, and may be created by methods such as sequence or GUID."
+pcornet,v3,lab_result_cm,norm_modifier_high,NO,,,,NO,,EQ;LE;LT;NO;NI;UN;OT,"EQ=Equal
 LE=Less than or equal to
 LT=Less than
 NO=No higher limit
@@ -57,7 +57,7 @@ For numeric results one of the following needs to be true:
 1) Both MODIFIER_LOW and MODIFIER_HIGH contain EQ (e.g. normal values fall in the range 3-10)
 2) MODIFIER_LOW contains GT or GE and MODIFIER_HIGH contains NO (e.g. normal values are >3 with no upper boundary)
 3) MODIFIER_HIGH contains LT or LE and MODIFIER_LOW contains NO (e.g. normal values are <=10 with no lower boundary)"
-pcornet,v3,LAB_RESULT_CM,NORM_MODIFIER_LOW,NO,,,,NO,,EQ;GE;GT;NO;NI;UN;OT,"EQ=Equal
+pcornet,v3,lab_result_cm,norm_modifier_low,NO,,,,NO,,EQ;GE;GT;NO;NI;UN;OT,"EQ=Equal
 GE=Greater than or equal to
 GT=Greater than
 NO=No lower limit
@@ -69,29 +69,29 @@ For numeric results one of the following needs to be true:
 1) Both MODIFIER_LOW and MODIFIER_HIGH contain EQ (e.g. normal values fall in the range 3-10)
 2) MODIFIER_LOW contains GT or GE and MODIFIER_HIGH contains NO (e.g. normal values are >3 with no upper boundary)
 3) MODIFIER_HIGH contains LT or LE and MODIFIER_LOW contains NO (e.g. normal values are <=10 with no lower boundary)"
-pcornet,v3,LAB_RESULT_CM,NORM_RANGE_HIGH,NO,,,,NO,,,,"Upper bound of the normal range assigned by the laboratory. Value should only contain the value of the upper bound. The symbols >, <, >=, <= should be removed. For example, if the normal range for a test is >100 and <300, then ""300"" should be entered."
-pcornet,v3,LAB_RESULT_CM,NORM_RANGE_LOW,NO,,,,NO,,,,"Lower bound of the normal range assigned by the laboratory. Value should only contain the value of the lower bound. The symbols >, <, >=, <= should be removed. For example, if the normal range for a test is >100 and <300, then ""100"" should be entered."
-pcornet,v3,LAB_RESULT_CM,PATID,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier. Used to link across tables.
-pcornet,v3,LAB_RESULT_CM,PRIORITY,NO,,,,NO,,E;R;S;NI;UN;OT,"E=Expedite
+pcornet,v3,lab_result_cm,norm_range_high,NO,,,,NO,,,,"Upper bound of the normal range assigned by the laboratory. Value should only contain the value of the upper bound. The symbols >, <, >=, <= should be removed. For example, if the normal range for a test is >100 and <300, then ""300"" should be entered."
+pcornet,v3,lab_result_cm,norm_range_low,NO,,,,NO,,,,"Lower bound of the normal range assigned by the laboratory. Value should only contain the value of the lower bound. The symbols >, <, >=, <= should be removed. For example, if the normal range for a test is >100 and <300, then ""100"" should be entered."
+pcornet,v3,lab_result_cm,patid,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+pcornet,v3,lab_result_cm,priority,NO,,,,NO,,E;R;S;NI;UN;OT,"E=Expedite
 R=Routine
 S=Stat
 NI=No information
 UN=Unknown
 OT=Other",Immediacy of test. The intent of this variable is to determine whether the test was obtained as part of routine care or as an emergent/urgent diagnostic test (designated as Stat or Expedite).
-pcornet,v3,LAB_RESULT_CM,RAW_FACILITY_CODE,NO,,,,NO,,,,Local facility code that identifies the hospital or clinic. Taken from facility claims.
-pcornet,v3,LAB_RESULT_CM,RAW_LAB_CODE,NO,,,,NO,,,,"Local code related to an individual lab test. This variable will not be used in queries, but may be used by local programmers to associate a record with a particular LAB_NAME."
-pcornet,v3,LAB_RESULT_CM,RAW_LAB_NAME,NO,,,,NO,,,,"Local code related to an individual lab test. This variable will not be used in queries, but may be used by local programmers to associate a record with a particular LAB_NAME."
-pcornet,v3,LAB_RESULT_CM,RAW_ORDER_DEPT,NO,,,,NO,,,,Local code for ordering provider department.
-pcornet,v3,LAB_RESULT_CM,RAW_PANEL,NO,,,,NO,,,,"Local code related to a battery or panel of lab tests. This variable will not be used in queries, but may be used by local programmers to associate a record with a particular LAB_NAME."
-pcornet,v3,LAB_RESULT_CM,RAW_RESULT,NO,,,,NO,,,,"The original test result value as seen in your source data. Values may include a decimal point, a sign or text (e.g., POSITIVE, NEGATIVE, DETECTED). The symbols >, <, >=, <= should be removed from the value and stored in the Modifier variable instead."
-pcornet,v3,LAB_RESULT_CM,RAW_UNIT,NO,,,,NO,,,,Original units for the result in your source data.
-pcornet,v3,LAB_RESULT_CM,RESULT_DATE,NO,,,YYYY-MM-DD,NO,DATE,,,Result date.
-pcornet,v3,LAB_RESULT_CM,RESULT_LOC,NO,,,,NO,,L;P;NI;UN;OT,"L=Lab
+pcornet,v3,lab_result_cm,raw_facility_code,NO,,,,NO,,,,Local facility code that identifies the hospital or clinic. Taken from facility claims.
+pcornet,v3,lab_result_cm,raw_lab_code,NO,,,,NO,,,,"Local code related to an individual lab test. This variable will not be used in queries, but may be used by local programmers to associate a record with a particular LAB_NAME."
+pcornet,v3,lab_result_cm,raw_lab_name,NO,,,,NO,,,,"Local code related to an individual lab test. This variable will not be used in queries, but may be used by local programmers to associate a record with a particular LAB_NAME."
+pcornet,v3,lab_result_cm,raw_order_dept,NO,,,,NO,,,,Local code for ordering provider department.
+pcornet,v3,lab_result_cm,raw_panel,NO,,,,NO,,,,"Local code related to a battery or panel of lab tests. This variable will not be used in queries, but may be used by local programmers to associate a record with a particular LAB_NAME."
+pcornet,v3,lab_result_cm,raw_result,NO,,,,NO,,,,"The original test result value as seen in your source data. Values may include a decimal point, a sign or text (e.g., POSITIVE, NEGATIVE, DETECTED). The symbols >, <, >=, <= should be removed from the value and stored in the Modifier variable instead."
+pcornet,v3,lab_result_cm,raw_unit,NO,,,,NO,,,,Original units for the result in your source data.
+pcornet,v3,lab_result_cm,result_date,NO,,,YYYY-MM-DD,NO,DATE,,,Result date.
+pcornet,v3,lab_result_cm,result_loc,NO,,,,NO,,L;P;NI;UN;OT,"L=Lab
 P=Point of Care
 NI=No information
 UN=Unknown
 OT=Other","Location of the test result. Point of Care locations may include anticoagulation clinic, newborn nursery, finger stick in provider office, or home. The default value is ‘L’ unless the result is Point of Care. There should not be any missing values."
-pcornet,v3,LAB_RESULT_CM,RESULT_MODIFIER,NO,,,,NO,,EQ;GE;GT;LE;LT;TX;NI;UN;OT,"EQ=Equal
+pcornet,v3,lab_result_cm,result_modifier,NO,,,,NO,,EQ;GE;GT;LE;LT;TX;NI;UN;OT,"EQ=Equal
 GE=Greater than or equal to
 GT=Greater than
 LE=Less than or equal to
@@ -102,8 +102,8 @@ UN=Unknown
 OT=Other","Modifier for result values. Any symbols in the RAW_RESULT value should be reflected in the RESULT_MODIFIER variable. 
 
 For example, if the original source data value is ""<=200"" then RAW_RESULT=200 and RESULT_MODIFIER=LE. If the original source data value is text then RESULT_MODIFIER=TX. If the original source data value is a numeric value then RESULT_MODIFIER=EQ."
-pcornet,v3,LAB_RESULT_CM,RESULT_NUM,NO,,,,NO,,,,Standardized/converted result for quantitative results. This variable should be null for qualitative results. Please see the reference tables for additional details.
-pcornet,v3,LAB_RESULT_CM,RESULT_QUAL,NO,,,,NO,,"BORDERLINE;POSITIVE;NEGATIVE;UNDETERMINED;NI=No information;UN=Unknown;OT=Other
+pcornet,v3,lab_result_cm,result_num,NO,,,,NO,,,,Standardized/converted result for quantitative results. This variable should be null for qualitative results. Please see the reference tables for additional details.
+pcornet,v3,lab_result_cm,result_qual,NO,,,,NO,,"BORDERLINE;POSITIVE;NEGATIVE;UNDETERMINED;NI=No information;UN=Unknown;OT=Other
 ","BORDERLINE
 POSITIVE
 NEGATIVE
@@ -111,10 +111,10 @@ UNDETERMINED
 NI=No information
 UN=Unknown
 OT=Other",Standardized result for qualitative results. This variable should be NI for quantitative results. Please see the reference tables for additional details and information on acceptable values for each qualitative LAB_NAME.
-pcornet,v3,LAB_RESULT_CM,RESULT_TIME,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Result time.
-pcornet,v3,LAB_RESULT_CM,RESULT_UNIT,NO,,,,NO,,,,Converted/standardized units for the result. Please see the standard abbreviations reference table for additional details.
-pcornet,v3,LAB_RESULT_CM,SPECIMEN_DATE,NO,,,YYYY-MM-DD,NO,DATE,,,Date specimen was collected.
-pcornet,v3,LAB_RESULT_CM,SPECIMEN_SOURCE,NO,,,,NO,,BLOOD;CSF;PLASMA;PPP;SERUM;SR_PLS;URINE;NI;UN;OT,"BLOOD=blood
+pcornet,v3,lab_result_cm,result_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Result time.
+pcornet,v3,lab_result_cm,result_unit,NO,,,,NO,,,,Converted/standardized units for the result. Please see the standard abbreviations reference table for additional details.
+pcornet,v3,lab_result_cm,specimen_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date specimen was collected.
+pcornet,v3,lab_result_cm,specimen_source,NO,,,,NO,,BLOOD;CSF;PLASMA;PPP;SERUM;SR_PLS;URINE;NI;UN;OT,"BLOOD=blood
 CSF=cerebrospinal fluid
 PLASMA=plasma
 PPP=platelet poor plasma
@@ -124,4 +124,4 @@ URINE=urine
 NI=No information
 UN=Unknown
 OT=Other",Specimen source. All records will have a specimen source; some tests have several possible values for SPECIMEN_SOURCE. Please see the reference tables for additional details.
-pcornet,v3,LAB_RESULT_CM,SPECIMEN_TIME,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time specimen was collected.
+pcornet,v3,lab_result_cm,specimen_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time specimen was collected.

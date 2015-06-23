@@ -1,6 +1,6 @@
 model,version,table,field,type,length,precision,scale,default
 pedsnet,v1,person,care_site_id,integer,,,,
-pedsnet,v1,person,day_of_birth,numder,,2,0,
+pedsnet,v1,person,day_of_birth,number,,2,0,
 pedsnet,v1,person,ethnicity_concept_id,integer,,,,
 pedsnet,v1,person,ethnicity_source_value,string,50,,,
 pedsnet,v1,person,gender_concept_id,integer,,,,

@@ -20,6 +20,6 @@ pedsnet,v1,idx_procedure_concept_id,No,procedure_occurrence,procedure_concept_id
 pedsnet,v1,idx_procedure_visit_id,No,procedure_occurrence,visit_occurrence_id,asc
 pedsnet,v1,idx_relationship_rel_id,Yes,relationship,relationship_id,asc
 pedsnet,v1,idx_source_to_concept_map_code,No,source_to_concept_map,source_code,asc
-pedsnet,v1,idx_visit_person_id,No,visit_occurrence,person_id,asc
-pedsnet,v1,idx_visit_concept_id,No,visit_occurrence,visit_concept_id,asc
+pedsnet,v1,idx_visit_person_date,No,visit_occurrence,person_id,asc
+pedsnet,v1,idx_visit_person_date,No,visit_occurrence,visit_start_date,asc
 pedsnet,v1,idx_vocabulary_vocabulary_id,Yes,vocabulary,vocabulary_id,asc

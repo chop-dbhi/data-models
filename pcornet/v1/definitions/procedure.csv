@@ -1,6 +1,6 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
-pcornet,v1,PROCEDURE,ADMIT_DATE,NO,,,YYYY-MM-DD,YES,DATE,,,Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
-pcornet,v1,PROCEDURE,ENC_TYPE,NO,,,,YES,,AV;ED;IP;IS;OA;NI;UN;OT,"AV = Ambulatory Visit
+pcornet,v1,procedure,admit_date,NO,,,YYYY-MM-DD,YES,DATE,,,Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
+pcornet,v1,procedure,enc_type,NO,,,,YES,,AV;ED;IP;IS;OA;NI;UN;OT,"AV = Ambulatory Visit
 ED = Emergency Department
 IP = Inpatient Hospital Stay
 IS = Non-Acute Institutional Stay
@@ -8,11 +8,11 @@ OA = Other Ambulatory Visit
 NI = No information
 UN = Unknown
 OT = Other",Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
-pcornet,v1,PROCEDURE,ENCOUNTERID,YES,ENCOUNTER,ENCOUNTERID,,NO,,,,Arbitrary encounter-level identifier. Used to link across tables.
-pcornet,v1,PROCEDURE,PATID,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier. Used to link across tables.
-pcornet,v1,PROCEDURE,PROVIDERID,NO,,,,YES,,,,Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
-pcornet,v1,PROCEDURE,PX,YES,,,,NO,,,,Procedure code.
-pcornet,v1,PROCEDURE,PX_TYPE,YES,,,,NO,,09;10;11;C2;C3;C4;H3;HC;LC;ND;RE;NI;UN;OT,"09 = ICD-9-CM
+pcornet,v1,procedure,encounterid,YES,ENCOUNTER,ENCOUNTERID,,NO,,,,Arbitrary encounter-level identifier. Used to link across tables.
+pcornet,v1,procedure,patid,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+pcornet,v1,procedure,providerid,NO,,,,YES,,,,Please note: This is a field replicated from the ENCOUNTER table. See ENCOUNTER table for definitions.
+pcornet,v1,procedure,px,YES,,,,NO,,,,Procedure code.
+pcornet,v1,procedure,px_type,YES,,,,NO,,09;10;11;C2;C3;C4;H3;HC;LC;ND;RE;NI;UN;OT,"09 = ICD-9-CM
 10 = ICD-10-PCS
 11 = ICD-11-PCS
 C2 = CPT Category II
@@ -36,5 +36,5 @@ Medications administered by clinicians can be captured in billing data and Elect
 We are now seeing NDCs captured as part of procedures because payers are demanding it for payment authorization. Inclusion of this code type enables those data partners that capture the NDC along with the procedure to include the data.
 
 Please note: The “Other” category is meant to identify internal use ontologies and codes."
-pcornet,v1,PROCEDURE,RAW_PX,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
-pcornet,v1,PROCEDURE,RAW_PX_TYPE,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,v1,procedure,raw_px,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,v1,procedure,raw_px_type,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
