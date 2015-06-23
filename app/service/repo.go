@@ -131,19 +131,30 @@ func (r *Repo) clone() {
 
 func (r *Repo) pull() {
 	if r.hasOrigin() {
-		remote := fmt.Sprintf("origin/%s", r.Branch)
-		cmd := exec.Command("git", "pull", ".", remote)
+		cmd := exec.Command("git", "fetch", "origin")
 
 		cmd.Dir = r.path
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
 
 		if err := cmd.Run(); err != nil {
-			logrus.Fatalf("problem pulling repo: %s", err)
+			logrus.Fatalf("problem fetching repo: %s", err)
 			return
 		}
 
-		logrus.Debugf("repo: pulled repo %s", r)
+		remote := fmt.Sprintf("origin/%s", r.Branch)
+		cmd = exec.Command("git", "merge", remote)
+
+		cmd.Dir = r.path
+		cmd.Stdout = os.Stdout
+		cmd.Stderr = os.Stderr
+
+		if err := cmd.Run(); err != nil {
+			logrus.Fatalf("problem merging repo: %s", err)
+			return
+		}
+
+		logrus.Debugf("repo: updated repo %s", r)
 	}
 
 	r.info()
