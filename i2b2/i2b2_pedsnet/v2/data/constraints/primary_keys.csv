@@ -8,7 +8,6 @@ i2b2_pedsnet,v2,primary key,pk_observation_fact,observation_fact,instance_num
 i2b2_pedsnet,v2,primary key,pk_observation_fact,observation_fact,provider_id
 i2b2_pedsnet,v2,primary key,pk_concept_dimension,concept_dimension,concept_path
 i2b2_pedsnet,v2,primary key,pk_patient_dimension,patient_dimension,patient_num
-i2b2_pedsnet,v2,primary key,pk_i2b2,i2b2,id
 i2b2_pedsnet,v2,primary key,pk_visit_dimension,visit_dimension,encounter_num
 i2b2_pedsnet,v2,primary key,pk_visit_dimension,visit_dimension,patient_num
 i2b2_pedsnet,v2,primary key,pk_provider_dimension,provider_dimension,provider_path
