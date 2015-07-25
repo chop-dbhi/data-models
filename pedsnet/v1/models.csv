@@ -1,2 +1,2 @@
-model,version,label,url,description
-pedsnet,v1,PEDSnet v1,http://pedsnet.info,
+model,version,release_level,release_serial,label,url,description
+pedsnet,v1,beta,1,PEDSnet v1,http://pedsnet.info,

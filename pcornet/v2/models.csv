@@ -1,2 +1,2 @@
-model,version,label,url,description
-pcornet,v2,PCORnet v2,http://www.pcornet.org/resource-center/pcornet-common-data-model/,
+model,version,release_level,release_serial,label,url,description
+pcornet,v2,beta,1,PCORnet v2,http://www.pcornet.org/resource-center/pcornet-common-data-model/,
