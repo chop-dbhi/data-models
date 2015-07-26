@@ -1,2 +1,2 @@
-model,version,label,url,description
-omop,v5,OMOP v5,http://omop.org/CDM,
+model,version,release_level,release_serial,label,url,description
+omop,v5,beta,1,OMOP v5,http://omop.org/CDM,
