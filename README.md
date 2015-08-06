@@ -87,9 +87,25 @@ CSVWriter writer = new CSVWriter(new FileWriter(fileName),
                                  CSVWriter.DEFAULT_SEPARATOR,
                                  CSVWriter.NO_QUOTE_CHARACTER);
 
+writer.writeNext(header)
+
 for (int row : rows) {
     writer.writeNext(row);
 }
+
+writer.close();
+```
+
+If `rows` is a `java.sql.ResultSet`, use `writeAll` directly.
+
+```java
+CSVWriter writer = new CSVWriter(new FileWriter(fileName),
+                                 CSVWriter.DEFAULT_SEPARATOR,
+                                 CSVWriter.NO_QUOTE_CHARACTER);
+
+// Pass the result set and derive the header from the result set
+// (assuming it is valid with the spec).
+writer.writeAll(rows, true);
 
 writer.close();
 ```
