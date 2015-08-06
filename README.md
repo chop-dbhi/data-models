@@ -21,3 +21,24 @@ The `references.csv` file (e.g., [omop/v5/references.csv](omop/v5/references.csv
 Each data model root directory may have a `renamings.csv` file (e.g., [omop/renamings.csv](omop/renamings.csv)) that maps fields which have been renamed across versions by providing a source data model `version`, `table`, and `field` and a target `version`, `table`, and `field`.
 
 The top-level `mappings` directory holds a series of CSV files which list field level mappings between data models. The files (e.g., [mappings/pedsnet_v2_omop_v5.csv](mappings/pedsnet_v2_omop_v5.csv)) contain a `target_model`, `target_version`, `target_table`, and `target_field` as well as a `source_model`, `source_version`, `source_table`, and `source_field` along with a free text `comment` for each mapping.
+
+## CSV Tools
+
+#### Python
+
+The [`csv`](https://docs.python.org/2/library/csv.html) can be used in the standard library.
+
+```python
+import csv
+
+# Writes all records to a file given a filename, a list of string representing
+# the header, and a list of rows containing the data.
+def write_records(filename, header, rows):
+    with open('person.csv', 'w+') as f:
+        w = csv.writer(f)
+
+        w.writerow(header)
+
+        for row in rows:
+            w.writerow(row)
+```
