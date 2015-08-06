@@ -74,3 +74,22 @@ COPY ( ... )
         ENCODING 'utf-8'
     )
 ```
+
+
+##### Java
+
+The [`opencsv`](http://opencsv.sourceforge.net/) is a popular package for reading and writing CSV files.
+
+For loop with `rows` as a Collection or Array.
+
+```java
+CSVWriter writer = new CSVWriter(new FileWriter(fileName),
+                                 CSVWriter.DEFAULT_SEPARATOR,
+                                 CSVWriter.NO_QUOTE_CHARACTER);
+
+for (int row : rows) {
+    writer.writeNext(row);
+}
+
+writer.close();
+```
