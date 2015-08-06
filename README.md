@@ -42,3 +42,35 @@ def write_records(filename, header, rows):
         for row in rows:
             w.writerow(row)
 ```
+
+#### PostgreSQL
+
+PostgreSQL provides valid CSV output using the [`COPY`](http://www.postgresql.org/docs/9.2/static/sql-copy.html) statement. The output can be to an file using an absolute file name or to STDOUT.
+
+Absolute path.
+
+```sql
+COPY ( ... )
+    TO '/path/to/person.csv'
+    WITH (
+        FORMAT csv,
+        DELIMITER ',',
+        NULL '',
+        HEADER true,
+        ENCODING 'utf-8'
+    )
+```
+
+To STDOUT.
+
+```sql
+COPY ( ... )
+    TO STDOUT
+    WITH (
+        FORMAT csv,
+        DELIMITER ',',
+        NULL '',
+        HEADER true,
+        ENCODING 'utf-8'
+    )
+```
