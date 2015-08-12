@@ -21,3 +21,114 @@ The `references.csv` file (e.g., [omop/v5/references.csv](omop/v5/references.csv
 Each data model root directory may have a `renamings.csv` file (e.g., [omop/renamings.csv](omop/renamings.csv)) that maps fields which have been renamed across versions by providing a source data model `version`, `table`, and `field` and a target `version`, `table`, and `field`.
 
 The top-level `mappings` directory holds a series of CSV files which list field level mappings between data models. The files (e.g., [mappings/pedsnet_v2_omop_v5.csv](mappings/pedsnet_v2_omop_v5.csv)) contain a `target_model`, `target_version`, `target_table`, and `target_field` as well as a `source_model`, `source_version`, `source_table`, and `source_field` along with a free text `comment` for each mapping.
+
+## CSV Tools
+
+#### Python
+
+The [`csv`](https://docs.python.org/2/library/csv.html) can be used in the standard library.
+
+```python
+import csv
+
+# Writes all records to a file given a filename, a list of string representing
+# the header, and a list of rows containing the data.
+def write_records(filename, header, rows):
+    with open('person.csv', 'w+') as f:
+        w = csv.writer(f)
+
+        w.writerow(header)
+
+        for row in rows:
+            w.writerow(row)
+```
+
+#### PostgreSQL
+
+PostgreSQL provides valid CSV output using the [`COPY`](http://www.postgresql.org/docs/9.2/static/sql-copy.html) statement. The output can be to an file using an absolute file name or to STDOUT.
+
+Absolute path.
+
+```sql
+COPY ( ... )
+    TO '/path/to/person.csv'
+    WITH (
+        FORMAT csv,
+        DELIMITER ',',
+        NULL '',
+        HEADER true,
+        ENCODING 'utf-8'
+    )
+```
+
+To STDOUT.
+
+```sql
+COPY ( ... )
+    TO STDOUT
+    WITH (
+        FORMAT csv,
+        DELIMITER ',',
+        NULL '',
+        HEADER true,
+        ENCODING 'utf-8'
+    )
+```
+
+
+##### Java
+
+The [`opencsv`](http://opencsv.sourceforge.net/) is a popular package for reading and writing CSV files.
+
+For loop with `rows` as a Collection or Array.
+
+```java
+CSVWriter writer = new CSVWriter(new FileWriter(fileName),
+                                 CSVWriter.DEFAULT_SEPARATOR,
+                                 CSVWriter.NO_QUOTE_CHARACTER);
+
+writer.writeNext(header)
+
+for (int row : rows) {
+    writer.writeNext(row);
+}
+
+writer.close();
+```
+
+If `rows` is a `java.sql.ResultSet`, use `writeAll` directly.
+
+```java
+CSVWriter writer = new CSVWriter(new FileWriter(fileName),
+                                 CSVWriter.DEFAULT_SEPARATOR,
+                                 CSVWriter.NO_QUOTE_CHARACTER);
+
+// Pass the result set and derive the header from the result set
+// (assuming it is valid with the spec).
+writer.writeAll(rows, true);
+
+writer.close();
+```
+
+##### Oracle
+
+Oracle experts should feel free to chime in, but a very promising option is Oracle's new SQLcl command-line tool, available on an early-adopter basis as part of the [SQL Developer](http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html) family.  SQLcl is being touted as a modern replacement for SQL*Plus.
+
+Sample usage:
+
+```
+set sqlformat csv
+spool footable.csv
+select * from footable;
+spool off
+```
+
+Another option is to use the [SQL Developer](http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html) GUI itself, which, although convenient, is not amenable to automation, as SQLcl is.
+
+SQL Developer (and probably SQLcl) export CSV using the following conventions: all text fields are wrapped in quotes (even NULL values, because NULL and empty string are treated the same in Oracle), and no numeric fields are wrapped in quotes. Quotes within fields are escaped via doubling. Newlines within fields are included in the output.
+
+SQL Developer usage:
+
+* On a Data tab (or a table name in the Connections panel), right-click and choose Export
+* Change format to csv
+* Change line terminator to Unix - other formatting and encoding defaults are fine
