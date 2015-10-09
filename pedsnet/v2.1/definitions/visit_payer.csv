@@ -1,0 +1,6 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v2.1,visit_payer,plan_class,Yes,,,"A list of the ""payment sources"" most often used in demographic analyses; proposed value would be Private/commercial, Medicaid/sCHIP, Medicare, Other public, Self-pay, Other/unknown"
+pedsnet,v2.1,visit_payer,plan_name,Yes,,,The untransformed payer/plan name from the source data
+pedsnet,v2.1,visit_payer,plan_type,No,,,"A standardized interpretation of the plan structure; proposed value set would be HMO, PPO, POS, Fee for service, Other/unknown"
+pedsnet,v2.1,visit_payer,visit_occurrence_id,Yes,visit_occurrence,visit_occurrence_id,A foreign key to the visit in the visit table where the payer was billed for the visit.
+pedsnet,v2.1,visit_payer,visit_payer_id,Yes,,,A system-generated unique identifier for each visit payer relationship.
