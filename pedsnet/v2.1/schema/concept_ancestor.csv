@@ -1,5 +1,5 @@
 model,version,table,field,type,length,precision,scale,default
-omop,v5,concept_ancestor,ancestor_concept_id,integer,,,,
-omop,v5,concept_ancestor,descendant_concept_id,integer,,,,
-omop,v5,concept_ancestor,max_levels_of_separation,integer,,,,
-omop,v5,concept_ancestor,min_levels_of_separation,integer,,,,
+pedsnet,v2.1,concept_ancestor,ancestor_concept_id,integer,,,,
+pedsnet,v2.1,concept_ancestor,descendant_concept_id,integer,,,,
+pedsnet,v2.1,concept_ancestor,max_levels_of_separation,integer,,,,
+pedsnet,v2.1,concept_ancestor,min_levels_of_separation,integer,,,,
