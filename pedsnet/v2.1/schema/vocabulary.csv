@@ -1,0 +1,6 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v2.1,vocabulary,vocabulary_concept_id,integer,,,,
+pedsnet,v2.1,vocabulary,vocabulary_id,string,20,,,
+pedsnet,v2.1,vocabulary,vocabulary_name,string,255,,,
+pedsnet,v2.1,vocabulary,vocabulary_reference,string,255,,,
+pedsnet,v2.1,vocabulary,vocabulary_version,string,255,,,
