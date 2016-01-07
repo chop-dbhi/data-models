@@ -1,0 +1,4 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v2.2,domain,domain_concept_id,Yes,concept,concept_id,A foreign key that refers to a standard concept identifier in the Standardized Vocabularies for the Domain the Domain record belongs to. 
+pedsnet,v2.2,domain,domain_id,Yes,,,A unique key for each domain. 
+pedsnet,v2.2,domain,domain_name,Yes,,,"The name describing the Domain, e.g. ""Condition"", ""Procedure"", ""Measurement"" etc. "
