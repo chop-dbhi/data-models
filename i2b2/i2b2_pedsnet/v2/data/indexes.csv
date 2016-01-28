@@ -78,6 +78,7 @@ i2b2_pedsnet,v2,ix_visit_sourcesystem_cd,No,visit_dimension,sourcesystem_cd,asc
 i2b2_pedsnet,v2,ix_visit_start_date_end_date,No,visit_dimension,start_date,asc
 i2b2_pedsnet,v2,ix_visit_start_date_end_date,No,visit_dimension,end_date,asc
 i2b2_pedsnet,v2,ix_visit_upload_id,No,visit_dimension,upload_id,asc
+i2b2_pedsnet,v2,ix_provider_id,No,provider_dimension,provider_id,asc
 i2b2_pedsnet,v2,ix_provider_name_char,No,provider_dimension,provider_id,asc
 i2b2_pedsnet,v2,ix_provider_name_char,No,provider_dimension,name_char,asc
 i2b2_pedsnet,v2,ix_provider_upload_id,No,provider_dimension,upload_id,asc
