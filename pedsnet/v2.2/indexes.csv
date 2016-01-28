@@ -1,7 +1,6 @@
 model,version,name,unique,table,field,order
 pedsnet,v2.2,idx_concept_class_id,No,concept,concept_class_id,asc
 pedsnet,v2.2,idx_concept_code,No,concept,concept_code,asc
-pedsnet,v2.2,idx_concept_concept_id,Yes,concept,concept_id,asc
 pedsnet,v2.2,idx_concept_domain_id,No,concept,domain_id,asc
 pedsnet,v2.2,idx_concept_vocabluary_id,No,concept,vocabulary_id,asc
 pedsnet,v2.2,idx_concept_ancestor_id_1,No,concept_ancestor,ancestor_concept_id,asc
@@ -10,7 +9,6 @@ pedsnet,v2.2,idx_concept_synonym_id,No,concept_synonym,concept_id,asc
 pedsnet,v2.2,idx_condition_concept_id,No,condition_occurrence,condition_concept_id,asc
 pedsnet,v2.2,idx_condition_person_id,No,condition_occurrence,person_id,asc
 pedsnet,v2.2,idx_condition_visit_id,No,condition_occurrence,visit_occurrence_id,asc
-pedsnet,v2.2,idx_death_person_id,No,death,person_id,asc
 pedsnet,v2.2,idx_drug_concept_id,No,drug_exposure,drug_concept_id,asc
 pedsnet,v2.2,idx_drug_person_id,No,drug_exposure,person_id,asc
 pedsnet,v2.2,idx_drug_visit_id,No,drug_exposure,visit_occurrence_id,asc
@@ -26,9 +24,9 @@ pedsnet,v2.2,idx_observation_concept_id,No,observation,observation_concept_id,as
 pedsnet,v2.2,idx_observation_person_id,No,observation,person_id,asc
 pedsnet,v2.2,idx_observation_visit_id,No,observation,visit_occurrence_id,asc
 pedsnet,v2.2,idx_observation_period_id,No,observation_period,person_id,asc
-pedsnet,v2.2,idx_person_id,Yes,person,person_id,asc
 pedsnet,v2.2,idx_procedure_person_id,No,procedure_occurrence,person_id,asc
 pedsnet,v2.2,idx_procedure_concept_id,No,procedure_occurrence,procedure_concept_id,asc
+pedsnet,v2.2,idx_procedure_provider_id,No,procedure_occurrence,provider_id,asc
 pedsnet,v2.2,idx_procedure_visit_id,No,procedure_occurrence,visit_occurrence_id,asc
 pedsnet,v2.2,idx_source_to_concept_id_1,No,source_to_concept_map,source_vocabulary_id,asc
 pedsnet,v2.2,idx_source_to_concept_id_2,No,source_to_concept_map,target_vocabulary_id,asc
@@ -36,7 +34,4 @@ pedsnet,v2.2,idx_source_to_concept_id_3,No,source_to_concept_map,target_concept_
 pedsnet,v2.2,idx_source_to_concept_code,No,source_to_concept_map,source_code,asc
 pedsnet,v2.2,idx_visit_person_id,No,visit_occurrence,person_id,asc
 pedsnet,v2.2,idx_visit_concept_id,No,visit_occurrence,visit_concept_id,asc
-pedsnet,v2.2,idx_visit_payer_id,Yes,visit_payer,visit_payer_id,asc
 pedsnet,v2.2,idx_visit_payer_visit_id,No,visit_payer,visit_occurrence_id,asc
-pedsnet,v2.2,idx_vocabulary_vocabulary_id,Yes,vocabulary,vocabulary_id,asc
-pedsnet,v2.2,idx_meas_org_id,Yes,measurement_organism,meas_organism_id,asc
