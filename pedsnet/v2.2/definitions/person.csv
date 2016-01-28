@@ -18,5 +18,6 @@ pedsnet,v2.2,person,race_source_concept_id,No,concept,concept_id,A foreign key t
 pedsnet,v2.2,person,race_source_value,No,,,The source code for the race of the person as it appears in the source data. The person race is mapped to a standard race concept in the Vocabulary and the original value is stored here for reference.,
 pedsnet,v2.2,person,time_of_birth,No,,,"The time of birth at the birthday. In order to reduce ambiguity around timezone shifts, this field is stored and transmitted as a full date and time without timezone information or conversion. Enter as much information as is available.",
 pedsnet,v2.2,person,year_of_birth,Yes,,,"The year of birth of the person. For data sources with date of birth, the year is extracted. For data sources where the year of birth is not available, the approximate year of birth is derived based on any age group categorization available.",
-pedsnet,v2.2,person,language_concept_id,No,concept,concept_id,A foreign key to the language concept that refers to the code used in the source.,
+pedsnet,v2.2,person,language_concept_id,No,concept,concept_id,A foreign key that refers to the standard concept identifier in the Vocabulary for the language of the person.,
+pedsnet,v2.2,person,language_source_concept_id,No,concept,concept_id,A foreign key to the language concept that refers to the code used in the source.,
 pedsnet,v2.2,person,language_source_value,No,,,The source code for the language of the person as it appears in the source data.,
