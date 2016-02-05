@@ -1,6 +1,0 @@
-model,version,table,field,type,length,precision,scale,default
-pedsnet,v2.1,fact_relationship,domain_concept_id_1,integer,,,,
-pedsnet,v2.1,fact_relationship,domain_concept_id_2,integer,,,,
-pedsnet,v2.1,fact_relationship,fact_id_1,integer,,,,
-pedsnet,v2.1,fact_relationship,fact_id_2,integer,,,,
-pedsnet,v2.1,fact_relationship,relationship_concept_id,integer,,,,

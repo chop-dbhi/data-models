@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+pcornet,3.0.0,death,patid,primary key,xpk_death
+pcornet,3.0.0,death,death_date,primary key,xpk_death
+pcornet,3.0.0,death,death_source,primary key,xpk_death
+pcornet,3.0.0,death,death_date,not null,
+pcornet,3.0.0,death,death_source,not null,
+pcornet,3.0.0,death,patid,not null,

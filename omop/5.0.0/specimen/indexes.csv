@@ -1,0 +1,3 @@
+model,version,table,field,name,order
+omop,5.0.0,specimen,person_id,idx_specimen_person_id,
+omop,5.0.0,specimen,specimen_concept_id,idx_specimen_concept_id,

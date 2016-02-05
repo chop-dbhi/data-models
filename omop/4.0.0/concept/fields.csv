@@ -1,0 +1,10 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,4.0.0,concept,concept_class,Yes,,,,"The category or class of the concept along both the hierarchical tree as well as different domains within a vocabulary. Examples are “Clinical Drug”, “Ingredient”, “Clinical Finding” etc. "
+omop,4.0.0,concept,concept_code,Yes,,,,"The concept code represents the identifier of the concept in the source data it originates from, such as SNOMED-CT concept IDs, RxNorm RXCUIs etc. Note that concept codes are not unique across vocabularies. "
+omop,4.0.0,concept,concept_id,Yes,,,,A system-generated unique identifier for each concept across all domains.
+omop,4.0.0,concept,concept_level,Yes,,,,"The level of hierarchy associated with the concept. Different concept levels are assigned to concepts to depict their seniority in a clearly defined hierarchy, such as drugs, conditions, etc. A concept level of 0 is assigned to concepts that are not part of a standard vocabulary, but are part of the vocabulary for reference purposes (e.g. drug form). "
+omop,4.0.0,concept,concept_name,Yes,,,,"An unambiguous, meaningful and descriptive name for the concept. "
+omop,4.0.0,concept,invalid_reason,No,,,,"Reason the concept was invalidated. Possible values are D (deleted), U (replaced with an update) or NULL when valid_end_date has the default value. "
+omop,4.0.0,concept,valid_end_date,Yes,,,,The date when the concept became invalid because it was deleted or superseded (updated) by a new concept. The default value is 31-Dec-2099.
+omop,4.0.0,concept,valid_start_date,Yes,,,,The date when the concept was first recorded.
+omop,4.0.0,concept,vocabulary_id,Yes,vocabulary,vocabulary_id,,A foreign key to the vocabulary table indicating from which source the concept has been adapted.

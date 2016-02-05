@@ -1,0 +1,3 @@
+model,version,table,field,name,order
+omop,4.0.0,vocabulary,vocabulary_id,idx_vocabulary_vocabulary_id,
+omop,4.0.0,vocabulary,vocabulary_name,xnq_vocabulary_name,

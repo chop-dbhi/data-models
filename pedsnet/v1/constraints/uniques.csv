@@ -1,6 +1,0 @@
-model,version,type,name,table,field
-pedsnet,v1,unique,xnk_care_site,care_site,organization_id
-pedsnet,v1,unique,xnk_care_site,care_site,care_site_source_value
-pedsnet,v1,unique,xnk_person,person,person_source_value
-pedsnet,v1,unique,xnk_organization,organization,organization_source_value
-pedsnet,v1,unique,xnk_vocabulary,vocabulary,vocabulary_name

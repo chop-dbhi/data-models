@@ -1,0 +1,11 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+pedsnet,1.0.0,drug_strength,drug_concept_id,,,,,
+pedsnet,1.0.0,drug_strength,ingredient_concept_id,,,,,
+pedsnet,1.0.0,drug_strength,amount_value,,,,,
+pedsnet,1.0.0,drug_strength,amount_unit,,,,,
+pedsnet,1.0.0,drug_strength,concentration_value,,,,,
+pedsnet,1.0.0,drug_strength,concentration_enum_unit,,,,,
+pedsnet,1.0.0,drug_strength,concentration_denom_unit,,,,,
+pedsnet,1.0.0,drug_strength,valid_start_date,,,,,
+pedsnet,1.0.0,drug_strength,valid_end_date,,,,,
+pedsnet,1.0.0,drug_strength,invalid_reason,,,,,

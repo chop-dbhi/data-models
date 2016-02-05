@@ -1,0 +1,12 @@
+model,version,table,field,type,length,precision,scale,default
+omop,5.0.0,drug_strength,amount_unit_concept_id,integer,,,,
+omop,5.0.0,drug_strength,amount_value,number,,20,5,
+omop,5.0.0,drug_strength,denominator_unit_concept_id,integer,,,,
+omop,5.0.0,drug_strength,denominator_value,number,,,,
+omop,5.0.0,drug_strength,drug_concept_id,integer,,,,
+omop,5.0.0,drug_strength,ingredient_concept_id,integer,,,,
+omop,5.0.0,drug_strength,invalid_reason,string,1,,,
+omop,5.0.0,drug_strength,numerator_unit_concept_id,integer,,,,
+omop,5.0.0,drug_strength,numerator_value,number,,20,5,
+omop,5.0.0,drug_strength,valid_end_date,date,,,,
+omop,5.0.0,drug_strength,valid_start_date,date,,,,

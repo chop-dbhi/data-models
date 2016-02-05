@@ -1,0 +1,8 @@
+model,version,table,field,type,name
+omop,5.0.0,relationship,relationship_id,primary key,xpk_relationship
+omop,5.0.0,relationship,defines_ancestry,not null,
+omop,5.0.0,relationship,is_hierarchical,not null,
+omop,5.0.0,relationship,relationship_concept_id,not null,
+omop,5.0.0,relationship,relationship_id,not null,
+omop,5.0.0,relationship,relationship_name,not null,
+omop,5.0.0,relationship,reverse_relationship_id,not null,

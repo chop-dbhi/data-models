@@ -1,0 +1,28 @@
+model,version,table,description
+omop,4.0.0,care_site,Information about the site of care
+omop,4.0.0,cohort,"Person, Provider or Visit cohorts "
+omop,4.0.0,concept,"Contains all Concepts across domains, including the name (description), their source (called Concept Type), their identifier in the source (called Source Code), their level in the hierarchy and their class. "
+omop,4.0.0,concept_ancestor,"Contains the ancestry relationship of Concepts that have one or several hierarchical Relationships among them for fast lookup of hierarchical tree information, such as drug classes. "
+omop,4.0.0,concept_relationship,Contains the Relationship between any two Concepts and the type of the Relationship.
+omop,4.0.0,concept_synonym,Contains any number of synonymous names (descriptions) for the Concepts.
+omop,4.0.0,condition_era,A Condition Era is defined as a span of time when the Person is assumed to have a given condition.
+omop,4.0.0,condition_occurrence,A diagnosis or condition that has been recorded about a person at a certain time
+omop,4.0.0,death,Time and cause of death of the Person
+omop,4.0.0,drug_approval,
+omop,4.0.0,drug_cost,For each Drug Exposure record additional information about cost and payments
+omop,4.0.0,drug_era,Association between a Person and a Drug over a specific time period
+omop,4.0.0,drug_exposure,Association between a Person and a Drug at a specific time
+omop,4.0.0,drug_strength,
+omop,4.0.0,location,"Physical addresses of patients, organizations and care sites "
+omop,4.0.0,observation,"Observations are clinical facts, such as laboratory tests, signs/symptoms, which are not captured within other CDM tables"
+omop,4.0.0,observation_period,"Time intervals during which health care information, such as drugs, conditions, and other clinical observations, may be available "
+omop,4.0.0,organization,Information about health care organizations
+omop,4.0.0,payer_plan_period,Information about the coverage plan of the person
+omop,4.0.0,person,Demographic information about a Person
+omop,4.0.0,procedure_cost,For each Procedure additional information about cost and payments
+omop,4.0.0,procedure_occurrence,Procedures carried out on the Person
+omop,4.0.0,provider,Information about health care providers
+omop,4.0.0,relationship,List of all types of Relationships in the Concept Relationship Table and their names (descriptions).
+omop,4.0.0,source_to_concept_map,Mapping between codes used in source data and Concepts in the Standard Vocabulary.
+omop,4.0.0,visit_occurrence,Visits for health care services of the Person
+omop,4.0.0,vocabulary,"Contains a list of sources for the various Concepts. Many Concepts are derived from national or industry initiatives, such as the ICD diagnostic codes. Others are created by OMOP. "

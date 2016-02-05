@@ -1,0 +1,13 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,2.1.0,visit_occurrence,care_site_id,integer,,,,
+pedsnet,2.1.0,visit_occurrence,person_id,integer,,,,
+pedsnet,2.1.0,visit_occurrence,provider_id,integer,,,,
+pedsnet,2.1.0,visit_occurrence,visit_concept_id,integer,,,,
+pedsnet,2.1.0,visit_occurrence,visit_end_date,date,,,,
+pedsnet,2.1.0,visit_occurrence,visit_end_time,datetime,,,,
+pedsnet,2.1.0,visit_occurrence,visit_occurrence_id,integer,,,,
+pedsnet,2.1.0,visit_occurrence,visit_source_concept_id,integer,,,,
+pedsnet,2.1.0,visit_occurrence,visit_source_value,string,256,,,
+pedsnet,2.1.0,visit_occurrence,visit_start_date,date,,,,
+pedsnet,2.1.0,visit_occurrence,visit_start_time,datetime,,,,
+pedsnet,2.1.0,visit_occurrence,visit_type_concept_id,integer,,,,

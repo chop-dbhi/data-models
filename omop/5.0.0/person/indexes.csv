@@ -1,0 +1,2 @@
+model,version,table,field,name,order
+omop,5.0.0,person,person_id,idx_person_id,

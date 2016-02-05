@@ -1,0 +1,6 @@
+model,version,table,field,type,length,precision,scale,default
+omop,4.0.0,observation,associated_provider_id,integer,,,,
+omop,4.0.0,observation,observation_concept_id,integer,,,,
+omop,4.0.0,observation,observation_date,date,,,,
+omop,4.0.0,observation,observation_id,integer,,,,
+omop,4.0.0,observation,observation_source_value,string,50,,,

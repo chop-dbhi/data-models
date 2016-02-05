@@ -1,0 +1,4 @@
+model,version,table,field,name,order
+omop,4.0.0,drug_exposure,drug_concept_id,idx_drug_concept_id,
+omop,4.0.0,drug_exposure,visit_occurrence_id,idx_drug_visit_id,
+omop,4.0.0,drug_exposure,person_id,idx_drug_person_id,

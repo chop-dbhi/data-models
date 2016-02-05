@@ -1,0 +1,12 @@
+model,version,table,field,type,length,precision,scale,default
+omop,5.0.0,condition_occurrence,condition_concept_id,integer,,,,
+omop,5.0.0,condition_occurrence,condition_end_date,date,,,,
+omop,5.0.0,condition_occurrence,condition_occurrence_id,integer,,,,
+omop,5.0.0,condition_occurrence,condition_source_concept_id,integer,,,,
+omop,5.0.0,condition_occurrence,condition_source_value,string,50,,,
+omop,5.0.0,condition_occurrence,condition_start_date,date,,,,
+omop,5.0.0,condition_occurrence,condition_type_concept_id,integer,,,,
+omop,5.0.0,condition_occurrence,person_id,integer,,,,
+omop,5.0.0,condition_occurrence,provider_id,integer,,,,
+omop,5.0.0,condition_occurrence,stop_reason,string,20,,,
+omop,5.0.0,condition_occurrence,visit_occurrence_id,integer,,,,

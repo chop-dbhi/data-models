@@ -1,0 +1,11 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,4.0.0,drug_strength,drug_concept_id,,,,,
+omop,4.0.0,drug_strength,ingredient_concept_id,,,,,
+omop,4.0.0,drug_strength,amount_value,,,,,
+omop,4.0.0,drug_strength,amount_unit,,,,,
+omop,4.0.0,drug_strength,concentration_value,,,,,
+omop,4.0.0,drug_strength,concentration_enum_unit,,,,,
+omop,4.0.0,drug_strength,concentration_denom_unit,,,,,
+omop,4.0.0,drug_strength,valid_start_date,,,,,
+omop,4.0.0,drug_strength,valid_end_date,,,,,
+omop,4.0.0,drug_strength,invalid_reason,,,,,

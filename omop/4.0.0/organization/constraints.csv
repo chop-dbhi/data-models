@@ -1,0 +1,3 @@
+model,version,table,field,type,name
+omop,4.0.0,organization,organization_id,primary key,xpk_organization
+omop,4.0.0,organization,organization_id,not null,

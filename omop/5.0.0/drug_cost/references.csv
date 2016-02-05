@@ -1,0 +1,4 @@
+model,version,table,field,ref_table,ref_field,name
+omop,5.0.0,drug_cost,currency_concept_id,concept,concept_id,fpk_drug_cost_currency
+omop,5.0.0,drug_cost,drug_exposure_id,drug_exposure,drug_exposure_id,fpk_drug_cost_id
+omop,5.0.0,drug_cost,payer_plan_period_id,payer_plan_period,payer_plan_period_id,fpk_drug_cost_period

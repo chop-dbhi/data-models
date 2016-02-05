@@ -1,0 +1,11 @@
+model,version,table,field,type,length,precision,scale,default
+pcornet,2.0.0,demographic,biobank_flag,string,1,,,
+pcornet,2.0.0,demographic,birth_date,string,10,,,
+pcornet,2.0.0,demographic,birth_time,string,5,,,
+pcornet,2.0.0,demographic,hispanic,string,2,,,
+pcornet,2.0.0,demographic,patid,string,256,,,
+pcornet,2.0.0,demographic,race,string,2,,,
+pcornet,2.0.0,demographic,raw_hispanic,string,256,,,
+pcornet,2.0.0,demographic,raw_race,string,256,,,
+pcornet,2.0.0,demographic,raw_sex,string,256,,,
+pcornet,2.0.0,demographic,sex,string,2,,,

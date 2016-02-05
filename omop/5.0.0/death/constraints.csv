@@ -1,0 +1,4 @@
+model,version,table,field,type,name
+omop,5.0.0,death,death_date,not null,
+omop,5.0.0,death,death_type_concept_id,not null,
+omop,5.0.0,death,person_id,not null,

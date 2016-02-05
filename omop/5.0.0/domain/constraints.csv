@@ -1,0 +1,5 @@
+model,version,table,field,type,name
+omop,5.0.0,domain,domain_id,primary key,xpk_domain
+omop,5.0.0,domain,domain_concept_id,not null,
+omop,5.0.0,domain,domain_id,not null,
+omop,5.0.0,domain,domain_name,not null,

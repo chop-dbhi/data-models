@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+omop,4.0.0,visit_occurrence,visit_occurrence_id,primary key,xpk_visit_occurrence
+omop,4.0.0,visit_occurrence,person_id,not null,
+omop,4.0.0,visit_occurrence,place_of_service_concept_id,not null,
+omop,4.0.0,visit_occurrence,visit_end_date,not null,
+omop,4.0.0,visit_occurrence,visit_occurrence_id,not null,
+omop,4.0.0,visit_occurrence,visit_start_date,not null,

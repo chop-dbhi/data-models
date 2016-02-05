@@ -1,0 +1,4 @@
+model,version,table,field,type,name
+pcornet,3.0.0,prescribing,prescribingid,primary key,xpk_prescribing
+pcornet,3.0.0,prescribing,patid,not null,
+pcornet,3.0.0,prescribing,prescribingid,not null,

@@ -1,5 +1,0 @@
-model,version,table,field,required,ref_table,ref_field,standard,description
-pedsnet,v1,relationship,defines_ancestry,No,,,,Defines whether a hierarchical relationship contributes to the concept_ancestor table. These are subsets of the hierarchical relationships. Valid values are Y or NULL. 
-pedsnet,v1,relationship,is_hierarchical,No,,,,Defines whether a relationship defines concepts into classes or hierarchies. Values are Y for hierarchical relationship or NULL if not. 
-pedsnet,v1,relationship,relationship_id,Yes,,,,The type of relationship captured by the relationship record. 
-pedsnet,v1,relationship,relationship_name,Yes,,,,The text that describes the relationship type. 

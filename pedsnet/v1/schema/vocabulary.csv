@@ -1,3 +1,0 @@
-model,version,table,field,type,length,precision,scale,default
-pedsnet,v1,vocabulary,vocabulary_id,integer,,,,
-pedsnet,v1,vocabulary,vocabulary_name,string,256,,,

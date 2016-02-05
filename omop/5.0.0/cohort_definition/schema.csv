@@ -1,0 +1,8 @@
+model,version,table,field,type,length,precision,scale,default
+omop,5.0.0,cohort_definition,cohort_definition_description,string,,,,
+omop,5.0.0,cohort_definition,cohort_definition_id,integer,,,,
+omop,5.0.0,cohort_definition,cohort_definition_name,string,255,,,
+omop,5.0.0,cohort_definition,cohort_definition_syntax,string,,,,
+omop,5.0.0,cohort_definition,cohort_initiation_date,date,,,,
+omop,5.0.0,cohort_definition,definition_type_concept_id,integer,,,,
+omop,5.0.0,cohort_definition,subject_concept_id,integer,,,,

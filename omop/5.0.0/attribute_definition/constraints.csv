@@ -1,0 +1,5 @@
+model,version,table,field,type,name
+omop,5.0.0,attribute_definition,attribute_definition_id,primary key,xpk_attribute_definition
+omop,5.0.0,attribute_definition,attribute_definition_id,not null,
+omop,5.0.0,attribute_definition,attribute_name,not null,
+omop,5.0.0,attribute_definition,attribute_type_concept_id,not null,

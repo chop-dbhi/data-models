@@ -1,0 +1,10 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+pedsnet,2.1.0,source_to_concept_map,invalid_reason,No,,,,"Reason the mapping instance was invalidated. Possible values are D (deleted), U (replaced with an update) or NULL when valid_end_date has the default value. "
+pedsnet,2.1.0,source_to_concept_map,source_code,Yes,,,,The source code being translated into a standard concept.
+pedsnet,2.1.0,source_to_concept_map,source_code_description,No,,,,An optional description for the source code. This is included as a convenience to compare the description of the source code to the name of the concept.
+pedsnet,2.1.0,source_to_concept_map,source_concept_id,Yes,concept,concept_id,,A foreign key to the source concept to which the source code is being mapped.
+pedsnet,2.1.0,source_to_concept_map,source_vocabulary_id,Yes,vocabulary,vocabulary_id,,A foreign key to the vocabulary table defining the vocabulary of the source code that is being mapped to the standard vocabulary.
+pedsnet,2.1.0,source_to_concept_map,target_concept_id,Yes,concept,concept_id,,A foreign key to the concept to which the source code is being mapped.
+pedsnet,2.1.0,source_to_concept_map,target_vocabulary_id,Yes,vocabulary,vocabulary_id,,A foreign key to the vocabulary table defining the vocabulary of the target concept.
+pedsnet,2.1.0,source_to_concept_map,valid_end_date,Yes,,,,The date when the mapping instance became invalid because it was deleted or superseded (updated) by a new relationship. Default value is 31-Dec-2099.
+pedsnet,2.1.0,source_to_concept_map,valid_start_date,Yes,,,,The date when the mapping instance was first recorded.

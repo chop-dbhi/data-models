@@ -1,0 +1,3 @@
+model,version,table,field,type,name
+pcornet,3.0.0,demographic,patid,primary key,xpk_demographic
+pcornet,3.0.0,demographic,patid,not null,

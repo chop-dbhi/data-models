@@ -1,8 +1,0 @@
-model,version,table,field,type,length,precision,scale,default
-pedsnet,v1,provider,care_site_id,integer,,,,
-pedsnet,v1,provider,dea,string,20,,,
-pedsnet,v1,provider,npi,string,20,,,
-pedsnet,v1,provider,provider_id,integer,,,,
-pedsnet,v1,provider,provider_source_value,string,100,,,
-pedsnet,v1,provider,specialty_concept_id,integer,,,,
-pedsnet,v1,provider,specialty_source_value,string,300,,,

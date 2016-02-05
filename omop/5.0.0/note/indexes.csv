@@ -1,0 +1,4 @@
+model,version,table,field,name,order
+omop,5.0.0,note,person_id,idx_note_person_id,
+omop,5.0.0,note,note_type_concept_id,idx_note_concept_id,
+omop,5.0.0,note,visit_occurrence_id,idx_note_visit_id,

@@ -1,0 +1,18 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,1.0.0,observation,associated_provider_id,No,provider,provider_id,A foreign key to the provider in the provider table who was responsible for making the observation.
+pedsnet,1.0.0,observation,observation_concept_id,Yes,concept,concept_id,A foreign key to the standard observation concept identifier in the Vocabulary.
+pedsnet,1.0.0,observation,observation_date,Yes,,,"The date of the observation. In order to reduce ambiguity around timezone shifts, this field is stored and transmitted as a full date and time. Enter as much information as is available."
+pedsnet,1.0.0,observation,observation_id,Yes,,,A unique identifier for each observation.
+pedsnet,1.0.0,observation,observation_source_value,No,,,"The observation code as it appears in the source data. This code is mapped to a standard concept in the Vocabulary and the original code is, stored here for reference."
+pedsnet,1.0.0,observation,observation_time,No,,,"The time of the observation. In order to reduce ambiguity around timezone shifts, this field is stored and transmitted as a full date and time. Enter as much information as is available."
+pedsnet,1.0.0,observation,observation_type_concept_id,Yes,concept,concept_id,A foreign key to the predefined concept identifier in the Vocabulary reflecting the type of the observation.
+pedsnet,1.0.0,observation,person_id,Yes,person,person_id,A foreign key identifier to the person about whom the observation was recorded. The demographic details of that person are stored in the person table.
+pedsnet,1.0.0,observation,range_high,No,,,"The upper limit of the normal range of the observation. It is not applicable if the observation results are non-numeric or categorical, and must be in the same units of measure as the observation value. Optional - Do not transmit to DCC."
+pedsnet,1.0.0,observation,range_low,No,,,"The lower limit of the normal range of the observation. It is not applicable if the observation results are non-numeric or categorical, and must be in the same units of measure as the observation value. Optional - Do not transmit to DCC."
+pedsnet,1.0.0,observation,relevant_condition_concept_id,No,concept,concept_id,"A foreign key to the condition concept related to this observation, if this relationship exists in the source data (e.g. indication for a diagnostic test)."
+pedsnet,1.0.0,observation,unit_concept_id,No,concept,concept_id,A foreign key to a standard concept identifier of measurement units in the Vocabulary.
+pedsnet,1.0.0,observation,unit_source_value,No,,,"The source code for the unit as it appears in the source data. This code is mapped to a standard unit concept in the Vocabulary and the original code is, stored here for reference."
+pedsnet,1.0.0,observation,value_as_concept_id,No,concept,concept_id,"A foreign key to an observation result stored as a concept identifier. This is applicable to observations where the result can be expressed as a standard concept from the Vocabulary (e.g., positive/negative, present/absent, low/high, etc.)."
+pedsnet,1.0.0,observation,value_as_number,No,,,The observation result stored as a number. This is applicable to observations where the result is expressed as a numeric value.
+pedsnet,1.0.0,observation,value_as_string,No,,,The observation result stored as a string. This is applicable to observations where the result is expressed as verbatim text.
+pedsnet,1.0.0,observation,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,A foreign key to the visit in the visit table during which the observation was recorded.

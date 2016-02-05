@@ -1,0 +1,5 @@
+model,version,table,field,name,order
+pedsnet,2.1.0,source_to_concept_map,source_vocabulary_id,idx_source_to_concept_id_1,
+pedsnet,2.1.0,source_to_concept_map,target_concept_id,idx_source_to_concept_id_3,
+pedsnet,2.1.0,source_to_concept_map,source_code,idx_source_to_concept_code,
+pedsnet,2.1.0,source_to_concept_map,target_vocabulary_id,idx_source_to_concept_id_2,

@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+pedsnet,2.2.0,death,person_id,primary key,xpk_death
+pedsnet,2.2.0,death,death_date,not null,
+pedsnet,2.2.0,death,death_impute_concept_id,not null,
+pedsnet,2.2.0,death,death_time,not null,
+pedsnet,2.2.0,death,death_type_concept_id,not null,
+pedsnet,2.2.0,death,person_id,not null,

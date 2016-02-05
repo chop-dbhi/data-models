@@ -1,0 +1,8 @@
+model,version,table,field,type,length,precision,scale,default
+omop,4.0.0,visit_occurrence,care_site_id,integer,,,,
+omop,4.0.0,visit_occurrence,person_id,integer,,,,
+omop,4.0.0,visit_occurrence,place_of_service_concept_id,integer,,,,
+omop,4.0.0,visit_occurrence,place_of_service_source_value,string,50,,,
+omop,4.0.0,visit_occurrence,visit_end_date,date,,,,
+omop,4.0.0,visit_occurrence,visit_occurrence_id,integer,,,,
+omop,4.0.0,visit_occurrence,visit_start_date,date,,,,

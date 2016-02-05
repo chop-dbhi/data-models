@@ -1,0 +1,6 @@
+model,version,table,field,type,name
+omop,4.0.0,cohort,cohort_id,primary key,xpk_cohort
+omop,4.0.0,cohort,cohort_concept_id,not null,
+omop,4.0.0,cohort,cohort_id,not null,
+omop,4.0.0,cohort,cohort_start_date,not null,
+omop,4.0.0,cohort,subject_id,not null,

@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+omop,5.0.0,procedure_occurrence,procedure_occurrence_id,primary key,xpk_procedure_occurrence
+omop,5.0.0,procedure_occurrence,person_id,not null,
+omop,5.0.0,procedure_occurrence,procedure_concept_id,not null,
+omop,5.0.0,procedure_occurrence,procedure_date,not null,
+omop,5.0.0,procedure_occurrence,procedure_occurrence_id,not null,
+omop,5.0.0,procedure_occurrence,procedure_type_concept_id,not null,

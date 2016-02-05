@@ -1,0 +1,4 @@
+model,version,table,field,type,name
+omop,4.0.0,procedure_cost,procedure_cost_id,primary key,xpk_procedure_cost
+omop,4.0.0,procedure_cost,procedure_cost_id,not null,
+omop,4.0.0,procedure_cost,procedure_occurrence_id,not null,

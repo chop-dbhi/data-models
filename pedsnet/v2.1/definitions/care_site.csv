@@ -1,9 +1,0 @@
-model,version,table,field,required,ref_table,ref_field,description
-pedsnet,v2.1,care_site,care_site_id,Yes,,,"A unique identifier for each defined location of care within an organization. Here, an organization is defined as a collection of one or more care sites that share a single EHR database."
-pedsnet,v2.1,care_site,care_site_name,No,,,The description of the care site
-pedsnet,v2.1,care_site,care_site_source_value,Yes,,,"The identifier for the organization in the source data, stored here for reference."
-pedsnet,v2.1,care_site,location_id,No,location,location_id,"A foreign key to the geographic location of the administrative offices of the organization in the location table, where the detailed address information is stored."
-pedsnet,v2.1,care_site,place_of_service_concept_id,No,concept,concept_id,A foreign key that refers to a place of service concept identifier in the Vocabulary
-pedsnet,v2.1,care_site,place_of_service_source_value,No,,,"The source code for the place of service as it appears in the source data, stored here for reference."
-pedsnet,v2.1,care_site,specialty_concept_id,No,concept,concept_id,The specialty of the department linked to a standard specialty concept as it appears in the Vocabulary
-pedsnet,v2.1,care_site,specialty_source_value,No,,,"The source code for the specialty as it appears in the source data, stored here for reference."

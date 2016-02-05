@@ -1,0 +1,3 @@
+model,version,table,field,ref_table,ref_field,name
+pcornet,3.0.0,procedures,encounterid,encounter,encounterid,fk_procedures_encounterid
+pcornet,3.0.0,procedures,patid,demographic,patid,fk_procedures_patid

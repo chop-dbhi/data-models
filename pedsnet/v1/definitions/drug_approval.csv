@@ -1,4 +1,0 @@
-model,version,table,field,required,ref_table,ref_field,standard,description
-pedsnet,v1,drug_approval,ingredient_concept_id,,,,,
-pedsnet,v1,drug_approval,approval_date,,,,,
-pedsnet,v1,drug_approval,approved_by,,,,,

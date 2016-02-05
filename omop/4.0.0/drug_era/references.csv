@@ -1,0 +1,2 @@
+model,version,table,field,ref_table,ref_field,name
+omop,4.0.0,drug_era,person_id,person,person_id,fpk_drug_era_person

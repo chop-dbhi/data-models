@@ -1,0 +1,5 @@
+model,version,table,field,type,name
+pedsnet,2.1.0,domain,domain_id,primary key,xpk_domain
+pedsnet,2.1.0,domain,domain_concept_id,not null,
+pedsnet,2.1.0,domain,domain_id,not null,
+pedsnet,2.1.0,domain,domain_name,not null,

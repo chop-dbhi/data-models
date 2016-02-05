@@ -1,0 +1,18 @@
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
+pcornet,3.0.0,prescribing,prescribingid,YES,,,,,,,,"Arbitrary identifier for each unique PRESCRIBING record. Does not need to be persistent across refreshes, and may be created by methods such as sequence or GUID."
+pcornet,3.0.0,prescribing,patid,YES,DEMOGRAPHIC,PATID,,,,,,Arbitrary person-level identifier used to link across tables.
+pcornet,3.0.0,prescribing,encounterid,NO,ENCOUNTER,ENCOUNTERID,,,,,,Arbitrary encounter-level identifier. This is an optional relationship; the ENCOUNTERID should be present if the prescribing activity is directly associated with an encounter.
+pcornet,3.0.0,prescribing,rx_providerid,NO,,,,,,,,Provider code for the provider who prescribed the medication. The provider code is a pseudoidentifier with a consistent crosswalk to the real identifier.
+pcornet,3.0.0,prescribing,rx_order_date,NO,,,,,,,,Order date of the prescription by the provider.
+pcornet,3.0.0,prescribing,rx_order_time,NO,,,,,,,,Order time of the prescription by the provider.
+pcornet,3.0.0,prescribing,rx_start_date,NO,,,,,,,,Start date of order. This attribute may not be consistent with the date on which the patient actually begin taking the medication.
+pcornet,3.0.0,prescribing,rx_end_date,NO,,,,,,,,End date of order (if available).
+pcornet,3.0.0,prescribing,rx_quantity,NO,,,,,,,,Quantity ordered.
+pcornet,3.0.0,prescribing,rx_refills,NO,,,,,,,,"Number of refills ordered (not including the original prescription). If no refills are ordered, the value should be zero."
+pcornet,3.0.0,prescribing,rx_days_supply,NO,,,,,,,,"Number of days supply ordered, as specified by the prescription."
+pcornet,3.0.0,prescribing,rx_frequency,NO,,,,,,,01=Every day 02=Two times a day (BID) 03=Three times a day (TID) 04=Four times a day (QID) 05=Every morning 06=Every afternoon 07=Before meals 08=After meals 09=As needed (PRN) NI=No information UN=Unknown OT=Other,Specified frequency of medication.
+pcornet,3.0.0,prescribing,rx_basis,NO,,,,,,,01=Dispensing 02=Administration NI=No information UN=Unknown OT=Other,Basis of the medication order
+pcornet,3.0.0,prescribing,rxnorm_cui,NO,,,,,,,,"Where an RxNorm mapping exists for the source medication, this field contains the RxNorm concept identifier (CUI) at the highest possible specificity. If more than one option exists for mapping, the following ordered strategy may be adopted: 1)Semantic generic clinical drug 2)Semantic Branded clinical drug 3)Generic drug pack 4)Branded drug pack"
+pcornet,3.0.0,prescribing,raw_rx_med_name,NO,,,,,,,,"Optional field for originating, full textual medication name from the source."
+pcornet,3.0.0,prescribing,raw_rx_frequency,NO,,,,,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,3.0.0,prescribing,raw_rxnorm_cui,NO,,,,,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."

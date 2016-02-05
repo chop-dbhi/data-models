@@ -1,0 +1,6 @@
+model,version,table,field,type,length,precision,scale,default
+omop,4.0.0,organization,location_id,integer,,,,
+omop,4.0.0,organization,organization_id,integer,,,,
+omop,4.0.0,organization,organization_source_value,string,50,,,
+omop,4.0.0,organization,place_of_service_concept_id,integer,,,,
+omop,4.0.0,organization,place_of_service_source_value,string,50,,,

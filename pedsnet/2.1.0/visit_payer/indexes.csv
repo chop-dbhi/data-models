@@ -1,0 +1,3 @@
+model,version,table,field,name,order
+pedsnet,2.1.0,visit_payer,visit_occurrence_id,idx_visit_payer_visit_id,
+pedsnet,2.1.0,visit_payer,visit_payer_id,idx_visit_payer_id,

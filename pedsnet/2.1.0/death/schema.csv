@@ -1,0 +1,9 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,2.1.0,death,cause_concept_id,integer,,,,
+pedsnet,2.1.0,death,cause_source_concept_id,integer,,,,
+pedsnet,2.1.0,death,cause_source_value,string,256,,,
+pedsnet,2.1.0,death,death_date,date,,,,
+pedsnet,2.1.0,death,death_impute_concept_id,integer,,,,
+pedsnet,2.1.0,death,death_time,datetime,,,,
+pedsnet,2.1.0,death,death_type_concept_id,integer,,,,
+pedsnet,2.1.0,death,person_id,integer,,,,

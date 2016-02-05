@@ -1,0 +1,9 @@
+model,version,table,field,type,name
+pedsnet,2.1.0,concept_relationship,concept_id_1,primary key,xpk_concept_relationship
+pedsnet,2.1.0,concept_relationship,concept_id_2,primary key,xpk_concept_relationship
+pedsnet,2.1.0,concept_relationship,relationship_id,primary key,xpk_concept_relationship
+pedsnet,2.1.0,concept_relationship,concept_id_1,not null,
+pedsnet,2.1.0,concept_relationship,concept_id_2,not null,
+pedsnet,2.1.0,concept_relationship,relationship_id,not null,
+pedsnet,2.1.0,concept_relationship,valid_end_date,not null,
+pedsnet,2.1.0,concept_relationship,valid_start_date,not null,

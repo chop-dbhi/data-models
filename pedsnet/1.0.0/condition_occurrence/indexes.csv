@@ -1,0 +1,4 @@
+model,version,table,field,name,order
+pedsnet,1.0.0,condition_occurrence,condition_concept_id,idx_condition_concept_id,
+pedsnet,1.0.0,condition_occurrence,person_id,idx_condition_person_id,
+pedsnet,1.0.0,condition_occurrence,visit_occurrence_id,idx_condition_visit_id,

@@ -1,0 +1,2 @@
+model,version,table,field,name,order
+omop,4.0.0,relationship,relationship_id,idx_relationship_rel_id,

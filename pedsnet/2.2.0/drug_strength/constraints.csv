@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+pedsnet,2.2.0,drug_strength,drug_concept_id,primary key,xpk_drug_strength
+pedsnet,2.2.0,drug_strength,ingredient_concept_id,primary key,xpk_drug_strength
+pedsnet,2.2.0,drug_strength,drug_concept_id,not null,
+pedsnet,2.2.0,drug_strength,ingredient_concept_id,not null,
+pedsnet,2.2.0,drug_strength,valid_end_date,not null,
+pedsnet,2.2.0,drug_strength,valid_start_date,not null,

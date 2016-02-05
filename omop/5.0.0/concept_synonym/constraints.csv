@@ -1,0 +1,4 @@
+model,version,table,field,type,name
+omop,5.0.0,concept_synonym,concept_id,not null,
+omop,5.0.0,concept_synonym,concept_synonym_name,not null,
+omop,5.0.0,concept_synonym,language_concept_id,not null,

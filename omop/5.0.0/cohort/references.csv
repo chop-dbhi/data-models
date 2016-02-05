@@ -1,0 +1,2 @@
+model,version,table,field,ref_table,ref_field,name
+omop,5.0.0,cohort,cohort_definition_id,cohort_definition,cohort_definition_id,fpk_cohort_definition

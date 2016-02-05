@@ -1,0 +1,8 @@
+model,version,table,field,type,length,precision,scale,default
+omop,4.0.0,provider,care_site_id,integer,,,,
+omop,4.0.0,provider,dea,string,20,,,
+omop,4.0.0,provider,npi,string,20,,,
+omop,4.0.0,provider,provider_id,integer,,,,
+omop,4.0.0,provider,provider_source_value,string,50,,,
+omop,4.0.0,provider,specialty_concept_id,integer,,,,
+omop,4.0.0,provider,specialty_source_value,string,50,,,

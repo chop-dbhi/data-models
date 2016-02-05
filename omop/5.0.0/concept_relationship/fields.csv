@@ -1,0 +1,7 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,5.0.0,concept_relationship,concept_id_1,Yes,concept,concept_id,,"A foreign key to the concept in the concept table associated with the relationship. Relationships are directional, and this field represents the source concept designation. "
+omop,5.0.0,concept_relationship,concept_id_2,Yes,concept,concept_id,,"A foreign key to the concept in the concept table associated with the relationship. Relationships are directional, and this field represents the destination concept designation. "
+omop,5.0.0,concept_relationship,invalid_reason,No,,,,"Reason the relationship was invalidated. Possible values are D (deleted), U (replaced with an update) or NULL when valid_end_date has the default value. "
+omop,5.0.0,concept_relationship,relationship_id,Yes,relationship,relationship_id,,The type of relationship as defined in the relationship table.
+omop,5.0.0,concept_relationship,valid_end_date,Yes,,,,The date when the relationship became invalid because it was deleted or superseded (updated) by a new relationship. Default value is 31-Dec-2099.
+omop,5.0.0,concept_relationship,valid_start_date,Yes,,,,The date when the instance of the relationship is first recorded.

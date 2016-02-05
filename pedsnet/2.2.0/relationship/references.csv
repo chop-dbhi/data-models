@@ -1,0 +1,3 @@
+model,version,table,field,ref_table,ref_field,name
+pedsnet,2.2.0,relationship,relationship_concept_id,concept,concept_id,fpk_relationship_concept
+pedsnet,2.2.0,relationship,reverse_relationship_id,relationship,relationship_id,fpk_relationship_reverse

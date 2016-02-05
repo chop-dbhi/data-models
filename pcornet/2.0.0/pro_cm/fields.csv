@@ -1,0 +1,54 @@
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
+pcornet,2.0.0,pro_cm,encounterid,NO,ENCOUNTER,ENCOUNTERID,,NO,,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the item was collected as part of a healthcare encounter."
+pcornet,2.0.0,pro_cm,patid,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier for the patient for whom the PRO response was captured. Used to link across tables.
+pcornet,2.0.0,pro_cm,pro_cat,NO,,,,NO,,"Y;N;NI;UN;OT
+","Y=Yes
+N=No
+NI=No information
+UN=Unknown
+OT=Other",Indicates whether Computer Adaptive Testing (CAT) was used to administer the survey or instrument that the item was part of. May apply to electronic (EC) and telephonic (PH or IV) modes.
+pcornet,2.0.0,pro_cm,pro_date,YES,,,YYYY-MM-DD,NO,DATE,,,The date of the response.
+pcornet,2.0.0,pro_cm,pro_item,YES,,,,NO,,PN_0001;PN_0002;PN_0003;PN_0004;PN_0005;PN_0006;PN_0007;PN_0008;PN_0009;PN_0010;PN_0011;PN_0012;PN_0013;PN_0014;PN_0015;PN_0016;PN_0017;PN_0018;PN_0019;PN_0020;PN_0021,"PN_0001=GLOBAL01
+PN_0002=GLOBAL02
+PN_0003=GLOBAL06
+PN_0004=PFA53
+PN_0005=EDDEP29
+PN_0006=HI7
+PN_0007=SLEEP20
+PN_0008=SRPPER11_CAPS
+PN_0009=PAININ9
+PN_0010=3793R1
+PN_0011=28676R1
+PN_0012=EOS_P_011
+PN_0013=PEDSGLOBAL2
+PN_0014=PEDSGLOBAL5
+PN_0015=PEDSGLOBAL6
+PN_0016=GLOBAL03
+PN_0017=GLOBAL04
+PN_0018=EDANX53
+PN_0019=SAMHSA
+PN_0020=CAHPS 4.0
+PN_0021=PA070",PCORnet identifier for the specific Common Measure item. Please see the Common Measures reference table for more details.
+pcornet,2.0.0,pro_cm,pro_loinc,NO,,,,NO,,,,"LOINC code for item context and stem. Please see the reference table for known LOINC codes for each common measure.
+
+Logical Observation Identifiers, Names, and Codes (LOINC) from the Regenstrief Institute. Results with local versions of LOINC codes (e.g., LOINC candidate codes) should be included in the RAW_table field, but the PRO_LOINC variable should be set to missing. Current LOINC codes are from 3-7 characters long but Regenstrief suggests a length of 10 for future growth. The last digit of the LOINC code is a check digit and is always preceded by a hyphen. All parts of the LOINC code, including the hyphen, must be included. Do not pad the LOINC code with leading zeros.
+"
+pcornet,2.0.0,pro_cm,pro_method,NO,,,,NO,,PA;EC;PH;IV;NI;UN;OT,"PA=Paper
+EC=Electronic
+PH=Telephonic
+IV=Telephonic with interactive voice response (IVR) technology
+NI=No information
+UN=Unknown
+OT=Other","Method of administration. Electronic includes responses captured via a personal or tablet computer, at web kiosks, or via a smartphone."
+pcornet,2.0.0,pro_cm,pro_mode,NO,,,,NO,,"SF;SA;PR;PA;NI;UN;OT
+","SF=Self without assistance
+SA= Self with assistance
+PR=Proxy without assistance
+PA=Proxy with assistance
+NI=No information
+UN=Unknown
+OT=Other","The person who responded on behalf of the patient for whom the response was captured. A proxy report is a measurement based on a report by someone other than the patient reporting as if he or she is the patient, such as a parent responding for a child, or a caregiver responding for an individual unable to report for themselves. Assistance excludes providing interpretation of the patient’s response. "
+pcornet,2.0.0,pro_cm,pro_response,NO,,,,NO,,,,The numeric response recorded for the item. Please see the Common Measures reference table for the list of valid responses for each item.
+pcornet,2.0.0,pro_cm,pro_time,YES,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,The time of the response.
+pcornet,2.0.0,pro_cm,raw_pro_code,NO,,,,NO,,,,"Optional field for originating code, such as LOINC candidate codes that have not yet been adopted"
+pcornet,2.0.0,pro_cm,raw_pro_response,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."

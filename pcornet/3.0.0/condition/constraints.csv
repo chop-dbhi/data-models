@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+pcornet,3.0.0,condition,conditionid,primary key,xpk_condition
+pcornet,3.0.0,condition,condition,not null,
+pcornet,3.0.0,condition,condition_source,not null,
+pcornet,3.0.0,condition,condition_type,not null,
+pcornet,3.0.0,condition,conditionid,not null,
+pcornet,3.0.0,condition,patid,not null,
