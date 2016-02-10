@@ -1,50 +1,11 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
-pcornet,3.0.0,demographic,biobank_flag,NO,,,,NO,,Y;N,"Y = Yes
-N = No","Flag to indicate that one or more biobanked specimens are stored and available for research use. Examples of biospecimens could include plasma, urine, or tissue. If biospecimens are available, locally maintained â€œmapping tablesâ€ù would be necessary to map between the DEMOGRAPHIC record and the originating biobanking system(s).
-
-If no known biobanked specimens are available, this field should be marked â€œNoâ€ù."
+pcornet,3.0.0,demographic,biobank_flag,NO,,,,NO,,Y;N,"Y = Yes N = No","Flag to indicate that one or more biobanked specimens are stored and available for research use. Examples of biospecimens could include plasma, urine, or tissue. If biospecimens are available, locally maintained mapping tables would be necessary to map between the DEMOGRAPHIC record and the originating biobanking system(s). If no known biobanked specimens are available, this field should be marked ."
 pcornet,3.0.0,demographic,birth_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date of birth.
 pcornet,3.0.0,demographic,birth_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time of birth.
-pcornet,3.0.0,demographic,hispanic,NO,,,,NO,,Y;N;R;NI;UN;OT,"Y = Yes
-N = No
-R = Refuse to answer
-NI = No information
-UN = Unknown
-OT = Other","A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
-pcornet,3.0.0,demographic,patid,YES,,,,NO,,,,"Arbitrary person-level identifier used to link across tables.
-
-PATID is a pseudoidentifier with a consistent crosswalk to the true identifier retained by the source Data Partner. For analytical data sets requiring patient-level data, only the pseudoidentifier is used to link across all information belonging to a patient.
-
-The PATID must be unique within the data source being queried. Creating a unique identifier within a CDRN would be beneficial and acceptable. The PATID is not the basis for linkages across partners."
-pcornet,3.0.0,demographic,race,NO,,,,NO,,01;02;03;04;05;06;07;NI;UN;OT,"01 = American Indian or Alaska Native
-02 = Asian
-03 = Black or African American
-04 = Native Hawaiian or Other Pacific Islander
-05 = White
-06 = Multiple race
-07 = Refuse to answer
-NI = No information
-UN = Unknown
-OT = Other","Please use only one race value per patient.
-
-Details of categorical definitions:
-American Indian or Alaska Native: A person having origins in any of the original peoples of North and South America (including Central America), and who maintains tribal affiliation or community attachment.
-
-Asian: A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam.
-
-Black or African American: A person having origins in any of the black racial groups of Africa.
-
-Native Hawaiian or Other Pacific Islander: A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands.
-
-White: A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
+pcornet,3.0.0,demographic,hispanic,NO,,,,NO,,Y;N;R;NI;UN;OT,"Y = Yes N = No R = Refuse to answer NI = No information UN = Unknown OT = Other","A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+pcornet,3.0.0,demographic,patid,YES,,,,NO,,,,"Arbitrary person-level identifier used to link across tables. PATID is a pseudoidentifier with a consistent crosswalk to the true identifier retained by the source Data Partner. For analytical data sets requiring patient-level data, only the pseudoidentifier is used to link across all information belonging to a patient. The PATID must be unique within the data source being queried. Creating a unique identifier within a CDRN would be beneficial and acceptable. The PATID is not the basis for linkages across partners."
+pcornet,3.0.0,demographic,race,NO,,,,NO,,01;02;03;04;05;06;07;NI;UN;OT,"01 = American Indian or Alaska Native 02 = Asian 03 = Black or African American 04 = Native Hawaiian or Other Pacific Islander 05 = White 06 = Multiple race 07 = Refuse to answer NI = No information UN = Unknown OT = Other","Please use only one race value per patient. Details of categorical definitions: American Indian or Alaska Native: A person having origins in any of the original peoples of North and South America (including Central America), and who maintains tribal affiliation or community attachment. Asian: A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent including, for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam. Black or African American: A person having origins in any of the black racial groups of Africa. Native Hawaiian or Other Pacific Islander: A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands. White: A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
 pcornet,3.0.0,demographic,raw_hispanic,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 pcornet,3.0.0,demographic,raw_race,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 pcornet,3.0.0,demographic,raw_sex,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
-pcornet,3.0.0,demographic,sex,NO,,,,NO,,A;F;M;NI;UN;OT,"A = Ambiguous
-F = Female
-M = Male
-NI = No information
-UN = Unknown
-OT = Other","Administrative sex.
-
-v2.0 guidance added: The â€œAmbiguousâ€ù category may be used for individuals who are physically undifferentiated from birth. The â€œOtherâ€ù category may be used for individuals who are undergoing gender re-assignment."
+pcornet,3.0.0,demographic,sex,NO,,,,NO,,A;F;M;NI;UN;OT,"A = Ambiguous F = Female M = Male NI = No information UN = Unknown OT = Other","Administrative sex. v2.0 guidance added: The Ambiguous category may be used for individuals who are physically undifferentiated from birth. The Other category may be used for individuals who are undergoing gender re-assignment."

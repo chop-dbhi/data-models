@@ -7,5 +7,5 @@ omop,4.0.0,source_to_concept_map,source_code_description,string,256,,,
 omop,4.0.0,source_to_concept_map,source_vocabulary_id,integer,,,,
 omop,4.0.0,source_to_concept_map,target_concept_id,integer,,,,
 omop,4.0.0,source_to_concept_map,target_vocabulary_id,integer,,,,
-omop,4.0.0,source_to_concept_map,valid_end_date,date,,,,'2099-12-31'::date
+omop,4.0.0,source_to_concept_map,valid_end_date,date,,,,2099-12-31
 omop,4.0.0,source_to_concept_map,valid_start_date,date,,,,

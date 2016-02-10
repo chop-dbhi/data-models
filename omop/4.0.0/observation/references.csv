@@ -1,0 +1,4 @@
+model,version,table,field,ref_table,ref_field,name
+omop,4.0.0,observation,associated_provider_id,provider,provider_id,fpk_observation_provider
+omop,4.0.0,observation,person_id,person,person_id,fpk_observation_person
+omop,4.0.0,observation,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_observation_visit

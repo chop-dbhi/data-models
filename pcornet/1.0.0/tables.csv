@@ -4,4 +4,4 @@ pcornet,1.0.0,diagnosis,Diagnosis codes indicate the results of diagnostic proce
 pcornet,1.0.0,encounter,Encounters are interactions between patients and providers within the context of healthcare delivery.
 pcornet,1.0.0,enrollment,"Enrollment is a concept that defines a period of time during which all medically-attended events are expected to be observed. This concept is often insurance-based, but other methods of defining enrollment are possible."
 pcornet,1.0.0,procedure,"Procedure codes indicate the discreet medical interventions and diagnostic testing, such as surgical procedures, administered within healthcare delivery."
-pcornet,1.0.0,vital,"Vital signs (such as height, weight, and blood pressure) directly measure an individual’s current state of attributes."
+pcornet,1.0.0,vital,"Vital signs (such as height, weight, and blood pressure) directly measure an individual's current state of attributes."

@@ -1,18 +1,9 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
-pcornet,3.0.0,dispensing,dispense_amt,NO,,,,NO,UNITS,,,"Number of units (pills, tablets, vials) dispensed. Net amount per NDC per dispensing. This amount is typically found on the dispensing record. Positive values are expected.
-
-Important: Please do not calculate during CDM implementation. This field should only reflect originating source system calculations.
-"
+pcornet,3.0.0,dispensing,dispense_amt,NO,,,,NO,UNITS,,,"Number of units (pills, tablets, vials) dispensed. Net amount per NDC per dispensing. This amount is typically found on the dispensing record. Positive values are expected. Important: Please do not calculate during CDM implementation. This field should only reflect originating source system calculations."
 pcornet,3.0.0,dispensing,dispense_date,YES,,,YYYY-MM-DD,NO,DATE,,,Dispensing date (as close as possible to date the person received the dispensing).
-pcornet,3.0.0,dispensing,dispense_sup,NO,,,,NO,DAYS,,,"Days supply. Number of days that the medication supports based on the number of doses as reported by the pharmacist. This amount is typically found on the dispensing record. Integer values are expected.
-
-Important: Please do not calculate during CDM implementation. This field should only reflect originating source system calculations."
+pcornet,3.0.0,dispensing,dispense_sup,NO,,,,NO,DAYS,,,"Days supply. Number of days that the medication supports based on the number of doses as reported by the pharmacist. This amount is typically found on the dispensing record. Integer values are expected. Important: Please do not calculate during CDM implementation. This field should only reflect originating source system calculations."
 pcornet,3.0.0,dispensing,dispensingid,YES,,,,,,,,"Arbitrary identifier for each unique record. Does not need to be persistent across refreshes, and may be created by methods such as sequence or GUID."
-pcornet,3.0.0,dispensing,ndc,YES,,,,NO,,,,"National Drug Code in the 11-digit, no-dash, HIPAA format.
-
-Please expunge any place holders (such as dashes or extra digits).
-
-If needed, guidance on normalization for other forms of NDC can be found: http://www.nlm.nih.gov/research/umls/rxnorm/docs/2012/rxnorm_doco_full_2012-1.html (see section 6)"
+pcornet,3.0.0,dispensing,ndc,YES,,,,NO,,,,"National Drug Code in the 11-digit, no-dash, HIPAA format. Please expunge any place holders (such as dashes or extra digits). If needed, guidance on normalization for other forms of NDC can be found: http://www.nlm.nih.gov/research/umls/rxnorm/docs/2012/rxnorm_doco_full_2012-1.html (see section 6)"
 pcornet,3.0.0,dispensing,patid,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier. Used to link across tables.
 pcornet,3.0.0,dispensing,prescribingid,NO,PRESCRIBING,PRESCRIBINGID,,,,,,"This is an optional relationship to the PRESCRIBING table, and may not be generally available. One prescribing order may generate multiple dispensing records."
 pcornet,3.0.0,dispensing,raw_ndc,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."

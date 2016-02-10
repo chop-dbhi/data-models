@@ -1,5 +1,5 @@
 model,version,table,field,required,ref_table,ref_field,standard,description
-omop,4.0.0,concept,concept_class,Yes,,,,"The category or class of the concept along both the hierarchical tree as well as different domains within a vocabulary. Examples are “Clinical Drug”, “Ingredient”, “Clinical Finding” etc. "
+omop,4.0.0,concept,concept_class,Yes,,,,"The category or class of the concept along both the hierarchical tree as well as different domains within a vocabulary. Examples are ""Clinical Drug"", ""Ingredient"", ""Clinical Finding"" etc. "
 omop,4.0.0,concept,concept_code,Yes,,,,"The concept code represents the identifier of the concept in the source data it originates from, such as SNOMED-CT concept IDs, RxNorm RXCUIs etc. Note that concept codes are not unique across vocabularies. "
 omop,4.0.0,concept,concept_id,Yes,,,,A system-generated unique identifier for each concept across all domains.
 omop,4.0.0,concept,concept_level,Yes,,,,"The level of hierarchy associated with the concept. Different concept levels are assigned to concepts to depict their seniority in a clearly defined hierarchy, such as drugs, conditions, etc. A concept level of 0 is assigned to concepts that are not part of a standard vocabulary, but are part of the vocabulary for reference purposes (e.g. drug form). "
