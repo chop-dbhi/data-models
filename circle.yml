@@ -35,13 +35,13 @@ dependencies:
     # Load dmsa image if it exists in cache and pull it.
     - if [[ -e ~/docker/dmsa.tar ]]; then docker load --input
       ~/docker/dmsa.tar; fi; docker pull
-      "dbhi/data-models-sqlalchemy:${DMSA_TEST_BRANCH}"
+      "dbhi/data-models-sqlalchemy:${DMSA_TEST_BRANCH/master/latest}"
     # Load data-models-service (dms) image if it exists in cache and pull it.
     - if [[ -e ~/docker/dms.tar ]]; then docker load --input
       ~/docker/dms.tar; fi; docker pull dbhi/data-models
     # Save dmsa image to cache for next build.
     - mkdir -p ~/docker; docker save
-      "dbhi/data-models-sqlalchemy:${DMSA_TEST_BRANCH}" > ~/docker/dmsa.tar
+      "dbhi/data-models-sqlalchemy:${DMSA_TEST_BRANCH/master/latest}" > ~/docker/dmsa.tar
     # Save dms image.
     - docker save dbhi/data-models > ~/docker/dms.tar
 
@@ -53,7 +53,7 @@ test:
       "https://github.com/chop-dbhi/${APP_NAME}@${BRANCH}"; sleep 10
     # Run the dmsa container locally.
     - docker run -d -p "5000:80" --link dms:dms
-      "dbhi/data-models-sqlalchemy:${DMSA_TEST_BRANCH}" gunicorn
+      "dbhi/data-models-sqlalchemy:${DMSA_TEST_BRANCH/master/latest}" gunicorn
       --bind="0.0.0.0:80" --workers=4
       'dmsa.service:build_app("http://dms:8123/")'; sleep 10
     # Integration testing of the running container service.
