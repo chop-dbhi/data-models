@@ -1,0 +1,64 @@
+machine:
+  services:
+    - docker
+  python:
+    version: 2.7.3
+  environment:
+    # Make CircleCI specific environment variables more generic.
+    BUILD_NUM: "${CIRCLE_BUILD_NUM}"
+    COMMIT_SHA1: "${CIRCLE_SHA1}"
+    BRANCH: "${CIRCLE_BRANCH}"
+    APP_NAME: "${CIRCLE_PROJECT_REPONAME}"
+    VERSION: "${CIRCLE_BRANCH}_${CIRCLE_BUILD_NUM}_${CIRCLE_SHA1:0:8}"
+    ARTIFACT_DIR: "${CIRCLE_ARTIFACTS}"
+    DMSA_TEST_BRANCH: "issue-28"
+    DMSA_TEST_SERVICE: "http://127.0.0.1:8123/"
+    DMSA_TEST_CONTAINER_URL: "http://127.0.0.1:5000/"
+
+checkout:
+  post:
+    # Checkout dmsa.
+    - git clone https://github.com/chop-dbhi/data-models-sqlalchemy.git
+      ~/data-models-sqlalchemy
+    - cd ~/data-models-sqlalchemy; git checkout ${DMSA_TEST_BRANCH}
+
+dependencies:
+  cache_directories:
+    # Add a cache directory to save docker images to.
+    - "~/docker"
+  override:
+    # Install dmsa app.
+    - cd ~/data-models-sqlalchemy; pip install -r requirements.txt;
+      python setup.py install
+    # Install docker-py for container testing.
+    - pip install docker-py
+    # Load dmsa image if it exists in cache and pull it.
+    - if [[ -e ~/docker/dmsa.tar ]]; then docker load --input
+      ~/docker/dmsa.tar; fi; docker pull
+      "dbhi/data-models-sqlalchemy:${DMSA_TEST_BRANCH}"
+    # Load data-models-service (dms) image if it exists in cache and pull it.
+    - if [[ -e ~/docker/dms.tar ]]; then docker load --input
+      ~/docker/dms.tar; fi; docker pull dbhi/data-models
+    # Save dmsa image to cache for next build.
+    - mkdir -p ~/docker; docker save
+      "dbhi/data-models-sqlalchemy:${DMSA_TEST_BRANCH}" > ~/docker/dmsa.tar
+    # Save dms image.
+    - docker save dbhi/data-models > ~/docker/dms.tar
+
+test:
+  override:
+    # Run the dms service locally.
+    - docker run -d -p "8123:8123" --name dms dbhi/data-models -log error
+      -path /opt/repos -repo
+      "https://github.com/chop-dbhi/${APP_NAME}@${BRANCH}"; sleep 10
+    # Run the dmsa container locally.
+    - docker run -d -p "5000:80" --link dms:dms
+      "dbhi/data-models-sqlalchemy:${DMSA_TEST_BRANCH}" gunicorn
+      --bind="0.0.0.0:80" --workers=4
+      'dmsa.service:build_app("http://dms:8123/")'; sleep 10
+    # Integration testing of the running container service.
+    - cd ~/data-models-sqlalchemy; nosetests dmsa.tests.container_integration
+    # Save DDL to artifact directory.
+    - mkdir -p "${ARTIFACT_DIR}/ddl"
+    - cd ~/data-models-sqlalchemy; python dmsa/tests/output_all_ddl.py
+      "${ARTIFACT_DIR}/ddl/dms_${VERSION}_all_ddl.sql"
