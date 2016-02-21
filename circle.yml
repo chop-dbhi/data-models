@@ -14,6 +14,9 @@ machine:
     DMSA_TEST_BRANCH: "master"
     DMSA_TEST_SERVICE: "http://127.0.0.1:8123/"
     DMSA_TEST_CONTAINER_URL: "http://127.0.0.1:5000/"
+    PULL_NUM: "${CIRCLE_PR_NUMBER}"
+    PULL_REPO: "${CIRCLE_PR_REPONAME}"
+    PULL_USER: "${CIRCLE_PR_USERNAME}"
 
 checkout:
   post:
@@ -26,7 +29,13 @@ dependencies:
   cache_directories:
     # Add a cache directory to save docker images to.
     - "~/docker"
+    # Add a cache directory for the jq install.
+    - "~/bin"
   override:
+    # Install jq for command line JSON parsing.
+    - mkdir -p ~/bin; if [[ ! -e ~/bin/jq ]]; then curl -L -o ~/bin/jq
+      http://stedolan.github.io/jq/download/linux64/jq &&
+      chmod 0755 ~/bin/jq; fi
     # Install dmsa app.
     - cd ~/data-models-sqlalchemy; pip install -r requirements.txt;
       python setup.py install
@@ -47,10 +56,16 @@ dependencies:
 
 test:
   override:
-    # Run the dms service locally.
-    - docker run -d -p "8123:8123" --name dms dbhi/data-models -log error
+    # Run the dms service locally using the data-models version being tested.
+    # For pull requests, we need to do some fancy github API work...
+    - if [ -z "${PULL_NUM}" ]; then 
+      docker run -d -p "8123:8123" --name dms dbhi/data-models -log error
       -path /opt/repos -repo
-      "https://github.com/chop-dbhi/${APP_NAME}@${BRANCH}"; sleep 10
+      "https://github.com/chop-dbhi/${APP_NAME}@${BRANCH}"; sleep 10; else
+      docker run -d -p "8123:8123" --name dms dbhi/data-models -log error
+      -path /opt/repos -repo
+      "https://github.com/${PULL_USER}/${PULL_REPO}@$(curl -s https://api.github.com/repos/chop-dbhi/${APP_NAME}/pulls/${PULL_NUM} | jq --raw-output '.head.ref')";
+      sleep 10; fi
     # Run the dmsa container locally.
     - docker run -d -p "5000:80" --link dms:dms
       "dbhi/data-models-sqlalchemy:${DMSA_TEST_BRANCH/master/latest}" gunicorn
