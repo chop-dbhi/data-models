@@ -86,10 +86,6 @@ pedsnet,v2.2,not null,,person,race_source_concept_id
 pedsnet,v2.2,not null,,person,year_of_birth
 pedsnet,v2.2,not null,,person,language_concept_id
 pedsnet,v2.2,not null,,person,language_source_concept_id
-pedsnet,v2.2,not null,,person,ethnicity_source_value
-pedsnet,v2.2,not null,,person,gender_source_value
-pedsnet,v2.2,not null,,person,race_source_value
-pedsnet,v2.2,not null,,person,language_source_value
 pedsnet,v2.2,not null,,provider,provider_id
 pedsnet,v2.2,not null,,provider,care_site_id
 pedsnet,v2.2,not null,,provider,provider_source_value
