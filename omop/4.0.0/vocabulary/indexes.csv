@@ -1,2 +1,0 @@
-model,version,table,field,name,order,unique
-omop,4.0.0,vocabulary,vocabulary_id,idx_vocabulary_vocabulary_id,,Yes

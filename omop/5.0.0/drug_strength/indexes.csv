@@ -1,3 +1,0 @@
-model,version,table,field,name,order
-omop,5.0.0,drug_strength,drug_concept_id,idx_drug_strength_id_1,
-omop,5.0.0,drug_strength,ingredient_concept_id,idx_drug_strength_id_2,

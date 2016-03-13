@@ -1,0 +1,2 @@
+model,version,table,field,ref_table,ref_field,name
+omop,v4,concept,vocabulary_id,vocabulary,vocabulary_id,fpk_concept_vocabulary

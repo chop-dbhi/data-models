@@ -1,2 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-omop,4.0.0,organization,location_id,location,location_id,fpk_organization_location

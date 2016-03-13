@@ -1,5 +1,0 @@
-model,version,table,field,type,name
-omop,4.0.0,concept_synonym,concept_synonym_id,primary key,xpk_concept_synonym
-omop,4.0.0,concept_synonym,concept_id,not null,
-omop,4.0.0,concept_synonym,concept_synonym_id,not null,
-omop,4.0.0,concept_synonym,concept_synonym_name,not null,

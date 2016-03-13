@@ -1,0 +1,5 @@
+model,version,table,field,type,name
+pedsnet,v2.1,concept_class,concept_class_id,primary key,xpk_concept_class
+pedsnet,v2.1,concept_class,concept_class_concept_id,not null,
+pedsnet,v2.1,concept_class,concept_class_id,not null,
+pedsnet,v2.1,concept_class,concept_class_name,not null,

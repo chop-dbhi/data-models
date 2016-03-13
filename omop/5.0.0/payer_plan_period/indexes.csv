@@ -1,2 +1,0 @@
-model,version,table,field,name,order
-omop,5.0.0,payer_plan_period,person_id,idx_period_person_id,

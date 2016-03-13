@@ -1,6 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-pedsnet,2.0.0,drug_strength,drug_concept_id,concept,concept_id,fpk_drug_strength_concept_1
-pedsnet,2.0.0,drug_strength,ingredient_concept_id,concept,concept_id,fpk_drug_strength_concept_2
-pedsnet,2.0.0,drug_strength,amount_unit_concept_id,concept,concept_id,fpk_drug_strength_unit_1
-pedsnet,2.0.0,drug_strength,numerator_unit_concept_id,concept,concept_id,fpk_drug_strength_unit_2
-pedsnet,2.0.0,drug_strength,denominator_unit_concept_id,concept,concept_id,fpk_drug_strength_unit_3

@@ -1,0 +1,6 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v1,organization,location_id,integer,,,,
+pedsnet,v1,organization,organization_id,integer,,,,
+pedsnet,v1,organization,organization_source_value,string,50,,,
+pedsnet,v1,organization,place_of_service_concept_id,integer,,,,
+pedsnet,v1,organization,place_of_service_source_value,string,100,,,

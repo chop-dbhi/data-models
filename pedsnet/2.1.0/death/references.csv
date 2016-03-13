@@ -1,6 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-pedsnet,2.1.0,death,cause_concept_id,concept,concept_id,fpk_death_cause_concept
-pedsnet,2.1.0,death,cause_source_concept_id,concept,concept_id,fpk_death_cause_concept_s
-pedsnet,2.1.0,death,death_impute_concept_id,concept,concept_id,fpk_death_impute_concept
-pedsnet,2.1.0,death,person_id,person,person_id,fpk_death_person
-pedsnet,2.1.0,death,death_type_concept_id,concept,concept_id,fpk_death_type_concept

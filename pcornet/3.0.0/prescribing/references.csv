@@ -1,3 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-pcornet,3.0.0,prescribing,encounterid,encounter,encounterid,fk_prescribing_encounterid
-pcornet,3.0.0,prescribing,patid,demographic,patid,fk_prescribing_patid

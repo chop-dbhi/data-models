@@ -1,0 +1,3 @@
+model,version,table,field,name,order
+omop,v5,visit_occurrence,visit_concept_id,idx_visit_concept_id,
+omop,v5,visit_occurrence,person_id,idx_visit_person_id,

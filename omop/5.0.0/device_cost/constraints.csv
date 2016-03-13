@@ -1,4 +1,0 @@
-model,version,table,field,type,name
-omop,5.0.0,device_cost,device_cost_id,primary key,xpk_device_cost
-omop,5.0.0,device_cost,device_cost_id,not null,
-omop,5.0.0,device_cost,device_exposure_id,not null,

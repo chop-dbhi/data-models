@@ -1,4 +1,0 @@
-model,version,table,field,type,name
-pedsnet,2.1.0,concept_synonym,concept_id,not null,
-pedsnet,2.1.0,concept_synonym,concept_synonym_name,not null,
-pedsnet,2.1.0,concept_synonym,language_concept_id,not null,

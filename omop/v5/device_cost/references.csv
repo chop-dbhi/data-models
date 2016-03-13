@@ -1,0 +1,4 @@
+model,version,table,field,ref_table,ref_field,name
+omop,v5,device_cost,currency_concept_id,concept,concept_id,fpk_device_cost_currency
+omop,v5,device_cost,device_exposure_id,device_exposure,device_exposure_id,fpk_device_cost_id
+omop,v5,device_cost,payer_plan_period_id,payer_plan_period,payer_plan_period_id,fpk_device_cost_period

@@ -1,2 +1,0 @@
-model,version,table,field,name,order
-omop,5.0.0,concept_synonym,concept_id,idx_concept_synonym_id,

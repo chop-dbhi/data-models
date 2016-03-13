@@ -1,3 +1,0 @@
-model,version,table,field,type,name
-omop,5.0.0,location,location_id,primary key,xpk_location
-omop,5.0.0,location,location_id,not null,

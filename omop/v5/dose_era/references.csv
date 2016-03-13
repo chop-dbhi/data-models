@@ -1,0 +1,4 @@
+model,version,table,field,ref_table,ref_field,name
+omop,v5,dose_era,drug_concept_id,concept,concept_id,fpk_dose_era_concept
+omop,v5,dose_era,person_id,person,person_id,fpk_dose_era_person
+omop,v5,dose_era,unit_concept_id,concept,concept_id,fpk_dose_era_unit_concept

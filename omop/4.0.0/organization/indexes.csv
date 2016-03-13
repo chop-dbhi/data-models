@@ -1,3 +1,0 @@
-model,version,table,field,name,order
-omop,4.0.0,organization,organization_source_value,idx_organization_source_value,
-omop,4.0.0,organization,place_of_service_source_value,idx_organization_source_value,

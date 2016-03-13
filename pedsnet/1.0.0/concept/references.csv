@@ -1,2 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-pedsnet,1.0.0,concept,vocabulary_id,vocabulary,vocabulary_id,fpk_concept_vocabulary

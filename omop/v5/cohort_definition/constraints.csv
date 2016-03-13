@@ -1,0 +1,6 @@
+model,version,table,field,type,name
+omop,v5,cohort_definition,cohort_definition_id,primary key,xpk_cohort_definition
+omop,v5,cohort_definition,cohort_definition_id,not null,
+omop,v5,cohort_definition,cohort_definition_name,not null,
+omop,v5,cohort_definition,definition_type_concept_id,not null,
+omop,v5,cohort_definition,subject_concept_id,not null,

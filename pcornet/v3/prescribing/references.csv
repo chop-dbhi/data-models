@@ -1,0 +1,3 @@
+model,version,table,field,ref_table,ref_field,name
+pcornet,v3,prescribing,encounterid,encounter,encounterid,fk_prescribing_encounterid
+pcornet,v3,prescribing,patid,demographic,patid,fk_prescribing_patid

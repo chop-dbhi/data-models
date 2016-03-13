@@ -1,0 +1,7 @@
+model,version,table,field,ref_table,ref_field,name
+omop,v5,specimen,specimen_concept_id,concept,concept_id,fpk_specimen_concept
+omop,v5,specimen,person_id,person,person_id,fpk_specimen_person
+omop,v5,specimen,anatomic_site_concept_id,concept,concept_id,fpk_specimen_site_concept
+omop,v5,specimen,disease_status_concept_id,concept,concept_id,fpk_specimen_status_concept
+omop,v5,specimen,specimen_type_concept_id,concept,concept_id,fpk_specimen_type_concept
+omop,v5,specimen,unit_concept_id,concept,concept_id,fpk_specimen_unit_concept

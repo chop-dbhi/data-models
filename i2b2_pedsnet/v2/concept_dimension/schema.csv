@@ -1,0 +1,10 @@
+model,version,table,field,type,length,precision,scale,default
+i2b2_pedsnet,v2,concept_dimension,concept_blob,string,256,,,
+i2b2_pedsnet,v2,concept_dimension,concept_cd,string,50,,,
+i2b2_pedsnet,v2,concept_dimension,concept_path,string,700,,,
+i2b2_pedsnet,v2,concept_dimension,download_date,timestamp,,,,
+i2b2_pedsnet,v2,concept_dimension,import_date,timestamp,,,,
+i2b2_pedsnet,v2,concept_dimension,name_char,string,2000,,,
+i2b2_pedsnet,v2,concept_dimension,sourcesystem_cd,string,50,,,
+i2b2_pedsnet,v2,concept_dimension,update_date,timestamp,,,,
+i2b2_pedsnet,v2,concept_dimension,upload_id,number,,38,5,

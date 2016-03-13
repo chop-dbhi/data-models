@@ -1,4 +1,0 @@
-model,version,table,field,name,order
-pedsnet,1.0.0,concept,vocabulary_id,idx_concept_vocabluary_id,
-pedsnet,1.0.0,concept,concept_code,idx_concept_code,
-pedsnet,1.0.0,concept,concept_id,idx_concept_concept_id,

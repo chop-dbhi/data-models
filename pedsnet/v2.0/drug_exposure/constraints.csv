@@ -1,0 +1,3 @@
+model,version,table,field,type,name
+pedsnet,v2.0,drug_exposure,drug_exposure_id,primary key,xpk_drug_exposure
+pedsnet,v2.0,drug_exposure,drug_exposure_id,not null,

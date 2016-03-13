@@ -1,4 +1,0 @@
-model,version,table,field,required,ref_table,ref_field,standard,description
-pedsnet,2.0.0,concept_synonym,concept_id,Yes,concept,concept_id,,A foreign key to the concept in the concept table.
-pedsnet,2.0.0,concept_synonym,concept_synonym_name,Yes,,,,The alternative name for the concept.
-pedsnet,2.0.0,concept_synonym,language_concept_id,Yes,concept,concept_id,,A foreign key to a concept representing the language.

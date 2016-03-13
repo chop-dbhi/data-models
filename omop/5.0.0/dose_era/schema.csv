@@ -1,8 +1,0 @@
-model,version,table,field,type,length,precision,scale,default
-omop,5.0.0,dose_era,dose_era_end_date,date,,,,
-omop,5.0.0,dose_era,dose_era_id,integer,,,,
-omop,5.0.0,dose_era,dose_era_start_date,date,,,,
-omop,5.0.0,dose_era,dose_value,number,,20,5,
-omop,5.0.0,dose_era,drug_concept_id,integer,,,,
-omop,5.0.0,dose_era,person_id,integer,,,,
-omop,5.0.0,dose_era,unit_concept_id,integer,,,,

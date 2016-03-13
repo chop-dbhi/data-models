@@ -1,0 +1,3 @@
+model,version,table,field,name,order
+omop,v4,observation_period,person_id,idx_observation_period_id,
+omop,v4,observation_period,observation_period_start_date,idx_observation_period_id,

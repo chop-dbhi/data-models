@@ -1,7 +1,0 @@
-model,version,table,field,type,name
-omop,5.0.0,observation_period,observation_period_id,primary key,xpk_observation_period
-omop,5.0.0,observation_period,observation_period_end_date,not null,
-omop,5.0.0,observation_period,observation_period_id,not null,
-omop,5.0.0,observation_period,observation_period_start_date,not null,
-omop,5.0.0,observation_period,period_type_concept_id,not null,
-omop,5.0.0,observation_period,person_id,not null,

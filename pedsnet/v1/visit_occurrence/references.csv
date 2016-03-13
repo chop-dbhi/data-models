@@ -1,0 +1,4 @@
+model,version,table,field,ref_table,ref_field,name
+pedsnet,v1,visit_occurrence,care_site_id,care_site,care_site_id,fpk_visit_care_site
+pedsnet,v1,visit_occurrence,person_id,person,person_id,fpk_visit_person
+pedsnet,v1,visit_occurrence,provider_id,provider,provider_id,fpk_visit_provider

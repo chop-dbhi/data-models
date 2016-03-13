@@ -1,2 +1,0 @@
-model,version,table,field,name,order
-omop,5.0.0,concept_class,concept_class_id,idx_concept_class_class_id,

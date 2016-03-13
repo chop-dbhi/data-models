@@ -1,0 +1,6 @@
+model,version,table,field,type,name
+omop,v5,measurement,measurement_id,primary key,xpk_measurement
+omop,v5,measurement,measurement_concept_id,not null,
+omop,v5,measurement,measurement_date,not null,
+omop,v5,measurement,measurement_id,not null,
+omop,v5,measurement,person_id,not null,

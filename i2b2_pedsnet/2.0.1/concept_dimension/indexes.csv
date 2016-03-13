@@ -1,2 +1,0 @@
-model,version,name,unique,table,field,order
-i2b2_pedsnet,2.0.1,ix_concept_upload_id,No,concept_dimension,upload_id,asc

@@ -1,2 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-pcornet,3.0.0,pcornet_trial,patid,demographic,patid,fk_pcornet_trial_patid

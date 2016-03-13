@@ -1,8 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-pedsnet,2.2.0,procedure_occurrence,procedure_concept_id,concept,concept_id,fpk_procedure_concept
-pedsnet,2.2.0,procedure_occurrence,procedure_source_concept_id,concept,concept_id,fpk_procedure_concept_s
-pedsnet,2.2.0,procedure_occurrence,modifier_concept_id,concept,concept_id,fpk_procedure_modifier
-pedsnet,2.2.0,procedure_occurrence,person_id,person,person_id,fpk_procedure_person
-pedsnet,2.2.0,procedure_occurrence,provider_id,provider,provider_id,fpk_procedure_provider
-pedsnet,2.2.0,procedure_occurrence,procedure_type_concept_id,concept,concept_id,fpk_procedure_type_concept
-pedsnet,2.2.0,procedure_occurrence,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_procedure_visit

@@ -1,8 +1,0 @@
-model,version,table,field,type,name
-pedsnet,2.2.0,drug_exposure,drug_exposure_id,primary key,xpk_drug_exposure
-pedsnet,2.2.0,drug_exposure,drug_concept_id,not null,
-pedsnet,2.2.0,drug_exposure,drug_exposure_id,not null,
-pedsnet,2.2.0,drug_exposure,drug_exposure_start_date,not null,
-pedsnet,2.2.0,drug_exposure,drug_exposure_start_time,not null,
-pedsnet,2.2.0,drug_exposure,drug_type_concept_id,not null,
-pedsnet,2.2.0,drug_exposure,person_id,not null,

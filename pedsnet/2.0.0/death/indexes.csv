@@ -1,2 +1,0 @@
-model,version,table,field,name,order
-pedsnet,2.0.0,death,person_id,idx_death_person_id,

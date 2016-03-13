@@ -1,0 +1,5 @@
+model,version,table,field,type,name
+pedsnet,v2.1,vocabulary,vocabulary_id,primary key,xpk_vocabulary
+pedsnet,v2.1,vocabulary,vocabulary_concept_id,not null,
+pedsnet,v2.1,vocabulary,vocabulary_id,not null,
+pedsnet,v2.1,vocabulary,vocabulary_name,not null,

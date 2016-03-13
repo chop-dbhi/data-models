@@ -1,0 +1,3 @@
+model,version,table,field,ref_table,ref_field,name
+pedsnet,v2.0,observation_period,period_type_concept_id,concept,concept_id,fpk_observation_period_concept
+pedsnet,v2.0,observation_period,person_id,person,person_id,fpk_observation_period_person

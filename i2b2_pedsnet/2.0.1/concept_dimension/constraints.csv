@@ -1,2 +1,0 @@
-model,version,type,name,table,field
-i2b2_pedsnet,2.0.1,primary key,pk_concept_dimension,concept_dimension,concept_path

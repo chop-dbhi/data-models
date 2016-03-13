@@ -1,7 +1,0 @@
-model,version,table,field,type,length,precision,scale,default
-omop,4.0.0,cohort,cohort_concept_id,integer,,,,
-omop,4.0.0,cohort,cohort_end_date,date,,,,
-omop,4.0.0,cohort,cohort_id,integer,,,,
-omop,4.0.0,cohort,cohort_start_date,date,,,,
-omop,4.0.0,cohort,stop_reason,string,20,,,
-omop,4.0.0,cohort,subject_id,integer,,,,

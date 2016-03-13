@@ -1,0 +1,8 @@
+model,version,table,field,type,name
+pedsnet,v2.2,visit_occurrence,visit_occurrence_id,primary key,xpk_visit_occurrence
+pedsnet,v2.2,visit_occurrence,person_id,not null,
+pedsnet,v2.2,visit_occurrence,visit_concept_id,not null,
+pedsnet,v2.2,visit_occurrence,visit_occurrence_id,not null,
+pedsnet,v2.2,visit_occurrence,visit_start_date,not null,
+pedsnet,v2.2,visit_occurrence,visit_start_time,not null,
+pedsnet,v2.2,visit_occurrence,visit_type_concept_id,not null,

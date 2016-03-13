@@ -1,0 +1,3 @@
+model,version,table,field,name,order
+omop,v5,dose_era,drug_concept_id,idx_dose_era_concept_id,
+omop,v5,dose_era,person_id,idx_dose_era_person_id,

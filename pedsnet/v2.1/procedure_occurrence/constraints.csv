@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+pedsnet,v2.1,procedure_occurrence,procedure_occurrence_id,primary key,xpk_procedure_occurrence
+pedsnet,v2.1,procedure_occurrence,person_id,not null,
+pedsnet,v2.1,procedure_occurrence,procedure_concept_id,not null,
+pedsnet,v2.1,procedure_occurrence,procedure_date,not null,
+pedsnet,v2.1,procedure_occurrence,procedure_occurrence_id,not null,
+pedsnet,v2.1,procedure_occurrence,procedure_type_concept_id,not null,

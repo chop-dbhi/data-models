@@ -1,7 +1,0 @@
-model,version,table,field,type,name
-pcornet,3.0.0,pcornet_trial,patid,primary key,xpk_pcornet_trial
-pcornet,3.0.0,pcornet_trial,trialid,primary key,xpk_pcornet_trial
-pcornet,3.0.0,pcornet_trial,participantid,primary key,xpk_pcornet_trial
-pcornet,3.0.0,pcornet_trial,participantid,not null,
-pcornet,3.0.0,pcornet_trial,patid,not null,
-pcornet,3.0.0,pcornet_trial,trialid,not null,

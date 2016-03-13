@@ -1,0 +1,2 @@
+model,version,table,field,ref_table,ref_field,name
+pcornet,v3,death_cause,patid,demographic,patid,fk_death_cause_patid

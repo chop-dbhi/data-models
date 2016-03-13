@@ -1,4 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-pedsnet,1.0.0,concept_relationship,concept_id_1,concept,concept_id,fpk_concept_relationship_c_1
-pedsnet,1.0.0,concept_relationship,concept_id_2,concept,concept_id,fpk_concept_relationship_c_2
-pedsnet,1.0.0,concept_relationship,relationship_id,relationship,relationship_id,fpk_concept_relationship_id

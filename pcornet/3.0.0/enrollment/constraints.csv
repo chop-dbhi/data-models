@@ -1,7 +1,0 @@
-model,version,table,field,type,name
-pcornet,3.0.0,enrollment,patid,primary key,xpk_enrollment
-pcornet,3.0.0,enrollment,enr_start_date,primary key,xpk_enrollment
-pcornet,3.0.0,enrollment,enr_basis,primary key,xpk_enrollment
-pcornet,3.0.0,enrollment,enr_basis,not null,
-pcornet,3.0.0,enrollment,enr_start_date,not null,
-pcornet,3.0.0,enrollment,patid,not null,

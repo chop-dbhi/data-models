@@ -1,0 +1,3 @@
+model,version,table,field,ref_table,ref_field,name
+pcornet,v3,diagnosis,encounterid,encounter,encounterid,fk_diagnosis_encounterid
+pcornet,v3,diagnosis,patid,demographic,patid,fk_diagnosis_patid

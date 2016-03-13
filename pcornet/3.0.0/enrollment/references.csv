@@ -1,2 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-pcornet,3.0.0,enrollment,patid,demographic,patid,fk_enrollment_patid

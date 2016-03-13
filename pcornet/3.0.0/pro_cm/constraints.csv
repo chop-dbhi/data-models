@@ -1,7 +1,0 @@
-model,version,table,field,type,name
-pcornet,3.0.0,pro_cm,pro_cm_id,primary key,xpk_pro_cm
-pcornet,3.0.0,pro_cm,patid,not null,
-pcornet,3.0.0,pro_cm,pro_cm_id,not null,
-pcornet,3.0.0,pro_cm,pro_date,not null,
-pcornet,3.0.0,pro_cm,pro_item,not null,
-pcornet,3.0.0,pro_cm,pro_response,not null,

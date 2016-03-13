@@ -1,0 +1,5 @@
+model,version,table,field,type,name
+pedsnet,v1,concept_synonym,concept_synonym_id,primary key,xpk_concept_synonym
+pedsnet,v1,concept_synonym,concept_id,not null,
+pedsnet,v1,concept_synonym,concept_synonym_id,not null,
+pedsnet,v1,concept_synonym,concept_synonym_name,not null,

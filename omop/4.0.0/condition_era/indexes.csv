@@ -1,3 +1,0 @@
-model,version,table,field,name,order
-omop,4.0.0,condition_era,person_id,idx_condition_era_person_id,
-omop,4.0.0,condition_era,condition_concept_id,idx_condition_era_concept_id,

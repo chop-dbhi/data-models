@@ -1,0 +1,4 @@
+model,version,table,field,type,name
+pedsnet,v1,drug_approval,approval_date,not null,
+pedsnet,v1,drug_approval,approved_by,not null,
+pedsnet,v1,drug_approval,ingredient_concept_id,not null,

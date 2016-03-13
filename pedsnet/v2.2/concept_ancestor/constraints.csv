@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+pedsnet,v2.2,concept_ancestor,ancestor_concept_id,primary key,xpk_concept_ancestor
+pedsnet,v2.2,concept_ancestor,descendant_concept_id,primary key,xpk_concept_ancestor
+pedsnet,v2.2,concept_ancestor,ancestor_concept_id,not null,
+pedsnet,v2.2,concept_ancestor,descendant_concept_id,not null,
+pedsnet,v2.2,concept_ancestor,max_levels_of_separation,not null,
+pedsnet,v2.2,concept_ancestor,min_levels_of_separation,not null,

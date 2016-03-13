@@ -1,0 +1,6 @@
+model,version,table,field,type,name
+pcornet,v3,encounter,encounterid,primary key,xpk_encounter
+pcornet,v3,encounter,admit_date,not null,
+pcornet,v3,encounter,enc_type,not null,
+pcornet,v3,encounter,encounterid,not null,
+pcornet,v3,encounter,patid,not null,

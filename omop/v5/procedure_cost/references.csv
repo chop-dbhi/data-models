@@ -1,0 +1,5 @@
+model,version,table,field,ref_table,ref_field,name
+omop,v5,procedure_cost,currency_concept_id,concept,concept_id,fpk_procedure_cost_currency
+omop,v5,procedure_cost,procedure_occurrence_id,procedure_occurrence,procedure_occurrence_id,fpk_procedure_cost_id
+omop,v5,procedure_cost,payer_plan_period_id,payer_plan_period,payer_plan_period_id,fpk_procedure_cost_period
+omop,v5,procedure_cost,revenue_code_concept_id,concept,concept_id,fpk_procedure_cost_revenue

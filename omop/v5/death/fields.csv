@@ -1,0 +1,7 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v5,death,cause_concept_id,No,concept,concept_id,SNOMED,A foreign key referring to a standard concept identifier in the vocabulary for conditions.
+omop,v5,death,cause_source_concept_id,No,concept,concept_id,,"A foreign key to the concept that refers to the code used in the source. Note, this variable name is abbreviated to ensure it will be allowable across database platforms. "
+omop,v5,death,cause_source_value,No,,,,"The source code for the cause of death as it appears in the source data. This code is mapped to a standard concept in the vocabulary and the original code is, stored here for reference. "
+omop,v5,death,death_date,Yes,,,,"The date the person deceased. If the precise date including day or month is not known or not allowed, December is used as the default month, and the last day of the month the default day. "
+omop,v5,death,death_type_concept_id,Yes,concept,concept_id,OMOP,A foreign key referring to the predefined concept identifier in the vocabulary reflecting how the death was represented in the source data.
+omop,v5,death,person_id,Yes,person,person_id,,A foreign key identifier to the deceased person. The demographic details of that person are stored in the person table.

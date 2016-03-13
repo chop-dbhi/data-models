@@ -1,4 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-omop,5.0.0,concept,concept_class_id,concept_class,concept_class_id,fpk_concept_class
-omop,5.0.0,concept,domain_id,domain,domain_id,fpk_concept_domain
-omop,5.0.0,concept,vocabulary_id,vocabulary,vocabulary_id,fpk_concept_vocabulary

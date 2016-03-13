@@ -1,7 +1,0 @@
-model,version,table,description
-i2b2,1.7.0,concept_dimension,
-i2b2,1.7.0,observation_fact,
-i2b2,1.7.0,patient_dimension,
-i2b2,1.7.0,provider_dimension,
-i2b2,1.7.0,visit_dimension,
-i2b2,1.7.0,i2b2,

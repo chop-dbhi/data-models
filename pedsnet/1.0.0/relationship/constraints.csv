@@ -1,6 +1,0 @@
-model,version,table,field,type,name
-pedsnet,1.0.0,relationship,relationship_id,primary key,xpk_relationship
-pedsnet,1.0.0,relationship,defines_ancestry,not null,
-pedsnet,1.0.0,relationship,is_hierarchical,not null,
-pedsnet,1.0.0,relationship,relationship_id,not null,
-pedsnet,1.0.0,relationship,relationship_name,not null,

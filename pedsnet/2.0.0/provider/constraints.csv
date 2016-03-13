@@ -1,3 +1,0 @@
-model,version,table,field,type,name
-pedsnet,2.0.0,provider,provider_id,primary key,xpk_provider
-pedsnet,2.0.0,provider,provider_id,not null,

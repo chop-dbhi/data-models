@@ -1,9 +1,0 @@
-model,version,table,field,required,ref_table,ref_field,standard,description
-omop,5.0.0,location,address_1,No,,,,"The address field 1, typically used for the street address, as it appears in the source data. "
-omop,5.0.0,location,address_2,No,,,,"The address field 2, typically used for additional detail such as buildings, suites, floors, as it appears in the source data. "
-omop,5.0.0,location,city,No,,,,The city field as it appears in the source data.
-omop,5.0.0,location,county,No,,,,The county. The county information is necessary because not all zip codes fall into one and the same county.
-omop,5.0.0,location,location_id,Yes,,,,A system-generated unique identifier for each geographic location.
-omop,5.0.0,location,location_source_value,No,,,,The verbatim information that is used to uniquely identify the location as it appears in the source data.
-omop,5.0.0,location,state,No,,,,The state field as it appears in the source data.
-omop,5.0.0,location,zip,No,,,,"The zip code. For US addresses, valid zip codes can be 3, 5 or 9 digits long, depending on the source data. "

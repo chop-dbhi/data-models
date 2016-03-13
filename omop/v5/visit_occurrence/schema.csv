@@ -1,0 +1,13 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v5,visit_occurrence,care_site_id,integer,,,,
+omop,v5,visit_occurrence,person_id,integer,,,,
+omop,v5,visit_occurrence,provider_id,integer,,,,
+omop,v5,visit_occurrence,visit_concept_id,integer,,,,
+omop,v5,visit_occurrence,visit_end_date,date,,,,
+omop,v5,visit_occurrence,visit_end_time,string,10,,,
+omop,v5,visit_occurrence,visit_occurrence_id,integer,,,,
+omop,v5,visit_occurrence,visit_source_concept_id,integer,,,,
+omop,v5,visit_occurrence,visit_source_value,string,50,,,
+omop,v5,visit_occurrence,visit_start_date,date,,,,
+omop,v5,visit_occurrence,visit_start_time,string,10,,,
+omop,v5,visit_occurrence,visit_type_concept_id,integer,,,,

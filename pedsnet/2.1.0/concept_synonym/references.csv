@@ -1,3 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-pedsnet,2.1.0,concept_synonym,concept_id,concept,concept_id,fpk_concept_synonym_concept
-pedsnet,2.1.0,concept_synonym,language_concept_id,concept,concept_id,fpk_concept_synonym_language

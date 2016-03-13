@@ -1,2 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-pedsnet,2.1.0,visit_payer,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_visit_payer_visit

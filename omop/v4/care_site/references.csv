@@ -1,0 +1,3 @@
+model,version,table,field,ref_table,ref_field,name
+omop,v4,care_site,location_id,location,location_id,fpk_care_site_location
+omop,v4,care_site,organization_id,organization,organization_id,fpk_care_site_organization

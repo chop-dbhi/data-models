@@ -1,6 +1,0 @@
-model,version,table,field,type,name
-pcornet,3.0.0,vital,vitalid,primary key,xpk_vital
-pcornet,3.0.0,vital,measure_date,not null,
-pcornet,3.0.0,vital,patid,not null,
-pcornet,3.0.0,vital,vital_source,not null,
-pcornet,3.0.0,vital,vitalid,not null,

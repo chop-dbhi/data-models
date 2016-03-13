@@ -1,2 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-i2b2_pedsnet,2.0.1,visit_dimension,patient_num,patient_dimension,patient_num,fpk_visit_patient

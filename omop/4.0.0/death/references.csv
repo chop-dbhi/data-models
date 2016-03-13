@@ -1,2 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-omop,4.0.0,death,person_id,person,person_id,fpk_death_person

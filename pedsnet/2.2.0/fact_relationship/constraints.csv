@@ -1,6 +1,0 @@
-model,version,table,field,type,name
-pedsnet,2.2.0,fact_relationship,domain_concept_id_1,not null,
-pedsnet,2.2.0,fact_relationship,domain_concept_id_2,not null,
-pedsnet,2.2.0,fact_relationship,fact_id_1,not null,
-pedsnet,2.2.0,fact_relationship,fact_id_2,not null,
-pedsnet,2.2.0,fact_relationship,relationship_concept_id,not null,

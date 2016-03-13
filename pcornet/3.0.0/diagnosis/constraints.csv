@@ -1,8 +1,0 @@
-model,version,table,field,type,name
-pcornet,3.0.0,diagnosis,diagnosisid,primary key,xpk_diagnosis
-pcornet,3.0.0,diagnosis,diagnosisid,not null,
-pcornet,3.0.0,diagnosis,dx,not null,
-pcornet,3.0.0,diagnosis,dx_source,not null,
-pcornet,3.0.0,diagnosis,dx_type,not null,
-pcornet,3.0.0,diagnosis,encounterid,not null,
-pcornet,3.0.0,diagnosis,patid,not null,

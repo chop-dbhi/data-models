@@ -1,0 +1,10 @@
+model,version,table,field,type,name
+omop,v5,concept,concept_id,primary key,xpk_concept
+omop,v5,concept,concept_class_id,not null,
+omop,v5,concept,concept_code,not null,
+omop,v5,concept,concept_id,not null,
+omop,v5,concept,concept_name,not null,
+omop,v5,concept,domain_id,not null,
+omop,v5,concept,valid_end_date,not null,
+omop,v5,concept,valid_start_date,not null,
+omop,v5,concept,vocabulary_id,not null,

@@ -1,5 +1,0 @@
-model,version,table,field,type,length,precision,scale,default
-omop,4.0.0,observation_period,observation_period_end_date,date,,,,
-omop,4.0.0,observation_period,observation_period_id,integer,,,,
-omop,4.0.0,observation_period,observation_period_start_date,date,,,,
-omop,4.0.0,observation_period,person_id,integer,,,,

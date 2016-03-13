@@ -1,5 +1,0 @@
-model,version,table,field,type,name
-pcornet,3.0.0,lab_result_cm,lab_result_cm_id,primary key,xpk_lab_result_cm
-pcornet,3.0.0,lab_result_cm,lab_result_cm_id,not null,
-pcornet,3.0.0,lab_result_cm,patid,not null,
-pcornet,3.0.0,lab_result_cm,result_date,not null,

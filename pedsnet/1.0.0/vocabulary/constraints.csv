@@ -1,5 +1,0 @@
-model,version,table,field,type,name
-pedsnet,1.0.0,vocabulary,vocabulary_id,primary key,xpk_vocabulary
-pedsnet,1.0.0,vocabulary,vocabulary_name,unique,xnk_vocabulary
-pedsnet,1.0.0,vocabulary,vocabulary_id,not null,
-pedsnet,1.0.0,vocabulary,vocabulary_name,not null,

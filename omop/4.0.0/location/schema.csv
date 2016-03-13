@@ -1,9 +1,0 @@
-model,version,table,field,type,length,precision,scale,default
-omop,4.0.0,location,address_1,string,50,,,
-omop,4.0.0,location,address_2,string,50,,,
-omop,4.0.0,location,city,string,50,,,
-omop,4.0.0,location,county,string,20,,,
-omop,4.0.0,location,location_id,integer,,,,
-omop,4.0.0,location,location_source_value,string,50,,,
-omop,4.0.0,location,state,string,2,,,
-omop,4.0.0,location,zip,string,9,,,

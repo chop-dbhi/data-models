@@ -1,3 +1,0 @@
-model,version,table,field,type,name
-omop,4.0.0,care_site,care_site_id,primary key,xpk_care_site
-omop,4.0.0,care_site,care_site_id,not null,

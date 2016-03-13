@@ -1,0 +1,10 @@
+model,version,table,field,type,length,precision,scale,default
+i2b2,v1.7,provider_dimension,download_date,datetime,,,,
+i2b2,v1.7,provider_dimension,import_date,datetime,,,,
+i2b2,v1.7,provider_dimension,name_char,string,850,,,
+i2b2,v1.7,provider_dimension,provider_blob,string,256,,,
+i2b2,v1.7,provider_dimension,provider_id,string,50,,,
+i2b2,v1.7,provider_dimension,provider_path,string,700,,,
+i2b2,v1.7,provider_dimension,sourcesystem_cd,string,50,,,
+i2b2,v1.7,provider_dimension,update_date,datetime,,,,
+i2b2,v1.7,provider_dimension,upload_id,number,,38,5,

@@ -1,3 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-pcornet,3.0.0,vital,encounterid,encounter,encounterid,fk_vital_encounterid
-pcornet,3.0.0,vital,patid,demographic,patid,fk_vital_patid

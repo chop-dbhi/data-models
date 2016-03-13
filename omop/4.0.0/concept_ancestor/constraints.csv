@@ -1,5 +1,0 @@
-model,version,table,field,type,name
-omop,4.0.0,concept_ancestor,ancestor_concept_id,primary key,xpk_concept_ancestor
-omop,4.0.0,concept_ancestor,descendant_concept_id,primary key,xpk_concept_ancestor
-omop,4.0.0,concept_ancestor,ancestor_concept_id,not null,
-omop,4.0.0,concept_ancestor,descendant_concept_id,not null,

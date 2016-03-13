@@ -1,0 +1,2 @@
+model,version,table,field,name,order
+omop,v5,concept_synonym,concept_id,idx_concept_synonym_id,

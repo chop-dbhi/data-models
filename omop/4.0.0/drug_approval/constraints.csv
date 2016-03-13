@@ -1,4 +1,0 @@
-model,version,table,field,type,name
-omop,4.0.0,drug_approval,approval_date,not null,
-omop,4.0.0,drug_approval,approved_by,not null,
-omop,4.0.0,drug_approval,ingredient_concept_id,not null,

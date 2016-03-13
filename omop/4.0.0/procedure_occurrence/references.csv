@@ -1,4 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-omop,4.0.0,procedure_occurrence,person_id,person,person_id,fpk_procedure_person
-omop,4.0.0,procedure_occurrence,associated_provider_id,provider,provider_id,fpk_procedure_provider
-omop,4.0.0,procedure_occurrence,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_procedure_visit

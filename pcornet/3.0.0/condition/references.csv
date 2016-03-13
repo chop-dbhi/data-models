@@ -1,3 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-pcornet,3.0.0,condition,encounterid,encounter,encounterid,fk_condition_encounterid
-pcornet,3.0.0,condition,patid,demographic,patid,fk_condition_patid

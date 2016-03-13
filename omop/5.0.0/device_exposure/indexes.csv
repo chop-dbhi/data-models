@@ -1,4 +1,0 @@
-model,version,table,field,name,order
-omop,5.0.0,device_exposure,device_concept_id,idx_device_concept_id,
-omop,5.0.0,device_exposure,person_id,idx_device_person_id,
-omop,5.0.0,device_exposure,visit_occurrence_id,idx_device_visit_id,

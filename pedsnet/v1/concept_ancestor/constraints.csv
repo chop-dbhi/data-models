@@ -1,0 +1,5 @@
+model,version,table,field,type,name
+pedsnet,v1,concept_ancestor,ancestor_concept_id,primary key,xpk_concept_ancestor
+pedsnet,v1,concept_ancestor,descendant_concept_id,primary key,xpk_concept_ancestor
+pedsnet,v1,concept_ancestor,ancestor_concept_id,not null,
+pedsnet,v1,concept_ancestor,descendant_concept_id,not null,

@@ -1,4 +1,0 @@
-model,version,table,field,type,name
-omop,5.0.0,visit_cost,visit_cost_id,primary key,xpk_visit_cost
-omop,5.0.0,visit_cost,visit_cost_id,not null,
-omop,5.0.0,visit_cost,visit_occurrence_id,not null,

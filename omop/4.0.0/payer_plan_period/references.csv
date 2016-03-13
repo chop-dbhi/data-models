@@ -1,2 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-omop,4.0.0,payer_plan_period,person_id,person,person_id,fpk_payer_plan_period

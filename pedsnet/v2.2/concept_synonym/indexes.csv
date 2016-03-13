@@ -1,0 +1,2 @@
+model,version,table,field,name,order
+pedsnet,v2.2,concept_synonym,concept_id,idx_concept_synonym_id,

@@ -1,0 +1,3 @@
+model,version,name,unique,table,field,order
+omop,v4,idx_observation_person_id,No,observation,person_id,asc
+omop,v4,idx_observation_person_id,No,observation,observation_concept_id,asc

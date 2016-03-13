@@ -1,0 +1,4 @@
+model,version,table,field,name,order
+omop,v5,measurement,measurement_concept_id,idx_measurement_concept_id,
+omop,v5,measurement,visit_occurrence_id,idx_measurement_visit_id,
+omop,v5,measurement,person_id,idx_measurement_person_id,

@@ -1,2 +1,0 @@
-model,version,table,field,name,order
-omop,5.0.0,domain,domain_id,idx_domain_domain_id,

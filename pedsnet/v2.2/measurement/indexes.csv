@@ -1,0 +1,4 @@
+model,version,table,field,name,order
+pedsnet,v2.2,measurement,measurement_concept_id,idx_measurement_concept_id,
+pedsnet,v2.2,measurement,visit_occurrence_id,idx_measurement_visit_id,
+pedsnet,v2.2,measurement,person_id,idx_measurement_person_id,

@@ -1,3 +1,0 @@
-model,version,table,field,type,name
-pedsnet,2.0.0,location,location_id,primary key,xpk_location
-pedsnet,2.0.0,location,location_id,not null,

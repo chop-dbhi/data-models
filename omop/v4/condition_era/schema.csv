@@ -1,0 +1,8 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v4,condition_era,condition_concept_id,integer,,,,
+omop,v4,condition_era,condition_era_end_date,date,,,,
+omop,v4,condition_era,condition_era_id,integer,,,,
+omop,v4,condition_era,condition_era_start_date,date,,,,
+omop,v4,condition_era,condition_occurrence_count,number,,5,1,
+omop,v4,condition_era,condition_type_concept_id,integer,,,,
+omop,v4,condition_era,person_id,integer,,,,

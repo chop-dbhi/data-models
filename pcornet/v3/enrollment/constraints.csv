@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+pcornet,v3,enrollment,patid,primary key,xpk_enrollment
+pcornet,v3,enrollment,enr_start_date,primary key,xpk_enrollment
+pcornet,v3,enrollment,enr_basis,primary key,xpk_enrollment
+pcornet,v3,enrollment,enr_basis,not null,
+pcornet,v3,enrollment,enr_start_date,not null,
+pcornet,v3,enrollment,patid,not null,

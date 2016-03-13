@@ -1,0 +1,5 @@
+model,version,table,field,type,name
+pedsnet,v2.0,visit_payer,visit_payer_id,primary key,xpk_visit_payer
+pedsnet,v2.0,visit_payer,plan_name,not null,
+pedsnet,v2.0,visit_payer,visit_occurrence_id,not null,
+pedsnet,v2.0,visit_payer,visit_payer_id,not null,

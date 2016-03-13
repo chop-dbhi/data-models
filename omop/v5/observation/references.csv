@@ -1,0 +1,10 @@
+model,version,table,field,ref_table,ref_field,name
+omop,v5,observation,observation_concept_id,concept,concept_id,fpk_observation_concept
+omop,v5,observation,observation_source_concept_id,concept,concept_id,fpk_observation_concept_s
+omop,v5,observation,person_id,person,person_id,fpk_observation_person
+omop,v5,observation,provider_id,provider,provider_id,fpk_observation_provider
+omop,v5,observation,qualifier_concept_id,concept,concept_id,fpk_observation_qualifier
+omop,v5,observation,observation_type_concept_id,concept,concept_id,fpk_observation_type_concept
+omop,v5,observation,unit_concept_id,concept,concept_id,fpk_observation_unit
+omop,v5,observation,value_as_concept_id,concept,concept_id,fpk_observation_value
+omop,v5,observation,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_observation_visit

@@ -1,4 +1,0 @@
-model,version,table,field,required,ref_table,ref_field,standard,description
-omop,4.0.0,concept_synonym,concept_id,Yes,concept,concept_id,,A foreign key to the concept in the concept table.
-omop,4.0.0,concept_synonym,concept_synonym_id,Yes,,,,A system-generated unique identifier for each concept synonym.
-omop,4.0.0,concept_synonym,concept_synonym_name,Yes,,,,The alternative name for the concept.

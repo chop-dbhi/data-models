@@ -1,0 +1,3 @@
+model,version,table,field,name,order
+pedsnet,v1,visit_occurrence,person_id,idx_visit_person_date,
+pedsnet,v1,visit_occurrence,visit_start_date,idx_visit_person_date,

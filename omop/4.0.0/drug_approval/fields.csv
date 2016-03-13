@@ -1,4 +1,0 @@
-model,version,table,field,required,ref_table,ref_field,standard,description
-omop,4.0.0,drug_approval,ingredient_concept_id,,,,,
-omop,4.0.0,drug_approval,approval_date,,,,,
-omop,4.0.0,drug_approval,approved_by,,,,,

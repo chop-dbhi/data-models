@@ -1,0 +1,10 @@
+model,version,table,field,type,name
+pedsnet,v2.2,concept,concept_id,primary key,xpk_concept
+pedsnet,v2.2,concept,concept_class_id,not null,
+pedsnet,v2.2,concept,concept_code,not null,
+pedsnet,v2.2,concept,concept_id,not null,
+pedsnet,v2.2,concept,concept_name,not null,
+pedsnet,v2.2,concept,domain_id,not null,
+pedsnet,v2.2,concept,valid_end_date,not null,
+pedsnet,v2.2,concept,valid_start_date,not null,
+pedsnet,v2.2,concept,vocabulary_id,not null,

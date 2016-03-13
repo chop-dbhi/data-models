@@ -1,4 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-pedsnet,1.0.0,person,care_site_id,care_site,care_site_id,fpk_person_care_site
-pedsnet,1.0.0,person,location_id,location,location_id,fpk_person_location
-pedsnet,1.0.0,person,provider_id,provider,provider_id,fpk_person_provider

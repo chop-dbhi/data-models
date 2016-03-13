@@ -1,3 +1,0 @@
-model,version,table,field,name,order
-omop,4.0.0,visit_occurrence,person_id,idx_visit_person_date,
-omop,4.0.0,visit_occurrence,visit_start_date,idx_visit_person_date,

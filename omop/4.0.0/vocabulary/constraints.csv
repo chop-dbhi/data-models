@@ -1,5 +1,0 @@
-model,version,table,field,type,name
-omop,4.0.0,vocabulary,vocabulary_id,primary key,xpk_vocabulary
-omop,4.0.0,vocabulary,vocabulary_name,unique,xnq_vocabulary_name
-omop,4.0.0,vocabulary,vocabulary_id,not null,
-omop,4.0.0,vocabulary,vocabulary_name,not null,

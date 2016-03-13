@@ -1,3 +1,0 @@
-model,version,table,field,type,name
-omop,5.0.0,provider,provider_id,primary key,xpk_provider
-omop,5.0.0,provider,provider_id,not null,

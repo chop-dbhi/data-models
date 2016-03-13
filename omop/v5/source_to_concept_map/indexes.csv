@@ -1,0 +1,5 @@
+model,version,table,field,name,order
+omop,v5,source_to_concept_map,target_concept_id,idx_source_to_concept_map_id_3,
+omop,v5,source_to_concept_map,source_vocabulary_id,idx_source_to_concept_map_id_1,
+omop,v5,source_to_concept_map,source_code,idx_source_to_concept_map_code,
+omop,v5,source_to_concept_map,target_vocabulary_id,idx_source_to_concept_map_id_2,

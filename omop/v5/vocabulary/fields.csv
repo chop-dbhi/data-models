@@ -1,0 +1,6 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v5,vocabulary,vocabulary_concept_id,Yes,concept,concept_id,,A foreign key that refers to a standard concept identifier in the Standardized Vocabularies for the vocabulary the Vocabulary record belongs to.
+omop,v5,vocabulary,vocabulary_id,Yes,,,,A unique identifier for each vocabulary.
+omop,v5,vocabulary,vocabulary_name,Yes,,,,"The name describing the vocabulary, for example ""SNOMED-CT"", ""ICD-9"", ""Visit"", etc. "
+omop,v5,vocabulary,vocabulary_reference,Yes,,,,"The name describing the vocabulary, for example ""SNOMED-CT"", ""ICD-9"", ""Visit"", etc. "
+omop,v5,vocabulary,vocabulary_version,Yes,,,,External reference to documentation or available download of the about the vocabulary.

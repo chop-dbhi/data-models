@@ -1,7 +1,0 @@
-model,version,table,field,type,name
-pcornet,3.0.0,procedures,proceduresid,primary key,xpk_procedures
-pcornet,3.0.0,procedures,encounterid,not null,
-pcornet,3.0.0,procedures,patid,not null,
-pcornet,3.0.0,procedures,proceduresid,not null,
-pcornet,3.0.0,procedures,px,not null,
-pcornet,3.0.0,procedures,px_type,not null,

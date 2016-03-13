@@ -1,0 +1,3 @@
+model,version,table,field,ref_table,ref_field,name
+omop,v5,condition_era,condition_concept_id,concept,concept_id,fpk_condition_era_concept
+omop,v5,condition_era,person_id,person,person_id,fpk_condition_era_person

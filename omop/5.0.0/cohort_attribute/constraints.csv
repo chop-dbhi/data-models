@@ -1,6 +1,0 @@
-model,version,table,field,type,name
-omop,5.0.0,cohort_attribute,attribute_definition_id,not null,
-omop,5.0.0,cohort_attribute,cohort_definition_id,not null,
-omop,5.0.0,cohort_attribute,cohort_end_date,not null,
-omop,5.0.0,cohort_attribute,cohort_start_date,not null,
-omop,5.0.0,cohort_attribute,subject_id,not null,

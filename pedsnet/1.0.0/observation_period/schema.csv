@@ -1,5 +1,0 @@
-model,version,table,field,type,length,precision,scale,default
-pedsnet,1.0.0,observation_period,observation_period_end_date,datetime,,,,
-pedsnet,1.0.0,observation_period,observation_period_id,integer,,,,
-pedsnet,1.0.0,observation_period,observation_period_start_date,datetime,,,,
-pedsnet,1.0.0,observation_period,person_id,integer,,,,

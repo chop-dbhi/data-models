@@ -1,2 +1,0 @@
-model,version,table,field,type,name
-omop,5.0.0,cdm_source,cdm_source_name,not null,

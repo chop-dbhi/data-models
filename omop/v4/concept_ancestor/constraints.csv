@@ -1,0 +1,5 @@
+model,version,table,field,type,name
+omop,v4,concept_ancestor,ancestor_concept_id,primary key,xpk_concept_ancestor
+omop,v4,concept_ancestor,descendant_concept_id,primary key,xpk_concept_ancestor
+omop,v4,concept_ancestor,ancestor_concept_id,not null,
+omop,v4,concept_ancestor,descendant_concept_id,not null,

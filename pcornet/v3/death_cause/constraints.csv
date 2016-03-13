@@ -1,0 +1,11 @@
+model,version,table,field,type,name
+pcornet,v3,death_cause,patid,primary key,xpk_death_cause
+pcornet,v3,death_cause,death_cause,primary key,xpk_death_cause
+pcornet,v3,death_cause,death_cause_code,primary key,xpk_death_cause
+pcornet,v3,death_cause,death_cause_type,primary key,xpk_death_cause
+pcornet,v3,death_cause,death_cause_source,primary key,xpk_death_cause
+pcornet,v3,death_cause,death_cause,not null,
+pcornet,v3,death_cause,death_cause_code,not null,
+pcornet,v3,death_cause,death_cause_source,not null,
+pcornet,v3,death_cause,death_cause_type,not null,
+pcornet,v3,death_cause,patid,not null,

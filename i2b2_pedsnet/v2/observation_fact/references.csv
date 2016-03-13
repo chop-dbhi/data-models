@@ -1,0 +1,3 @@
+model,version,table,field,ref_table,ref_field,name
+i2b2_pedsnet,v2,observation_fact,encounter_num,visit_dimension,encounter_num,fpk_obs_fact_visit
+i2b2_pedsnet,v2,observation_fact,patient_num,patient_dimension,patient_num,fpk_obs_fact_patient

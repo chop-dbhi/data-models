@@ -1,6 +1,0 @@
-model,version,table,field,type,name
-pcornet,3.0.0,encounter,encounterid,primary key,xpk_encounter
-pcornet,3.0.0,encounter,admit_date,not null,
-pcornet,3.0.0,encounter,enc_type,not null,
-pcornet,3.0.0,encounter,encounterid,not null,
-pcornet,3.0.0,encounter,patid,not null,

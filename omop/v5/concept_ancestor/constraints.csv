@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+omop,v5,concept_ancestor,ancestor_concept_id,primary key,xpk_concept_ancestor
+omop,v5,concept_ancestor,descendant_concept_id,primary key,xpk_concept_ancestor
+omop,v5,concept_ancestor,ancestor_concept_id,not null,
+omop,v5,concept_ancestor,descendant_concept_id,not null,
+omop,v5,concept_ancestor,max_levels_of_separation,not null,
+omop,v5,concept_ancestor,min_levels_of_separation,not null,

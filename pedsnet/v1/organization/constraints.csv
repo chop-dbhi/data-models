@@ -1,0 +1,5 @@
+model,version,table,field,type,name
+pedsnet,v1,organization,organization_id,primary key,xpk_organization
+pedsnet,v1,organization,organization_source_value,unique,xnk_organization
+pedsnet,v1,organization,organization_id,not null,
+pedsnet,v1,organization,organization_source_value,not null,

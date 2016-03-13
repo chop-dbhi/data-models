@@ -1,5 +1,0 @@
-model,version,table,field,type,name
-pcornet,3.0.0,harvest,networkid,primary key,xpk_harvest
-pcornet,3.0.0,harvest,datamartid,primary key,xpk_harvest
-pcornet,3.0.0,harvest,datamartid,not null,
-pcornet,3.0.0,harvest,networkid,not null,

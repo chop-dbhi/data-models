@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+pedsnet,v2.1,observation,observation_id,primary key,xpk_observation
+pedsnet,v2.1,observation,observation_concept_id,not null,
+pedsnet,v2.1,observation,observation_date,not null,
+pedsnet,v2.1,observation,observation_id,not null,
+pedsnet,v2.1,observation,observation_type_concept_id,not null,
+pedsnet,v2.1,observation,person_id,not null,

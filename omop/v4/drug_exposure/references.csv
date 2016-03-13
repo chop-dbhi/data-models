@@ -1,0 +1,4 @@
+model,version,table,field,ref_table,ref_field,name
+omop,v4,drug_exposure,person_id,person,person_id,fpk_drug_person
+omop,v4,drug_exposure,prescribing_provider_id,provider,provider_id,fpk_drug_provider
+omop,v4,drug_exposure,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_drug_visit

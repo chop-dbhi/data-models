@@ -1,5 +1,0 @@
-model,version,table,field,type,length,precision,scale,default
-omop,5.0.0,cohort,cohort_definition_id,integer,,,,
-omop,5.0.0,cohort,cohort_end_date,date,,,,
-omop,5.0.0,cohort,cohort_start_date,date,,,,
-omop,5.0.0,cohort,subject_id,integer,,,,

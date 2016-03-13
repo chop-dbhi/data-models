@@ -1,5 +1,0 @@
-model,version,table,field,ref_table,ref_field,name
-pedsnet,2.2.0,measurement_organism,organism_concept_id,concept,concept_id,fpk_meas_org_concept
-pedsnet,2.2.0,measurement_organism,measurement_id,measurement,measurement_id,fpk_meas_org_meas
-pedsnet,2.2.0,measurement_organism,person_id,person,person_id,fpk_meas_org_person
-pedsnet,2.2.0,measurement_organism,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_meas_org_visit

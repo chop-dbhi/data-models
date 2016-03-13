@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+omop,v5,drug_strength,drug_concept_id,primary key,xpk_drug_strength
+omop,v5,drug_strength,ingredient_concept_id,primary key,xpk_drug_strength
+omop,v5,drug_strength,drug_concept_id,not null,
+omop,v5,drug_strength,ingredient_concept_id,not null,
+omop,v5,drug_strength,valid_end_date,not null,
+omop,v5,drug_strength,valid_start_date,not null,

@@ -1,7 +1,0 @@
-model,version,table,description
-i2b2_pedsnet,2.0.1,i2b2,"i2b2 ontology"
-i2b2_pedsnet,2.0.1,concept_dimension,
-i2b2_pedsnet,2.0.1,observation_fact,
-i2b2_pedsnet,2.0.1,patient_dimension,
-i2b2_pedsnet,2.0.1,provider_dimension,
-i2b2_pedsnet,2.0.1,visit_dimension,

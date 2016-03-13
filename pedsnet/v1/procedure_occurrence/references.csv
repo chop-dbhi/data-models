@@ -1,0 +1,4 @@
+model,version,table,field,ref_table,ref_field,name
+pedsnet,v1,procedure_occurrence,person_id,person,person_id,fpk_procedure_person
+pedsnet,v1,procedure_occurrence,associated_provider_id,provider,provider_id,fpk_procedure_provider
+pedsnet,v1,procedure_occurrence,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_procedure_visit
