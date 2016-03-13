@@ -1,7 +1,7 @@
 model,version,table,field,type,length,precision,scale,default
-pcornet,v2,dispensing,dispense_amt,number,5,1,,
+pcornet,v2,dispensing,dispense_amt,number,,10,2,
 pcornet,v2,dispensing,dispense_date,string,10,,,
-pcornet,v2,dispensing,dispense_sup,number,5,1,,
+pcornet,v2,dispensing,dispense_sup,number,,10,2,
 pcornet,v2,dispensing,ndc,string,11,,,
 pcornet,v2,dispensing,patid,string,256,,,
 pcornet,v2,dispensing,raw_ndc,string,256,,,

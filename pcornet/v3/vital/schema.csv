@@ -2,7 +2,7 @@ model,version,table,field,type,length,precision,scale,default
 pcornet,v3,vital,bp_position,string,2,,,
 pcornet,v3,vital,diastolic,number,,6,2,
 pcornet,v3,vital,encounterid,string,256,,,
-pcornet,v3,vital,ht,number,,10,0,
+pcornet,v3,vital,ht,number,,10,2,
 pcornet,v3,vital,measure_date,date,,,,
 pcornet,v3,vital,measure_time,string,5,,,
 pcornet,v3,vital,original_bmi,number,,10,2,
