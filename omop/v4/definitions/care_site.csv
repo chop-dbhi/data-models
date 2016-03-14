@@ -1,7 +1,0 @@
-model,version,table,field,required,ref_table,ref_field,standard,description
-omop,v4,care_site,care_site_id,Yes,,,,A system-generated unique identifier for each care site. A care site is the place where the provider delivered the healthcare to the person. 
-omop,v4,care_site,care_site_source_value,No,,,,"The identifier for the care site as it appears in the source data, stored here for reference. "
-omop,v4,care_site,location_id,No,location,location_id,,"A foreign key to the geographic location in the location table, where the detailed address information is stored. "
-omop,v4,care_site,organization_id,No,organization,organization_id,,"A foreign key to the organization in the organization table, where the detailed information is stored. "
-omop,v4,care_site,place_of_service_concept_id,No,concept,concept_id,CMS,A foreign key to the predefined concept identifier in the vocabulary reflecting the place of service. 
-omop,v4,care_site,place_of_service_source_value,No,,,,"The source code for the place of service as it appears in the source data, stored here for reference. "

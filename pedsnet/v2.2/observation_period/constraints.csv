@@ -1,0 +1,9 @@
+model,version,table,field,type,name
+pedsnet,v2.2,observation_period,observation_period_id,primary key,xpk_observation_period
+pedsnet,v2.2,observation_period,observation_period_end_date,not null,
+pedsnet,v2.2,observation_period,observation_period_end_time,not null,
+pedsnet,v2.2,observation_period,observation_period_id,not null,
+pedsnet,v2.2,observation_period,observation_period_start_date,not null,
+pedsnet,v2.2,observation_period,observation_period_start_time,not null,
+pedsnet,v2.2,observation_period,period_type_concept_id,not null,
+pedsnet,v2.2,observation_period,person_id,not null,

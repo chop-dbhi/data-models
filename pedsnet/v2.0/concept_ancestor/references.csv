@@ -1,0 +1,3 @@
+model,version,table,field,ref_table,ref_field,name
+pedsnet,v2.0,concept_ancestor,ancestor_concept_id,concept,concept_id,fpk_concept_ancestor_concept_1
+pedsnet,v2.0,concept_ancestor,descendant_concept_id,concept,concept_id,fpk_concept_ancestor_concept_2

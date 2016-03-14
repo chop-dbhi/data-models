@@ -1,0 +1,4 @@
+model,version,table,field,type,name
+omop,v5,drug_cost,drug_cost_id,primary key,xpk_drug_cost
+omop,v5,drug_cost,drug_cost_id,not null,
+omop,v5,drug_cost,drug_exposure_id,not null,

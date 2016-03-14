@@ -1,0 +1,4 @@
+model,version,type,name,table,field
+i2b2_pedsnet,v2,primary key,pk_provider_dimension,provider_dimension,provider_id
+i2b2_pedsnet,v2,not null,,provider_dimension,provider_id
+i2b2_pedsnet,v2,not null,,provider_dimension,provider_path

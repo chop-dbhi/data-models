@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+omop,v5,drug_exposure,drug_exposure_id,primary key,xpk_drug_exposure
+omop,v5,drug_exposure,drug_concept_id,not null,
+omop,v5,drug_exposure,drug_exposure_id,not null,
+omop,v5,drug_exposure,drug_exposure_start_date,not null,
+omop,v5,drug_exposure,drug_type_concept_id,not null,
+omop,v5,drug_exposure,person_id,not null,

@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+pcornet,v3,pcornet_trial,patid,primary key,xpk_pcornet_trial
+pcornet,v3,pcornet_trial,trialid,primary key,xpk_pcornet_trial
+pcornet,v3,pcornet_trial,participantid,primary key,xpk_pcornet_trial
+pcornet,v3,pcornet_trial,participantid,not null,
+pcornet,v3,pcornet_trial,patid,not null,
+pcornet,v3,pcornet_trial,trialid,not null,

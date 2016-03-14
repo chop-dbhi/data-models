@@ -1,0 +1,6 @@
+model,version,name,unique,table,field,order
+i2b2_pedsnet,v2,ix_provider_path,No,provider_dimension,provider_id,asc
+i2b2_pedsnet,v2,ix_provider_path,No,provider_dimension,provider_path,asc
+i2b2_pedsnet,v2,ix_provider_name_char,No,provider_dimension,provider_id,asc
+i2b2_pedsnet,v2,ix_provider_name_char,No,provider_dimension,name_char,asc
+i2b2_pedsnet,v2,ix_provider_upload_id,No,provider_dimension,upload_id,asc

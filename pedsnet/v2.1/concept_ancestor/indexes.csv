@@ -1,0 +1,3 @@
+model,version,table,field,name,order
+pedsnet,v2.1,concept_ancestor,descendant_concept_id,idx_concept_ancestor_id_2,
+pedsnet,v2.1,concept_ancestor,ancestor_concept_id,idx_concept_ancestor_id_1,

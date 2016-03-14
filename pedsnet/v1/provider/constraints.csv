@@ -1,0 +1,5 @@
+model,version,table,field,type,name
+pedsnet,v1,provider,provider_id,primary key,xpk_provider
+pedsnet,v1,provider,care_site_id,not null,
+pedsnet,v1,provider,provider_id,not null,
+pedsnet,v1,provider,provider_source_value,not null,

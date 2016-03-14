@@ -1,0 +1,4 @@
+model,version,table,field,name,order
+omop,v5,procedure_occurrence,person_id,idx_procedure_person_id,
+omop,v5,procedure_occurrence,procedure_concept_id,idx_procedure_concept_id,
+omop,v5,procedure_occurrence,visit_occurrence_id,idx_procedure_visit_id,

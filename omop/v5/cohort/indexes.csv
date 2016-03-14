@@ -1,0 +1,3 @@
+model,version,table,field,name,order
+omop,v5,cohort,cohort_definition_id,idx_cohort_c_definition_id,
+omop,v5,cohort,subject_id,idx_cohort_subject_id,

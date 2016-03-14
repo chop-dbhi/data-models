@@ -1,0 +1,8 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v5,drug_era,drug_concept_id,integer,,,,
+omop,v5,drug_era,drug_era_end_date,date,,,,
+omop,v5,drug_era,drug_era_id,integer,,,,
+omop,v5,drug_era,drug_era_start_date,date,,,,
+omop,v5,drug_era,drug_exposure_count,integer,,,,
+omop,v5,drug_era,gap_days,integer,,,,
+omop,v5,drug_era,person_id,integer,,,,

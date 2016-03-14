@@ -1,0 +1,2 @@
+model,version,table,field,name,order
+pedsnet,v2.0,vocabulary,vocabulary_id,idx_vocabulary_vocabulary_id,

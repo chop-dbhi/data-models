@@ -1,0 +1,6 @@
+model,version,table,field,type,name
+pcornet,v3,dispensing,dispensingid,primary key,xpk_dispensing
+pcornet,v3,dispensing,dispense_date,not null,
+pcornet,v3,dispensing,dispensingid,not null,
+pcornet,v3,dispensing,ndc,not null,
+pcornet,v3,dispensing,patid,not null,

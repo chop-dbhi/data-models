@@ -1,0 +1,3 @@
+model,version,table,field,ref_table,ref_field,name
+pedsnet,v2.2,care_site,location_id,location,location_id,fpk_care_site_location
+pedsnet,v2.2,care_site,place_of_service_concept_id,concept,concept_id,fpk_care_site_place

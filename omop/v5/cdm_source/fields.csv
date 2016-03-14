@@ -1,0 +1,11 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v5,cdm_source,cdm_etl_reference,No,,,,URL or other external reference to location of ETL specification documentation and ETL source code
+omop,v5,cdm_source,cdm_holder,No,,,,The name of the organization responsible for the development of the CDM instance
+omop,v5,cdm_source,cdm_release_date,No,,,,The date when the CDM was instantiated
+omop,v5,cdm_source,cdm_source_abbreviation,No,,,,An abbreviation of the name
+omop,v5,cdm_source,cdm_source_name,Yes,,,,The full name of the source.
+omop,v5,cdm_source,cdm_version,No,,,,The version of CDM used
+omop,v5,cdm_source,source_description,No,,,,A description of the source data origin and purpose for collection. The description may contain a summary of the period of time that is expected to be covered by this dataset.
+omop,v5,cdm_source,source_documentation_reference,No,,,,URL or other external reference to location of source documentation
+omop,v5,cdm_source,source_release_date,No,,,,"The date for which the source data is most current, such as the last day of data capture "
+omop,v5,cdm_source,vocabulary_version,No,,,,The version of the vocabulary used

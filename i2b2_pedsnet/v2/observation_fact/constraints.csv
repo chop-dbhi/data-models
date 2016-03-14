@@ -1,0 +1,15 @@
+model,version,type,name,table,field
+i2b2_pedsnet,v2,primary key,pk_observation_fact,observation_fact,patient_num
+i2b2_pedsnet,v2,primary key,pk_observation_fact,observation_fact,concept_cd
+i2b2_pedsnet,v2,primary key,pk_observation_fact,observation_fact,modifier_cd
+i2b2_pedsnet,v2,primary key,pk_observation_fact,observation_fact,start_date
+i2b2_pedsnet,v2,primary key,pk_observation_fact,observation_fact,encounter_num
+i2b2_pedsnet,v2,primary key,pk_observation_fact,observation_fact,instance_num
+i2b2_pedsnet,v2,primary key,pk_observation_fact,observation_fact,provider_id
+i2b2_pedsnet,v2,not null,,observation_fact,encounter_num
+i2b2_pedsnet,v2,not null,,observation_fact,patient_num
+i2b2_pedsnet,v2,not null,,observation_fact,concept_cd
+i2b2_pedsnet,v2,not null,,observation_fact,provider_id
+i2b2_pedsnet,v2,not null,,observation_fact,start_date
+i2b2_pedsnet,v2,not null,,observation_fact,modifier_cd
+i2b2_pedsnet,v2,not null,,observation_fact,instance_num

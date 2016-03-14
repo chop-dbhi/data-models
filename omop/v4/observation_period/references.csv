@@ -1,0 +1,2 @@
+model,version,table,field,ref_table,ref_field,name
+omop,v4,observation_period,person_id,person,person_id,fpk_observation_period_person

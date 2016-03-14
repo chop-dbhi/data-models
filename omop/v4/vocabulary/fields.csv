@@ -1,0 +1,3 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v4,vocabulary,vocabulary_id,Yes,,,,A unique identifier for each vocabulary.
+omop,v4,vocabulary,vocabulary_name,Yes,,,,"The name describing the vocabulary, for example ""SNOMED-CT"", ""ICD-9"", ""Visit"", etc. "

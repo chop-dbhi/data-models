@@ -1,0 +1,4 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v1,drug_approval,approval_date,date,,,,
+pedsnet,v1,drug_approval,approved_by,string,20,,,FDA
+pedsnet,v1,drug_approval,ingredient_concept_id,integer,,,,

@@ -1,0 +1,13 @@
+model,version,table,field,ref_table,ref_field,name
+pedsnet,v2.2,measurement,measurement_concept_id,concept,concept_id,fpk_measurement_concept
+pedsnet,v2.2,measurement,measurement_source_concept_id,concept,concept_id,fpk_measurement_concept_s
+pedsnet,v2.2,measurement,operator_concept_id,concept,concept_id,fpk_measurement_operator
+pedsnet,v2.2,measurement,person_id,person,person_id,fpk_measurement_person
+pedsnet,v2.2,measurement,priority_concept_id,concept,concept_id,fpk_measurement_priority
+pedsnet,v2.2,measurement,provider_id,provider,provider_id,fpk_measurement_provider
+pedsnet,v2.2,measurement,range_high_operator_concept_id,concept,concept_id,fpk_measurement_range_high_op
+pedsnet,v2.2,measurement,range_low_operator_concept_id,concept,concept_id,fpk_measurement_range_low_op
+pedsnet,v2.2,measurement,measurement_type_concept_id,concept,concept_id,fpk_measurement_type_concept
+pedsnet,v2.2,measurement,unit_concept_id,concept,concept_id,fpk_measurement_unit
+pedsnet,v2.2,measurement,value_as_concept_id,concept,concept_id,fpk_measurement_value
+pedsnet,v2.2,measurement,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_measurement_visit

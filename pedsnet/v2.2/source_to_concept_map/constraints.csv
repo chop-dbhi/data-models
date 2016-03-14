@@ -1,0 +1,12 @@
+model,version,table,field,type,name
+pedsnet,v2.2,source_to_concept_map,source_vocabulary_id,primary key,xpk_source_to_concept_map
+pedsnet,v2.2,source_to_concept_map,target_concept_id,primary key,xpk_source_to_concept_map
+pedsnet,v2.2,source_to_concept_map,source_code,primary key,xpk_source_to_concept_map
+pedsnet,v2.2,source_to_concept_map,valid_end_date,primary key,xpk_source_to_concept_map
+pedsnet,v2.2,source_to_concept_map,source_code,not null,
+pedsnet,v2.2,source_to_concept_map,source_concept_id,not null,
+pedsnet,v2.2,source_to_concept_map,source_vocabulary_id,not null,
+pedsnet,v2.2,source_to_concept_map,target_concept_id,not null,
+pedsnet,v2.2,source_to_concept_map,target_vocabulary_id,not null,
+pedsnet,v2.2,source_to_concept_map,valid_end_date,not null,
+pedsnet,v2.2,source_to_concept_map,valid_start_date,not null,

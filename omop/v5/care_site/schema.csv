@@ -1,0 +1,7 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v5,care_site,care_site_id,integer,,,,
+omop,v5,care_site,care_site_name,string,255,,,
+omop,v5,care_site,care_site_source_value,string,50,,,
+omop,v5,care_site,location_id,integer,,,,
+omop,v5,care_site,place_of_service_concept_id,integer,,,,
+omop,v5,care_site,place_of_service_source_value,string,50,,,

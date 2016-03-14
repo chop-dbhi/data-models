@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+pcornet,v3,procedures,proceduresid,primary key,xpk_procedures
+pcornet,v3,procedures,encounterid,not null,
+pcornet,v3,procedures,patid,not null,
+pcornet,v3,procedures,proceduresid,not null,
+pcornet,v3,procedures,px,not null,
+pcornet,v3,procedures,px_type,not null,

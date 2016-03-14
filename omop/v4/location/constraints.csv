@@ -1,0 +1,3 @@
+model,version,table,field,type,name
+omop,v4,location,location_id,primary key,xpk_location
+omop,v4,location,location_id,not null,

@@ -1,0 +1,4 @@
+model,version,type,name,table,field
+i2b2_pedsnet,v2,primary key,pk_patient_dimension,patient_dimension,patient_num
+i2b2_pedsnet,v2,not null,,patient_dimension,patient_num
+i2b2_pedsnet,v2,not null,,patient_dimension,birth_date

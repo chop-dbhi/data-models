@@ -1,0 +1,2 @@
+model,version,table,field,ref_table,ref_field,name
+pedsnet,v1,provider,care_site_id,care_site,care_site_id,fpk_provider_care_site

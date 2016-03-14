@@ -1,8 +1,0 @@
-model,version,table,field,required,ref_table,ref_field,standard,description
-omop,v5,cohort_definition,cohort_definition_description,No,,,,A complete description of the cohort definition.
-omop,v5,cohort_definition,cohort_definition_id,Yes,,,,A unique identifier for each cohort. 
-omop,v5,cohort_definition,cohort_definition_name,Yes,,,,A short description of the cohort. 
-omop,v5,cohort_definition,cohort_definition_syntax,No,,,,Syntax to operationalize the cohort definition.
-omop,v5,cohort_definition,cohort_initiation_date,No,,,,A date to indicate when the cohort was instantiated in the COHORT table.
-omop,v5,cohort_definition,definition_type_concept_id,Yes,concept,concept_id,,Type to define what kind of cohort definition the record represents and how the syntax may be executed.
-omop,v5,cohort_definition,subject_concept_id,Yes,concept,concept_id,,"A foreign key to the concept to which defines the domain of subjects that are members of the cohort (e.g., person, provider, visit). "

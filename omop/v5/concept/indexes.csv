@@ -1,0 +1,6 @@
+model,version,table,field,name,order
+omop,v5,concept,domain_id,idx_concept_domain_id,
+omop,v5,concept,vocabulary_id,idx_concept_vocabluary_id,
+omop,v5,concept,concept_id,idx_concept_concept_id,
+omop,v5,concept,concept_code,idx_concept_code,
+omop,v5,concept,concept_class_id,idx_concept_class_id,

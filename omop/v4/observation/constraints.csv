@@ -1,0 +1,7 @@
+model,version,type,name,table,field
+omop,v4,not null,,observation,associated_provider_id
+omop,v4,not null,,observation,observation_concept_id
+omop,v4,not null,,observation,observation_date
+omop,v4,not null,,observation,observation_type_concept_id
+omop,v4,not null,,observation,person_id
+omop,v4,primary key,xpk_observation,observation,observation_id

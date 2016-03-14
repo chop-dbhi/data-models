@@ -1,0 +1,8 @@
+model,version,table,field,type,name
+pedsnet,v2.1,relationship,relationship_id,primary key,xpk_relationship
+pedsnet,v2.1,relationship,defines_ancestry,not null,
+pedsnet,v2.1,relationship,is_hierarchical,not null,
+pedsnet,v2.1,relationship,relationship_concept_id,not null,
+pedsnet,v2.1,relationship,relationship_id,not null,
+pedsnet,v2.1,relationship,relationship_name,not null,
+pedsnet,v2.1,relationship,reverse_relationship_id,not null,

@@ -1,0 +1,13 @@
+model,version,table,field,type,length,precision,scale,default
+pcornet,v2,condition,condition,string,18,,,
+pcornet,v2,condition,condition_source,string,2,,,
+pcornet,v2,condition,condition_status,string,2,,,
+pcornet,v2,condition,condition_type,string,2,,,
+pcornet,v2,condition,encounterid,string,256,,,
+pcornet,v2,condition,patid,string,256,,,
+pcornet,v2,condition,raw_condition,string,256,,,
+pcornet,v2,condition,raw_condition_source,string,256,,,
+pcornet,v2,condition,raw_condition_status,string,256,,,
+pcornet,v2,condition,raw_condition_type,string,256,,,
+pcornet,v2,condition,report_date,string,10,,,
+pcornet,v2,condition,resolve_date,string,10,,,

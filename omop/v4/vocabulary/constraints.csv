@@ -1,0 +1,5 @@
+model,version,table,field,type,name
+omop,v4,vocabulary,vocabulary_id,primary key,xpk_vocabulary
+omop,v4,vocabulary,vocabulary_name,unique,xnq_vocabulary_name
+omop,v4,vocabulary,vocabulary_id,not null,
+omop,v4,vocabulary,vocabulary_name,not null,

@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+pedsnet,v1,care_site,care_site_id,primary key,xpk_care_site
+pedsnet,v1,care_site,organization_id,unique,xnk_care_site
+pedsnet,v1,care_site,care_site_source_value,unique,xnk_care_site
+pedsnet,v1,care_site,care_site_id,not null,
+pedsnet,v1,care_site,care_site_source_value,not null,
+pedsnet,v1,care_site,organization_id,not null,

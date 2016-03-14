@@ -1,0 +1,4 @@
+model,version,type,name,table,field
+i2b2_pedsnet,v2,primary key,pk_visit_dimension,visit_dimension,encounter_num
+i2b2_pedsnet,v2,not null,,visit_dimension,encounter_num
+i2b2_pedsnet,v2,not null,,visit_dimension,patient_num

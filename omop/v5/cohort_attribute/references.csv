@@ -1,0 +1,4 @@
+model,version,table,field,ref_table,ref_field,name
+omop,v5,cohort_attribute,attribute_definition_id,attribute_definition,attribute_definition_id,fpk_ca_attribute_definition
+omop,v5,cohort_attribute,cohort_definition_id,cohort_definition,cohort_definition_id,fpk_ca_cohort_definition
+omop,v5,cohort_attribute,value_as_concept_id,concept,concept_id,fpk_ca_value

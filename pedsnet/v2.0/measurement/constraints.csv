@@ -1,0 +1,6 @@
+model,version,table,field,type,name
+pedsnet,v2.0,measurement,measurement_id,primary key,xpk_measurement
+pedsnet,v2.0,measurement,measurement_concept_id,not null,
+pedsnet,v2.0,measurement,measurement_date,not null,
+pedsnet,v2.0,measurement,measurement_id,not null,
+pedsnet,v2.0,measurement,person_id,not null,

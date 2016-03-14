@@ -1,0 +1,47 @@
+target_model,target_version,target_table,target_field,source_model,source_version,source_table,source_field,comment
+pcornet,1.0.0,demographic,patid,omop,4.0.0,person,person_id,
+pcornet,1.0.0,demographic,birth_date,omop,4.0.0,person,year_of_birth,
+pcornet,1.0.0,demographic,birth_date,omop,4.0.0,person,month_of_birth,
+pcornet,1.0.0,demographic,birth_date,omop,4.0.0,person,day_of_birth,
+pcornet,1.0.0,demographic,sex,omop,4.0.0,person,gender_concept_id,"Maps to the concept_id values under the ""Gender"" concept class."
+pcornet,1.0.0,demographic,hispanic,omop,4.0.0,person,ethnicity_concept_id,"Limited to the concept_id values under the ""Hispanic"" concept class."
+pcornet,1.0.0,demographic,race,omop,4.0.0,person,race_concept_id,"Limited to the concept_id values under the ""Race"" concept class."
+pcornet,1.0.0,demographic,biobank_flag,omop,4.0.0,observation,value_as_concept_id,"Explicitly maps to concept_id 4001345 in the ""Biobank_flag"" concept class."
+pcornet,1.0.0,demographic,raw_sex,omop,4.0.0,person,gender_source_value,
+pcornet,1.0.0,demographic,raw_hispanic,omop,4.0.0,person,ethnicity_source_value,
+pcornet,1.0.0,demographic,raw_race,omop,4.0.0,person,race_source_value,
+pcornet,1.0.0,encounter,patid,omop,4.0.0,visit_occurrence,person_id,
+pcornet,1.0.0,encounter,encounterid,omop,4.0.0,visit_occurrence,visit_occurrence_id,
+pcornet,1.0.0,encounter,admit_date,omop,4.0.0,visit_occurrence,visit_start_date,
+pcornet,1.0.0,encounter,discharge_date,omop,4.0.0,visit_occurrence,visit_end_date,
+pcornet,1.0.0,encounter,facility_location,omop,4.0.0,location,zip,
+pcornet,1.0.0,encounter,enc_type,omop,4.0.0,visit_occurrence,place_of_service_concept_id,"Limited to concept_id values under the ""Encounter Type"" concept class."
+pcornet,1.0.0,encounter,facilityid,omop,4.0.0,visit_occurrence,care_site_id,
+pcornet,1.0.0,encounter,discharge_disposition,omop,4.0.0,observation,value_as_concept_id,"Explicitly maps to concept_id 44813951 in the ""Discharge Disposition"" concept class."
+pcornet,1.0.0,encounter,discharge_status,omop,4.0.0,observation,value_as_concept_id,"Explicitly maps to concept_id 4137274 in the ""Discharge Status"" concept class."
+pcornet,1.0.0,encounter,drg,omop,4.0.0,concept,concept_code,Explicitly maps to concept_id 3040646.
+pcornet,1.0.0,encounter,admitting_source,omop,4.0.0,observation,value_as_concept_id,"Explicitly maps to concept_id 4145666 in the ""Admitting Source"" concept class."
+pcornet,1.0.0,encounter,raw_enc_type,omop,4.0.0,visit_occurrence,place_of_service_concept_id,
+pcornet,1.0.0,encounter,raw_discharge_disposition,omop,4.0.0,observation,value_as_concept_id,
+pcornet,1.0.0,encounter,raw_discharge_status,omop,4.0.0,observation,value_as_concept_id,
+pcornet,1.0.0,encounter,raw_admitting_source,omop,4.0.0,observation,value_as_concept_id,
+pcornet,1.0.0,enrollment,patid,omop,4.0.0,observation_period,person_id,
+pcornet,1.0.0,enrollment,enr_start_date,omop,4.0.0,observation_period,observation_period_start_date,
+pcornet,1.0.0,enrollment,enr_end_date,omop,4.0.0,observation_period,observation_period_end_date,
+pcornet,1.0.0,enrollment,chart,omop,4.0.0,observation,value_as_concept_id,"Explicitly maps to concept_id 4030450 in the ""Chart Availability"" concept class."
+pcornet,1.0.0,diagnosis,patid,omop,4.0.0,condition_occurrence,person_id,
+pcornet,1.0.0,diagnosis,encounterid,omop,4.0.0,condition_occurrence,visit_occurrence_id,
+pcornet,1.0.0,diagnosis,dx,omop,4.0.0,condition_occurrence,condition_concept_id,
+pcornet,1.0.0,procedure,patid,omop,4.0.0,procedure_occurrence,person_id,
+pcornet,1.0.0,procedure,encounterid,omop,4.0.0,procedure_occurrence,visit_occurrence_id,
+pcornet,1.0.0,procedure,px,omop,4.0.0,procedure_occurrence,procedure_concept_id,
+pcornet,1.0.0,vital,patid,omop,4.0.0,observation,person_id,
+pcornet,1.0.0,vital,encounterid,omop,4.0.0,observation,visit_occurrence_id,
+pcornet,1.0.0,vital,measure_date,omop,4.0.0,observation,observation_date,
+pcornet,1.0.0,vital,measure_time,omop,4.0.0,observation,observation_time,
+pcornet,1.0.0,vital,ht,omop,4.0.0,observation,value_as_number,Explicitly maps to concept_id 3036277.
+pcornet,1.0.0,vital,wt,omop,4.0.0,observation,value_as_number,Explicitly maps to concept_id 3025315.
+pcornet,1.0.0,vital,original_bmi,omop,4.0.0,observation,value_as_number,Explicitly maps to concept_id 3038553.
+pcornet,1.0.0,vital,diastolic,omop,4.0.0,observation,value_as_number,Explicitly maps to concept_id 3012888.
+pcornet,1.0.0,vital,systolic,omop,4.0.0,observation,value_as_number,Explicitly maps to concept_id 3004249.
+pcornet,1.0.0,vital,bp_position,omop,4.0.0,observation,observation_concept_id,"Maps to the concept_id values under the ""BP Position"" concept class."

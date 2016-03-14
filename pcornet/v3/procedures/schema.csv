@@ -1,0 +1,13 @@
+model,version,table,field,type,length,precision,scale,default
+pcornet,v3,procedures,admit_date,date,,,,
+pcornet,v3,procedures,enc_type,string,2,,,
+pcornet,v3,procedures,encounterid,string,256,,,
+pcornet,v3,procedures,patid,string,256,,,
+pcornet,v3,procedures,proceduresid,string,256,,,
+pcornet,v3,procedures,providerid,string,256,,,
+pcornet,v3,procedures,px,string,11,,,
+pcornet,v3,procedures,px_date,date,,,,
+pcornet,v3,procedures,px_source,string,256,,,
+pcornet,v3,procedures,px_type,string,2,,,
+pcornet,v3,procedures,raw_px,string,256,,,
+pcornet,v3,procedures,raw_px_type,string,256,,,

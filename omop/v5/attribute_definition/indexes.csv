@@ -1,0 +1,2 @@
+model,version,table,field,name,order
+omop,v5,attribute_definition,attribute_definition_id,idx_attribute_definition_id,

@@ -1,0 +1,7 @@
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
+pcornet,v3,death_cause,patid,YES,DEMOGRAPHIC,PATID,,,,,,Arbitrary person-level identifier used to link across tables.
+pcornet,v3,death_cause,death_cause,YES,,,,,,,,Cause of death code. Please include the decimal point in ICD codes (if any).
+pcornet,v3,death_cause,death_cause_code,YES,,,,,,,09=ICD-9 10=ICD-10 NI=No information UN=Unknown OT=Other,Cause of death code type.
+pcornet,v3,death_cause,death_cause_type,YES,,,,,,,C=Contributory I=Immediate/Primary O=Other U=Underlying NI=No information UN=Unknown OT=Other,Cause of death type. There should be only one underlying cause of death.
+pcornet,v3,death_cause,death_cause_source,YES,,,,,,,"L=Other, locally defined N=National Death Index D=Social Security S=State Death files T=Tumor data NI=No information UN=Unknown OT=Other","Source of cause of death information. Guidance: ""Other, locally defined"" may be used to indicate presence of deaths reported from EHR systems, such as inpatient hospital deaths or dead on arrival."
+pcornet,v3,death_cause,death_cause_confidence,NO,,,,,,,E=Excellent F=Fair P=Poor NI=No information UN=Unknown OT=Other,"Confidence in the accuracy of the cause of death based on source, match, number of reporting sources, discrepancies, etc."

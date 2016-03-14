@@ -1,0 +1,4 @@
+model,version,table,field,type,name
+omop,v4,provider,provider_id,primary key,xpk_provider
+omop,v4,provider,provider_id,not null,
+omop,v4,provider,provider_source_value,not null,

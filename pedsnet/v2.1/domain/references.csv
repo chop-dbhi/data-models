@@ -1,0 +1,2 @@
+model,version,table,field,ref_table,ref_field,name
+pedsnet,v2.1,domain,domain_concept_id,concept,concept_id,fpk_domain_concept

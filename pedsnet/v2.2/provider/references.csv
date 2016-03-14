@@ -1,0 +1,6 @@
+model,version,table,field,ref_table,ref_field,name
+pedsnet,v2.2,provider,care_site_id,care_site,care_site_id,fpk_provider_care_site
+pedsnet,v2.2,provider,gender_concept_id,concept,concept_id,fpk_provider_gender
+pedsnet,v2.2,provider,gender_source_concept_id,concept,concept_id,fpk_provider_gender_s
+pedsnet,v2.2,provider,specialty_concept_id,concept,concept_id,fpk_provider_specialty
+pedsnet,v2.2,provider,specialty_source_concept_id,concept,concept_id,fpk_provider_specialty_s

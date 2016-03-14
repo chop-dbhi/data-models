@@ -1,0 +1,5 @@
+model,version,table,field,name,order
+pedsnet,v2.1,person,person_id,idx_person_id,
+pedsnet,v2.1,person,location_id,idx_person_location_id,
+pedsnet,v2.1,person,care_site_id,idx_person_care_site_id,
+pedsnet,v2.1,person,provider_id,idx_person_provider_id,

@@ -1,0 +1,5 @@
+model,version,table,field,type,name
+omop,v4,person,person_id,primary key,xpk_person
+omop,v4,person,gender_concept_id,not null,
+omop,v4,person,person_id,not null,
+omop,v4,person,year_of_birth,not null,

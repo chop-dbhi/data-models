@@ -1,0 +1,10 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v1,procedure_occurrence,associated_provider_id,integer,,,,
+pedsnet,v1,procedure_occurrence,person_id,integer,,,,
+pedsnet,v1,procedure_occurrence,procedure_concept_id,integer,,,,
+pedsnet,v1,procedure_occurrence,procedure_date,datetime,,,,
+pedsnet,v1,procedure_occurrence,procedure_occurrence_id,integer,,,,
+pedsnet,v1,procedure_occurrence,procedure_source_value,string,100,,,
+pedsnet,v1,procedure_occurrence,procedure_type_concept_id,integer,,,,
+pedsnet,v1,procedure_occurrence,relevant_condition_concept_id,integer,,,,
+pedsnet,v1,procedure_occurrence,visit_occurrence_id,integer,,,,

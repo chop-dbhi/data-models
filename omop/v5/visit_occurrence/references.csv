@@ -1,0 +1,7 @@
+model,version,table,field,ref_table,ref_field,name
+omop,v5,visit_occurrence,care_site_id,care_site,care_site_id,fpk_visit_care_site
+omop,v5,visit_occurrence,visit_concept_id,concept,concept_id,fpk_visit_concept
+omop,v5,visit_occurrence,visit_source_concept_id,concept,concept_id,fpk_visit_concept_s
+omop,v5,visit_occurrence,person_id,person,person_id,fpk_visit_person
+omop,v5,visit_occurrence,provider_id,provider,provider_id,fpk_visit_provider
+omop,v5,visit_occurrence,visit_type_concept_id,concept,concept_id,fpk_visit_type_concept

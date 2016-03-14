@@ -1,0 +1,5 @@
+model,version,table,field,type,name
+pcornet,v3,harvest,networkid,primary key,xpk_harvest
+pcornet,v3,harvest,datamartid,primary key,xpk_harvest
+pcornet,v3,harvest,datamartid,not null,
+pcornet,v3,harvest,networkid,not null,

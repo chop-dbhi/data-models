@@ -1,0 +1,19 @@
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
+pcornet,v2,vital,bp_position,NO,,,,NO,,01;02;03;NI;UN;OT,"01 = Sitting 02 = Standing 03 = Supine NI = No information UN = Unknown OT = Other",Position for orthostatic blood pressure. Leave blank if blood pressure was not measured.
+pcornet,v2,vital,diastolic,NO,,,,NO,MMHG,,,"Diastolic blood pressure (in mmHg). Only populated if measure was taken on this date. If missing, leave blank."
+pcornet,v2,vital,encounterid,NO,ENCOUNTER,ENCOUNTERID,,NO,,,,Arbitrary encounter-level identifier. This is an optional relationship; the ENCOUNTERID should be present if the vitals were measured as part of healthcare delivery.
+pcornet,v2,vital,ht,NO,,,,NO,INCH,,,"Height (in inches) measured by standing. Only populated if measure was taken on this date. If missing, leave blank. Decimal precision is permissible."
+pcornet,v2,vital,measure_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date of vitals measure.
+pcornet,v2,vital,measure_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time of vitals measure.
+pcornet,v2,vital,original_bmi,NO,,,,NO,,,,"BMI if calculated in the source system.  Important: Please do not calculate BMI during CDM implementation. This field should only reflect originating source system calculations, if height and weight are not stored in the source."
+pcornet,v2,vital,patid,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier. Used to link across tables.
+pcornet,v2,vital,raw_bp_position,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,v2,vital,raw_diastolic,NO,,,,NO,,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM."
+pcornet,v2,vital,raw_systolic,NO,,,,NO,,,,"Optional field for originating value of field, prior to formatting into the PCORnet CDM."
+pcornet,v2,vital,raw_tobacco,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set. New to v2.0."
+pcornet,v2,vital,raw_tobacco_type,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set. New to v2.0."
+pcornet,v2,vital,systolic,NO,,,,NO,MMHG,,,"Systolic blood pressure (in mmHg). Only populated if measure was taken on this date. If missing, leave blank."
+pcornet,v2,vital,tobacco,NO,,,,NO,,01;02;03;04;05;06;07;08;NI;UN;OT,"01=Current every day smoker 02=Current some day smoker 03=Former smoker 04=Never smoker 05=Smoker, current status unknown 06=Unknown if ever smoked 07=Heavy tobacco smoker 08=Light tobacco smoker NI=No information UN=Unknown OT=Other","This field is new to v2.0.  Guidance: The values of ""Heavy tobacco smoker"" and ""Light tobacco smoker"" will be assumed to imply a smoking status of current."
+pcornet,v2,vital,tobacco_type,NO,,,,NO,,"01;02;03;04;NI;UN;OT ","01=Cigarettes only 02=Other tobacco only 03=Cigarettes and other tobacco 04=None NI=No information UN=Unknown OT=Other","This field is new to v2.0.  Type(s) of tobacco used."
+pcornet,v2,vital,vital_source,NO,,,,NO,,PR;PD;HC;HD;NI;UN;OT,"PR = Patient-reported PD=Patient device direct feed HC = Healthcare delivery setting HD=Healthcare device direct feed NI = No information UN = Unknown OT = Other","Please note: The ""Patient-reported"" category can include reporting by patient's family or guardian.  v2.0 amendment: The new categorical value of PD and HD have been added.  v2.0 guidance added: If unknown whether data are received directly from a device feed, use the more general context (such as patient-reported, healthcare delivery setting, or registry)."
+pcornet,v2,vital,wt,NO,,,,NO,POUND,,,"Weight (in pounds). Only populated if measure was taken on this date. If missing, leave blank. Decimal precision is permissible."

@@ -1,0 +1,10 @@
+model,version,table,field,ref_table,ref_field,name
+pedsnet,v2.1,observation,observation_concept_id,concept,concept_id,fpk_observation_concept
+pedsnet,v2.1,observation,observation_source_concept_id,concept,concept_id,fpk_observation_concept_s
+pedsnet,v2.1,observation,person_id,person,person_id,fpk_observation_person
+pedsnet,v2.1,observation,provider_id,provider,provider_id,fpk_observation_provider
+pedsnet,v2.1,observation,qualifier_concept_id,concept,concept_id,fpk_observation_qualifier
+pedsnet,v2.1,observation,observation_type_concept_id,concept,concept_id,fpk_observation_type_concept
+pedsnet,v2.1,observation,unit_concept_id,concept,concept_id,fpk_observation_unit
+pedsnet,v2.1,observation,value_as_concept_id,concept,concept_id,fpk_observation_value
+pedsnet,v2.1,observation,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_observation_visit

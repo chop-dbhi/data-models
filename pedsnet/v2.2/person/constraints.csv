@@ -1,0 +1,13 @@
+model,version,table,field,type,name
+pedsnet,v2.2,person,person_id,primary key,xpk_person
+pedsnet,v2.2,person,care_site_id,not null,
+pedsnet,v2.2,person,ethnicity_concept_id,not null,
+pedsnet,v2.2,person,ethnicity_source_concept_id,not null,
+pedsnet,v2.2,person,gender_concept_id,not null,
+pedsnet,v2.2,person,gender_source_concept_id,not null,
+pedsnet,v2.2,person,language_concept_id,not null,
+pedsnet,v2.2,person,language_source_concept_id,not null,
+pedsnet,v2.2,person,person_id,not null,
+pedsnet,v2.2,person,race_concept_id,not null,
+pedsnet,v2.2,person,race_source_concept_id,not null,
+pedsnet,v2.2,person,year_of_birth,not null,

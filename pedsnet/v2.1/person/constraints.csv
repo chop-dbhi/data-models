@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+pedsnet,v2.1,person,person_id,primary key,xpk_person
+pedsnet,v2.1,person,ethnicity_concept_id,not null,
+pedsnet,v2.1,person,gender_concept_id,not null,
+pedsnet,v2.1,person,person_id,not null,
+pedsnet,v2.1,person,race_concept_id,not null,
+pedsnet,v2.1,person,year_of_birth,not null,

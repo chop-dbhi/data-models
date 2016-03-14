@@ -1,0 +1,7 @@
+model,version,table,field,type,name
+omop,v5,note,note_id,primary key,xpk_note
+omop,v5,note,note_date,not null,
+omop,v5,note,note_id,not null,
+omop,v5,note,note_text,not null,
+omop,v5,note,note_type_concept_id,not null,
+omop,v5,note,person_id,not null,

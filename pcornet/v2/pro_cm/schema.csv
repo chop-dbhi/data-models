@@ -1,0 +1,13 @@
+model,version,table,field,type,length,precision,scale,default
+pcornet,v2,pro_cm,encounterid,string,256,,,
+pcornet,v2,pro_cm,patid,string,256,,,
+pcornet,v2,pro_cm,pro_cat,string,2,,,
+pcornet,v2,pro_cm,pro_date,string,10,,,
+pcornet,v2,pro_cm,pro_item,string,7,,,
+pcornet,v2,pro_cm,pro_loinc,string,10,,,
+pcornet,v2,pro_cm,pro_method,string,2,,,
+pcornet,v2,pro_cm,pro_mode,string,2,,,
+pcornet,v2,pro_cm,pro_response,number,,10,2,
+pcornet,v2,pro_cm,pro_time,string,5,,,
+pcornet,v2,pro_cm,raw_pro_code,string,256,,,
+pcornet,v2,pro_cm,raw_pro_response,string,256,,,

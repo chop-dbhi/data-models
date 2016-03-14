@@ -1,0 +1,8 @@
+model,version,table,field,type,name
+pcornet,v3,diagnosis,diagnosisid,primary key,xpk_diagnosis
+pcornet,v3,diagnosis,diagnosisid,not null,
+pcornet,v3,diagnosis,dx,not null,
+pcornet,v3,diagnosis,dx_source,not null,
+pcornet,v3,diagnosis,dx_type,not null,
+pcornet,v3,diagnosis,encounterid,not null,
+pcornet,v3,diagnosis,patid,not null,
