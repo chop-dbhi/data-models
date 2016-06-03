@@ -122,8 +122,6 @@ pedsnet,v2.2,not null,,visit_payer,visit_payer_id
 pedsnet,v2.2,not null,,vocabulary,vocabulary_concept_id
 pedsnet,v2.2,not null,,vocabulary,vocabulary_id
 pedsnet,v2.2,not null,,vocabulary,vocabulary_name
-pedsnet,v2.2,not null,,vocabulary,vocabulary_reference
-pedsnet,v2.2,not null,,vocabulary,vocabulary_version
 pedsnet,v2.2,not null,,measurement_organism,organism_concept_id
 pedsnet,v2.2,not null,,measurement_organism,measurement_id
 pedsnet,v2.2,not null,,measurement_organism,meas_organism_id
