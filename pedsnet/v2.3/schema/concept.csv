@@ -1,0 +1,12 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v2.3,concept,concept_class_id,string,20,,,
+pedsnet,v2.3,concept,concept_code,string,256,,,
+pedsnet,v2.3,concept,concept_id,integer,,,,
+pedsnet,v2.3,concept,concept_level,integer,,,,
+pedsnet,v2.3,concept,concept_name,string,512,,,
+pedsnet,v2.3,concept,domain_id,string,20,,,
+pedsnet,v2.3,concept,invalid_reason,string,1,,,
+pedsnet,v2.3,concept,standard_concept,string,1,,,
+pedsnet,v2.3,concept,valid_end_date,date,,,,
+pedsnet,v2.3,concept,valid_start_date,date,,,,
+pedsnet,v2.3,concept,vocabulary_id,string,20,,,
