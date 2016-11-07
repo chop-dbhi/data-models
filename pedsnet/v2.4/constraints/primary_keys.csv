@@ -29,3 +29,4 @@ pedsnet,v2.4,primary key,xpk_visit_occurrence,visit_occurrence,visit_occurrence_
 pedsnet,v2.4,primary key,xpk_visit_payer,visit_payer,visit_payer_id
 pedsnet,v2.4,primary key,xpk_vocabulary,vocabulary,vocabulary_id
 pedsnet,v2.4,primary key,xpk_meas_organism,measurement_organism,meas_organism_id
+pedsnet,v2.4,primary key,xpk_adt_occurrence,adt_occurrence,adt_occurrence_id

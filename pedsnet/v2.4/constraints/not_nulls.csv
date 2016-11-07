@@ -128,3 +128,9 @@ pedsnet,v2.4,not null,,measurement_organism,measurement_id
 pedsnet,v2.4,not null,,measurement_organism,meas_organism_id
 pedsnet,v2.4,not null,,measurement_organism,person_id
 pedsnet,v2.4,not null,,measurement_organism,organism_source_value
+pedsnet,v2.4,not null,,adt_occurrence,service_concept_id
+pedsnet,v2.4,not null,,adt_occurrence,adt_type_concept_id
+pedsnet,v2.4,not null,,adt_occurrence,adt_occurrence_id
+pedsnet,v2.4,not null,,adt_occurrence,visit_occurrence_id
+pedsnet,v2.4,not null,,adt_occurrence,person_id
+pedsnet,v2.4,not null,,adt_occurrence,care_site_id
