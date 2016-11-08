@@ -24,3 +24,4 @@ pedsnet,v2.4,source_to_concept_map,"The SOURCE_TO_CONCEPT_MAP table is a legacy 
 pedsnet,v2.4,visit_occurrence,Visits for health care services of the Person
 pedsnet,v2.4,visit_payer,The visit payer table documents insurance information as it relates to a visit in visit_occurrence. For this reason the key of this table will be visit_occurrence_id and visit_payer_id.
 pedsnet,v2.4,vocabulary,The VOCABULARY table includes a list of the vocabularies collected from various sources or created de novo by the OMOP community. This reference table is populated with a single record for each vocabulary source and includes a descriptive name and other associated attributes for the vocabulary.
+pedsnet,v2.4,adt_occurrence,The adt_occurrence table contains information about distinct admission, discharge, or transfer events that occur as part of a clinical visit.
