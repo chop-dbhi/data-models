@@ -35,3 +35,8 @@ pedsnet,v2.4,idx_source_to_concept_code,No,source_to_concept_map,source_code,asc
 pedsnet,v2.4,idx_visit_person_id,No,visit_occurrence,person_id,asc
 pedsnet,v2.4,idx_visit_concept_id,No,visit_occurrence,visit_concept_id,asc
 pedsnet,v2.4,idx_visit_payer_visit_id,No,visit_payer,visit_occurrence_id,asc
+pedsnet,v2.4,idx_adt_visit_id,No,adt_occurrence,visit_occurrence_id,asc
+pedsnet,v2.4,idx_adt_prior_id,No,adt_occurrence,prior_adt_occurrence_id,asc
+pedsnet,v2.4,idx_adt_next_id,No,adt_occurrence,next_adt_occurrence_id,asc
+pedsnet,v2.4,idx_adt_service_id,No,adt_occurrence,service_concept_id,asc
+pedsnet,v2.4,idx_adt_type_id,No,adt_occurrence,adt_type_concept_id,asc
