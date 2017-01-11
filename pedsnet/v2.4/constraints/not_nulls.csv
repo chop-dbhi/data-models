@@ -134,3 +134,10 @@ pedsnet,v2.4,not null,,adt_occurrence,adt_occurrence_id
 pedsnet,v2.4,not null,,adt_occurrence,visit_occurrence_id
 pedsnet,v2.4,not null,,adt_occurrence,person_id
 pedsnet,v2.4,not null,,adt_occurrence,care_site_id
+pedsnet,v2.4,not null,,condition_era,condition_era_start_date
+pedsnet,v2.4,not null,,condition_era,condition_era_end_date
+pedsnet,v2.4,not null,,drug_era,drug_era_start_date
+pedsnet,v2.4,not null,,drug_era,drug_era_end_date
+pedsnet,v2.4,not null,,dose_era,dose_era_start_date
+pedsnet,v2.4,not null,,dose_era,dose_era_end_date
+pedsnet,v2.4,not null,,dose_era,dose_value

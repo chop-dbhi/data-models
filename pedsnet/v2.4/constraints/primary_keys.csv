@@ -30,3 +30,6 @@ pedsnet,v2.4,primary key,xpk_visit_payer,visit_payer,visit_payer_id
 pedsnet,v2.4,primary key,xpk_vocabulary,vocabulary,vocabulary_id
 pedsnet,v2.4,primary key,xpk_meas_organism,measurement_organism,meas_organism_id
 pedsnet,v2.4,primary key,xpk_adt_occurrence,adt_occurrence,adt_occurrence_id
+pedsnet,v2.4,primary key,xpk_dose_era,dose_era,dose_era_id
+pedsnet,v2.4,primary key,xpk_drug_era,drug_era,drug_era_id
+pedsnet,v2.4,primary key,xpk_condition_era,condition_era,condition_era_id
