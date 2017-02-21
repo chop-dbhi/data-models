@@ -51,6 +51,8 @@ ED = Emergency Department
 EI = Emergency Department Admit to Inpatient Hospital Stay (permissible substitution)
 IP = Inpatient Hospital Stay
 IS = Non-Acute Institutional Stay
+OS = Observation Stay
+IC = Institutional Professional Consult (permissible substitution)
 OA = Other Ambulatory Visit
 NI = No information
 UN = Unknown
@@ -59,11 +61,15 @@ OT = Other","Encounter type.
 Details of categorical definitions:
 Ambulatory Visit: Includes visits at outpatient clinics, physician offices, same day/ambulatory surgery centers, urgent care facilities, and other same-day ambulatory hospital encounters, but excludes emergency department encounters.
 
-Emergency Department (ED): Includes ED encounters that become inpatient stays (in which case inpatient stays would be a separate encounter). Excludes urgent care visits. ED claims should be pulled before hospitalization claims to ensure that ED with subsequent admission won't be rolled up in the hospital event.
+Emergency Department (ED): Includes ED encounters that become inpatient stays (in which case inpatient stays would be a separate encounter). Excludes urgent care visits. ED claims should be pulled before hospitalization claims to ensure that ED with subsequent admission won't be rolled up in the hospital event.   Does not include observation stays, where known (guidance added in v3.1).
 
 Emergency Department Admit to Inpatient Hospital Stay: Permissible substitution for preferred state of separate ED and IP records. Only for use with data sources where the individual records for ED and IP cannot be distinguished (new to v2.0).
 
-Inpatient Hospital Stay: Includes all inpatient stays, including: same-day hospital discharges, hospital transfers, and acute hospital care where the discharge is after the admission date.
+Inpatient Hospital Stay: Includes all inpatient stays, including: same-day hospital discharges, hospital transfers, and acute hospital care where the discharge is after the admission date.  Does not include observation stays, where known (guidance added in v3.1).
+
+Observation Stay: “Hospital outpatient services given to help the can be discharged. Observations services may be given in the emergency department or another area of the hospital.” Definition from Medicare, CMS Product No. 11435, https://www.medicare.gov/Pubs/pdf/11435.pdf (new value set item added in v3.1).
+
+Institutional Professional Consult: Permissible substitution when services provided by a medical professional cannot be combined with the given encounter record, such as a specialist consult in an inpatient setting; this situation can be common with claims data sources (new value set item added in v3.1).
 
 Non-Acute Institutional Stay: Includes hospice, skilled nursing facility (SNF), rehab center, nursing home, residential, overnight non-hospital dialysis and other non-hospital stays.
 
