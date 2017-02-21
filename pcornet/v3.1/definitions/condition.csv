@@ -30,7 +30,7 @@ SM = SNOMED CT
 HP = Human Phenotype Ontology
 AG = Algorithmic
 NI = No information
-UN = Unknown OT=Other,"Condition code type.
+UN = Unknown OT=Other","Condition code type.
 
 Please note: The “Other” category is meant to identify internal use ontologies and codes.
 Value set items updated to reference both the Clinical Modification (CM) and the Procedure Coding (PCS) context for ICD-9, ICD-10, and ICD-11 (update made in v3.1).",,
