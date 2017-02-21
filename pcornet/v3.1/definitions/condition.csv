@@ -1,14 +1,14 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description,,
-pcornet,v3,condition,condition,YES,,,,NO,,,,"Condition code. 
+pcornet,v3.1,condition,condition,YES,,,,NO,,,,"Condition code. 
 
 Leading zeroes and different levels of decimal precision are permissible in this field. Please populate the exact textual value of this diagnosis code, but remove source-specific suffixes and prefixes. Other codes should be listed as recorded in the source data.",,
-pcornet,v3,condition,conditionid,YES,,,,,,,,"Arbitrary identifier for each unique record. Does not need to be persistent across refreshes, and may be created by methods such as sequence or GUID.",,
-pcornet,v3,condition,condition_source,NO,,,,NO,,PR;HC;RG;NI;UN;OT,PR=Patient-reported medical history HC=Healthcare problem list RG=Registry cohort PC=PCORnetdefined condition algorithm NI=No information UN=Unknown OT=Other,"Please note: The “Patient-reported” category can include reporting by a proxy, such as patient’s family or guardian.
+pcornet,v3.1,condition,conditionid,YES,,,,,,,,"Arbitrary identifier for each unique record. Does not need to be persistent across refreshes, and may be created by methods such as sequence or GUID.",,
+pcornet,v3.1,condition,condition_source,NO,,,,NO,,PR;HC;RG;NI;UN;OT,PR=Patient-reported medical history HC=Healthcare problem list RG=Registry cohort PC=PCORnetdefined condition algorithm NI=No information UN=Unknown OT=Other,"Please note: The “Patient-reported” category can include reporting by a proxy, such as patient’s family or guardian.
 
 Guidance: “Registry cohort” generally refers to cohorts of patients flagged with a certain set of characteristics for management within a health system.
 
 “Patient-reported” can include self-reported medical history and/or current medical conditions, not captured via healthcare problem lists or registry cohorts.",,
-pcornet,v3,condition,condition_status,NO,,,,NO,,AC;RS;IN;NI;UN;OT,"AC=Active
+pcornet,v3.1,condition,condition_status,NO,,,,NO,,AC;RS;IN;NI;UN;OT,"AC=Active
 RS=Resolved
 IN=Inactive
 NI=No information
@@ -16,15 +16,15 @@ UN=Unknown
 OT=Other","Condition status corresponding with REPORT_DATE.
 
 Guidance: The value of IN=Inactive may be used in situations where a condition is not resolved, but is not currently active (for example, psoriasis).",,
-pcornet,v3,condition,condition_type,YES,,,,NO,,09;10;11;SM;HP;NI;UN;OT,09=ICD-9-CM 10=ICD-10-CM 11=ICD-11-CM SM=SNOMED CT HP=Human Phenotype Ontology AG=Algorithmic NI=No information UN=Unknown OT=Other,"Condition code type. 
+pcornet,v3.1,condition,condition_type,YES,,,,NO,,09;10;11;SM;HP;NI;UN;OT,09=ICD-9-CM 10=ICD-10-CM 11=ICD-11-CM SM=SNOMED CT HP=Human Phenotype Ontology AG=Algorithmic NI=No information UN=Unknown OT=Other,"Condition code type. 
 
 Please note: The “Other” category is meant to identify internal use ontologies and codes.",,
-pcornet,v3,condition,encounterid,NO,ENCOUNTER,ENCOUNTERID,,NO,,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the item was collected as part of a healthcare encounter. If more than one encounter association is present, this field should be populated with the ID of the encounter when the condition was first entered into the system. However, please note that many conditions may be recorded outside of an encounter context.",,
-pcornet,v3,condition,onset_date,NO,,,,,,,,Please note that onset date is a very precise concept. Please do not map data unless they precisely match this definition. The REPORT_DATE concept may be a better fit for many systems.,Please note that onset date is a very precise concept. Please do not map data unless they precisely match this definition. The REPORT_DATE concept may be a better fit for many systems.,Please note that onset date is a very precise concept. Please do not map data unless they precisely match this definition. The REPORT_DATE concept may be a better fit for many systems.
-pcornet,v3,condition,patid,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier. Used to link across tables.,,
-pcornet,v3,condition,raw_condition,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",,
-pcornet,v3,condition,raw_condition_source,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",,
-pcornet,v3,condition,raw_condition_status,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",,
-pcornet,v3,condition,raw_condition_type,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",,
-pcornet,v3,condition,report_date,YES,,,YYYY-MM-DD,NO,DATE,,,"Date condition was noted, which may be the date when it was recorded by a provider or nurse, or the date on which the patient reported it. Please note that this date may not correspond to onset date.",,
-pcornet,v3,condition,resolve_date,NO,,,YYYY-MM-DD,NO,DATE,,,"Date condition was resolved, if resolution of a transient condition has been achieved. A resolution date is not generally expected for chronic conditions, even if the condition is managed.",,
+pcornet,v3.1,condition,encounterid,NO,ENCOUNTER,ENCOUNTERID,,NO,,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the item was collected as part of a healthcare encounter. If more than one encounter association is present, this field should be populated with the ID of the encounter when the condition was first entered into the system. However, please note that many conditions may be recorded outside of an encounter context.",,
+pcornet,v3.1,condition,onset_date,NO,,,,,,,,Please note that onset date is a very precise concept. Please do not map data unless they precisely match this definition. The REPORT_DATE concept may be a better fit for many systems.,Please note that onset date is a very precise concept. Please do not map data unless they precisely match this definition. The REPORT_DATE concept may be a better fit for many systems.,Please note that onset date is a very precise concept. Please do not map data unless they precisely match this definition. The REPORT_DATE concept may be a better fit for many systems.
+pcornet,v3.1,condition,patid,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier. Used to link across tables.,,
+pcornet,v3.1,condition,raw_condition,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",,
+pcornet,v3.1,condition,raw_condition_source,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",,
+pcornet,v3.1,condition,raw_condition_status,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",,
+pcornet,v3.1,condition,raw_condition_type,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.",,
+pcornet,v3.1,condition,report_date,YES,,,YYYY-MM-DD,NO,DATE,,,"Date condition was noted, which may be the date when it was recorded by a provider or nurse, or the date on which the patient reported it. Please note that this date may not correspond to onset date.",,
+pcornet,v3.1,condition,resolve_date,NO,,,YYYY-MM-DD,NO,DATE,,,"Date condition was resolved, if resolution of a transient condition has been achieved. A resolution date is not generally expected for chronic conditions, even if the condition is managed.",,

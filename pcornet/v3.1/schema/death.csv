@@ -1,6 +1,6 @@
 model,version,table,field,type,length,precision,scale,default
-pcornet,v3,death,patid,string,,,,
-pcornet,v3,death,death_date,date,,,,
-pcornet,v3,death,death_date_impute,string,2,,,
-pcornet,v3,death,death_source,string,2,,,
-pcornet,v3,death,death_match_confidence,string,2,,,
+pcornet,v3.1,death,patid,string,,,,
+pcornet,v3.1,death,death_date,date,,,,
+pcornet,v3.1,death,death_date_impute,string,2,,,
+pcornet,v3.1,death,death_source,string,2,,,
+pcornet,v3.1,death,death_match_confidence,string,2,,,

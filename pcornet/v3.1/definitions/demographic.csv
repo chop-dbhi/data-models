@@ -1,22 +1,22 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
-pcornet,v3,demographic,biobank_flag,NO,,,,NO,,Y;N,"Y = Yes
+pcornet,v3.1,demographic,biobank_flag,NO,,,,NO,,Y;N,"Y = Yes
 N = No","Flag to indicate that one or more biobanked specimens are stored and available for research use. Examples of biospecimens could include plasma, urine, or tissue. If biospecimens are available, locally maintained â€œmapping tablesâ€ù would be necessary to map between the DEMOGRAPHIC record and the originating biobanking system(s).
 
 If no known biobanked specimens are available, this field should be marked â€œNoâ€ù."
-pcornet,v3,demographic,birth_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date of birth.
-pcornet,v3,demographic,birth_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time of birth.
-pcornet,v3,demographic,hispanic,NO,,,,NO,,Y;N;R;NI;UN;OT,"Y = Yes
+pcornet,v3.1,demographic,birth_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date of birth.
+pcornet,v3.1,demographic,birth_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time of birth.
+pcornet,v3.1,demographic,hispanic,NO,,,,NO,,Y;N;R;NI;UN;OT,"Y = Yes
 N = No
 R = Refuse to answer
 NI = No information
 UN = Unknown
 OT = Other","A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
-pcornet,v3,demographic,patid,YES,,,,NO,,,,"Arbitrary person-level identifier used to link across tables. 
+pcornet,v3.1,demographic,patid,YES,,,,NO,,,,"Arbitrary person-level identifier used to link across tables. 
 
 PATID is a pseudoidentifier with a consistent crosswalk to the true identifier retained by the source Data Partner. For analytical data sets requiring patient-level data, only the pseudoidentifier is used to link across all information belonging to a patient.
 
 The PATID must be unique within the data source being queried. Creating a unique identifier within a CDRN would be beneficial and acceptable. The PATID is not the basis for linkages across partners."
-pcornet,v3,demographic,race,NO,,,,NO,,01;02;03;04;05;06;07;NI;UN;OT,"01 = American Indian or Alaska Native
+pcornet,v3.1,demographic,race,NO,,,,NO,,01;02;03;04;05;06;07;NI;UN;OT,"01 = American Indian or Alaska Native
 02 = Asian
 03 = Black or African American
 04 = Native Hawaiian or Other Pacific Islander
@@ -37,10 +37,10 @@ Black or African American: A person having origins in any of the black racial gr
 Native Hawaiian or Other Pacific Islander: A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands.
 
 White: A person having origins in any of the original peoples of Europe, the Middle East, or North Africa."
-pcornet,v3,demographic,raw_hispanic,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
-pcornet,v3,demographic,raw_race,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
-pcornet,v3,demographic,raw_sex,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
-pcornet,v3,demographic,sex,NO,,,,NO,,A;F;M;NI;UN;OT,"A = Ambiguous 
+pcornet,v3.1,demographic,raw_hispanic,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,v3.1,demographic,raw_race,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,v3.1,demographic,raw_sex,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,v3.1,demographic,sex,NO,,,,NO,,A;F;M;NI;UN;OT,"A = Ambiguous 
 F = Female
 M = Male
 NI = No information
