@@ -16,7 +16,6 @@ pcornet,v3.1,primary key,pcornet_trial,patid,xpk_pcornet_trial
 pcornet,v3.1,primary key,pcornet_trial,trialid,xpk_pcornet_trial
 pcornet,v3.1,primary key,pcornet_trial,participantid,xpk_pcornet_trial
 pcornet,v3.1,primary key,death,patid,xpk_death
-pcornet,v3.1,primary key,death,death_date,xpk_death
 pcornet,v3.1,primary key,death,death_source,xpk_death
 pcornet,v3.1,primary key,death_cause,patid,xpk_death_cause
 pcornet,v3.1,primary key,death_cause,death_cause,xpk_death_cause
