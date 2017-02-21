@@ -50,5 +50,5 @@ v3.1 definition updated: Sex assigned at birth
 v2.0 guidance added: The â€œAmbiguousâ€ù category may be used for individuals who are physically undifferentiated from birth. The â€œOtherâ€ù category may be used for individuals who are undergoing gender re-assignment."
 pcornet,v3.1,demographic,raw_sexual_orientation,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 pcornet,v3.1,demographic,raw_gender_identity,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
-pcornet,v3.1,demographic,sexual_orientation,NO,,,,NO,,AS;BI;GA;LE;QU;QS;ST;SE;MU;DC;NI;UN;OT,"Sexual orientation.  New field in v3.1"
-pcornet,v3.1,demographic,gender_identity,NO,,,,NO,,M;F;TM;TF;GQ;SE;MU;DC;NI;UN;OT,"Current gender identity.  New field in v3.1"
+pcornet,v3.1,demographic,sexual_orientation,NO,,,,NO,,AS;BI;GA;LE;QU;QS;ST;SE;MU;DC;NI;UN;OT,"Sexual orientation.  New field in v3.1",
+pcornet,v3.1,demographic,gender_identity,NO,,,,NO,,M;F;TM;TF;GQ;SE;MU;DC;NI;UN;OT,"Current gender identity.  New field in v3.1",
