@@ -1,7 +1,8 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description,,
 pcornet,v3.1,condition,condition,YES,,,,NO,,,,"Condition code.
 
-Some codes will contain leading zeroes, and different levels of decimal precision may also be present. This field is a character field, not numeric, to accommodate these coding conventions. Please populate the exact value of this diagnosis code, but remove any source-specific suffixes and prefixes. (Description updated in v3.1.)",,
+Some codes will contain leading zeroes, and different levels of decimal precision may also be present. This field is a character field, not numeric, to accommodate these coding conventions. Please populate the exact value of this diagnosis code, but remove any source-specific suffixes and prefixes.
+(Description updated in v3.1.)",,
 pcornet,v3.1,condition,conditionid,YES,,,,,,,,"Arbitrary identifier for each unique record. Does not need to be persistent across refreshes, and may be created by methods such as sequence or GUID.",,
 pcornet,v3.1,condition,condition_source,NO,,,,NO,,PR;HC;RG;NI;UN;OT,"PR = Patient-reported medical history
 HC = Healthcare problem list
