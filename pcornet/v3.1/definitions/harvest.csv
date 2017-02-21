@@ -1,12 +1,12 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
-pcornet,v3.1,harvest,networkid,YES,,,,,,,,This identifier is assigned by DSSNI operations
-pcornet,v3.1,harvest,network_name,NO,,,,,,,,Descriptive name of the network
-pcornet,v3.1,harvest,datamartid,YES,,,,,,,,This identifier is assigned by DSSNI operations
-pcornet,v3.1,harvest,datamart_name,NO,,,,,,,,Descriptive name of the datamart 
+pcornet,v3.1,harvest,networkid,YES,,,,,,,,This identifier is assigned by the PCORnet Distributed Research Network Operations Center (DRN OC) (description updated in v3.1)
+pcornet,v3.1,harvest,network_name,NO,,,,,,,,Descriptive name of the network.  This identifier is assigned by the PCORnet Distributed Research Network Operations Center (DRN OC) (description updated in v3.1)
+pcornet,v3.1,harvest,datamartid,YES,,,,,,,,This identifier is assigned by the PCORnet Distributed Research Network Operations Center (DRN OC) (description updated in v3.1)
+pcornet,v3.1,harvest,datamart_name,NO,,,,,,,,Descriptive name of the datamart. This identifier is assigned by the PCORnet Distributed Research Network Operations Center (DRN OC) (description updated in v3.1)
 pcornet,v3.1,harvest,datamart_platform,NO,,,,,,,01=SQL Server 02=Oracle 03=PostgreSQL 04=MySQL 05=SAS NI=No information UN=Unknown OT=Other,
-pcornet,v3.1,harvest,cdm_version,NO,,,,,,,,"Version currently implemented within this datamart (for example, 1.0, 2.0, 3.0)."
-pcornet,v3.1,harvest,datamart_claims,NO,,,,,,,01=Not present 02=Present NI=No information UN=Unknown OT=Other,Datamart includes claims data source(s) 
-pcornet,v3.1,harvest,datamart_ehr,NO,,,,,,,01=Not present 02=Present NI=No information UN=Unknown OT=Other,Datamart includes EHR data source(s) 
+pcornet,v3.1,harvest,cdm_version,NO,,,,,,,,"Version currently implemented within this datamart (for example, 1.0, 2.0, 3.0).   Number precision and scale updated in v3.1."
+pcornet,v3.1,harvest,datamart_claims,NO,,,,,,,01=Not present 02=Present NI=No information UN=Unknown OT=Other,Datamart includes claims data source(s)
+pcornet,v3.1,harvest,datamart_ehr,NO,,,,,,,01=Not present 02=Present NI=No information UN=Unknown OT=Other,Datamart includes EHR data source(s)
 pcornet,v3.1,harvest,birth_date_mgmt,NO,,,,,,,01=No imputation or obfuscation 02=Imputation for incomplete dates 03=Date obfuscation 04=Both imputation and obfuscation NI=No information UN=Unknown OT=Other,Data management strategy currently present in the BIRTH_DATE field on the DEMOGRAPHIC table Please see notes for additional definitions.
 pcornet,v3.1,harvest,enr_start_date_mgmt,NO,,,,,,,01=No imputation or obfuscation 02=Imputation for incomplete dates 03=Date obfuscation 04=Both imputation and obfuscation NI=No information UN=Unknown OT=Other,Data management strategy currently present in the ENR_START_DATE field on the ENROLLMENT table Please see notes for additional definitions.
 pcornet,v3.1,harvest,enr_end_date_mgmt,NO,,,,,,,01=No imputation or obfuscation 02=Imputation for incomplete dates 03=Date obfuscation 04=Both imputation and obfuscation NI=No information UN=Unknown OT=Other,Data management strategy currently present in the ENR_END_DATE field on the ENROLLMENT table Please see notes for additional definitions.
