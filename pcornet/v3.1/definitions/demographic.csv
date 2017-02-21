@@ -11,7 +11,7 @@ R = Refuse to answer
 NI = No information
 UN = Unknown
 OT = Other","A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
-pcornet,v3.1,demographic,patid,YES,,,,NO,,,,"Arbitrary person-level identifier used to link across tables. 
+pcornet,v3.1,demographic,patid,YES,,,,NO,,,,"Arbitrary person-level identifier used to link across tables.
 
 PATID is a pseudoidentifier with a consistent crosswalk to the true identifier retained by the source Data Partner. For analytical data sets requiring patient-level data, only the pseudoidentifier is used to link across all information belonging to a patient.
 
@@ -40,11 +40,15 @@ White: A person having origins in any of the original peoples of Europe, the Mid
 pcornet,v3.1,demographic,raw_hispanic,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 pcornet,v3.1,demographic,raw_race,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 pcornet,v3.1,demographic,raw_sex,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
-pcornet,v3.1,demographic,sex,NO,,,,NO,,A;F;M;NI;UN;OT,"A = Ambiguous 
+pcornet,v3.1,demographic,sex,NO,,,,NO,,A;F;M;NI;UN;OT,"A = Ambiguous
 F = Female
 M = Male
 NI = No information
 UN = Unknown
-OT = Other","Administrative sex. 
-
+OT = Other","Administrative sex.
+v3.1 definition updated: Sex assigned at birth
 v2.0 guidance added: The â€œAmbiguousâ€ù category may be used for individuals who are physically undifferentiated from birth. The â€œOtherâ€ù category may be used for individuals who are undergoing gender re-assignment."
+pcornet,v3.1,demographic,raw_sexual_orientation,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,v3.1,demographic,raw_gender_identity,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,v3.1,demographic,sexual_orientation,NO,,,,NO,,AS;BI;GA;LE;QU;QS;ST;SE;MU;DC;NI;UN;OT,"Sexual orientation.  New field in v3.1"
+pcornet,v3.1,demographic,gender_identity,NO,,,,NO,,M;F;TM;TF;GQ;SE;MU;DC;NI;UN;OT,"Current gender identity.  New field in v3.1"
