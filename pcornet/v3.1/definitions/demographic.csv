@@ -1,6 +1,6 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
 pcornet,v3.1,demographic,biobank_flag,NO,,,,NO,,Y;N,"Y = Yes
-N = No","Flag to indicate that one or more biobanked specimens are stored and available for research use. Examples of biospecimens could include plasma, urine, or tissue. If biospecimens are available, locally maintained "mapping tables" would be necessary to map between the DEMOGRAPHIC record and the originating biobanking system(s). If no known biobanked specimens are available, this field should be marked "No"."
+N = No","Flag to indicate that one or more biobanked specimens are stored and available for research use. Examples of biospecimens could include plasma, urine, or tissue. If biospecimens are available, locally maintained 'mapping tables' would be necessary to map between the DEMOGRAPHIC record and the originating biobanking system(s). If no known biobanked specimens are available, this field should be marked 'No'."
 pcornet,v3.1,demographic,birth_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date of birth.
 pcornet,v3.1,demographic,birth_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time of birth.
 pcornet,v3.1,demographic,hispanic,NO,,,,NO,,Y;N;R;NI;UN;OT,"Y = Yes
