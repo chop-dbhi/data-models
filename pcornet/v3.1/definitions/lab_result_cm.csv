@@ -11,7 +11,7 @@ NI=No information
 UN=Unknown
 OT=Other",Abnormal result indicator. This value comes from the source data; do not apply logic to create it.
 pcornet,v3.1,lab_result_cm,encounterid,NO,ENCOUNTER,ENCOUNTERID,,NO,,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the lab was collected as part of a healthcare encounter."
-pcornet,v3.1,lab_result_cm,lab_loinc,NO,,,,NO,,,,"Logical Observation Identifiers, Names, and Codes (LOINC) from the Regenstrief Institute. Results with local versions of LOINC codes (e.g., LOINC candidate codes) should be included in the RAW_table field, but the LOINC variable should be set to missing. Current LOINC codes are from 3-7 characters long but Regenstrief suggests a length of 10 for future growth. The last digit of the LOINC code is a check digit and is always preceded by a hyphen. All parts of the LOINC code, including the hyphen, must be included. Do not pad the LOINC code with leading zeros. 
+pcornet,v3.1,lab_result_cm,lab_loinc,NO,,,,NO,,,,"Logical Observation Identifiers, Names, and Codes (LOINC) from the Regenstrief Institute. Results with local versions of LOINC codes (e.g., LOINC candidate codes) should be included in the RAW_table field, but the LOINC variable should be set to missing. Current LOINC codes are from 3-7 characters long but Regenstrief suggests a length of 10 for future growth. The last digit of the LOINC code is a check digit and is always preceded by a hyphen. All parts of the LOINC code, including the hyphen, must be included. Do not pad the LOINC code with leading zeros.
 
 Please see the LOINC reference table for known LOINC codes for each LAB_NAME.
 "
@@ -25,25 +25,26 @@ LDL=Low-density lipoprotein
 INR=International normalized ratio
 TROP_I=Troponin I cardiac
 TROP_T_QL=Troponin T cardiac (qualitative)
-TROP_T_QN=Troponin T cardiac (quantitative)","Laboratory result common measure, a categorical identification for the type of test, which is harmonized across all contributing data partners.
+TROP_T_QN=Troponin T cardiac (quantitative)
+NI = No information
+UN = Unknown
+OT = Other","Laboratory result common measure, a categorical identification for the type of test, which is harmonized across all contributing data partners.
 
-Please note that it is possible for more than one LOINC code, CPT code, and/or local code to be associated with one LAB_NAME."
+Please note that it is possible for more than one LOINC code, CPT code, and/or local code to be associated with one LAB_NAME.
+"Value set modified in v3.1 to add “null value” options"
 pcornet,v3.1,lab_result_cm,lab_order_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date test was ordered.
 pcornet,v3.1,lab_result_cm,lab_px,NO,,,,NO,,,,"Optional variable for local and standard procedure codes, used to identify the originating order for the lab test."
-pcornet,v3.1,lab_result_cm,lab_px_type,NO,,,,NO,,09;10;11;C2;C3;C4;H3;HC;LC;ND;RE;NI;UN;OT,"09=ICD-9-CM
+pcornet,v3.1,lab_result_cm,lab_px_type,NO,,,,NO,,09;10;11;CH;LC;ND;RE;NI;UN;OT,"09=ICD-9-PCS
 10=ICD-10-PCS
 11=ICD-11-PCS
-C2=CPT Category II
-C3=CPT Category III
-C4=CPT-4 (i.e., HCPCS Level I)
-H3=HCPCS Level III
-HC=HCPCS (i.e., HCPCS Level II)
+CH = CPT or HCPCS
 LC=LOINC
 ND=NDC
 RE=Revenue
 NI=No information
 UN=Unknown
-OT=Other","Procedure code type, if applicable."
+OT=Other","Procedure code type, if applicable.
+Value set modified in v3.1 to combine CPT and HCPCS codes into one category; also, ICD-9 value set item typo corrected to specify ICD-9-PCS"
 pcornet,v3.1,lab_result_cm,lab_result_cm_id,YES,,,,,,,,"Arbitrary identifier for each unique LAB_RESULT_CM record. Does not need to be persistent across refreshes, and may be created by methods such as sequence or GUID."
 pcornet,v3.1,lab_result_cm,norm_modifier_high,NO,,,,NO,,EQ;LE;LT;NO;NI;UN;OT,"EQ=Equal
 LE=Less than or equal to
@@ -51,9 +52,9 @@ LT=Less than
 NO=No higher limit
 NI=No information
 UN=Unknown
-OT=Other","Modifier for NORM_RANGE_HIGH values. 
+OT=Other","Modifier for NORM_RANGE_HIGH values.
 
-For numeric results one of the following needs to be true: 
+For numeric results one of the following needs to be true:
 1) Both MODIFIER_LOW and MODIFIER_HIGH contain EQ (e.g. normal values fall in the range 3-10)
 2) MODIFIER_LOW contains GT or GE and MODIFIER_HIGH contains NO (e.g. normal values are >3 with no upper boundary)
 3) MODIFIER_HIGH contains LT or LE and MODIFIER_LOW contains NO (e.g. normal values are <=10 with no lower boundary)"
@@ -63,9 +64,9 @@ GT=Greater than
 NO=No lower limit
 NI=No information
 UN=Unknown
-OT=Other","Modifier for NORM_RANGE_LOW values. 
+OT=Other","Modifier for NORM_RANGE_LOW values.
 
-For numeric results one of the following needs to be true: 
+For numeric results one of the following needs to be true:
 1) Both MODIFIER_LOW and MODIFIER_HIGH contain EQ (e.g. normal values fall in the range 3-10)
 2) MODIFIER_LOW contains GT or GE and MODIFIER_HIGH contains NO (e.g. normal values are >3 with no upper boundary)
 3) MODIFIER_HIGH contains LT or LE and MODIFIER_LOW contains NO (e.g. normal values are <=10 with no lower boundary)"
@@ -99,10 +100,10 @@ LT=Less than
 TX=Text
 NI=No information
 UN=Unknown
-OT=Other","Modifier for result values. Any symbols in the RAW_RESULT value should be reflected in the RESULT_MODIFIER variable. 
+OT=Other","Modifier for result values. Any symbols in the RAW_RESULT value should be reflected in the RESULT_MODIFIER variable.
 
 For example, if the original source data value is ""<=200"" then RAW_RESULT=200 and RESULT_MODIFIER=LE. If the original source data value is text then RESULT_MODIFIER=TX. If the original source data value is a numeric value then RESULT_MODIFIER=EQ."
-pcornet,v3.1,lab_result_cm,result_num,NO,,,,NO,,,,Standardized/converted result for quantitative results. This variable should be null for qualitative results. Please see the reference tables for additional details.
+pcornet,v3.1,lab_result_cm,result_num,NO,,,,NO,,,,Standardized/converted result for quantitative results. Please see the Implementation Guidance for additional details (description updated for v3.1). v3.1 modification: SAS data type corrected to Numeric. Number precision and scale updated in v3.1.
 pcornet,v3.1,lab_result_cm,result_qual,NO,,,,NO,,"BORDERLINE;POSITIVE;NEGATIVE;UNDETERMINED;NI=No information;UN=Unknown;OT=Other
 ","BORDERLINE
 POSITIVE
@@ -110,9 +111,9 @@ NEGATIVE
 UNDETERMINED
 NI=No information
 UN=Unknown
-OT=Other",Standardized result for qualitative results. This variable should be NI for quantitative results. Please see the reference tables for additional details and information on acceptable values for each qualitative LAB_NAME.
+OT=Other",Standardized result for qualitative results. This variable should be NI for quantitative results. Please see the Implementation Guidance for additional details and information on acceptable values for each qualitative LAB_NAME (description updated in v3.1).
 pcornet,v3.1,lab_result_cm,result_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Result time.
-pcornet,v3.1,lab_result_cm,result_unit,NO,,,,NO,,,,Converted/standardized units for the result. Please see the standard abbreviations reference table for additional details.
+pcornet,v3.1,lab_result_cm,result_unit,NO,,,,NO,,,,Converted/standardized units for the result.  Please see the Implementation Guidance for additional details (description updated in v3.1).
 pcornet,v3.1,lab_result_cm,specimen_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date specimen was collected.
 pcornet,v3.1,lab_result_cm,specimen_source,NO,,,,NO,,BLOOD;CSF;PLASMA;PPP;SERUM;SR_PLS;URINE;NI;UN;OT,"BLOOD=blood
 CSF=cerebrospinal fluid
@@ -123,5 +124,5 @@ SR_PLS=serum/plasma
 URINE=urine
 NI=No information
 UN=Unknown
-OT=Other",Specimen source. All records will have a specimen source; some tests have several possible values for SPECIMEN_SOURCE. Please see the reference tables for additional details.
+OT=Other",Specimen source. All records will have a specimen source; some tests have several possible values for SPECIMEN_SOURCE. Please see the Implementation Guidance for additional details. (Description updated for v3.1.)
 pcornet,v3.1,lab_result_cm,specimen_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time specimen was collected.
