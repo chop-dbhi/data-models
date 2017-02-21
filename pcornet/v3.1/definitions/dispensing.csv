@@ -1,14 +1,14 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
 pcornet,v3.1,dispensing,dispense_amt,NO,,,,NO,UNITS,,,"Number of units (pills, tablets, vials) dispensed. Net amount per NDC per dispensing. This amount is typically found on the dispensing record. Positive values are expected.
 
-Important: Please do not calculate during CDM implementation. This field should only reflect originating source system calculations.
+Important: Please do not calculate during CDM implementation. This field should only reflect originating source system calculations.  Number precision and scale updated in v3.1.
 "
 pcornet,v3.1,dispensing,dispense_date,YES,,,YYYY-MM-DD,NO,DATE,,,Dispensing date (as close as possible to date the person received the dispensing).
 pcornet,v3.1,dispensing,dispense_sup,NO,,,,NO,DAYS,,,"Days supply. Number of days that the medication supports based on the number of doses as reported by the pharmacist. This amount is typically found on the dispensing record. Integer values are expected.
 
-Important: Please do not calculate during CDM implementation. This field should only reflect originating source system calculations."
+Important: Please do not calculate during CDM implementation. This field should only reflect originating source system calculations.  Number precision and scale updated in v3.1."
 pcornet,v3.1,dispensing,dispensingid,YES,,,,,,,,"Arbitrary identifier for each unique record. Does not need to be persistent across refreshes, and may be created by methods such as sequence or GUID."
-pcornet,v3.1,dispensing,ndc,YES,,,,NO,,,,"National Drug Code in the 11-digit, no-dash, HIPAA format. 
+pcornet,v3.1,dispensing,ndc,YES,,,,NO,,,,"National Drug Code in the 11-digit, no-dash, HIPAA format.
 
 Please expunge any place holders (such as dashes or extra digits).
 
