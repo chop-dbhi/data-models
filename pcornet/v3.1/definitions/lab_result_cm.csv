@@ -31,7 +31,7 @@ UN = Unknown
 OT = Other","Laboratory result common measure, a categorical identification for the type of test, which is harmonized across all contributing data partners.
 
 Please note that it is possible for more than one LOINC code, CPT code, and/or local code to be associated with one LAB_NAME.
-"Value set modified in v3.1 to add “null value” options"
+Value set modified in v3.1 to add 'null value' options"
 pcornet,v3.1,lab_result_cm,lab_order_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date test was ordered.
 pcornet,v3.1,lab_result_cm,lab_px,NO,,,,NO,,,,"Optional variable for local and standard procedure codes, used to identify the originating order for the lab test."
 pcornet,v3.1,lab_result_cm,lab_px_type,NO,,,,NO,,09;10;11;CH;LC;ND;RE;NI;UN;OT,"09=ICD-9-PCS
