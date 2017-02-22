@@ -4,7 +4,13 @@ pcornet,v3.1,condition,condition,YES,,,,NO,,,,"Condition code.
 Some codes will contain leading zeroes, and different levels of decimal precision may also be present. This field is a character field, not numeric, to accommodate these coding conventions. Please populate the exact value of this diagnosis code, but remove any source-specific suffixes and prefixes.
 (Description updated in v3.1.)",,
 pcornet,v3.1,condition,conditionid,YES,,,,,,,,"Arbitrary identifier for each unique record. Does not need to be persistent across refreshes, and may be created by methods such as sequence or GUID.",,
-pcornet,v3.1,condition,condition_source,NO,,,,NO,,PR;HC;RG;NI;UN;OT,"PR = Patient-reported medical history  HC = Healthcare problem list  RG = Registry cohort  PC = PCORnetdefined condition algorithm  NI = No information  UN = Unknown  OT = Other","Please note: The 'Patient-reported' category can include reporting by a proxy, such as patient's family or guardian.
+pcornet,v3.1,condition,condition_source,NO,,,,NO,,PR;HC;RG;NI;UN;OT,"PR = Patient-reported medical history
+HC = Healthcare problem list
+RG = Registry cohort
+PC = PCORnetdefined condition algorithm
+NI = No information
+UN = Unknown
+OT = Other","Please note: The 'Patient-reported' category can include reporting by a proxy, such as patient's family or guardian.
 Guidance: 'Registry cohort' generally refers to cohorts of patients flagged with a certain set of characteristics for management within a health system.
 'Patient-reported' can include self-reported medical history and/or current medical conditions,
 not captured via healthcare problem lists or registry cohorts.",,
