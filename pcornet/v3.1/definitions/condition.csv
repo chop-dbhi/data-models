@@ -11,9 +11,7 @@ PC = PCORnetdefined condition algorithm
 NI = No information
 UN = Unknown
 OT = Other","Please note: The 'Patient-reported' category can include reporting by a proxy, such as patient's family or guardian.
-
 Guidance: 'Registry cohort' generally refers to cohorts of patients flagged with a certain set of characteristics for management within a health system.
-
 'Patient-reported' can include self-reported medical history and/or current medical conditions,
 not captured via healthcare problem lists or registry cohorts.",,
 pcornet,v3.1,condition,condition_status,NO,,,,NO,,AC;RS;IN;NI;UN;OT,"AC = Active
