@@ -10,7 +10,7 @@ pcornet,v3.1,enrollment,"Enrollment is a concept that defines a period of time d
 pcornet,v3.1,harvest,Attributes associated with the specific PCORnet datamart implementation.,
 pcornet,v3.1,lab_result_cm,"Laboratory result Common Measures (CM) use specific types of quantitative and qualitative measurements from blood and other body specimens. The common measures are defined in the same way across all PCORnet networks, but this table can also include other types of lab results.",
 pcornet,v3.1,pcornet_trial,Patients who are enrolled in PCORnet clinical trials.,
-pcornet,v3.1,prescribing,Provider orders for medication dispensing and/or administration. These orders may take place in any setting, including the inpatient or outpatient basis.,
+pcornet,v3.1,prescribing,"Provider orders for medication dispensing and/or administration. These orders may take place in any setting, including the inpatient or outpatient basis.",
 pcornet,v3.1,pro_cm,"Patient-reported outcome Common Measures are standardized measures that are defined in the same way across all PCORnet networks. Each measure is recorded at the individual item level: an individual question/statement, paired with its standardized response options.",
 pcornet,v3.1,procedures,"Procedure codes indicate the discreet medical interventions and diagnostic testing, such as surgical procedures and lab orders, delivered within a healthcare context.",
 pcornet,v3.1,vital,"Vital signs (such as height, weight, and blood pressure) directly measure an individual’s current state of attributes.",
