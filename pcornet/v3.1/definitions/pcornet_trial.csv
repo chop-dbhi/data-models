@@ -1,0 +1,9 @@
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
+pcornet,v3.1,pcornet_trial,patid,YES,DEMOGRAPHIC,PATID,,,,,,Arbitrary person-level identifier used to link across tables.
+pcornet,v3.1,pcornet_trial,trialid,YES,,,,,,,,Each TRIALID is assigned by the PCORnet trial’s coordinating center.
+pcornet,v3.1,pcornet_trial,participantid,YES,,,,,,,,"Arbitrary person-level identifier used to uniquely identify a participant in a PCORnet trial. PARTICIPANTID is never repeated or reused for a specific clinical trial, and is generally assigned by trial-specific processes. It may be the same as a randomization ID."
+pcornet,v3.1,pcornet_trial,trial_siteid,NO,,,,,,,,Each TRIAL_SITEID is assigned by the PCORnet trial coordinating center.
+pcornet,v3.1,pcornet_trial,trial_enroll_date,NO,,,,,,,,Date on which the participant enrolled in the trial (generally coincides with trial consent process).
+pcornet,v3.1,pcornet_trial,trial_end_date,NO,,,,,,,,Date on which the participant completes participation in the trial.
+pcornet,v3.1,pcornet_trial,trial_withdraw_date,NO,,,,,,,,"If applicable, date on which the participant withdraws consent from the trial."
+pcornet,v3.1,pcornet_trial,trial_invite_code,NO,,,,,,,,"Textual strings used to uniquely identify invitations sent to potential participants, and allows acceptances to be associated back to the originating source. Where used, there should generally be a unique combination of PATID, TRIAL_NAME, and INVITE_CODE within each datamart. For example, this might include “co-enrollment ID strings” for e-mail invites or “verification codes” for letter invites"

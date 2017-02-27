@@ -1,0 +1,51 @@
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
+pcornet,v3.1,prescribing,prescribingid,YES,,,,,,,,"Arbitrary identifier for each unique PRESCRIBING record. Does not need to be persistent across refreshes, and may be created by methods such as sequence or GUID."
+pcornet,v3.1,prescribing,patid,YES,DEMOGRAPHIC,PATID,,,,,,Arbitrary person-level identifier used to link across tables.
+pcornet,v3.1,prescribing,encounterid,NO,ENCOUNTER,ENCOUNTERID,,,,,,Arbitrary encounter-level identifier. This is an optional relationship; the ENCOUNTERID should be present if the prescribing activity is directly associated with an encounter.
+pcornet,v3.1,prescribing,rx_providerid,NO,,,,,,,,Provider code for the provider who prescribed the medication. The provider code is a pseudoidentifier with a consistent crosswalk to the real identifier.
+pcornet,v3.1,prescribing,rx_order_date,NO,,,,,,,,Order date of the prescription by the provider.
+pcornet,v3.1,prescribing,rx_order_time,NO,,,,,,,,Order time of the prescription by the provider.
+pcornet,v3.1,prescribing,rx_start_date,NO,,,,,,,,Start date of order. This attribute may not be consistent with the date on which the patient actually begin taking the medication.
+pcornet,v3.1,prescribing,rx_end_date,NO,,,,,,,,End date of order (if available).
+pcornet,v3.1,prescribing,rx_quantity,NO,,,,,,,,Quantity ordered. Number precision and scale updated in v3.1.
+pcornet,v3.1,prescribing,rx_quantity_unit,NO,,,,NO,,PI;TA;VI;LI;SO;SU;OI;CR;PO;PA;IN;KI;DE;NI;UN;OT,"PI = Pill
+TA = Tablet
+VI = Vial
+LI = Liquid
+SO = Solution
+SU = Suspension
+OI = Ointment
+CR = Cream
+PO = Powder
+PA = Patch
+IN = Inhaler
+KI = Kit
+DE = Device
+NI = No information
+UN = Unknown
+OT = Other","The unit associated with the quantity prescribed. New field added in v3.1."
+pcornet,v3.1,prescribing,rx_refills,NO,,,,,,,,"Number of refills ordered (not including the original prescription). If no refills are ordered, the value should be zero.   Number precision and scale updated in v3.1."
+pcornet,v3.1,prescribing,rx_days_supply,NO,,,,,,,,"Number of days supply ordered, as specified by the prescription.   Number precision and scale updated in v3.1."
+pcornet,v3.1,prescribing,rx_frequency,NO,,,,,,01;02;03;04;05;06;07;08;09;NI;UN;OT,"01 = Every day 
+02=Two times a day (BID)
+03=Three times a day (TID)
+04=Four times a day (QID)
+05=Every morning
+06=Every afternoon
+07=Before meals
+08=After meals
+09=As needed (PRN)
+NI=No information
+UN=Unknown
+OT=Other",Specified frequency of medication.
+pcornet,v3.1,prescribing,rx_basis,NO,,,,,,01;02;NI;UN;OT,"01 = Order to Dispense
+02 = Order to administer
+NI = No information
+UN = Unknown
+OT = Other","Basis of the medication order. The PRESCRIBING table can contain orders for many different activities, and this field is intended to connect the provider’s prescribing order with how the order was fulfilled (such as outpatient dispensing or administration by a healthcare professional). (Value set items updated and field definition expanded in v3.1.)"
+pcornet,v3.1,prescribing,rxnorm_cui,NO,,,,,,,,"Where an RxNorm mapping exists for the source medication, this field contains the RxNorm concept identifier (CUI) at the highest possible specificity. If more than one option exists for mapping, the following ordered strategy may be adopted: 1)Semantic generic clinical drug 2)Semantic Branded clinical drug 3)Generic drug pack 4)Branded drug pack"
+pcornet,v3.1,prescribing,raw_rx_med_name,NO,,,,,,,,"Optional field for originating, full textual medication name from the source."
+pcornet,v3.1,prescribing,raw_rx_frequency,NO,,,,,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,v3.1,prescribing,raw_rxnorm_cui,NO,,,,,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.  v3.1 modification: field types changed to character because the National Library of Medicine specifies this variable as a character type."
+pcornet,v3.1,prescribing,raw_rx_quantity,NO,,,,,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
+pcornet,v3.1,prescribing,raw_rx_ndc,NO,,,,,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.."
