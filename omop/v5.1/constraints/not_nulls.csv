@@ -102,10 +102,9 @@ omop,v5.1,not null,,fact_relationship,relationship_concept_id
 omop,v5.1,not null,,payer_plan_period,person_id
 omop,v5.1,not null,,payer_plan_period,payer_plan_period_start_date
 omop,v5.1,not null,,payer_plan_period,payer_plan_period_end_date
-omop,v5.1,not null,,visit_cost,visit_occurrence_id
-omop,v5.1,not null,,procedure_cost,procedure_occurrence_id
-omop,v5.1,not null,,drug_cost,drug_exposure_id
-omop,v5.1,not null,,device_cost,device_exposure_id
+omop,v5.1,not null,,cost,cost_event_id
+omop,v5.1,not null,,cost,cost_domain_id
+omop,v5.1,not null,,cost,cost_type_concept_id
 omop,v5.1,not null,,cohort,cohort_definition_id
 omop,v5.1,not null,,cohort,subject_id
 omop,v5.1,not null,,cohort,cohort_start_date

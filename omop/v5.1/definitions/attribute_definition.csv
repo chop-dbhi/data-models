@@ -1,0 +1,6 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v5.1,attribute_definition,attribute_definition_id,Yes,,,,A unique identifier for each attribute. 
+omop,v5.1,attribute_definition,attribute_description,No,,,,A complete description of the attribute definition.
+omop,v5.1,attribute_definition,attribute_name,Yes,,,,A short description of the attribute. 
+omop,v5.1,attribute_definition,attribute_syntax,No,,,,Syntax to operationalize the attribute definition.
+omop,v5.1,attribute_definition,attribute_type_concept_id,Yes,concept,concept_id,,Type to define what kind of attribute definition the record represents and how the syntax may be executed.
