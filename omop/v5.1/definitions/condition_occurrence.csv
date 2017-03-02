@@ -12,5 +12,5 @@ omop,v5.1,condition_occurrence,person_id,Yes,person,person_id,,A foreign key ide
 omop,v5.1,condition_occurrence,provider_id,No,provider,provider_id,,A foreign key to the provider in the provider table who was responsible for determining (diagnosing) the condition. 
 omop,v5.1,condition_occurrence,stop_reason,No,,,,"The reason, if available, that the condition was no longer recorded, as indicated in the source data. Valid values include discharged, resolved, etc. "
 omop,v5.1,condition_occurrence,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,,A foreign key to the visit in the visit table during which the condition was determined (diagnosed). 
-omop,v5.1,condition_occurrence,condition_status_concept_id,No,concept,concept_id,A foreign key to the predefined concept in the standard vocabulary reflecting the condition status.
+omop,v5.1,condition_occurrence,condition_status_concept_id,No,concept,concept_id,,A foreign key to the predefined concept in the standard vocabulary reflecting the condition status.
 omop,v5.1,condition_occurrence,condition_status_source_value,No,,,,The source code for condition status as it appears in the source data.
