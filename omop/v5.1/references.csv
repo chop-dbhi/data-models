@@ -128,5 +128,5 @@ omop,v5.1,visit_occurrence,visit_source_concept_id,concept,concept_id,fpk_visit_
 omop,v5.1,visit_occurrence,visit_type_concept_id,concept,concept_id,fpk_visit_type_concept
 omop,v5.1,visit_occurrence,admitting_source_concept_id,concept,concept_id,fpk_visit_adm_src_concept
 omop,v5.1,visit_occurrence,discharge_to_concept_id,concept,concept_id,fpk_visit_disch_concept
-omop,v5.1,visit_occurrence,preceding_visit_occurrence_id,visit,visit_occurrence_id,fpk_visit_preceding_visit
+omop,v5.1,visit_occurrence,preceding_visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_visit_preceding_visit
 omop,v5.1,vocabulary,vocabulary_concept_id,concept,concept_id,fpk_vocabulary_concept
