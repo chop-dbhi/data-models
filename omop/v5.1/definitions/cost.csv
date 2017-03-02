@@ -7,17 +7,17 @@ omop,v5.1,cost,paid_patient_coinsurance,No,,,,"The amount paid by the person as 
 omop,v5.1,cost,paid_patient_copay,No,,,,The amount paid by the person as a fixed contribution to the expenses. Copay does not contribute to the out_of_pocket expenses. 
 omop,v5.1,cost,paid_ingredient_cost,No,,,,"The amount paid by the Payer to a pharmacy for the drug, excluding the amount paid for dispensing the drug. paid_ingredient_cost contributes to the paid_by_payer field if this field is populated with a nonzero value."
 omop,v5.1,cost,paid_patient_deductible,No,,,,The amount paid by the person that is counted toward the deductible defined by the payer plan (policy). 
-omop,v5.1,cost,paid_dispensing_fee,No,,,,The amount paid by the Payer to a pharmacy for dispensing a drug, excluding the amount paid for the drug ingredient. paid_dispensing_fee contributes to the paid_by_payer field if this field is populated with a nonzero value.
+omop,v5.1,cost,paid_dispensing_fee,No,,,,"The amount paid by the Payer to a pharmacy for dispensing a drug, excluding the amount paid for the drug ingredient. paid_dispensing_fee contributes to the paid_by_payer field if this field is populated with a nonzero value."
 omop,v5.1,cost,payer_plan_period_id,No,payer_plan_period,payer_plan_period_id,,"A foreign key to the payer_plan_period table, where the details of the payer, plan and family are stored. "
 omop,v5.1,cost,total_paid,No,,,,The total amount paid for the expenses of the procedure. 
 omop,v5.1,cost,total_charge,No,,,,"The total amount charged by some provider of goods or services (e.g. hospital, physician pharmacy, dme provider) to payers (insurance companies, the patient)."
 omop,v5.1,cost,total_cost,No,,,,"The cost incurred by the provider of goods or services."
 omop,v5.1,cost,cost_id,Yes,,,,A unique identifier for each procedure cost record. 
-omop,v5.1,cost,cost_event_id,Yes,,,,A foreign key identifier to the event (e.g. Measurement, Procedure, Visit, Drug Exposure, etc) record for which cost data are recorded.
-omop,v5.1,cost,cost_domain_id,Yes,concept,concept_id,,The concept representing the domain of the cost event, from which the corresponding table can be inferred that contains the entity for which cost information is recorded.
-omop,v5.1,cost,cost_type_concept_id,No,concept,concept_id,,A foreign key identifier to a concept in the CONCEPT table for the provenance or the source of the COST data: Calculated from insurance claim information, provider revenue, calculated from cost-to-charge ratio, reported from accounting database, etc.
+omop,v5.1,cost,cost_event_id,Yes,,,,"A foreign key identifier to the event (e.g. Measurement, Procedure, Visit, Drug Exposure, etc) record for which cost data are recorded."
+omop,v5.1,cost,cost_domain_id,Yes,concept,concept_id,,"The concept representing the domain of the cost event, from which the corresponding table can be inferred that contains the entity for which cost information is recorded."
+omop,v5.1,cost,cost_type_concept_id,No,concept,concept_id,,"A foreign key identifier to a concept in the CONCEPT table for the provenance or the source of the COST data: Calculated from insurance claim information, provider revenue, calculated from cost-to-charge ratio, reported from accounting database, etc."
 omop,v5.1,cost,amount_allowed,No,,,,The contracted amount agreed between the payer and provider.
 omop,v5.1,cost,revenue_code_concept_id,No,concept,concept_id,,A foreign key referring to a Standard Concept ID in the Standardized Vocabularies for Revenue codes.
 omop,v5.1,cost,drg_concept_id,No,concept,concept_id,,A foreign key referring to a Standard Concept ID in the Standardized Vocabularies for DRG codes.
-omop,v5.1,cost,revenue_code_source_value,No,,,,The source code for the Revenue code as it appears in the source data, stored here for reference.
+omop,v5.1,cost,revenue_code_source_value,No,,,,"The source code for the Revenue code as it appears in the source data, stored here for reference."
 omop,v5.1,cost,drg_source_value,No,,,,"The source code for the 3-digit DRG source code as it appears in the source data, stored here for reference."
