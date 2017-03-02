@@ -13,7 +13,6 @@ omop,v5,drug_strength,The DRUG_STRENGTH table contains structured content about 
 omop,v5,fact_relationship,"The fact relationship domain contains details of the relationships between facts within one domain or across two domains, and the nature of the relationship."
 omop,v5,location,"Physical addresses of patients, organizations and care sites "
 omop,v5,measurement,The measurement domain captures measurement orders and measurement results. The measurement domain can contain laboratory results and vital signs.
-omop,v5,measurement_organism,The measurement organism table contains organism information related to laboratory culture results in the measurement table.
 omop,v5,observation,"Observations are clinical facts, such as laboratory tests, signs/symptoms, which are not captured within other CDM tables"
 omop,v5,observation_period,"Time intervals during which health care information, such as drugs, conditions, and other clinical observations, may be available "
 omop,v5,person,Demographic information about a Person 
@@ -22,9 +21,7 @@ omop,v5,provider,Information about health care providers
 omop,v5,relationship,"The RELATIONSHIP table provides a reference list of all allowable types of relationships that can be used to associate any two concepts in the concept relationship table. Relationships are classified as hierarchical (parent-child) or non-hierarchical, and are used to determine which concept relationship records should be included in the computation of the concept ancestor table. "
 omop,v5,source_to_concept_map,"The SOURCE_TO_CONCEPT_MAP table is a legacy data structure within the OMOP Common Data Model, recommended for use in extract, transform, and load (ETL) processes to maintain local source codes which are not available as concepts in the Standardized Vocabularies, and to establish mappings for each source code into a standard concept that can be used to populate the Common Data Model tables. The source to concept map table is no longer populated with content within the Standardized Vocabularies published to the OMOP community. "
 omop,v5,visit_occurrence,Visits for health care services of the Person
-omop,v5,visit_payer,The visit payer table documents insurance information as it relates to a visit in visit_occurrence. For this reason the key of this table will be visit_occurrence_id and visit_payer_id.
 omop,v5,vocabulary,The VOCABULARY table includes a list of the vocabularies collected from various sources or created de novo by the OMOP community. This reference table is populated with a single record for each vocabulary source and includes a descriptive name and other associated attributes for the vocabulary.
-omop,v5,adt_occurrence,"The adt_occurrence table contains information about distinct admission, discharge, or transfer events that occur as part of a clinical visit."
 omop,v5,dose_era,A Dose Era is defined as a span of time when the Person is assumed to be exposed to a constant dose of a specific active ingredient.
 omop,v5,drug_era,A Drug Era is defined as a span of time when the Person is assumed to be exposed to a particular active ingredient.
 omop,v5,condition_era,A Condition Era is defined as a span of time when the Person is assumed to have a given condition. 
@@ -34,10 +31,10 @@ omop,v5,cohort_attribute,"The cohort_attribute table contains attributes assoica
 omop,v5,cohort_definition,The cohort definition table contains records to define each derived cohort through an associated description and syntax.
 omop,v5,cohort,The COHORT table contains records derived as a set of subjects that satisfy a given set of inclusion criteria for a duration of time.
 omop,v5,device_cost,The DEVICE_COST table captures the cost of a medical device or supply used on a Person.
-omop,v5,device_exposure,The device exposure domain captures records about a personÕs inferred exposure to a foreign physical object or instrument that which is used for diagnostic or therapeutic purposes through a mechanism beyond chemical action.
-omop,v5,drug_cost,ÊThe Drug Cost table captures records indicating the cost of a Drug Exposure.
+omop,v5,device_exposure,The device exposure domain captures records about a personï¿½s inferred exposure to a foreign physical object or instrument that which is used for diagnostic or therapeutic purposes through a mechanism beyond chemical action.
+omop,v5,drug_cost,ï¿½The Drug Cost table captures records indicating the cost of a Drug Exposure.
 omop,v5,note,The NOTE table captures unstructured information that was recorded by a provider or a patient in free text notes on a given date.
 omop,v5,payer_plan_period,The PAYER_PLAN_PERIOD table captures records that detail the period of time that a person is continuously enrolled under a specific health plan benefit structure from a given payer.
 omop,v5,procedure_cost,The PROCEDURE_COST table captures the cost of a Procedure performed on a Person.
-omop,v5,specimen,ÊThe specimen domain contains the records identifying each biological sample from a person.
+omop,v5,specimen,ï¿½The specimen domain contains the records identifying each biological sample from a person.
 omop,v5,visit_cost,"The Visit Cost table captures the costs of health visit of a patient which are not itemized to specific procedures, drugs, or devices used within the encounter."
