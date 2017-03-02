@@ -1,0 +1,11 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v5.1,cdm_source,cdm_etl_reference,string,255,,,
+omop,v5.1,cdm_source,cdm_holder,string,255,,,
+omop,v5.1,cdm_source,cdm_release_date,date,,,,
+omop,v5.1,cdm_source,cdm_source_abbreviation,string,25,,,
+omop,v5.1,cdm_source,cdm_source_name,string,255,,,
+omop,v5.1,cdm_source,cdm_version,string,10,,,
+omop,v5.1,cdm_source,source_description,clob,,,,
+omop,v5.1,cdm_source,source_documentation_reference,string,255,,,
+omop,v5.1,cdm_source,source_release_date,date,,,,
+omop,v5.1,cdm_source,vocabulary_version,string,20,,,

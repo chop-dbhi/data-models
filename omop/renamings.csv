@@ -6,3 +6,4 @@ omop,v4,drug_exposure,prescribing_provider_id,v5,drug_exposure,provider_id
 omop,v4,procedure_occurrence,associated_provider_id,v5,procedure_occurrence,provider_id
 omop,v4,visit_occurrence,place_of_service_concept_id,v5,visit_occurrence,visit_concept_id
 omop,v4,visit_occurrence,place_of_service_source_value,v5,visit_occurrence,visit_source_value
+omop,v5,person,time_of_birth,v5.1,person,birth_datetime

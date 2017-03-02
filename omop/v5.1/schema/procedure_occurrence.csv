@@ -1,0 +1,13 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v5,procedure_occurrence,modifier_concept_id,integer,,,,
+omop,v5,procedure_occurrence,person_id,integer,,,,
+omop,v5,procedure_occurrence,procedure_concept_id,integer,,,,
+omop,v5,procedure_occurrence,procedure_date,date,,,,
+omop,v5,procedure_occurrence,procedure_occurrence_id,integer,,,,
+omop,v5,procedure_occurrence,procedure_source_concept_id,integer,,,,
+omop,v5,procedure_occurrence,procedure_source_value,string,50,,,
+omop,v5,procedure_occurrence,procedure_type_concept_id,integer,,,,
+omop,v5,procedure_occurrence,provider_id,integer,,,,
+omop,v5,procedure_occurrence,qualifier_source_value,string,50,,,
+omop,v5,procedure_occurrence,quantity,integer,,,,
+omop,v5,procedure_occurrence,visit_occurrence_id,integer,,,,

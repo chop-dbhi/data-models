@@ -1,0 +1,8 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v5.1,cohort_attribute,attribute_definition_id,Yes,attribute_definition,attribute_definition_id,,A foreign key to a record in the ATTRIBUTE_DEFINITION table containing relevant attribute definition information. 
+omop,v5.1,cohort_attribute,cohort_definition_id,Yes,cohort_definition,cohort_definition_id,,A foreign key to a record in the COHORT_DEFINITION table containing relevant Cohort definition information. 
+omop,v5.1,cohort_attribute,cohort_end_date,Yes,,,,"The date when the cohort definition criteria for the person, provider or visit no longer match or the cohort membership was terminated. "
+omop,v5.1,cohort_attribute,cohort_start_date,Yes,,,,"The date when the cohort definition criteria for the person, provider or visit first match. "
+omop,v5.1,cohort_attribute,subject_id,Yes,"person, provider, visit_occurrence","person_id, provider_id, visit_occurrence_id",,"A foreign key to the subject in the cohort. These could be referring to records in the PERSON, PROVIDER, or VISIT_OCCURRENCE table. "
+omop,v5.1,cohort_attribute,value_as_concept_id,No,concept,concept_id,,The attribute result stored as a concept id. This is applicable to attributes where the result is expressed as a categorical value. 
+omop,v5.1,cohort_attribute,value_as_number,No,,,,"The attribute result stored as a number. This is applicable to attributes where the result is expressed as a numeric value, such as calculated entities (e.g. age, BMI) or composite scales (e.g. Charlson index). "
