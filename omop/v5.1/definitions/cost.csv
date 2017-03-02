@@ -15,7 +15,7 @@ omop,v5.1,cost,total_cost,No,,,,"The cost incurred by the provider of goods or s
 omop,v5.1,cost,cost_id,Yes,,,,A unique identifier for each procedure cost record. 
 omop,v5.1,cost,cost_event_id,Yes,,,,A foreign key identifier to the event (e.g. Measurement, Procedure, Visit, Drug Exposure, etc) record for which cost data are recorded.
 omop,v5.1,cost,cost_domain_id,Yes,concept,concept_id,,The concept representing the domain of the cost event, from which the corresponding table can be inferred that contains the entity for which cost information is recorded.
-omop,v5.1,cost,cost_type_concept_id,Yes,concept,concept_id,,A foreign key identifier to a concept in the CONCEPT table for the provenance or the source of the COST data: Calculated from insurance claim information, provider revenue, calculated from cost-to-charge ratio, reported from accounting database, etc.
+omop,v5.1,cost,cost_type_concept_id,No,concept,concept_id,,A foreign key identifier to a concept in the CONCEPT table for the provenance or the source of the COST data: Calculated from insurance claim information, provider revenue, calculated from cost-to-charge ratio, reported from accounting database, etc.
 omop,v5.1,cost,amount_allowed,No,,,,The contracted amount agreed between the payer and provider.
 omop,v5.1,cost,revenue_code_concept_id,No,concept,concept_id,,A foreign key referring to a Standard Concept ID in the Standardized Vocabularies for Revenue codes.
 omop,v5.1,cost,drg_concept_id,No,concept,concept_id,,A foreign key referring to a Standard Concept ID in the Standardized Vocabularies for DRG codes.
