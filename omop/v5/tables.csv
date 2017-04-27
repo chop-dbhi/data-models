@@ -31,15 +31,6 @@ omop,v5,cohort_attribute,"The cohort_attribute table contains attributes assoica
 omop,v5,cohort_definition,The cohort definition table contains records to define each derived cohort through an associated description and syntax.
 omop,v5,cohort,The COHORT table contains records derived as a set of subjects that satisfy a given set of inclusion criteria for a duration of time.
 omop,v5,device_cost,The DEVICE_COST table captures the cost of a medical device or supply used on a Person.
-<<<<<<< HEAD
-omop,v5,device_exposure,The device exposure domain captures records about a person�s inferred exposure to a foreign physical object or instrument that which is used for diagnostic or therapeutic purposes through a mechanism beyond chemical action.
-omop,v5,drug_cost,�The Drug Cost table captures records indicating the cost of a Drug Exposure.
-omop,v5,note,The NOTE table captures unstructured information that was recorded by a provider or a patient in free text notes on a given date.
-omop,v5,payer_plan_period,The PAYER_PLAN_PERIOD table captures records that detail the period of time that a person is continuously enrolled under a specific health plan benefit structure from a given payer.
-omop,v5,procedure_cost,The PROCEDURE_COST table captures the cost of a Procedure performed on a Person.
-omop,v5,specimen,�The specimen domain contains the records identifying each biological sample from a person.
-omop,v5,visit_cost,"The Visit Cost table captures the costs of health visit of a patient which are not itemized to specific procedures, drugs, or devices used within the encounter."
-=======
 omop,v5,device_exposure,The device exposure domain captures records about a persons inferred exposure to a foreign physical object or instrument that which is used for diagnostic or therapeutic purposes through a mechanism beyond chemical action.
 omop,v5,drug_cost,The Drug Cost table captures records indicating the cost of a Drug Exposure.
 omop,v5,note,The NOTE table captures unstructured information that was recorded by a provider or a patient in free text notes on a given date.
@@ -47,4 +38,3 @@ omop,v5,payer_plan_period,The PAYER_PLAN_PERIOD table captures records that deta
 omop,v5,procedure_cost,The PROCEDURE_COST table captures the cost of a Procedure performed on a Person.
 omop,v5,specimen,The specimen domain contains the records identifying each biological sample from a person.
 omop,v5,visit_cost,"The Visit Cost table captures the costs of health visit of a patient which are not itemized to specific procedures, drugs, or devices used within the encounter."
->>>>>>> chop-dbhi/master
