@@ -18,6 +18,7 @@ pedsnet,v2.5,condition_occurrence,condition_type_concept_id,concept,concept_id,f
 pedsnet,v2.5,condition_occurrence,person_id,person,person_id,fpk_condition_person
 pedsnet,v2.5,condition_occurrence,provider_id,provider,provider_id,fpk_condition_provider
 pedsnet,v2.5,condition_occurrence,condition_status_concept_id,concept,concept_id,fpk_condition_status
+pedsnet,v2.5,condition_occurrence,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_condition_visit
 pedsnet,v2.5,death,cause_concept_id,concept,concept_id,fpk_death_cause_concept
 pedsnet,v2.5,death,cause_source_concept_id,concept,concept_id,fpk_death_cause_concept_s
 pedsnet,v2.5,death,death_type_concept_id,concept,concept_id,fpk_death_type_concept
