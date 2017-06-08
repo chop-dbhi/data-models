@@ -8,7 +8,7 @@ pedsnet,v2.2,primary key,xpk_concept_relationship,concept_relationship,concept_i
 pedsnet,v2.2,primary key,xpk_concept_relationship,concept_relationship,concept_id_2
 pedsnet,v2.2,primary key,xpk_concept_relationship,concept_relationship,relationship_id
 pedsnet,v2.2,primary key,xpk_condition_occurrence,condition_occurrence,condition_occurrence_id
-pedsnet,v2.2,primary key,xpk_death,death,person_id
+pedsnet,v2.2,primary key,xpk_death,death,death_cause_id
 pedsnet,v2.2,primary key,xpk_domain,domain,domain_id
 pedsnet,v2.2,primary key,xpk_drug_exposure,drug_exposure,drug_exposure_id
 pedsnet,v2.2,primary key,xpk_drug_strength,drug_strength,drug_concept_id
