@@ -1,0 +1,14 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v2.6,provider,care_site_id,Yes,care_site,care_site_id,"A foreign key to the main care site where the provider is practicing. This field is required in PEDSnet, which is a deviation from OMOP CDM V4."
+pedsnet,v2.6,provider,dea,No,,,The Drug Enforcement Administration (DEA) number of the provider. Optional – Do not transmit to DCC.
+pedsnet,v2.6,provider,gender_concept_id,No,concept,concept_id,The gender of the provider
+pedsnet,v2.6,provider,gender_source_concept_id,No,concept,concept_id,A foreign key to a concept that refers to the code used in the source.
+pedsnet,v2.6,provider,gender_source_value,No,,,The source value for the provider gender.
+pedsnet,v2.6,provider,npi,No,,,The National Provider Identifier (NPI) of the provider. Optional – Do not transmit to DCC.
+pedsnet,v2.6,provider,provider_id,Yes,,,A unique identifier for each provider. Each site must maintain a map from this value to the identifier used for the provider in the source data.
+pedsnet,v2.6,provider,provider_name,No,,,A description of the provider.
+pedsnet,v2.6,provider,provider_source_value,Yes,,,"The identifier used for the provider in the source data, stored here for reference. Sites should create a random ID, but keep the mapping."
+pedsnet,v2.6,provider,specialty_concept_id,No,concept,concept_id,A foreign key to a standard provider's specialty concept identifier in the Vocabulary. This is an optional field. PEDSnet has not yet defined an ETL convention for selecting one specialty code for providers who have multiple specialties.
+pedsnet,v2.6,provider,specialty_source_concept_id,No,concept,concept_id,A foreign key to a concept that refers to the code used in the source
+pedsnet,v2.6,provider,specialty_source_value,No,,,"The source code for the provider specialty as it appears in the source data, stored here for reference."
+pedsnet,v2.6,provider,year_of_birth,No,,,The year of birth of the provider
