@@ -72,8 +72,8 @@ pedsnet,v2.6,not null,,observation,person_id
 pedsnet,v2.6,not null,,observation_period,observation_period_id
 pedsnet,v2.6,not null,,observation_period,observation_period_end_date
 pedsnet,v2.6,not null,,observation_period,observation_period_start_date
-pedsnet,v2.6,not null,,observation_period,observation_period_end_datetime
-pedsnet,v2.6,not null,,observation_period,observation_period_start_datetime
+pedsnet,v2.6,not null,,observation_period,observation_period_end_time
+pedsnet,v2.6,not null,,observation_period,observation_period_start_time
 pedsnet,v2.6,not null,,observation_period,period_type_concept_id
 pedsnet,v2.6,not null,,observation_period,person_id
 pedsnet,v2.6,not null,,person,person_id
