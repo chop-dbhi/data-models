@@ -89,6 +89,9 @@ omop,v5.1,not null,,measurement,measure_type_concept_id
 omop,v5.1,not null,,note,person_id
 omop,v5.1,not null,,note,note_date
 omop,v5.1,not null,,note,note_type_concept_id
+omop,v5.1,not null,,note,note_class_concept_id
+omop,v5.1,not null,,note,encoding_concept_id
+omop,v5.1,not null,,note,language_concept_id
 omop,v5.1,not null,,note,note_text
 omop,v5.1,not null,,observation,person_id
 omop,v5.1,not null,,observation,observation_concept_id

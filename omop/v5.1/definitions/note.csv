@@ -1,10 +1,13 @@
 model,version,table,field,required,ref_table,ref_field,standard,description
-omop,v5.1,note,note_date,Yes,,,,The date the note was recorded. 
 omop,v5.1,note,note_id,Yes,,,,A unique identifier for each note. 
-omop,v5.1,note,note_source_value,No,,,,"The source value associated with the origin of the note, as standardized using the note_concept_id "
 omop,v5.1,note,note_text,Yes,,,,The content of the note. 
+omop,v5.1,note,note_title,Yes,,,,The title of the Note as it appears in the source.
+omop,v5.1,note,note_date,Yes,,,,The date the note was recorded. 
 omop,v5.1,note,note_datetime,No,,,,The time the note was recorded. 
 omop,v5.1,note,note_type_concept_id,Yes,concept,concept_id,,A foreign key to the predefined concept identifier in the Standardized Vocabularies reflecting the type data from which the note. 
 omop,v5.1,note,person_id,Yes,person,person_id,,A foreign key identifier to the person about whom the note was recorded. The demographic details of that person are stored in the person table. 
 omop,v5.1,note,provider_id,No,provider,provider_id,,A foreign key to the provider in the provider table who was responsible for taking the note. 
 omop,v5.1,note,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,,Foreign key to visit 
+omop,v5.1,note,note_class_concept_id,Yes,concept,concept_id,,A foreign key to the predefined Concept in the Standardized Vocabularies reflecting the HL7 LOINC Document Type Vocabulary classification of the note.
+omop,v5.1,note,encoding_concept_id,Yes,concept,concept_id,,A foreign key to the predefined Concept in the Standardized Vocabularies reflecting the note character encoding type.
+omop,v5.1,note,language_concept_id,Yes,concept,concept_id,,A foreign key to the predefined Concept in the Standardized Vocabularies reflecting the language of the note.
