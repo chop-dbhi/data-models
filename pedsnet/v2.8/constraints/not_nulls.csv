@@ -140,9 +140,9 @@ pedsnet,v2.8,not null,,drug_era,drug_era_end_date
 pedsnet,v2.8,not null,,dose_era,dose_era_start_date
 pedsnet,v2.8,not null,,dose_era,dose_era_end_date
 pedsnet,v2.8,not null,,dose_era,dose_value
-pedsnet,v2.8, not null,,immunization,person_id
-pedsnet,v2.8, not null,,immunization,immunization_concept_id
-pedsnet,v2.8, not null,,immunization,immunization_source_concept_id
-pedsnet,v2.8, not null,,immunization,immunization_id
-pedsnet,v2.8, not null,,immunization,immunization_date
-pedsnet,v2.8, not null,,immunization,immunization_source_value
+pedsnet,v2.8,not null,,immunization,person_id
+pedsnet,v2.8,not null,,immunization,immunization_concept_id
+pedsnet,v2.8,not null,,immunization,immunization_source_concept_id
+pedsnet,v2.8,not null,,immunization,immunization_id
+pedsnet,v2.8,not null,,immunization,immunization_date
+pedsnet,v2.8,not null,,immunization,immunization_source_value
