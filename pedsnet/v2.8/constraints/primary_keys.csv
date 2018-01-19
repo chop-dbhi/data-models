@@ -33,4 +33,4 @@ pedsnet,v2.8,primary key,xpk_adt_occurrence,adt_occurrence,adt_occurrence_id
 pedsnet,v2.8,primary key,xpk_dose_era,dose_era,dose_era_id
 pedsnet,v2.8,primary key,xpk_drug_era,drug_era,drug_era_id
 pedsnet,v2.8,primary key,xpk_condition_era,condition_era,condition_era_id
-pedsnet,v2.8,primary_key,xpk_immunization,immunization,immunization_id
+pedsnet,v2.8,primary key,xpk_immunization,immunization,immunization_id
