@@ -1,0 +1,31 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v2.8,measurement_anthro,measurement_concept_id,Yes,concept,concept_id,A foreign key to the standard measurement concept identifier in the Vocabulary.
+pedsnet,v2.8,measurement_anthro,measurement_date,Yes,,,The date of the measurement.
+pedsnet,v2.8,measurement_anthro,anthro_measurement_id,Yes,,,A system-generated unique identifier for each measurement
+pedsnet,v2.8,measurement_anthro,measurement_source_concept_id,No,concept,concept_id,A foreign key to a concept that refers to the code used in the source.
+pedsnet,v2.8,measurement_anthro,measurement_source_value,Yes,,,"The measurement name as it appears in the source data. This code is mapped to a standard concept in the Standardized Vocabularies and the original code is, stored here for reference."
+pedsnet,v2.8,measurement_anthro,measurement_datetime,Yes,,,The time of the measurement.
+pedsnet,v2.8,measurement_anthro,measurement_type_concept_id,Yes,concept,concept_id,A foreign key to the predefined concept identifier in the Vocabulary reflecting the type of the measurement.
+pedsnet,v2.8,measurement_anthro,operator_concept_id,No,concept,concept_id,"A foreign key identifier to the mathematical operator that is applied to the value_as_number.Operators are <, ��_, =, ���, >"
+pedsnet,v2.8,measurement_anthro,person_id,Yes,person,person_id,A foreign key identifier to the person who the measurement is being documented for. The demographic details of that person are stored in the person table.
+pedsnet,v2.8,measurement_anthro,provider_id,No,provider,provider_id,A foreign key to the provider in the provider table who was responsible for making the measurement.
+pedsnet,v2.8,measurement_anthro,range_high,No,,,"The upper limit of the normal range of the measurement. It is not applicable if the observation results are non-numeric or categorical, and must be in the same units of measure as the measurement value."
+pedsnet,v2.8,measurement_anthro,range_low,No,,,"The lower limit of the normal range of the measurement. It is not applicable if the observation results are non-numeric or categorical, and must be in the same units of measure as the measurement value."
+pedsnet,v2.8,measurement_anthro,unit_concept_id,No,concept,concept_id,A foreign key to a standard concept identifier of measurement units in the Vocabulary.
+pedsnet,v2.8,measurement_anthro,unit_source_value,No,,,"The source code for the unit as it appears in the source data. This code is mapped to a standard unit concept in the Standardized Vocabularies and the original code is, stored here for reference."
+pedsnet,v2.8,measurement_anthro,value_as_concept_id,No,concept,concept_id,"A foreign key to an observation result stored as a concept identifier. This is applicable to observations where the result can be expressed as a standard concept from the Vocabulary (e.g., positive/negative, present/absent, low/high, etc.)."
+pedsnet,v2.8,measurement_anthro,value_as_number,No,,,The measurement result stored as a number. This is applicable to measurements where the result is expressed as a numeric value.
+pedsnet,v2.8,measurement_anthro,value_source_value,Yes,,,The source value associated with the structured value stored as numeric or concept. This field can be used in instances where the source data are transformed
+pedsnet,v2.8,measurement_anthro,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,A foreign key to the visit in the visit table during which the observation was recorded.
+pedsnet,v2.8,measurement_anthro,range_low_source_value,No,,,The lower limit of the normal range of the measurement as it appears in the source.
+pedsnet,v2.8,measurement_anthro,range_low_operator_concept_id,No,concept,concept_id,A forign key to the modifier of lower limit of the normal range of the measurement as it appears in the source as a concept identifer.
+pedsnet,v2.8,measurement_anthro,range_high_source_value,No,,,The higher limit of the normal range of the measurement as it appears in the source.
+pedsnet,v2.8,measurement_anthro,range_high_operator_concept_id,No,concept,concept_id,A forign key to the modifier of higher limit of the normal range of the measurement as it appears in the source as a concept identifer.
+pedsnet,v2.8,measurement_anthro,measurement_order_date,No,,,This field applies to Lab Orders only. This is the date the lab was ordered in the source.
+pedsnet,v2.8,measurement_anthro,measurement_order_datetime,No,,,This field applies to Lab Orders only. This is the time the lab was ordered in the source.
+pedsnet,v2.8,measurement_anthro,measurement_result_date,No,,,This field applies to Lab Orders only. This is the date the lab resulted in the source.
+pedsnet,v2.8,measurement_anthro,measurement_result_datetime,No,,,This field applies to Lab Orders only. This is the time the lab resulted in the source.
+pedsnet,v2.8,measurement_anthro,specimen_source_value,No,,,This field is applicable for lab values only. This source value for the specimen source as it appears in the source
+pedsnet,v2.8,measurement_anthro,priority_concept_id,No,concept,concept_id,This field applies to Lab Orders only. A foreign key to a concept that referes to the lab priority as described in the source
+pedsnet,v2.8,measurement_anthro,priority_source_value,No,,,This field applies to Lab Orders only. A foreign key to a concept that referes to the lab priority as described in the source
+
