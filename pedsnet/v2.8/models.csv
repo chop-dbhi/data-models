@@ -1,6 +1,2 @@
 model,version,release_level,release_serial,label,url,description
-<<<<<<< HEAD
-pedsnet,2.8.0,beta,1,PEDSnet v2.8,http://pedsnet.info,
-=======
-pedsnet,2.8.0,beta,2,PEDSnet v2.8,http://pedsnet.info,
->>>>>>> chop-dbhi/master
+pedsnet,2.8.0,beta,3,PEDSnet v2.8,http://pedsnet.info,

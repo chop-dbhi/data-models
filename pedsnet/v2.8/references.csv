@@ -125,3 +125,5 @@ pedsnet,v2.8,immunization,immunization_source_concept_id,concept,concept_id,fpk_
 pedsnet,v2.8,immunization,person_id,person,person_id,fpk_imm_person
 pedsnet,v2.8,immunization,provider_id,provider,provider_id,fpk_imm_provider
 pedsnet,v2.8,immunization,imm_route_concept_id,concept,concept_id,fpk_imm_route_concept
+pedsnet,v2.8,immunization,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_imm_visit
+pedsnet,v2.8,immunization,procedure_occurrence_id,procedure_occurrence,procedure_occurrence_id,fpk_imm_procedure
