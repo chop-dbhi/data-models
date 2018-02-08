@@ -128,7 +128,7 @@ pedsnet-split,v2.8,visit_occurrence,preceding_visit_occurrence_id,visit_occurren
 pedsnet-split,v2.8,visit_payer,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_visit_payer_visit
 pedsnet-split,v2.8,vocabulary,vocabulary_concept_id,concept,concept_id,fpk_vocabulary_concept
 pedsnet-split,v2.8,measurement_organism,organism_concept_id,concept,concept_id,fpk_meas_org_concept
-pedsnet-split,v2.8,measurement_organism,measurement_id,measurement_labs,labs_measurement_id,fpk_meas_org_meas
+pedsnet-split,v2.8,measurement_organism,labs_measurement_id,measurement_labs,labs_measurement_id,fpk_meas_org_meas
 pedsnet-split,v2.8,measurement_organism,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_meas_org_visit
 pedsnet-split,v2.8,measurement_organism,person_id,person,person_id,fpk_meas_org_person
 pedsnet-split,v2.8,adt_occurrence,service_concept_id,concept,concept_id,fpk_adt_ser_concept
