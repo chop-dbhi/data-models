@@ -23,9 +23,9 @@ pedsnet-split,v2.8,idx_meas_anthro_visit_id,No,measurement_anthro,visit_occurren
 pedsnet-split,v2.8,idx_meas_labs_concept_id,No,measurement_labs,measurement_concept_id,asc
 pedsnet-split,v2.8,idx_meas_labs_person_id,No,measurement_labs,person_id,asc
 pedsnet-split,v2.8,idx_meas_labs_visit_id,No,measurement_labs,visit_occurrence_id,asc
-pedsnet-split,v2.8,idx_meas_anthro_concept_id,No,measurement_vitals,measurement_concept_id,asc
-pedsnet-split,v2.8,idx_meas_anthro_person_id,No,measurement_vitals,person_id,asc
-pedsnet-split,v2.8,idx_meas_anthro_visit_id,No,measurement_vitals,visit_occurrence_id,asc
+pedsnet-split,v2.8,idx_meas_vitals_concept_id,No,measurement_vitals,measurement_concept_id,asc
+pedsnet-split,v2.8,idx_meas_vitals_person_id,No,measurement_vitals,person_id,asc
+pedsnet-split,v2.8,idx_meas_vitals_visit_id,No,measurement_vitals,visit_occurrence_id,asc
 pedsnet-split,v2.8,idx_observation_concept_id,No,observation,observation_concept_id,asc
 pedsnet-split,v2.8,idx_observation_person_id,No,observation,person_id,asc
 pedsnet-split,v2.8,idx_observation_visit_id,No,observation,visit_occurrence_id,asc
