@@ -1,7 +1,7 @@
 model,version,table,field,type,length,precision,scale,default
-pedsnet,v2.8,condition_era,condition_era_id,integer,,,,
-pedsnet,v2.8,condition_era,person_id,integer,,,,
-pedsnet,v2.8,condition_era,condition_concept_id,integer,,,,
-pedsnet,v2.8,condition_era,condition_era_start_date,date,,,,
-pedsnet,v2.8,condition_era,condition_era_end_date,date,,,,
-pedsnet,v2.8,condition_era,condition_occurrence_count,integer,,,,
+pedsnet-split,v2.8,condition_era,condition_era_id,integer,,,,
+pedsnet-split,v2.8,condition_era,person_id,integer,,,,
+pedsnet-split,v2.8,condition_era,condition_concept_id,integer,,,,
+pedsnet-split,v2.8,condition_era,condition_era_start_date,date,,,,
+pedsnet-split,v2.8,condition_era,condition_era_end_date,date,,,,
+pedsnet-split,v2.8,condition_era,condition_occurrence_count,integer,,,,
