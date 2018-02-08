@@ -12,7 +12,9 @@ pedsnet,v2.8,drug_exposure,The drug exposure domain captures any biochemical sub
 pedsnet,v2.8,drug_strength,The DRUG_STRENGTH table contains structured content about the amount or concentration and associated units of a specific ingredient within a particular drug product. The drug strength table is a supplemental file to support standardized analysis of drug utilization using concepts from the RxNorm vocabulary. A clinical drug concept which contains multiple active ingredients will result in one drug strength record for each active ingredient.
 pedsnet,v2.8,fact_relationship,"The fact relationship domain contains details of the relationships between facts within one domain or across two domains, and the nature of the relationship."
 pedsnet,v2.8,location,"Physical addresses of patients, organizations and care sites "
-pedsnet,v2.8,measurement,The measurement domain captures measurement orders and measurement results. The measurement domain can contain laboratory results and vital signs.
+pedsnet,v2.8,measurement_labs,The measurement domain captures measurement orders and measurement results. This measurement domain contains laboratory results.
+pedsnet,v2.8,measurement_vitals,This measurement domain captures vital signs.
+pedsnet,v2.8,measurement_anthro,This measurement domain captures anthropometric measurements.
 pedsnet,v2.8,measurement_organism,The measurement organism table contains organism information related to laboratory culture results in the measurement table.
 pedsnet,v2.8,observation,"Observations are clinical facts, such as laboratory tests, signs/symptoms, which are not captured within other CDM tables"
 pedsnet,v2.8,observation_period,"Time intervals during which health care information, such as drugs, conditions, and other clinical observations, may be available "
