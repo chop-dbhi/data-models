@@ -1,0 +1,6 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v2.9,fact_relationship,domain_concept_id_1,Yes,concept,concept_id,"The concept representing the domain of fact one, from which the corresponding table can be inferred. "
+pedsnet,v2.9,fact_relationship,domain_concept_id_2,Yes,concept,concept_id,"The concept representing the domain of fact two, from which the corresponding table can be inferred. "
+pedsnet,v2.9,fact_relationship,fact_id_1,Yes,,,The unique identifier in the table corresponding to the domain of fact one. 
+pedsnet,v2.9,fact_relationship,fact_id_2,Yes,,,The unique identifier in the table corresponding to the domain of fact two. 
+pedsnet,v2.9,fact_relationship,relationship_concept_id,Yes,concept,concept_id,A foreign key to a standard concept identifier of relationship in the Standardized Vocabularies. 
