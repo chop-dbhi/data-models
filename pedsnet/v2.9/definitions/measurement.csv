@@ -28,5 +28,5 @@ pedsnet,v2.9,measurement,measurement_result_datetime,No,,,This field applies to 
 pedsnet,v2.9,measurement,specimen_source_value,No,,,This field is applicable for lab values only. This source value for the specimen source as it appears in the source
 pedsnet,v2.9,measurement,priority_concept_id,No,concept,concept_id,This field applies to Lab Orders only. A foreign key to a concept that referes to the lab priority as described in the source
 pedsnet,v2.9,measurement,priority_source_value,No,,,This field applies to Lab Orders only. A foreign key to a concept that referes to the lab priority as described in the source
-pedsnet,v2.9,measurement,specmien_concept_id,No,concept,concept_id,This field is applicable for lab values only. A foreign key to a concept that refers to the specimen source.
+pedsnet,v2.9,measurement,specimen_concept_id,No,concept,concept_id,This field is applicable for lab values only. A foreign key to a concept that refers to the specimen source.
 
