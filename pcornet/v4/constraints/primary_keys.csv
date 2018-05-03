@@ -1,0 +1,26 @@
+model,version,type,table,field,name
+pcornet,v4,primary key,demographic,patid,xpk_demographic
+pcornet,v4,primary key,enrollment,patid,xpk_enrollment
+pcornet,v4,primary key,enrollment,enr_start_date,xpk_enrollment
+pcornet,v4,primary key,enrollment,enr_basis,xpk_enrollment
+pcornet,v4,primary key,encounter,encounterid,xpk_encounter
+pcornet,v4,primary key,diagnosis,diagnosisid,xpk_diagnosis
+pcornet,v4,primary key,procedures,proceduresid,xpk_procedures
+pcornet,v4,primary key,vital,vitalid,xpk_vital
+pcornet,v4,primary key,dispensing,dispensingid,xpk_dispensing
+pcornet,v4,primary key,lab_result_cm,lab_result_cm_id,xpk_lab_result_cm
+pcornet,v4,primary key,condition,conditionid,xpk_condition
+pcornet,v4,primary key,pro_cm,pro_cm_id,xpk_pro_cm
+pcornet,v4,primary key,prescribing,prescribingid,xpk_prescribing
+pcornet,v4,primary key,pcornet_trial,patid,xpk_pcornet_trial
+pcornet,v4,primary key,pcornet_trial,trialid,xpk_pcornet_trial
+pcornet,v4,primary key,pcornet_trial,participantid,xpk_pcornet_trial
+pcornet,v4,primary key,death,patid,xpk_death
+pcornet,v4,primary key,death,death_source,xpk_death
+pcornet,v4,primary key,death_cause,patid,xpk_death_cause
+pcornet,v4,primary key,death_cause,death_cause,xpk_death_cause
+pcornet,v4,primary key,death_cause,death_cause_code,xpk_death_cause
+pcornet,v4,primary key,death_cause,death_cause_type,xpk_death_cause
+pcornet,v4,primary key,death_cause,death_cause_source,xpk_death_cause
+pcornet,v4,primary key,harvest,networkid,xpk_harvest
+pcornet,v4,primary key,harvest,datamartid,xpk_harvest
