@@ -20,3 +20,16 @@ pcornet,v4,prescribing,encounterid,encounter,encounterid,fk_prescribing_encounte
 pcornet,v4,pcornet_trial,patid,demographic,patid,fk_pcornet_trial_patid
 pcornet,v4,death,patid,demographic,patid,fk_death_patid
 pcornet,v4,death_cause,patid,demographic,patid,fk_death_cause_patid
+pcornet,v4,med_admin,patid,demographic,patid,fk_medadmin_patid
+pcornet,v4,med_admin,encounterid,encounter,encounterid,fk_medadmin_encounterid
+pcornet,v4,med_admin,medadmin_providerid,provider,providerid,fk_medadmin_providerid
+pcornet,v4,encounter,providerid,provider,providerid,fk_encounter_providerid
+pcornet,v4,diagnosis,providerid,provider,providerid,fk_diagnosis_providerid
+pcornet,v4,procedures,providerid,provider,providerid,fk_procedures_providerid
+pcornet,v4,prescribing,providerid,provider,rx_providerid,fk_prescribing_providerid
+pcornet,v4,obs_clin,patid,demographic,patid,fk_obsclin_patid
+pcornet,v4,obs_clin,encounterid,encounter,encounterid,fk_obsclin_encounterid
+pcornet,v4,obs_clin,obsclin_providerid,provider,providerid,fk_obsclin_providerid
+pcornet,v4,obs_gen,patid,demographic,patid,fk_obsgen_patid
+pcornet,v4,obs_gen,encounterid,encounter,encounterid,fk_obsgen_encounterid
+pcornet,v4,obs_gen,obsgen_providerid,provider,providerid,fk_obsgen_providerid

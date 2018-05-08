@@ -24,3 +24,7 @@ pcornet,v4,primary key,death_cause,death_cause_type,xpk_death_cause
 pcornet,v4,primary key,death_cause,death_cause_source,xpk_death_cause
 pcornet,v4,primary key,harvest,networkid,xpk_harvest
 pcornet,v4,primary key,harvest,datamartid,xpk_harvest
+pcornet,v4,primary key,obs_gen,obsgenid,xpk_obsgenid
+pcornet,v4,primary key,obs_clin,obsclinid,xpk_obsclinid
+pcornet,v4,primary key,provider,providerid,xpk_providerid
+pcornet,v4,primary key,med_admin,medadminid,xpk_medadminid

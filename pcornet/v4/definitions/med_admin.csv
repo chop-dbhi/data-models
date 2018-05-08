@@ -1,0 +1,24 @@
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
+pcornet,v4,med_admin,meadminid,YES,,,,NO,,,,Arbitrary identifier for each unique MED_ADMIN record. 
+pcornet,v4,med_admin,patid,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier used to link across tables. 
+pcornet,v4,med_admin,encounterid,YES,ENCOUNTER,ENCOUNTERID,,NO,,,,Arbitrary encounter-level identifier. This is an optional relationship because not all vital sign measures will be associated with a healthcare encounter. (New description added in v4.)
+pcornet,v4,med_admin,prescribingid,NO,,,,NO,,,,"This is an optional relationship to the PRESCRIBING table, and may not be generally available. One prescribing order may generate multiple administration records. "
+pcornet,v4,med_admin,medadmin_providerid,YES,PROVIDER,PROVIDERID,,NO,,,,Provider code for the provider who prescribed the medication. The provider code is a pseudoidentifier with a consistent crosswalk to the real identifier. 
+pcornet,v4,med_admin,medadmin_start_date,YES,,,YYYY-MM-DD,NO,DATE,,,Date medication administration started/occurred 
+pcornet,v4,med_admin,medadmin_start_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time medication administration started/occurred 
+pcornet,v4,med_admin,medadmin_stop_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date medication administration ended 
+pcornet,v4,med_admin,medadmin_stop_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time medication administration ended 
+pcornet,v4,med_admin,medadmin_type,NO,,,,NO,,ND;RX;NI;UN;OT,ND=NDC RX=RXNORM NI=No information UN=Unknown OT=Other ,"This field is a derived attribute, and is not expected to be an explicit data field within a source system  If mapping from medication database (e.g., MediSpan, FDB), and it is possible to map to RxNorm and NDC, RxNorm is the preferred term type. If medication administration records are stored natively as NDC, do not convert to RxNorm."
+pcornet,v4,med_admin,medadmin_code,NO,,,,NO,,,,Medication code 
+pcornet,v4,med_admin,medadmin_dose_admin,NO,,,,NO,,,,"Dose of a given mediation, as administered by the provider. Do not impute or derive if not expressly defined in the source system as a discrete field."
+pcornet,v4,med_admin,medadmin_dose_admin_unit,NO,,,,NO,,,,"Units of measure associated with the dose of the medication as administered by the provider. Do not impute or derive if not expressly defined in the source system as a discrete field.
+ Choose the standardized unit of measure that is most reflective of the source data.
+ The Value Set Appendix contains a list of the units most commonly associated with medication records. Partners can use this table to aid in their mapping efforts, but they should refer back to the full value set if they have a medication record with a unit of measure that is not present in this curated list."
+pcornet,v4,med_admin,medadmin_route,NO,,,,NO,,,,Route of medication delivery. 
+pcornet,v4,med_admin,medadmin_source,NO,,,,NO,,OD;DR;NI;UN;OT,OD=Order/EHR DR=Derived NI=No information UN=Unknown OT=Other,"Source of the medication administration record. This field is a derived attribute, and is not expected to be an explicit data field within a source system. Use “OD” for medication orders entered into the EHR.
+Use “DR” for all medication orders that are derived or imputed through analytical procedures (e.g., natural language processing). This does not apply to administrations mapped from a superset terminology or drug database (e.g., MediSpan, FDB). For those records, use “OD” (General Guidance #4)."
+pcornet,v4,med_admin,raw_medadmin_med_name,NO,,,,NO,,,,"Field for originating, full textual medication name from the source. "
+pcornet,v4,med_admin,raw_medadmin_code,NO,,,,NO,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
+pcornet,v4,med_admin,raw_medadmin_dose_admin,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
+pcornet,v4,med_admin,raw_medadmin_dose_admin_unit,NO,,,,NO,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
+pcornet,v4,med_admin,raw_medadmin_route,NO,,,,NO,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "

@@ -1,0 +1,7 @@
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
+pcornet,v4,provider,providerid,YES,,,,NO,,,,"Arbitrary identifier for each unique PROVIDER record. Does not need to be persistent across refreshes, and may be  created by methods such as sequence or GUID."
+pcornet,v4,provider,provider_sex,NO,,,,NO,,A;F;M;NI;OT;UN,A=Ambiguous F=Female M=Male NI=No information UN=Unknown OT=Other ,Sex assigned at birth. The “Ambiguous” category may be used for individuals who are physically undifferentiated from birth. The “Other” category may be used for individuals who are undergoing gender re-assignment.
+pcornet,v4,provider,provider_specialty_primary,NO,,,,NO,,,,Primary specialty of the provider 
+pcornet,v4,provider,provider_npi,NO,,,,NO,,,,National Provider Identifier (NPI) of the provider. 
+pcornet,v4,provider,provider_npi_flag,NO,,,,NO,,Y;N,Y=Yes N=No ,"Flag to indicate whether partner has access to the National Provider Identifier (NPI) of the provider. This field is a derived attribute, and is not expected to be an explicit data field within a source system"
+pcornet,v4,provider,raw_provider_specialty_primary,NO,,,,NO,,,,"Field for originating value of field, prior to mapping into the PCORnet CDM value set. "
