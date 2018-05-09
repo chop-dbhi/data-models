@@ -1,5 +1,5 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
-pcornet,v4,med_admin,meadminid,YES,,,,NO,,,,Arbitrary identifier for each unique MED_ADMIN record. 
+pcornet,v4,med_admin,medadminid,YES,,,,NO,,,,Arbitrary identifier for each unique MED_ADMIN record. 
 pcornet,v4,med_admin,patid,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier used to link across tables. 
 pcornet,v4,med_admin,encounterid,YES,ENCOUNTER,ENCOUNTERID,,NO,,,,Arbitrary encounter-level identifier. This is an optional relationship because not all vital sign measures will be associated with a healthcare encounter. (New description added in v4.)
 pcornet,v4,med_admin,prescribingid,NO,,,,NO,,,,"This is an optional relationship to the PRESCRIBING table, and may not be generally available. One prescribing order may generate multiple administration records. "
