@@ -8,41 +8,11 @@ pcornet,v4,prescribing,rx_order_time,NO,,,,,,,,Order time of the prescription by
 pcornet,v4,prescribing,rx_start_date,NO,,,,,,,,Start date of order. This attribute may not be consistent with the date on which the patient actually begin taking the medication.
 pcornet,v4,prescribing,rx_end_date,NO,,,,,,,,End date of order (if available).
 pcornet,v4,prescribing,rx_quantity,NO,,,,,,,,Quantity ordered. Number precision and scale updated in v4.
-pcornet,v4,prescribing,rx_quantity_unit,NO,,,,NO,,PI;TA;VI;LI;SO;SU;OI;CR;PO;PA;IN;KI;DE;NI;UN;OT,"PI = Pill
-TA = Tablet
-VI = Vial
-LI = Liquid
-SO = Solution
-SU = Suspension
-OI = Ointment
-CR = Cream
-PO = Powder
-PA = Patch
-IN = Inhaler
-KI = Kit
-DE = Device
-NI = No information
-UN = Unknown
-OT = Other",The unit associated with the quantity prescribed. New field added in v4.
+pcornet,v4,prescribing,rx_quantity_unit,NO,,,,NO,,PI;TA;VI;LI;SO;SU;OI;CR;PO;PA;IN;KI;DE;NI;UN;OT,"PI = Pill TA = Tablet VI = Vial LI = Liquid SO = Solution SU = Suspension OI = Ointment CR = Cream PO = Powder PA = Patch IN = Inhaler KI = Kit DE = Device NI = No information UN = Unknown OT = Other",The unit associated with the quantity prescribed. New field added in v4.
 pcornet,v4,prescribing,rx_refills,NO,,,,,,,,"Number of refills ordered (not including the original prescription). If no refills are ordered, the value should be zero.   Number precision and scale updated in v4."
 pcornet,v4,prescribing,rx_days_supply,NO,,,,,,,,"Number of days supply ordered, as specified by the prescription.   Number precision and scale updated in v4."
-pcornet,v4,prescribing,rx_frequency,NO,,,,,,01;02;03;04;05;06;07;08;09;10;11;NI;UN;OT,"01 = Every day 
-02=Two times a day (BID)
-03=Three times a day (TID)
-04=Four times a day (QID)
-05=Every morning
-06=Every afternoon
-07=Before meals
-08=After meals
-09=As needed (PRN)
-10= Every Morning 11= Once NI=No information
-UN=Unknown
-OT=Other",Specified frequency of medication.
-pcornet,v4,prescribing,rx_basis,NO,,,,,,01;02;NI;UN;OT,"01 = Order to Dispense
-02 = Order to administer
-NI = No information
-UN = Unknown
-OT = Other","Basis of the medication order. The PRESCRIBING table can contain orders for many different activities, and this field is intended to connect the provider‚Äôs prescribing order with how the order was fulfilled (such as outpatient dispensing or administration by a healthcare professional). (Value set items updated and field definition expanded in v4.)"
+pcornet,v4,prescribing,rx_frequency,NO,,,,,,01;02;03;04;05;06;07;08;09;10;11;NI;UN;OT,"01 = Every day  02=Two times a day (BID) 03=Three times a day (TID) 04=Four times a day (QID) 05=Every morning 06=Every afternoon 07=Before meals 08=After meals 09=As needed (PRN) 10= Every Morning 11= Once NI=No information UN=Unknown OT=Other",Specified frequency of medication.
+pcornet,v4,prescribing,rx_basis,NO,,,,,,01;02;NI;UN;OT,"01 = Order to Dispense 02 = Order to administer NI = No information UN = Unknown OT = Other","Basis of the medication order. The PRESCRIBING table can contain orders for many different activities, and this field is intended to connect the provider√¢‚Ç¨‚Ñ¢s prescribing order with how the order was fulfilled (such as outpatient dispensing or administration by a healthcare professional). (Value set items updated and field definition expanded in v4.)"
 pcornet,v4,prescribing,rxnorm_cui,NO,,,,,,,,"Where an RxNorm mapping exists for the source medication, this field contains the RxNorm concept identifier (CUI) at the highest possible specificity. If more than one option exists for mapping, the following ordered strategy may be adopted: 1)Semantic generic clinical drug 2)Semantic Branded clinical drug 3)Generic drug pack 4)Branded drug pack"
 pcornet,v4,prescribing,raw_rx_med_name,NO,,,,,,,,"Optional field for originating, full textual medication name from the source."
 pcornet,v4,prescribing,raw_rx_frequency,NO,,,,,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
@@ -50,181 +20,12 @@ pcornet,v4,prescribing,raw_rxnorm_cui,NO,,,,,,,,"Optional field for originating 
 pcornet,v4,prescribing,raw_rx_quantity,NO,,,,,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 pcornet,v4,prescribing,raw_rx_ndc,NO,,,,,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set.."
 pcornet,v4,prescribing,rx_dose_ordered,NO,,,,,,,,"Dose of a given mediation, as ordered by the provider "
-pcornet,v4,prescribing,rx_dose_ordered_unit,NO,,,,,,%;cm;g;g/hr;g/kg;g/m2;/[IU];/[IU]/mL;meq;meq/kg;meq/kg/h;mg;mg/h;mg/kg;mg/kg/d;mg/kg/h;mg/kg/min;mg/m2;mg/mL;10*6.[IU];mL;mL/h;mL/kg;mL/kg/h;mL/m2;mmol;mmol/kg;ng/kg/min;[oz_av];[tbs_us];[tsp_us];ug;ug/d;ug/hr;ug/kg;ug/kg/h;ug/kg/min;ug/m2;ug/min;[IU]/h;[IU]/kg;[IU]/kg/h;[IU]/min;[IU]/mL;NI;UN;OT,"% = percent
-cm = centimeter
-g = gram
-g/hr = gram per hour
-g/kg = gram per kilogram
-g/m2 = gram per square meter
-/[IU] = per international unit
-/[IU]/mL = per international unit per milliliter
-meq = milliequivalent
-meq/kg = milliequivalent per kilogram
-meq/kg/h = milliequivalent per kilogram per hour
-mg = milligram
-mg/h = milligram per hour
-mg/kg = milligram per kilogram
-mg/kg/d = milligram per kilogram per day
-mg/kg/h = milligram per kilogram per hour
-mg/kg/min = milligram per kilogram per minute
-mg/m2 = milligram per square meter
-mg/mL = milligram per milliliter
-10*6.[IU] = million international unit
-mL = milliliter
-mL/h = milliliter per hour
-mL/kg = milliliter per kilogram
-mL/kg/h = milliliter per kilogram per hour
-mL/m2 = milliliter per square meter
-mmol = millimole
-mmol/kg = millimole per kilogram
-ng/kg/min = nanogram per kilogram per minute
-[oz_av] = ounce (US and British)
-[tbs_us] = tablespoon (US)
-[tsp_us] = teaspoon (US)
-ug = microgram
-ug/d = microgram per day
-ug/hr = microgram per hour
-ug/kg = microgram per kilogram
-ug/kg/h = microgram per kilogram per hour
-ug/kg/min = microgram per kilogram per minute
-ug/m2 = microgram per square meter
-ug/min = microgram per minutes
-[IU]/h = international unit per hour
-[IU]/kg = international unit per kilogram
-[IU]/kg/h = international unit per kilogram per hour
-[IU]/min = international unit per minute
-[IU]/mL = international unit per milliliter
-NI = No information
-UN = Unknown
-OT = Other",Units of measure associated with the dose of the medication as ordered by the provider 
-pcornet,v4,prescribing,rx_dose_form,NO,,,,,,AUGMENTED_TOPICAL_CREAM;AUGMENTED_TOPICAL_GEL;AUGMENTED_TOPICAL_LOTION;AUGMENTED_TOPICAL_OINTMENT;BAR_SOAP;BEADS;BUCCAL_FILM;BUCCAL_TABLET;CAKE;CEMENT;CHEWABLE_BAR;CHEWABLE_TABLET;CHEWING_GUM;CRYSTALS;DISINTEGRATING_TABLET;DISK;DOUCHE;DRUG_IMPLANT;DRY_POWDER_INHALER;ENEMA;ENTERIC_COATED_CAPSULE;ENTERIC_COATED_TABLET;EXTENDED_RELEASE_CAPSULE;EXTENDED_RELEASE_ENTERIC_COATED_CAPSULE;EXTENDED_RELEASE_ENTERIC_COATED_CAPSULE;EXTENDED_RELEASE_ENTERIC_COATED_TABLET;EXTENDED_RELEASE_ENTERIC_COATED_TABLET;EXTENDED_RELEASE_SUSPENSION;EXTENDED_RELEASE_TABLET;FLAKES;GAS_FOR_INHALATION;GRANULES;INHALANT_POWDER ;INHALANT_POWDER ;INHALANT_SOLUTION;INHALANT_SOLUTION;INJECTABLE_SOLUTION;INJECTABLE_SUSPENSION;INTRAPERITONEAL_SOLUTION;IRRIGATION_SOLUTION;LOZENGE ;MEDICATED_BAR_SOAP;MEDICATED_LIQUID_SOAP;MEDICATED_PAD ;MEDICATED_SHAMPOO;MEDICATED_TAPE;METERED_DOSE_INHALER;MOUTHWASH ;MUCOSAL_SPRAY;MUCUS_MEMBRANE_TOPICAL_SOLUTION;NASAL_CREAM;NASAL_GEL ;NASAL_INHALANT;NASAL_INHALER;NASAL_OINTMENT;NASAL_SOLUTION ;NASAL_SPRAY;NASAL_SUSPENSION ;OPHTHALMIC_CREAM;OPHTHALMIC_GEL ;OPHTHALMIC_IRRIGATION_SOLUTION;OPHTHALMIC_OINTMENT;OPHTHALMIC_SOLUTION ;OPHTHALMIC_SUSPENSION ;ORAL_CAPSULE;ORAL_CREAM;ORAL_FOAM;ORAL_GEL ;ORAL_OINTMENT;ORAL_PASTE;ORAL_POWDER;ORAL_SOLUTION ;ORAL_SPRAY;ORAL_STRIP;ORAL_SUSPENSION ;ORAL_TABLET ;OTIC_CREAM;OTIC_OINTMENT;OTIC_SOLUTION ;OTIC_SUSPENSION ;PASTE;PELLET;POWDER_SPRAY;PREFILLED_APPLICATOR;PREFILLED_SYRINGE_;PREFILLED_SYRINGE_;PUDDING;RECTAL_CREAM;RECTAL_FOAM;RECTAL_GEL ;RECTAL_OINTMENT;RECTAL_POWDER;RECTAL_SPRAY;RECTAL_SUPPOSITORY;SUBLINGUAL_TABLET;SUSTAINED_RELEASE_BUCCAL_TABLET;TOOTHPASTE;TOPICAL_CREAM;TOPICAL_FOAM;TOPICAL_GEL ;TOPICAL_LOTION;TOPICAL_OIL;TOPICAL_OINTMENT;TOPICAL_POWDER;TOPICAL_SOLUTION ;TOPICAL_SPRAY ;TRANSDERMAL_PATCH;URETHRAL_GEL ;URETHRAL_SUPPOSITORY;VAGINAL_CREAM;VAGINAL_FOAM;VAGINAL_GEL ;VAGINAL_OINTMENT;VAGINAL_POWDER;VAGINAL_RING;VAGINAL_SPRAY;VAGINAL_SUPPOSITORY;VAGINAL_TABLET;WAFER;NI;UN;OT,"AUGMENTED_TOPICAL_CREAM = Augmented Topical Cream
-AUGMENTED_TOPICAL_GEL = Augmented Topical Gel
-AUGMENTED_TOPICAL_LOTION = Augmented Topical Lotion
-AUGMENTED_TOPICAL_OINTMENT = Augmented Topical Ointment
-BAR_SOAP = Bar Soap
-BEADS = Beads
-BUCCAL_FILM = Buccal Film
-BUCCAL_TABLET = Buccal Tablet
-CAKE = Cake
-CEMENT = Cement
-CHEWABLE_BAR = Chewable Bar
-CHEWABLE_TABLET = Chewable Tablet
-CHEWING_GUM = Chewing Gum
-CRYSTALS = Crystals
-DISINTEGRATING_TABLET = Disintegrating Tablet
-DISK = Disk
-DOUCHE = Douche
-DRUG_IMPLANT = Drug Implant
-DRY_POWDER_INHALER = Dry Powder Inhaler
-ENEMA = Enema(Rectal Solution; Rectal Suspension)
-ENTERIC_COATED_CAPSULE = Enteric Coated Capsule
-ENTERIC_COATED_TABLET = Enteric Coated Tablet
-EXTENDED_RELEASE_CAPSULE = Extended Release Capsule
-EXTENDED_RELEASE_ENTERIC_COATED_CAPSULE = Extended Release Enteric Coated Capsule
-EXTENDED_RELEASE_ENTERIC_COATED_CAPSULE = Extended Release Enteric Coated Capsule
-EXTENDED_RELEASE_ENTERIC_COATED_TABLET = Extended Release Enteric Coated Tablet
-EXTENDED_RELEASE_ENTERIC_COATED_TABLET = Extended Release Enteric Coated Tablet
-EXTENDED_RELEASE_SUSPENSION = Extended Release Suspension
-EXTENDED_RELEASE_TABLET = Extended Release Tablet
-FLAKES = Flakes
-GAS_FOR_INHALATION = Gas for Inhalation
-GRANULES = Granules
-INHALANT_POWDER  = Inhalant Powder (Powdered Dose Inhaler)
-INHALANT_POWDER  = Inhalant Powder (Powdered Dose Inhaler)
-INHALANT_SOLUTION = Inhalant Solution
-INHALANT_SOLUTION = Inhalant Solution
-INJECTABLE_SOLUTION = Injectable Solution
-INJECTABLE_SUSPENSION = Injectable Suspension
-INTRAPERITONEAL_SOLUTION = Intraperitoneal Solution
-IRRIGATION_SOLUTION = Irrigation Solution
-LOZENGE  = Lozenge (Oral Troche)
-MEDICATED_BAR_SOAP = Medicated Bar Soap
-MEDICATED_LIQUID_SOAP = Medicated Liquid Soap
-MEDICATED_PAD  = Medicated Pad (Medicated Swab)
-MEDICATED_SHAMPOO = Medicated Shampoo
-MEDICATED_TAPE = Medicated Tape
-METERED_DOSE_INHALER = Metered Dose Inhaler
-MOUTHWASH  = Mouthwash (Oral Rinse; Topical Dental Solution)
-MUCOSAL_SPRAY = Mucosal Spray
-MUCUS_MEMBRANE_TOPICAL_SOLUTION = Mucus Membrane Topical Solution
-NASAL_CREAM = Nasal Cream
-NASAL_GEL  = Nasal Gel (Nasal Jelly)
-NASAL_INHALANT = Nasal Inhalant
-NASAL_INHALER = Nasal Inhaler
-NASAL_OINTMENT = Nasal Ointment
-NASAL_SOLUTION  = Nasal Solution (Nasal Drops; Nose Drops)
-NASAL_SPRAY = Nasal Spray
-NASAL_SUSPENSION  = Nasal Suspension (Nasal Drops; Nose Drops)
-OPHTHALMIC_CREAM = Ophthalmic Cream
-OPHTHALMIC_GEL  = Ophthalmic Gel (Ophthalmic Jelly)
-OPHTHALMIC_IRRIGATION_SOLUTION = Ophthalmic Irrigation Solution
-OPHTHALMIC_OINTMENT = Ophthalmic Ointment
-OPHTHALMIC_SOLUTION  = Ophthalmic Solution (Ophthalmic Drops; Eye Drops)
-OPHTHALMIC_SUSPENSION  = Ophthalmic Suspension (Ophthalmic Drops; Eye Drops)
-ORAL_CAPSULE = Oral Capsule
-ORAL_CREAM = Oral Cream
-ORAL_FOAM = Oral Foam
-ORAL_GEL  = Oral Gel (Oral Jelly)
-ORAL_OINTMENT = Oral Ointment
-ORAL_PASTE = Oral Paste
-ORAL_POWDER = Oral Powder
-ORAL_SOLUTION  = Oral Solution (Oral Drops)
-ORAL_SPRAY = Oral Spray
-ORAL_STRIP = Oral Strip
-ORAL_SUSPENSION  = Oral Suspension (Oral Drops)
-ORAL_TABLET  = Oral Tablet (Caplet)
-OTIC_CREAM = Otic Cream
-OTIC_OINTMENT = Otic Ointment
-OTIC_SOLUTION  = Otic Solution (Otic Drops; Ear Drops)
-OTIC_SUSPENSION  = Otic Suspension (Otic Drops; Ear Drops)
-PASTE = Paste
-PELLET = Pellet
-POWDER_SPRAY = Powder Spray
-PREFILLED_APPLICATOR = Prefilled Applicator
-PREFILLED_SYRINGE_ = Prefilled Syringe (Cartridge, Pen)
-PREFILLED_SYRINGE_ = Prefilled Syringe (Cartridge, Pen)
-PUDDING = Pudding
-RECTAL_CREAM = Rectal Cream
-RECTAL_FOAM = Rectal Foam
-RECTAL_GEL  = Rectal Gel (Rectal Jelly)
-RECTAL_OINTMENT = Rectal Ointment
-RECTAL_POWDER = Rectal Powder
-RECTAL_SPRAY = Rectal Spray
-RECTAL_SUPPOSITORY = Rectal Suppository
-SUBLINGUAL_TABLET = Sublingual Tablet
-SUSTAINED_RELEASE_BUCCAL_TABLET = Sustained Release Buccal Tablet
-TOOTHPASTE = Toothpaste
-TOPICAL_CREAM = Topical Cream
-TOPICAL_FOAM = Topical Foam
-TOPICAL_GEL  = Topical Gel (Topical Jelly)
-TOPICAL_LOTION = Topical Lotion
-TOPICAL_OIL = Topical Oil
-TOPICAL_OINTMENT = Topical Ointment
-TOPICAL_POWDER = Topical Powder
-TOPICAL_SOLUTION  = Topical Solution (Tincture; Liniment)
-TOPICAL_SPRAY  = Topical Spray (Dermal Spray)
-TRANSDERMAL_PATCH = Transdermal Patch
-URETHRAL_GEL  = Urethral Gel (Urethral Jelly)
-URETHRAL_SUPPOSITORY = Urethral Suppository
-VAGINAL_CREAM = Vaginal Cream
-VAGINAL_FOAM = Vaginal Foam
-VAGINAL_GEL  = Vaginal Gel (Vaginal Jelly)
-VAGINAL_OINTMENT = Vaginal Ointment
-VAGINAL_POWDER = Vaginal Powder
-VAGINAL_RING = Vaginal Ring
-VAGINAL_SPRAY = Vaginal Spray
-VAGINAL_SUPPOSITORY = Vaginal Suppository
-VAGINAL_TABLET = Vaginal Tablet
-WAFER = Wafer
-NI = No information
-UN = Unknown
-OT = Other",The unit associated with the quantity prescribed. 
-pcornet,v4,prescribing,rx_prn_flag,NO,,,,,,Y;N;,Y=Yes N=No ,Flag to indicate that all or part of medication frequency instructions includes “as needed.” 
+pcornet,v4,prescribing,rx_dose_ordered_unit,NO,,,,,,%;cm;g;g/hr;g/kg;g/m2;/[IU];/[IU]/mL;meq;meq/kg;meq/kg/h;mg;mg/h;mg/kg;mg/kg/d;mg/kg/h;mg/kg/min;mg/m2;mg/mL;10*6.[IU];mL;mL/h;mL/kg;mL/kg/h;mL/m2;mmol;mmol/kg;ng/kg/min;[oz_av];[tbs_us];[tsp_us];ug;ug/d;ug/hr;ug/kg;ug/kg/h;ug/kg/min;ug/m2;ug/min;[IU]/h;[IU]/kg;[IU]/kg/h;[IU]/min;[IU]/mL;NI;UN;OT,"% = percent cm = centimeter g = gram g/hr = gram per hour g/kg = gram per kilogram g/m2 = gram per square meter /[IU] = per international unit /[IU]/mL = per international unit per milliliter meq = milliequivalent meq/kg = milliequivalent per kilogram meq/kg/h = milliequivalent per kilogram per hour mg = milligram mg/h = milligram per hour mg/kg = milligram per kilogram mg/kg/d = milligram per kilogram per day mg/kg/h = milligram per kilogram per hour mg/kg/min = milligram per kilogram per minute mg/m2 = milligram per square meter mg/mL = milligram per milliliter 10*6.[IU] = million international unit mL = milliliter mL/h = milliliter per hour mL/kg = milliliter per kilogram mL/kg/h = milliliter per kilogram per hour mL/m2 = milliliter per square meter mmol = millimole mmol/kg = millimole per kilogram ng/kg/min = nanogram per kilogram per minute [oz_av] = ounce (US and British) [tbs_us] = tablespoon (US) [tsp_us] = teaspoon (US) ug = microgram ug/d = microgram per day ug/hr = microgram per hour ug/kg = microgram per kilogram ug/kg/h = microgram per kilogram per hour ug/kg/min = microgram per kilogram per minute ug/m2 = microgram per square meter ug/min = microgram per minutes [IU]/h = international unit per hour [IU]/kg = international unit per kilogram [IU]/kg/h = international unit per kilogram per hour [IU]/min = international unit per minute [IU]/mL = international unit per milliliter NI = No information UN = Unknown OT = Other",Units of measure associated with the dose of the medication as ordered by the provider 
+pcornet,v4,prescribing,rx_dose_form,NO,,,,,,AUGMENTED_TOPICAL_CREAM;AUGMENTED_TOPICAL_GEL;AUGMENTED_TOPICAL_LOTION;AUGMENTED_TOPICAL_OINTMENT;BAR_SOAP;BEADS;BUCCAL_FILM;BUCCAL_TABLET;CAKE;CEMENT;CHEWABLE_BAR;CHEWABLE_TABLET;CHEWING_GUM;CRYSTALS;DISINTEGRATING_TABLET;DISK;DOUCHE;DRUG_IMPLANT;DRY_POWDER_INHALER;ENEMA;ENTERIC_COATED_CAPSULE;ENTERIC_COATED_TABLET;EXTENDED_RELEASE_CAPSULE;EXTENDED_RELEASE_ENTERIC_COATED_CAPSULE;EXTENDED_RELEASE_ENTERIC_COATED_CAPSULE;EXTENDED_RELEASE_ENTERIC_COATED_TABLET;EXTENDED_RELEASE_ENTERIC_COATED_TABLET;EXTENDED_RELEASE_SUSPENSION;EXTENDED_RELEASE_TABLET;FLAKES;GAS_FOR_INHALATION;GRANULES;INHALANT_POWDER√ä;INHALANT_POWDER√ä;INHALANT_SOLUTION;INHALANT_SOLUTION;INJECTABLE_SOLUTION;INJECTABLE_SUSPENSION;INTRAPERITONEAL_SOLUTION;IRRIGATION_SOLUTION;LOZENGE√ä;MEDICATED_BAR_SOAP;MEDICATED_LIQUID_SOAP;MEDICATED_PAD√ä;MEDICATED_SHAMPOO;MEDICATED_TAPE;METERED_DOSE_INHALER;MOUTHWASH√ä;MUCOSAL_SPRAY;MUCUS_MEMBRANE_TOPICAL_SOLUTION;NASAL_CREAM;NASAL_GEL√ä;NASAL_INHALANT;NASAL_INHALER;NASAL_OINTMENT;NASAL_SOLUTION√ä;NASAL_SPRAY;NASAL_SUSPENSION√ä;OPHTHALMIC_CREAM;OPHTHALMIC_GEL√ä;OPHTHALMIC_IRRIGATION_SOLUTION;OPHTHALMIC_OINTMENT;OPHTHALMIC_SOLUTION√ä;OPHTHALMIC_SUSPENSION√ä;ORAL_CAPSULE;ORAL_CREAM;ORAL_FOAM;ORAL_GEL√ä;ORAL_OINTMENT;ORAL_PASTE;ORAL_POWDER;ORAL_SOLUTION√ä;ORAL_SPRAY;ORAL_STRIP;ORAL_SUSPENSION√ä;ORAL_TABLET√ä;OTIC_CREAM;OTIC_OINTMENT;OTIC_SOLUTION√ä;OTIC_SUSPENSION√ä;PASTE;PELLET;POWDER_SPRAY;PREFILLED_APPLICATOR;PREFILLED_SYRINGE_;PREFILLED_SYRINGE_;PUDDING;RECTAL_CREAM;RECTAL_FOAM;RECTAL_GEL√ä;RECTAL_OINTMENT;RECTAL_POWDER;RECTAL_SPRAY;RECTAL_SUPPOSITORY;SUBLINGUAL_TABLET;SUSTAINED_RELEASE_BUCCAL_TABLET;TOOTHPASTE;TOPICAL_CREAM;TOPICAL_FOAM;TOPICAL_GEL√ä;TOPICAL_LOTION;TOPICAL_OIL;TOPICAL_OINTMENT;TOPICAL_POWDER;TOPICAL_SOLUTION√ä;TOPICAL_SPRAY√ä;TRANSDERMAL_PATCH;URETHRAL_GEL√ä;URETHRAL_SUPPOSITORY;VAGINAL_CREAM;VAGINAL_FOAM;VAGINAL_GEL√ä;VAGINAL_OINTMENT;VAGINAL_POWDER;VAGINAL_RING;VAGINAL_SPRAY;VAGINAL_SUPPOSITORY;VAGINAL_TABLET;WAFER;NI;UN;OT,"AUGMENTED_TOPICAL_CREAM = Augmented Topical Cream AUGMENTED_TOPICAL_GEL = Augmented Topical Gel AUGMENTED_TOPICAL_LOTION = Augmented Topical Lotion AUGMENTED_TOPICAL_OINTMENT = Augmented Topical Ointment BAR_SOAP = Bar Soap BEADS = Beads BUCCAL_FILM = Buccal Film BUCCAL_TABLET = Buccal Tablet CAKE = Cake CEMENT = Cement CHEWABLE_BAR = Chewable Bar CHEWABLE_TABLET = Chewable Tablet CHEWING_GUM = Chewing Gum CRYSTALS = Crystals DISINTEGRATING_TABLET = Disintegrating Tablet DISK = Disk DOUCHE = Douche DRUG_IMPLANT = Drug Implant DRY_POWDER_INHALER = Dry Powder Inhaler ENEMA = Enema(Rectal Solution; Rectal Suspension) ENTERIC_COATED_CAPSULE = Enteric Coated Capsule ENTERIC_COATED_TABLET = Enteric Coated Tablet EXTENDED_RELEASE_CAPSULE = Extended Release Capsule EXTENDED_RELEASE_ENTERIC_COATED_CAPSULE = Extended Release Enteric Coated Capsule EXTENDED_RELEASE_ENTERIC_COATED_CAPSULE = Extended Release Enteric Coated Capsule EXTENDED_RELEASE_ENTERIC_COATED_TABLET = Extended Release Enteric Coated Tablet EXTENDED_RELEASE_ENTERIC_COATED_TABLET = Extended Release Enteric Coated Tablet EXTENDED_RELEASE_SUSPENSION = Extended Release Suspension EXTENDED_RELEASE_TABLET = Extended Release Tablet FLAKES = Flakes GAS_FOR_INHALATION = Gas for Inhalation GRANULES = Granules INHALANT_POWDER√ä = Inhalant Powder√ä(Powdered Dose Inhaler) INHALANT_POWDER√ä = Inhalant Powder√ä(Powdered Dose Inhaler) INHALANT_SOLUTION = Inhalant Solution INHALANT_SOLUTION = Inhalant Solution INJECTABLE_SOLUTION = Injectable Solution INJECTABLE_SUSPENSION = Injectable Suspension INTRAPERITONEAL_SOLUTION = Intraperitoneal Solution IRRIGATION_SOLUTION = Irrigation Solution LOZENGE√ä = Lozenge√ä(Oral Troche) MEDICATED_BAR_SOAP = Medicated Bar Soap MEDICATED_LIQUID_SOAP = Medicated Liquid Soap MEDICATED_PAD√ä = Medicated Pad√ä(Medicated Swab) MEDICATED_SHAMPOO = Medicated Shampoo MEDICATED_TAPE = Medicated Tape METERED_DOSE_INHALER = Metered Dose Inhaler MOUTHWASH√ä = Mouthwash√ä(Oral Rinse; Topical Dental Solution) MUCOSAL_SPRAY = Mucosal Spray MUCUS_MEMBRANE_TOPICAL_SOLUTION = Mucus Membrane Topical Solution NASAL_CREAM = Nasal Cream NASAL_GEL√ä = Nasal Gel√ä(Nasal Jelly) NASAL_INHALANT = Nasal Inhalant NASAL_INHALER = Nasal Inhaler NASAL_OINTMENT = Nasal Ointment NASAL_SOLUTION√ä = Nasal Solution√ä(Nasal Drops; Nose Drops) NASAL_SPRAY = Nasal Spray NASAL_SUSPENSION√ä = Nasal Suspension√ä(Nasal Drops; Nose Drops) OPHTHALMIC_CREAM = Ophthalmic Cream OPHTHALMIC_GEL√ä = Ophthalmic Gel√ä(Ophthalmic Jelly) OPHTHALMIC_IRRIGATION_SOLUTION = Ophthalmic Irrigation Solution OPHTHALMIC_OINTMENT = Ophthalmic Ointment OPHTHALMIC_SOLUTION√ä = Ophthalmic Solution√ä(Ophthalmic Drops; Eye Drops) OPHTHALMIC_SUSPENSION√ä = Ophthalmic Suspension√ä(Ophthalmic Drops; Eye Drops) ORAL_CAPSULE = Oral Capsule ORAL_CREAM = Oral Cream ORAL_FOAM = Oral Foam ORAL_GEL√ä = Oral Gel√ä(Oral Jelly) ORAL_OINTMENT = Oral Ointment ORAL_PASTE = Oral Paste ORAL_POWDER = Oral Powder ORAL_SOLUTION√ä = Oral Solution√ä(Oral Drops) ORAL_SPRAY = Oral Spray ORAL_STRIP = Oral Strip ORAL_SUSPENSION√ä = Oral Suspension√ä(Oral Drops) ORAL_TABLET√ä = Oral Tablet√ä(Caplet) OTIC_CREAM = Otic Cream OTIC_OINTMENT = Otic Ointment OTIC_SOLUTION√ä = Otic Solution√ä(Otic Drops; Ear Drops) OTIC_SUSPENSION√ä = Otic Suspension√ä(Otic Drops; Ear Drops) PASTE = Paste PELLET = Pellet POWDER_SPRAY = Powder Spray PREFILLED_APPLICATOR = Prefilled Applicator PREFILLED_SYRINGE_ = Prefilled Syringe (Cartridge, Pen) PREFILLED_SYRINGE_ = Prefilled Syringe (Cartridge, Pen) PUDDING = Pudding RECTAL_CREAM = Rectal Cream RECTAL_FOAM = Rectal Foam RECTAL_GEL√ä = Rectal Gel√ä(Rectal Jelly) RECTAL_OINTMENT = Rectal Ointment RECTAL_POWDER = Rectal Powder RECTAL_SPRAY = Rectal Spray RECTAL_SUPPOSITORY = Rectal Suppository SUBLINGUAL_TABLET = Sublingual Tablet SUSTAINED_RELEASE_BUCCAL_TABLET = Sustained Release Buccal Tablet TOOTHPASTE = Toothpaste TOPICAL_CREAM = Topical Cream TOPICAL_FOAM = Topical Foam TOPICAL_GEL√ä = Topical Gel√ä(Topical Jelly) TOPICAL_LOTION = Topical Lotion TOPICAL_OIL = Topical Oil TOPICAL_OINTMENT = Topical Ointment TOPICAL_POWDER = Topical Powder TOPICAL_SOLUTION√ä = Topical Solution√ä(Tincture; Liniment) TOPICAL_SPRAY√ä = Topical Spray√ä(Dermal Spray) TRANSDERMAL_PATCH = Transdermal Patch URETHRAL_GEL√ä = Urethral Gel√ä(Urethral Jelly) URETHRAL_SUPPOSITORY = Urethral Suppository VAGINAL_CREAM = Vaginal Cream VAGINAL_FOAM = Vaginal Foam VAGINAL_GEL√ä = Vaginal Gel√ä(Vaginal Jelly) VAGINAL_OINTMENT = Vaginal Ointment VAGINAL_POWDER = Vaginal Powder VAGINAL_RING = Vaginal Ring VAGINAL_SPRAY = Vaginal Spray VAGINAL_SUPPOSITORY = Vaginal Suppository VAGINAL_TABLET = Vaginal Tablet WAFER = Wafer NI = No information UN = UnknownOT = Other",The unit associated with the quantity prescribed.  
+pcornet,v4,prescribing,rx_prn_flag,NO,,,,,,Y;N;,Y=Yes N=No ,Flag to indicate that all or part of medication frequency instructions includes √ías needed.√ì 
 pcornet,v4,prescribing,rx_route,NO,,,,,,,,Route of medication delivery. 
 pcornet,v4,prescribing,rx_source,NO,,,,,,OD;DR;NI;UN;OT,OD=Order/EHR DR=Derived NI=No information UN=Unknown OT=Other,Source of the prescribing information.
-pcornet,v4,prescribing,rx_dispense_as_written,NO,,,,,,Y;N;NI;UN;OT,"Y=Yes
-N=No
-NI=No information UN=Unknown OT=Other",Flag to indicate whether the provider indicated that the medication order was to be dispensed as written. 
+pcornet,v4,prescribing,rx_dispense_as_written,NO,,,,,,Y;N;NI;UN;OT,"Y=Yes N=No NI=No information UN=Unknown OT=Other",Flag to indicate whether the provider indicated that the medication order was to be dispensed as written. 
 pcornet,v4,prescribing,rx_dose_ordered,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
 pcornet,v4,prescribing,rx_dose_ordered_unit,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
 pcornet,v4,prescribing,raw_rx_route,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
