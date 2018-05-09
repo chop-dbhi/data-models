@@ -48,12 +48,12 @@ PR=Proxy without assistance
 PA=Proxy with assistance
 NI=No information
 UN=Unknown
-OT=Other","The person who responded on behalf of the patient for whom the response was captured. A proxy report is a measurement based on a report by someone other than the patient reporting as if he or she is the patient, such as a parent responding for a child, or a caregiver responding for an individual unable to report for themselves. Assistance excludes providing interpretation of the patient’s response. "
+OT=Other","The person who responded on behalf of the patient for whom the response was captured. A proxy report is a measurement based on a report by someone other than the patient reporting as if he or she is the patient, such as a parent responding for a child, or a caregiver responding for an individual unable to report for themselves. Assistance excludes providing interpretation of the patient‚Äôs response. "
 pcornet,v4,pro_cm,pro_response_num,NO,,,,NO,,,,The numeric response recorded for the item. Please see the Common Measures reference table for the list of valid responses for each item.  Number precision and scale updated in v4.
 pcornet,v4,pro_cm,pro_time,YES,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,The time of the response.
 pcornet,v4,pro_cm,pro_type,NO,,,,NO,,PM;NQ;AM;NT;PC;LC;HC;NI;UN;OT,PM=PROMIS NQ=Neuro-QoL AM=ASQC-Me NT=NIH Toolbox PC=PRO_CTCAE LC=LOINC HC=HCAHPS NI=No information UN=Unknown OT=Other,Terminology / vocabulary used to describe the PRO item.
 pcornet,v4,pro_cm,pro_item_name,NO,,,,NO,,,,Short name or code of the PRO item in the vocabulary/terminology specified in PRO_TYPE. 
-pcornet,v4,pro_cm,pro_item_loinc,NO,,,,NO,,,,"LOINC� code for the PRO item, if available."
+pcornet,v4,pro_cm,pro_item_loinc,NO,,,,NO,,,,"LOINC® code for the PRO item, if available."
 pcornet,v4,pro_cm,pro_response_text,NO,,,,NO,,,,"Text version of the response recorded for the item, if available/applicable."
 pcornet,v4,pro_cm,pro_item_version,NO,,,,NO,,,,Version of the item/question.
 pcornet,v4,pro_cm,pro_measure_name,NO,,,,NO,,,,"Short name or code of the PRO measure/form that item belongs to, if item is being administered as part of a measure"
@@ -63,7 +63,7 @@ pcornet,v4,pro_cm,pro_measure_theta,NO,,,,NO,,,,The value of theta reported from
 pcornet,v4,pro_cm,pro_measure_scaled_tscore,NO,,,,NO,,,,Standardized score based on the total raw score for the instrument. Only applies to items that are administered as part of a measure. 
 pcornet,v4,pro_cm,pro_measure_standard_measure,NO,,,,NO,,,,Possible range of the actual final score based on the scaled T-score. Only applies to items that are administered as part of a measure.
 pcornet,v4,pro_cm,pro_measure_count_scored,NO,,,,NO,,,,Number of PRO item responses that were involved in the scoring of the measure. 
-pcornet,v4,pro_cm,pro_measure_loinc,NO,,,,NO,,,,"LOINC� code for the PRO item, if available."
+pcornet,v4,pro_cm,pro_measure_loinc,NO,,,,NO,,,,"LOINC® code for the PRO item, if available."
 pcornet,v4,pro_cm,pro_measure_version,NO,,,,NO,,,,Version of the measure.
 pcornet,v4,pro_cm,pro_item_fullname,NO,,,,NO,,,,Full name of the PRO item.
 pcornet,v4,pro_cm,pro_item_text,NO,,,,NO,,,,Text of the PRO item question.

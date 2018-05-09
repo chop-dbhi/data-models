@@ -67,7 +67,7 @@ Emergency Department Admit to Inpatient Hospital Stay: Permissible substitution 
 
 Inpatient Hospital Stay: Includes all inpatient stays, including: same-day hospital discharges, hospital transfers, and acute hospital care where the discharge is after the admission date.  Does not include observation stays, where known (guidance added in v4).
 
-Observation Stay: ‚ÄúHospital outpatient services given to help the can be discharged. Observations services may be given in the emergency department or another area of the hospital.‚Äù Definition from Medicare, CMS Product No. 11435, https://www.medicare.gov/Pubs/pdf/11435.pdf (new value set item added in v4).
+Observation Stay: ‚Äö√Ñ√∫Hospital outpatient services given to help the can be discharged. Observations services may be given in the emergency department or another area of the hospital.‚Äö√Ñ√π Definition from Medicare, CMS Product No. 11435, https://www.medicare.gov/Pubs/pdf/11435.pdf (new value set item added in v4).
 
 Institutional Professional Consult: Permissible substitution when services provided by a medical professional cannot be combined with the given encounter record, such as a specialist consult in an inpatient setting; this situation can be common with claims data sources (new value set item added in v4).
 
@@ -116,22 +116,22 @@ pcornet,v4,encounter,payer_type_primary,NO,,,,NO,,1;11;111;112;113;119;12;121;12
 23 = Medicaid/SCHIP
 24 = Medicaid Applicant
 25 = Medicaid - Out of State
-26 = Medicaid – Long Term Care
+26 = Medicaid ‚Äì Long Term Care
 29 = Medicaid Other
 291 = Medicaid Pharmacy Benefit Manager
 299 = Medicaid - Dental
 3 = OTHER GOVERNMENT (Federal/State/Local) (excluding Department of Corrections)
 31 = Department of Defense
 311 = TRICARE (CHAMPUS)
-3111 = TRICARE Prime—HMO
-3112 = TRICARE Extra—PPO
+3111 = TRICARE Prime‚ÄîHMO
+3112 = TRICARE Extra‚ÄîPPO
 3113 = TRICARE Standard - Fee For Service
 3114 = TRICARE For Life--Medicare Supplement
 3115 = TRICARE Reserve Select
 3116 = Uniformed Services Family Health Plan (USFHP) -- HMO
 3119 = Department of Defense - (other)
 312 = Military Treatment Facility
-3121 = Enrolled Prime—HMO
+3121 = Enrolled Prime‚ÄîHMO
 3122 = Non-enrolled Space Available
 3123 = TRICARE For Life (TFL)
 313 = Dental --Stand Alone
@@ -153,8 +153,8 @@ pcornet,v4,encounter,payer_type_primary,NO,,,,NO,,1;11;111;112;113;119;12;121;12
 3223 = Children of Women Vietnam Veterans (CWVV)
 3229 = Other non-veteran care
 33 = Indian Health Service or Tribe
-331 = Indian Health Service – Regular
-332 = Indian Health Service – Contract
+331 = Indian Health Service ‚Äì Regular
+332 = Indian Health Service ‚Äì Contract
 333 = Indian Health Service - Managed Care
 334 = Indian Tribe - Sponsored Coverage
 34 = HRSA Program
@@ -183,7 +183,7 @@ pcornet,v4,encounter,payer_type_primary,NO,,,,NO,,1;11;111;112;113;119;12;121;12
 382 = Federal, State, Local not specified - FFS
 389 = Federal, State, Local not specified - Other
 39 = Other Federal
-391 = Federal Employee Health Plan – Use when known.
+391 = Federal Employee Health Plan ‚Äì Use when known.
 4 = DEPARTMENTS OF CORRECTIONS
 41 = Corrections Federal
 42 = Corrections State
@@ -204,7 +204,7 @@ pcornet,v4,encounter,payer_type_primary,NO,,,,NO,,1;11;111;112;113;119;12;121;12
 522 = Self-insured (ERISA) Administrative Services Only (ASO) plan
 523 = Medicare supplemental policy (as second payer)
 524 = Indemnity Insurance - Dental
-529 = Private health insurance—other commercial Indemnity
+529 = Private health insurance‚Äîother commercial Indemnity
 53 = Managed Care (private) or private health insurance (indemnity), not otherwise specified
 54 = Organized Delivery System
 55 = Small Employer Purchasing Group
@@ -213,11 +213,11 @@ pcornet,v4,encounter,payer_type_primary,NO,,,,NO,,1;11;111;112;113;119;12;121;12
 562 = Vision Other Private Insurance
 6 = BLUE CROSS/BLUE SHIELD
 61 = BC Managed Care
-611 = BC Managed Care – HMO
-612 = BC Managed Care – PPO
-613 = BC Managed Care – POS
+611 = BC Managed Care ‚Äì HMO
+612 = BC Managed Care ‚Äì PPO
+613 = BC Managed Care ‚Äì POS
 614 = BC Managed Care - Dental
-619 = BC Managed Care – Other
+619 = BC Managed Care ‚Äì Other
 62 = BC Insurance Indemnity
 621 = BC Indemnity
 622 = BC Self-insured (ERISA) Administrative Services Only (ASO)Plan
@@ -246,7 +246,7 @@ pcornet,v4,encounter,payer_type_primary,NO,,,,NO,,1;11;111;112;113;119;12;121;12
 95 = Worker's Compensation
 951 = Worker's Comp HMO
 953 = Worker's Comp Fee-for-Service
-954 = Worker’s Comp Other Managed Care
+954 = Worker‚Äôs Comp Other Managed Care
 959 = Worker's Comp, Other unspecified
 96 = Auto Insurance (includes no fault)
 97 = Legal Liability / Liability Insurance
@@ -278,22 +278,22 @@ pcornet,v4,encounter,payer_type_secondary,NO,,,,NO,,1;11;111;112;113;119;12;121;
 23 = Medicaid/SCHIP
 24 = Medicaid Applicant
 25 = Medicaid - Out of State
-26 = Medicaid – Long Term Care
+26 = Medicaid ‚Äì Long Term Care
 29 = Medicaid Other
 291 = Medicaid Pharmacy Benefit Manager
 299 = Medicaid - Dental
 3 = OTHER GOVERNMENT (Federal/State/Local) (excluding Department of Corrections)
 31 = Department of Defense
 311 = TRICARE (CHAMPUS)
-3111 = TRICARE Prime—HMO
-3112 = TRICARE Extra—PPO
+3111 = TRICARE Prime‚ÄîHMO
+3112 = TRICARE Extra‚ÄîPPO
 3113 = TRICARE Standard - Fee For Service
 3114 = TRICARE For Life--Medicare Supplement
 3115 = TRICARE Reserve Select
 3116 = Uniformed Services Family Health Plan (USFHP) -- HMO
 3119 = Department of Defense - (other)
 312 = Military Treatment Facility
-3121 = Enrolled Prime—HMO
+3121 = Enrolled Prime‚ÄîHMO
 3122 = Non-enrolled Space Available
 3123 = TRICARE For Life (TFL)
 313 = Dental --Stand Alone
@@ -315,8 +315,8 @@ pcornet,v4,encounter,payer_type_secondary,NO,,,,NO,,1;11;111;112;113;119;12;121;
 3223 = Children of Women Vietnam Veterans (CWVV)
 3229 = Other non-veteran care
 33 = Indian Health Service or Tribe
-331 = Indian Health Service – Regular
-332 = Indian Health Service – Contract
+331 = Indian Health Service ‚Äì Regular
+332 = Indian Health Service ‚Äì Contract
 333 = Indian Health Service - Managed Care
 334 = Indian Tribe - Sponsored Coverage
 34 = HRSA Program
@@ -345,7 +345,7 @@ pcornet,v4,encounter,payer_type_secondary,NO,,,,NO,,1;11;111;112;113;119;12;121;
 382 = Federal, State, Local not specified - FFS
 389 = Federal, State, Local not specified - Other
 39 = Other Federal
-391 = Federal Employee Health Plan – Use when known.
+391 = Federal Employee Health Plan ‚Äì Use when known.
 4 = DEPARTMENTS OF CORRECTIONS
 41 = Corrections Federal
 42 = Corrections State
@@ -366,7 +366,7 @@ pcornet,v4,encounter,payer_type_secondary,NO,,,,NO,,1;11;111;112;113;119;12;121;
 522 = Self-insured (ERISA) Administrative Services Only (ASO) plan
 523 = Medicare supplemental policy (as second payer)
 524 = Indemnity Insurance - Dental
-529 = Private health insurance—other commercial Indemnity
+529 = Private health insurance‚Äîother commercial Indemnity
 53 = Managed Care (private) or private health insurance (indemnity), not otherwise specified
 54 = Organized Delivery System
 55 = Small Employer Purchasing Group
@@ -375,11 +375,11 @@ pcornet,v4,encounter,payer_type_secondary,NO,,,,NO,,1;11;111;112;113;119;12;121;
 562 = Vision Other Private Insurance
 6 = BLUE CROSS/BLUE SHIELD
 61 = BC Managed Care
-611 = BC Managed Care – HMO
-612 = BC Managed Care – PPO
-613 = BC Managed Care – POS
+611 = BC Managed Care ‚Äì HMO
+612 = BC Managed Care ‚Äì PPO
+613 = BC Managed Care ‚Äì POS
 614 = BC Managed Care - Dental
-619 = BC Managed Care – Other
+619 = BC Managed Care ‚Äì Other
 62 = BC Insurance Indemnity
 621 = BC Indemnity
 622 = BC Self-insured (ERISA) Administrative Services Only (ASO)Plan
@@ -408,7 +408,7 @@ pcornet,v4,encounter,payer_type_secondary,NO,,,,NO,,1;11;111;112;113;119;12;121;
 95 = Worker's Compensation
 951 = Worker's Comp HMO
 953 = Worker's Comp Fee-for-Service
-954 = Worker’s Comp Other Managed Care
+954 = Worker‚Äôs Comp Other Managed Care
 959 = Worker's Comp, Other unspecified
 96 = Auto Insurance (includes no fault)
 97 = Legal Liability / Liability Insurance
