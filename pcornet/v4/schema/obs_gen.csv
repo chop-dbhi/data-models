@@ -1,4 +1,4 @@
-﻿model,version,table,field,type,length,precision,scale,default
+model,version,table,field,type,length,precision,scale,default
 pcornet,v4,obs_gen,obsgenid,string,,,,
 pcornet,v4,obs_gen,patid,string,,,,
 pcornet,v4,obs_gen,encounterid,string,,,,
