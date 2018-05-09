@@ -1,5 +1,5 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description,
-pcornet,v4,obs_clin,obclinid,YES,,,,NO,,,,Arbitrary identifier for each unique OBS_CLIN record. ,
+pcornet,v4,obs_clin,obsclinid,YES,,,,NO,,,,Arbitrary identifier for each unique OBS_CLIN record. ,
 pcornet,v4,obs_clin,patid,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier. Used to link across tables. ,
 pcornet,v4,obs_clin,encounterid,NO,ENCOUNTER,ENCOUNTERID,,NO,,,,Arbitrary encounter-level identifier used to link across tables. ,
 pcornet,v4,obs_clin,obsclin_providerid,NO,PROVIDER,PROVIDERID,,NO,,,,Provider code for the provider who ordered the observation. The provider code is a pseudoidentifier with a consistent crosswalk to the real identifier. ,
