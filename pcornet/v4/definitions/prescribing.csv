@@ -228,5 +228,4 @@ NI=No information UN=Unknown OT=Other",Flag to indicate whether the provider ind
 pcornet,v4,prescribing,rx_dose_ordered,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
 pcornet,v4,prescribing,rx_dose_ordered_unit,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
 pcornet,v4,prescribing,raw_rx_route,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
-pcornet,v4,prescribing,raw_rx_refills,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
-,,,,,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
+pcornet,v4,prescribing,raw_rx_refills,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. ",,,,,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
