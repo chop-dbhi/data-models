@@ -26,7 +26,7 @@ pcornet,v4,prescribing,rx_prn_flag,NO,,,,,,Y;N;,Y=Yes N=No ,Flag to indicate tha
 pcornet,v4,prescribing,rx_route,NO,,,,,,,,Route of medication delivery. 
 pcornet,v4,prescribing,rx_source,NO,,,,,,OD;DR;NI;UN;OT,OD=Order/EHR DR=Derived NI=No information UN=Unknown OT=Other,Source of the prescribing information.
 pcornet,v4,prescribing,rx_dispense_as_written,NO,,,,,,Y;N;NI;UN;OT,"Y=Yes N=No NI=No information UN=Unknown OT=Other",Flag to indicate whether the provider indicated that the medication order was to be dispensed as written. 
-pcornet,v4,prescribing,rx_dose_ordered,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
-pcornet,v4,prescribing,rx_dose_ordered_unit,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
+pcornet,v4,prescribing,raw_rx_dose_ordered,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
+pcornet,v4,prescribing,raw_rx_dose_ordered_unit,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
 pcornet,v4,prescribing,raw_rx_route,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
 pcornet,v4,prescribing,raw_rx_refills,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
