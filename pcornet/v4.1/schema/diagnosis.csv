@@ -14,6 +14,6 @@ pcornet,v4.1,diagnosis,raw_dx,string,,,,
 pcornet,v4.1,diagnosis,raw_dx_source,string,,,,
 pcornet,v4.1,diagnosis,raw_dx_type,string,,,,
 pcornet,v4.1,diagnosis,raw_pdx,string,,,,
-pcornet,v4.1,diagnosis,dx_poa,string,,,,
+pcornet,v4.1,diagnosis,dx_poa,string,2,,,
 pcornet,v4.1,diagnosis,raw_dx_poa,string,,,,
 
