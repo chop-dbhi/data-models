@@ -1,0 +1,17 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v3.0,condition_occurrence,condition_concept_id,Yes,concept,concept_id,A foreign key that refers to a standard condition concept identifier in the Vocabulary.
+pedsnet,v3.0,condition_occurrence,condition_end_date,No,,,"The date when the instance of the condition is considered to have ended. If this information is not available, set to NULL."
+pedsnet,v3.0,condition_occurrence,condition_end_datetime,No,,,The date and time when the instance of the condition is considered to have ended
+pedsnet,v3.0,condition_occurrence,condition_occurrence_id,Yes,,,A unique identifier for each condition occurrence event.
+pedsnet,v3.0,condition_occurrence,condition_source_concept_id,No,concept,concept_id,A foreign key to a condition concept that refers to the code used in the source
+pedsnet,v3.0,condition_occurrence,condition_source_value,No,,,"The source code for the condition as it appears in the source data. This code is mapped to a standard condition concept in the Vocabulary and the original code is, stored here for reference. Condition source codes are typically ICD-9-CM diagnosis codes from medical claims or discharge status/visit diagnosis codes from EHRs."
+pedsnet,v3.0,condition_occurrence,condition_start_date,Yes,,,The date when the instance of the condition is recorded.
+pedsnet,v3.0,condition_occurrence,condition_start_datetime,Yes,,,The date and time when the instance of the condition is recorded.
+pedsnet,v3.0,condition_occurrence,condition_type_concept_id,Yes,concept,concept_id,"A foreign key to the predefined concept identifier in the Vocabulary reflecting the source data from which the condition was recorded, the level of standardization, and the type of occurrence. For example, conditions may be defined as primary or secondary diagnoses, problem lists and person statuses."
+pedsnet,v3.0,condition_occurrence,person_id,Yes,person,person_id,A foreign key identifier to the person who is experiencing the condition. The demographic details of that person are stored in the person table.
+pedsnet,v3.0,condition_occurrence,provider_id,No,provider,provider_id,A foreign key to the provider in the provider table who was responsible for determining (diagnosing) the condition.
+pedsnet,v3.0,condition_occurrence,stop_reason,No,,,"The reason, if available, that the condition was no longer recorded, as indicated in the source data. Valid values include discharged, resolved, etc. Note that a stop_reason does not necessarily imply that the condition is no longer occurring."
+pedsnet,v3.0,condition_occurrence,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,A foreign key to the visit in the visit table during which the condition was determined (diagnosed).
+pedsnet,v3.0,condition_occurrence,condition_status_concept_id,No,concept,concept_id,A foreign key to the predefined concept in the standard vocabulary reflecting the condition status.
+pedsnet,v3.0,condition_occurrence,condition_status_source_value,No,,,The source code for the condition status as it appears in the source data.
+pedsnet,v3.0,condition_occurrence,poa_concept_id,No,concept,concept_id,A foreign key to value in the source for that determines if the diagnosis is present on admission.
