@@ -1,0 +1,7 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v3.4,visit_payer,plan_class,string,,,,
+pedsnet,v3.4,visit_payer,plan_name,string,,,,
+pedsnet,v3.4,visit_payer,plan_type,string,,,,
+pedsnet,v3.4,visit_payer,visit_occurrence_id,integer,,,,
+pedsnet,v3.4,visit_payer,visit_payer_id,integer,,,,
+pedsnet,v3.4,visit_payer,visit_payer_type_concept_id,integer,,,,
