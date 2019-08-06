@@ -19,3 +19,4 @@ pcornet,v5.0,obs_clin,raw_obsclin_type,NO,,,,NO,,, ,Terminology related to the c
 pcornet,v5.0,obs_clin,raw_obsclin_result,NO,,,,NO,,,,"The original test result value as seen in your source data. Values may include a decimal point, a sign or text (e.g., POSITIVE, NEGATIVE, DETECTED). The symbols >, <, >=, <= should be removed from the value and stored in the Modifier variable instead. ",
 pcornet,v5.0,obs_clin,raw_obsclin_modifier,NO,,,,NO,,,,The original modifier text as represented in your source data. ,
 pcornet,v5.0,obs_clin,raw_obsclin_unit,NO,,,,NO,,,,Original units for the result in your source data. ,
+pcornet,v5.0,obs_clin,obsclin_source,NO,,,,NO,,OD;BI;CL;RG;DR;NI;UN;OT,"OD=Order/EHR; BI=Billing; CL=Claim; RG=Registry/ancillary system; DR=Derived; NI=No information; UN=Unknown; OT=Other","Source of the information for the lab result.",
