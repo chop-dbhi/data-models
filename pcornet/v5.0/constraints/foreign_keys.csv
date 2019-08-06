@@ -33,3 +33,9 @@ pcornet,v5.0,obs_clin,obsclin_providerid,provider,providerid,fk_obsclin_provider
 pcornet,v5.0,obs_gen,patid,demographic,patid,fk_obsgen_patid
 pcornet,v5.0,obs_gen,encounterid,encounter,encounterid,fk_obsgen_encounterid
 pcornet,v5.0,obs_gen,obsgen_providerid,provider,providerid,fk_obsgen_providerid
+pcornet,v5.0,hash_token,patid,demographic,patid,fk_hash_token_patid
+pcornet,v5.0,lds_address_history,patid,demographic,patid,fk_lds_addhist_patid
+pcornet,v5.0,immunization,patid,demographic,patid,fk_immun_patid
+pcornet,v5.0,immunization,encounterid,encounter,encounterid,fk_immun_encounterid
+pcornet,v5.0,immunization,vx_providerid,provider,providerid,fk_immun_providerid
+pcornet,v5.0,immunization,proceduresid,procedures,proceduresid,fk_immun_procedureid

@@ -28,3 +28,6 @@ pcornet,v5.0,primary key,obs_gen,obsgenid,xpk_obsgenid
 pcornet,v5.0,primary key,obs_clin,obsclinid,xpk_obsclinid
 pcornet,v5.0,primary key,provider,providerid,xpk_providerid
 pcornet,v5.0,primary key,med_admin,medadminid,xpk_medadminid
+pcornet,v5.0,primary key,hash_token,patid,xpk_hashtoken
+pcornet,v5.0,primary key,lds_address_history,addressid,xpk_ldsaddhist
+pcornet,v5.0,primary key,immunization,immunizationid,xpk_immunization
