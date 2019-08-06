@@ -13,3 +13,4 @@ pcornet,v5.0,dispensing,dispense_route,NO,,,,NO,,OTIC;INTRA_ARTICULAR;GASTROSTOM
 pcornet,v5.0,dispensing,raw_dispense_dose_disp,NO,,,,NO,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set."
 pcornet,v5.0,dispensing,raw_dispense_dose_disp_unit,NO,,,,NO,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
 pcornet,v5.0,dispensing,raw_dispense_route,NO,,,,NO,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
+pcornet,v5.0,dispensing,dispense_source_disp,NO,,,,,,"OD;BI;CL;DR;NI;UN;OT","OD=Order/EHR; BI=Billing; CL=Claim; DR=Derived; NI=No information; UN=Unknown; OT=Other;","Source of the dispensing information."

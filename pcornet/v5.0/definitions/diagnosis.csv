@@ -16,3 +16,4 @@ pcornet,v5.0,diagnosis,raw_dx_type,NO,,,,NO,,,,"Optional field for originating v
 pcornet,v5.0,diagnosis,raw_pdx,NO,,,,NO,,,,"Optional field for originating value of field, prior to mapping into the PCORnet CDM value set."
 pcornet,v5.0,diagnosis,dx_poa,NO,,,,NO,,Y;N;U;W;I;NI;UN;OT,"Y = Diagnosis present N = Diagnosis not present U = Insufficient documentation W = Clinically undetermined 1 = Unreported / not used NI=No information UN=Unknown OT=Other",Flag to denote whether diagnosis was present on inpatient admission. 
 pcornet,v5.0,diagnosis,raw_dx_poa,NO,,,,NO,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set. "
+pcornet,v5.0,diagnosis,dx_date,NO,,,YYYY-MM-DD,YES,DATE,,,Date diagnosis was recorded, if known.
