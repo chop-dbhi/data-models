@@ -1,0 +1,27 @@
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
+pcornet,v5.0,pro_cm,encounterid,NO,ENCOUNTER,ENCOUNTERID,,NO,,,,"Arbitrary encounter-level identifier used to link across tables. This is an optional field, and should only be populated if the item was collected as part of a healthcare encounter."
+pcornet,v5.0,pro_cm,patid,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier for the patient for whom the PRO response was captured. Used to link across tables.
+pcornet,v5.0,pro_cm,pro_cm_id,YES,,,,,,,,"Arbitrary identifier for each unique record. Does not need to be persistent across refreshes, and may be created by methods such as sequence or GUID."
+pcornet,v5.0,pro_cm,pro_cat,NO,,,,NO,,"Y;N;NI;UN;OT","Y=Yes  N=No  NI=No information  UN=Unknown OT=Other",Indicates whether Computer Adaptive Testing (CAT) was used to administer the survey or instrument that the item was part of. May apply to electronic (EC) and telephonic (PH or IV) modes.
+pcornet,v5.0,pro_cm,pro_date,YES,,,YYYY-MM-DD,NO,DATE,,,The date of the response.
+pcornet,v5.0,pro_cm,pro_method,NO,,,,NO,,PA;EC;PH;IV;NI;UN;OT,"PA=Paper EC=Electronic  PH=Telephonic  IV=Telephonic with interactive voice response (IVR) technology  NI=No information  UN=Unknown OT=Other","Method of administration. Electronic includes responses captured via a personal or tablet computer, at web kiosks, or via a smartphone."
+pcornet,v5.0,pro_cm,pro_mode,NO,,,,NO,,"SF;SA;PR;PA;NI;UN;OT","SF=Self without assistance  SA= Self with assistance  PR=Proxy without assistance  PA=Proxy with assistance  NI=No information UN=Unknown OT=Other","The person who responded on behalf of the patient for whom the response was captured. A proxy report is a measurement based on a report by someone other than the patient reporting as if he or she is the patient, such as a parent responding for a child, or a caregiver responding for an individual unable to report for themselves. Assistance excludes providing interpretation of the patient‚Äôs response. "
+pcornet,v5.0,pro_cm,pro_response_num,NO,,,,NO,,,,The numeric response recorded for the item. Please see the Common Measures reference table for the list of valid responses for each item.  Number precision and scale updated in v4.
+pcornet,v5.0,pro_cm,pro_time,YES,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,The time of the response.
+pcornet,v5.0,pro_cm,pro_type,NO,,,,NO,,PM;NQ;AM;NT;PC;LC;HC;NI;UN;OT,PM=PROMIS NQ=Neuro-QoL AM=ASQC-Me NT=NIH Toolbox PC=PRO_CTCAE LC=LOINC HC=HCAHPS NI=No information UN=Unknown OT=Other,Terminology / vocabulary used to describe the PRO item.
+pcornet,v5.0,pro_cm,pro_item_name,NO,,,,NO,,,,Short name or code of the PRO item in the vocabulary/terminology specified in PRO_TYPE. 
+pcornet,v5.0,pro_cm,pro_item_loinc,NO,,,,NO,,,,"LOINC® code for the PRO item, if available."
+pcornet,v5.0,pro_cm,pro_response_text,NO,,,,NO,,,,"Text version of the response recorded for the item, if available/applicable."
+pcornet,v5.0,pro_cm,pro_item_version,NO,,,,NO,,,,Version of the item/question.
+pcornet,v5.0,pro_cm,pro_measure_name,NO,,,,NO,,,,"Short name or code of the PRO measure/form that item belongs to, if item is being administered as part of a measure"
+pcornet,v5.0,pro_cm,pro_measure_seq,NO,,,,NO,,,,Arbitrary ID/sequence number used to link PRO item responses that are associated with the same measure/form.
+pcornet,v5.0,pro_cm,pro_measure_score,NO,,,,NO,,,,Overall raw score for the PRO measure.
+pcornet,v5.0,pro_cm,pro_measure_theta,NO,,,,NO,,,,The value of theta reported from the CAT PROMIS results. Only applies to items that are administered as part of a measure. 
+pcornet,v5.0,pro_cm,pro_measure_scaled_tscore,NO,,,,NO,,,,Standardized score based on the total raw score for the instrument. Only applies to items that are administered as part of a measure. 
+pcornet,v5.0,pro_cm,pro_measure_standard_error,NO,,,,NO,,,,Possible range of the actual final score based on the scaled T-score. Only applies to items that are administered as part of a measure.
+pcornet,v5.0,pro_cm,pro_measure_count_scored,NO,,,,NO,,,,Number of PRO item responses that were involved in the scoring of the measure. 
+pcornet,v5.0,pro_cm,pro_measure_loinc,NO,,,,NO,,,,"LOINC® code for the PRO item, if available."
+pcornet,v5.0,pro_cm,pro_measure_version,NO,,,,NO,,,,Version of the measure.
+pcornet,v5.0,pro_cm,pro_item_fullname,NO,,,,NO,,,,Full name of the PRO item.
+pcornet,v5.0,pro_cm,pro_item_text,NO,,,,NO,,,,Text of the PRO item question.
+pcornet,v5.0,pro_cm,pro_measure_fullname,NO,,,,NO,,,,Full name of the PRO measure.
