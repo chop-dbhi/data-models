@@ -1,0 +1,7 @@
+model,version,table,field,type,length,precision,scale,default
+pcornet,v5.0,provider,providerid,string,,,,
+pcornet,v5.0,provider,provider_sex,string,2,,,
+pcornet,v5.0,provider,provider_specialty_primary,string,,,,
+pcornet,v5.0,provider,provider_npi,number,,15,8,
+pcornet,v5.0,provider,provider_npi_flag,string,1,,,
+pcornet,v5.0,provider,raw_provider_specialty_primary,string,,,,
