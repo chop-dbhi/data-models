@@ -39,3 +39,6 @@ pcornet,v5.0,immunization,patid,demographic,patid,fk_immun_patid
 pcornet,v5.0,immunization,encounterid,encounter,encounterid,fk_immun_encounterid
 pcornet,v5.0,immunization,vx_providerid,provider,providerid,fk_immun_providerid
 pcornet,v5.0,immunization,proceduresid,procedures,proceduresid,fk_immun_procedureid
+pcornet,v5.0,private_address_geocode,addressid,private_address_history,addressid,fk_gecode_addressid
+pcornet,v5.0,private_address_history,patid,demographic,patid,fk_add_history_patid
+pcornet,v5.0,private_demographic,patid,demographic,patid,fk_priv_demographic_patid
