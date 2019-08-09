@@ -13,4 +13,5 @@ pcornet,v5.0,private_address_history,address_zip5,string,,,,
 pcornet,v5.0,private_address_history,address_zip9,string,,,,
 pcornet,v5.0,private_address_history,address_period_start,date,,,,
 pcornet,v5.0,private_address_history,address_period_end,date,,,,
-pcornet,v5.0,private_address_history,raw_address_text,date,,,,
+pcornet,v5.0,private_address_history,raw_address_text,string,,,,
+
