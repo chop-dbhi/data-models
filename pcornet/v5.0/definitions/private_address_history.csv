@@ -1,4 +1,4 @@
-model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description,,
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description,
 pcornet,v5.0,private_address_history,addressid,YES,,,,NO,,,,"Arbitrary identifier for each unique address record.",
 pcornet,v5.0,private_address_history,patid,YES,DEMOGRAPHIC,PATID,,NO,,,,"Arbitrary person-level identifier. Used to link across tables.",
 pcornet,v5.0,private_address_history,address_use,NO,,,,NO,,PR;HC;RG;NI;UN;OT,"PR = Patient-reported medical history HC = Healthcare problem list RG = Registry cohort PC = PCORnetdefined condition algorithm NI = No information UN = Unknown OT = Other","Arbitrary person-level identifier. Used to link across tables.",
