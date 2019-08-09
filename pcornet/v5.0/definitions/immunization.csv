@@ -20,7 +20,7 @@ pcornet,v5.0,immunization,vx_lot_num,NO,,,,NO,,,,"Lot number of the immunization
 pcornet,v5.0,immunization,vx_exp_date,NO,,,,NO,,,,"Expiration date of the immunization.",
 pcornet,v5.0,immunization,raw_vx_name,NO,,,,NO,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set.",
 pcornet,v5.0,immunization,raw_vx_code,NO,,,,NO,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set.",
-pcornet,v5.0,immunization,raw_vx_code_type,NO,,,,NO,,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set.",
+pcornet,v5.0,immunization,raw_vx_code_type,NO,,,,NO,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set.",
 pcornet,v5.0,immunization,raw_vx_dose,NO,,,,NO,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set.",
 pcornet,v5.0,immunization,raw_vx_dose_unit,NO,,,,NO,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set.",
 pcornet,v5.0,immunization,raw_vx_route,NO,,,,NO,,,,"Field for originating value, prior to mapping into the PCORnet CDM value set.",
