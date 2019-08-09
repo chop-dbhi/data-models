@@ -1,4 +1,4 @@
-model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description,,
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description,
 pcornet,v5.0,hash_token,patid,NO,,,,NO,,,,"Arbitrary person-level identifier. Used to link across tables..",
 pcornet,v5.0,hash_token,token_01,NO,,,,NO,,,,"Encrypted hash generated from PII using token strategy 01.",
 pcornet,v5.0,hash_token,token_02,NO,,,,NO,,,,"Encrypted hash generated from PII using token strategy 02.",
