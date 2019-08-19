@@ -143,6 +143,7 @@ pedsnet,v3.5,not null,,dose_era,dose_value
 pedsnet,v3.5,not null,,immunization,person_id
 pedsnet,v3.5,not null,,immunization,immunization_concept_id
 pedsnet,v3.5,not null,,immunization,immunization_source_concept_id
+pedsnet,v3.5,not null,,immunization,relationship_type_concept_id
 pedsnet,v3.5,not null,,immunization,immunization_id
 pedsnet,v3.5,not null,,immunization,immunization_date
 pedsnet,v3.5,not null,,immunization,immunization_source_value
