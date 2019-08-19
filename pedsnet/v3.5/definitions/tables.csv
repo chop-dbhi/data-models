@@ -30,3 +30,4 @@ pedsnet,v3.5,drug_era,A Drug Era is defined as a span of time when the Person is
 pedsnet,v3.5,condition_era,A Condition Era is defined as a span of time when the Person is assumed to have a given condition. 
 pedsnet,v3.5,immunization,The immunization domain captures immunization records.
 pedsnet,v3.5,device_exposure,The Device domain captures information about a person's exposure to a foreign physical object or instrument which is used for diagnostic or therapeutic purposes through a mechanism beyond chemical action.
+pedsnet,v3.5,location_history,"The 'Location_History' domain is intended to store historical location information for various domains persons, providers and care_sites."
