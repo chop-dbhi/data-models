@@ -143,3 +143,4 @@ pedsnet,v3.5,location_history,location_id,location,location_id,fpk_loc_hist_loca
 pedsnet,v3.5,location_history,domain_id,domain,domain_id,fpk_loc_hist_domain
 pedsnet,v3.5,location_history,entity_id,person,person_id,fpk_loc_hist_person
 pedsnet,v3.5,location_history,relationship_type_concept_id,concept,concept_id,fpk_loc_hist_type
+pedsnet,v3.5,location_history,location_preferred_concept_id,concept,concept_id,fpk_loc_hist_type
