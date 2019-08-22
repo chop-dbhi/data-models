@@ -13,6 +13,6 @@ omop,v6.0,visit_occurrence,visit_start_datetime,No,,,,The time the visit started
 omop,v6.0,visit_occurrence,visit_type_concept_id,Yes,concept,concept_id,,A foreign key to the predefined concept identifier in the Standardized Vocabularies reflecting the type of source data from which the visit record is derived. 
 omop,v6.0,visit_occurrence,admitted_from_source_concept_id,No,concept,concept_id,,A foreign key to the predefined concept in the Place of Service Vocabulary reflecting the admitting source for a visit.
 omop,v6.0,visit_occurrence,discharge_to_concept_id,No,concept,concept_id,,A foreign key to the predefined concept in the Place of Service Vocabulary reflecting the discharge disposition (destination) for a visit.
-omop,v6.0,visit_occurrence,preceding_visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,,"A foreign key to the VISIT_OCCURRENCE table record of the visit immediately preceding this visit.
+omop,v6.0,visit_occurrence,preceding_visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,,"A foreign key to the VISIT_OCCURRENCE table record of the visit immediately preceding this visit."
 omop,v6.0,visit_occurrence,admitted_from_source_value,No,,,,The source code for the admitting source as it appears in the source data.
 omop,v6.0,visit_occurrence,discharge_to_source_value,No,,,,The source code for the discharge disposition as it appears in the source data.

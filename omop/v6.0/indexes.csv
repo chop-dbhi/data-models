@@ -1,9 +1,6 @@
 model,version,name,unique,table,field,order
-omop,v6.0,idx_attribute_definition_id,No,attribute_definition,attribute_definition_id,asc
 omop,v6.0,idx_cohort_c_definition_id,No,cohort,cohort_definition_id,asc
 omop,v6.0,idx_cohort_subject_id,No,cohort,subject_id,asc
-omop,v6.0,idx_ca_definition_id,No,cohort_attribute,cohort_definition_id,asc
-omop,v6.0,idx_ca_subject_id,No,cohort_attribute,subject_id,asc
 omop,v6.0,idx_cohort_definition_id,No,cohort_definition,cohort_definition_id,asc
 omop,v6.0,idx_concept_class_id,No,concept,concept_class_id,asc
 omop,v6.0,idx_concept_code,No,concept,concept_code,asc

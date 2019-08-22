@@ -16,19 +16,21 @@ omop,v6.0,primary key,xpk_source_to_concept_map,source_to_concept_map,valid_end_
 omop,v6.0,primary key,xpk_drug_strength,drug_strength,drug_concept_id
 omop,v6.0,primary key,xpk_drug_strength,drug_strength,ingredient_concept_id
 omop,v6.0,primary key,xpk_cohort_definition,cohort_definition,cohort_definition_id
-omop,v6.0,primary key,xpk_attribute_definition,attribute_definition,attribute_definition_id
 omop,v6.0,primary key,xpk_person,person,person_id
 omop,v6.0,primary key,xpk_observation_period,observation_period,observation_period_id
 omop,v6.0,primary key,xpk_specimen,specimen,specimen_id
 omop,v6.0,primary key,xpk_visit_occurrence,visit_occurrence,visit_occurrence_id
+omop,v6.0,primary key,xpk_visit_detail,visit_detail,visit_detail_id
 omop,v6.0,primary key,xpk_procedure_occurrence,procedure_occurrence,procedure_occurrence_id
 omop,v6.0,primary key,xpk_drug_exposure,drug_exposure,drug_exposure_id
 omop,v6.0,primary key,xpk_device_exposure,device_exposure,device_exposure_id
 omop,v6.0,primary key,xpk_condition_occurrence,condition_occurrence,condition_occurrence_id
 omop,v6.0,primary key,xpk_measurement,measurement,measurement_id
 omop,v6.0,primary key,xpk_note,note,note_id
+omop,v6.0,primary key,xpk_note_nlp,note_nlp,note_nlp_id
 omop,v6.0,primary key,xpk_observation,observation,observation_id
 omop,v6.0,primary key,xpk_location,location,location_id
+omop,v6.0,primary key,xpk_location_history,location_history,location_id
 omop,v6.0,primary key,xpk_care_site,care_site,care_site_id
 omop,v6.0,primary key,xpk_provider,provider,provider_id
 omop,v6.0,primary key,xpk_payer_plan_period,payer_plan_period,payer_plan_period_id
@@ -40,3 +42,4 @@ omop,v6.0,primary key,xpk_cohort,cohort,subject_id
 omop,v6.0,primary key,xpk_drug_era,drug_era,drug_era_id
 omop,v6.0,primary key,xpk_dose_era,dose_era,dose_era_id
 omop,v6.0,primary key,xpk_condition_era,condition_era,condition_era_id
+omop,v6.0,primary key,xpk_survey_conduct,survey_conduct,survey_conduct_id
