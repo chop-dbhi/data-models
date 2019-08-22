@@ -11,4 +11,4 @@ omop,v6.0,provider,provider_source_value,Yes,,,,"The identifier used for the pro
 omop,v6.0,provider,specialty_concept_id,No,concept,concept_id,CDC,A foreign key to a standard provider's specialty concept identifier in the vocabulary. 
 omop,v6.0,provider,specialty_source_concept_id,No,concept,concept_id,,A foreign key to a concept that refers to the code used in the source. 
 omop,v6.0,provider,specialty_source_value,No,,,,"The source code for the provider specialty as it appears in the source data, stored here for reference. "
-omop,v6.0,provider,year_of_birth,No,,,,
+omop,v6.0,provider,year_of_birth,No,,,,The year of birth of the Provider.

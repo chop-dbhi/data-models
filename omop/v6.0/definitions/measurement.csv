@@ -18,3 +18,4 @@ omop,v6.0,measurement,value_as_concept_id,No,concept,concept_id,,"A foreign key 
 omop,v6.0,measurement,value_as_number,No,,,,A measurement stored as a number. This is applicable to measurement where the result is expressed as a numeric value. 
 omop,v6.0,measurement,value_source_value,No,,,,The source value associated with the structured value stored as numeric or concept. This field can be used in instances where the source data are transformed to produce the structured value. 
 omop,v6.0,measurement,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,,A foreign key to the visit in the visit table during which the measurement was recorded. 
+omop,v6.0,measurement,visit_detail_id,No,visit_detail,visit_detail_id,,A foreign key to the Visit Detail in the VISIT_DETAIL table during which the Measurement was recorded.

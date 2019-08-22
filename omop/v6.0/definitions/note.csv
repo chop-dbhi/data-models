@@ -11,3 +11,7 @@ omop,v6.0,note,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,,Fore
 omop,v6.0,note,note_class_concept_id,Yes,concept,concept_id,,A foreign key to the predefined Concept in the Standardized Vocabularies reflecting the HL7 LOINC Document Type Vocabulary classification of the note.
 omop,v6.0,note,encoding_concept_id,Yes,concept,concept_id,,A foreign key to the predefined Concept in the Standardized Vocabularies reflecting the note character encoding type.
 omop,v6.0,note,language_concept_id,Yes,concept,concept_id,,A foreign key to the predefined Concept in the Standardized Vocabularies reflecting the language of the note.
+omop,v6.0,note,note_event_id,No,,,,A foreign key identifier to the event (e.g. Measurement, Procedure, Visit, Drug Exposure, etc) record during which the note was recorded.
+omop,v6.0,note,note_event_field_concept_id,No,concept,concept_id,,A foreign key to the predefined Concept in the Standardized Vocabularies reflecting the field to which the note_event_id is referring.
+omop,v6.0,note,visit_detail_id,No,visit_detail,visit_detail_id,,A foreign key to the Visit in the VISIT_DETAIL table when the Note was taken.
+omop,v6.0,note,note_source_value,No,,,,The source value associated with the origin of the Note.
