@@ -1,0 +1,7 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v6.0,condition_era,condition_concept_id,Yes,concept,concept_id,SNOMED,A foreign key that refers to a standard condition concept identifier in the vocabulary. 
+omop,v6.0,condition_era,condition_era_end_datetime,Yes,,,,The end date for the condition era constructed from the individual instances of condition occurrences. It is the end date of the final continuously recorded instance of the condition. 
+omop,v6.0,condition_era,condition_era_id,Yes,,,,A system-generated unique identifier for each condition era. 
+omop,v6.0,condition_era,condition_era_start_datetime,Yes,,,,The start date for the condition era constructed from the individual instances of condition occurrences. It is the start date of the very first chronologically recorded instance of the condition. 
+omop,v6.0,condition_era,condition_occurrence_count,No,,,,The number of individual condition occurrences used to construct the condition era. 
+omop,v6.0,condition_era,person_id,Yes,person,person_id,,A foreign key identifier to the person who is experiencing the condition during the condition era. The demographic details of that person are stored in the person table.

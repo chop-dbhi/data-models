@@ -1,0 +1,13 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v6.0,note,note_date,date,,,,
+omop,v6.0,note,note_id,integer,,,,
+omop,v6.0,note,note_text,clob,,,,
+omop,v6.0,note,note_datetime,datetime,,,,
+omop,v6.0,note,note_type_concept_id,integer,,,,
+omop,v6.0,note,person_id,integer,,,,
+omop,v6.0,note,provider_id,integer,,,,
+omop,v6.0,note,visit_occurrence_id,integer,,,,
+omop,v6.0,note,language_concept_id,integer,,,,
+omop,v6.0,note,encoding_concept_id,integer,,,,
+omop,v6.0,note,note_class_concept_id,integer,,,,
+omop,v6.0,note,note_title,string,250,,,

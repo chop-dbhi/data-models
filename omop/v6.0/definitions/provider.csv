@@ -1,0 +1,14 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v6.0,provider,care_site_id,No,care_site,care_site_id,,A foreign key to the main care site where the provider is practicing. 
+omop,v6.0,provider,dea,No,,,,The Drug Enforcement Administration (DEA) number of the provider. 
+omop,v6.0,provider,gender_concept_id,No,concept,concept_id,,
+omop,v6.0,provider,gender_source_concept_id,No,concept,concept_id,,A foreign key to a concept that refers to the code used in the source.
+omop,v6.0,provider,gender_source_value,No,,,,
+omop,v6.0,provider,npi,No,,,,The National Provider Identifier (NPI) of the provider. 
+omop,v6.0,provider,provider_id,Yes,,,,A system-generated unique identifier for each provider. 
+omop,v6.0,provider,provider_name,No,,,,A description of the provider 
+omop,v6.0,provider,provider_source_value,Yes,,,,"The identifier used for the provider in the source data, stored here for reference. "
+omop,v6.0,provider,specialty_concept_id,No,concept,concept_id,CDC,A foreign key to a standard provider's specialty concept identifier in the vocabulary. 
+omop,v6.0,provider,specialty_source_concept_id,No,concept,concept_id,,A foreign key to a concept that refers to the code used in the source. 
+omop,v6.0,provider,specialty_source_value,No,,,,"The source code for the provider specialty as it appears in the source data, stored here for reference. "
+omop,v6.0,provider,year_of_birth,No,,,,

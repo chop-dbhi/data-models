@@ -1,0 +1,11 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v6.0,concept,concept_class_id,string,20,,,
+omop,v6.0,concept,concept_code,string,50,,,
+omop,v6.0,concept,concept_id,integer,,,,
+omop,v6.0,concept,concept_name,string,255,,,
+omop,v6.0,concept,domain_id,string,20,,,
+omop,v6.0,concept,invalid_reason,string,1,,,
+omop,v6.0,concept,standard_concept,string,1,,,
+omop,v6.0,concept,valid_end_date,date,,,,
+omop,v6.0,concept,valid_start_date,date,,,,
+omop,v6.0,concept,vocabulary_id,string,20,,,

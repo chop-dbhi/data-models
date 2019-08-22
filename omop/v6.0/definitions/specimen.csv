@@ -1,0 +1,16 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v6.0,specimen,anatomic_site_concept_id,No,concept,concept_id,,A foreign key to a standard concept identifier for the anatomic location of specimen collection. 
+omop,v6.0,specimen,anatomic_site_source_value,No,,,,The information about the anatomic site as detailed in the source. 
+omop,v6.0,specimen,disease_status_concept_id,No,concept,concept_id,,A foreign key to a standard concept identifier for the disease status of specimen collection. 
+omop,v6.0,specimen,disease_status_source_value,No,,,,The information about the disease status as detailed in the source. 
+omop,v6.0,specimen,person_id,Yes,person,person_id,,A foreign key identifier to the person for whom the specimen is recorded. 
+omop,v6.0,specimen,quantity,No,,,,The amount of specimen collection from the person during the sampling procedure 
+omop,v6.0,specimen,specimen_concept_id,Yes,concept,concept_id,,A foreign key referring to a standard concept identifier in the Standardized Vocabularies for the specimen. 
+omop,v6.0,specimen,specimen_date,Yes,,,,The date the specimen was obtained from the person. 
+omop,v6.0,specimen,specimen_id,Yes,,,,A unique identifier for each specimen. 
+omop,v6.0,specimen,specimen_source_id,No,,,,The specimen identifier as it appears in the source data. 
+omop,v6.0,specimen,specimen_source_value,No,,,,"The specimen value as it appears in the source data. This value is mapped to a standard concept in the Standardized Vocabularies and the original code is, stored here for reference. "
+omop,v6.0,specimen,specimen_datetime,No,,,,The time on the date when the specimen was obtained from the person. 
+omop,v6.0,specimen,specimen_type_concept_id,Yes,concept,concept_id,,A foreign key referring to the predefined concept identifier in the Standardized Vocabularies reflecting the system of record from which the specimen was represented in the source data. 
+omop,v6.0,specimen,unit_concept_id,No,concept,concept_id,,A foreign key to a standard concept identifier for the unit associated with the numeric quantity of the specimen collection. 
+omop,v6.0,specimen,unit_source_value,No,,,,The information about the unit as detailed in the source. 
