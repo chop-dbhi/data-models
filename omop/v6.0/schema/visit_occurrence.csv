@@ -16,4 +16,3 @@ omop,v6.0,visit_occurrence,admitted_from_source_concept_id,integer,,,,
 omop,v6.0,visit_occurrence,discharge_to_concept_id,integer,,,,
 omop,v6.0,visit_occurrence,admitted_from_source_value,string,,,,
 omop,v6.0,visit_occurrence,discharge_to_source_value,string,,,,
-
