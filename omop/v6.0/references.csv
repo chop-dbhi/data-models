@@ -138,7 +138,7 @@ omop,v6.0,cost,cost_concept_id,concept,concept_id,fpk_domain_cost_id
 omop,v6.0,cost,cost_source_concept_id,concept,concept_id,fpk_domain_cost_source
 omop,v6.0,cost,revenue_code_concept_id,concept,concept_id,fpk_rev_code_cost_id
 omop,v6.0,cost,drg_concept_id,concept,concept_id,fpk_drg_cost_id
-omop,v6.0,cost_event_field,concept,concept_id,fpk_drg_cost_event
+omop,v6.0,cost,cost_event_field_concept_id,concept,concept_id,fpk_drg_cost_event
 omop,v6.0,visit_occurrence,care_site_id,care_site,care_site_id,fpk_visit_care_site
 omop,v6.0,visit_occurrence,person_id,person,person_id,fpk_visit_person
 omop,v6.0,visit_occurrence,provider_id,provider,provider_id,fpk_visit_provider
