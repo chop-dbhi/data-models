@@ -19,7 +19,6 @@ omop,v6.0,idx_condition_era_person_id,No,condition_era,person_id,asc
 omop,v6.0,idx_condition_concept_id,No,condition_occurrence,condition_concept_id,asc
 omop,v6.0,idx_condition_person_id,No,condition_occurrence,person_id,asc
 omop,v6.0,idx_condition_visit_id,No,condition_occurrence,visit_occurrence_id,asc
-omop,v6.0,idx_death_person_id,No,death,person_id,asc
 omop,v6.0,idx_device_concept_id,No,device_exposure,device_concept_id,asc
 omop,v6.0,idx_device_person_id,No,device_exposure,person_id,asc
 omop,v6.0,idx_device_visit_id,No,device_exposure,visit_occurrence_id,asc

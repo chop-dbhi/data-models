@@ -104,7 +104,7 @@ omop,v6.0,not null,,payer_plan_period,person_id
 omop,v6.0,not null,,payer_plan_period,payer_plan_period_start_date
 omop,v6.0,not null,,payer_plan_period,payer_plan_period_end_date
 omop,v6.0,not null,,cost,cost_event_id
-omop,v6.0,not null,,cost,cost_domain_id
+omop,v6.0,not null,,cost,cost_concept_id
 omop,v6.0,not null,,cost,cost_type_concept_id
 omop,v6.0,not null,,cohort,cohort_definition_id
 omop,v6.0,not null,,cohort,subject_id
