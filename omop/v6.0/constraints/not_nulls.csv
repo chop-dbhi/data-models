@@ -80,7 +80,7 @@ omop,v6.0,not null,,condition_occurrence,condition_type_concept_id
 omop,v6.0,not null,,measurement,person_id
 omop,v6.0,not null,,measurement,measurement_concept_id
 omop,v6.0,not null,,measurement,measurement_date
-omop,v6.0,not null,,measurement,measure_type_concept_id
+omop,v6.0,not null,,measurement,measurement_type_concept_id
 omop,v6.0,not null,,note,person_id
 omop,v6.0,not null,,note,note_date
 omop,v6.0,not null,,note,note_type_concept_id
