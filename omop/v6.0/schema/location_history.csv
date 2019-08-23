@@ -1,0 +1,7 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v6.0,location_history,location_id,integer,,,,
+omop,v6.0,location_history,relationship_type_concept_id,integer,,,,
+omop,v6.0,location_history,domain_id,integer,,,,
+omop,v6.0,location_history,entity_id,integer,,,,
+omop,v6.0,location_history,start_date,date,,,,
+omop,v6.0,location_history,end_date,date,,,,

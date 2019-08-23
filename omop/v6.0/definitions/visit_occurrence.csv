@@ -1,0 +1,18 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v6.0,visit_occurrence,care_site_id,No,care_site,care_site_id,,A foreign key to the care site in the care site table that was visited. 
+omop,v6.0,visit_occurrence,person_id,Yes,person,person_id,,A foreign key identifier to the person for whom the visit is recorded. The demographic details of that person are stored in the person table. 
+omop,v6.0,visit_occurrence,provider_id,No,provider,provider_id,,A foreign key to the provider in the provider table who was associated with the visit. 
+omop,v6.0,visit_occurrence,visit_concept_id,Yes,concept,concept_id,,A foreign key that refers to a visit concept identifier in the Standardized Vocabularies. 
+omop,v6.0,visit_occurrence,visit_end_date,Yes,,,,The end date of the visit. If this is a one-day visit the end date should match the start date. 
+omop,v6.0,visit_occurrence,visit_end_datetime,No,,,,The time the visit ended. 
+omop,v6.0,visit_occurrence,visit_occurrence_id,Yes,,,,A system-generated unique identifier for each person's visit or encounter at a healthcare provider. 
+omop,v6.0,visit_occurrence,visit_source_concept_id,No,concept,concept_id,,A foreign key to a concept that refers to the code used in the source. 
+omop,v6.0,visit_occurrence,visit_source_value,No,,,,The source code used to reflect the type or source of the visit in the source data.
+omop,v6.0,visit_occurrence,visit_start_date,Yes,,,,The start date of the visit.
+omop,v6.0,visit_occurrence,visit_start_datetime,No,,,,The time the visit started. 
+omop,v6.0,visit_occurrence,visit_type_concept_id,Yes,concept,concept_id,,A foreign key to the predefined concept identifier in the Standardized Vocabularies reflecting the type of source data from which the visit record is derived. 
+omop,v6.0,visit_occurrence,admitted_from_source_concept_id,No,concept,concept_id,,A foreign key to the predefined concept in the Place of Service Vocabulary reflecting the admitting source for a visit.
+omop,v6.0,visit_occurrence,discharge_to_concept_id,No,concept,concept_id,,A foreign key to the predefined concept in the Place of Service Vocabulary reflecting the discharge disposition (destination) for a visit.
+omop,v6.0,visit_occurrence,preceding_visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,,"A foreign key to the VISIT_OCCURRENCE table record of the visit immediately preceding this visit."
+omop,v6.0,visit_occurrence,admitted_from_source_value,No,,,,The source code for the admitting source as it appears in the source data.
+omop,v6.0,visit_occurrence,discharge_to_source_value,No,,,,The source code for the discharge disposition as it appears in the source data.

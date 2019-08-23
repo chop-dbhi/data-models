@@ -1,0 +1,8 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v6.0,cohort_definition,cohort_definition_description,clob,,,,
+omop,v6.0,cohort_definition,cohort_definition_id,integer,,,,
+omop,v6.0,cohort_definition,cohort_definition_name,string,255,,,
+omop,v6.0,cohort_definition,cohort_definition_syntax,clob,,,,
+omop,v6.0,cohort_definition,cohort_initiation_date,date,,,,
+omop,v6.0,cohort_definition,definition_type_concept_id,integer,,,,
+omop,v6.0,cohort_definition,subject_concept_id,integer,,,,

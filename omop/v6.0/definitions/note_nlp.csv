@@ -1,0 +1,15 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v6.0,note_nlp,note_nlp_id,Yes,,,,A unique identifier for each term extracted from a note.
+omop,v6.0,note_nlp,note_id,Yes,note,note_id,,A foreign key to the Note table note the term was
+omop,v6.0,note_nlp,section_concept_id,Yes,concept,concept_id,,A foreign key to the predefined Concept in the Standardized Vocabularies representing the section of the extracted term
+omop,v6.0,note_nlp,snippet,No,,,,A small window of text surrounding the term.
+omop,v6.0,note_nlp,offset,No,,,,Character offset of the extracted term in the input note.
+omop,v6.0,note_nlp,lexical_variant,Yes,,,,raw text extracted from the NLP tool.
+omop,v6.0,note_nlp,note_nlp_concept_id,Yes,concept,concept_id,,A foreign key to the predefined Concept in the Standardized Vocabularies reflecting the normalized concept for the extracted term. Domain of the term is represented as part of the Concept table.
+omop,v6.0,note_nlp,note_nlp_source_concept_id,Yes,concept,concept_id,,A foreign key to a Concept that refers to the code in the source vocabulary used by the NLP system
+omop,v6.0,note_nlp,nlp_system,No,,,,Name and version of the NLP system that extracted the term.Useful for data provenance.
+omop,v6.0,note_nlp,nlp_date,Yes,,,,The date of the note processing.Useful for data provenance.
+omop,v6.0,note_nlp,nlp_datetime,No,,,,The date and time of the note processing.Useful for data provenance.
+omop,v6.0,note_nlp,term_exists,No,,,,A summary modifier that signifies presence or absence of the term for a given patient. Useful for quick querying.
+omop,v6.0,note_nlp,term_temporal,No,,,,"An optional time modifier associated with the extracted term. (for now “past” or “present” only). Standardize it later."
+omop,v6.0,note_nlp,term_modifiers,No,,,,"A compact description of all the modifiers of the specific term extracted by the NLP system. (e.g. “son has rash” ? “negated=no,subject=family, certainty=undef,conditional=false,general=false”)."
