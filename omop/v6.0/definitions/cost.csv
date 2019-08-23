@@ -14,6 +14,6 @@ omop,v6.0,cost,billed_date,No,,,,"The date a bill was generated for a service or
 omop,v6.0,cost,paid_date,No,,,,"The date payment was received for a service or encounter."
 omop,v6.0,cost,revenue_code_concept_id,No,concept,concept_id,,A foreign key referring to a Standard Concept ID in the Standardized Vocabularies for Revenue codes.
 omop,v6.0,cost,drg_concept_id,No,concept,concept_id,,A foreign key referring to a Standard Concept ID in the Standardized Vocabularies for DRG codes.
-omop,v6.0,cost,revenue_code_source_value,No,,,,The source code for the Revenue code as it appears in the source data, stored here for reference.
-omop,v6.0,cost,drg_source_value,No,,,,The source code for the 3-digit DRG source code as it appears in the source data, stored here for reference.
+omop,v6.0,cost,revenue_code_source_value,No,,,,The source code for the Revenue code as it appears in the source data stored here for reference.
+omop,v6.0,cost,drg_source_value,No,,,,The source code for the 3-digit DRG source code as it appears in the source data stored here for reference.
 omop,v6.0,cost,person_id,Yes,person,person_id,,A unique identifier for each PERSON.

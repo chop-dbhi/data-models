@@ -5,7 +5,7 @@ omop,v6.0,visit_detail,provider_id,No,provider,provider_id,,A foreign key to the
 omop,v6.0,visit_detail,visit_detail_concept_id,Yes,concept,concept_id,,A foreign key that refers to a visit Concept identifier in the Standardized Vocabularies belonging to the 'Visit' Vocabulary.
 omop,v6.0,visit_detail,visit_detail_end_date,Yes,,,,The end date of the visit. If this is a one-day visit the end date should match the start date. 
 omop,v6.0,visit_detail,visit_detail_end_datetime,No,,,,The time the visit ended. 
-omop,v6.0,visit_detail,visit_occurrence_id,Yes,visit_occurrence,visit_occurrence_id,,A foreign key that refers to the record in the VISIT_OCCURRENCE table. This is a required field, because for every visit_detail is a child of visit_occurrence and cannot exist without a corresponding parent record in visit_occurrence.
+omop,v6.0,visit_detail,visit_occurrence_id,Yes,visit_occurrence,visit_occurrence_id,,A foreign key that refers to the record in the VISIT_OCCURRENCE table. This is a required field because for every visit_detail is a child of visit_occurrence and cannot exist without a corresponding parent record in visit_occurrence.
 omop,v6.0,visit_detail,visit_detail_source_concept_id,No,concept,concept_id,,A foreign key to a concept that refers to the code used in the source. 
 omop,v6.0,visit_detail,visit_detail_source_value,No,,,,The source code used to reflect the type or source of the visit in the source data.
 omop,v6.0,visit_detail,visit_detail_start_date,Yes,,,,The start date of the visit.
