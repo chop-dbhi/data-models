@@ -56,9 +56,6 @@ omop,v6.0,not null,,specimen,person_id
 omop,v6.0,not null,,specimen,specimen_concept_id
 omop,v6.0,not null,,specimen,specimen_type_concept_id
 omop,v6.0,not null,,specimen,specimen_date
-omop,v6.0,not null,,death,person_id
-omop,v6.0,not null,,death,death_date
-omop,v6.0,not null,,death,death_type_concept_id
 omop,v6.0,not null,,visit_occurrence,person_id
 omop,v6.0,not null,,visit_occurrence,visit_concept_id
 omop,v6.0,not null,,visit_occurrence,visit_start_date
