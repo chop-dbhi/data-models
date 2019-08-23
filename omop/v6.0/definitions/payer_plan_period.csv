@@ -13,7 +13,7 @@ omop,v6.0,payer_plan_period,plan_source_value,No,,,,The source code for the Pers
 omop,v6.0,payer_plan_period,plan_source_concept_id,No,concept,concept_id,,A foreign key to a plan concept that refers to the plan code used in the source data.
 omop,v6.0,payer_plan_period,contract_concept_id,No,concept,concept_id,,A foreign key to a standard concept representing the reason justifying the contract between person_id and contract_person_id.
 omop,v6.0,payer_plan_period,contract_source_concept_id,No,concept,concept_id,,A foreign key to a concept that refers to the code used in the source as the reason justifying the contract.
-omop,v6.0,payer_plan_period,contract_source_value,No,,,,The source code representing the reason justifying the contract. Usually it is family relationship like a spouse domestic partner, child etc.
+omop,v6.0,payer_plan_period,contract_source_value,No,,,,The source code representing the reason justifying the contract. Usually it is family relationship like a spouse domestic partner child etc.
 omop,v6.0,payer_plan_period,sponsor_concept_id,No,concept,concept_id,,A foreign key that refers to a concept identifier that represents the sponsor in the Standardized Vocabularies.
 omop,v6.0,payer_plan_period,sponsor_source_concept_id,No,concept,concept_id,,A foreign key to a sponsor concept that refers to the sponsor code used in the source data.
 omop,v6.0,payer_plan_period,sponsor_source_value,No,,,,The source code for the Person's sponsor of the health plan as it appears in the source data.
