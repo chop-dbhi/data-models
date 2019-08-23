@@ -124,3 +124,17 @@ omop,v6.0,not null,,condition_era,person_id
 omop,v6.0,not null,,condition_era,condition_concept_id
 omop,v6.0,not null,,condition_era,condition_era_start_date
 omop,v6.0,not null,,condition_era,condition_era_end_date
+omop,v6.0,not null,,note_nlp,note_nlp_id
+omop,v6.0,not null,,visit_detail,visit_detail_id
+omop,v6.0,not null,,visit_detail,visit_detail_type_concept_id
+omop,v6.0,not null,,visit_detail,visit_occurrence_id
+omop,v6.0,not null,,visit_detail,person_id
+omop,v6.0,not null,,visit_detail,visit_detail_concept_id
+omop,v6.0,not null,,survey_conduct,survey_conduct_id
+omop,v6.0,not null,,survey_conduct,survey_concept_id
+omop,v6.0,not null,,survey_conduct,assisted_concept_id
+omop,v6.0,not null,,survey_conduct,respondent_type_concept_id
+omop,v6.0,not null,,survey_conduct,timing_concept_id
+omop,v6.0,not null,,survey_conduct,collection_method_concept_id
+omop,v6.0,not null,,cost,cost_id
+omop,v6.0,not null,,cost,person_id
