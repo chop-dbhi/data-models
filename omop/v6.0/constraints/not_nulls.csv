@@ -133,5 +133,7 @@ omop,v6.0,not null,,survey_conduct,assisted_concept_id
 omop,v6.0,not null,,survey_conduct,respondent_type_concept_id
 omop,v6.0,not null,,survey_conduct,timing_concept_id
 omop,v6.0,not null,,survey_conduct,collection_method_concept_id
+omop,v6.0,not null,,survey_conduct,validated_survey_concept_id
 omop,v6.0,not null,,cost,cost_id
 omop,v6.0,not null,,cost,person_id
+omop,v6.0,not null,,location_history,location_id
