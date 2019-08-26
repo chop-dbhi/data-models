@@ -1,11 +1,11 @@
 model,version,table,field,required,ref_table,ref_field,standard,description
 omop,v6.0,payer_plan_period,family_source_value,No,,,,The source code for the person's family as it appears in the source data. 
 omop,v6.0,payer_plan_period,payer_plan_period_end_date,Yes,,,,The end date of the payer plan period. 
-omop,v6.0,payer_plan_period,payer_plan_period_id,Yes,,,,"An identifier for each unique combination of payer, plan, family code and time span."
+omop,v6.0,payer_plan_period,payer_plan_period_id,Yes,,,,An identifier for each unique combination of payer plan family code and time span.
 omop,v6.0,payer_plan_period,payer_plan_period_start_date,Yes,,,,The start date of the payer plan period. 
 omop,v6.0,payer_plan_period,payer_source_concept_id,No,concept,concept_id,,A foreign key to a payer concept that refers to the code used in the source.
 omop,v6.0,payer_plan_period,person_id,Yes,person,person_id,,A foreign key identifier to the person covered by the payer. The demographic details of that person are stored in the person table. 
-omop,v6.0,payer_plan_period,contact_person_id,Yes,person,person_id,,"A foreign key identifier to the person_id in person table, for the person who is the primary subscriber/contract owner for the record in the payer_plan_period table. Maybe the same person or different person, depending on who is the primary subscriber/contract owner."
+omop,v6.0,payer_plan_period,contact_person_id,Yes,person,person_id,,A foreign key identifier to the person_id in person table for the person who is the primary subscriber/contract owner for the record in the payer_plan_period table. Maybe the same person or different person depending on who is the primary subscriber/contract owner.
 omop,v6.0,payer_plan_period,payer_source_value,No,,,,The source code for the person's coverage plan as it appears in the source data. 
 omop,v6.0,payer_plan_period,payer_concept_id,No,concept,concept_id,,A foreign key that refers to a standard Payer concept identifier in the Standarized Vocabularies.
 omop,v6.0,payer_plan_period,plan_concept_id,No,concept,concept_id,,A foreign key that refers to a standard plan concept identifier that represents the health benefit plan in the Standardized Vocabularies.
