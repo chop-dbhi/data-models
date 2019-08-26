@@ -3,20 +3,20 @@ omop,v6.0,observation,observation_concept_id,Yes,concept,concept_id,LOINC SNOMED
 omop,v6.0,observation,observation_date,Yes,,,,The date of the observation. 
 omop,v6.0,observation,observation_id,Yes,,,,A system-generated unique identifier for each observation. 
 omop,v6.0,observation,observation_source_concept_id,No,concept,concept_id,,A foreign key to a concept that refers to the code used in the source. 
-omop,v6.0,observation,observation_source_value,No,,,,"The observation code as it appears in the source data. This code is mapped to a standard concept in the vocabulary and the original code is, stored here for reference. "
+omop,v6.0,observation,observation_source_value,No,,,,"The observation code as it appears in the source data. This code is mapped to a standard concept in the vocabulary and the original code is stored here for reference. "
 omop,v6.0,observation,observation_datetime,No,,,,The time of the observation.
 omop,v6.0,observation,observation_type_concept_id,Yes,concept,concept_id,OMOP,A foreign key to the predefined concept identifier in the vocabulary reflecting the type of the observation. 
 omop,v6.0,observation,person_id,Yes,person,person_id,,A foreign key identifier to the person about whom the observation was recorded. The demographic details of that person are stored in the person table. 
 omop,v6.0,observation,provider_id,No,provider,provider_id,,A foreign key to the provider in the provider table who was responsible for making the observation. 
-omop,v6.0,observation,qualifier_concept_id,No,concept,concept_id,,"A foreign key to a standard concept identifier for a qualifier (e.g., severity of drug-drug interaction alert) "
+omop,v6.0,observation,qualifier_concept_id,No,concept,concept_id,,"A foreign key to a standard concept identifier for a qualifier (e.g. severity of drug-drug interaction alert) "
 omop,v6.0,observation,qualifier_source_value,No,,,,The source value associated with a qualifier to characterize the observation 
 omop,v6.0,observation,unit_concept_id,No,concept,concept_id,UCUM,A foreign key to a standard concept identifier of measurement units in the vocabulary. 
-omop,v6.0,observation,unit_source_value,No,,,,"The source code for the unit as it appears in the source data. This code is mapped to a standard unit concept in the vocabulary and the original code is, stored here for reference. "
-omop,v6.0,observation,value_as_concept_id,No,concept,concept_id,,"A foreign key to an observation result stored as a concept identifier. This is applicable to observations where the result can be expressed as a standard concept from the vocabulary (e.g., positive/negative, present/absent, low/high, etc.). "
+omop,v6.0,observation,unit_source_value,No,,,,"The source code for the unit as it appears in the source data. This code is mapped to a standard unit concept in the vocabulary and the original code is stored here for reference. "
+omop,v6.0,observation,value_as_concept_id,No,concept,concept_id,,"A foreign key to an observation result stored as a concept identifier. This is applicable to observations where the result can be expressed as a standard concept from the vocabulary (e.g. positive/negative present/absent low/high etc.). "
 omop,v6.0,observation,value_as_number,No,,,,The observation result stored as a number. This is applicable to observations where the result is expressed as a numeric value.
-omop,v6.0,observation,value_as_string,No,,,,"The observation result stored as a varchar. This is applicable to observations where the result is expressed as verbatim text, such as in radiology or pathology reports. "
+omop,v6.0,observation,value_as_string,No,,,,"The observation result stored as a varchar. This is applicable to observations where the result is expressed as verbatim text such as in radiology or pathology reports. "
 omop,v6.0,observation,value_as_datetime,No,,,,"The observation result stored as a datetime value. This is applicable to observations where the result is expressed as a point in time."
 omop,v6.0,observation,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,,A foreign key to the visit in the visit table during which the observation was recorded. 
 omop,v6.0,observation,visit_detail_id,No,visit_detail,visit_detail_id,,A foreign key to the visit in the VISIT_DETAIL table during which the observation was recorded.
-omop,v6.0,observation,observation_event_id,No,,,,A foreign key to an event table (e.g., PROCEDURE_OCCURRENCE_ID).
+omop,v6.0,observation,observation_event_id,No,,,,"A foreign key to an event table (e.g. PROCEDURE_OCCURRENCE_ID)".
 omop,v6.0,observation,obs_event_field_concept_id,No,,,,A foreign key that refers to a Standard Concept identifier in the Standardized Vocabularies referring to the field represented in the OBSERVATION_EVENT_ID.
