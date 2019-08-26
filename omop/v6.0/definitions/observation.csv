@@ -18,5 +18,5 @@ omop,v6.0,observation,value_as_string,No,,,,"The observation result stored as a 
 omop,v6.0,observation,value_as_datetime,No,,,,"The observation result stored as a datetime value. This is applicable to observations where the result is expressed as a point in time."
 omop,v6.0,observation,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,,A foreign key to the visit in the visit table during which the observation was recorded. 
 omop,v6.0,observation,visit_detail_id,No,visit_detail,visit_detail_id,,A foreign key to the visit in the VISIT_DETAIL table during which the observation was recorded.
-omop,v6.0,observation,observation_event_id,No,,,,"A foreign key to an event table (e.g. PROCEDURE_OCCURRENCE_ID)".
-omop,v6.0,observation,obs_event_field_concept_id,No,,,,A foreign key that refers to a Standard Concept identifier in the Standardized Vocabularies referring to the field represented in the OBSERVATION_EVENT_ID.
+omop,v6.0,observation,observation_event_id,No,,,,"A foreign key to an event table (e.g. PROCEDURE_OCCURRENCE_ID)."
+omop,v6.0,observation,obs_event_field_concept_id,No,,,,"A foreign key that refers to a Standard Concept identifier in the Standardized Vocabularies referring to the field represented in the OBSERVATION_EVENT_ID."
