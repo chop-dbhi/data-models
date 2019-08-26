@@ -1,2 +1,2 @@
 model,version,release_level,release_serial,label,url,description
-omop,6.0.0,beta,1,OMOP v6.0,https://github.com/OHDSI/CommonDataModel/wiki,
+omop,6.0.0,beta,2,OMOP v6,http://omop.org/CDM,
