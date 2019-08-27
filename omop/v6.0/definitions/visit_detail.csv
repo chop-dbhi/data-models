@@ -11,7 +11,7 @@ omop,v6.0,visit_detail,visit_detail_source_value,No,,,,The source code used to r
 omop,v6.0,visit_detail,visit_detail_start_date,Yes,,,,The start date of the visit.
 omop,v6.0,visit_detail,visit_detail_start_datetime,No,,,,The time the visit started. 
 omop,v6.0,visit_detail,visit_detail_type_concept_id,Yes,concept,concept_id,,A foreign key to the predefined concept identifier in the Standardized Vocabularies reflecting the type of source data from which the visit record is derived. 
-omop,v6.0,visit_detail,admitted_from_source_concept_id,No,concept,concept_id,,A foreign key to the predefined concept in the Place of Service Vocabulary reflecting the admitting source for a visit.
+omop,v6.0,visit_detail,admitted_from_concept_id,No,concept,concept_id,,A foreign key to the predefined concept in the Place of Service Vocabulary reflecting the admitting source for a visit.
 omop,v6.0,visit_detail,discharge_to_concept_id,No,concept,concept_id,,A foreign key to the predefined concept in the Place of Service Vocabulary reflecting the discharge disposition (destination) for a visit.
 omop,v6.0,visit_detail,preceding_visit_detail_id,No,visit_detail,visit_detail_id,,A foreign key to the VISIT_DETAIL table of the visit immediately preceding this visit
 omop,v6.0,visit_detail,visit_detail_parent_id,No,visit_occurrence,visit_occurrence_id,,"A foreign key to the VISIT_OCCURRENCE table record to represent the parent Visit this Visit Detail belongs to."

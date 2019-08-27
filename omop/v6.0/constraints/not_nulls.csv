@@ -155,6 +155,8 @@ omop,v6.0,not null,,visit_detail,visit_detail_type_concept_id
 omop,v6.0,not null,,visit_detail,visit_occurrence_id
 omop,v6.0,not null,,visit_detail,person_id
 omop,v6.0,not null,,visit_detail,visit_detail_concept_id
+omop,v6.0,not null,,visit_detail,admitted_from_concept_id
+omop,v6.0,not null,,visit_detail,discharge_to_concept_id
 omop,v6.0,not null,,visit_detail,visit_detail_start_date
 omop,v6.0,not null,,visit_detail,visit_detail_end_date
 omop,v6.0,not null,,survey_conduct,survey_conduct_id
