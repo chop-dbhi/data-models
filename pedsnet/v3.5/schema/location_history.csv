@@ -1,7 +1,7 @@
 model,version,table,field,type,length,precision,scale,default
 pedsnet,v3.5,location_history,location_id,integer,,,,
 pedsnet,v3.5,location_history,relationship_type_concept_id,integer,,,,
-pedsnet,v3.5,location_history,domain_id,integer,,,,
+pedsnet,v3.5,location_history,domain_id,string,,,,
 pedsnet,v3.5,location_history,entity_id,integer,,,,
 pedsnet,v3.5,location_history,location_preferred_concept_id,integer,,,,
 pedsnet,v3.5,location_history,start_date,date,,,,
