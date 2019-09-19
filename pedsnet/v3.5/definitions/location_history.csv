@@ -1,4 +1,5 @@
 model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v3.5,location_history,location_history_id,Yes,,,"A system-generated unique identifier for each measurement"
 pedsnet,v3.5,location_history,location_id,Yes,,,"A foreign key to the location table."
 pedsnet,v3.5,location_history,relationship_type_concept_id,Yes,concept,concept_id,"The type of relationship between location and entity."
 pedsnet,v3.5,location_history,domain_id,No,domain,domain_id,"The domain of the entity that is related to the location. Either PERSON, PROVIDER, or CARE_SITE.For PEDSNet v3.5, only patient address histories are present in this table. Due to this the domain_id = Person for all records."
