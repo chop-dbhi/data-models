@@ -9,4 +9,4 @@ pcornet,v5.1,lds_address_history,address_state,NO,,,,NO,,,,"State, as represente
 pcornet,v5.1,lds_address_history,address_zip5,NO,,,,NO,,,,"5-digit postal code for the address.",
 pcornet,v5.1,lds_address_history,address_zip9,NO,,,,NO,,,,"9-digit postal code for the address.",
 pcornet,v5.1,lds_address_history,address_period_start,NO,,,,NO,,,,"Initial date when the address is known to be in use.",
-pcornet,v5.1,lds_address_history,address_period_end,NO,,,,NO,,,,"Date when address was no longer in use.",
+pcornet,v5.1,lds_address_history,address_period_end,NO,,,,NO,,,,"Date when address was no longer in use."
