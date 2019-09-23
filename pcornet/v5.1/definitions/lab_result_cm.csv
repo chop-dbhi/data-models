@@ -31,4 +31,4 @@ pcornet,v5.1,lab_result_cm,specimen_source,NO,,,,NO,,^BPU;^BPU.AUTOLOGOUS;^BPU.P
 pcornet,v5.1,lab_result_cm,specimen_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time specimen was collected.
 pcornet,v5.1,lab_result_cm,result_snomed,NO,,,,NO,,,,"If the qualitative result has been mapped to SNOMED CT, the corresponding SNOMED code can be placed here. "
 pcornet,v5.1,lab_result_cm,lab_result_source,NO,,,,NO,,OD;BI;CL;DR;NI;UN;OT,"OD=Order/EHR; BI=Billing; CL=Claim; DR=Derived; NI=No information; UN=Unknown; OT=Other;","Source of the information for the lab result"
-pcornet,v5.1,lab_result_cm,lab_loinc_source,NO,,,,NO,,IN;LM;HL;DW;PC;DM;NI;UN;OT,"IN=Instrument; LM=LIMS (Standalone or EHR); HL=HL7 feed; DW=Data warehouse; PC=PCORnet ETL; DM=Other CDM; NI=No information; UN=Unknown; OT=Other ","Source/provenance of the LOINC code for this result."
+pcornet,v5.1,lab_result_cm,lab_loinc_source,NO,,,,NO,,IN;LM;HL;DW;PC;DM;NI;UN;OT,"IN=Instrument; LM=LIMS (Standalone or EHR); HL=HL7 feed; DW=Data warehouse; PC=PCORnet ETL; DM=Other CDM; NI=No information; UN=Unknown; OT=Other ","Source or provenance of the LOINC code for this result."

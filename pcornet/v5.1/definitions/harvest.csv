@@ -57,3 +57,4 @@ pcornet,v5.1,harvest,vx_exp_date_mgmt,NO,,,,,,,01=No imputation or obfuscation 0
 pcornet,v5.1,harvest,refresh_hash_token_date,NO,,,YYYY-MM-DD,NO,DATE,,,Most recent date on which the present data were loaded into the HASH TOKEN table. This date should be null if the table does not have records. 
 pcornet,v5.1,harvest,refresh_lds_address_hx_date,NO,,,YYYY-MM-DD,NO,DATE,,,Most recent date on which the present data were loaded into the LDS_ADDRESS_HISTORY table. This date should be null if the table does not have records. 
 pcornet,v5.1,harvest,refresh_immunization_date,NO,,,YYYY-MM-DD,NO,DATE,,,Most recent date on which the present data were loaded into the IMMUNIZATION table. This date should be null if the table does not have records. 
+
