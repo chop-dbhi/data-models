@@ -1,0 +1,6 @@
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
+pcornet,v5.1,death,patid,YES,DEMOGRAPHIC,PATID,,,,,,Arbitrary person-level identifier used to link across tables.
+pcornet,v5.1,death,death_date,YES,,,,,,,,Date of death.
+pcornet,v5.1,death,death_date_impute,,,,,,,,B=Both month and day imputed D=Day imputed M=Month imputed N=Not imputed NI=No information UN=Unknown OT=Other,"When date of death is imputed, this field indicates which parts of the date were imputed."
+pcornet,v5.1,death,death_source,YES,,,,,,L;N;D;S;T;DR;NI;UN;OT,"L=Other, locally defined; N=National Death Index; D=Social Security; S=State Death files; T=Tumor data; DR=Derived NI=No information; UN=Unknown; OT=Other","Guidance: “Other, locally defined” may be used to indicate presence of deaths reported from EHR systems, such as inpatient hospital deaths or dead on arrival."
+pcornet,v5.1,death,death_match_confidence,,,,,,,,E=Excellent F=Fair P=Poor NI=No information UN=Unknown OT=Other,"For situations where a probabilistic patient matching strategy is used, this field indicates the confidence that the patient drawn from external source data represents the actual patient. Should not be present where DEATH_SOURCE is L (locally-defined). May not be applicable for DEATH_SOURCE=T (tumor registry data)"
