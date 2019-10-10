@@ -1,0 +1,12 @@
+model,version,table,field,type,length,precision,scale,default
+pcornet,v5.1,lds_address_history,addressid,string,,,,
+pcornet,v5.1,lds_address_history,patid,string,,,,
+pcornet,v5.1,lds_address_history,address_use,string,,,,
+pcornet,v5.1,lds_address_history,address_type,string,,,,
+pcornet,v5.1,lds_address_history,address_preferred,string,,,,
+pcornet,v5.1,lds_address_history,address_city,string,,,,
+pcornet,v5.1,lds_address_history,address_state,string,,,,
+pcornet,v5.1,lds_address_history,address_zip5,string,,,,
+pcornet,v5.1,lds_address_history,address_zip9,string,,,,
+pcornet,v5.1,lds_address_history,address_period_start,date,,,,
+pcornet,v5.1,lds_address_history,address_period_end,date,,,,
