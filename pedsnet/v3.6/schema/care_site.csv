@@ -1,0 +1,9 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v3.6,care_site,care_site_id,integer,,,,
+pedsnet,v3.6,care_site,care_site_name,string,,,,
+pedsnet,v3.6,care_site,care_site_source_value,string,,,,
+pedsnet,v3.6,care_site,location_id,integer,,,,
+pedsnet,v3.6,care_site,place_of_service_concept_id,integer,,,,
+pedsnet,v3.6,care_site,place_of_service_source_value,string,,,,
+pedsnet,v3.6,care_site,specialty_concept_id,integer,,,,
+pedsnet,v3.6,care_site,specialty_source_value,string,,,,
