@@ -1,0 +1,11 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v3.6,location_history,location_history_id,Yes,,,"A system-generated unique identifier for each measurement"
+pedsnet,v3.6,location_history,location_id,Yes,,,"A foreign key to the location table."
+pedsnet,v3.6,location_history,relationship_type_concept_id,Yes,concept,concept_id,"The type of relationship between location and entity."
+pedsnet,v3.6,location_history,domain_id,No,domain,domain_id,"The domain of the entity that is related to the location. Either PERSON, PROVIDER, or CARE_SITE.For PEDSNet v3.5, only patient address histories are present in this table. Due to this the domain_id = Person for all records."
+pedsnet,v3.6,location_history,entity_id,No,person,person_id,"The unique identifier for the entity. References either person_id, provider_id, or care_site_id, depending on domain_id.	For PEDSNet v3.5, only patient address histories are present in this table. Due to this, please populate this field with the corresponding person_id."
+pedsnet,v3.6,location_history,location_preferred_concept_id,No,concept,concept_id,"A foreign key that indicates if the location is the preferred location.For PEDSnet 3.5 value set = Yes/No and Flavors of null"
+pedsnet,v3.6,location_history,start_date,No,,,"The date the relationship started.	No date shifting."
+pedsnet,v3.6,location_history,start_datetime,No,,,"The date the relationship started.	No date shifting."
+pedsnet,v3.6,location_history,end_date,No,,,"The date the relationship ended.	This field should be NULL for the current location of the entity. No date shifting."
+pedsnet,v3.6,location_history,end_datetime,No,,,"The date the relationship ended.This field should be NULL for the current location of the entity. No date shifting."
