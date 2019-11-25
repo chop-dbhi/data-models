@@ -19,4 +19,4 @@ pcornet,v5.1,obs_gen,raw_obsgen_code,NO,,,,NO,,,,Local code related to an indivi
 pcornet,v5.1,obs_gen,raw_obsgen_type,NO,,,,NO,,,,Terminology related to the code in RAW_OBSGEN_CODE. 
 pcornet,v5.1,obs_gen,raw_obsgen_result,NO,,,,NO,,,,The original test result value as seen in your source data. 
 pcornet,v5.1,obs_gen,raw_obsgen_unit,NO,,,,NO,,,,Original units for the result in your source data. 
-pcornet,v5.1,obs_gen,obsgen_source,NO,,,,NO,,OD;BI;CL;RG;DR;NI;UN;OT,"OD=Order/EHR; BI=Billing; CL=Claim; RG=Registry/ancillary system; DR=Derived; NI=No information; UN=Unknown; OT=Other","Source of the information for the lab result.",
+pcornet,v5.1,obs_gen,obsgen_source,NO,,,,NO,,OD;BI;CL;RG;DR;NI;UN;OT,"OD=Order/EHR; BI=Billing; CL=Claim; RG=Registry/ancillary system; DR=Derived; NI=No information; UN=Unknown; OT=Other","Source of the information for the lab result."
