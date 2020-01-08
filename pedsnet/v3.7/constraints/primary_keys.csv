@@ -36,3 +36,4 @@ pedsnet,v3.7,primary key,xpk_condition_era,condition_era,condition_era_id
 pedsnet,v3.7,primary key,xpk_immunization,immunization,immunization_id
 pedsnet,v3.7,primary key,xpk_device,device_exposure,device_exposure_id
 pedsnet,v3.7,primary key,xpk_location_history,location_history,location_history_id
+pedsnet,v3.7,primary key,xpk_hash_person,hash_token,person_id

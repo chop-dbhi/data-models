@@ -159,3 +159,4 @@ pedsnet,v3.7,not null,,location_history,domain_id
 pedsnet,v3.7,not null,,location_history,entity_id
 pedsnet,v3.7,not null,,location_history,relationship_type_concept_id
 pedsnet,v3.7,not null,,location_history,location_preferred_concept_id
+pedsnet,v3.7,not null,,hash_token,person_id
