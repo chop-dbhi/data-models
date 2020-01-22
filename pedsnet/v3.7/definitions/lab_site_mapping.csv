@@ -1,0 +1,7 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v3.7,lab_site_mapping,pedsnet_lab_name,yes,,,"The name of the PEDSnet lab. "
+pedsnet,v3.7,lab_site_mapping,pedsnet_loinc_code,yes,,,"The loinc code of the PEDSnet lab. "
+pedsnet,v3.7,lab_site_mapping,pedsnet_concept_id,yes,concept,concept_d,"The concept id of the PEDSnet lab. "
+pedsnet,v3.7,lab_site_mapping,site_source_value,yes,,,"The site measurement source value that corresponds to the PEDSnet lab."
+pedsnet,v3.7,lab_site_mapping,site_loinc_code,yes,,,"The site measurement loinc code that corresponds to the PEDSnet lab."
+pedsnet,v3.7,lab_site_mapping,site_measurement_concept_id,yes,concept,concept_id,"The site measurement concept id that corresponds to the PEDSnet lab."
