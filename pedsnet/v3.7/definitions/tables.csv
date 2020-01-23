@@ -32,4 +32,4 @@ pedsnet,v3.7,immunization,The immunization domain captures immunization records.
 pedsnet,v3.7,device_exposure,The Device domain captures information about a person's exposure to a foreign physical object or instrument which is used for diagnostic or therapeutic purposes through a mechanism beyond chemical action.
 pedsnet,v3.7,location_history,"The 'Location_History' domain is intended to store historical location information for various domains persons, providers and care_sites."
 pedsnet,v3.7,hash_token,"The 'Hash_Token' domain is intended to store encrypted and keyed secure hash tokens that are used to match patient records across DataMarts using privacy-preserving record linkage methods. This table requirement comes from the PCORnet data model."
-
+pedsnet,v3.7,lab_site_mapping,"The 'Lab Site Mapping' table is intended to store local site mappings to the standard PEDSnet loinc codes."

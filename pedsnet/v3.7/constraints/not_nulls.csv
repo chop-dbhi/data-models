@@ -160,3 +160,9 @@ pedsnet,v3.7,not null,,location_history,entity_id
 pedsnet,v3.7,not null,,location_history,relationship_type_concept_id
 pedsnet,v3.7,not null,,location_history,location_preferred_concept_id
 pedsnet,v3.7,not null,,hash_token,person_id
+pedsnet,v3.7,not null,,lab_site_mapping,pedsnet_lab_name
+pedsnet,v3.7,not null,,lab_site_mapping,pedsnet_loinc_code
+pedsnet,v3.7,not null,,lab_site_mapping,pedsnet_concept_id
+pedsnet,v3.7,not null,,lab_site_mapping,site_source_value
+pedsnet,v3.7,not null,,lab_site_mapping,site_loinc_code
+pedsnet,v3.7,not null,,lab_site_mapping,site_measurement_concept_id
