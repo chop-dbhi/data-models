@@ -30,8 +30,8 @@ pedsnet,v3.7,idx_measurement_concept_id,No,measurement,measurement_concept_id,as
 pedsnet,v3.7,idx_measurement_person_id,No,measurement,person_id,asc
 pedsnet,v3.7,idx_measurement_visit_id,No,measurement,visit_occurrence_id,asc
 pedsnet,v3.7,idx_measurement_date,No,measurement,measurement_date,asc
-pedsnet,v3.7,idx_measurement_type_concept_id,No,measurement,measurement_type_concept_id,asc
-pedsnet,v3.7,idx_measurement_value_concept_id,No,measurement,value_as_concept_id,asc
+pedsnet,v3.7,idx_meas_type_concept_id,No,measurement,measurement_type_concept_id,asc
+pedsnet,v3.7,idx_meas_value_concept_id,No,measurement,value_as_concept_id,asc
 pedsnet,v3.7,idx_measurement_value_number,No,measurement,value_as_number,asc
 pedsnet,v3.7,idx_measurement_source_value,No,measurement,measurement_source_value,asc
 pedsnet,v3.7,idx_observation_concept_id,No,observation,observation_concept_id,asc
@@ -66,8 +66,8 @@ pedsnet,v3.7,idx_adt_service_id,No,adt_occurrence,service_concept_id,asc
 pedsnet,v3.7,idx_adt_type_concept_id,No,adt_occurrence,adt_type_concept_id,asc
 pedsnet,v3.7,idx_adt_date,No,adt_occurrence,adt_date,asc
 pedsnet,v3.7,idx_adt_type_id,No,adt_occurrence,adt_type_concept_id,asc
-pedsnet,v3.7,idx_place_of_service_concept_id,No,care_site,place_of_service_concept_id,asc
-pedsnet,v3.7,idx_care_site_specialty_concept_id,No,care_site,specialty_concept_id,asc
+pedsnet,v3.7,idx_place_of_service_c_id,No,care_site,place_of_service_concept_id,asc
+pedsnet,v3.7,idx_care_site_specialty_c_id,No,care_site,specialty_concept_id,asc
 pedsnet,v3.7,idx_death_person,No,death,person_id,asc
 pedsnet,v3.7,idx_device_person,No,device_exposure,person_id,asc
 pedsnet,v3.7,idx_dose_era_person,No,dose_era,person_id,asc
@@ -76,7 +76,7 @@ pedsnet,v3.7,idx_immunizaton_person,No,immunization,person_id,asc
 pedsnet,v3.7,idx_location_zip,No,location,zip,asc
 pedsnet,v3.7,idx_location_state,No,location,state,asc
 pedsnet,v3.7,idx_location_entity,No,location_history,entity_id,asc
-pedsnet,v3.7,idx_measurement_org_concept_id,No,measurement_organism,organism_concept_id,asc
+pedsnet,v3.7,idx_meas_org_concept_id,No,measurement_organism,organism_concept_id,asc
 pedsnet,v3.7,idx_measurement_org_person_id,No,measurement_organism,person_id,asc
 pedsnet,v3.7,idx_measurement_org_visit_id,No,measurement_organism,visit_occurrence_id,asc
 pedsnet,v3.7,idx_measurement_org_meas_id,No,measurement_organism,measurement_id,asc
@@ -84,4 +84,4 @@ pedsnet,v3.7,idx_person_birthdatetime,No,person,birth_datetime,asc
 pedsnet,v3.7,idx_person_ethnicity,No,person,ethnicity_concept_id,asc
 pedsnet,v3.7,idx_person_race,No,person,race_concept_id,asc
 pedsnet,v3.7,idx_person_gender,No,person,gender_concept_id,asc
-pedsnet,v3.7,idx_provider_specialty_concept_id,No,provider,specialty_concept_id,asc
+pedsnet,v3.7,idx_provider_specialty_c_id,No,provider,specialty_concept_id,asc
