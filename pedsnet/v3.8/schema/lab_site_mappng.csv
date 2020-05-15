@@ -1,0 +1,7 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v3.8,lab_site_mapping,pedsnet_lab_name,string,,,,
+pedsnet,v3.8,lab_site_mapping,pedsnet_loinc_code,string,,,,
+pedsnet,v3.8,lab_site_mapping,pedsnet_concept_id,integer,,,,
+pedsnet,v3.8,lab_site_mapping,site_source_value,string,,,,
+pedsnet,v3.8,lab_site_mapping,site_loinc_code,string,,,,
+pedsnet,v3.8,lab_site_mapping,site_measurement_concept_id,integer,,,,

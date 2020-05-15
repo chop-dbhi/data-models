@@ -1,0 +1,7 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+pedsnet,v3.8,relationship,defines_ancestry,Yes,,,,Defines whether a hierarchical relationship contributes to the concept_ancestor table. These are subsets of the hierarchical relationships. Valid values are 1 or 0.
+pedsnet,v3.8,relationship,is_hierarchical,Yes,,,,Defines whether a relationship defines concepts into classes or hierarchies. Values are 1 for hierarchical relationship or 0 if not. 
+pedsnet,v3.8,relationship,relationship_concept_id,Yes,concept,concept_id,,A foreign key that refers to a standard concept identifier in the Standardized Vocabularies for the relationship concept.
+pedsnet,v3.8,relationship,relationship_id,Yes,,,,The type of relationship captured by the relationship record.
+pedsnet,v3.8,relationship,relationship_name,Yes,,,,The text that describes the relationship type.
+pedsnet,v3.8,relationship,reverse_relationship_id,Yes,relationship,relationship_id,,The identifier for the relationship used to define the reverse relationship between two concepts.
