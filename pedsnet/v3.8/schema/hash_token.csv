@@ -1,0 +1,8 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v3.8,hash_token,person_id,integer,,,,
+pedsnet,v3.8,hash_token,token_01,string,,,,
+pedsnet,v3.8,hash_token,token_02,string,,,,
+pedsnet,v3.8,hash_token,token_03,string,,,,
+pedsnet,v3.8,hash_token,token_04,string,,,,
+pedsnet,v3.8,hash_token,token_05,string,,,,
+pedsnet,v3.8,hash_token,token_16,string,,,,

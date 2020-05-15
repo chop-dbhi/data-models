@@ -1,0 +1,8 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v3.8,observation_period,observation_period_end_date,date,,,,
+pedsnet,v3.8,observation_period,observation_period_end_time,datetime,,,,
+pedsnet,v3.8,observation_period,observation_period_id,integer,,,,
+pedsnet,v3.8,observation_period,observation_period_start_date,date,,,,
+pedsnet,v3.8,observation_period,observation_period_start_time,datetime,,,,
+pedsnet,v3.8,observation_period,period_type_concept_id,integer,,,,
+pedsnet,v3.8,observation_period,person_id,integer,,,,
