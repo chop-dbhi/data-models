@@ -1,0 +1,8 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v3.9,observation_period,observation_period_end_date,Yes,,,The end date of the observation period for which data are available from the source.
+pedsnet,v3.9,observation_period,observation_period_end_time,Yes,,,The end date of the observation period for which data are available from the source.
+pedsnet,v3.9,observation_period,observation_period_id,Yes,,,A system-generate unique identifier for each observation period
+pedsnet,v3.9,observation_period,observation_period_start_date,Yes,,,The start date of the observation period for which data are available from the data source
+pedsnet,v3.9,observation_period,observation_period_start_time,Yes,,,The start date of the observation period for which data are available from the data source
+pedsnet,v3.9,observation_period,period_type_concept_id,Yes,concept,concept_id,A foreign key identifier to the predefined concept in the Standardized Vocabularies reflecting the source of the observation period information
+pedsnet,v3.9,observation_period,person_id,Yes,person,person_id,A foreign key identifier to the person who is experiencing the condition. The demographic details of that person are stored in the person table.
