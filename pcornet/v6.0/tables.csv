@@ -1,5 +1,5 @@
 model,version,table,description,
-pcornet,v6.0,condition,A condition represents a patient’s diagnosed and self-reported health conditions and diseases. The patient’s medical history and current state may both be represented.,
+pcornet,v6.0,condition,"A condition represents a patient’s diagnosed and self-reported health conditions and diseases. The patient’s medical history and current state may both be represented.",
 pcornet,v6.0,death,Reported mortality information for patients.,
 pcornet,v6.0,death_cause,The individual causes associated with a reported death.,
 pcornet,v6.0,demographic,Demographics record the direct attributes of individual patients.,
