@@ -3,8 +3,10 @@ pcornet,v6.0,obs_gen,obsgenid,YES,,,,NO,,,,Arbitrary identifier for each unique 
 pcornet,v6.0,obs_gen,patid,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier. Used to link across tables. 
 pcornet,v6.0,obs_gen,encounterid,NO,ENCOUNTER,ENCOUNTERID,,NO,,,,Arbitrary encounter-level identifier used to link across tables. This field should be populated if the observation was recorded as part of a healthcare encounter. 
 pcornet,v6.0,obs_gen,obsgen_providerid,NO,PROVIDER,PROVIDERID,,NO,,,,Provider code for the provider who recorded the observation. The provider code is a pseudoidentifier with a consistent crosswalk to the real identifier. 
-pcornet,v6.0,obs_gen,obsgen_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date of observation/measurement 
-pcornet,v6.0,obs_gen,obsgen_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time of observation/measurement. 
+pcornet,v6.0,obs_gen,obsgen_start_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date of observation/measurement 
+pcornet,v6.0,obs_gen,obsgen_start_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time of observation/measurement.
+pcornet,v6.0,obs_gen,obsgen_stop_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date of observation/measurement 
+pcornet,v6.0,obs_gen,obsgen_stop_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time of observation/measurement.  
 pcornet,v6.0,obs_gen,obsgen_type,NO,,,,NO,,09;10;11;ON;SM;HP;HG;LC;RX;ND;HC;GM;CVX;UD_*;PC_*;NI; UN;OT,09=ICD-9-CM 10=ICD-10-CM/PCS 11=ICD-11-CM/PCS ON=ICD-O (Oncology) SM=SNOMED HP=Human Phenotype Ontology HG=Human Genome Organization LC=LOINC RX=RXNORM ND=NDC HC=CPT/HCPCS GM=Global Medical Device Nomenclature CVX=Vaccine administered UD_*=User-defined PC_*=PCORnet reserved NI=No information UN=Unknown OT=Other ,Terminology/vocabulary used to describe the observation. Networks/partners can define their own terminologies with strings starting with UD_. Strings that start with PC_ are reserved for network-wide activities and will be assigned by the Coordinating Center. 
 pcornet,v6.0,obs_gen,obsgen_code,NO,,,,NO,,,,Standardized code denoting the observations based on the terminology/vocabulary specified in OBSGEN_TYPE 
 pcornet,v6.0,obs_gen,obsgen_result_qual,NO,,,,NO,,POSITIVE;NEGATIVE;BORDERLINE;ELEVATED;HIGH;LOW;NORMAL;ABNORMAL;UNDETERMINED;NI;UN;OT;,POSITIVE=Positive NEGATIVE=Negative BORDERLINE=Borderline ELEVATED=Elevated HIGH=High LOW=Low NORMAL=Normal ABNORMAL=Abnormal UNDETERMINED=Undetermined NI=No Information UN=Unknown OT=Other,Standardized result for qualitative results. This variable should be NI for quantitative results. Use RAW_OBSGEN_RESULT to store qualitative results that cannot be harmonized to the defined value set.
@@ -20,3 +22,4 @@ pcornet,v6.0,obs_gen,raw_obsgen_type,NO,,,,NO,,,,Terminology related to the code
 pcornet,v6.0,obs_gen,raw_obsgen_result,NO,,,,NO,,,,The original test result value as seen in your source data. 
 pcornet,v6.0,obs_gen,raw_obsgen_unit,NO,,,,NO,,,,Original units for the result in your source data. 
 pcornet,v6.0,obs_gen,obsgen_source,NO,,,,NO,,OD;BI;CL;RG;DR;NI;UN;OT,"OD=Order/EHR; BI=Billing; CL=Claim; RG=Registry/ancillary system; DR=Derived; NI=No information; UN=Unknown; OT=Other","Source of the information for the lab result."
+pcornet,v6.0,obs_gen,obsgen_abn_ind,NO,,,,NO,,See Documentation,"","Abnormal result indicator. This value comes from the source data; do not apply logic to create it. If field is blank in source data, map to the appropriate flavor of null."
