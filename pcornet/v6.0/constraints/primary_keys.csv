@@ -9,6 +9,7 @@ pcornet,v6.0,primary key,procedures,proceduresid,xpk_procedures
 pcornet,v6.0,primary key,vital,vitalid,xpk_vital
 pcornet,v6.0,primary key,dispensing,dispensingid,xpk_dispensing
 pcornet,v6.0,primary key,lab_result_cm,lab_result_cm_id,xpk_lab_result_cm
+pcornet,v6.0,primary key,lab_history,labhistoryid,xpk_labhistory
 pcornet,v6.0,primary key,condition,conditionid,xpk_condition
 pcornet,v6.0,primary key,pro_cm,pro_cm_id,xpk_pro_cm
 pcornet,v6.0,primary key,prescribing,prescribingid,xpk_prescribing
