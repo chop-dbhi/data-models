@@ -3,7 +3,7 @@ pcornet,v6.0,obs_gen,obsgenid,YES,,,,NO,,,,Arbitrary identifier for each unique 
 pcornet,v6.0,obs_gen,patid,YES,DEMOGRAPHIC,PATID,,NO,,,,Arbitrary person-level identifier. Used to link across tables. 
 pcornet,v6.0,obs_gen,encounterid,NO,ENCOUNTER,ENCOUNTERID,,NO,,,,Arbitrary encounter-level identifier used to link across tables. This field should be populated if the observation was recorded as part of a healthcare encounter. 
 pcornet,v6.0,obs_gen,obsgen_providerid,NO,PROVIDER,PROVIDERID,,NO,,,,Provider code for the provider who recorded the observation. The provider code is a pseudoidentifier with a consistent crosswalk to the real identifier. 
-pcornet,v6.0,obs_gen,obsgen_start_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date of observation/measurement 
+pcornet,v6.0,obs_gen,obsgen_start_date,YES,,,YYYY-MM-DD,NO,DATE,,,Date of observation/measurement 
 pcornet,v6.0,obs_gen,obsgen_start_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time of observation/measurement.
 pcornet,v6.0,obs_gen,obsgen_stop_date,NO,,,YYYY-MM-DD,NO,DATE,,,Date of observation/measurement 
 pcornet,v6.0,obs_gen,obsgen_stop_time,NO,,,HH:MI (24-hour clock and zero padding),NO,TIME,,,Time of observation/measurement.  
