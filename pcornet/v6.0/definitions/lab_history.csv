@@ -1,7 +1,7 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description,
 pcornet,v6.0,lab_history,labhistoryid,YES,,,,NO,,,,"Arbitrary identifier for each unique LAB_HISTORY record.",
 pcornet,v6.0,lab_history,lab_loinc,YES,,,,NO,,,,"Logical Observation Identifiers, Names, and Codes (LOINC®) from the Regenstrief Institute. Current LOINC codes are from 3-7 characters long but Regenstrief suggests a length of 10 for future growth. The last digit of the LOINC code is a check digit and is always preceded by a hyphen. All parts of the LOINC code, including the hyphen, must be included. Do not pad the LOINC code with leading zeros.",
-pcornet,v6.0,lab_history,lab_facilityid,NO,,,,NO,,,,"Arbitrary local code that identifies the facility providing lab results. Used in instances where partners are aggregating laboratory results from a number of different organizations. LAB_FACILITYID can be a true identifier, or a pseudoidentifier with a consistent crosswalk to the true identifier retained by the source data partner.",
+pcornet,v6.0,lab_history,lab_facilityid,NO,,,,NO,,,,"Arbitrary local code that identifies the facility providing lab results.Used in instances where partners are aggregating laboratory results from a number of different organizations. LAB_FACILITYID can be a true identifier, or a pseudoidentifier with a consistent crosswalk to the true identifier retained by the source data partner.",
 pcornet,v6.0,lab_history,sex,NO,,,,NO,,,"Sex to which this unit and range applies.",
 pcornet,v6.0,lab_history,race,NO,,,,NO,,,"Race to which this unit and range applies.",
 pcornet,v6.0,lab_history,age_min_wks,NO,,,,NO,,,"Minimum age to which this unit and range applies, in weeks.",
