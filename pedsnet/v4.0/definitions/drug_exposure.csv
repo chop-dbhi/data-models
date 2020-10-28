@@ -1,0 +1,30 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v4.0,drug_exposure,days_supply,No,,,The number of days of supply the medication as recorded in the original prescription or dispensing record
+pedsnet,v4.0,drug_exposure,dose_unit_concept_id,No,concept,concept_id,A foreign key to a predefined concept in the Standard Vocabularies reflecting the unit the effective drug_dose value is expressed
+pedsnet,v4.0,drug_exposure,dose_unit_source_value,No,,,The information about the dose unit as detailed in the source
+pedsnet,v4.0,drug_exposure,drug_concept_id,Yes,concept,concept_id,A foreign key that refers to a standard drug concept identifier in the Vocabulary.
+pedsnet,v4.0,drug_exposure,drug_exposure_end_date,No,,,The end date for the current instance of drug utilization. It is not available from all sources.
+pedsnet,v4.0,drug_exposure,drug_exposure_end_datetime,No,,,The end date and time of the utilization of the drug
+pedsnet,v4.0,drug_exposure,drug_exposure_id,Yes,,,A system-generated unique identifier for each drug utilization event.
+pedsnet,v4.0,drug_exposure,drug_exposure_start_date,Yes,,,"The start date for the current instance of drug utilization. Valid entries include a start date of a prescription, the date a prescription was filled, or the date on which a drug administration procedure was recorded. "
+pedsnet,v4.0,drug_exposure,drug_exposure_start_datetime,Yes,,,"The start date and time of the utilization of the drug. The start date of the prescription, the date the prescription was filled, the date a drug was dispensed or the date on which a drug administration procedure was recorded are acceptable."
+pedsnet,v4.0,drug_exposure,drug_source_concept_id,No,concept,concept_id,A foreign key to a drug concept that refers to the code used in the source
+pedsnet,v4.0,drug_exposure,drug_source_value,No,,,The source drug value as it appears in the source data. The source is mapped to a standard RxNorm concept and the original code is stored here for reference.
+pedsnet,v4.0,drug_exposure,drug_type_concept_id,Yes,concept,concept_id,A foreign key to a standard concept identifier of the type of drug exposure in the Vocabulary as represented in the source data
+pedsnet,v4.0,drug_exposure,effective_drug_dose,No,,,Numerical value of drug dose for this drug_exposure record
+pedsnet,v4.0,drug_exposure,lot_number,No,,,An identifier to determine where the product originated
+pedsnet,v4.0,drug_exposure,person_id,Yes,person,person_id,A foreign key identifier to the person who is subjected to the drug. The demographic details of that person are stored in the person table.
+pedsnet,v4.0,drug_exposure,provider_id,No,provider,provider_id,A foreign key to the provider in the provider table who initiated (prescribed) the drug exposure
+pedsnet,v4.0,drug_exposure,quantity,No,,,The quantity of the drugs as recorded in the original prescription or dispensing record
+pedsnet,v4.0,drug_exposure,refills,No,,,The number of refills after the initial prescrition
+pedsnet,v4.0,drug_exposure,route_concept_id,No,concept,concept_id,A foreign key that refers to a standard administration route concept identifier in the Vocabulary.
+pedsnet,v4.0,drug_exposure,route_source_value,No,,,The information about the route of administration as detailed in the source
+pedsnet,v4.0,drug_exposure,sig,No,,,The directions on the drug prescription as recorded in the original prescription (and printed on the container) or the dispensing record
+pedsnet,v4.0,drug_exposure,stop_reason,No,,,"The reason, if available, where the medication was stopped, as indicated in the source data."
+pedsnet,v4.0,drug_exposure,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,A foreign key to the visit in the visit table during which the drug exposure initiated.
+pedsnet,v4.0,drug_exposure,drug_exposure_order_date,No,,,The order date of the drug
+pedsnet,v4.0,drug_exposure,drug_exposure_order_datetime,No,,,The order date and time of the drug
+pedsnet,v4.0,drug_exposure,eff_drug_dose_source_value,No,,,The drug dose for this drug_exposure record as it appears in the source
+pedsnet,v4.0,drug_exposure,frequency,No,,,The discrete frequency information as available from the source
+pedsnet,v4.0,drug_exposure,dispense_as_written_concept_id,No,concept,concept_id,A foreign key to value in the source for that determines if the medication is to be dispensed as written.
+
