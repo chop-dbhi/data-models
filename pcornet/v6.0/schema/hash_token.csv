@@ -1,5 +1,5 @@
 model,version,table,field,type,length,precision,scale,default
-pcornet,v6.0,hash_token,patid,string,18,,,
+pcornet,v6.0,hash_token,patid,string,,,,
 pcornet,v6.0,hash_token,token_01,string,,,,
 pcornet,v6.0,hash_token,token_02,string,,,,
 pcornet,v6.0,hash_token,token_03,string,,,,
