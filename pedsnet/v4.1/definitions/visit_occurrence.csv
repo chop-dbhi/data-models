@@ -1,0 +1,18 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v4.1,visit_occurrence,care_site_id,No,care_site,care_site_id,A foreign key to the care site in the care site table that was visited.
+pedsnet,v4.1,visit_occurrence,person_id,Yes,person,person_id,A foreign key identifier to the person for whom the visit is recorded. The demographic details of that person are stored in the person table.
+pedsnet,v4.1,visit_occurrence,provider_id,No,provider,provider_id,"A foreign key to the provider in the provider table who was associated with the visit. NOTE: this is NOT in OMOP CDM v4, but appears in OMOP CDMv5. PEDSnet is including the field at this time due to an existing use case (Obesity cohort)."
+pedsnet,v4.1,visit_occurrence,visit_concept_id,Yes,concept,concept_id,A foreign key that refers to a place of service concept identifier in the vocabulary.
+pedsnet,v4.1,visit_occurrence,visit_end_date,No,,,"The end date of the visit. If this is a one-day visit the end date should match the start date. If the encounter is on-going at the time of ETL, this should be null."
+pedsnet,v4.1,visit_occurrence,visit_end_datetime,No,,,The end time of the visit.
+pedsnet,v4.1,visit_occurrence,visit_occurrence_id,Yes,,,A unique identifier for each person’s visits or encounter at a healthcare provider. Sites can provide whatever integers (DCC will replace the value).
+pedsnet,v4.1,visit_occurrence,visit_source_concept_id,No,concept,concept_id,A foreign key to a concept that refers to the code used in the source.
+pedsnet,v4.1,visit_occurrence,visit_source_value,No,,,"The source code used to reflect the type or source of the visit in the source data. Valid entries include office visits, hospital admissions, etc. These source codes can also be type-of service codes and activity type codes."
+pedsnet,v4.1,visit_occurrence,visit_start_date,Yes,,,The start date of the visit.
+pedsnet,v4.1,visit_occurrence,visit_start_datetime,Yes,,,The start time of the visit.
+pedsnet,v4.1,visit_occurrence,visit_type_concept_id,Yes,concept,concept_id,A foreign key to the predefined concept identifier in the Standardized Vocabularies reflecting the type of source data from which the visit record is derived.
+pedsnet,v4.1,visit_occurrence,preceding_visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,A foreign key to the VISIT_OCCURRENCE table record of the visit immediately preceding this visit.
+pedsnet,v4.1,visit_occurrence,admitted_from_concept_id,No,concept,concept_id,A foreign key to a concept that refers to the code used in the source.
+pedsnet,v4.1,visit_occurrence,discharge_to_concept_id,No,concept,concept_id,A foreign key to a concept that refers to the code used in the source.
+pedsnet,v4.1,visit_occurrence,admitted_from_source_value,No,,,The source code for the admitting source as it appears in the source data.
+pedsnet,v4.1,visit_occurrence,discharge_to_source_value,No,,,The source code for the discharge disposition as it appears in the source data.
