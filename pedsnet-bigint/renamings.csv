@@ -1,9 +1,9 @@
 model,source_version,source_table,source_field,target_version,target_table,target_field
-pedsnet,v1,condition_occurrence,associated_provider_id,v2,condition_occurrence,provider_id
-pedsnet,v1,death,cause_of_death_concept_id,v2,death,cause_concept_id
-pedsnet,v1,death,cause_of_death_source_value,v2,death,cause_source_value
-pedsnet,v1,drug_exposure,prescribing_provider_id,v2,drug_exposure,provider_id
-pedsnet,v1,person,pn_time_of_birth,v2,person,time_of_birth
-pedsnet,v1,procedure_occurrence,associated_provider_id,v2,procedure_occurrence,provider_id
-pedsnet,v1,visit_occurrence,place_of_service_concept_id,v2,visit_occurrence,visit_concept_id
-pedsnet,v1,visit_occurrence,place_of_service_source_value,v2,visit_occurrence,visit_source_value
+pedsnet-bigint,v1,condition_occurrence,associated_provider_id,v2,condition_occurrence,provider_id
+pedsnet-bigint,v1,death,cause_of_death_concept_id,v2,death,cause_concept_id
+pedsnet-bigint,v1,death,cause_of_death_source_value,v2,death,cause_source_value
+pedsnet-bigint,v1,drug_exposure,prescribing_provider_id,v2,drug_exposure,provider_id
+pedsnet-bigint,v1,person,pn_time_of_birth,v2,person,time_of_birth
+pedsnet-bigint,v1,procedure_occurrence,associated_provider_id,v2,procedure_occurrence,provider_id
+pedsnet-bigint,v1,visit_occurrence,place_of_service_concept_id,v2,visit_occurrence,visit_concept_id
+pedsnet-bigint,v1,visit_occurrence,place_of_service_source_value,v2,visit_occurrence,visit_source_value
