@@ -6,7 +6,7 @@ pedsnet,v3.5,measurement,measurement_source_concept_id,No,concept,concept_id,A f
 pedsnet,v3.5,measurement,measurement_source_value,Yes,,,"The measurement name as it appears in the source data. This code is mapped to a standard concept in the Standardized Vocabularies and the original code is, stored here for reference."
 pedsnet,v3.5,measurement,measurement_datetime,Yes,,,The time of the measurement.
 pedsnet,v3.5,measurement,measurement_type_concept_id,Yes,concept,concept_id,A foreign key to the predefined concept identifier in the Vocabulary reflecting the type of the measurement.
-pedsnet,v3.5,measurement,operator_concept_id,No,concept,concept_id,"A foreign key identifier to the mathematical operator that is applied to the value_as_number.Operators are <, ��_, =, ���, >"
+pedsnet,v3.5,measurement,operator_concept_id,No,concept,concept_id,"A foreign key identifier to the mathematical operator that is applied to the value_as_number.Operators are"
 pedsnet,v3.5,measurement,person_id,Yes,person,person_id,A foreign key identifier to the person who the measurement is being documented for. The demographic details of that person are stored in the person table.
 pedsnet,v3.5,measurement,provider_id,No,provider,provider_id,A foreign key to the provider in the provider table who was responsible for making the measurement.
 pedsnet,v3.5,measurement,range_high,No,,,"The upper limit of the normal range of the measurement. It is not applicable if the observation results are non-numeric or categorical, and must be in the same units of measure as the measurement value."
@@ -29,4 +29,3 @@ pedsnet,v3.5,measurement,specimen_source_value,No,,,This field is applicable for
 pedsnet,v3.5,measurement,priority_concept_id,No,concept,concept_id,This field applies to Lab Orders only. A foreign key to a concept that referes to the lab priority as described in the source
 pedsnet,v3.5,measurement,priority_source_value,No,,,This field applies to Lab Orders only. A foreign key to a concept that referes to the lab priority as described in the source
 pedsnet,v3.5,measurement,specimen_concept_id,No,concept,concept_id,This field is applicable for lab values only. A foreign key to a concept that refers to the specimen source.
-
