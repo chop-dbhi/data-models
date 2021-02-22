@@ -1,0 +1,5 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v3.5,concept_ancestor,ancestor_concept_id,biginteger,,,,
+pedsnet,v3.5,concept_ancestor,descendant_concept_id,biginteger,,,,
+pedsnet,v3.5,concept_ancestor,max_levels_of_separation,biginteger,,,,
+pedsnet,v3.5,concept_ancestor,min_levels_of_separation,biginteger,,,,
