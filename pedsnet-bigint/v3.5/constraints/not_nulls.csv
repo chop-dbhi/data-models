@@ -1,0 +1,12 @@
+model,version,type,name,table,field
+pedsnet-bigint,v3.5,not null,,person,person_id
+pedsnet-bigint,v3.5,not null,,person,care_site_id
+pedsnet-bigint,v3.5,not null,,person,ethnicity_concept_id
+pedsnet-bigint,v3.5,not null,,person,ethnicity_source_concept_id
+pedsnet-bigint,v3.5,not null,,person,gender_concept_id
+pedsnet-bigint,v3.5,not null,,person,gender_source_concept_id
+pedsnet-bigint,v3.5,not null,,person,race_concept_id
+pedsnet-bigint,v3.5,not null,,person,race_source_concept_id
+pedsnet-bigint,v3.5,not null,,person,year_of_birth
+pedsnet-bigint,v3.5,not null,,person,language_concept_id
+pedsnet-bigint,v3.5,not null,,person,language_source_concept_id
