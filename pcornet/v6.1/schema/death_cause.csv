@@ -1,0 +1,7 @@
+model,version,table,field,type,length,precision,scale,default
+pcornet,v6.1,death_cause,patid,string,,,,
+pcornet,v6.1,death_cause,death_cause,string,8,,,
+pcornet,v6.1,death_cause,death_cause_code,string,2,,,
+pcornet,v6.1,death_cause,death_cause_type,string,2,,,
+pcornet,v6.1,death_cause,death_cause_source,string,2,,,
+pcornet,v6.1,death_cause,death_cause_confidence,string,2,,,
