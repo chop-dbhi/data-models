@@ -6,7 +6,6 @@ pcornet,v6.1,primary key,enrollment,enr_basis,xpk_enrollment
 pcornet,v6.1,primary key,encounter,encounterid,xpk_encounter
 pcornet,v6.1,primary key,diagnosis,diagnosisid,xpk_diagnosis
 pcornet,v6.1,primary key,procedures,proceduresid,xpk_procedures
-pcornet,v6.1,primary key,vital,vitalid,xpk_vital
 pcornet,v6.1,primary key,dispensing,dispensingid,xpk_dispensing
 pcornet,v6.1,primary key,lab_result_cm,lab_result_cm_id,xpk_lab_result_cm
 pcornet,v6.1,primary key,condition,conditionid,xpk_condition

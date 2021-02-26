@@ -5,8 +5,6 @@ pcornet,v6.1,diagnosis,patid,demographic,patid,fk_diagnosis_patid
 pcornet,v6.1,diagnosis,encounterid,encounter,encounterid,fk_diagnosis_encounterid
 pcornet,v6.1,procedures,patid,demographic,patid,fk_procedures_patid
 pcornet,v6.1,procedures,encounterid,encounter,encounterid,fk_procedures_encounterid
-pcornet,v6.1,vital,patid,demographic,patid,fk_vital_patid
-pcornet,v6.1,vital,encounterid,encounter,encounterid,fk_vital_encounterid
 pcornet,v6.1,dispensing,patid,demographic,patid,fk_dispensing_patid
 pcornet,v6.1,dispensing,prescribingid,prescribing,prescribingid,fk_dispensing_prescribingid
 pcornet,v6.1,lab_result_cm,patid,demographic,patid,fk_lab_result_cm_patid
