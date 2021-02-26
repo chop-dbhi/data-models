@@ -6,3 +6,4 @@ pcornet,v6.1,hash_token,token_03,NO,,,,NO,,,,"Encrypted hash generated from PII 
 pcornet,v6.1,hash_token,token_04,NO,,,,NO,,,,"Encrypted hash generated from PII using token strategy 04.",
 pcornet,v6.1,hash_token,token_05,NO,,,,NO,,,,"Encrypted hash generated from PII using token strategy 05.",
 pcornet,v6.1,hash_token,token_16,NO,,,,NO,,,,"Encrypted hash generated from PII using token strategy 16.",
+pcornet,v6.1,hash_token,token_encryption_key,YES,,,,NO,,,,"Name of the key used to generate the encrypted hash tokens.",
