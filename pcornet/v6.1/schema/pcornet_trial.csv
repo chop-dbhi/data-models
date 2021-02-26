@@ -1,0 +1,9 @@
+model,version,table,field,type,length,precision,scale,default
+pcornet,v6.1,pcornet_trial,patid,string,,,,
+pcornet,v6.1,pcornet_trial,trialid,string,20,,,
+pcornet,v6.1,pcornet_trial,participantid,string,,,,
+pcornet,v6.1,pcornet_trial,trial_siteid,string,,,,
+pcornet,v6.1,pcornet_trial,trial_enroll_date,date,,,,
+pcornet,v6.1,pcornet_trial,trial_end_date,date,,,,
+pcornet,v6.1,pcornet_trial,trial_withdraw_date,date,,,,
+pcornet,v6.1,pcornet_trial,trial_invite_code,string,20,,,
