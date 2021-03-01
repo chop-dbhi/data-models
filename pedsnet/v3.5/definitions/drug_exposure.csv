@@ -9,7 +9,7 @@ pedsnet,v3.5,drug_exposure,drug_exposure_id,Yes,,,A system-generated unique iden
 pedsnet,v3.5,drug_exposure,drug_exposure_start_date,Yes,,,"The start date for the current instance of drug utilization. Valid entries include a start date of a prescription, the date a prescription was filled, or the date on which a drug administration procedure was recorded. "
 pedsnet,v3.5,drug_exposure,drug_exposure_start_datetime,Yes,,,"The start date and time of the utilization of the drug. The start date of the prescription, the date the prescription was filled, the date a drug was dispensed or the date on which a drug administration procedure was recorded are acceptable."
 pedsnet,v3.5,drug_exposure,drug_source_concept_id,No,concept,concept_id,A foreign key to a drug concept that refers to the code used in the source
-pedsnet,v3.5,drug_exposure,drug_source_value,No,,,The source drug value as it appears in the source data. The source is mapped to a standard RxNorm concept and the original code is stored here for reference.
+pedsnet,v3.5,drug_exposure,drug_source_value,Yes,,,The source drug value as it appears in the source data. The source is mapped to a standard RxNorm concept and the original code is stored here for reference.
 pedsnet,v3.5,drug_exposure,drug_type_concept_id,Yes,concept,concept_id,A foreign key to a standard concept identifier of the type of drug exposure in the Vocabulary as represented in the source data
 pedsnet,v3.5,drug_exposure,effective_drug_dose,No,,,Numerical value of drug dose for this drug_exposure record
 pedsnet,v3.5,drug_exposure,lot_number,No,,,An identifier to determine where the product originated
