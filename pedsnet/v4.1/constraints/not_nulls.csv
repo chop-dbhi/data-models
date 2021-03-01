@@ -45,6 +45,7 @@ pedsnet,v4.1,not null,,drug_exposure,drug_concept_id
 pedsnet,v4.1,not null,,drug_exposure,drug_exposure_start_date
 pedsnet,v4.1,not null,,drug_exposure,drug_exposure_start_datetime
 pedsnet,v4.1,not null,,drug_exposure,drug_type_concept_id
+pedsnet,v4.1,not null,,drug_exposure,drug_source_value
 pedsnet,v4.1,not null,,drug_strength,drug_concept_id
 pedsnet,v4.1,not null,,drug_strength,ingredient_concept_id
 pedsnet,v4.1,not null,,drug_strength,valid_start_date
