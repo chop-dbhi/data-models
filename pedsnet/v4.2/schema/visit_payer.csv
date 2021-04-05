@@ -2,6 +2,6 @@ model,version,table,field,type,length,precision,scale,default
 pedsnet,v4.2,visit_payer,plan_class,string,,,,
 pedsnet,v4.2,visit_payer,plan_name,string,,,,
 pedsnet,v4.2,visit_payer,plan_type,string,,,,
-pedsnet,v4.2,visit_payer,visit_occurrence_id,integer,,,,
-pedsnet,v4.2,visit_payer,visit_payer_id,integer,,,,
+pedsnet,v4.2,visit_payer,visit_occurrence_id,biginteger,,,,
+pedsnet,v4.2,visit_payer,visit_payer_id,biginteger,,,,
 pedsnet,v4.2,visit_payer,visit_payer_type_concept_id,integer,,,,
