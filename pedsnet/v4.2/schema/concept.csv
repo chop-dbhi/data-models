@@ -2,7 +2,6 @@ model,version,table,field,type,length,precision,scale,default
 pedsnet,v4.2,concept,concept_class_id,string,50,,,
 pedsnet,v4.2,concept,concept_code,string,256,,,
 pedsnet,v4.2,concept,concept_id,integer,,,,
-pedsnet,v4.2,concept,concept_level,integer,,,,
 pedsnet,v4.2,concept,concept_name,string,512,,,
 pedsnet,v4.2,concept,domain_id,string,20,,,
 pedsnet,v4.2,concept,invalid_reason,string,1,,,
