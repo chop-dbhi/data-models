@@ -1,0 +1,9 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v4.3,hash_token,person_id,yes,person,person_id,"A foreign key identifier to the Person who is subjected to the Device. The demographic details of that Person are stored in the PERSON table."
+pedsnet,v4.3,hash_token,token_01,No,,,"Encrypted keyed hash generated from PII using token strategy 01 in Datavant DeID."
+pedsnet,v4.3,hash_token,token_02,No,,,"Encrypted keyed hash generated from PII using token strategy 02 in Datavant DeID."
+pedsnet,v4.3,hash_token,token_03,No,,,"Encrypted keyed hash generated from PII using token strategy 03 in Datavant DeID."
+pedsnet,v4.3,hash_token,token_04,No,,,"Encrypted keyed hash generated from PII using token strategy 04 in Datavant DeID."
+pedsnet,v4.3,hash_token,token_05,No,,,"Encrypted keyed hash generated from PII using token strategy 05 in Datavant DeID."
+pedsnet,v4.3,hash_token,token_16,No,,,"Encrypted keyed hash generated from PII using token strategy 16 in Datavant DeID."
+pedsnet,v4.3,hash_token,token_encryption_key,Yes,,,"The token encryption key used."
