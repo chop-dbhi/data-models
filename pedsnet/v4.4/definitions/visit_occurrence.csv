@@ -13,6 +13,6 @@ pedsnet,v4.4,visit_occurrence,visit_start_datetime,Yes,,,The start time of the v
 pedsnet,v4.4,visit_occurrence,visit_type_concept_id,Yes,concept,concept_id,A foreign key to the predefined concept identifier in the Standardized Vocabularies reflecting the type of source data from which the visit record is derived.
 pedsnet,v4.4,visit_occurrence,preceding_visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,A foreign key to the VISIT_OCCURRENCE table record of the visit immediately preceding this visit.
 pedsnet,v4.4,visit_occurrence,admitted_from_concept_id,No,concept,concept_id,A foreign key to a concept that refers to the code used in the source.
-pedsnet,v4.4,visit_occurrence,discharge_to_concept_id,No,concept,concept_id,A foreign key to a concept that refers to the code used in the source.
+pedsnet,v4.4,visit_occurrence,discharged_to_concept_id,No,concept,concept_id,A foreign key to a concept that refers to the code used in the source.
 pedsnet,v4.4,visit_occurrence,admitted_from_source_value,No,,,The source code for the admitting source as it appears in the source data.
-pedsnet,v4.4,visit_occurrence,discharge_to_source_value,No,,,The source code for the discharge disposition as it appears in the source data.
+pedsnet,v4.4,visit_occurrence,discharged_to_source_value,No,,,The source code for the discharge disposition as it appears in the source data.
