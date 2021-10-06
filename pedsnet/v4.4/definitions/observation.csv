@@ -15,4 +15,5 @@ pedsnet,v4.4,observation,unit_source_value,No,,,"The source code for the unit as
 pedsnet,v4.4,observation,value_as_concept_id,No,concept,concept_id,"A foreign key to an observation result stored as a concept identifier. This is applicable to observations where the result can be expressed as a standard concept from the Vocabulary (e.g., positive/negative, present/absent, low/high, etc.)."
 pedsnet,v4.4,observation,value_as_number,No,,,The observation result stored as a number. This is applicable to observations where the result is expressed as a numeric value.
 pedsnet,v4.4,observation,value_as_string,No,,,The observation result stored as a string. This is applicable to observations where the result is expressed as verbatim text.
+pedsnet,v4.4,observation,value_source_value,No,,,The observation result stored as it appears in the source.
 pedsnet,v4.4,observation,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,A foreign key to the visit in the visit table during which the observation was recorded.
