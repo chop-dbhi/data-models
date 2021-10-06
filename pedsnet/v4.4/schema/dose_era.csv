@@ -1,0 +1,8 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v4.4,dose_era,dose_era_id,biginteger,,,,
+pedsnet,v4.4,dose_era,person_id,biginteger,,,,
+pedsnet,v4.4,dose_era,drug_concept_id,integer,,,,
+pedsnet,v4.4,dose_era,dose_era_start_date,date,,,,
+pedsnet,v4.4,dose_era,dose_era_end_date,date,,,,
+pedsnet,v4.4,dose_era,unit_concept_id,integer,,,,
+pedsnet,v4.4,dose_era,dose_value,float,,,,
