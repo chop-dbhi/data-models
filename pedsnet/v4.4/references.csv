@@ -147,3 +147,4 @@ pedsnet,v4.4,location_history,location_preferred_concept_id,concept,concept_id,f
 pedsnet,v4.4,hash_token,person_id,person,person_id,fpk_hash_token_person
 pedsnet,v4.4,lab_site_mapping,pedsnet_concept_id,concept,concept_id,fpk_pedsnet_concept
 pedsnet,v4.4,lab_site_mapping,site_measurement_concept_id,concept,concept_id,fpk_site_measurement_concept
+pedsnet,v4.4,location,country_concept_id,concept,concept_id,fpk_location_country_concept
