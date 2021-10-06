@@ -1,0 +1,8 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v4.4,dose_era,dose_era_id,Yes,,,A unique identifier for each Dose Era.
+pedsnet,v4.4,dose_era,person_id,Yes,person,person_id,A foreign key identifier to the Person who is subjected to the drug during the drug era. The demographic details of that Person are stored in the PERSON table.
+pedsnet,v4.4,dose_era,drug_concept_id,Yes,concept,concept_id,A foreign key that refers to a Standard Concept identifier in the Standardized Vocabularies for the active Ingredient Concept.
+pedsnet,v4.4,dose_era,unit_concept_id,Yes,concept,concept_id,A foreign key that refers to a Standard Concept identifier in the Standardized Vocabularies for the unit concept.
+pedsnet,v4.4,dose_era,dose_value,Yes,,,The numeric value of the dose.
+pedsnet,v4.4,dose_era,dose_era_start_date,No,,,The start date for the drug era constructed from the individual instances of drug exposures. It is the start date of the very first chronologically recorded instance of utilization of a drug.
+pedsnet,v4.4,dose_era,dose_era_end_date,No,,,The end date for the drug era constructed from the individual instance of drug exposures. It is the end date of the final continuously recorded instance of utilization of a drug.
