@@ -51,6 +51,7 @@ pedsnet,v4.4,measurement,person_id,person,person_id,fpk_measurement_person
 pedsnet,v4.4,measurement,provider_id,provider,provider_id,fpk_measurement_provider
 pedsnet,v4.4,measurement,priority_concept_id,concept,concept_id,fpk_measurement_priority
 pedsnet,v4.4,measurement,unit_concept_id,concept,concept_id,fpk_measurement_unit
+pedsnet,v4.4,measurement,unit_source_concept_id,concept,concept_id,fpk_measurement_src_unit
 pedsnet,v4.4,measurement,value_as_concept_id,concept,concept_id,fpk_measurement_value
 pedsnet,v4.4,measurement,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_measurement_visit
 pedsnet,v4.4,measurement,range_low_operator_concept_id,concept,concept_id,fpk_measurement_range_low_op
@@ -102,7 +103,7 @@ pedsnet,v4.4,visit_occurrence,visit_concept_id,concept,concept_id,fpk_visit_conc
 pedsnet,v4.4,visit_occurrence,visit_source_concept_id,concept,concept_id,fpk_visit_concept_s
 pedsnet,v4.4,visit_occurrence,visit_type_concept_id,concept,concept_id,fpk_visit_type_concept
 pedsnet,v4.4,visit_occurrence,admitted_from_concept_id,concept,concept_id,fpk_adm_src_concept
-pedsnet,v4.4,visit_occurrence,discharge_to_concept_id,concept,concept_id,fpk_disch_concept
+pedsnet,v4.4,visit_occurrence,discharged_to_concept_id,concept,concept_id,fpk_disch_concept
 pedsnet,v4.4,visit_occurrence,preceding_visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_visit_visit
 pedsnet,v4.4,visit_payer,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_visit_payer_visit
 pedsnet,v4.4,visit_payer,visit_payer_type_concept_id,concept,concept_id,fpk_visit_payer_concept
@@ -140,6 +141,8 @@ pedsnet,v4.4,device_exposure,person_id,person,person_id,fpk_device_person
 pedsnet,v4.4,device_exposure,device_type_concept_id,concept,concept_id,fpk_device_type_concept
 pedsnet,v4.4,device_exposure,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_device_visit
 pedsnet,v4.4,device_exposure,placement_concept_id,concept,concept_id,fpk_device_placement_concept
+pedsnet,v4.4,device_exposure,unit_concept_id,concept,concept_id,fpk_device_unit
+pedsnet,v4.4,device_exposure,unit_source_concept_id,concept,concept_id,fpk_device_src_unit
 pedsnet,v4.4,location_history,location_id,location,location_id,fpk_loc_hist_location
 pedsnet,v4.4,location_history,entity_id,person,person_id,fpk_loc_hist_person
 pedsnet,v4.4,location_history,relationship_type_concept_id,concept,concept_id,fpk_loc_hist_type
