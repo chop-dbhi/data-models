@@ -9,6 +9,5 @@ pedsnet,v4.4,location,state,No,,,The state field as it appears in the source dat
 pedsnet,v4.4,location,zip,No,,,"The zip code. For US addresses, valid zip codes can be 3, 5 or 9 digits long, depending on the source data."
 pedsnet,v4.4,location,country_concept_id,No,concept,concept_id,The standard concept for country.
 pedsnet,v4.4,location,country_source_value,No,,,The country field as it appears in the source data.
-pedsnet,v4.4,location,longitude,integer,No,,,The latitude associated with the location.
-pedsnet,v4.4,location,latitude,integer,No,,,The longitude associated with the location.
-
+pedsnet,v4.4,location,longitude,integer,No,,The latitude associated with the location.
+pedsnet,v4.4,location,latitude,integer,No,,The longitude associated with the location.
