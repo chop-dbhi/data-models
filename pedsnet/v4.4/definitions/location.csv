@@ -11,3 +11,4 @@ pedsnet,v4.4,location,country_concept_id,No,concept,concept_id,The standard conc
 pedsnet,v4.4,location,country_source_value,No,,,The country field as it appears in the source data.
 pedsnet,v4.4,location,longitude,No,,,The latitude associated with the location.
 pedsnet,v4.4,location,latitude,No,,,The longitude associated with the location.
+pedsnet,v4.4,location,census_block_group,No,,,The census block group associated with the location.
