@@ -92,6 +92,8 @@ pedsnet,v4.6,not null,,person,person_source_value
 pedsnet,v4.6,not null,,provider,provider_id
 pedsnet,v4.6,not null,,provider,care_site_id
 pedsnet,v4.6,not null,,provider,provider_source_value
+pedsnet,v4.6,not null,,provider_specialty,provider_id
+pedsnet,v4.6,not null,,provider_specialty,provider_specialty_id
 pedsnet,v4.6,not null,,procedure_occurrence,procedure_occurrence_id
 pedsnet,v4.6,not null,,procedure_occurrence,person_id
 pedsnet,v4.6,not null,,procedure_occurrence,procedure_concept_id

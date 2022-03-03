@@ -1,0 +1,4 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v4.6,provider_specialty,provider_id,Yes,provider,provider_id,A foreign key to a provider in the provider table.
+pedsnet,v4.6,provider_specialty,specialty_concept_id,Yes,concept,concept_id,A foreign key to a standard provider's specialty concept identifier in the Vocabulary. This is a madatory field.
+pedsnet,v4.6,provider_specialty,priority,No,,,"This is an optional field. In the case that a provider has multiple specialties and thus multiple records in this table, specialties can be ranked in this field numerically (primary specialty = 1, secondary specialty = 2, etc.)."

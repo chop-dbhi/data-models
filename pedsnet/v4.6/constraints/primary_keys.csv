@@ -20,6 +20,8 @@ pedsnet,v4.6,primary key,xpk_observation_period,observation_period,observation_p
 pedsnet,v4.6,primary key,xpk_person,person,person_id
 pedsnet,v4.6,primary key,xpk_procedure_occurrence,procedure_occurrence,procedure_occurrence_id
 pedsnet,v4.6,primary key,xpk_provider,provider,provider_id
+pedsnet,v4.6,primary key,xpk_provider_specialty,provider_specialty,provider_id
+pedsnet,v4.6,primary key,xpk_provider_specialty,provider_specialty,provider_specialty_id
 pedsnet,v4.6,primary key,xpk_relationship,relationship,relationship_id
 pedsnet,v4.6,primary key,xpk_source_to_concept_map,source_to_concept_map,source_vocabulary_id
 pedsnet,v4.6,primary key,xpk_source_to_concept_map,source_to_concept_map,target_concept_id

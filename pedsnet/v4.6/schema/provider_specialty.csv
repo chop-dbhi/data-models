@@ -1,0 +1,4 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v4.6,provider_specialty,provider_id,biginteger,,,,
+pedsnet,v4.6,provider_specialty,specialty_concept_id,integer,,,,
+pedsnet,v4.6,provider_specialty,priority,integer,,,,

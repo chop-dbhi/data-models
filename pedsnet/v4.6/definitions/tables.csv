@@ -19,6 +19,7 @@ pedsnet,v4.6,observation_period,"Time intervals during which health care informa
 pedsnet,v4.6,person,Demographic information about a Person 
 pedsnet,v4.6,procedure_occurrence,Procedures carried out on the Person
 pedsnet,v4.6,provider,Information about health care providers 
+pedsnet,v4.6,provider_specialty,"Specification on each specialty a provider has, as well as priority in specialties (primary, secondary, etc)"
 pedsnet,v4.6,relationship,"The RELATIONSHIP table provides a reference list of all allowable types of relationships that can be used to associate any two concepts in the concept relationship table. Relationships are classified as hierarchical (parent-child) or non-hierarchical, and are used to determine which concept relationship records should be included in the computation of the concept ancestor table. "
 pedsnet,v4.6,source_to_concept_map,"The SOURCE_TO_CONCEPT_MAP table is a legacy data structure within the OMOP Common Data Model, recommended for use in extract, transform, and load (ETL) processes to maintain local source codes which are not available as concepts in the Standardized Vocabularies, and to establish mappings for each source code into a standard concept that can be used to populate the Common Data Model tables. The source to concept map table is no longer populated with content within the Standardized Vocabularies published to the OMOP community. "
 pedsnet,v4.6,visit_occurrence,Visits for health care services of the Person
