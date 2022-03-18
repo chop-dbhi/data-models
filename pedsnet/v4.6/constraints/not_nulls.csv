@@ -92,8 +92,6 @@ pedsnet,v4.6,not null,,person,person_source_value
 pedsnet,v4.6,not null,,provider,provider_id
 pedsnet,v4.6,not null,,provider,care_site_id
 pedsnet,v4.6,not null,,provider,provider_source_value
-pedsnet,v4.6,not null,,provider_specialty,provider_id
-pedsnet,v4.6,not null,,provider_specialty,provider_specialty_id
 pedsnet,v4.6,not null,,procedure_occurrence,procedure_occurrence_id
 pedsnet,v4.6,not null,,procedure_occurrence,person_id
 pedsnet,v4.6,not null,,procedure_occurrence,procedure_concept_id
@@ -170,3 +168,8 @@ pedsnet,v4.6,not null,,lab_site_mapping,pedsnet_loinc_code
 pedsnet,v4.6,not null,,lab_site_mapping,pedsnet_concept_id
 pedsnet,v4.6,not null,,lab_site_mapping,site_source_value
 pedsnet,v4.6,not null,,lab_site_mapping,site_measurement_concept_id
+pedsnet,v4.6,not null,,specialty,domain_id
+pedsnet,v4.6,not null,,specialty,entity_id
+pedsnet,v4.6,not null,,specialty,entity_type_concept_id
+pedsnet,v4.6,not null,,specialty,specialty_concept_id
+pedsnet,v4.6,not null,,specialty,specialty_source_value

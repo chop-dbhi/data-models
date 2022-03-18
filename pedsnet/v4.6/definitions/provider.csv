@@ -9,3 +9,6 @@ pedsnet,v4.6,provider,provider_id,Yes,,,A unique identifier for each provider. E
 pedsnet,v4.6,provider,provider_name,No,,,A description of the provider.
 pedsnet,v4.6,provider,provider_source_value,Yes,,,"The identifier used for the provider in the source data, stored here for reference. Sites should create a random ID, but keep the mapping."
 pedsnet,v4.6,provider,year_of_birth,No,,,The year of birth of the provider
+pedsnet,v4.6,provider,specialty_concept_id,No,concept,concept_id,The specialty of the department linked to a standard specialty concept as it appears in the Vocabulary
+pedsnet,v4.6,provider,specialty_source_concept_id,No,concept,concept_id,A foreign key to a concept that refers to the code used in the source
+pedsnet,v4.6,provider,specialty_source_value,No,,,"The source code for the specialty as it appears in the source data, stored here for reference."
