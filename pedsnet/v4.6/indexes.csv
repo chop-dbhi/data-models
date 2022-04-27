@@ -85,3 +85,5 @@ pedsnet,v4.6,idx_person_ethnicity,No,person,ethnicity_concept_id,asc
 pedsnet,v4.6,idx_person_race,No,person,race_concept_id,asc
 pedsnet,v4.6,idx_person_gender,No,person,gender_concept_id,asc
 pedsnet,v4.6,idx_provider_specialty_c_id,No,provider,specialty_concept_id,asc
+pedsnet,v4.6,idx_specialty_entity_id,No,specialty,entity_id,asc
+pedsnet,v4.6,idx_specialty_specialty_c_id,No,specialty,specialty_concept_id,asc
