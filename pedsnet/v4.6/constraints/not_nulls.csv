@@ -168,6 +168,7 @@ pedsnet,v4.6,not null,,lab_site_mapping,pedsnet_loinc_code
 pedsnet,v4.6,not null,,lab_site_mapping,pedsnet_concept_id
 pedsnet,v4.6,not null,,lab_site_mapping,site_source_value
 pedsnet,v4.6,not null,,lab_site_mapping,site_measurement_concept_id
+pedsnet,v4.6,not null,,specialty,specialty_id
 pedsnet,v4.6,not null,,specialty,domain_id
 pedsnet,v4.6,not null,,specialty,entity_id
 pedsnet,v4.6,not null,,specialty,entity_type_concept_id
