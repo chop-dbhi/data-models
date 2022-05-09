@@ -150,5 +150,5 @@ pedsnet,v4.6,hash_token,person_id,person,person_id,fpk_hash_token_person
 pedsnet,v4.6,lab_site_mapping,pedsnet_concept_id,concept,concept_id,fpk_pedsnet_concept
 pedsnet,v4.6,lab_site_mapping,site_measurement_concept_id,concept,concept_id,fpk_site_measurement_concept
 pedsnet,v4.6,location,country_concept_id,concept,concept_id,fpk_location_country_concept
-pedsnet,v4.6,specialty,specialty_concept_id,concept,concept_id,fpk_specialty_specialty_concept
+pedsnet,v4.6,specialty,specialty_concept_id,concept,concept_id,fpk_specialty_spec_concept
 pedsnet,v4.6,specialty,entity_type_concept_id,concept,concept_id,fpk_specialty_entity_type
