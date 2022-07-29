@@ -1,0 +1,7 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v4.7,concept_relationship,concept_id_1,integer,,,,
+pedsnet,v4.7,concept_relationship,concept_id_2,integer,,,,
+pedsnet,v4.7,concept_relationship,invalid_reason,string,1,,,
+pedsnet,v4.7,concept_relationship,relationship_id,string,20,,,
+pedsnet,v4.7,concept_relationship,valid_end_date,date,,,,
+pedsnet,v4.7,concept_relationship,valid_start_date,date,,,,
