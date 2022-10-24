@@ -1,0 +1,25 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v4.8,immunization,imm_dose_unit_concept_id,No,concept,concept_id,A foreign key to a predefined concept in the Standard Vocabularies reflecting the unit the immunization_dose value is expressed
+pedsnet,v4.8,immunization,imm_dose_unit_source_value,No,,,The information about the immunization dose unit as detailed in the source
+pedsnet,v4.8,immunization,immunization_concept_id,Yes,concept,concept_id,A foreign key that refers to a standard immunization concept identifier in the Vocabulary.
+pedsnet,v4.8,immunization,immunization_id,Yes,,,A system-generated unique identifier for each immunization event.
+pedsnet,v4.8,immunization,immunization_date,Yes,,,The date for the administration of immunization.
+pedsnet,v4.8,immunization,immunization_datetime,Yes,,,The date and time of the administration of immunization. 
+pedsnet,v4.8,immunization,immunization_source_concept_id,No,concept,concept_id,A foreign key to a immunization concept that refers to the code used in the source
+pedsnet,v4.8,immunization,immunization_source_value,No,,,The source immunization value as it appears in the source data. The source is mapped to a standard CVX concept and the original code is stored here for reference.
+pedsnet,v4.8,immunization,immunization_dose,No,,,Numerical value of drug dose for this immunization record
+pedsnet,v4.8,immunization,person_id,Yes,person,person_id,A foreign key identifier to the person who received the immunization. The demographic details of that person are stored in the person table.
+pedsnet,v4.8,immunization,provider_id,No,provider,provider_id,A foreign key to the provider in the provider table who administered the immunization.
+pedsnet,v4.8,immunization,imm_route_concept_id,No,concept,concept_id,A foreign key that refers to a standard administration route concept identifier in the Vocabulary.
+pedsnet,v4.8,immunization,imm_route_source_value,No,,,The information about the route of administration as detailed in the source
+pedsnet,v4.8,immunization,visit_occurrence_id,No,,,A foreign key that refers to the visit associated with the immunization record.
+pedsnet,v4.8,immunization,procedure_occurrence_id,No,,,A foreign key that refers to the procedure associated with the immunization record.
+pedsnet,v4.8,immunization,imm_recorded_date,No,,,The date the immunization was recorded.This date is applicable for immunizations that have been reported by the patient and not administered at the visit. No date shifting.
+pedsnet,v4.8,immunization,imm_recorded_datetime,No,,,"The time the immunization was recorded.	This date and time is applicable for immunizations that have been reported by the patient and not administered at the visit. No date shifting."
+pedsnet,v4.8,immunization,imm_manufacturer,No,,,The information about the immunization manufacturer.
+pedsnet,v4.8,immunization,imm_lot_num,No,,,The information about the immunization lot number.
+pedsnet,v4.8,immunization,imm_exp_date,No,,,The date of the immunization expiration. No date shifting.
+pedsnet,v4.8,immunization,imm_exp_datetime,No,,,The date and time of the immunization expiration.No date shifting.
+pedsnet,v4.8,immunization,immunization_type_concept_id,No,concept,concept_id,A foreign key that refers to source of immunization record.
+pedsnet,v4.8,immunization,imm_body_site_concept_id,No,concept,concept_id,A foreign key that refers to the body site where the immunization was administered in the vocabulary.
+pedsnet,v4.8,immunization,imm_body_site_source_value,No,,,The body site where the immunization was administered in the source system.

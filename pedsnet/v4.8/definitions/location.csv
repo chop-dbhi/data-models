@@ -1,0 +1,14 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v4.8,location,address_1,No,,,Optional - Do not transmit to DCC
+pedsnet,v4.8,location,address_2,No,,,Optional - Do not transmit to DCC
+pedsnet,v4.8,location,city,No,,,The city field as it appears in the source data.
+pedsnet,v4.8,location,county,No,,,Optional - Do not transmit to DCC
+pedsnet,v4.8,location,location_id,Yes,,,A unique identifier for each geographic location.
+pedsnet,v4.8,location,location_source_value,No,,,The verbatim information that is used to uniquely identify the location as it appears in the source data. 
+pedsnet,v4.8,location,state,No,,,The state field as it appears in the source data.
+pedsnet,v4.8,location,zip,No,,,"The zip code. For US addresses, valid zip codes can be 3, 5 or 9 digits long, depending on the source data."
+pedsnet,v4.8,location,country_concept_id,No,concept,concept_id,The standard concept for country.
+pedsnet,v4.8,location,country_source_value,No,,,The country field as it appears in the source data.
+pedsnet,v4.8,location,longitude,No,,,The latitude associated with the location.
+pedsnet,v4.8,location,latitude,No,,,The longitude associated with the location.
+pedsnet,v4.8,location,census_block_group,No,,,The census block group associated with the location.
