@@ -1,6 +1,7 @@
 model,version,type,name,table,field
 pedsnet,v4.8,not null,,care_site,care_site_id
 pedsnet,v4.8,not null,,care_site,care_site_source_value
+pedsnet,v4.8,not null,,care_site,specialty_concept_id
 pedsnet,v4.8,not null,,concept,concept_class_id
 pedsnet,v4.8,not null,,concept,concept_code
 pedsnet,v4.8,not null,,concept,concept_id
@@ -92,6 +93,7 @@ pedsnet,v4.8,not null,,person,person_source_value
 pedsnet,v4.8,not null,,provider,provider_id
 pedsnet,v4.8,not null,,provider,care_site_id
 pedsnet,v4.8,not null,,provider,provider_source_value
+pedsnet,v4.8,not null,,provider,specialty_concept_id
 pedsnet,v4.8,not null,,procedure_occurrence,procedure_occurrence_id
 pedsnet,v4.8,not null,,procedure_occurrence,person_id
 pedsnet,v4.8,not null,,procedure_occurrence,procedure_concept_id
@@ -117,6 +119,8 @@ pedsnet,v4.8,not null,,visit_occurrence,visit_concept_id
 pedsnet,v4.8,not null,,visit_occurrence,visit_occurrence_id
 pedsnet,v4.8,not null,,visit_occurrence,visit_start_datetime
 pedsnet,v4.8,not null,,visit_occurrence,visit_start_date
+pedsnet,v4.8,not null,,visit_occurrence,visit_end_datetime
+pedsnet,v4.8,not null,,visit_occurrence,visit_end_date
 pedsnet,v4.8,not null,,visit_occurrence,visit_type_concept_id
 pedsnet,v4.8,not null,,visit_occurrence,visit_source_value
 pedsnet,v4.8,not null,,visit_payer,plan_name
