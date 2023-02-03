@@ -1,0 +1,21 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v4.9,device_exposure,device_exposure_id,Yes,,,A system-generated unique identifier for each Device Exposure.
+pedsnet,v4.9,device_exposure,device_concept_id,Yes,concept,concept_id,A foreign key that refers to a Standard Concept identifier in the Standardized Vocabularies belonging to the Device domain.
+pedsnet,v4.9,device_exposure,device_exposure_start_date,Yes,,,The date the Device or supply was applied or used.
+pedsnet,v4.9,device_exposure,device_exposure_start_datetime,Yes,,,The date and time the Device or supply was applied or used. 
+pedsnet,v4.9,device_exposure,device_exposure_end_date,No,,,The date use of the Device or supply was ceased.
+pedsnet,v4.9,device_exposure,device_exposure_end_datetime,No,,,The date and time use of the Device or supply was ceased. 
+pedsnet,v4.9,device_exposure,device_type_concept_id,Yes,concept,concept_id,A foreign key to the predefined Concept identifier in the Standardized Vocabularies reflecting the type of Device Exposure recorded.
+pedsnet,v4.9,device_exposure,unique_device_id,No,,,A UDI or equivalent identifying the instance of the Device used in the Person.
+pedsnet,v4.9,device_exposure,production_id,No,,,The PI portion of the UDI or equivalent identifying the instance of the Device used in the Person.
+pedsnet,v4.9,device_exposure,quantity,No,,,The number of individual Devices used in the exposure.
+pedsnet,v4.9,device_exposure,person_id,Yes,person,person_id,A foreign key identifier to the Person who is subjected to the Device. The demographic details of that Person are stored in the PERSON table.
+pedsnet,v4.9,device_exposure,provider_id,No,provider,provider_id,A foreign key to the provider in the PROVIDER table who initiated or administered the Device.
+pedsnet,v4.9,device_exposure,device_source_value,No,,,The source code for the Device as it appears in the source data. This code is mapped to a Standard Device Concept in the Standardized Vocabularies and the original code is stored here for reference.
+pedsnet,v4.9,device_exposure,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,A foreign key that refers to the visit associated with the device_exposure record.
+pedsnet,v4.9,device_exposure,device_source_concept_id,No,concept,concept_id,A foreign key to a Device Concept that refers to the code used in the source. 
+pedsnet,v4.9,device_exposure,placement_concept_id,No,concept,concept_id,A foreign key that refers to the body site where the device was placed.
+pedsnet,v4.9,device_exposure,placement_source_value,No,,,The body site where the device was placed in the source system.
+pedsnet,v4.9,device_exposure,unit_concept_id,No,concept,concept_id,A foreign key to a standard concept identifier of device units in the Vocabulary.
+pedsnet,v4.9,device_exposure,unit_source_concept_id,No,concept,concept_id,A foreign key to a standard concept identifier of measurement units in the Vocabulary as it appears in the source.
+pedsnet,v4.9,device_exposure,unit_source_value,No,,,"The source code for the unit as it appears in the source data. This code is mapped to a standard unit concept in the Standardized Vocabularies and the original code is, stored here for reference."
