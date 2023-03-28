@@ -1,0 +1,8 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v5.0,location_fips,location_fips_id,Yes,,,primary key for location_fips table
+pedsnet,v5.0,location_fips,location_id,Yes,location,location_id,foreign key to location table
+pedsnet,v5.0,location_fips,state,Yes,,,first two integers of census code representing a state
+pedsnet,v5.0,location_fips,county,Yes,,,next three integers of census code representing a county
+pedsnet,v5.0,location_fips,tract,Yes,,,next six integers of census code representing a tract
+pedsnet,v5.0,location_fips,block_group,No,,,final integers of census code representing a block group
+pedsnet,v5.0,location_fips,census_year,Yes,,,year of census data collection
