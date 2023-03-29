@@ -1,8 +1,8 @@
 model,version,table,field,type,length,precision,scale,default
 pedsnet,v5.0,location_fips,location_fips_id,biginteger,,,,
 pedsnet,v5.0,location_fips,location_id,biginteger,,,,
-pedsnet,v5.0,location_fips,state,integer,2,,,
-pedsnet,v5.0,location_fips,county,integer,3,,,
-pedsnet,v5.0,location_fips,tract,integer,6,,,
-pedsnet,v5.0,location_fips,block_group,integer,1,,,
+pedsnet,v5.0,location_fips,state,string,2,,,
+pedsnet,v5.0,location_fips,county,string,3,,,
+pedsnet,v5.0,location_fips,tract,string,6,,,
+pedsnet,v5.0,location_fips,block_group,string,1,,,
 pedsnet,v5.0,location_fips,census_year,integer,4,,,
