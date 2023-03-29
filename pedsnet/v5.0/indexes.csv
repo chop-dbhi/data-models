@@ -87,4 +87,4 @@ pedsnet,v5.0,idx_person_gender,No,person,gender_concept_id,asc
 pedsnet,v5.0,idx_provider_specialty_c_id,No,provider,specialty_concept_id,asc
 pedsnet,v5.0,idx_specialty_entity_id,No,specialty,entity_id,asc
 pedsnet,v5.0,idx_specialty_specialty_c_id,No,specialty,specialty_concept_id,asc
-pedsnet,v5.0,idx_fips_location_id,No,location_fips,location_concept_id,asc
+pedsnet,v5.0,idx_fips_location_id,No,location_fips,location_id,asc
