@@ -38,4 +38,4 @@ pedsnet,v5.0,primary key,xpk_device,device_exposure,device_exposure_id
 pedsnet,v5.0,primary key,xpk_location_history,location_history,location_history_id
 pedsnet,v5.0,primary key,xpk_hash_person,hash_token,person_id
 pedsnet,v5.0,primary key,xpk_specialty,specialty,specialty_id
-pedsnet,v5.0,primary key,xpk_fips,location_fips,location_fips_id
+pedsnet,v5.0,primary key,xpk_fips,location_fips,geocode_id

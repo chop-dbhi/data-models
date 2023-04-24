@@ -1,8 +1,10 @@
 model,version,table,field,required,ref_table,ref_field,description
-pedsnet,v5.0,location_fips,location_fips_id,Yes,,,primary key for location_fips table
-pedsnet,v5.0,location_fips,location_id,Yes,location,location_id,foreign key to location table
-pedsnet,v5.0,location_fips,state,Yes,,,first two integers of census code representing a state
-pedsnet,v5.0,location_fips,county,Yes,,,next three integers of census code representing a county
-pedsnet,v5.0,location_fips,tract,Yes,,,next six integers of census code representing a tract
-pedsnet,v5.0,location_fips,block_group,No,,,final integers of census code representing a block group
-pedsnet,v5.0,location_fips,census_year,Yes,,,year of census data collection
+pedsnet,v5.0,location_fips,geocode_id,Yes,,,A system-generated unique identifier for each location_fips record.
+pedsnet,v5.0,location_fips,location_id,Yes,location,location_id,"A foreign key to the location table, where the detailed address information is stored."
+pedsnet,v5.0,location_fips,geocode_state,Yes,,,First 2 characters of a FIPS code that represents a state
+pedsnet,v5.0,location_fips,geocode_county,Yes,,,Next 3 characters of a FIPS code that represents a county
+pedsnet,v5.0,location_fips,geocode_tract,Yes,,,Next 6 characters of a FIPS code that represents a census tract
+pedsnet,v5.0,location_fips,geocode_group,No,,,Next 1 character of a FIPS code that represents a block group
+pedsnet,v5.0,location_fips,geocode_block,No,,,Final 3 characters of a FIPS code that represents a block
+pedsnet,v5.0,location_fips,geocode_year,Yes,,,The census year associated with the geocode (For example 2010 or 2020 )
+pedsnet,v5.0,location_fips,geocode_shapefile,No,,,The name of the shapefile used in the geocoding process

@@ -178,9 +178,9 @@ pedsnet,v5.0,not null,,specialty,entity_id
 pedsnet,v5.0,not null,,specialty,entity_type_concept_id
 pedsnet,v5.0,not null,,specialty,specialty_concept_id
 pedsnet,v5.0,not null,,specialty,specialty_source_value
-pedsnet,v5.0,not null,,location_fips,location_fips_id
+pedsnet,v5.0,not null,,location_fips,geocode_id
 pedsnet,v5.0,not null,,location_fips,location_id
-pedsnet,v5.0,not null,,location_fips,state
-pedsnet,v5.0,not null,,location_fips,county
-pedsnet,v5.0,not null,,location_fips,tract
-pedsnet,v5.0,not null,,location_fips,census_year
+pedsnet,v5.0,not null,,location_fips,geocode_state
+pedsnet,v5.0,not null,,location_fips,geocode_county
+pedsnet,v5.0,not null,,location_fips,geocode_tract
+pedsnet,v5.0,not null,,location_fips,geocode_year
