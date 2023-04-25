@@ -183,4 +183,5 @@ pedsnet,v5.0,not null,,location_fips,location_id
 pedsnet,v5.0,not null,,location_fips,geocode_state
 pedsnet,v5.0,not null,,location_fips,geocode_county
 pedsnet,v5.0,not null,,location_fips,geocode_tract
+pedsnet,v5.0,not null,,location_fips,geocode_group
 pedsnet,v5.0,not null,,location_fips,geocode_year
