@@ -1,9 +1,35 @@
-model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description,
-pcornet,v6.1,hash_token,patid,NO,,,,NO,,,,"Arbitrary person-level identifier. Used to link across tables..",
-pcornet,v6.1,hash_token,token_01,NO,,,,NO,,,,"Encrypted hash generated from PII using token strategy 01.",
-pcornet,v6.1,hash_token,token_02,NO,,,,NO,,,,"Encrypted hash generated from PII using token strategy 02.",
-pcornet,v6.1,hash_token,token_03,NO,,,,NO,,,,"Encrypted hash generated from PII using token strategy 03.",
-pcornet,v6.1,hash_token,token_04,NO,,,,NO,,,,"Encrypted hash generated from PII using token strategy 04.",
-pcornet,v6.1,hash_token,token_05,NO,,,,NO,,,,"Encrypted hash generated from PII using token strategy 05.",
-pcornet,v6.1,hash_token,token_16,NO,,,,NO,,,,"Encrypted hash generated from PII using token strategy 16.",
-pcornet,v6.1,hash_token,token_encryption_key,YES,,,,NO,,,,"Name of the key used to generate the encrypted hash tokens.",
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
+pcornet,v6.1,hash_token,patid,NO,,,,NO,,,,Arbitrary person-level identifier. Used to link across tables..
+pcornet,v6.1,hash_token,TOKEN_01,NO,,,,NO,,,,Encrypted hash generated from PII using token strategy 01.
+pcornet,v6.1,hash_token,TOKEN_02,NO,,,,NO,,,,Encrypted hash generated from PII using token strategy 02.
+pcornet,v6.1,hash_token,TOKEN_03,NO,,,,NO,,,,Encrypted hash generated from PII using token strategy 03.
+pcornet,v6.1,hash_token,TOKEN_04,NO,,,,NO,,,,Encrypted hash generated from PII using token strategy 04.
+pcornet,v6.1,hash_token,TOKEN_05,NO,,,,NO,,,,Encrypted hash generated from PII using token strategy 05.
+pcornet,v6.1,hash_token,TOKEN_06,NO,,,,NO,,,,Encrypted hash generated from PII using token strategy 16.
+pcornet,v6.1,hash_token,TOKEN_07,NO,,,,NO,,,,Name of the key used to generate the encrypted hash tokens.
+pcornet,v6.1,hash_token,TOKEN_08,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 07.
+pcornet,v6.1,hash_token,TOKEN_09,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 08. 
+pcornet,v6.1,hash_token,TOKEN_101,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 09. 
+pcornet,v6.1,hash_token,TOKEN_102,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 101.
+pcornet,v6.1,hash_token,TOKEN_103,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 102. 
+pcornet,v6.1,hash_token,TOKEN_104,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 103.
+pcornet,v6.1,hash_token,TOKEN_105,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 104.
+pcornet,v6.1,hash_token,TOKEN_106,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 105.
+pcornet,v6.1,hash_token,TOKEN_107,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 106. 
+pcornet,v6.1,hash_token,TOKEN_108,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 107. 
+pcornet,v6.1,hash_token,TOKEN_109,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 108. 
+pcornet,v6.1,hash_token,TOKEN_110,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 109. 
+pcornet,v6.1,hash_token,TOKEN_111,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 110.
+pcornet,v6.1,hash_token,TOKEN_12,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 111. 
+pcornet,v6.1,hash_token,TOKEN_14,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 12.
+pcornet,v6.1,hash_token,TOKEN_15,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 14.
+pcornet,v6.1,hash_token,TOKEN_16,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 15. 
+pcornet,v6.1,hash_token,TOKEN_17,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 17.
+pcornet,v6.1,hash_token,TOKEN_18,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 18. 
+pcornet,v6.1,hash_token,TOKEN_23,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 23.
+pcornet,v6.1,hash_token,TOKEN_24,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 24. 
+pcornet,v6.1,hash_token,TOKEN_25,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 25. 
+pcornet,v6.1,hash_token,TOKEN_26,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 26.
+pcornet,v6.1,hash_token,TOKEN_29,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 29. 
+pcornet,v6.1,hash_token,TOKEN_30,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 30.
+pcornet,v6.1,hash_token,TOKEN_ENCRYPTION_KEY,YES,,,,NO,,,,Name of the key used to generate the encrypted hash tokens.
