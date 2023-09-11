@@ -1,0 +1,13 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v5.2,location,address_1,string,,,,
+pedsnet,v5.2,location,address_2,string,,,,
+pedsnet,v5.2,location,city,string,,,,
+pedsnet,v5.2,location,county,string,,,,
+pedsnet,v5.2,location,location_id,biginteger,,,,
+pedsnet,v5.2,location,location_source_value,string,,,,
+pedsnet,v5.2,location,state,string,,,,
+pedsnet,v5.2,location,zip,string,,,,
+pedsnet,v5.2,location,country_concept_id,integer,,,,
+pedsnet,v5.2,location,country_source_value,string,,,,
+pedsnet,v5.2,location,longitude,float,,,,
+pedsnet,v5.2,location,latitude,float,,,,
