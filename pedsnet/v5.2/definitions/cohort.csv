@@ -1,5 +1,5 @@
-﻿model,version,table,field,required,ref_table,ref_field,description
-pedsnet,v5.2,cohort,cohort_definition_id ,Yes ,cohort_definition_id,cohort_definition,Foreign key to cohort_definition table
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v5.2,cohort,cohort_definition_id ,Yes ,cohort_definition,cohort_definition_id,Foreign key to cohort_definition table
 pedsnet,v5.2,cohort,subject_id ,Yes ,person,person_id,foreign key to person table
 pedsnet,v5.2,cohort,cohort_start_date ,Yes ,,,enrollment date of patient in trial
 pedsnet,v5.2,cohort,cohort_start_datetime ,Yes ,,,enrollment datetime of patient in trial
