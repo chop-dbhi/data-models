@@ -1,10 +1,10 @@
 model,version,table,field,required,ref_table,ref_field,description
-pedsnet,v5.2,cohort,cohort_definition_id ,Yes ,cohort_definition,cohort_definition_id,Foreign key to cohort_definition table
-pedsnet,v5.2,cohort,subject_id ,Yes ,person,person_id,foreign key to person table
-pedsnet,v5.2,cohort,cohort_start_date ,Yes ,,,enrollment date of patient in trial
-pedsnet,v5.2,cohort,cohort_start_datetime ,Yes ,,,enrollment datetime of patient in trial
-pedsnet,v5.2,cohort,cohort_end_date ,Yes ,,,end date of patient in trial
-pedsnet,v5.2,cohort,cohort_end_datetime ,Yes ,,,end datetime of patient trial
-pedsnet,v5.2,cohort,withdraw_date ,No ,,,date of patient withdrawl from trail
-pedsnet,v5.2,cohort,withdraw_datetime ,No ,,,datetime of patient withdrawl from trial
-pedsnet,v5.2,cohort,participant_id ,No ,,,optional field for the participant identifier internal to the clinical trial
+pedsnet,v5.2,cohort,cohort_definition_id,Yes,cohort_definition,cohort_definition_id,Foreign key to cohort_definition table
+pedsnet,v5.2,cohort,subject_id,Yes,person,person_id,foreign key to person table
+pedsnet,v5.2,cohort,cohort_start_date,Yes,,,enrollment date of patient in trial
+pedsnet,v5.2,cohort,cohort_start_datetime,Yes,,,enrollment datetime of patient in trial
+pedsnet,v5.2,cohort,cohort_end_date,Yes,,,end date of patient in trial
+pedsnet,v5.2,cohort,cohort_end_datetime,Yes,,,end datetime of patient trial
+pedsnet,v5.2,cohort,withdraw_date,No,,,date of patient withdrawl from trail
+pedsnet,v5.2,cohort,withdraw_datetime,No,,,datetime of patient withdrawl from trial
+pedsnet,v5.2,cohort,participant_id,No,,,optional field for the participant identifier internal to the clinical trial
