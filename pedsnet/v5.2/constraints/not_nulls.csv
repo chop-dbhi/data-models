@@ -185,13 +185,13 @@ pedsnet,v5.2,not null,,location_fips,geocode_county
 pedsnet,v5.2,not null,,location_fips,geocode_tract
 pedsnet,v5.2,not null,,location_fips,geocode_group
 pedsnet,v5.2,not null,,location_fips,geocode_year
+pedsnet,v5.2,not null,,cohort_definition,cohort_definition_id
+pedsnet,v5.2,not null,,cohort_definition,cohort_definition_name
+pedsnet,v5.2,not null,,cohort_definition,definition_type_concept_id
+pedsnet,v5.2,not null,,cohort_definition,subject_concept_id
 pedsnet,v5.2,not null,,cohort,cohort_definition_id
 pedsnet,v5.2,not null,,cohort,subject_id
 pedsnet,v5.2,not null,,cohort,cohort_start_date
 pedsnet,v5.2,not null,,cohort,cohort_start_datetime
 pedsnet,v5.2,not null,,cohort,cohort_end_date
 pedsnet,v5.2,not null,,cohort,cohort_end_datetime
-pedsnet,v5.2,not null,,cohort_definition,cohort_definition_id
-pedsnet,v5.2,not null,,cohort_definition,cohort_definition_name
-pedsnet,v5.2,not null,,cohort_definition,definition_type_concept_id
-pedsnet,v5.2,not null,,cohort_definition,subject_concept_id
