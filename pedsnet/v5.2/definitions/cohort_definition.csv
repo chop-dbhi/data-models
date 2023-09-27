@@ -1,8 +1,0 @@
-﻿model,version,table,field,required,ref_table,ref_field,description
-pedsnet,v5.2,cohort_definition,cohort_definition_id,Yes,,,Unique identifier for the cohort. 
-pedsnet,v5.2,cohort_definition,cohort_definition_name,Yes,,,A short description of the cohort. 
-pedsnet,v5.2,cohort_definition,cohort_definition_description,No,,,A complete description of the cohort. 
-pedsnet,v5.2,cohort_definition,definition_type_concept_id,Yes,concept,concept_id,Type defining what kind of Cohort Definition the record represents and how the syntax may be executed. 
-pedsnet,v5.2,cohort_definition,cohort_definition_syntax,No,,,Syntax or code to operationalize the Cohort Definition. 
-pedsnet,v5.2,cohort_definition,subject_concept_id,Yes,concept,concept_id,This field contains a Concept that represents the domain of the subjects that are members of the cohort.
-pedsnet,v5.2,cohort_definition,cohort_initiation_date,No,,,A date to indicate when the cohort was initiated in the COHORT table. 
