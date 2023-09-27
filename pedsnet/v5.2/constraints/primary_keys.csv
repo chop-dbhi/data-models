@@ -39,6 +39,5 @@ pedsnet,v5.2,primary key,xpk_location_history,location_history,location_history_
 pedsnet,v5.2,primary key,xpk_hash_person,hash_token,person_id
 pedsnet,v5.2,primary key,xpk_specialty,specialty,specialty_id
 pedsnet,v5.2,primary key,xpk_fips,location_fips,geocode_id
-pedsnet,v5.2,primary key,xpk_cohort_definition,cohort_definition,cohort_definition_id
 pedsnet,v5.2,primary key,xpk_cohort,cohort,cohort_definition_id
 pedsnet,v5.2,primary key,xpk_cohort,cohort,subject_id

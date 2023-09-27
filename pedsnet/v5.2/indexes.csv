@@ -88,6 +88,5 @@ pedsnet,v5.2,idx_provider_specialty_c_id,No,provider,specialty_concept_id,asc
 pedsnet,v5.2,idx_specialty_entity_id,No,specialty,entity_id,asc
 pedsnet,v5.2,idx_specialty_specialty_c_id,No,specialty,specialty_concept_id,asc
 pedsnet,v5.2,idx_fips_location_id,No,location_fips,location_id,asc
-pedsnet,v5.2,idx_cd_cohort_def_id,No,cohort_definition,cohort_definition_id,asc
 pedsnet,v5.2,idx_c_cohort_def_id,No,cohort,cohort_definition_id,asc
 pedsnet,v5.2,idx_c_subject_id,No,cohort,subject_id,asc
