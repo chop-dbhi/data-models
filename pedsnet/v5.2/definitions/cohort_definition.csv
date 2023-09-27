@@ -1,0 +1,8 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v5.2,cohort_definition,cohort_definition_id,No,,,placeholder
+pedsnet,v5.2,cohort_definition,cohort_definition_name,No,,,placeholder
+pedsnet,v5.2,cohort_definition,cohort_definition_description,No,,,placeholder
+pedsnet,v5.2,cohort_definition,definition_type_concept_id,No,,,placeholder
+pedsnet,v5.2,cohort_definition,cohort_definition_syntax,No,,,placeholder
+pedsnet,v5.2,cohort_definition,subject_concept_id,No,,,placeholder
+pedsnet,v5.2,cohort_definition,cohort_initiation_date,No,,,placeholder
