@@ -191,3 +191,4 @@ pedsnet,v5.2,not null,,cohort,cohort_start_date
 pedsnet,v5.2,not null,,cohort,cohort_start_datetime
 pedsnet,v5.2,not null,,cohort,cohort_end_date
 pedsnet,v5.2,not null,,cohort,cohort_end_datetime
+pedsnet,v5.2,not null,,cohort_definition,cohort_definition_id
