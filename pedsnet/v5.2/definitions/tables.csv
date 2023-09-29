@@ -36,4 +36,3 @@ pedsnet,v5.2,lab_site_mapping,The 'Lab Site Mapping' table is intended to store 
 pedsnet,v5.2,specialty,"Specification on priority of specialties for providers and care sites (primary, secondary, etc)"
 pedsnet,v5.2,location_fips,Geocoded location data for each location_id down to the census block group level
 pedsnet,v5.2,cohort,The COHORT table contains records of subjects that satisfy a given set of criteria for a duration of time and the definition of the cohort is contained within the COHORT_DEFINITION table
-pedsnet,v5.2,cohort_definition,Defines a cohort
