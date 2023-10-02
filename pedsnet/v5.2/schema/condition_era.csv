@@ -1,7 +1,0 @@
-model,version,table,field,type,length,precision,scale,default
-pedsnet,v5.2,condition_era,condition_era_id,biginteger,,,,
-pedsnet,v5.2,condition_era,person_id,biginteger,,,,
-pedsnet,v5.2,condition_era,condition_concept_id,integer,,,,
-pedsnet,v5.2,condition_era,condition_era_start_date,date,,,,
-pedsnet,v5.2,condition_era,condition_era_end_date,date,,,,
-pedsnet,v5.2,condition_era,condition_occurrence_count,integer,,,,
