@@ -35,3 +35,4 @@ pedsnet,v5.2,hash_token,The 'Hash_Token' domain is intended to store encrypted a
 pedsnet,v5.2,lab_site_mapping,The 'Lab Site Mapping' table is intended to store local site mappings to the standard PEDSnet loinc codes.
 pedsnet,v5.2,specialty,"Specification on priority of specialties for providers and care sites (primary, secondary, etc)"
 pedsnet,v5.2,location_fips,Geocoded location data for each location_id down to the census block group level
+pedsnet,v5.2,cohort_definition,maintains the rules governing the inclusion of a subject into a cohort
