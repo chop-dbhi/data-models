@@ -1,4 +1,0 @@
-model,version,table,field,type,length,precision,scale,default
-pedsnet,v5.2,domain,domain_concept_id,integer,,,,
-pedsnet,v5.2,domain,domain_id,string,20,,,
-pedsnet,v5.2,domain,domain_name,string,255,,,
