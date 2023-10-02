@@ -1,7 +1,7 @@
 model,version,table,field,type,length,precision,scale,default
-pedsnet,v5.1,specialty,specialty_id,biginteger,,,,
-pedsnet,v5.1,specialty,domain_id,string,,,,
-pedsnet,v5.1,specialty,entity_id,biginteger,,,,
-pedsnet,v5.1,specialty,entity_type_concept_id,integer,,,,
-pedsnet,v5.1,specialty,specialty_concept_id,integer,,,,
-pedsnet,v5.1,specialty,specialty_source_value,string,,,,
+pedsnet,v5.2,specialty,specialty_id,biginteger,,,,
+pedsnet,v5.2,specialty,domain_id,string,,,,
+pedsnet,v5.2,specialty,entity_id,biginteger,,,,
+pedsnet,v5.2,specialty,entity_type_concept_id,integer,,,,
+pedsnet,v5.2,specialty,specialty_concept_id,integer,,,,
+pedsnet,v5.2,specialty,specialty_source_value,string,,,,
