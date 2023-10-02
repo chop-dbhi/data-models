@@ -1,0 +1,10 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v5.2,cohort,cohort_definition_id,Yes,cohort_definition,cohort_definition_id,"It is the unique identifier for a given cohort (e.g., arm of a clinical trial)"
+pedsnet,v5.2,cohort,subject_id,Yes,person,person_id,patient enrolled in trial
+pedsnet,v5.2,cohort,cohort_start_date,Yes,,,date for start of enrollment in trial
+pedsnet,v5.2,cohort,cohort_start_datetime,Yes,,,datetime for start of enrollment in trial
+pedsnet,v5.2,cohort,cohort_end_date,Yes,,,date for end of trial
+pedsnet,v5.2,cohort,cohort_end_datetime,Yes,,,datetime for end of trial
+pedsnet,v5.2,cohort,withdraw_date,No,,,date of clinical trial withdrawal
+pedsnet,v5.2,cohort,withdraw_datetime,No,,,datetime of clinical trial withdrawal
+pedsnet,v5.2,cohort,participant_id,No,,,
