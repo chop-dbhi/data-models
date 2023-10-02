@@ -155,3 +155,5 @@ pedsnet,v5.2,specialty,entity_type_concept_id,concept,concept_id,fpk_specialty_e
 pedsnet,v5.2,location_fips,location_id,location,location_id,fpk_fips_location
 pedsnet,v5.2,cohort_definition,definition_type_concept_id,concept,concept_id,fpk_def_type
 pedsnet,v5.2,cohort_definition,subject_concept_id,concept,concept_id,fpk_subject
+pedsnet,v5.2,cohort,cohort_definition_id,cohort_definition,cohort_definition_id,fpk_cohort_def_def
+pedsnet,v5.2,cohort,subject_id,cohort_definition,cohort_definition_id,fpk_cohort_subject
