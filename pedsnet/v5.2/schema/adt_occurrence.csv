@@ -1,0 +1,13 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v5.1,adt_occurrence,adt_type_source_value,string,,,,
+pedsnet,v5.1,adt_occurrence,service_source_value,string,,,,
+pedsnet,v5.1,adt_occurrence,adt_date,date,,,,
+pedsnet,v5.1,adt_occurrence,adt_datetime,datetime,,,,
+pedsnet,v5.1,adt_occurrence,care_site_id,biginteger,,,,
+pedsnet,v5.1,adt_occurrence,service_concept_id,integer,,,,
+pedsnet,v5.1,adt_occurrence,adt_type_concept_id,integer,,,,
+pedsnet,v5.1,adt_occurrence,person_id,biginteger,,,,
+pedsnet,v5.1,adt_occurrence,visit_occurrence_id,biginteger,,,,
+pedsnet,v5.1,adt_occurrence,prior_adt_occurrence_id,biginteger,,,,
+pedsnet,v5.1,adt_occurrence,next_adt_occurrence_id,biginteger,,,,
+pedsnet,v5.1,adt_occurrence,adt_occurrence_id,biginteger,,,,
