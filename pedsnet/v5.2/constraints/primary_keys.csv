@@ -42,3 +42,4 @@ pedsnet,v5.2,primary key,xpk_fips,location_fips,geocode_id
 pedsnet,v5.2,primary key,xpk_cohort_definition,cohort_definition,cohort_definition_id
 pedsnet,v5.2,primary key,xpk_cohort,cohort,cohort_definition_id
 pedsnet,v5.2,primary key,xpk_cohort,cohort,subject_id
+pedsnet,v5.2,primary key,xpk_cohort,cohort,cohort_start_datetime
