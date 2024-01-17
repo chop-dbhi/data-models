@@ -1,0 +1,10 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v5.3,location_fips,geocode_id,biginteger,,,,
+pedsnet,v5.3,location_fips,location_id,biginteger,,,,
+pedsnet,v5.3,location_fips,geocode_state,string,2,,,
+pedsnet,v5.3,location_fips,geocode_county,string,3,,,
+pedsnet,v5.3,location_fips,geocode_tract,string,6,,,
+pedsnet,v5.3,location_fips,geocode_group,string,1,,,
+pedsnet,v5.3,location_fips,geocode_block,string,3,,,
+pedsnet,v5.3,location_fips,geocode_year,integer,,,,
+pedsnet,v5.3,location_fips,geocode_shapefile,string,,,,
