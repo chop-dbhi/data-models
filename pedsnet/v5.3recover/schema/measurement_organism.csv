@@ -1,0 +1,8 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v5.3recover,measurement_organism,meas_organism_id,string,,,,
+pedsnet,v5.3recover,measurement_organism,measurement_id,string,,,,
+pedsnet,v5.3recover,measurement_organism,person_id,string,,,,
+pedsnet,v5.3recover,measurement_organism,visit_occurrence_id,string,,,,
+pedsnet,v5.3recover,measurement_organism,organism_concept_id,integer,,,,
+pedsnet,v5.3recover,measurement_organism,organism_source_value,string,,,,
+pedsnet,v5.3recover,measurement_organism,positivity_datetime,datetime,,,,

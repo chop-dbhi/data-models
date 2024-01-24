@@ -1,0 +1,24 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v5.3recover,person,care_site_id,Yes,care_site,care_site_id,"A foreign key to the site of primary care in the care_site table, where the details of the care site are stored"
+pedsnet,v5.3recover,person,day_of_birth,No,,,"The day of the month of birth of the person. For data sources that provide the precise date of birth, the day is extracted and stored in this field."
+pedsnet,v5.3recover,person,ethnicity_concept_id,Yes,concept,concept_id,A foreign key that refers to the standard concept identifier in the Vocabulary for the ethnicity of the person.
+pedsnet,v5.3recover,person,ethnicity_source_concept_id,Yes,concept,concept_id,A foreign key to the ethnicity concept that refers to the code used in the source.
+pedsnet,v5.3recover,person,ethnicity_source_value,No,,,"The source code for the ethnicity of the person as it appears in the source data. The person ethnicity is mapped to a standard ethnicity concept in the Vocabulary and the original code is, stored here for reference."
+pedsnet,v5.3recover,person,gender_concept_id,Yes,concept,concept_id,A foreign key that refers to a standard concept identifier in the Vocabulary for the gender of the person.
+pedsnet,v5.3recover,person,gender_source_concept_id,Yes,concept,concept_id,A foreign key to the gender concept that refers to the code used in the source.
+pedsnet,v5.3recover,person,gender_source_value,No,,,The source code for the gender of the person as it appears in the source data. The person�۪s gender is mapped to a standard gender concept in the Vocabulary; the original value is stored here for reference.
+pedsnet,v5.3recover,person,location_id,No,location,location_id,"A foreign key to the place of residency (ZIP code) for the person in the location table, where the detailed address information is stored."
+pedsnet,v5.3recover,person,month_of_birth,No,,,"The month of birth of the person. For data sources that provide the precise date of birth, the month is extracted and stored in this field."
+pedsnet,v5.3recover,person,person_id,Yes,,,"A unique identifier for each person; this is created by each contributing site. Note: This is not a value found in the EHR. However, a map to patient ID or MRN from the EHR must be kept at the site and not shared with the data coordinating center for re-identification in the future."
+pedsnet,v5.3recover,person,person_source_value,No,,,"An encrypted key derived from the person identifier in the source data. For site-specific data extracts, this may be identical to the person_id."
+pedsnet,v5.3recover,person,pn_gestational_age,No,,,"The post-menstrual age in weeks of the person at birth, if known."
+pedsnet,v5.3recover,person,provider_id,No,provider,provider_id,Foreign key to the primary care provider ��� the person is seeing in the provider table.
+pedsnet,v5.3recover,person,race_concept_id,Yes,concept,concept_id,A foreign key that refers to a standard concept identifier in the Vocabulary for the race of the person.
+pedsnet,v5.3recover,person,race_source_concept_id,Yes,concept,concept_id,A foreign key to the race concept that refers to the code used in the source.
+pedsnet,v5.3recover,person,race_source_value,No,,,The source code for the race of the person as it appears in the source data. The person race is mapped to a standard race concept in the Vocabulary and the original value is stored here for reference.
+pedsnet,v5.3recover,person,birth_date,No,,,The persons birthday. Full Date. Enter as much information as is available.
+pedsnet,v5.3recover,person,birth_datetime,No,,,"The time of birth at the birthday. In order to reduce ambiguity around timezone shifts, this field is stored and transmitted as a full date and time without timezone information or conversion. Enter as much information as is available."
+pedsnet,v5.3recover,person,year_of_birth,Yes,,,"The year of birth of the person. For data sources with date of birth, the year is extracted. For data sources where the year of birth is not available, the approximate year of birth is derived based on any age group categorization available."
+pedsnet,v5.3recover,person,language_concept_id,Yes,concept,concept_id,A foreign key that refers to the standard concept identifier in the Vocabulary for the language of the person.
+pedsnet,v5.3recover,person,language_source_concept_id,Yes,concept,concept_id,A foreign key to the language concept that refers to the code used in the source.
+pedsnet,v5.3recover,person,language_source_value,No,,,The source code for the language of the person as it appears in the source data.
