@@ -1,0 +1,4 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v5.3recover,concept_synonym,concept_id,integer,,,,
+pedsnet,v5.3recover,concept_synonym,concept_synonym_name,string,1200,,,
+pedsnet,v5.3recover,concept_synonym,language_concept_id,integer,,,,
