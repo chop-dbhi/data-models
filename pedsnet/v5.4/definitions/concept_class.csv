@@ -1,0 +1,4 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v5.4,concept_class,concept_class_concept_id,Yes,concept,concept_id,A foreign key that refers to a standard concept identifier in the Standardized Vocabularies for the Class the record belongs to. 
+pedsnet,v5.4,concept_class,concept_class_id,Yes,,,A unique key for each class. 
+pedsnet,v5.4,concept_class,concept_class_name,Yes,,,"The name describing the Concept Class, e.g. ""Clinical Finding"", ""Ingredient"", etc. "

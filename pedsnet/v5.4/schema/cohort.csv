@@ -1,0 +1,10 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v5.4,cohort,cohort_definition_id,biginteger,,,,
+pedsnet,v5.4,cohort,subject_id,biginteger,,,,
+pedsnet,v5.4,cohort,cohort_start_date,date,,,,
+pedsnet,v5.4,cohort,cohort_start_datetime,datetime,,,,
+pedsnet,v5.4,cohort,cohort_end_date,date,,,,
+pedsnet,v5.4,cohort,cohort_end_datetime,datetime,,,,
+pedsnet,v5.4,cohort,withdraw_date,date,,,,
+pedsnet,v5.4,cohort,withdraw_datetime,datetime,,,,
+pedsnet,v5.4,cohort,participant_id,string,,,,
