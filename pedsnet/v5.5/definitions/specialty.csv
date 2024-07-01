@@ -1,0 +1,7 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v5.5,specialty,specialty_id,Yes,,,a unique identifier for each specialty instance in the table.
+pedsnet,v5.5,specialty,domain_id,Yes,,,The domain of the entity that is related to the specialty. Either PROVIDER or CARE_SITE.
+pedsnet,v5.5,specialty,entity_id,Yes,,,The unique identifier for the entity. References either provider_id or care_site_id depending on domain_id.
+pedsnet,v5.5,specialty,entity_type_concept_id,Yes,concept,concept_id,concept_id that represents the hierarchical order of the specialty record as it is associated with the domain_id + entity_id record (i.e. with the given PROVIDER or CARESITE).
+pedsnet,v5.5,specialty,specialty_concept_id,Yes,concept,concept_id,A foreign key that refers to the given PROVIDER or CARESITE specialty.
+pedsnet,v5.5,specialty,specialty_source_value,Yes,,,The Specialty Name as it appears in the source data.

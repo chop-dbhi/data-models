@@ -1,0 +1,35 @@
+model,version,table,field,required,ref_table,ref_field,,description
+pedsnet,v5.5,hash_token,person_id,yes,person,person_id,,A foreign key identifier to the Person who is subjected to the Device. The demographic details of that Person are stored in the PERSON table.
+pedsnet,v5.5,hash_token,token_01,No,,,,Encrypted keyed hash generated from PII using token strategy 01 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_02,No,,,,Encrypted keyed hash generated from PII using token strategy 02 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_03,No,,,,Encrypted keyed hash generated from PII using token strategy 03 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_04,No,,,,Encrypted keyed hash generated from PII using token strategy 04 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_05,No,,,,Encrypted keyed hash generated from PII using token strategy 05 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_06,No,,,,Encrypted keyed hash generated from PII using token strategy 06 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_07,No,,,,Encrypted keyed hash generated from PII using token strategy 07 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_08,No,,,,Encrypted keyed hash generated from PII using token strategy 08 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_09,No,,,,Encrypted keyed hash generated from PII using token strategy 09 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_12,No,,,,Encrypted keyed hash generated from PII using token strategy 12 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_14,No,,,,Encrypted keyed hash generated from PII using token strategy 14 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_15,No,,,,Encrypted keyed hash generated from PII using token strategy 15 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_16,No,,,,Encrypted keyed hash generated from PII using token strategy 16 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_17,No,,,,Encrypted keyed hash generated from PII using token strategy 17 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_18,No,,,,Encrypted keyed hash generated from PII using token strategy 18 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_23,No,,,,Encrypted keyed hash generated from PII using token strategy 23 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_24,No,,,,Encrypted keyed hash generated from PII using token strategy 24 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_25,No,,,,Encrypted keyed hash generated from PII using token strategy 25 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_26,No,,,,Encrypted keyed hash generated from PII using token strategy 26 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_29,No,,,,Encrypted keyed hash generated from PII using token strategy 29 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_30,No,,,,Encrypted keyed hash generated from PII using token strategy 30 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_101,No,,,,Encrypted keyed hash generated from PII using token strategy 101 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_102,No,,,,Encrypted keyed hash generated from PII using token strategy 102 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_103,No,,,,Encrypted keyed hash generated from PII using token strategy 103 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_104,No,,,,Encrypted keyed hash generated from PII using token strategy 104 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_105,No,,,,Encrypted keyed hash generated from PII using token strategy 105 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_106,No,,,,Encrypted keyed hash generated from PII using token strategy 106 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_107,No,,,,Encrypted keyed hash generated from PII using token strategy 107 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_108,No,,,,Encrypted keyed hash generated from PII using token strategy 108 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_109,No,,,,Encrypted keyed hash generated from PII using token strategy 109 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_110,No,,,,Encrypted keyed hash generated from PII using token strategy 110 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_111,No,,,,Encrypted keyed hash generated from PII using token strategy 111 in Datavant DeID.
+pedsnet,v5.5,hash_token,token_encryption_key,Yes,,,,The token encryption key used.
