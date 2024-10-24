@@ -1,0 +1,19 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v5.6,observation,observation_concept_id,Yes,concept,concept_id,A foreign key to the standard observation concept identifier in the Vocabulary.
+pedsnet,v5.6,observation,observation_date,Yes,,,The date of the observation.
+pedsnet,v5.6,observation,observation_id,Yes,,,A unique identifier for each observation.
+pedsnet,v5.6,observation,observation_source_concept_id,No,concept,concept_id,A foreign key to a concept that refers to the code used in the source.
+pedsnet,v5.6,observation,observation_source_value,No,,,"The observation code as it appears in the source data. This code is mapped to a standard concept in the Vocabulary and the original code is, stored here for reference."
+pedsnet,v5.6,observation,observation_datetime,No,,,The time of the observation.
+pedsnet,v5.6,observation,observation_type_concept_id,Yes,concept,concept_id,A foreign key to the predefined concept identifier in the Vocabulary reflecting the type of the observation.
+pedsnet,v5.6,observation,person_id,Yes,person,person_id,A foreign key identifier to the person about whom the observation was recorded. The demographic details of that person are stored in the person table.
+pedsnet,v5.6,observation,provider_id,No,provider,provider_id,A foreign key to the provider in the provider table who was responsible for making the observation.
+pedsnet,v5.6,observation,qualifier_concept_id,No,concept,concept_id,A foreign key to standard concept identifier for a qualifier (e.g severity of drug-drug interaction alert)
+pedsnet,v5.6,observation,qualifier_source_value,No,,,The source value associated with a qualifier to characterize the observation
+pedsnet,v5.6,observation,unit_concept_id,No,concept,concept_id,A foreign key to a standard concept identifier of measurement units in the Vocabulary.
+pedsnet,v5.6,observation,unit_source_value,No,,,"The source code for the unit as it appears in the source data. This code is mapped to a standard unit concept in the Vocabulary and the original code is, stored here for reference."
+pedsnet,v5.6,observation,value_as_concept_id,No,concept,concept_id,"A foreign key to an observation result stored as a concept identifier. This is applicable to observations where the result can be expressed as a standard concept from the Vocabulary (e.g., positive/negative, present/absent, low/high, etc.)."
+pedsnet,v5.6,observation,value_as_number,No,,,The observation result stored as a number. This is applicable to observations where the result is expressed as a numeric value.
+pedsnet,v5.6,observation,value_as_string,No,,,The observation result stored as a string. This is applicable to observations where the result is expressed as verbatim text.
+pedsnet,v5.6,observation,value_source_value,No,,,The observation result stored as it appears in the source.
+pedsnet,v5.6,observation,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,A foreign key to the visit in the visit table during which the observation was recorded.
