@@ -88,3 +88,8 @@ pedsnet,v5.7,idx_provider_specialty_c_id,No,provider,specialty_concept_id,asc
 pedsnet,v5.7,idx_specialty_entity_id,No,specialty,entity_id,asc
 pedsnet,v5.7,idx_specialty_specialty_c_id,No,specialty,specialty_concept_id,asc
 pedsnet,v5.7,idx_fips_location_id,No,location_fips,location_id,asc
+pedsnet,v5.7,idx_drug_concept_id_pilot,No,drug_exposure_infusion_pilot,drug_concept_id,asc
+pedsnet,v5.7,idx_drug_person_id_pilot,No,drug_exposure_infusion_pilot,person_id,asc
+pedsnet,v5.7,idx_drug_visit_id_pilot,No,drug_exposure_infusion_pilot,visit_occurrence_id,asc
+pedsnet,v5.7,idx_drug_type_id_pilot,No,drug_exposure_infusion_pilot,drug_type_concept_id,asc
+pedsnet,v5.7,idx_drug_exposure_start_pilot,No,drug_exposure_infusion_pilot,drug_exposure_start_date,asc
