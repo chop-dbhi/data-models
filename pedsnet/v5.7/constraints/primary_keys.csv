@@ -43,3 +43,4 @@ pedsnet,v5.7,primary key,xpk_cohort_definition,cohort_definition,cohort_definiti
 pedsnet,v5.7,primary key,xpk_cohort,cohort,cohort_definition_id
 pedsnet,v5.7,primary key,xpk_cohort,cohort,subject_id
 pedsnet,v5.7,primary key,xpk_cohort,cohort,cohort_start_datetime
+pedsnet,v5.7,primary key,xpk_drug_exposure_pilot,drug_exposure_infusion_pilot,drug_exposure_id
