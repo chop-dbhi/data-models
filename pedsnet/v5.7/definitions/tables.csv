@@ -37,3 +37,4 @@ pedsnet,v5.7,specialty,"Specification on priority of specialties for providers a
 pedsnet,v5.7,location_fips,Geocoded location data for each location_id down to the census block group level
 pedsnet,v5.7,cohort_definition,maintains the rules governing the inclusion of a subject into a cohort
 pedsnet,v5.7,cohort,COHORT table contains records of subjects that satisfy a given set of criteria for a duration of time and the definition of the cohort is contained within the COHORT_DEFINITION table
+pedsnet,v5.7,drug_iv_pilot,Table used for piloting the extraction of all continuous infusion MAR entires in order to derive the infused fluid volume
