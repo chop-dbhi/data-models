@@ -1,7 +1,14 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
 pcornet,v7.0,lds_address_history,addressid,YES,,,,NO,,,,Arbitrary identifier for each unique address record.
 pcornet,v7.0,lds_address_history,patid,YES,,,,NO,,,,Arbitrary person-level identifier. Used to link across tables.
-pcornet,v7.0,lds_address_history,address_use,NO,,,,NO,,PR;HC;RG;NI;UN;OT,PR = Patient-reported medical history HC = Healthcare problem list RG = Registry cohort PC = PCORnetdefined condition algorithm NI = No information UN = Unknown OT = Other,Arbitrary person-level identifier. Used to link across tables.
+pcornet,v7.0,lds_address_history,address_use,NO,,,,NO,,PR;HC;RG;NI;UN;OT;OH,PR = Patient-reported medical history HC = Healthcare problem list RG = Registry cohort PC = PCORnetdefined condition algorithm NI = No information UN = Unknown OT = Other OH = Other Home,"Purpose of the address.
+
+Details of categorical definitions:
+Home: A communication address at home.
+Work: An office address.  First choice for business-related contacts during business hours.
+Temp: A temporary address.
+Old/Incorrect: This address is no longer in use (or was never correct but retained for records).
+Other Home: An address where the patient resides, but is not considered the primary home address."
 pcornet,v7.0,lds_address_history,address_type,NO,,,,NO,,PO;PH;BO;NI;UN;OT,PO=Postal; PH=Physical; BO=Both; NI=No information; UN=Unknown; OT=Other;,Type of address.
 pcornet,v7.0,lds_address_history,address_preferred,NO,,,,NO,,Y;N,Y=Yes; N=No,"Indicates whether this address is the preferred one for a given patient, address use and address type within a given address period."
 pcornet,v7.0,lds_address_history,address_city,NO,,,,NO,,,,"The name of the city, town, village or other community."
@@ -11,3 +18,7 @@ pcornet,v7.0,lds_address_history,address_zip9,NO,,,,NO,,,,9-digit postal code fo
 pcornet,v7.0,lds_address_history,address_period_start,NO,,,,NO,,,,Initial date when the address is known to be in use.
 pcornet,v7.0,lds_address_history,address_period_end,NO,,,,NO,,,,Date when address was no longer in use.
 pcornet,v7.0,lds_address_history,address_county,NO,,,,NO,,,,The name of the county associated with the address.
+pcornet,v7.0,lds_address_history,state_fips,NO,,,,NO,,,,Two-digit Federal Information Processing System (FIPS) code for the state associated with the address record.
+pcornet,v7.0,lds_address_history,county_fips,NO,,,,NO,,,,Five-digit Federal Information Processing System (FIPS) code for the county associated with the address record.  The first two digits of the county FIPS code correspond to the state.  
+pcornet,v7.0,lds_address_history,ruca_zip,NO,,,,NO,,,,Rural Urban Commuting Area (RUCA) code for the 5-digit zip code associated with the address record. 
+pcornet,v7.0,lds_address_history,current_address_flag,NO,,,,NO,,Y;N,Y=Yes N=No,Flag to indicate whether this address record should be considered as the patient’s current physical home address.
