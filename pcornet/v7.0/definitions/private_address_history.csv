@@ -24,4 +24,4 @@ pcornet,v7.0,private_address_history,raw_address_text,NO,,,,NO,,,,Text represent
 pcornet,v7.0,private_address_history,state_fips,NO,,,,NO,,,,Two-digit Federal Information Processing System (FIPS) code for the state associated with the address record.
 pcornet,v7.0,private_address_history,county_fips,NO,,,,NO,,,,Five-digit Federal Information Processing System (FIPS) code for the county associated with the address record.  The first two digits of the county FIPS code correspond to the state.  
 pcornet,v7.0,private_address_history,ruca_zip,NO,,,,NO,,,,Rural Urban Commuting Area (RUCA) code for the 5-digit zip code associated with the address record. 
-pcornet,v7.0,private_address_history,current_address_flag,NO,,,,NO,,Y;N,Y=Yes N=No,Flag to indicate whether this address record should be considered as the patient’s current physical home address.
+pcornet,v7.0,private_address_history,current_address_flag,NO,,,,NO,,Y;N,Y=Yes N=No,Flag to indicate whether this address record should be considered as the patients current physical home address.
