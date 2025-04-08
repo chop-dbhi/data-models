@@ -1,0 +1,35 @@
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
+pcornet,v7.0,hash_token,patid,NO,,,,NO,,,,Arbitrary person-level identifier. Used to link across tables..
+pcornet,v7.0,hash_token,token_01,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 01
+pcornet,v7.0,hash_token,token_02,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 02
+pcornet,v7.0,hash_token,token_03,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 03
+pcornet,v7.0,hash_token,token_04,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 04
+pcornet,v7.0,hash_token,token_05,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 05
+pcornet,v7.0,hash_token,token_06,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 06
+pcornet,v7.0,hash_token,token_07,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 07
+pcornet,v7.0,hash_token,token_08,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 08
+pcornet,v7.0,hash_token,token_09,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 09
+pcornet,v7.0,hash_token,token_101,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 101
+pcornet,v7.0,hash_token,token_102,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 102
+pcornet,v7.0,hash_token,token_103,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 103
+pcornet,v7.0,hash_token,token_104,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 104
+pcornet,v7.0,hash_token,token_105,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 105
+pcornet,v7.0,hash_token,token_106,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 106
+pcornet,v7.0,hash_token,token_107,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 107
+pcornet,v7.0,hash_token,token_108,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 108
+pcornet,v7.0,hash_token,token_109,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 109
+pcornet,v7.0,hash_token,token_110,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 110
+pcornet,v7.0,hash_token,token_111,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 111
+pcornet,v7.0,hash_token,token_12,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 12
+pcornet,v7.0,hash_token,token_14,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 14
+pcornet,v7.0,hash_token,token_15,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 15
+pcornet,v7.0,hash_token,token_16,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 16
+pcornet,v7.0,hash_token,token_17,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 17
+pcornet,v7.0,hash_token,token_18,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 18
+pcornet,v7.0,hash_token,token_23,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 23
+pcornet,v7.0,hash_token,token_24,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 24
+pcornet,v7.0,hash_token,token_25,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 25
+pcornet,v7.0,hash_token,token_26,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 26
+pcornet,v7.0,hash_token,token_29,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 29
+pcornet,v7.0,hash_token,token_30,NO,,,,NO,,,,Encrypted keyed hash generated from PII using Datavant token strategy 30
+pcornet,v7.0,hash_token,token_encryption_key,YES,,,,NO,,,,Name of the key used to generate the encrypted hash tokens.

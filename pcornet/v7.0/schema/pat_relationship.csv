@@ -1,0 +1,6 @@
+model,version,table,field,type,length,precision,scale,default
+pcornet,v7.0,pat_relationship,patid_1,string,,,,
+pcornet,v7.0,pat_relationship,patid_2,string,,,,
+pcornet,v7.0,pat_relationship,relationship_type,string,2,,,
+pcornet,v7.0,pat_relationship,relationship_start,date,,,,
+pcornet,v7.0,pat_relationship,relationship_end,date,,,,
