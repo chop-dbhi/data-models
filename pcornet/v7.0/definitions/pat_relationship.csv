@@ -1,10 +1,6 @@
 model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
 pcornet,v7.0,pat_relationship,patid_1,YES,patid,demographic,,,,,,Arbitrary person-level identifier used to link across tables. PATID of the first patient in the relationship link.
-pcornet,v7.0,pat_relationship,patid_2,YES,patid,demographic,,,,,,"Arbitrary person-level identifier used to link across tables.
-
-PATID of the second patient in the relationship link."
-pcornet,v7.0,pat_relationship,relationship_type,YES,,,,,,01;02;03;04;05;06;07,01=Birth mother-child 02=Parent-child 03 = Legal guardian - child 04=Spouse or partner 05=Sibling 06= Grandparent-grandchild 07=Other,"Code denoting the relationship between the two patients.
-
-The order of the terms indicates directionality.  For instance, if using “birth mother – child”, PATID_1 represents birth mother, PATID_2, the child."
+pcornet,v7.0,pat_relationship,patid_2,YES,patid,demographic,,,,,,"Arbitrary person-level identifier used to link across tables. PATID of the second patient in the relationship link."
+pcornet,v7.0,pat_relationship,relationship_type,YES,,,,,,01;02;03;04;05;06;07,01=Birth mother-child 02=Parent-child 03 = Legal guardian - child 04=Spouse or partner 05=Sibling 06= Grandparent-grandchild 07=Other,"Code denoting the relationship between the two patients. The order of the terms indicates directionality.  For instance, if using birth mother child, PATID_1 represents birth mother, PATID_2, the child."
 pcornet,v7.0,pat_relationship,relationship_start,NO,,,YYYY-MM-DD,,,,,"The date the indicated relationship was believed to have started, if known."
 pcornet,v7.0,pat_relationship,relationship_end,NO,,,YYYY-MM-DD,,,,,"The date the indicated relationship was believed to have ended, if known."
