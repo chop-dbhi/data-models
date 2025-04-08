@@ -9,11 +9,7 @@ pcornet,v7.0,external_meds,ext_dose,NO,,,,,,,,Dose of a given external mediation
 pcornet,v7.0,external_meds,ext_dose_ordered_unit,NO,,,,,,,,Units of measure associated with the dose of the external medication 
 pcornet,v7.0,external_meds,ext_dose_form,NO,,,,,,,,The form of the external medication. This is equivalent to RxNorm Dose Form.
 pcornet,v7.0,external_meds,ext_route,NO,,,,,,,,Route of medication delivery.
-pcornet,v7.0,external_meds,ext_basis,NO,,,,,,01;02;NI;UN;OT,01=Patient-reported 02=External health system / health information exchange NI=No information UN=Unknown OT=Other,"Basis of the external medication. 
-
-Use Òpatient-reportedÓ for medications that come from the patient, such as through a kiosk or portal.  Use this value even if the patient-reported medication is ultimately recorded or confirmed by the provider.
-
-Use Òexternal health system / health information exchangeÓ for medications that are pulled into the EHR from outside health systems.  "
+pcornet,v7.0,external_meds,ext_basis,NO,,,,,,01;02;NI;UN;OT,01=Patient-reported 02=External health system / health information exchange NI=No information UN=Unknown OT=Other,"Basis of the external medication. Use patient-reported for medications that come from the patient, such as through a kiosk or portal. Use this value even if the patient-reported medication is ultimately recorded or confirmed by the provider. Use external health system / health information exchange for medications that are pulled into the EHR from outside health systems."
 pcornet,v7.0,external_meds,rxnorm_cui,NO,,,,,,,,"Where an RxNorm mapping exists for the source medication, this field contains the RxNorm concept identifier (CUI) at the highest possible specificity."
 pcornet,v7.0,external_meds,extmed_source,NO,,,,,,OD;DR;NI;UN;OT,OD=Order/EHR DR=Derived NI=No information UN=Unknown OT=Other,Source of the external medication information.
 pcornet,v7.0,external_meds,raw_ext_med_name,NO,,,,,,,,"Field for originating, full textual medication name from the source."
