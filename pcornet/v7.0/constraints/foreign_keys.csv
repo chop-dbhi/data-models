@@ -42,3 +42,5 @@ pcornet,v7.0,procedures,providerid,provider,providerid,fk_procedures_providerid
 pcornet,v7.0,vital,patid,demographic,patid,fk_vital_patid
 pcornet,v7.0,vital,encounterid,encounter,encounterid,fk_vital_encounterid
 pcornet,v7.0,external_meds,patid,demographic,patid,fk_ext_meds_patid
+pcornet,v7.0,pat_relationship,patid_1,demographic,patid,fk_pat_rel_patid_1
+pcornet,v7.0,pat_relationship,patid_2,demographic,patid,fk_pat_rel_patid_1
