@@ -27,31 +27,10 @@ pcornet,v7.0,private_demographic,primary_email,NO,,,,NO,,,,Primary e-mail addres
 pcornet,v7.0,private_demographic,primary_phone,NO,,,,NO,,,,Primary phone number for the patient (if known).
 pcornet,v7.0,private_demographic,raw_pat_name,NO,,,,NO,,,,"Full name of the patient, as represented in the source."
 pcornet,v7.0,private_demographic,race_eth_missing,NO,,,,NO,,R;NI;UN;OT,R=Refuse to answer NI=No information UN=Unknown OT=Other,Field to indicate whether patient has refused to provide a response to question(s) related to race/ethnicity or if a response does not conform to other values.
-pcornet,v7.0,private_demographic,race_eth_ai_an,NO,,,,NO,,Y,Y=Yes,"Field to indicate whether patient identifies with the categories of American Indian or Alaska Native race/ethnicity. 
-
-Details of categorical definition:
-American Indian or Alaska Native: Individuals with origins in any of the original peoples of North, Central, and South America, including, for example, Navajo Nation, Blackfeet Tribe of the Blackfeet Indian Reservation of Montana, Native Village of Barrow Inupiat Traditional Government, Nome Eskimo Community, Aztec, and Maya."
-pcornet,v7.0,private_demographic,race_eth_asian,NO,,,,NO,,Y,Y=Yes,"Field to indicate whether patient identifies with the categories of Asian race/ethnicity. 
-
-Details of categorical definition:
-Asian: Individuals with origins in any of the original peoples of Central or East Asia, Southeast Asia, or South Asia, including, for example, Chinese, Asian Indian, Filipino, Vietnamese, Korean, and Japanese."
-pcornet,v7.0,private_demographic,race_eth_black,NO,,,,NO,,Y,Y=Yes,"Field to indicate whether patient identifies with the categories of Black or African American race/ethnicity. 
-
-Details of categorical definition:
-Black or African American: Individuals with origins in any of the Black racial groups of Africa, including, for example, African American, Jamaican, Haitian, Nigerian, Ethiopian, and Somali."
-pcornet,v7.0,private_demographic,race_eth_hispanic,NO,,,,NO,,Y,Y=Yes,"Field to indicate whether patient identifies with the categories of Hispanic or Latino race/ethnicity. 
-
-Details of categorical definition:
-Hispanic or Latino: Includes individuals of Mexican, Puerto Rican, Salvadoran, Cuban, Dominican, Guatemalan, and other Central or South American or Spanish culture or origin."
-pcornet,v7.0,private_demographic,race_eth_me_na,NO,,,,NO,,Y,Y=Yes,"Field to indicate whether patient identifies with the categories of Middle Eastern or North African race/ethnicity. 
-
-Details of categorical definition:
-Middle Eastern or North African: Individuals with origins in any of the original peoples of the Middle East or North Africa, including, for example, Lebanese, Iranian, Egyptian, Syrian, Iraqi, and Israeli."
-pcornet,v7.0,private_demographic,race_eth_nh_pi,NO,,,,NO,,Y,Y=Yes,"Field to indicate whether patient identifies with the categories of Native Hawaiian or Pacific Islander race/ethnicity. 
-
-Details of categorical definition:
-Native Hawaiian or Pacific Islander: Individuals with origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands, including, for example, Native Hawaiian, Samoan, Chamorro, Tongan, Fijian, and Marshallese."
-pcornet,v7.0,private_demographic,race_eth_white,NO,,,,NO,,Y,Y=Yes,"Field to indicate whether patient identifies with the categories of White race/ethnicity. 
-
-Details of categorical definition:
-White: Individuals with origins in any of the original peoples of Europe, including, for example, English, German, Irish, Italian, Polish, and Scottish."
+pcornet,v7.0,private_demographic,race_eth_ai_an,NO,,,,NO,,Y,Y=Yes,"Field to indicate whether patient identifies with the categories of American Indian or Alaska Native race/ethnicity. Details of categorical definition: American Indian or Alaska Native: Individuals with origins in any of the original peoples of North, Central, and South America, including, for example, Navajo Nation, Blackfeet Tribe of the Blackfeet Indian Reservation of Montana, Native Village of Barrow Inupiat Traditional Government, Nome Eskimo Community, Aztec, and Maya."
+pcornet,v7.0,private_demographic,race_eth_asian,NO,,,,NO,,Y,Y=Yes,"Field to indicate whether patient identifies with the categories of Asian race/ethnicity. Details of categorical definition: Asian: Individuals with origins in any of the original peoples of Central or East Asia, Southeast Asia, or South Asia, including, for example, Chinese, Asian Indian, Filipino, Vietnamese, Korean, and Japanese."
+pcornet,v7.0,private_demographic,race_eth_black,NO,,,,NO,,Y,Y=Yes,"Field to indicate whether patient identifies with the categories of Black or African American race/ethnicity. Details of categorical definition: Black or African American: Individuals with origins in any of the Black racial groups of Africa, including, for example, African American, Jamaican, Haitian, Nigerian, Ethiopian, and Somali."
+pcornet,v7.0,private_demographic,race_eth_hispanic,NO,,,,NO,,Y,Y=Yes,"Field to indicate whether patient identifies with the categories of Hispanic or Latino race/ethnicity. Details of categorical definition: Hispanic or Latino: Includes individuals of Mexican, Puerto Rican, Salvadoran, Cuban, Dominican, Guatemalan, and other Central or South American or Spanish culture or origin."
+pcornet,v7.0,private_demographic,race_eth_me_na,NO,,,,NO,,Y,Y=Yes,"Field to indicate whether patient identifies with the categories of Middle Eastern or North African race/ethnicity. Details of categorical definition: Middle Eastern or North African: Individuals with origins in any of the original peoples of the Middle East or North Africa, including, for example, Lebanese, Iranian, Egyptian, Syrian, Iraqi, and Israeli."
+pcornet,v7.0,private_demographic,race_eth_nh_pi,NO,,,,NO,,Y,Y=Yes,"Field to indicate whether patient identifies with the categories of Native Hawaiian or Pacific Islander race/ethnicity. Details of categorical definition: Native Hawaiian or Pacific Islander: Individuals with origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands, including, for example, Native Hawaiian, Samoan, Chamorro, Tongan, Fijian, and Marshallese."
+pcornet,v7.0,private_demographic,race_eth_white,NO,,,,NO,,Y,Y=Yes,"Field to indicate whether patient identifies with the categories of White race/ethnicity. Details of categorical definition: White: Individuals with origins in any of the original peoples of Europe, including, for example, English, German, Irish, Italian, Polish, and Scottish."
