@@ -13,7 +13,6 @@ pcornet,v7.0,pro_cm,pro_type,NO,,,,NO,,PM;NQ;AM;NT;PC;LC;HC;NI;UN;OT,PM=PROMIS N
 pcornet,v7.0,pro_cm,pro_name,NO,,,,NO,,,,Short name of the PRO item or measure in the vocabulary/terminology specified in PRO_TYPE.
 pcornet,v7.0,pro_cm,pro_code,NO,,,,NO,,,,"Standardized code for the PRO item or measure, if available. "
 pcornet,v7.0,pro_cm,pro_response_text,NO,,,,NO,,,,"Text version of the response recorded for the item or measure, if available/applicable."
-pcornet,v7.0,pro_cm,pro_response_num,NO,,,,NO,,,,"The numeric response recorded for the item or measure, if available/applicable. "
 pcornet,v7.0,pro_cm,pro_version,NO,,,,NO,,,,Version of the item/question or measure.
 pcornet,v7.0,pro_cm,pro_seq,NO,,,,NO,,,,Arbitrary ID/sequence number used to link PRO item responses that are associated with the same measure/form.  
 pcornet,v7.0,pro_cm,pro_fullname,NO,,,,NO,,,,Full name of the PRO item or measure.
