@@ -1,0 +1,24 @@
+model,version,table,field,required,ref_table,ref_field,data_format,replicated,unit_of_measure,value_set,value_description,description
+pcornet,v7.0,external_meds,extmedid,YES,,,,,,,,Arbitrary identifier for each unique EXTERNAL_MEDS record. 
+pcornet,v7.0,external_meds,patid,YES,DEMOGRAPHIC,PATID,,,,,,Arbitrary person-level identifier used to link across tables. 
+pcornet,v7.0,external_meds,ext_record_date,NO,,,YYYY-MM-DD,,DATE,PR;HC;RG;NI;UN;OT,PR = Patient-reported medical history HC = Healthcare problem list RG = Registry cohort PC = PCORnetdefined condition algorithm NI = No information UN = Unknown OT = Other,Date the external medication was recorded in the EHR.
+pcornet,v7.0,external_meds,ext_pat_start_date,NO,,,YYYY-MM-DD,,DATE,AC;RS;IN;NI;UN;OT,AC = Active RS = Resolved IN = Inactive NI = No information UN = Unknown OT = Other,"Date the patient reports taking the external medication, if known."
+pcornet,v7.0,external_meds,ext_end_date,NO,,,YYYY-MM-DD,,DATE,09;10;11;SM;HP;NI;UN;OT,09 = ICD-9-CM/PCS 10 = ICD-10-CM/PCS 11 = ICD-11-CM/PCS SM = SNOMED CT HP = Human Phenotype Ontology AG = Algorithmic NI = No information UN = Unknown OT=Other,Date the external medication was ended or canceled in the EHR.  
+pcornet,v7.0,external_meds,ext_pat_end_date,NO,,,YYYY-MM-DD,,DATE,,,"Date the patient reports stopping the external medication, if known."
+pcornet,v7.0,external_meds,ext_dose,NO,,,,,,,,Dose of a given external mediation
+pcornet,v7.0,external_meds,ext_dose_ordered_unit,NO,,,,,,,,Units of measure associated with the dose of the external medication 
+pcornet,v7.0,external_meds,ext_dose_form,NO,,,,,,,,The form of the external medication. This is equivalent to RxNorm Dose Form.
+pcornet,v7.0,external_meds,ext_route,NO,,,,,,,,Route of medication delivery.
+pcornet,v7.0,external_meds,ext_basis,NO,,,,,,01;02;NI;UN;OT,01=Patient-reported 02=External health system / health information exchange NI=No information UN=Unknown OT=Other,"Basis of the external medication. 
+
+Use “patient-reported” for medications that come from the patient, such as through a kiosk or portal.  Use this value even if the patient-reported medication is ultimately recorded or confirmed by the provider.
+
+Use “external health system / health information exchange” for medications that are pulled into the EHR from outside health systems.  "
+pcornet,v7.0,external_meds,rxnorm_cui,NO,,,,,,,,"Where an RxNorm mapping exists for the source medication, this field contains the RxNorm concept identifier (CUI) at the highest possible specificity."
+pcornet,v7.0,external_meds,extmed_source,NO,,,,,,OD;DR;NI;UN;OT,OD=Order/EHR DR=Derived NI=No information UN=Unknown OT=Other,Source of the external medication information.
+pcornet,v7.0,external_meds,raw_ext_med_name,NO,,,,,,,,"Field for originating, full textual medication name from the source."
+pcornet,v7.0,external_meds,raw_rxnorm_cui,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet® CDM value set."
+pcornet,v7.0,external_meds,raw_ext_ndc,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet® CDM value set."
+pcornet,v7.0,external_meds,raw_ext_dose,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet® CDM value set."
+pcornet,v7.0,external_meds,raw_ext_dose_unit,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet® CDM value set."
+pcornet,v7.0,external_meds,raw_ext_route,NO,,,,,,,,"Field for originating value, prior to mapping into the PCORnet® CDM value set."

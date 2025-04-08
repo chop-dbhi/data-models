@@ -25,3 +25,4 @@ pcornet,v7.0,lds_address_history," ""Longitudinal record of a patient’s addres
 pcornet,v7.0,private_demographic," ""Protected table that is intended to provide a standardized representation of the personally-identifiable information (PII) that is needed to support local activities related to record linkage.""",,
 pcornet,v7.0,private_address_history," ""Protected table that can be used to store elements of a patient’s address that are considered personal health information (PHI). These data can be used for geocoding or other linkage projects.""",,
 pcornet,v7.0,private_address_geocode," ""Protected table that can be used to store the results of geocoding algorithms.""",,
+pcornet,v7.0,external_meds,Medications external to the originating health system.  Examples include medications as reported by the patient and those obtained from external health systems.,,
