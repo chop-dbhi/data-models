@@ -116,6 +116,8 @@ pedsnet,v5.8,adt_occurrence,adt_type_concept_id,concept,concept_id,fpk_adt_type_
 pedsnet,v5.8,adt_occurrence,visit_occurrence_id,visit_occurrence,visit_occurrence_id,fpk_adt_occ_visit
 pedsnet,v5.8,adt_occurrence,person_id,person,person_id,fpk_adt_occ_person
 pedsnet,v5.8,adt_occurrence,care_site_id,care_site,care_site_id,fpk_adt_occ_caresite
+pedsnet,v5.8,adt_occurrence,prior_adt_occurrence_id,adt_occurrence,adt_occurrence_id,fpk_adt_occ_prior
+pedsnet,v5.8,adt_occurrence,next_adt_occurrence_id,adt_occurrence,adt_occurrence_id,fpk_adt_occ_next
 pedsnet,v5.8,drug_era,drug_concept_id,concept,concept_id,fpk_drug_era_d_concept
 pedsnet,v5.8,drug_era,person_id,person,person_id,fpk_drug_era_person
 pedsnet,v5.8,dose_era,person_id,person,person_id,fpk_dose_era_person

@@ -8,6 +8,6 @@ pedsnet,v5.8,adt_occurrence,service_concept_id,Yes,concept,concept_id,"”A fore
 pedsnet,v5.8,adt_occurrence,adt_type_concept_id,Yes,concept,concept_id,"”A foreign key that refers to an adt event type concept identifier in the vocabulary. This concept describes the type of the adt event."""
 pedsnet,v5.8,adt_occurrence,person_id,Yes,person,person_id,A foreign key identifier to the person for whom the visit is recorded.
 pedsnet,v5.8,adt_occurrence,visit_occurrence_id,Yes,visit_occurrence,visit_occurrence_id,A foreign key identifier to the visit containing this event.
-pedsnet,v5.8,adt_occurrence,prior_adt_occurrence_id,No,,,Foreign key into the adt_occurrence table pointing to the ADT record immediately preceding this record in the event stream for the visit. Must be populated for all but the first ADT even within a visit.
-pedsnet,v5.8,adt_occurrence,next_adt_occurrence_id,No,,,Foreign key into the adt_occurrence table pointing to the ADT record immediately following this record in the event stream for the visit. Must be populated for all but the last ADT even within a visit.
+pedsnet,v5.8,adt_occurrence,prior_adt_occurrence_id,No,adt_occurrence,adt_occurrence_id,Foreign key into the adt_occurrence table pointing to the ADT record immediately preceding this record in the event stream for the visit. Must be populated for all but the first ADT even within a visit.
+pedsnet,v5.8,adt_occurrence,next_adt_occurrence_id,No,adt_occurrence,adt_occurrence_id,Foreign key into the adt_occurrence table pointing to the ADT record immediately following this record in the event stream for the visit. Must be populated for all but the last ADT even within a visit.
 pedsnet,v5.8,adt_occurrence,adt_occurrence_id,Yes,,,A unique identifier for each ADT event.
