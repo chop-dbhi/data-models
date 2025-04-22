@@ -1,0 +1,8 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v5.8,cohort_definition,cohort_definition_id,Yes,,,the unique identifier for a given cohort
+pedsnet,v5.8,cohort_definition,cohort_definition_name,Yes,,,short description of the cohort
+pedsnet,v5.8,cohort_definition,cohort_definition_description,No,,,long description of the cohort
+pedsnet,v5.8,cohort_definition,definition_type_concept_id,Yes,concept,concept_id,type of cohort
+pedsnet,v5.8,cohort_definition,cohort_definition_syntax,No,,,additional syntax
+pedsnet,v5.8,cohort_definition,subject_concept_id,Yes,concept,concept_id,person for current use cases
+pedsnet,v5.8,cohort_definition,cohort_initiation_date,No,,,date of most recent data extraction for cohort enrollment
