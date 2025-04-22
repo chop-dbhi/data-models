@@ -195,7 +195,7 @@ pedsnet,v5.8,not null,,cohort,cohort_start_date
 pedsnet,v5.8,not null,,cohort,cohort_start_datetime
 pedsnet,v5.8,not null,,cohort,cohort_end_date
 pedsnet,v5.8,not null,,cohort,cohort_end_datetime
-pedsnet,v5.8,not null,,drug_iv_pilot,drug_exposure_id
+pedsnet,v5.8,not null,,drug_iv_pilot,drug_pilot_id
 pedsnet,v5.8,not null,,drug_iv_pilot,person_id
 pedsnet,v5.8,not null,,drug_iv_pilot,drug_concept_id
 pedsnet,v5.8,not null,,drug_iv_pilot,drug_exposure_start_date
