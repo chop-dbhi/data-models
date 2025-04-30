@@ -30,3 +30,4 @@ pedsnet,v5.8,drug_iv_pilot,dispense_as_written_concept_id,No,concept,concept_id,
 pedsnet,v5.8,drug_iv_pilot,dose_infusion_rate,No,,,The numerical rate value of the continuous infusion.
 pedsnet,v5.8,drug_iv_pilot,dose_infusion_rate_units,No,,,The unit associated with the rate of the continuous infusion.
 pedsnet,v5.8,drug_iv_pilot,order_group_id,No,,,Identifier used to group MAR actions from the same order togther.
+pedsnet,v5.8,drug_iv_pilot,mar_action_name,No,,,The name of the MAR action the record represents.
