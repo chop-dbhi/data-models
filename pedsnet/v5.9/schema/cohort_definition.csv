@@ -1,0 +1,8 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v5.9,cohort_definition,cohort_definition_id,biginteger,,,,
+pedsnet,v5.9,cohort_definition,cohort_definition_name,string,,,,
+pedsnet,v5.9,cohort_definition,cohort_definition_description,string,,,,
+pedsnet,v5.9,cohort_definition,definition_type_concept_id,integer,,,,
+pedsnet,v5.9,cohort_definition,cohort_definition_syntax,string,,,,
+pedsnet,v5.9,cohort_definition,subject_concept_id,integer,,,,
+pedsnet,v5.9,cohort_definition,cohort_initiation_date,date,,,,

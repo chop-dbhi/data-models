@@ -1,0 +1,8 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v5.9,drug_era,drug_era_id,biginteger,,,,
+pedsnet,v5.9,drug_era,person_id,biginteger,,,,
+pedsnet,v5.9,drug_era,drug_concept_id,integer,,,,
+pedsnet,v5.9,drug_era,drug_era_start_date,date,,,,
+pedsnet,v5.9,drug_era,drug_era_end_date,date,,,,
+pedsnet,v5.9,drug_era,drug_exposure_count,integer,,,,
+pedsnet,v5.9,drug_era,gap_days,integer,,,,
