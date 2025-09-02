@@ -150,7 +150,7 @@ pedsnet,v5.9,not null,,dose_era,dose_value
 pedsnet,v5.9,not null,,immunization,person_id
 pedsnet,v5.9,not null,,immunization,immunization_concept_id
 pedsnet,v5.9,not null,,immunization,immunization_type_concept_id
-pedsnet,v5.9,not null,,immunization,body_site_concept_id
+pedsnet,v5.9,not null,,immunization,imm_body_site_concept_id
 pedsnet,v5.9,not null,,immunization,immunization_source_concept_id
 pedsnet,v5.9,not null,,immunization,relationship_type_concept_id
 pedsnet,v5.9,not null,,immunization,immunization_id
