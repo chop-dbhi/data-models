@@ -1,0 +1,17 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v5.4,note,note_id,Yes,,,,A unique identifier for each note. 
+omop,v5.4,note,note_text,Yes,,,,The content of the note. 
+omop,v5.4,note,note_title,No,,,,The title of the Note as it appears in the source.
+omop,v5.4,note,note_date,Yes,,,,The date the note was recorded. 
+omop,v5.4,note,note_datetime,No,,,,The time the note was recorded. 
+omop,v5.4,note,note_type_concept_id,Yes,concept,concept_id,,A foreign key to the predefined concept identifier in the Standardized Vocabularies reflecting the type data from which the note. 
+omop,v5.4,note,person_id,Yes,person,person_id,,A foreign key identifier to the person about whom the note was recorded. The demographic details of that person are stored in the person table. 
+omop,v5.4,note,provider_id,No,provider,provider_id,,A foreign key to the provider in the provider table who was responsible for taking the note. 
+omop,v5.4,note,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,,The Visit during which the note was written.
+omop,v5.4,note,visit_detail_id,No,visit_detail,visit_detail_id,,The Visit Detail during which the note was written.
+omop,v5.4,note,note_class_concept_id,Yes,concept,concept_id,,A foreign key to the predefined Concept in the Standardized Vocabularies reflecting the HL7 LOINC Document Type Vocabulary classification of the note.
+omop,v5.4,note,encoding_concept_id,Yes,concept,concept_id,,A foreign key to the predefined Concept in the Standardized Vocabularies reflecting the note character encoding type.
+omop,v5.4,note,language_concept_id,Yes,concept,concept_id,,A foreign key to the predefined Concept in the Standardized Vocabularies reflecting the language of the note.
+omop,v5.4,note,note_source_value,No,,,,The source value mapped to the NOTE_CLASS_CONCEPT_ID.
+omop,v5.4,note,note_event_id,No,,,,"If the Note record is related to another record in the database, this field is the primary key of the linked record"
+omop,v5.4,note,note_event_field_concept_id,No,,,,"If the Note record is related to another record in the database, this field is the CONCEPT_ID that identifies which table the primary key of the linked record came from."

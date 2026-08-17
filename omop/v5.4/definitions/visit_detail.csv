@@ -1,0 +1,20 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v5.4,visit_detail,care_site_id,No,care_site,care_site_id,,A foreign key to the care site in the care site table that was visited. 
+omop,v5.4,visit_detail,person_id,Yes,person,person_id,,A foreign key identifier to the person for whom the visit is recorded. The demographic details of that person are stored in the person table. 
+omop,v5.4,visit_detail,provider_id,No,provider,provider_id,,A foreign key to the provider in the provider table who was associated with the visit. 
+omop,v5.4,visit_detail,visit_detail_id,Yes,,,,Use this to identify unique interactions between a person and the health care system. This identifier links across the other CDM event tables to associate events with a visit detail.
+omop,v5.4,visit_detail,visit_detail_concept_id,Yes,concept,concept_id,,"This field contains a concept id representing the kind of visit detail, like inpatient or outpatient. All concepts in this field should be standard and belong to the Visit domain."
+omop,v5.4,visit_detail,visit_detail_end_date,Yes,,,,The end date of the visit. If this is a one-day visit the end date should match the start date. 
+omop,v5.4,visit_detail,visit_detail_end_datetime,No,,,,The time the visit ended. 
+omop,v5.4,visit_detail,visit_occurrence_id,Yes,,,,Use this field to link the VISIT_DETAIL record to its VISIT_OCCURRENCE.
+omop,v5.4,visit_detail,visit_detail_source_concept_id,No,concept,concept_id,,A foreign key to a concept that refers to the code used in the source. 
+omop,v5.4,visit_detail,visit_detail_source_value,No,,,,"This field houses the verbatim value from the source data representing the kind of visit detail that took place (inpatient, outpatient, emergency, etc.)"
+omop,v5.4,visit_detail,visit_detail_start_date,Yes,,,,The start date of the visit.
+omop,v5.4,visit_detail,visit_detail_start_datetime,No,,,,The time the visit started. 
+omop,v5.4,visit_detail,visit_detail_type_concept_id,Yes,concept,concept_id,,"Use this field to understand the provenance of the visit detail record, or where the record comes from."
+omop,v5.4,visit_detail,admitted_from_concept_id,No,concept,concept_id,,"Use this field to determine where the patient was admitted from. This concept is part of the visit domain and can indicate if a patient was admitted to the hospital from a long-term care facility, for example."
+omop,v5.4,visit_detail,discharged_to_concept_id,No,concept,concept_id,,A foreign key to the predefined concept in the Place of Service Vocabulary reflecting the discharge disposition (destination) for a visit.
+omop,v5.4,visit_detail,preceding_visit_detail_id,No,visit_detail,visit_detail_id,,	Use this field to find the visit detail that occurred for the person prior to the given visit detail record. There could be a few days or a few years in between.
+omop,v5.4,visit_detail,parent_visit_detail_id,No,visit_detail,visit_detail_id,,	Use this field to find the visit detail that subsumes the given visit detail record. This is used in the case that a visit detail record needs to be nested beyond the VISIT_OCCURRENCE/VISIT_DETAIL relationship.
+omop,v5.4,visit_detail,admitted_source_value,No,,,,The source code for the admitting source as it appears in the source data.
+omop,v5.4,visit_detail,discharged_to_source_value,No,,,,The source code for the discharge disposition as it appears in the source data.

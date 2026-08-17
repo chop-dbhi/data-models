@@ -1,0 +1,10 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v5.4,metadata,metadata_id,integer,,,,
+omop,v5.4,metadata,metadata_concept_id,integer,,,,
+omop,v5.4,metadata,metadata_type_concept_id,Yinteger,,,,
+omop,v5.4,metadata,name,string,250,,,
+omop,v5.4,metadata,value_as_string,string,250,,,
+omop,v5.4,metadata,value_as_concept_idinteger,,,,
+omop,v5.4,metadata,value_as_number,number,,,,
+omop,v5.4,metadata,metadata_date,date,,,,
+omop,v5.4,metadata,metadata_datetime,datetime,,,,

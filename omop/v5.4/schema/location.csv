@@ -1,0 +1,13 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v5.4,location,address_1,string,50,,,
+omop,v5.4,location,address_2,string,50,,,
+omop,v5.4,location,city,string,50,,,
+omop,v5.4,location,county,string,20,,,
+omop,v5.4,location,location_id,integer,,,,
+omop,v5.4,location,location_source_value,string,50,,,
+omop,v5.4,location,state,string,2,,,
+omop,v5.4,location,zip,string,9,,,
+omop,v5.4,location,country_concept_id,integer,,,,
+omop,v5.4,location,country_source_value,string,80,,,
+omop,v5.4,location,latitude,numeric,,,,
+omop,v5.4,location,longitude,numeric,,,,
