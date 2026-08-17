@@ -18,5 +18,5 @@ omop,v5.4,observation,value_as_string,No,,,,"The observation result stored as a 
 omop,v5.4,observation,value_source_value,No,,,,This field houses the verbatim result value of the Observation from the source data. Do not get confused with the Observation_source_value which captures source value of the observation mapped to observation_concept_id. This field is the observation result value from the source.
 omop,v5.4,observation,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,,A foreign key to the visit in the visit table during which the observation was recorded. 
 omop,v5.4,observation,visit_detail_id,No,visit_detail,visit_detail_id,,A foreign key to the VISIT_DETAIL record during which the Observation occurred
-omop,v5.4,observation,observation_event_id,No,,,,If the Observation record is related to another record in the database, this field is the primary key of the linked record.
-omop,v5.4,observation,obs_event_field_concept_id,No,,,,If the Observation record is related to another record in the database, this field is the CONCEPT_ID that identifies which table the primary key of the linked record came from.
+omop,v5.4,observation,observation_event_id,No,,,,"If the Observation record is related to another record in the database, this field is the primary key of the linked record."
+omop,v5.4,observation,obs_event_field_concept_id,No,,,,"If the Observation record is related to another record in the database, this field is the CONCEPT_ID that identifies which table the primary key of the linked record came from."

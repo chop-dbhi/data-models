@@ -21,4 +21,4 @@ omop,v5.4,drug_exposure,sig,No,,,,"The directions (""signetur"") on the drug pre
 omop,v5.4,drug_exposure,stop_reason,No,,,,"The reason the medication was stopped, where available. Reasons include regimen completed, changed, removed, etc. "
 omop,v5.4,drug_exposure,visit_occurrence_id,No,visit_occurrence,visit_occurrence_id,,A foreign key to the visit in the visit table during which the drug exposure initiated. 
 omop,v5.4,drug_exposure,visit_detail_id,No,visit_detail,visit_detail_id,,A foreign key to the visit in the visit table during which the drug exposure initiated. 
-omop,v5.4,drug_exposure,verbatim_end_date,No,,,,This is the end date of the drug exposure as it appears in the source data, if it is given
+omop,v5.4,drug_exposure,verbatim_end_date,No,,,,"This is the end date of the drug exposure as it appears in the source data, if it is given"
