@@ -1,0 +1,10 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v5.4,metadata,metadata_id,Yes,,,,The unique key given to a Metadata record.
+omop,v5.4,metadata,metadata_concept_id,Yes,concept,concept_id,,
+omop,v5.4,metadata,metadata_type_concept_id,Yes,concept,concept_id,,
+omop,v5.4,metadata,name,Yes,,,,
+omop,v5.4,metadata,value_as_string,No,,,,
+omop,v5.4,metadata,value_as_concept_id,No,concept,concept_id,,
+omop,v5.4,metadata,value_as_number,No,,,,"This is the numerical value of the result of the Metadata, if applicable and available."
+omop,v5.4,metadata,metadata_date,No,,,,
+omop,v5.4,metadata,metadata_datetime,No,,,,

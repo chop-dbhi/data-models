@@ -1,0 +1,4 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v5.4,episode_event,episode_id,integer,,,,
+omop,v5.4,episode_event,event_id,integer,,,,
+omop,v5.4,episode_event,episode_event_field_concept_id,integer,,,,

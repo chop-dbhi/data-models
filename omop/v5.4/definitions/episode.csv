@@ -1,0 +1,14 @@
+model,version,table,field,required,ref_table,ref_field,standard,description
+omop,v5.4,episode,episode_id,Yes,,,,A unique identifier for each Episode.
+omop,v5.4,episode,person_id,Yes,person,person_id,,The PERSON_ID of the PERSON for whom the episode is recorded.
+omop,v5.4,episode,episode_concept_id,Yes,concept,concept_id,,"The EPISODE_CONCEPT_ID represents the kind abstraction related to the disease phase, outcome or treatment."
+omop,v5.4,episode,episode_start_date,Yes,,,,The date when the Episode beings.
+omop,v5.4,episode,episode_start_datetime,No,,,,The date and time when the Episode beings.
+omop,v5.4,episode,episode_end_date,No,,,,The date when the instance of the Episode is considered to have ended.
+omop,v5.4,episode,episode_end_datetime,No,,,,The date and time when the instance of the Episode is considered to have ended.
+omop,v5.4,episode,episode_parent_id,No,episode,episode_id,,Use this field to find the Episode that subsumes the given Episode record. This is used in the case that an Episode are nested into each other.
+omop,v5.4,episode,episode_number,No,,,,"For sequences of episodes, this is used to indicate the order the episodes occurred. For example, lines of treatment could be indicated here."
+omop,v5.4,episode,episode_object_concept_id,No,concept,concept_id,,"A Standard Concept representing the disease phase, outcome, or other abstraction of which the episode consists"
+omop,v5.4,episode,episode_type_concept_id,No,concept,concept_id,,"This field can be used to determine the provenance of the Episode record, as in whether the episode was from an EHR system, insurance claim, registry, or other sources."
+omop,v5.4,episode,episode_source_value,No,,,,The source code for the Episode as it appears in the source data. This code is mapped to a Standard Condition Concept in the Standardized Vocabularies and the original code is stored here for reference.
+omop,v5.4,episode,episode_source_concept_id,No,concept,concept_id,,A foreign key to a Episode Concept that refers to the code used in the source.
