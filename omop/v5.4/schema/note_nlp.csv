@@ -1,6 +1,6 @@
 model,version,table,field,type,length,precision,scale,default
-omop,v5.4,note_nlp,note_nlp_id,integer,,,,
-omop,v5.4,note_nlp,note_id,integer,,,,
+omop,v5.4,note_nlp,note_nlp_id,biginteger,,,,
+omop,v5.4,note_nlp,note_id,biginteger,,,,
 omop,v5.4,note_nlp,section_concept_id,integer,,,,
 omop,v5.4,note_nlp,snippet,string,250,,,
 omop,v5.4,note_nlp,offset,string,50,,,

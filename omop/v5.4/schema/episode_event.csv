@@ -1,4 +1,4 @@
 model,version,table,field,type,length,precision,scale,default
-omop,v5.4,episode_event,episode_id,integer,,,,
-omop,v5.4,episode_event,event_id,integer,,,,
+omop,v5.4,episode_event,episode_id,biginteger,,,,
+omop,v5.4,episode_event,event_id,biginteger,,,,
 omop,v5.4,episode_event,episode_event_field_concept_id,integer,,,,
