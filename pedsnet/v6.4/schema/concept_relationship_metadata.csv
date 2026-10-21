@@ -1,0 +1,11 @@
+model,version,table,field,type,length,precision,scale,default
+pedsnet,v6.4,concept_relationship_metadata,concept_id_1,integer,,,,
+pedsnet,v6.4,concept_relationship_metadata,concept_id_2,integer,,,,
+pedsnet,v6.4,concept_relationship_metadata,relationship_id,string,20,,,
+pedsnet,v6.4,concept_relationship_metadata,relationship_predicate_id,string,20,,,
+pedsnet,v6.4,concept_relationship_metadata,relationship_group,integer,,,,
+pedsnet,v6.4,concept_relationship_metadata,mapping_source,string,50,,,
+pedsnet,v6.4,concept_relationship_metadata,confidence,number,,,,
+pedsnet,v6.4,concept_relationship_metadata,mapping_tool,string,50,,,
+pedsnet,v6.4,concept_relationship_metadata,mapper,string,50,,,
+pedsnet,v6.4,concept_relationship_metadata,reviewer,string,50,,,

@@ -194,3 +194,8 @@ pedsnet,v6.4,not null,,cohort,cohort_start_date
 pedsnet,v6.4,not null,,cohort,cohort_start_datetime
 pedsnet,v6.4,not null,,cohort,cohort_end_date
 pedsnet,v6.4,not null,,cohort,cohort_end_datetime
+pedsnet,v6.4,not null,,pack_content,pack_concept_id
+pedsnet,v6.4,not null,,pack_content,drug_concept_id
+pedsnet,v6.4,not null,,concept_relationship_metadata,concept_id_1
+pedsnet,v6.4,not null,,concept_relationship_metadata,concept_id_2
+pedsnet,v6.4,not null,,concept_relationship_metadata,relationship_id
