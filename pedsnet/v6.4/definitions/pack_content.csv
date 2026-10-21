@@ -1,0 +1,5 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v6.4,pack_content,pack_concept_id,Yes,concept,concept_id,The concept representing the pack
+pedsnet,v6.4,pack_content,drug_concept_id,Yes,concept,concept_id,The concept representing the individual drug component inside the pack
+pedsnet,v6.4,pack_content,amount,No,,,The number of the above Drug components in the Pack
+pedsnet,v6.4,pack_content,box_size,No,,,The number of Packs in a Drug Box

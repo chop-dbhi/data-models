@@ -1,0 +1,4 @@
+model,version,table,field,required,ref_table,ref_field,description
+pedsnet,v6.4,concept_metadata,concept_id,No,concept,concept_id,The concept representing the pack
+pedsnet,v6.4,concept_metadata,concept_category,No,,,See OMOP table description for acceptable values
+pedsnet,v6.4,concept_metadata,reverse_status,No,,,Determines if code is reused or not
