@@ -37,3 +37,6 @@ pedsnet,v6.4,specialty,"Specification on priority of specialties for providers a
 pedsnet,v6.4,location_fips,Geocoded location data for each location_id down to the census block group level
 pedsnet,v6.4,cohort_definition,maintains the rules governing the inclusion of a subject into a cohort
 pedsnet,v6.4,cohort,COHORT table contains records of subjects that satisfy a given set of criteria for a duration of time and the definition of the cohort is contained within the COHORT_DEFINITION table
+pedsnet,v6.4,concept_metadata,The concept_metadata table stores metadata for each concept from the concept table
+pedsnet,v6.4,concept_relationship_metadata,The concept_relationship_metadata table stores metadata for each relationship between concepts from the concept_relationship table
+pedsnet,v6.4,pack_content,The PACK_CONTENT table contains structured content of drug packs
