@@ -1,0 +1,5 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v5.5,pack_content,pack_concept_id,integer,,,,
+omop,v5.5,pack_content,drug_concept_id,integer,,,,
+omop,v5.5,pack_content,amount,integer,,,,
+omop,v5.5,pack_content,box_size,integer,,,,

@@ -1,0 +1,2 @@
+model,version,release_level,release_serial,label,url,description
+omop,5.5.0,alpha,3,OMOP v5.5,https://ohdsi.github.io/CommonDataModel/cdm55.html,
