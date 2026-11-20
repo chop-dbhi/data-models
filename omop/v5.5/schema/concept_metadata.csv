@@ -1,0 +1,4 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v5.5,concept_metadata,concept_id,integer,,,,
+omop,v5.5,concept_metadata,concept_category,string,20,,,
+omop,v5.5,concept_metadata,reuse_status,string,20,,,

@@ -1,0 +1,11 @@
+model,version,table,field,type,length,precision,scale,default
+omop,v5.5,concept_relationship_metadata,concept_id_1,integer,,,,
+omop,v5.5,concept_relationship_metadata,concept_id_2,integer,,,,
+omop,v5.5,concept_relationship_metadata,relationship_id,string,20,,,
+omop,v5.5,concept_relationship_metadata,relationship_predicate_id,string,20,,,
+omop,v5.5,concept_relationship_metadata,relationship_group,integer,,,,
+omop,v5.5,concept_relationship_metadata,mapping_source,string,50,,,
+omop,v5.5,concept_relationship_metadata,confidence,number,,,,
+omop,v5.5,concept_relationship_metadata,mapping_tool,string,50,,,
+omop,v5.5,concept_relationship_metadata,mapper,string,50,,,
+omop,v5.5,concept_relationship_metadata,reviewer,string,50,,,

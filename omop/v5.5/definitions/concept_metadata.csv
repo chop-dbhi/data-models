@@ -1,0 +1,4 @@
+model,version,table,field,required,ref_table,ref_field,description
+omop,v5.5,concept_metadata,concept_id,No,concept,concept_id,The concept representing the pack
+omop,v5.5,concept_metadata,concept_category,No,,,See OMOP table description for acceptable values
+omop,v5.5,concept_metadata,reuse_status,No,,,Determines if code is reused or not
